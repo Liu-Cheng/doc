@@ -1,0 +1,18 @@
+\contentsline {section}{\numberline {1}Introduction}{2}
+\contentsline {section}{\numberline {2}Related Work}{3}
+\contentsline {subsection}{\numberline {2.1}FPGA Acceleration}{3}
+\contentsline {subsection}{\numberline {2.2}Loop Optimization}{3}
+\contentsline {section}{\numberline {3}System Overview}{4}
+\contentsline {subsection}{\numberline {3.1}System Context}{4}
+\contentsline {subsection}{\numberline {3.2}HW/SW Codesign Using FPGA Accelerator}{4}
+\contentsline {subsection}{\numberline {3.3}SCGRA Based FPGA Accelerator}{5}
+\contentsline {subsubsection}{\numberline {3.3.1}SCGRA}{6}
+\contentsline {subsubsection}{\numberline {3.3.2}On Chip Buffer}{7}
+\contentsline {section}{\numberline {4}Design Space Exploration}{7}
+\contentsline {subsection}{\numberline {4.1}Design Space Overview}{8}
+\contentsline {subsection}{\numberline {4.2}Design Space Exploration Methods}{9}
+\contentsline {section}{\numberline {5}Current Progress}{10}
+\contentsline {subsection}{\numberline {5.1}SCGRA Based HLS Design Flow}{11}
+\contentsline {subsection}{\numberline {5.2}Loop Unrolling Exploration}{11}
+\contentsline {subsection}{\numberline {5.3}SW/HW Communication on Zedboard}{13}
+\contentsline {section}{\numberline {6}Conclusion}{14}

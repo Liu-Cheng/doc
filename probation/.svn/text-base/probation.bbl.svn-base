@@ -1,0 +1,148 @@
+\begin{thebibliography}{10}
+
+\bibitem{Handle-c}
+Handel-c.
+\newblock \url{www.mentor.com/products/fpga/handel-c/}.
+\newblock [Online; accessed 19-May-2013].
+
+\bibitem{Impulse-c}
+Impulse-c.
+\newblock \url{http://www.impulseaccelerated.com/products.htm}.
+\newblock [Online; accessed 19-May-2013].
+
+\bibitem{vivado}
+Xilinx vivado.
+\newblock \url{http://www.xilinx.com/products/design-tools/vivado/index.htm}.
+\newblock [Online; accessed 22-May-2013].
+
+\bibitem{zedboard}
+Zedboard.
+\newblock \url{http://zedoard.org}.
+\newblock [Online; accessed 29-May-2013].
+
+\bibitem{leap}
+Michael Adler, Kermin~E Fleming, Angshuman Parashar, Michael Pellauer, and Joel
+  Emer.
+\newblock Leap scratchpads: automatic memory and cache management for
+  reconfigurable logic.
+\newblock In {\em Proceedings of the 19th ACM/SIGDA international symposium on
+  Field programmable gate arrays}, pages 25--28. ACM, 2011.
+
+\bibitem{loop-unrolling-roccc}
+Betul Buyukkurt, Zhi Guo, and Walid~A Najjar.
+\newblock Impact of loop unrolling on area, throughput and clock frequency in
+  roccc: C to vhdl compiler for fpgas.
+\newblock In {\em Reconfigurable Computing: Architectures and Applications},
+  pages 401--412. Springer, 2006.
+
+\bibitem{legup}
+Andrew Canis, Jongsok Choi, Mark Aldham, Victor Zhang, Ahmed Kammoona, Jason~H
+  Anderson, Stephen Brown, and Tomasz Czajkowski.
+\newblock Legup: high-level synthesis for fpga-based processor/accelerator
+  systems.
+\newblock In {\em Proceedings of the 19th ACM/SIGDA international symposium on
+  Field programmable gate arrays}, pages 33--36. ACM, 2011.
+
+\bibitem{app-acc}
+Shuai Che, Jie Li, J.W. Sheaffer, K.~Skadron, and J.~Lach.
+\newblock Accelerating compute-intensive applications with gpus and fpgas.
+\newblock In {\em Application Specific Processors, 2008. SASP 2008. Symposium
+  on}, pages 101--107, 2008.
+
+\bibitem{coram}
+Eric~S Chung, James~C Hoe, and Ken Mai.
+\newblock Coram: an in-fabric memory architecture for fpga-based computing.
+\newblock In {\em Proceedings of the 19th ACM/SIGDA international symposium on
+  Field programmable gate arrays}, pages 97--106. ACM, 2011.
+
+\bibitem{loop-unrolling-shifting}
+O.S. Dragomir, T.~Stefanov, and K.~Bertels.
+\newblock Loop unrolling and shifting for reconfigurable architectures.
+\newblock In {\em Field Programmable Logic and Applications, 2008. FPL 2008.
+  International Conference on}, pages 167--172, 2008.
+
+\bibitem{heterogeneous-cgra}
+R.~Ferreira, J.G. Vendramini, L.~Mucida, M.M. Pereira, and L.~Carro.
+\newblock An fpga-based heterogeneous coarse-grained dynamically reconfigurable
+  architecture.
+\newblock In {\em Proceedings of the 14th international conference on
+  Compilers, architectures and synthesis for embedded systems}, pages 195--204.
+  ACM, 2011.
+
+\bibitem{marc}
+I.~Lebedev, Shaoyi Cheng, A.~Doupnik, J.~Martin, C.~Fletcher, D.~Burke, Mingjie
+  Lin, and J.~Wawrzynek.
+\newblock {MARC}: A many-core approach to reconfigurable computing.
+\newblock In {\em Reconfigurable Computing and FPGAs (ReConFig), 2010
+  International Conference on}, pages 7 --12, dec. 2010.
+
+\bibitem{polytope}
+Christian Lengauer.
+\newblock Loop parallelization in the polytope model.
+\newblock In {\em CONCUR'93}, pages 398--416. Springer, 1993.
+
+\bibitem{vfpga}
+O.~Malik, A.~Hemani, and M.A. Shami.
+\newblock High level synthesis framework for a coarse grain reconfigurable
+  architecture.
+\newblock In {\em NORCHIP, 2010}, pages 1--6, 2010.
+
+\bibitem{design-productivity}
+Brent~E Nelson, Michael~J Wirthlin, Brad~L Hutchings, Peter~M Athanas, and
+  Shawn Bohner.
+\newblock Design productivity for configurable computing.
+\newblock In {\em ERSA’08: Proceedings of the International Conference on
+  Engineering of Reconfigurable Systems and Algorithms}, pages 57--66, 2008.
+
+\bibitem{modular-scheduling}
+B.R. Rau.
+\newblock Iterative modulo scheduling: An algorithm for software pipelining
+  loops.
+\newblock In {\em Proceedings of the 27th annual international symposium on
+  Microarchitecture}, pages 63--74. ACM, 1994.
+
+\bibitem{list-scheduling}
+JMJ Schutten.
+\newblock List scheduling revisited.
+\newblock {\em Operations Research Letters}, 18(4):167--170, 1996.
+
+\bibitem{EndToEnd}
+G.~Stitt, A.~George, H.~Lam, C.~Reardon, M.~Smith, B.~Holland, V.~Aggarwal,
+  Gongyu Wang, J.~Coole, and S.~Koehler.
+\newblock An end-to-end tool flow for fpga-accelerated scientific computing.
+\newblock {\em Design Test of Computers, IEEE}, 28(4):68--77, 2011.
+
+\bibitem{random-gen}
+David~Barrie Thomas, Lee Howes, and Wayne Luk.
+\newblock A comparison of cpus, gpus, fpgas, and massively parallel processor
+  arrays for random number generation.
+\newblock In {\em Proceedings of the ACM/SIGDA international symposium on Field
+  programmable gate arrays}, pages 63--72. ACM, 2009.
+
+\bibitem{classifier}
+Da~Tong, Lu~Sun, Kiran~Kumar Matam, and Viktor Prasanna.
+\newblock High throughput and programmable online traffic classifier on fpga.
+\newblock In {\em Proceedings of the ACM/SIGDA international symposium on Field
+  programmable gate arrays}, pages 255--264. ACM, 2013.
+
+\bibitem{loop-unrolling-cgra}
+Dawei Wang, Sikun Li, and Yong Dou.
+\newblock Loop kernel pipelining mapping onto coarse-grained reconfigurable
+  architecture for data-intensive applications.
+\newblock {\em Journal of Software}, 4(1):81--89, 2009.
+
+\bibitem{c-to-coram}
+Gabriel Weisz and James~C Hoe.
+\newblock C-to-coram: compiling perfect loop nests to the portable coram
+  abstraction.
+\newblock In {\em Proceedings of the ACM/SIGDA international symposium on Field
+  programmable gate arrays}, pages 221--230. ACM, 2013.
+
+\bibitem{colinheart}
+Hayden Kwok-Hay. Yu, Colin Lin.~So.
+\newblock Energy-efficient dataflow computations on {FPGA}s using
+  application-specific coarse-grain architecture synthesis.
+\newblock In {\em Highly Efficient Accelerators and Reconfigurable
+  Technologies, The 4th International Workshop on}. IEEE, 2012.
+
+\end{thebibliography}
