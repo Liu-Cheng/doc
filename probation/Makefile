@@ -1,7 +1,7 @@
-TITLE=probation
-FILES=probation.tex 
+TITLE=presentation
+FILES=presentation.tex 
 
-BIBFILES=refs.bib 
+BIBFILES= 
 IMGFILES=
 
 #final : codes1078-so.tex
@@ -10,10 +10,10 @@ IMGFILES=
 
 $(TITLE).pdf : $(FILES) $(BIBFILES) $(IMGFILES)
 	pdflatex $(TITLE)
-	bibtex $(TITLE)
+	#bibtex $(TITLE)
 	pdflatex $(TITLE)
 	pdflatex $(TITLE)
 
 .PHONY : clean
 clean :
-	\rm -f *~ *.log $(TITLE).pdf *.aux *.bbl *.blg *.lot *.lof
+	\rm -f *~ *.log $(TITLE).pdf *.aux *.bbl *.blg *.lot *.lof *.snm *.toc *.nav *.vrb *.out
