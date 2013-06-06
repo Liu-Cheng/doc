@@ -114,14 +114,18 @@
         energy efficiency.} 
 
 \begin{figure}
-  \includegraphics[width=.7\linewidth]{performance-cpu-fpga-gpu}
+  \vspace{-1em}
+  \includegraphics[width=.8\linewidth]{performance-cpu-fpga-gpu}
+  \vspace{-1em}
 \end{figure}
 \begin{figure}
-  \includegraphics[width=.7\linewidth]{energy-cpu-fpga-gpu}
+  \vspace{-1em}
+  \includegraphics[width=.8\linewidth]{energy-cpu-fpga-gpu}
+  \vspace{-1em}
 \end{figure}
 
-\begin{spacing}{1.5}
-\tiny{Eric S. Chung, etc., Single-Chip Heterogeneous Computing: Does the future include customized
+\begin{spacing}{1.2}
+\tiny{[1] Eric S. Chung, etc., Single-Chip Heterogeneous Computing: Does the future include customized
 logic, FPGA and GPGPUs?, IEEE International Symposium of Microarchitecture, 2010}
 \end{spacing}
 
@@ -133,25 +137,81 @@ logic, FPGA and GPGPUs?, IEEE International Symposium of Microarchitecture, 2010
 \frametitle{Why isn't FPGA the mainstream computing device?}
 \textbf{Main obstacles}
 \begin{itemize}
+
 \item High barrier-to-entry
 \begin{itemize}
-\item More software engineers than hardware engineers.
 \item Require hardware knowledge for both design and debug.
+\item More software engineers than hardware engineers.
+\item ...
 \end{itemize}
 
 \item Low design productivity
 \begin{itemize}
 \item Low level abstraction and long development time
-\item Long compilation time and long debugging time
+\item Long compilation and implementation time
 \item Poor portability and design reuse
+\item Unable to support complex software like OS
+\item ...
 \end{itemize}
 
 \end{itemize}
+
 \end{frame}
 
 %------------------------------------------------
 \begin{frame}[t]
-\frametitle{Computation kernel and CPU+FPGA accelerator}
+\frametitle{What has the community done to overcome the obstacles?}
+
+\textbf{Design methodologies}
+\begin{itemize}
+\item High level synthesis languages and tools \\
+\footnotesize
+Vivado(Xpilot, AutoESL), LegUP, Impulse-C, ...
+\normalsize
+
+\item Communication libraries, unified memory interfaces, and integrated environments \\
+\footnotesize
+CoRAM, LEAP, ...
+\normalsize
+
+\item Virtual overlay on top of commerical FPGA \\
+\footnotesize 
+VirtualRC, Soft coarse-grained reconfigurale array (SCGRA), ...
+\normalsize
+
+\end{itemize}
+
+\textbf{Computation architectures}
+\begin{itemize}
+\item Hybrid computation architectures \\
+\footnotesize
+Embedded softcore+FPGA, Embedded hardcore+FPGA, General CPU+FPGA, ...
+\normalsize
+\end{itemize}
+
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}[t]
+\frametitle{Differences and relations of the design methodologies}
+
+\begin{figure}
+  \includegraphics[width=.8\linewidth]{virtual-overlay}
+\end{figure}
+
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}[t]
+
+\frametitle{Trade-offs under the hood?}
+\textbf{Performance vs. productivity/flexibility}
+
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}[t]
+\frametitle{CPU+FPGA accelerator}
 \textbf{Computation kernel}
 \begin{itemize}
 \item Sequential programming model.
@@ -165,7 +225,7 @@ Include CPU+FPGA accelerator as well as the compiling flow
 
 %------------------------------------------------
 \begin{frame}[t]
-\frametitle{Challenges of the CPU+FPGA accelerator}
+\frametitle{Trade-offs with the CPU+FPGA accelerator}
 \begin{itemize}
 \item High barrier-to-entry (Hardware engineering skills, ...)
 \item Low design productivity (Low level abstraction, Long compilation time, ...)

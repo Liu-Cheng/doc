@@ -11,7 +11,7 @@ set auto x
 set yrange [0:*]
 set xrange [-0.5:1.5]
 set key at 0.4, 6.8 
-set title "Energy efficiency comparison"
+set title "Energy efficiency comparison [1]"
 plot 'energy-cpu-fpga-gpu.data' using 2:xtic(1) title col, \
         '' using 3:xtic(1) title col, \
         '' using 4:xtic(1) title col, \
