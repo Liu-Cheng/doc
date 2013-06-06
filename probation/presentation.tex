@@ -75,10 +75,9 @@
 
 %\setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides uncomment this line
 }
-
+\usepackage{setspace}
 \usepackage{graphicx} % Allows including images
 \usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
-
 %----------------------------------------------------------------------------------------
 %	TITLE PAGE
 %----------------------------------------------------------------------------------------
@@ -95,6 +94,7 @@
 }
 \date{\today} % Date, can be changed to a custom date
 
+\graphicspath{{./figures/}} 
 \begin{document}
 
 \begin{frame}
@@ -109,40 +109,58 @@
 \section{Background} 
 %------------------------------------------------
 \begin{frame}[t]
-\frametitle{Loop and performance acceleration}
-\begin{itemize}
-\item Loop will be the performance bottleneck in many programs executed on a sequential computation architecture.
-\item Loop has ample data parallelism and it is one of the most preferable optimization tagrets.
-\item Loop provides a great opportunity for FPGA computation.
-\end{itemize}
-\end{frame}
+\frametitle{FPGA vs. CPU vs. GPU}
+\textbf{FPGA has competitive computation capability and \\
+        energy efficiency.} 
 
-%------------------------------------------------
-\begin{frame}[t]
-\frametitle{FPGA design over CPU based software design}
+\begin{figure}
+  \includegraphics[width=.7\linewidth]{performance-cpu-fpga-gpu}
+\end{figure}
+\begin{figure}
+  \includegraphics[width=.7\linewidth]{energy-cpu-fpga-gpu}
+\end{figure}
 
-\textbf{Advantages}
-\begin{itemize}
-\item Inherent parallel computation capability
-\item Energy efficiency (application specific design, ...)
-\item Low latency
-\item ...
-\end{itemize}
-
-\textbf{Disadvantages}
-\begin{itemize}
-\item High barrier-to-entry (Hardware engineering skills, ...)
-\item Low design productivity (Low level abstraction, Long compilation time, ...)
-\item Difficult to handle complex softwares like OS
-\item ...
-\end{itemize}
+\begin{spacing}{1.5}
+\tiny{Eric S. Chung, etc., Single-Chip Heterogeneous Computing: Does the future include customized
+logic, FPGA and GPGPUs?, IEEE International Symposium of Microarchitecture, 2010}
+\end{spacing}
 
 \end{frame}
 
 %------------------------------------------------
 \begin{frame}[t]
-\frametitle{Hybrid architecture: CPU+FPGA accelerator}
-CPU+FPGA Contex
+
+\frametitle{Why isn't FPGA the mainstream computing device?}
+\textbf{Main obstacles}
+\begin{itemize}
+\item High barrier-to-entry
+\begin{itemize}
+\item More software engineers than hardware engineers.
+\item Require hardware knowledge for both design and debug.
+\end{itemize}
+
+\item Low design productivity
+\begin{itemize}
+\item Low level abstraction and long development time
+\item Long compilation time and long debugging time
+\item Poor portability and design reuse
+\end{itemize}
+
+\end{itemize}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}[t]
+\frametitle{Computation kernel and CPU+FPGA accelerator}
+\textbf{Computation kernel}
+\begin{itemize}
+\item Sequential programming model.
+\item Loop is typical computation kernel.
+\end{itemize}
+
+\textbf{CPU+FPGA accelerator}
+Include CPU+FPGA accelerator as well as the compiling flow
+
 \end{frame}
 
 %------------------------------------------------
@@ -155,6 +173,7 @@ CPU+FPGA Contex
 \item ...
 \end{itemize}
 \end{frame}
+
 
 %------------------------------------------------
 \section{Related work}
@@ -255,9 +274,7 @@ Complex design space
 
 \end{frame}
 
-%\begin{figure}
-%\includegraphics[width=0.8\linewidth]{test}
-%\end{figure}
+
 
 %------------------------------------------------
 \section{Current progress}
