@@ -1,0 +1,88 @@
+\begin{thebibliography}{10}
+
+\bibitem{data2mem}
+data2mem.
+\newblock [Online; accessed 19-September-2012].
+
+\bibitem{llvm}
+The {LLVM} compiler framework.
+\newblock [Online; accessed 19-September-2012].
+
+\bibitem{beckhoff2011xilinx}
+C.~Beckhoff, D.~Koch, and J.~Torresen.
+\newblock The {Xilinx} design language ({XDL}): Tutorial and use cases.
+\newblock In {\em Reconfigurable Communication-centric Systems-on-Chip
+  ({ReCoSoC}), 2011 6th International Workshop on}, pages 1--8. IEEE, 2011.
+
+\bibitem{cardoso2010compiling}
+J.M.P. Cardoso, P.C. Diniz, and M.~Weinhardt.
+\newblock Compiling for reconfigurable computing: A survey.
+\newblock {\em ACM Computing Surveys (CSUR)}, 42(4):13, 2010.
+
+\bibitem{cong2011high}
+J.~Cong, B.~Liu, S.~Neuendorffer, J.~Noguera, K.~Vissers, and Z.~Zhang.
+\newblock High-level synthesis for {FPGA}s: From prototyping to deployment.
+\newblock {\em Computer-Aided Design of Integrated Circuits and Systems, IEEE
+  Transactions on}, 30(4):473--491, 2011.
+
+\bibitem{coole2010intermediate}
+J.~Coole and G.~Stitt.
+\newblock Intermediate fabrics: Virtual architectures for circuit portability
+  and fast placement and routing.
+\newblock In {\em Hardware/Software Codesign and System Synthesis (CODES+
+  ISSS), 2010 IEEE/ACM/IFIP International Conference on}, pages 13--22. IEEE,
+  2010.
+
+\bibitem{ferreira2011fpga}
+R.~Ferreira, J.G. Vendramini, L.~Mucida, M.M. Pereira, and L.~Carro.
+\newblock An fpga-based heterogeneous coarse-grained dynamically reconfigurable
+  architecture.
+\newblock In {\em Proceedings of the 14th international conference on
+  Compilers, architectures and synthesis for embedded systems}, pages 195--204.
+  ACM, 2011.
+
+\bibitem{Frangieh2010}
+T.~Frangieh, A.~Chandrasekharan, S.~Rajagopalan, Y.~Iskander, S.~Craven, and
+  C.~Patterson.
+\newblock {PATIS}: Using partial configuration to improve static {FPGA} design
+  productivity.
+\newblock In {\em Parallel Distributed Processing, Workshops and Phd Forum
+  ({IPDPSW}), 2010 IEEE International Symposium on}, pages 1 --8, april 2010.
+
+\bibitem{kim2010dynamic}
+Y.~Kim and R.N. Mahapatra.
+\newblock Dynamic context compression for low-power coarse-grained
+  reconfigurable architecture.
+\newblock {\em Very Large Scale Integration (VLSI) Systems, IEEE Transactions
+  on}, 18(1):15--28, 2010.
+
+\bibitem{kissler2006dynamically}
+D.~Kissler, F.~Hannig, A.~Kupriyanov, and J.~Teich.
+\newblock A dynamically reconfigurable weakly programmable processor array
+  architecture template.
+\newblock In {\em Proceedings of the 2nd International Workshop on
+  Reconfigurable Communication Centric System-on-Chips (ReCoSoC), Montpellier,
+  France}, pages 31--37, 2006.
+
+\bibitem{lavin2011}
+C.~Lavin, M.~Padilla, J.~Lamprecht, P.~Lundrigan, B.~Nelson, and B.~Hutchings.
+\newblock {HMFlow}: Accelerating {FPGA} compilation with hard macros for rapid
+  prototyping.
+\newblock In {\em Field-Programmable Custom Computing Machines ({FCCM}), 2011
+  {IEEE} 19th Annual International Symposium on}, pages 117 --124, may 2011.
+
+\bibitem{Lebedev2010}
+I.~Lebedev, Shaoyi Cheng, A.~Doupnik, J.~Martin, C.~Fletcher, D.~Burke, Mingjie
+  Lin, and J.~Wawrzynek.
+\newblock {MARC}: A many-core approach to reconfigurable computing.
+\newblock In {\em Reconfigurable Computing and FPGAs (ReConFig), 2010
+  International Conference on}, pages 7 --12, dec. 2010.
+
+\bibitem{colinheart}
+Hayden Kwok-Hay. Yu, Colin Lin.~So.
+\newblock Energy-efficient dataflow computations on {FPGA}s using
+  application-specific coarse-grain architecture synthesis.
+\newblock In {\em Highly Efficient Accelerators and Reconfigurable
+  Technologies, The 4th International Workshop on}. IEEE, 2012.
+
+\end{thebibliography}
