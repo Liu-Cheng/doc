@@ -78,6 +78,7 @@
 \usepackage{setspace}
 \usepackage{graphicx} % Allows including images
 \usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+\setbeamertemplate{caption}[numbered]
 %----------------------------------------------------------------------------------------
 %	TITLE PAGE
 %----------------------------------------------------------------------------------------
@@ -159,6 +160,8 @@ logic, FPGA and GPGPUs?, IEEE International Symposium of Microarchitecture, 2010
 \end{frame}
 
 %------------------------------------------------
+\section{Related work}
+%------------------------------------------------
 \begin{frame}[t]
 \frametitle{What has the community done to overcome the obstacles?}
 
@@ -181,7 +184,7 @@ VirtualRC, Soft coarse-grained reconfigurale array (SCGRA), ...
 
 \end{itemize}
 
-\textbf{Computation architectures}
+\textbf{CPU+FPGA based hybrid computation}
 \begin{itemize}
 \item Hybrid computation architectures \\
 \footnotesize
@@ -204,41 +207,85 @@ Embedded softcore+FPGA, Embedded hardcore+FPGA, General CPU+FPGA, ...
 %------------------------------------------------
 \begin{frame}[t]
 
-\frametitle{Trade-offs under the hood?}
-\textbf{Performance vs. productivity/flexibility}
+\frametitle{Performance vs. productivity}
+\begin{figure}
+\includegraphics[width=0.8\linewidth]{performance-vs-productivity}
+\end{figure}
 
 \end{frame}
 
 %------------------------------------------------
 \begin{frame}[t]
-\frametitle{CPU+FPGA accelerator}
-\textbf{Computation kernel}
-\begin{itemize}
-\item Sequential programming model.
-\item Loop is typical computation kernel.
-\end{itemize}
+\frametitle{CPU+FPGA based hybrid computation}
 
-\textbf{CPU+FPGA accelerator}
-Include CPU+FPGA accelerator as well as the compiling flow
+\textbf{Hardware/software co-design}
+\begin{figure}
+\includegraphics[width=0.8\linewidth]{codesign}
+\end{figure}
+
+\textbf{Loop and computation kernel}
+\begin{itemize}
+\item Most algorithms are implemented following a sequential programming model.
+\item Loops are typical computation kernels with large parallel operations.
+\end{itemize}
 
 \end{frame}
 
 %------------------------------------------------
 \begin{frame}[t]
-\frametitle{Trade-offs with the CPU+FPGA accelerator}
+\frametitle{CPU+FPGA based hyrbid computation architecture}
+
+\begin{figure}
+\includegraphics[width=0.5\linewidth]{system-context}
+\vspace{-1em}
+\caption{Single chip multicore with FPGA accelerator}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=0.5\linewidth]{system-context2}
+\vspace{-1em}
+\caption{Shared memory multiprocessor with FPGA accelerator}
+\end{figure}
+
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}[t]
+\frametitle{Previous SCGRA Work}
+\textbf{What have been done?}
 \begin{itemize}
-\item High barrier-to-entry (Hardware engineering skills, ...)
-\item Low design productivity (Low level abstraction, Long compilation time, ...)
-\item Complex design space exploration
-\item ...
+\item Introduced the SCGRA layer for HLS,
+\item showed potential design productivity improvement,
+\item and proved its energy efficiency using an application specific SCGRA topology
+\end{itemize}
+\textbf{What are still missing?}
+\begin{itemize}
+\item The relationship between a holistic loop and its kernel data flow graph,
+\item A systemic view on the correlation between CPU and FPGA, particularly the on chip buffer and IO
+bandwidth constrain.
 \end{itemize}
 \end{frame}
 
+%------------------------------------------------
+\begin{frame}[t]
+\frametitle{Main goals of my work}
+\textbf{Loop acceleration on a CPU+FPGA}
+\begin{itemize}
+\item Optimal loop unrolling
+\item Application specific on chip buffer scheme 
+\item IO bandwidth and communication latency aware scheduling
+\end{itemize}
+
+\textbf{Improve the SCGRA based HLS}
+\begin{figure}
+\vspace{-1em}
+\includegraphics[width=0.7\linewidth]{design-goal}
+\end{figure}
+
+\end{frame}
 
 %------------------------------------------------
-\section{Related work}
-%------------------------------------------------
-\begin{frame}
+\begin{frame}[t]
 \frametitle{Contemporary FPGA accelerator design methods}
 \textbf{Classification through design entry}
 \begin{itemize}
