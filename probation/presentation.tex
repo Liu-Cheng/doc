@@ -141,8 +141,8 @@ logic, FPGA and GPGPUs?, IEEE International Symposium of Microarchitecture, 2010
 
 \item High barrier-to-entry
 \begin{itemize}
-\item Require hardware knowledge for both design and debug.
-\item More software engineers than hardware engineers.
+\item Require extensive hardware knowledge,
+\item while software engineers usually don't have.
 \item ...
 \end{itemize}
 
@@ -151,7 +151,7 @@ logic, FPGA and GPGPUs?, IEEE International Symposium of Microarchitecture, 2010
 \item Low level abstraction and long development time
 \item Long compilation and implementation time
 \item Poor portability and design reuse
-\item Unable to support complex software like OS
+\item Difficult to support complex software like OS
 \item ...
 \end{itemize}
 
@@ -171,12 +171,6 @@ logic, FPGA and GPGPUs?, IEEE International Symposium of Microarchitecture, 2010
 \footnotesize
 Vivado(Xpilot, AutoESL), LegUP, Impulse-C, ...
 \normalsize
-
-\item Communication libraries, unified memory interfaces, and integrated environments \\
-\footnotesize
-CoRAM, LEAP, ...
-\normalsize
-
 \item Virtual overlay on top of commerical FPGA \\
 \footnotesize 
 VirtualRC, Soft coarse-grained reconfigurale array (SCGRA), ...
@@ -190,6 +184,10 @@ VirtualRC, Soft coarse-grained reconfigurale array (SCGRA), ...
 \footnotesize
 Embedded softcore+FPGA, Embedded hardcore+FPGA, General CPU+FPGA, ...
 \normalsize
+\item Communication libraries, unified memory interfaces, and integrated environments \\
+\footnotesize
+CoRAM, LEAP, ...
+\normalsize
 \end{itemize}
 
 \end{frame}
@@ -199,7 +197,8 @@ Embedded softcore+FPGA, Embedded hardcore+FPGA, General CPU+FPGA, ...
 \frametitle{Differences and relations of the design methodologies}
 
 \begin{figure}
-  \includegraphics[width=.8\linewidth]{virtual-overlay}
+\vspace{-1em}
+\includegraphics[width=.9\linewidth]{virtual-overlay}
 \end{figure}
 
 \end{frame}
@@ -207,10 +206,14 @@ Embedded softcore+FPGA, Embedded hardcore+FPGA, General CPU+FPGA, ...
 %------------------------------------------------
 \begin{frame}[t]
 
-\frametitle{Performance vs. productivity}
+\frametitle{Performance vs. productivity vs. overhead}
 \begin{figure}
-\includegraphics[width=0.8\linewidth]{performance-vs-productivity}
+\vspace{-1em}
+\includegraphics[width=0.7\linewidth]{performance-vs-productivity-vs-overhead}
 \end{figure}
+
+Why SCGRA based HLS has potential to provide better performance?\\
+performance = operations per cycle $\times$ \textbf{implementation frequency}
 
 \end{frame}
 
@@ -261,162 +264,148 @@ Embedded softcore+FPGA, Embedded hardcore+FPGA, General CPU+FPGA, ...
 \textbf{What are still missing?}
 \begin{itemize}
 \item The relationship between a holistic loop and its kernel data flow graph,
-\item A systemic view on the correlation between CPU and FPGA, particularly the on chip buffer and IO
-bandwidth constrain.
+\item influence of the communication between CPU and FPGA on the SCGRA based HLS.
 \end{itemize}
 \end{frame}
 
 %------------------------------------------------
 \begin{frame}[t]
-\frametitle{Main goals of my work}
-\textbf{Loop acceleration on a CPU+FPGA}
+\frametitle{Main goal of this work}
+\textbf{Accelerate loop on a CPU+FPGA system}
 \begin{itemize}
-\item Optimal loop unrolling
-\item Application specific on chip buffer scheme 
-\item IO bandwidth and communication latency aware scheduling
-\end{itemize}
-
-\textbf{Improve the SCGRA based HLS}
-\begin{figure}
-\vspace{-1em}
-\includegraphics[width=0.7\linewidth]{design-goal}
-\end{figure}
-
-\end{frame}
-
-%------------------------------------------------
-\begin{frame}[t]
-\frametitle{Contemporary FPGA accelerator design methods}
-\textbf{Classification through design entry}
-\begin{itemize}
-\item Register transfer level (RTL) design flow
-\item High level synthesis based design flow
-\end{itemize}
-
-\textbf{Classification through compilation}
-\begin{itemize}
-\item Compile to HDL and implementation on FPGA
-\item Comple to virtual overlay, implementation on overlay and implementation on FPGA
-\end{itemize}
-
-\end{frame}
-
-%------------------------------------------------
-\begin{frame}
-
-\frametitle{Comparison of different design methods}
-Performance and productivity.
-
-\end{frame}
-
-%------------------------------------------------
-\begin{frame}
-
-\frametitle{Limitation of previous SCGRA work}
-\begin{itemize}
-\item Ignore the loop structure
-\item Ignore the communication limitation
+\item Optimal loop unrolling for the SCGRA based accelerator
+\item Application specific on-chip buffering including data prefetching and buffer structure
+customization 
 \end{itemize}
 
 \end{frame}
 
 %------------------------------------------------
 \section{Research scheme}
-\begin{frame}
-
-\frametitle{System overview}
-SCGRA based CPU+FPGA accelerator.
-
-\end{frame}
-
 %------------------------------------------------
-\begin{frame}
-\frametitle{Design space overview}
-Complex design space
+\begin{frame}[t]
+\frametitle{Hardware infrastructure} 
+\textbf{SCGRA based CPU+FPGA accelerator}
+\begin{figure}
+\includegraphics[width=0.65\linewidth]{scgra-acceleratorv2}
+\end{figure}
 
-\end{frame}
-
-%------------------------------------------------
-\begin{frame}
-
-\frametitle{Research focuses}
+\textbf{Softness of the accelerator}
 \begin{itemize}
-\item Loop unrolling
-\item Operation scheduling
-\item Communication interface
+\item SCGRA structure could be reconfigurable
+\item On chip buffer could be reconfigurable
+\end{itemize}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}[t]
+\frametitle{SCGRA based accelerator design flow}
+
+\begin{figure}
+\vspace{-1em}
+\includegraphics[width=0.76\linewidth]{design-space-overview2}
+\end{figure}
+
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}[t]
+\frametitle{Optimal loop unrolling}
+
+\textbf{Why loop unrolling and why not fully unroll the loop?}
+\begin{itemize}
+\item Increases parallel operations and improves performance
+\item Induces larger hardware overhead performance 
+\item Benefit may be limited by system constrains.
 \end{itemize}
 
-\end{frame}
-
-%------------------------------------------------
-\begin{frame}
-
-\frametitle{Automatic loop optimization}
-\begin{itemize}
-\item Loop unrolling analysis
-\end{itemize}
+\textbf{Simplified loop unrolling}
+\begin{figure}
+\vspace{-1em}
+\includegraphics[width=0.95\linewidth]{system-loop-unrolling}
+\end{figure}
 
 \end{frame}
 
 %------------------------------------------------
-\begin{frame}
+\begin{frame}[t]
+\frametitle{On-chip buffering}
 
-\frametitle{Operation scheduling}
-\begin{itemize}
-\item IO aware
-\item On chip memory aware
-\item memory footprint aware
-\end{itemize}
-
-\end{frame}
-
-%------------------------------------------------
-\begin{frame}
-
-\frametitle{Communication interface}
-\begin{itemize}
-\item Data prefetching
-\item On chip buffer synthesis
-\end{itemize}
+\begin{figure}
+\vspace{-1em}
+\includegraphics[width=0.7\linewidth]{on-chip-buffer}
+\end{figure}
 
 \end{frame}
-
-
 
 %------------------------------------------------
 \section{Current progress}
-\begin{frame}
+\begin{frame}[t]
+\frametitle{Quantify the productivity of the SCGRA based HLS}
+\textbf{Current SCGRA based HLS}
+\begin{figure}
+\vspace{-1em}
+\includegraphics[width=0.85\linewidth]{design-flow}
+\vspace{-1em}
+\end{figure}
 
-\frametitle{Design productivity oriented design flow}
-Design flow developed to improvde design productivity.
+\textbf{Colin's work on the SCGRA based HLS}
+\begin{itemize}
+\item Operation scheduling
+\item SCGRA design and implementation
+\item Application specific SCGRA topology synthesis
+\end{itemize}
 
 \end{frame}
 
 %------------------------------------------------
-\begin{frame}
-
+\begin{frame}[t]
 \frametitle{Preliminary loop unrolling analysis}
-%\footnotesize{
-%\begin{thebibliography}{99} % Beamer does not support BibTeX so references must be inserted manually as below
-%\bibitem[Smith, 2012]{p1} John Smith (2012)
-%\newblock Title of the publication
-%\newblock \emph{Journal Name} 12(3), 45 -- 678.
-%\end{thebibliography}
-%}
+\vspace{-1em}
+\textbf{loop unrolling influence on performance and overhead}
+\begin{figure}
+\vspace{-1em}
+\includegraphics[width=0.6\linewidth]{loop-unrolling}
+\vspace{-1em}
+\end{figure}
+
+\textbf{Irregular loop bound}
+\begin{figure}
+\vspace{-1em}
+\includegraphics[width=0.6\linewidth]{any-loop-unrolling}
+\vspace{-1em}
+\end{figure}
 \end{frame}
 
 %------------------------------------------------
-\begin{frame}
-
+\begin{frame}[t]
 \frametitle{HW/SW communication on Zedboard}
-HW/SW communication on Zedboard
+
+\textbf{Zedboard platform}
+\begin{figure}
+\includegraphics[width=0.7\linewidth]{zynq}
+\end{figure}
+\textbf{Different communication methods}
+\begin{itemize}
+\item Accelerator coherence port
+\item Central DMA, Video DMA, XDMA
+\item GPIO
+\end{itemize}
 
 \end{frame}
 
 %------------------------------------------------
 \section{Conclusion}
-\begin{frame}
-\Huge{\centerline{The End}}
+\begin{frame}[t]
+\frametitle{Self-evaluation}
+
+\textbf{About the progress and publciation}
+\begin{itemize}
+\item Didn't work hard enough
+\item Didn't not balance well between the engineering work and research focus
+\item Have taken 10 RPG courses up to now
+\end{itemize}
+
 \end{frame}
 
 %------------------------------------------------
