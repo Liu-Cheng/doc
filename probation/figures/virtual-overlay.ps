@@ -1,16 +1,18 @@
-%!PS-Adobe-3.0 EPSF-3.0
+%!PS-Adobe-3.0
 %%Creator: cairo 1.10.2 (http://cairographics.org)
-%%CreationDate: Tue Jun 11 16:57:46 2013
+%%CreationDate: Tue Jun 11 17:01:13 2013
 %%Pages: 1
-%%BoundingBox: 0 -1 467 377
+%%BoundingBox: 0 0 467 377
 %%DocumentData: Clean7Bit
 %%LanguageLevel: 2
+%%DocumentMedia: 165x133mm 467 376 0 () ()
 %%EndComments
 %%BeginProlog
-/cairo_eps_state save def
-/dict_count countdictstack def
-/op_count count 1 sub def
-userdict begin
+/languagelevel where
+{ pop languagelevel } { 1 } ifelse
+2 lt { /Helvetica findfont 12 scalefont setfont 50 500 moveto
+  (This print job requires a PostScript Language Level 2 printer.) show
+  showpage quit } if
 /q { gsave } bind def
 /Q { grestore } bind def
 /cm { 6 array astore concat } bind def
@@ -63,10 +65,10 @@ userdict begin
 %%EndProlog
 %%Page: 1 1
 %%BeginPageSetup
-%%PageBoundingBox: 0 -1 467 377
+%%PageMedia: 165x133mm
+%%PageBoundingBox: 0 0 467 377
 %%EndPageSetup
-q 0 -1 467 378 rectclip q
-0 376.236 467 -377 re W n
+q 0 0 467 377 rectclip q
 0.835294 0.898039 1 rg
 129.801 135.834 m 249.203 135.834 l 174.305 96.58 l 47.309 96.58 l h
 129.801 135.834 m f
@@ -80,7 +82,6 @@ q 0 -1 467 378 rectclip q
 h
 129.801 240.402 m S Q
 Q q
-0 376.236 467 -377 re W n
 q
 0 376.236 466 -376 re W n
 % Fallback Image: x=0, y=0, w=467, h=377 res=300dpi size=9171498
@@ -10575,7 +10576,4 @@ Q
 Q Q
 showpage
 %%Trailer
-count op_count sub {pop} repeat
-countdictstack dict_count sub {end} repeat
-cairo_eps_state restore
 %%EOF
