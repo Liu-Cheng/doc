@@ -4,7 +4,7 @@ set boxwidth 0.7 absolute
 set key top center
 set style data histogram
 set style histogram cluster gap 1
-set ylabel "GFLOP/J"
+set ylabel "GFLOP/s"
 set style fill solid border rgb "black"
 set auto x
 set size 1, 0.6
