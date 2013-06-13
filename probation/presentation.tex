@@ -111,6 +111,8 @@
 %------------------------------------------------
 \begin{frame}[t]
 \frametitle{FPGA vs. CPU vs. GPU}
+
+\vspace{-1em}
 \textbf{FPGA has competitive computation capability and \\
         energy efficiency.} 
 
@@ -133,155 +135,132 @@ logic, FPGA and GPGPUs?, IEEE International Symposium of Microarchitecture, 2010
 \end{frame}
 
 %------------------------------------------------
-\begin{frame}[t]
-
-\frametitle{Why isn't FPGA the mainstream computing device?}
-\textbf{Main obstacles}
-\begin{itemize}
-
-\item High barrier-to-entry
-\begin{itemize}
-\item Require extensive hardware knowledge,
-\item while software engineers usually don't have.
-\item ...
-\end{itemize}
-
-\item Low design productivity
-\begin{itemize}
-\item Low level abstraction and long development time
-\item Long compilation and implementation time
-\item Poor portability and design reuse
-\item Difficult to support complex software like OS
-\item ...
-\end{itemize}
-
-\end{itemize}
-
-\end{frame}
-
-%------------------------------------------------
 \section{Related work}
 %------------------------------------------------
 \begin{frame}[t]
-\frametitle{What has the community done to overcome the obstacles?}
+\frametitle{Challenges and progress on FPGA computing}
 
-\textbf{Design methodologies}
+\vspace{-1em}
+\textbf{Challenges}
 \begin{itemize}
-\item High level synthesis languages and tools \\
-\footnotesize
-Vivado(Xpilot, AutoESL), LegUP, Impulse-C, ...
-\normalsize
-\item Virtual overlay on top of commerical FPGA \\
-\footnotesize 
-VirtualIF, Soft coarse-grained reconfigurale array (SCGRA), ...
-\normalsize
-
+\item High barrier-to-entry (Hardware knowledge, ...)
+\item Low design productivity (Low abstarction level, long compilation time, ...)
 \end{itemize}
 
-\textbf{CPU+FPGA based hybrid computation}
+\textbf{Progress}
 \begin{itemize}
-\item Hybrid computation architectures \\
+
+\item High level synthesis (HLS), e.g., LegUp, AotoESL, Impulse-C, ROCCC, ...
+
+\item Virtual overlays
 \footnotesize
-Embedded softcore+FPGA, Embedded hardcore+FPGA, General CPU+FPGA, ...
-\normalsize
-\item Communication libraries, unified memory interfaces, and integrated environments \\
-\footnotesize
-CoRAM, LEAP, ...
-\normalsize
-\end{itemize}
-
-\end{frame}
-
-%------------------------------------------------
-\begin{frame}[t]
-\frametitle{Differences and relations of the design methodologies}
-
-\begin{figure}
-\vspace{-1em}
-\includegraphics[width=.9\linewidth]{virtual-overlay}
-\end{figure}
-
-\end{frame}
-
-%------------------------------------------------
-\begin{frame}[t]
-
-\frametitle{Performance vs. productivity vs. overhead}
-\begin{figure}
-\vspace{-1em}
-\includegraphics[width=0.7\linewidth]{performance-vs-productivity-vs-overhead}
-\end{figure}
-
-Why SCGRA based HLS has potential to provide better performance?\\
-performance = operations per cycle $\times$ \textbf{implementation frequency}
-
-\end{frame}
-
-%------------------------------------------------
-\begin{frame}[t]
-\frametitle{CPU+FPGA based hybrid computation}
-
-\textbf{Hardware/software co-design}
-\begin{figure}
-\includegraphics[width=0.8\linewidth]{codesign}
-\end{figure}
-
-\textbf{Loop and computation kernel}
 \begin{itemize}
-\item Most algorithms are implemented following a sequential programming model.
-\item Loops are typical computation kernels with large parallel operations.
+\item[\checkmark] Reconfigurable many-core, e.g., MARC, WPPA(Weakly programmable processor array), ...
+\item[\checkmark] Coarse-grained reconfigurable array, e.g.,QUKU, SCGRA, Heterogeneous CGRA, ... 
+\item[\checkmark] Virtual FPGA, e.g., Intermediate Fabric, ZUMA, CARBON, MALIBU, ...
 \end{itemize}
+\normalsize 
 
+\item Other techniques, e.g., Partial reconfigurable technique, Hard Macros, Communication library, ...
+
+\end{itemize}
 \end{frame}
 
 %------------------------------------------------
 \begin{frame}[t]
-\frametitle{CPU+FPGA based hyrbid computation architecture}
+\frametitle{Differences and relations of the overlays}
 
 \begin{figure}
-\includegraphics[width=0.5\linewidth]{system-context}
 \vspace{-1em}
-\caption{Single chip multicore with FPGA accelerator}
-\end{figure}
-
-\begin{figure}
-\includegraphics[width=0.5\linewidth]{system-context2}
-\vspace{-1em}
-\caption{Shared memory multiprocessor with FPGA accelerator}
+\includegraphics[width=.7\linewidth]{virtual-overlay}
 \end{figure}
 
 \end{frame}
 
 %------------------------------------------------
 \begin{frame}[t]
-\frametitle{Previous SCGRA Work}
+\frametitle{SCGRA work in our group}
+
+\vspace{-1em}
 \textbf{What have been done?}
 \begin{itemize}
 \item Introduced the SCGRA layer for HLS,
 \item showed potential design productivity improvement,
 \item and proved its energy efficiency using an application specific SCGRA topology
 \end{itemize}
+
 \textbf{What are still missing?}
 \begin{itemize}
 \item The relationship between a holistic loop and its kernel data flow graph,
 \item influence of the communication between CPU and FPGA on the SCGRA based HLS.
 \end{itemize}
+
+\textbf{Focus of my work}
+\begin{itemize}
+\item Automatic loop acceleration on a tightly-coupled CPU+FPGA using the SCGRA overlay
+\end{itemize}
 \end{frame}
 
 %------------------------------------------------
 \begin{frame}[t]
-\frametitle{Main goal of this work}
-\textbf{Accelerate loop on a CPU+FPGA system}
+\frametitle{Why loop acceleration?}
+
+\vspace{-1em}
+\textbf{Loop and computation kernel}
 \begin{itemize}
-\item Optimal loop unrolling for the SCGRA based accelerator
-\item Application specific on-chip buffering including data prefetching and buffer structure
-customization 
+\item Loops usually form the most computationally intensive kernel of a program
+\item Regularity of loops provide ample of data parallelism
+\item Loops are important optimization targets for the parallel computing architecturs including
+Multi-core processor, GPU, CGRA and FPGA.
+\end{itemize}
+
+\textbf{Difference from previous work}
+\begin{itemize}
+\item Hardware infrastructure (SCGRA and communication) is changing with the loop optimization
+\begin{itemize}
+\item[\checkmark] Not possible with hard CGRA
+\item[\checkmark] Take advantage of the softness of the FPGA
+\item[\checkmark] Application-specific buffering, loop unrolling, and scheduling
+\end{itemize}
 \end{itemize}
 
 \end{frame}
 
 %------------------------------------------------
 \section{Research scheme}
+%------------------------------------------------
+\begin{frame}[t]
+\frametitle{SCGRA based accelerator design flow}
+
+\begin{figure}
+\vspace{-1em}
+\includegraphics[width=0.76\linewidth]{design-space-overview2}
+\end{figure}
+
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}[t]
+\frametitle{Optimal loop unrolling}
+
+\vspace{-1em}
+\textbf{Why loop unrolling and why not fully unroll the loop?}
+\begin{itemize}
+\item Increases parallel operations and improves performance
+\item Induces larger hardware overhead performance 
+\item Benefit may be limited by system constrains.
+\end{itemize}
+
+\textbf{Loop unrolling problem}
+\begin{itemize}
+\item Assumptions: Bounded loop, and data dependency known at compiling
+\item Input: Sequential program proportition, kernel DFG, loop iteration bound, ...
+\item Optimization target: Min(loop execution time/communication cost)
+\item Constrain: hardware overhead, IO bandwidth 
+\item Model: Operation Scheduling model+Data prefetching model
+\end{itemize}
+\end{frame}
+
 %------------------------------------------------
 \begin{frame}[t]
 \frametitle{Hardware infrastructure} 
@@ -299,36 +278,6 @@ customization
 
 %------------------------------------------------
 \begin{frame}[t]
-\frametitle{SCGRA based accelerator design flow}
-
-\begin{figure}
-\vspace{-1em}
-\includegraphics[width=0.76\linewidth]{design-space-overview2}
-\end{figure}
-
-\end{frame}
-
-%------------------------------------------------
-\begin{frame}[t]
-\frametitle{Optimal loop unrolling}
-
-\textbf{Why loop unrolling and why not fully unroll the loop?}
-\begin{itemize}
-\item Increases parallel operations and improves performance
-\item Induces larger hardware overhead performance 
-\item Benefit may be limited by system constrains.
-\end{itemize}
-
-\textbf{Simplified loop unrolling}
-\begin{figure}
-\vspace{-1em}
-\includegraphics[width=0.95\linewidth]{system-loop-unrolling}
-\end{figure}
-
-\end{frame}
-
-%------------------------------------------------
-\begin{frame}[t]
 \frametitle{On-chip buffering}
 
 \begin{figure}
@@ -341,26 +290,28 @@ customization
 %------------------------------------------------
 \section{Current progress}
 \begin{frame}[t]
-\frametitle{Quantify the productivity of the SCGRA based HLS}
-\textbf{Current SCGRA based HLS}
+\frametitle{SCGRA based HLS optimization for both design productivity and frequency}
+
+\vspace{-1em}
+\textbf{Optimized SCGRA based HLS}
 \begin{figure}
 \vspace{-1em}
-\includegraphics[width=0.85\linewidth]{design-flow}
+\includegraphics[width=0.75\linewidth]{design-flow}
 \vspace{-1em}
 \end{figure}
 
-\textbf{Colin's work on the SCGRA based HLS}
-\begin{itemize}
-\item Operation scheduling
-\item SCGRA design and implementation
-\item Application specific SCGRA topology synthesis
-\end{itemize}
+\textbf{Experiment results}
+\begin{figure}
+\includegraphics[width=0.5\linewidth]{impl_freq}
+\includegraphics[width=0.5\linewidth]{performanceCP}
+\end{figure}
 
 \end{frame}
 
 %------------------------------------------------
 \begin{frame}[t]
 \frametitle{Preliminary loop unrolling analysis}
+
 \vspace{-1em}
 \textbf{loop unrolling influence on performance and overhead}
 \begin{figure}
@@ -381,6 +332,7 @@ customization
 \begin{frame}[t]
 \frametitle{HW/SW communication on Zedboard}
 
+\vspace{-1em}
 \textbf{Zedboard platform}
 \begin{figure}
 \includegraphics[width=0.7\linewidth]{zynq}
@@ -397,13 +349,15 @@ customization
 %------------------------------------------------
 \section{Conclusion}
 \begin{frame}[t]
-\frametitle{Self-evaluation}
+\frametitle{Conclusion}
 
-\textbf{About the progress and publciation}
+\vspace{-1em}
+\textbf{Potential contribution}
 \begin{itemize}
-\item Didn't work hard enough
-\item Didn't not balance well between the engineering work and research focus
-\item Have taken 10 RPG courses up to now
+\item Analyze the relationship between loop and its kernel data flow graph. Hopefully, an optimal
+partial loop unrolling may help resolve the BRAM-consuming problem in previous work.  
+\item Provide a systemic solution to loop acceleration on a CPU+FPGA system and therefore a more friendly
+high level interface to the end users.
 \end{itemize}
 
 \end{frame}
