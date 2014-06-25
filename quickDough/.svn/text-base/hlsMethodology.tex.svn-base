@@ -2,12 +2,12 @@
 \documentclass{acm_proc_article-sp}
 \usepackage{graphicx}
 \usepackage{multirow}
-\usepackage[caption=true,font=footnotesize]{subfig}
+\usepackage[caption=false,font=footnotesize]{subfig}
 \usepackage{dblfloatfix}
 \usepackage{algorithmic}
 \usepackage{algorithm}
 \usepackage{xspace}
-\usepackage{url}
+
 %\renewcommand{\topfraction}{0.5}
 %\renewcommand{\dbltopfraction}{0.5}
 
@@ -28,22 +28,18 @@
 
 \newcommand{\autoesl}{AutoESL\xspace}
 
-\usepackage{etoolbox}
-\makeatletter
-\patchcmd{\maketitle}{\@copyrightspace}{}{}{}
-\makeatother
-
 \begin{document}
 
 \title{A Soft Coarse-Grained Reconfigurable Array Based High-level Synthesis Methodology: Promoting Design Productivity and Exploring Extreme FPGA Frequency}
 
-\numberofauthors{1}
- \author{
+\numberofauthors{3}
+% \author{
 % % 1st. author
- \alignauthor
- Liu Cheng\\
-        \affaddr{The University of Hong Kong}\\
-        \email{liucheng@hku.hk}
+% \alignauthor
+% name1\\
+%        \affaddr{Electrical and Electronic Engineering}\\
+%        \affaddr{The University of Hong Kong}\\
+%        \email{email1}
 % % 2nd. author
 % \alignauthor
 % name2\\
@@ -56,9 +52,9 @@
 %        \affaddr{Electrical and Electronic Engineering}\\
 %        \affaddr{The University of Hong Kong}\\
 %        \email{email3}
- }
+% }
 
-%\author{}
+\author{}
 \maketitle
 
 \begin{abstract}

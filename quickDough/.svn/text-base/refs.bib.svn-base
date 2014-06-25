@@ -84,7 +84,7 @@ ISSN={},}
 
 @misc{data2mem,
    title = "data2mem",
-   howpublished ="\url{http://www.xilinx.com/support/documentation/sw_manuals/xilinx11/data2mem.pdf}",
+   url = "http://www.xilinx.com/support/documentation/sw_manuals/xilinx11/data2mem.pdf",
    note = "[Online; accessed 19-September-2012]"
  }
 
@@ -99,7 +99,7 @@ ISSN={},}
 
 @misc{llvm,
    title = "The {LLVM} compiler framework",
-   howpublished = "\url{http://llvm.org}",
+   url = "http://llvm.org",
    note = "[Online; accessed 19-September-2012]"
  }
 

@@ -1,4 +1,4 @@
-This is BibTeX, Version 0.99c (Web2C 7.5.6)
+This is BibTeX, Version 0.99c (TeX Live 2009/Debian)
 The top-level auxiliary file: hlsMethodology.aux
 The style file: plain.bst
 Database file #1: refs.bib
@@ -6,16 +6,16 @@ Warning--to sort, need author or key in llvm
 Warning--to sort, need author or key in data2mem
 You've used 13 entries,
             2118 wiz_defined-function locations,
-            568 strings with 6950 characters,
-and the built_in function-call counts, 5259 in all, are:
-= -- 505
+            570 strings with 7053 characters,
+and the built_in function-call counts, 5281 in all, are:
+= -- 511
 > -- 264
 < -- 7
 + -- 109
 - -- 92
 * -- 362
-:= -- 808
-add.period$ -- 41
+:= -- 814
+add.period$ -- 43
 call.type$ -- 13
 change.case$ -- 85
 chr.to.int$ -- 0
@@ -23,17 +23,17 @@ cite$ -- 15
 duplicate$ -- 212
 empty$ -- 419
 format.name$ -- 92
-if$ -- 1152
+if$ -- 1158
 int.to.chr$ -- 0
 int.to.str$ -- 13
 missing$ -- 11
-newline$ -- 66
+newline$ -- 68
 num.names$ -- 22
-pop$ -- 120
+pop$ -- 118
 preamble$ -- 1
 purify$ -- 72
 quote$ -- 0
-skip$ -- 158
+skip$ -- 156
 stack$ -- 0
 substring$ -- 285
 swap$ -- 74
@@ -44,5 +44,5 @@ type$ -- 52
 warning$ -- 2
 while$ -- 45
 width$ -- 15
-write$ -- 140
+write$ -- 144
 (There were 2 warnings)

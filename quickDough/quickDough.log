@@ -1,0 +1,432 @@
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2013.9.7)  26 JUN 2014 00:37
+entering extended mode
+ %&-line parsing enabled.
+**quickDough
+(./quickDough.tex
+LaTeX2e <2009/09/24>
+Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
+yphenation, farsi, arabic, croatian, bulgarian, ukrainian, russian, czech, slov
+ak, danish, dutch, finnish, french, basque, ngerman, german, german-x-2009-06-1
+9, ngerman-x-2009-06-19, ibycus, monogreek, greek, ancientgreek, hungarian, san
+skrit, italian, latin, latvian, lithuanian, mongolian2a, mongolian, bokmal, nyn
+orsk, romanian, irish, coptic, serbian, turkish, welsh, esperanto, uppersorbian
+, estonian, indonesian, interlingua, icelandic, kurmanji, slovenian, polish, po
+rtuguese, spanish, galician, catalan, swedish, ukenglish, pinyin, loaded.
+(/usr/share/texmf-texlive/tex/latex/IEEEtran/IEEEtran.cls
+Document Class: IEEEtran 2007/03/05 V1.7a by Michael Shell
+-- See the "IEEEtran_HOWTO" manual for usage information.
+-- http://www.michaelshell.org/tex/ieeetran/
+\@IEEEtrantmpdimenA=\dimen102
+\@IEEEtrantmpdimenB=\dimen103
+\@IEEEtrantmpcountA=\count79
+\@IEEEtrantmpcountB=\count80
+\@IEEEtrantmptoksA=\toks14
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 366.
+
+(/usr/share/texmf-texlive/tex/latex/psnfss/ot1ptm.fd
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+-- Using 8.5in x 11in (letter) paper.
+-- Using PDF output.
+\@IEEEnormalsizeunitybaselineskip=\dimen104
+-- This is a 10 point document.
+\CLASSINFOnormalsizebaselineskip=\dimen105
+\CLASSINFOnormalsizeunitybaselineskip=\dimen106
+\IEEEnormaljot=\dimen107
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 724.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <5> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 724.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 724.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 724.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 724.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 724.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 724.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 724.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 724.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 724.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <11> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 724.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <11> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 724.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 724.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 724.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 724.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <17> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 724.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <20> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 724.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <20> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 724.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 724.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <24> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 724.
+\IEEEilabelindentA=\dimen108
+\IEEEilabelindentB=\dimen109
+\IEEEilabelindent=\dimen110
+\IEEEelabelindent=\dimen111
+\IEEEdlabelindent=\dimen112
+\IEEElabelindent=\dimen113
+\IEEEiednormlabelsep=\dimen114
+\IEEEiedmathlabelsep=\dimen115
+\IEEEiedtopsep=\skip41
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@IEEEsubequation=\count85
+\abovecaptionskip=\skip42
+\belowcaptionskip=\skip43
+\c@figure=\count86
+\c@table=\count87
+\@IEEEeqnnumcols=\count88
+\@IEEEeqncolcnt=\count89
+\@IEEEtmpitemindent=\dimen116
+\c@IEEEbiography=\count90
+\@IEEEtranrubishbin=\box26
+) (/usr/share/texmf-texlive/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf-texlive/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks15
+)
+(/usr/share/texmf-texlive/tex/latex/graphics/graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf-texlive/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/etc/texmf/tex/latex/config/graphics.cfg
+File: graphics.cfg 2009/08/28 v1.8 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+
+(/usr/share/texmf-texlive/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2010/03/12 v0.04p Graphics/color for pdfTeX
+\Gread@gobject=\count91
+))
+\Gin@req@height=\dimen117
+\Gin@req@width=\dimen118
+)
+(/usr/share/texmf-texlive/tex/latex/multirow/multirow.sty
+\bigstrutjot=\dimen119
+)
+(/usr/share/texmf-texlive/tex/latex/subfig/subfig.sty
+Package: subfig 2005/06/28 ver: 1.3 subfig package
+
+(/usr/share/texmf-texlive/tex/latex/caption/caption3.sty
+Package: caption3 2009/10/09 v3.1k caption3 kernel (AR)
+\captionmargin=\dimen120
+\captionmargin@=\dimen121
+\captionwidth=\dimen122
+\caption@indent=\dimen123
+\caption@parindent=\dimen124
+\caption@hangindent=\dimen125
+Package caption Info: Unknown document class (or package),
+(caption)             standard defaults will be used on input line 1068.
+)
+\c@KVtest=\count92
+\sf@farskip=\skip44
+\sf@captopadj=\dimen126
+\sf@capskip=\skip45
+\sf@nearskip=\skip46
+\c@subfigure=\count93
+\c@subfigure@save=\count94
+\c@lofdepth=\count95
+\c@subtable=\count96
+\c@subtable@save=\count97
+\c@lotdepth=\count98
+\sf@top=\skip47
+\sf@bottom=\skip48
+)
+(/usr/share/texmf-texlive/tex/latex/ltxmisc/dblfloatfix.sty
+Package: dblfloatfix 2003/11/18 v1.0 (MH)
+
+(/usr/share/texmf-texlive/tex/latex/base/fixltx2e.sty
+Package: fixltx2e 2006/09/13 v1.1m fixes to LaTeX
+LaTeX Info: Redefining \em on input line 420.
+)
+\@dblbotnum=\count99
+\c@dblbotnumber=\count100
+) (./algorithmic.sty
+Package: algorithmic 2006/06/02
+
+Document Style `algorithmic' - environment
+(/usr/share/texmf-texlive/tex/latex/base/ifthen.sty
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+(/usr/share/texmf-texlive/tex/latex/tools/calc.sty
+Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count101
+\calc@Bcount=\count102
+\calc@Adimen=\dimen127
+\calc@Bdimen=\dimen128
+\calc@Askip=\skip49
+\calc@Bskip=\skip50
+LaTeX Info: Redefining \setlength on input line 76.
+LaTeX Info: Redefining \addtolength on input line 77.
+\calc@Ccount=\count103
+\calc@Cskip=\skip51
+)
+\c@ALC@line=\count104
+\c@ALC@rem=\count105
+\c@ALC@depth=\count106
+\ALC@tlm=\skip52
+\algorithmicindent=\skip53
+)
+(/usr/share/texmf-texlive/tex/latex/algorithms/algorithm.sty
+Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
+nment
+
+(/usr/share/texmf-texlive/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count107
+\float@exts=\toks16
+\float@box=\box27
+\@float@everytoks=\toks17
+\@floatcapt=\box28
+)
+\@float@every@algorithm=\toks18
+\c@algorithm=\count108
+)
+(/usr/share/texmf-texlive/tex/latex/tools/xspace.sty
+Package: xspace 2006/05/08 v1.12 Space after command names (DPC,MH)
+)
+(/usr/share/texmf-texlive/tex/latex/ltxmisc/url.sty
+\Urlmuskip=\muskip10
+Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
+)
+(/usr/share/texmf-texlive/tex/latex/natbib/natbib.sty
+Package: natbib 2009/07/16 8.31 (PWD, AO)
+\bibhang=\skip54
+\bibsep=\skip55
+LaTeX Info: Redefining \cite on input line 694.
+\c@NAT@ctr=\count109
+) (./quickDough.aux)
+\openout1 = `quickDough.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+
+(/usr/share/texmf-texlive/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count110
+\scratchdimen=\dimen129
+\scratchbox=\box29
+\nofMPsegments=\count111
+\nofMParguments=\count112
+\everyMPshowfont=\toks19
+\MPscratchCnt=\count113
+\MPscratchDim=\dimen130
+\MPnumerator=\count114
+\everyMPtoPDFconversion=\toks20
+)
+Package caption Info: Begin \AtBeginDocument code.
+Package caption3 Info: subfig package 1.2 or 1.3 is loaded.
+LaTeX Info: Redefining \subref on input line 34.
+Package caption Info: End \AtBeginDocument code.
+ (./abstract.tex) (./introduction.tex) (./relatedwork.tex [1{/var/lib/texmf/fon
+ts/map/pdftex/updmap/pdftex.map}
+
+
+]
+
+LaTeX Warning: Reference `tessier2001reconfigurable' on page 2 undefined on inp
+ut line 12.
+
+
+LaTeX Warning: Reference `compton2002reconfigurable' on page 2 undefined on inp
+ut line 12.
+
+) (./framework.tex [2]
+
+pdfTeX warning: pdflatex (file ./figures/typical-FPGA-accelerator.pdf): PDF inc
+lusion: found PDF version <1.5>, but at most version <1.4> allowed
+<./figures/typical-FPGA-accelerator.pdf, id=12, 77.11359pt x 65.49162pt>
+File: ./figures/typical-FPGA-accelerator.pdf Graphic file (type pdf)
+
+<use ./figures/typical-FPGA-accelerator.pdf>
+
+pdfTeX warning: pdflatex (file ./figures/framework.pdf): PDF inclusion: found P
+DF version <1.5>, but at most version <1.4> allowed
+<./figures/framework.pdf, id=14, 354.4743pt x 298.81639pt>
+File: ./figures/framework.pdf Graphic file (type pdf)
+
+<use ./figures/framework.pdf>) (./scgraimplement.tex [3 <./figures/typical-FPGA
+-accelerator.pdf> <./figures/framework.pdf>]
+
+pdfTeX warning: pdflatex (file ./figures/scgra-accelerator.pdf): PDF inclusion:
+ found PDF version <1.5>, but at most version <1.4> allowed
+<./figures/scgra-accelerator.pdf, id=35, 112.72179pt x 67.58745pt>
+File: ./figures/scgra-accelerator.pdf Graphic file (type pdf)
+
+<use ./figures/scgra-accelerator.pdf>
+
+pdfTeX warning: pdflatex (file ./figures/pe.pdf): PDF inclusion: found PDF vers
+ion <1.5>, but at most version <1.4> allowed
+<./figures/pe.pdf, id=37, 315.41873pt x 239.34418pt>
+File: ./figures/pe.pdf Graphic file (type pdf)
+ <use ./figures/pe.pdf>
+
+pdfTeX warning: pdflatex (file ./figures/alu.pdf): PDF inclusion: found PDF ver
+sion <1.5>, but at most version <1.4> allowed
+<./figures/alu.pdf, id=39, 341.84032pt x 261.67764pt>
+File: ./figures/alu.pdf Graphic file (type pdf)
+ <use ./figures/alu.pdf>
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 46.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 46.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 46.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[4 <./figures/scgra-accelerator.pdf> <./figures/pe.pdf> <./figures/alu.pdf>])
+(./scgracompile.tex
+
+pdfTeX warning: pdflatex (file ./figures/full-scgra-compile.pdf): PDF inclusion
+: found PDF version <1.5>, but at most version <1.4> allowed
+<./figures/full-scgra-compile.pdf, id=68, 337.38547pt x 522.18396pt>
+File: ./figures/full-scgra-compile.pdf Graphic file (type pdf)
+
+<use ./figures/full-scgra-compile.pdf>
+
+pdfTeX warning: pdflatex (file ./figures/min-scgra-compile.pdf): PDF inclusion:
+ found PDF version <1.5>, but at most version <1.4> allowed
+<./figures/min-scgra-compile.pdf, id=70, 214.01079pt x 264.83383pt>
+File: ./figures/min-scgra-compile.pdf Graphic file (type pdf)
+
+<use ./figures/min-scgra-compile.pdf> [5 <./figures/full-scgra-compile.pdf> <./
+figures/min-scgra-compile.pdf>]) (./experiments.tex
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Overfull \hbox (23.7603pt too wide) in paragraph at lines 74--91
+ [][] 
+ []
+
+[6] <./figures/HLS-Compilation-Time.pdf, id=96, 676.5275pt x 286.06876pt>
+File: ./figures/HLS-Compilation-Time.pdf Graphic file (type pdf)
+
+<use ./figures/HLS-Compilation-Time.pdf>
+<./figures/QuickDough-Compilation-Time.pdf, id=97, 676.5275pt x 286.06876pt>
+File: ./figures/QuickDough-Compilation-Time.pdf Graphic file (type pdf)
+
+<use ./figures/QuickDough-Compilation-Time.pdf> [7 <./figures/HLS-Compilation-T
+ime.pdf> <./figures/QuickDough-Compilation-Time.pdf>]
+<./figures/impl-freq.pdf, id=119, 681.54625pt x 307.1475pt>
+File: ./figures/impl-freq.pdf Graphic file (type pdf)
+
+<use ./figures/impl-freq.pdf>
+<./figures/real-perf.pdf, id=120, 680.5425pt x 307.1475pt>
+File: ./figures/real-perf.pdf Graphic file (type pdf)
+
+<use ./figures/real-perf.pdf> [8 <./figures/impl-freq.pdf>]
+<./figures/execution-time.pdf, id=133, 516.93124pt x 194.7275pt>
+File: ./figures/execution-time.pdf Graphic file (type pdf)
+
+<use ./figures/execution-time.pdf>
+Underfull \vbox (badness 2418) has occurred while \output is active []
+
+
+<./figures/kernel-sim-perf.pdf, id=134, 680.5425pt x 305.14pt>
+File: ./figures/kernel-sim-perf.pdf Graphic file (type pdf)
+
+<use ./figures/kernel-sim-perf.pdf>
+<./figures/kernel-real-perf.pdf, id=135, 506.89375pt x 229.85875pt>
+File: ./figures/kernel-real-perf.pdf Graphic file (type pdf)
+
+<use ./figures/kernel-real-perf.pdf>) (./conclusions.tex [9 <./figures/real-per
+f.pdf> <./figures/execution-time.pdf> <./figures/kernel-sim-perf.pdf>])
+(./quickDough.bbl
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 7.
+
+Underfull \hbox (badness 10000) in paragraph at lines 4--9
+[]\OT1/ptm/m/n/10 data2mem.  $http : / / www . xilinx . com / support /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4--9
+\OT1/ptm/m/n/10 documentation / sw[]manuals / xilinx11 / data2mem . pdf$.
+ []
+
+
+Underfull \hbox (badness 3849) in paragraph at lines 16--20
+[]\OT1/ptm/m/n/10 Nios em-bed-ded pro-ces-sor.  $http : / / www . altera . com 
+/
+ []
+
+
+Underfull \hbox (badness 3579) in paragraph at lines 67--73
+[]\OT1/ptm/m/n/10 T. Frang-ieh, A. Chan-drasekha-ran, S. Ra-jagopalan,
+ []
+
+[10 <./figures/kernel-real-perf.pdf>]
+Underfull \hbox (badness 2165) in paragraph at lines 94--100
+\OT1/ptm/m/n/10 J. TE-ICH.  A dy-nam-i-cally re-con-fig-urable weakly
+ []
+
+
+Underfull \hbox (badness 1565) in paragraph at lines 94--100
+\OT1/ptm/m/n/10 pro-grammable pro-ces-sor ar-ray ar-chi-tec-ture tem-plate.
+ []
+
+
+Underfull \hbox (badness 3396) in paragraph at lines 94--100
+\OT1/ptm/m/it/10 WORK-SHOP ON RE-CON-FIG-URABLE COM-MU-NI-
+ []
+
+) [11] (./quickDough.aux)
+
+LaTeX Warning: There were undefined references.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 3268 strings out of 493848
+ 51879 string characters out of 1152824
+ 141430 words of memory out of 3000000
+ 6493 multiletter control sequences out of 15000+50000
+ 39875 words of font info for 73 fonts, out of 3000000 for 9000
+ 714 hyphenation exceptions out of 8191
+ 36i,13n,38p,1809b,290s stack positions out of 5000i,500n,10000p,200000b,50000s
+{/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-texli
+ve/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-texlive/fonts/typ
+e1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-texlive/fonts/type1/public/ams
+fonts/cm/cmr8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy
+8.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmb8a.pfb></usr/share/te
+xmf-texlive/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texmf-texlive/fonts/t
+ype1/urw/times/utmr8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmri
+8a.pfb>
+Output written on quickDough.pdf (11 pages, 1097965 bytes).
+PDF statistics:
+ 204 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 71 words of extra memory for PDF output out of 10000 (max. 10000000)
+

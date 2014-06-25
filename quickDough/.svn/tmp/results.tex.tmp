@@ -1,0 +1,176 @@
+\section{EXPERIMENTS}\label{sec:results}
+In this section, we take 5 computation kernels including matrix multiply (MM), fast Fourier transform (FFT), discrete convolution (CONV), advanced encryption standard (AES) and Viterbi decoder (VD) as our benchmark and implement them using both \autoesl and the proposed HLS methodology. After that, we make a comprehensive comparison in terms of design efficiency, hardware implementation and performance.
+
+
+\subsection{Benchmark}
+MM has two input matrices $A \left( i,j \right)$, $B \left( j,k \right)$ and an output matrix $C \left( i,k \right)$
+where $i=1,2,3,...,M$, $j=1,2,3,...,N$, $k=1,2,3,...,P$. It can be described as follow:\begin{displaymath} C \left( i,k \right) = \sum_{i=1}^N {A
+\left( i,j \right) \times B(j,k)} \end{displaymath} In the experiment, we assume that $M=20, N=20, P=20$. And there are $M \times N \times P = 8000$ operations which are mainly multiply-add operations.
+
+
+FFT initially takes vector $x \left( i \right)$ as input, and vector $X \left( i \right)$ as output where $i=1,2,3,...,N,N=2^M, M \in Z$. In order to escape $\sin$ and $\cos$ computation on FPGA, we also assume roots of unity vector to be input data which are simply determined by $N$. In this case, there are totally $1.5 \times N$ input data including $N$ input signal and $N/2$ roots of unity. We adopt the radix-2 Cooley-Tukey algorithm for implementation and set $N=1024,M=10$. And there are $N \times M=10240$ operations each of which is a complex multiply-accumulation with 3 input. Since we don't have the complex multiply-add DSP core available for \autoesl implementation at the moment, we simply replace the complex multiply-add with real number multiply-add to keep the computation structure in the experiment.
+
+
+Suppose input signal vectors of CONV are $u \left( i \right)$ and $h \left( i \right)$ where $i=1,2,3,...,N$. When $i>N$ or $i<1$, $u \left( i \right) = 0,h \left( i \right) = 0$.Then the output signal vector can be expressed as follow: \begin{displaymath} y \left( k \right) = \sum_{i=1}^N {u \left( i \right) \times h \left( k-i \right),k=N/2,N/2+1,...,3N/2} \end{displaymath} In the experiment, $N=100$ and there are around $3N^2/4$ operations which are mainly multiply-add operations.
+
+
+AES is based on the principle named substitution-permutation network and it operates on a $4 \times 4$ column-major order matrix of bytes which is also called state. The encryption process basically consists of four steps. First of all, round keys are derived using Rijndael's key schedule. Secondly, each byte of the state is combined with the round key using bitwise xor. Thirdly, the plain text goes through byte substitution using Rijnhdael's S-box, row shifting, column mixing and round key adding in serial order, and then repeat all the processes except column mixing. In the experiment, input data consists of 10 128-bit blocks and the key adopts 128-bit option. In this case, there are 12660 operations mainly including circular shift and bitwise exclusive or.
+
+
+VD can be used to decode the bitstream encoded by convolutional code. The basic Viterbi decoder operation is butterfly operation in trellis diagram. Each butterfly involves an Add-Compare-Select operation on the two nodes where the 0 and I paths from the current node merge at the next step of the trellis.  In the experiments, we adopt the NASA standard in which the decoding rate is $1/2$ and the decoding length is 7. Input message length is 150 bit and the total operation number is around 2989 including shift, add, or and compare.
+
+
+\subsection{Experiment Setup}
+All runtimes were obtained on a Linux workstation with an Intel(R) Xeon(R) CPU E5345 and 8GB of RAM. LLVM v3.2 and clang v3.2 were used for C program compiling. \autoesl 2011.4.2 and PlanAheadv13.4 were used for synthesis and implementation respectively. All the designs targeted at Virtex6 (xc6vlx240tff784-1).In order to have a comprehensive comparison, we provide three implementations for each computation kernel with different tradeoff between performance and hardware overhead using both \autoesl and the proposed HLS methodology. 
+
+
+\autoesl makes the trade-off between overhead and performance mainly by changing the loop unrolling factor, so implementation without unrolling, implementation with medium unrolling and implementation with large unrolling are presented. Configurations of each kind of unrolling for each computation kernel are detailed in Table \ref{tab:urconfig}. Also all the implementations are set to be pipelined using \autoesl directive. In addition, we put all the input arrays/vectors in a single vector and output arrays/vectors in another vector to make sure \autoesl generate a single input port and a single output port for a fair comparison. 
+
+\begin{table}
+\caption{Detailed unrolling configuration of the benchmark}
+\label{tab:urconfig}
+\centering
+\small
+\begin{tabular}{|p{1cm}|p{6.5cm}|}
+\hline
+MM & {It is a three-level nested loop and each loop iterates 20. Unrolling factors of three implementations are  $1 \times 1 \times 1$, $1 \times 5 \times 20$ and $1 \times 10 \times 20$. When I set unrolling factor to be $1 \times 20 \times 20$, \autoesl fails to provide better performance.}\\
+
+\hline
+FFT & {It is a three-level nested loop. The outside loop iteration number is 10 while the iteration number of the rest two loops varies with the outside loop. Unrolling factors of the three implementations are $1 \times 1 \times 1$, $10 \times 1 \times 1$ and $10 \times m \times n$. Although both $m$ and $n$ change all the time, $m \times n$ is fixed to be 32. \autoesl fails to complete the implementation when I further increase the unrolling factors.}\\
+
+\hline
+CONV & {It is a two-level nested loop and each loop iterates 100. Since part of the element is 0, simple branch helps to reduce the multiplication operation. Unrolling factors of the three implementations are $1 \times 1$, $1 \times 100$, $5 \times 100$. And target FPGA device has insufficient DSP to accommodate further unrolling.}\\
+
+\hline
+AES & {AES essentially consists of key expansion initially, and then repeated kernel procedure including byte substitution, row shifting, column mixing, and round key addition. The kernel procedure iterates 9. Unrolling factors of the three implementations are 1, 3, and 9. I tried to unroll and inline the sub functions manually, \autoesl failed to implement the design.}\\
+
+\hline
+VD & {VD kernel is a loop of a series of butterfly operations in trellis diagram. The loop iterates 150. Unrolling factors of the three implementations are 1, 2 and 5.}\\
+
+\hline
+\end{tabular}
+\end{table}
+
+The proposed HLS methodology compromises through changing the SCGRA scale, and implementations targeting at $4 \times 4$ Torus, $3 \times 3$ Torus and $2 \times 2$ Torus are developed respectively. While the proposed HLS methodology may require various scales of SCGRA, each of them further needs a few implementations with different instruction memory capacity. In the experiment, data memory of the PE is $256 \times 16$-bit. ALU supports 8 types of operations and the opcode takes 3-bit. In total, PEs without IO port need 65-bit instruction and PE with IO needs one additional bit for load/store FIFO operation. Since primitive BRAM is 18K-bit or 36K-bit, we build 72-bit width instruction memory and have 1K$\times$72-bit instruction rom, 2K$\times$72-bit instruction rom and 4K$ \times$72-bit instruction rom for different CGRA scales implemented respectively. 
+
+
+\subsection{Experiment Results}
+In this section, \autoesl and the proposed HLS methodology are compared in design efficiency, hardware implementation and performance using the benchmark mentioned above. However, the proposed HLS methodology depends on a pre-built SCGRA. While we have only 9 SCGRA implementations in advance at the moment, not all the computation kernels in the benchmark are able to find a matched pre-built SCGRA. When the benchmark fails to find any pre-built SCGRA, we consider it as an implementation failure. In the experiment, FFT and AES fail to be implemented on the pre-built 2$\times$2 Torus SCGRA, while VD fails to be deployed to any of the pre-built SCGRA. Note that the figures and tables simply leave the failed implementation blank.
+
+\subsubsection{Design Efficiency}
+Given a HLL program, the HLS tools should be responsible for the entire process transforming the program all the way to bitstream. Therefore the design time that the process consumes is considered to be the metric of the design tools' efficiency.
+
+Figure \ref{fig:designtimeCP} shows the design time of the benchmark using both \autoesl and the proposed HLS methodology. \autoesl includes two steps: \autoesl synthesis and \autoesl implementation. \autoesl synthesis is pretty fast, and it ranges from seconds to dozens of seconds. However, \autoesl implementation that goes through the lengthy processes such as floor planning, placing and routing is extremely slow. With moderate unrolling, it costs \autoesl around 20 minutes to implement a single computation kernel in the benchmark. And the design time increases with the expansion of the computation kernels. Moreover, when the timing constrain is pressing, the design time increases considerably. With the influence of both the large loop unrolling and strigent timing constrain, design time of FFT and VD exceeds 2 hours. The proposed HLS methodology bypasses the lengthy low-level implementation steps and it merely has three high-level steps i.e. LLVM compiling, SCGRA scheduling and bitstream integration included. Each step can be done in a few seconds, and implementation using this methodology is generally 10X-100X faster than the minium implementation using \autoesl.
+
+
+\begin{figure*}
+\centering
+\includegraphics[width=10cm]{designtimeCP}
+\caption{Design time comparison of the benchmark using both \autoesl and the proposed HLS methodology}
+\label{fig:designtimeCP}
+\end{figure*} 
+
+\subsubsection{Hardware Implementation}
+In this section, hardware implementation including both hardware resource overhead and implementation frequency are compared. Table \ref{tab:overhead} presents the hardware overhead of the benchmark using the proposed HLS methodology with $4 \times4$ Torus(P44), $3 \times 3$ Torus (P33), and $2 \times 2$ Torus (P22), and \autoesl with no unrolling (NUR), medium unrolling (MUR), and large unrolling (LUR). From the table, it can be seen that the proposed HLS methodology tends to use more BRAM than \autoesl does in all occasions. The reason is that the proposed HLS methodology employs SCGRA as the hardware infrastructure and the SCGRA typically requires a number of large instruction memories to store all the control words. Although data memories take a number of BRAMs as well, instruction memories consume the majority of the BRAMs. Currently, the raw control words are stored in the instruction memory directly, but context compression techniques \cite{kim2010dynamic} may help remove the instruction redundancy and alleviate the BRAM requirements. On top of BRAM, SLICE, LUT, FF and DSPs are also important resource components. However, the overhead of these components are quite different from that of BRAM. When the computation kernels are not unrolled at all, \autoesl provides quite compact implementations and it consumes only a small number of SLICE, LUT, FF and DSP. When medium loop unrolling is adopted, \autoesl and the proposed HLS methodology cost comparable number of SLICE, LUT, and FF. When a large loop unrolling is employed, these resource components overhead of \autoesl  increases a lot, while the overhead of the proposed HLS methodology using larger SCGRA increases more smoothly. As a result, the proposed HLS methodology simply consumes half of the SLICE, LUT, FF and 1/20-1/50 of DSP. The comparion in AES is a bit different because the SCGRA has more computation capability than that is required. Pre-build more light-weight SCGRA may decrease the SCGRA overhead.
+
+\begin{table}
+\caption{Hardware overhead of the benchmark.}
+\label{tab:overhead}
+\centering
+\small
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+\multicolumn{2}{|c|}{} & SLICE & LUT & FF & DSP & RAM\\
+\hline
+\multirow{4}{*}{MM} & T44 & 2273 & 4303 & 11129 & 16 & 176\\
+\cline{2-7}
+& T33 & 1029 & 3229 & 6958 & 9 & 99\\
+\cline{2-7}
+& T22 & 619 & 1045 & 2805 & 4 & 76\\
+\cline{2-7}
+& NUR & 158 & 296 & 320 & 1 & 2\\
+\cline{2-7}
+& MUR & 1151 & 3517 & 4224 & 78 & 2\\
+\cline{2-7}
+& LUR & 1958	& 6711	& 8006	&182 &2\\
+\hline
+
+\multirow{4}{*}{FFT}	& T44 & 2870 & 3905 & 12380 & 16 & 304\\
+\cline{2-7}
+& T33 & 1519 & 2574 & 6976 & 9 & 171\\
+\cline{2-7}
+& T22 & - & - & - & - & -\\
+\cline{2-7}
+
+& NUR & 315 & 655 & 889 & 2 & 2\\
+\cline{2-7}
+& MUR & 648 & 1889 & 1770 &	10 & 11\\
+\cline{2-7}
+& LUR &	10097 &	30809 &	20153 &	173 & 12\\
+\hline
+
+\multirow{4}{*}{CONV} & T44 & 2273 & 4303 & 11129 &	16 & 176\\
+\cline{2-7}
+& T33 & 1029 & 3229 & 6958 & 9 & 99\\
+\cline{2-7}
+& T22 & 619 & 1045 & 2805 & 4 & 76\\
+\cline{2-7}
+
+& NUR &	87 & 217 & 205 & 1 & 2\\
+\cline{2-7}
+& MUR & 1149 & 3763 &	4558 & 98 &	2\\
+\cline{2-7}
+& LUR & 4213 & 13633 & 19940 & 497 & 2\\
+\hline
+
+\multirow{4}{*}{AES} & T44 & 2273 & 4303 & 11129 & 16 & 176\\
+\cline{2-7}
+& T33 & 1029 & 3229 & 6958 & 9 & 99\\
+\cline{2-7}
+& T22 & - & - & - & - & -\\
+\cline{2-7}
+
+& NUR &	501 & 1251 & 1660 & 0 & 8\\
+\cline{2-7}
+& MUR &	705 & 1799 & 1947 &	0 &	8\\
+\cline{2-7}
+& LUR & 708 & 1767 & 1872 & 0 & 8\\
+\hline
+
+\multirow{4}{*}{VD} & T44 & - & - & - & - & -\\
+\cline{2-7}
+& T33 & - & - & - & - & -\\
+\cline{2-7}
+& T22 & - & - & - & - & -\\
+\cline{2-7}
+
+& NUR & 1911 & 4883 & 6684 & 0 & 12\\
+\cline{2-7}
+& MUR & 3306 & 10033 & 12863 & 0 & 12\\
+\cline{2-7}
+& LUR & 8833 & 24693 & 31886 & 0 & 12\\
+\hline
+\end{tabular}
+\end{table}
+
+Figure \ref{fig:frequencyCP} shows the implementation frequency using both HLS tools. It is clear that the SCGRA employed in the proposed HLS methodology is generally able to work at 400MHz which gets near the extreme frequency of three-stage-pipeline DSP core implemented in the same device. When the SCGRA scales up or the instruction memory capacity increases, implementation frequency only degrades slightly. \autoesl has specific implementation for each benchmark, but the highest implementation frequency is only around 300MHz. When large loop unrolling is adopted, the implementation frequency deteriorates radically. As a result, the worst implementation frequency is only around 50MHz, which almost makes the loop unrolling efforts meaningless. The reason is clear. Loop unrolling using \autoesl brings a large number of irregular blocks. These blocks scattered around FPGA make the placing and routing difficult, and thus the implementation frequency is lower. While the SCGRA is regular and it is well pipelined, therefore the implementation frequency is much higher.
+
+\begin{figure*}
+\centering
+\includegraphics[width=12cm]{freqCP}
+\caption{Implementation frequency comparison of the benchmark using both \autoesl and the proposed HLS methodology}
+\label{fig:frequencyCP}
+\end{figure*}
+
+\subsubsection{Performance}
+In this section, the execution time of the benchmark is taken as the metric of performance.  The execution time is computed by multiplying the number of execution cycles with the implemented clock period. \autoesl acquires the execution cycles through \autoesl synthesis, and the proposed HLS method obtains the execution cycles from the SCGRA scheduler. All clock periods of the implementations come from FPGA implementation.
+
+
+Figure \ref{fig:performanceCP} shows the performance comparison of the benchmark using different HLS tools. It can be seen that the proposed HLS method outperforms \autoesl in all the benchmark except the one it fails to implement. The highest performance of MM, FFT, CONV and AES using the proposed HLS method is around 7X, 19X, 5X and 30X faster than that using \autoesl respectively. One of the most critical reasons lies in that \autoesl adopts RAM buffer as communication interfaces between blocks which is incapable to provide enough bandwidth to support large parallelism exploration. Take the experiments of FFT and AES as an example. Both computation kernels of FFT and AES are divided into multiple sub blocks to provide larger parallelism for \autoesl implementation. However, the dependent sub blocks have to fetch data from RAM buffer in upstream and send data to RAM buffer in downstream. As a result, each sub block has additional IO bandwidth constrains which negatively influence the parallelism exploration, and therefore the design with larger unrolling factors fails to improve the performance much. At the same time, the design with larger unrolling requires larger hardware resource and deteriorates the timing. This is why the performance of FFT and AES degrades even when larger unrolling factors are employed. The proposed HLS method only has IO constrains and all the inner operations of the applications share the whole communication network. Consequently, it provides better performance.
+
+\begin{figure*}
+\centering
+\includegraphics[width=12cm]{performanceCP}
+\caption{Performance comparison of the benchmark using both \autoesl and the proposed HLS methodology}
+\label{fig:performanceCP}
+\end{figure*}

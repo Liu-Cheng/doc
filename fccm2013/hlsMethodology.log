@@ -1,39 +1,41 @@
-This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2012.9.10)  14 JAN 2013 01:12
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2013.9.7)  7 SEP 2013 16:19
 entering extended mode
  %&-line parsing enabled.
 **hlsMethodology
 (./hlsMethodology.tex
-LaTeX2e <2005/12/01>
-Babel <v3.8h> and hyphenation patterns for english, usenglishmax, dumylang, noh
-yphenation, arabic, basque, bulgarian, coptic, welsh, czech, slovak, german, ng
-erman, danish, esperanto, spanish, catalan, galician, estonian, farsi, finnish,
- french, greek, monogreek, ancientgreek, croatian, hungarian, interlingua, ibyc
-us, indonesian, icelandic, italian, latin, mongolian, dutch, norsk, polish, por
-tuguese, pinyin, romanian, russian, slovenian, uppersorbian, serbian, swedish, 
-turkish, ukenglish, ukrainian, loaded.
-(./acm_proc_article-sp.cls (/usr/share/texmf/tex/latex/graphics/epsfig.sty
+LaTeX2e <2009/09/24>
+Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
+yphenation, farsi, arabic, croatian, bulgarian, ukrainian, russian, czech, slov
+ak, danish, dutch, finnish, french, basque, ngerman, german, german-x-2009-06-1
+9, ngerman-x-2009-06-19, ibycus, monogreek, greek, ancientgreek, hungarian, san
+skrit, italian, latin, latvian, lithuanian, mongolian2a, mongolian, bokmal, nyn
+orsk, romanian, irish, coptic, serbian, turkish, welsh, esperanto, uppersorbian
+, estonian, indonesian, interlingua, icelandic, kurmanji, slovenian, polish, po
+rtuguese, spanish, galician, catalan, swedish, ukenglish, pinyin, loaded.
+(./acm_proc_article-sp.cls
+(/usr/share/texmf-texlive/tex/latex/graphics/epsfig.sty
 Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
 
-(/usr/share/texmf/tex/latex/graphics/graphicx.sty
+(/usr/share/texmf-texlive/tex/latex/graphics/graphicx.sty
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
-(/usr/share/texmf/tex/latex/graphics/keyval.sty
+(/usr/share/texmf-texlive/tex/latex/graphics/keyval.sty
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks14
 )
-(/usr/share/texmf/tex/latex/graphics/graphics.sty
-Package: graphics 2006/02/20 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+(/usr/share/texmf-texlive/tex/latex/graphics/graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
-(/usr/share/texmf/tex/latex/graphics/trig.sty
+(/usr/share/texmf-texlive/tex/latex/graphics/trig.sty
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-(/usr/share/texmf/tex/latex/config/graphics.cfg
-File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+(/etc/texmf/tex/latex/config/graphics.cfg
+File: graphics.cfg 2009/08/28 v1.8 graphics configuration of TeX Live
 )
-Package graphics Info: Driver file: pdftex.def on input line 90.
+Package graphics Info: Driver file: pdftex.def on input line 91.
 
-(/usr/share/texmf/tex/latex/pdftex-def/pdftex.def
-File: pdftex.def 2007/01/08 v0.04d Graphics/color for pdfTeX
+(/usr/share/texmf-texlive/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2010/03/12 v0.04p Graphics/color for pdfTeX
 \Gread@gobject=\count79
 ))
 \Gin@req@height=\dimen102
@@ -42,35 +44,35 @@ File: pdftex.def 2007/01/08 v0.04d Graphics/color for pdfTeX
 \epsfxsize=\dimen104
 \epsfysize=\dimen105
 )
-(/usr/share/texmf/tex/latex/amsfonts/amssymb.sty
-Package: amssymb 2002/01/22 v2.2d
+(/usr/share/texmf-texlive/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2009/06/22 v3.00
 
-(/usr/share/texmf/tex/latex/amsfonts/amsfonts.sty
-Package: amsfonts 2001/10/25 v2.2f
+(/usr/share/texmf-texlive/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
 \@emptytoks=\toks15
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
-(Font)                  U/euf/m/n --> U/euf/b/n on input line 132.
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
 ))
-(/usr/share/texmf/tex/latex/amsmath/amsmath.sty
+(/usr/share/texmf-texlive/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2000/07/18 v2.13 AMS math features
 \@mathmargin=\skip41
 
 For additional information on amsmath, use the `?' option.
-(/usr/share/texmf/tex/latex/amsmath/amstext.sty
+(/usr/share/texmf-texlive/tex/latex/amsmath/amstext.sty
 Package: amstext 2000/06/29 v2.01
 
-(/usr/share/texmf/tex/latex/amsmath/amsgen.sty
+(/usr/share/texmf-texlive/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0
 \@emptytoks=\toks16
 \ex@=\dimen106
 ))
-(/usr/share/texmf/tex/latex/amsmath/amsbsy.sty
+(/usr/share/texmf-texlive/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d
 \pmbraise@=\dimen107
 )
-(/usr/share/texmf/tex/latex/amsmath/amsopn.sty
+(/usr/share/texmf-texlive/tex/latex/amsmath/amsopn.sty
 Package: amsopn 1999/12/14 v2.01 operator names
 )
 \inf@bad=\count80
@@ -138,7 +140,7 @@ Excerpts were taken from (Journal Style) 'esub2acm.cls'.
 \titleboxnoteflag=\count100
 Document Class: acm_proc_article-sp 2009/04/22 - V3.2SP - based on esub2acm.sty
  <23 April 96>
-(/usr/share/texmf/tex/latex/base/latexsym.sty
+(/usr/share/texmf-texlive/tex/latex/base/latexsym.sty
 Package: latexsym 1998/08/17 v2.2e Standard LaTeX package (lasy symbols)
 \symlasy=\mathgroup6
 LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
@@ -170,176 +172,183 @@ LaTeX Info: Redefining \cite on input line 1236.
 \acmcopyr=\toks33
 \boilerplate=\toks34
 \copyrightetc=\toks35
-(/usr/share/texmf/tex/latex/base/fontenc.sty
+(/usr/share/texmf-texlive/tex/latex/base/fontenc.sty
 Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
 
-(/usr/share/texmf/tex/latex/base/t1enc.def
+(/usr/share/texmf-texlive/tex/latex/base/t1enc.def
 File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
 )
 LaTeX Font Info:    Try loading font information for T1+aer on input line 100.
 
-(/usr/share/texmf/tex/latex/ae/t1aer.fd
+(/usr/share/texmf-texlive/tex/latex/ae/t1aer.fd
 File: t1aer.fd 1997/11/16 Font definitions for T1/aer.
 )))
-(/usr/share/texmf/tex/latex/multirow/multirow.sty
+(/usr/share/texmf-texlive/tex/latex/multirow/multirow.sty
 \bigstrutjot=\dimen123
 )
-(/usr/share/texmf/tex/latex/subfig/subfig.sty
+(/usr/share/texmf-texlive/tex/latex/subfig/subfig.sty
 Package: subfig 2005/06/28 ver: 1.3 subfig package
 
-(/usr/share/texmf/tex/latex/caption/caption3.sty
-Package: caption3 2007/01/07 v3.0k caption3 kernel (AR)
+(/usr/share/texmf-texlive/tex/latex/caption/caption.sty
+Package: caption 2009/10/09 v3.1k Customizing captions (AR)
+
+(/usr/share/texmf-texlive/tex/latex/caption/caption3.sty
+Package: caption3 2009/10/09 v3.1k caption3 kernel (AR)
 \captionmargin=\dimen124
-\captionmarginx=\dimen125
+\captionmargin@=\dimen125
 \captionwidth=\dimen126
-\captionindent=\dimen127
-\captionparindent=\dimen128
-\captionhangindent=\dimen129
+\caption@indent=\dimen127
+\caption@parindent=\dimen128
+\caption@hangindent=\dimen129
 \abovecaptionskip=\skip44
 \belowcaptionskip=\skip45
+Package caption Info: Unknown document class (or package),
+(caption)             standard defaults will be used on input line 1068.
 )
-\c@KVtest=\count109
+
+Package caption Warning: Unsupported document class (or package) detected,
+(caption)                usage of the caption package is not recommended.
+See the caption package documentation for explanation.
+
+Package caption Info: \@makecaption = \long macro:#1#2-> \vskip \baselineskip \
+setbox \@tempboxa \hbox {\textbf {#1: #2}} \ifdim \wd \@tempboxa >\hsize \textb
+f {#1: #2}\par \else \hbox to\hsize {\hfil \box \@tempboxa \hfil }\par \fi .
+\c@ContinuedFloat=\count109
+)
+\c@KVtest=\count110
 \sf@farskip=\skip46
 \sf@captopadj=\dimen130
 \sf@capskip=\skip47
 \sf@nearskip=\skip48
-\c@subfigure=\count110
-\c@subfigure@save=\count111
-\c@lofdepth=\count112
-\c@subtable=\count113
-\c@subtable@save=\count114
-\c@lotdepth=\count115
+\c@subfigure=\count111
+\c@subfigure@save=\count112
+\c@lofdepth=\count113
+\c@subtable=\count114
+\c@subtable@save=\count115
+\c@lotdepth=\count116
 \sf@top=\skip49
 \sf@bottom=\skip50
-)
-(/usr/share/texmf/tex/latex/ltxmisc/dblfloatfix.sty
+) (/usr/share/texmf-texlive/tex/latex/ltxmisc/dblfloatfix.sty
 Package: dblfloatfix 2003/11/18 v1.0 (MH)
 
-(/usr/share/texmf/tex/latex/base/fixltx2e.sty
-Package: fixltx2e 2006/03/24 v1.1n fixes to LaTeX
+(/usr/share/texmf-texlive/tex/latex/base/fixltx2e.sty
+Package: fixltx2e 2006/09/13 v1.1m fixes to LaTeX
 LaTeX Info: Redefining \em on input line 420.
 LaTeX Info: The control sequence `\[' is already robust on input line 471.
 LaTeX Info: The control sequence `\]' is already robust on input line 472.
 )
-\@dblbotnum=\count116
-\c@dblbotnumber=\count117
+\@dblbotnum=\count117
+\c@dblbotnumber=\count118
 ) (./algorithmic.sty
 Package: algorithmic 2006/06/02
 
 Document Style `algorithmic' - environment
-(/usr/share/texmf/tex/latex/base/ifthen.sty
+(/usr/share/texmf-texlive/tex/latex/base/ifthen.sty
 Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
 )
-(/usr/share/texmf/tex/latex/tools/calc.sty
-Package: calc 2005/08/06 v4.2 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count118
-\calc@Bcount=\count119
+(/usr/share/texmf-texlive/tex/latex/tools/calc.sty
+Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count119
+\calc@Bcount=\count120
 \calc@Adimen=\dimen131
 \calc@Bdimen=\dimen132
 \calc@Askip=\skip51
 \calc@Bskip=\skip52
-LaTeX Info: Redefining \setlength on input line 75.
-LaTeX Info: Redefining \addtolength on input line 76.
-\calc@Ccount=\count120
+LaTeX Info: Redefining \setlength on input line 76.
+LaTeX Info: Redefining \addtolength on input line 77.
+\calc@Ccount=\count121
 \calc@Cskip=\skip53
 )
-\c@ALC@line=\count121
-\c@ALC@rem=\count122
-\c@ALC@depth=\count123
+\c@ALC@line=\count122
+\c@ALC@rem=\count123
+\c@ALC@depth=\count124
 \ALC@tlm=\skip54
 \algorithmicindent=\skip55
 )
-(/usr/share/texmf/tex/latex/algorithms/algorithm.sty
-Package: algorithm 
+(/usr/share/texmf-texlive/tex/latex/algorithms/algorithm.sty
+Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
+nment
 
-Document Style `algorithm' - floating environment
-(/usr/share/texmf/tex/latex/float/float.sty
+(/usr/share/texmf-texlive/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count124
+\c@float@type=\count125
 \float@exts=\toks36
 \float@box=\box30
 \@float@everytoks=\toks37
 \@floatcapt=\box31
 )
 \@float@every@algorithm=\toks38
-\c@algorithm=\count125
+\c@algorithm=\count126
 )
-(/usr/share/texmf/tex/latex/tools/xspace.sty
+(/usr/share/texmf-texlive/tex/latex/tools/xspace.sty
 Package: xspace 2006/05/08 v1.12 Space after command names (DPC,MH)
-) (./hlsMethodology.aux)
+)
+(/usr/share/texmf-texlive/tex/latex/ltxmisc/url.sty
+\Urlmuskip=\muskip11
+Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
+)
+(/usr/share/texmf-texlive/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2009/08/06 v1.8 e-TeX tools for LaTeX
+
+(/usr/share/texmf-texlive/tex/latex/etex-pkg/etex.sty
+Package: etex 1998/03/26 v2.0 eTeX basic definition package (PEB)
+\et@xins=\count127
+)) (./hlsMethodology.aux)
 \openout1 = `hlsMethodology.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
 
-(/usr/share/texmf/tex/context/base/supp-pdf.tex
+(/usr/share/texmf-texlive/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count126
+\scratchcounter=\count128
 \scratchdimen=\dimen133
 \scratchbox=\box32
-\nofMPsegments=\count127
-\nofMParguments=\count128
-\MPscratchCnt=\count129
+\nofMPsegments=\count129
+\nofMParguments=\count130
+\everyMPshowfont=\toks39
+\MPscratchCnt=\count131
 \MPscratchDim=\dimen134
-\MPnumerator=\count130
-\everyMPtoPDFconversion=\toks39
-) (/usr/share/texmf/tex/latex/ragged2e/ragged2e.sty
-Package: ragged2e 2003/03/25 v2.04 ragged2e Package (MS)
-
-(/usr/share/texmf/tex/latex/everysel/everysel.sty
-Package: everysel 1999/06/08 v1.03 EverySelectfont Package (MS)
-LaTeX Info: Redefining \selectfont on input line 125.
+\MPnumerator=\count132
+\everyMPtoPDFconversion=\toks40
 )
-\CenteringLeftskip=\skip56
-\RaggedLeftLeftskip=\skip57
-\RaggedRightLeftskip=\skip58
-\CenteringRightskip=\skip59
-\RaggedLeftRightskip=\skip60
-\RaggedRightRightskip=\skip61
-\CenteringParfillskip=\skip62
-\RaggedLeftParfillskip=\skip63
-\RaggedRightParfillskip=\skip64
-\JustifyingParfillskip=\skip65
-\CenteringParindent=\skip66
-\RaggedLeftParindent=\skip67
-\RaggedRightParindent=\skip68
-\JustifyingParindent=\skip69
+Package caption Info: Begin \AtBeginDocument code.
+Package caption3 Info: subfig package 1.2 or 1.3 is loaded.
+LaTeX Info: Redefining \subref on input line 36.
+Package caption Info: float package is loaded.
+Package caption Info: End \AtBeginDocument code.
+LaTeX Font Info:    Try loading font information for U+msa on input line 62.
+ (/usr/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 58.
+LaTeX Font Info:    Try loading font information for U+msb on input line 62.
 
-(/usr/share/texmf/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2002/01/19 v2.2g AMS font definitions
+(/usr/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 58.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 62.
 
-(/usr/share/texmf/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2002/01/19 v2.2g AMS font definitions
-)
-LaTeX Font Info:    Try loading font information for U+lasy on input line 58.
-
-(/usr/share/texmf/tex/latex/base/ulasy.fd
+(/usr/share/texmf-texlive/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
-) (./abstract.tex) (./introduction.tex
+) (./abstract.tex)
+(./introduction.tex
 Overfull \hbox (2.89607pt too wide) in paragraph at lines 6--7
 \T1/aer/m/n/9 level syn-the-sis method-ol-ogy that uti-lizes a \T1/aer/m/it/9 s
 oft \T1/aer/m/n/9 coarse-grained
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
 ]) (./related.tex
@@ -348,7 +357,7 @@ Overfull \hbox (2.8584pt too wide) in paragraph at lines 6--7
 spent
  []
 
-) (./methodology.tex <designflow.pdf, id=9, 457.71pt x 260.975pt>
+) (./methodology.tex <designflow.pdf, id=11, 457.71pt x 260.975pt>
 File: designflow.pdf Graphic file (type pdf)
 
 <use designflow.pdf> [2]
@@ -360,17 +369,13 @@ Overfull \hbox (7.26039pt too wide) in paragraph at lines 39--40
 
 pdfTeX warning: pdflatex (file ./pe.pdf): PDF inclusion: found PDF version <1.5
 >, but at most version <1.4> allowed
-<pe.pdf, id=15, 337.86226pt x 191.87685pt>
+<pe.pdf, id=16, 337.86226pt x 191.87685pt>
 File: pe.pdf Graphic file (type pdf)
- <use pe.pdf>
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[3 <./designflow.pdf>]
+ <use pe.pdf> [3 <./designflow.pdf> <./pe.pdf>]
 
 pdfTeX warning: pdflatex (file ./alu.pdf): PDF inclusion: found PDF version <1.
 6>, but at most version <1.4> allowed
-<alu.pdf, id=1550, 258.36525pt x 147.06946pt>
+<alu.pdf, id=2043, 258.36525pt x 147.06946pt>
 File: alu.pdf Graphic file (type pdf)
  <use alu.pdf>) (./results.tex
 Overfull \hbox (10.62648pt too wide) in paragraph at lines 16--17
@@ -378,42 +383,37 @@ Overfull \hbox (10.62648pt too wide) in paragraph at lines 16--17
 -
  []
 
-[4 <./pe.pdf
-
-pdfTeX warning: pdflatex (file ./pe.pdf): PDF inclusion: Page Group detected wh
-ich pdfTeX can't handle. Ignoring it.
-> <./alu.pdf
-
-pdfTeX warning: pdflatex (file ./alu.pdf): PDF inclusion: Page Group detected w
-hich pdfTeX can't handle. Ignoring it.
->] <designtime.pdf, id=2270, 649.42625pt x 404.51125pt>
-File: designtime.pdf Graphic file (type pdf)
- <use designtime.pdf>
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[5 <./designtime.pdf>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+[4 <./alu.pdf>] <designtime.pdf, id=2272, 649.42625pt x 404.51125pt>
+File: designtime.pdf Graphic file (type pdf)
+
+<use designtime.pdf>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-<impl_freq.pdf, id=2402, 582.175pt x 259.97125pt>
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[5 <./designtime.pdf>] <impl_freq.pdf, id=2404, 582.175pt x 259.97125pt>
 File: impl_freq.pdf Graphic file (type pdf)
- <use impl_freq.pdf>
-<lib_impl_freq.pdf, id=2403, 363.3575pt x 205.76875pt>
+
+<use impl_freq.pdf>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<lib_impl_freq.pdf, id=2405, 363.3575pt x 205.76875pt>
 File: lib_impl_freq.pdf Graphic file (type pdf)
  <use lib_impl_freq.pdf>
-[6 <./impl_freq.pdf> <./lib_impl_freq.pdf>]
-<sim_perf.pdf, id=2491, 530.98375pt x 241.90375pt>
-File: sim_perf.pdf Graphic file (type pdf)
- <use sim_perf.pdf>
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-<real_perf.pdf, id=2492, 523.9575pt x 228.855pt>
+[6 <./impl_freq.pdf> <./lib_impl_freq.pdf>]
+<sim_perf.pdf, id=2493, 530.98375pt x 241.90375pt>
+File: sim_perf.pdf Graphic file (type pdf)
+ <use sim_perf.pdf>
+<real_perf.pdf, id=2494, 523.9575pt x 228.855pt>
 File: real_perf.pdf Graphic file (type pdf)
  <use real_perf.pdf>)
 (./conclusions.tex
@@ -422,30 +422,38 @@ Overfull \hbox (13.56903pt too wide) in paragraph at lines 2--3
 -
  []
 
-[7 <./sim_perf.pdf> <./real_perf.pdf>]) (./hlsMethodology.bbl) [8]
-(./hlsMethodology.aux) ) 
+[7 <./sim_perf.pdf> <./real_perf.pdf>]) (./hlsMethodology.bbl
+LaTeX Font Info:    Try loading font information for T1+aett on input line 7.
+
+(/usr/share/texmf-texlive/tex/latex/ae/t1aett.fd
+File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
+)) [8] (./hlsMethodology.aux) ) 
 Here is how much of TeX's memory you used:
- 3111 strings out of 256216
- 38871 string characters out of 1917072
- 112353 words of memory out of 1500000
- 6284 multiletter control sequences out of 10000+200000
- 49960 words of font info for 73 fonts, out of 1200000 for 2000
- 645 hyphenation exceptions out of 8191
- 39i,10n,38p,1848b,261s stack positions out of 5000i,500n,6000p,200000b,15000s
-{/usr/share/texmf/fonts/enc/dvips/base/8r.enc}</usr/sha
-re/texmf/fonts/type1/bluesky/cm/cmbx9.pfb></usr/share/texmf/fonts/type1/bluesky
-/cm/cmmi6.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmmi8.pfb></usr/share/te
-xmf/fonts/type1/bluesky/cm/cmmi9.pfb></usr/share/texmf/fonts/type1/bluesky/cm/c
-mr6.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmr8.pfb></usr/share/texmf/fon
-ts/type1/bluesky/cm/cmr9.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmsy8.pfb
-></usr/share/texmf/fonts/type1/bluesky/cm/cmsy9.pfb></usr/share/texmf/fonts/typ
-e1/bluesky/cm/cmti9.pfb></usr/share/texmf/fonts/type1/public/cmex/fmex9.pfb></u
-sr/share/texmf/fonts/type1/bluesky/ams/msbm10.pfb></usr/share/texmf/fonts/type1
-/urw/helvetic/uhvb8a.pfb></usr/share/texmf/fonts/type1/urw/times/utmb8a.pfb></u
-sr/share/texmf/fonts/type1/urw/times/utmri8a.pfb>
-Output written on hlsMethodology.pdf (8 pages, 1333302 bytes).
+ 4137 strings out of 493848
+ 55126 string characters out of 1152824
+ 152175 words of memory out of 3000000
+ 7295 multiletter control sequences out of 15000+50000
+ 49948 words of font info for 72 fonts, out of 3000000 for 9000
+ 714 hyphenation exceptions out of 8191
+ 44i,10n,42p,1848b,292s stack positions out of 5000i,500n,10000p,200000b,50000s
+{/usr/share/texmf-texlive/fonts/enc/dvips/base/8
+r.enc}</usr/share/texmf-texlive/fonts/type1/public/amsfonts/cmextra/cmex9.pfb><
+/usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/t
+exmf-texlive/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-texlive
+/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texmf-texlive/fonts/type1
+/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfo
+nts/cm/cmr8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr9.p
+fb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/sha
+re/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texmf-tex
+live/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/share/texmf-texlive/fonts/t
+ype1/public/amsfonts/cm/cmtt9.pfb></usr/share/texmf-texlive/fonts/type1/public/
+amsfonts/symbols/msbm10.pfb></usr/share/texmf-texlive/fonts/type1/urw/helvetic/
+uhvb8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/
+share/texmf-texlive/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf-texlive/
+fonts/type1/urw/times/utmri8a.pfb>
+Output written on hlsMethodology.pdf (8 pages, 1400411 bytes).
 PDF statistics:
- 2614 PDF objects out of 2984 (max. 8388607)
- 0 named destinations out of 1000 (max. 131072)
+ 2620 PDF objects out of 2984 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
  41 words of extra memory for PDF output out of 10000 (max. 10000000)
 
