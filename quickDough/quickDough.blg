@@ -4,46 +4,48 @@ The style file: plain.bst
 Database file #1: refs.bib
 Warning--to sort, need author or key in microblaze
 Warning--to sort, need author or key in nios
+Warning--to sort, need author or key in zedboard
+Warning--to sort, need author or key in ROCCC
 Warning--to sort, need author or key in data2mem
-You've used 25 entries,
+You've used 29 entries,
             2118 wiz_defined-function locations,
-            645 strings with 9464 characters,
-and the built_in function-call counts, 10034 in all, are:
-= -- 982
-> -- 438
-< -- 16
-+ -- 180
-- -- 148
-* -- 650
-:= -- 1501
-add.period$ -- 80
-call.type$ -- 25
-change.case$ -- 149
+            667 strings with 10035 characters,
+and the built_in function-call counts, 11295 in all, are:
+= -- 1113
+> -- 486
+< -- 17
++ -- 200
+- -- 164
+* -- 730
+:= -- 1684
+add.period$ -- 93
+call.type$ -- 29
+change.case$ -- 169
 chr.to.int$ -- 0
-cite$ -- 28
-duplicate$ -- 439
-empty$ -- 834
-format.name$ -- 148
-if$ -- 2256
+cite$ -- 34
+duplicate$ -- 487
+empty$ -- 946
+format.name$ -- 164
+if$ -- 2539
 int.to.chr$ -- 0
-int.to.str$ -- 25
-missing$ -- 22
-newline$ -- 128
-num.names$ -- 44
-pop$ -- 206
+int.to.str$ -- 29
+missing$ -- 24
+newline$ -- 148
+num.names$ -- 48
+pop$ -- 238
 preamble$ -- 1
-purify$ -- 124
+purify$ -- 140
 quote$ -- 0
-skip$ -- 349
+skip$ -- 386
 stack$ -- 0
-substring$ -- 582
-swap$ -- 166
-text.length$ -- 16
+substring$ -- 659
+swap$ -- 179
+text.length$ -- 17
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 100
-warning$ -- 3
-while$ -- 88
-width$ -- 27
-write$ -- 279
-(There were 3 warnings)
+type$ -- 116
+warning$ -- 5
+while$ -- 97
+width$ -- 31
+write$ -- 322
+(There were 5 warnings)

@@ -18,6 +18,25 @@ Nios embedded processor.
   \url{http://www.altera.com/products/ip/processors/nios/nio-index.html}.
 \newblock [Online; accessed 25-June-2014].
 
+\bibitem{ROCCC}
+Roccc2.0.
+\newblock \url{http://www.jacquardcomputing.com/roccc/}.
+\newblock [Online; accessed 19-January-2014].
+
+\bibitem{zedboard}
+Zedboard.
+\newblock \url{http://www.zedboard.org/}.
+\newblock [Online; accessed 25-June-2014].
+
+\bibitem{Baleani2002HW-SW}
+Massimo Baleani, Frank Gennari, Yunjian Jiang, Yatish Patel, Robert~K. Brayton,
+  and Alberto Sangiovanni-Vincentelli.
+\newblock Hw/sw partitioning and code generation of embedded control
+  applications on a reconfigurable architecture platform.
+\newblock In {\em Proceedings of the Tenth International Symposium on
+  Hardware/Software Codesign}, CODES '02, pages 151--156, New York, NY, USA,
+  2002. ACM.
+
 \bibitem{beckhoff2011xilinx}
 C.~Beckhoff, D.~Koch, and J.~Torresen.
 \newblock The {Xilinx} design language ({XDL}): Tutorial and use cases.
@@ -41,6 +60,11 @@ D.~Capalija and T.S. Abdelrahman.
 J.M.P. Cardoso, P.C. Diniz, and M.~Weinhardt.
 \newblock Compiling for reconfigurable computing: A survey.
 \newblock {\em ACM Computing Surveys (CSUR)}, 42(4):13, 2010.
+
+\bibitem{compton2002reconfigurable}
+Katherine Compton and Scott Hauck.
+\newblock Reconfigurable computing: a survey of systems and software.
+\newblock {\em ACM Computing Surveys (csuR)}, 34(2):171--210, 2002.
 
 \bibitem{cong2011high}
 J.~Cong, B.~Liu, S.~Neuendorffer, J.~Noguera, K.~Vissers, and Z.~Zhang.
@@ -91,12 +115,10 @@ Jeffrey Kingyens and J.~Gregory Steffan.
 \newblock {\em Int. J. Reconfig. Comp.}, 2011, 2011.
 
 \bibitem{kissler2006dynamically}
-D.~KISSLER, F.~HANNIG, A.~KUPRIYANOV, and J.~TEICH.
+Dmitrij Kissler, Frank Hannig, Alexey Kupriyanov, and J{\"u}rgen Teich.
 \newblock A dynamically reconfigurable weakly programmable processor array
   architecture template.
-\newblock In {\em PROCEEDINGS OF THE 2ND INTERNATIONAL WORKSHOP ON
-  RECONFIGURABLE COMMUNICATION CENTRIC SYSTEM-ON-CHIPS (RECOSOC), MONTPELLIER,
-  FRANCE}, pages 31--37, 2006.
+\newblock In {\em ReCoSoC}, pages 31--37, 2006.
 
 \bibitem{Kock2013CI}
 D.~Koch, C.~Beckhoff, and G.G.F. Lemieux.

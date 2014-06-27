@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2013.9.7)  26 JUN 2014 00:37
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2013.9.7)  27 JUN 2014 23:59
 entering extended mode
  %&-line parsing enabled.
 **quickDough
@@ -252,16 +252,10 @@ Package caption Info: End \AtBeginDocument code.
 ts/map/pdftex/updmap/pdftex.map}
 
 
-]
+]) (./framework.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Warning: Reference `tessier2001reconfigurable' on page 2 undefined on inp
-ut line 12.
-
-
-LaTeX Warning: Reference `compton2002reconfigurable' on page 2 undefined on inp
-ut line 12.
-
-) (./framework.tex [2]
+ [2]
 
 pdfTeX warning: pdflatex (file ./figures/typical-FPGA-accelerator.pdf): PDF inc
 lusion: found PDF version <1.5>, but at most version <1.4> allowed
@@ -287,7 +281,7 @@ File: ./figures/scgra-accelerator.pdf Graphic file (type pdf)
 
 pdfTeX warning: pdflatex (file ./figures/pe.pdf): PDF inclusion: found PDF vers
 ion <1.5>, but at most version <1.4> allowed
-<./figures/pe.pdf, id=37, 315.41873pt x 239.34418pt>
+<./figures/pe.pdf, id=37, 334.86078pt x 186.67596pt>
 File: ./figures/pe.pdf Graphic file (type pdf)
  <use ./figures/pe.pdf>
 
@@ -309,62 +303,63 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 [4 <./figures/scgra-accelerator.pdf> <./figures/pe.pdf> <./figures/alu.pdf>])
 (./scgracompile.tex
 
-pdfTeX warning: pdflatex (file ./figures/full-scgra-compile.pdf): PDF inclusion
-: found PDF version <1.5>, but at most version <1.4> allowed
-<./figures/full-scgra-compile.pdf, id=68, 337.38547pt x 522.18396pt>
-File: ./figures/full-scgra-compile.pdf Graphic file (type pdf)
+pdfTeX warning: pdflatex (file ./figures/scgra-compile.pdf): PDF inclusion: fou
+nd PDF version <1.5>, but at most version <1.4> allowed
+<./figures/scgra-compile.pdf, id=68, 234.11981pt x 447.79752pt>
+File: ./figures/scgra-compile.pdf Graphic file (type pdf)
 
-<use ./figures/full-scgra-compile.pdf>
+<use ./figures/scgra-compile.pdf>
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-pdfTeX warning: pdflatex (file ./figures/min-scgra-compile.pdf): PDF inclusion:
- found PDF version <1.5>, but at most version <1.4> allowed
-<./figures/min-scgra-compile.pdf, id=70, 214.01079pt x 264.83383pt>
-File: ./figures/min-scgra-compile.pdf Graphic file (type pdf)
+ [5 <./figures/scgra-compile.pdf>]
 
-<use ./figures/min-scgra-compile.pdf> [5 <./figures/full-scgra-compile.pdf> <./
-figures/min-scgra-compile.pdf>]) (./experiments.tex
+pdfTeX warning: pdflatex (file ./figures/dfg-gen.pdf): PDF inclusion: found PDF
+ version <1.5>, but at most version <1.4> allowed
+<./figures/dfg-gen.pdf, id=83, 532.8213pt x 442.46716pt>
+File: ./figures/dfg-gen.pdf Graphic file (type pdf)
 
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
+<use ./figures/dfg-gen.pdf>) (./experiments.tex [6 <./figures/dfg-gen.pdf>]
 Overfull \hbox (23.7603pt too wide) in paragraph at lines 74--91
  [][] 
  []
 
-[6] <./figures/HLS-Compilation-Time.pdf, id=96, 676.5275pt x 286.06876pt>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [7]
+<./figures/HLS-Compilation-Time.pdf, id=108, 676.5275pt x 286.06876pt>
 File: ./figures/HLS-Compilation-Time.pdf Graphic file (type pdf)
 
 <use ./figures/HLS-Compilation-Time.pdf>
-<./figures/QuickDough-Compilation-Time.pdf, id=97, 676.5275pt x 286.06876pt>
+<./figures/QuickDough-Compilation-Time.pdf, id=109, 676.5275pt x 286.06876pt>
 File: ./figures/QuickDough-Compilation-Time.pdf Graphic file (type pdf)
 
-<use ./figures/QuickDough-Compilation-Time.pdf> [7 <./figures/HLS-Compilation-T
-ime.pdf> <./figures/QuickDough-Compilation-Time.pdf>]
-<./figures/impl-freq.pdf, id=119, 681.54625pt x 307.1475pt>
+<use ./figures/QuickDough-Compilation-Time.pdf>
+<./figures/impl-freq.pdf, id=110, 681.54625pt x 307.1475pt>
 File: ./figures/impl-freq.pdf Graphic file (type pdf)
 
 <use ./figures/impl-freq.pdf>
-<./figures/real-perf.pdf, id=120, 680.5425pt x 307.1475pt>
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [8 <./figures/HLS-Compilation-Time.pdf> <./figures/QuickDough-Compilation-Time
+.pdf>]
+<./figures/real-perf.pdf, id=131, 680.5425pt x 307.1475pt>
 File: ./figures/real-perf.pdf Graphic file (type pdf)
 
-<use ./figures/real-perf.pdf> [8 <./figures/impl-freq.pdf>]
-<./figures/execution-time.pdf, id=133, 516.93124pt x 194.7275pt>
+<use ./figures/real-perf.pdf>
+<./figures/execution-time.pdf, id=132, 516.93124pt x 194.7275pt>
 File: ./figures/execution-time.pdf Graphic file (type pdf)
 
-<use ./figures/execution-time.pdf>
-Underfull \vbox (badness 2418) has occurred while \output is active []
-
-
-<./figures/kernel-sim-perf.pdf, id=134, 680.5425pt x 305.14pt>
+<use ./figures/execution-time.pdf> [9 <./figures/impl-freq.pdf> <./figures/real
+-perf.pdf> <./figures/execution-time.pdf>]
+<./figures/kernel-sim-perf.pdf, id=160, 680.5425pt x 305.14pt>
 File: ./figures/kernel-sim-perf.pdf Graphic file (type pdf)
 
 <use ./figures/kernel-sim-perf.pdf>
-<./figures/kernel-real-perf.pdf, id=135, 506.89375pt x 229.85875pt>
+<./figures/kernel-real-perf.pdf, id=161, 506.89375pt x 229.85875pt>
 File: ./figures/kernel-real-perf.pdf Graphic file (type pdf)
 
-<use ./figures/kernel-real-perf.pdf>) (./conclusions.tex [9 <./figures/real-per
-f.pdf> <./figures/execution-time.pdf> <./figures/kernel-sim-perf.pdf>])
-(./quickDough.bbl
+<use ./figures/kernel-real-perf.pdf>) (./conclusions.tex) (./quickDough.bbl
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 7.
 
@@ -384,49 +379,36 @@ Underfull \hbox (badness 3849) in paragraph at lines 16--20
  []
 
 
-Underfull \hbox (badness 3579) in paragraph at lines 67--73
+Underfull \hbox (badness 1448) in paragraph at lines 22--25
+[]\OT1/ptm/m/n/10 Roccc2.0.  $http : / / www . jacquardcomputing . com / roccc/
+$.
+ []
+
+[10 <./figures/kernel-sim-perf.pdf> <./figures/kernel-real-perf.pdf>]
+Underfull \hbox (badness 3579) in paragraph at lines 91--97
 []\OT1/ptm/m/n/10 T. Frang-ieh, A. Chan-drasekha-ran, S. Ra-jagopalan,
  []
 
-[10 <./figures/kernel-real-perf.pdf>]
-Underfull \hbox (badness 2165) in paragraph at lines 94--100
-\OT1/ptm/m/n/10 J. TE-ICH.  A dy-nam-i-cally re-con-fig-urable weakly
- []
-
-
-Underfull \hbox (badness 1565) in paragraph at lines 94--100
-\OT1/ptm/m/n/10 pro-grammable pro-ces-sor ar-ray ar-chi-tec-ture tem-plate.
- []
-
-
-Underfull \hbox (badness 3396) in paragraph at lines 94--100
-\OT1/ptm/m/it/10 WORK-SHOP ON RE-CON-FIG-URABLE COM-MU-NI-
- []
-
-) [11] (./quickDough.aux)
-
-LaTeX Warning: There were undefined references.
-
- ) 
+) [11] (./quickDough.aux) ) 
 Here is how much of TeX's memory you used:
- 3268 strings out of 493848
- 51879 string characters out of 1152824
- 141430 words of memory out of 3000000
- 6493 multiletter control sequences out of 15000+50000
- 39875 words of font info for 73 fonts, out of 3000000 for 9000
+ 3278 strings out of 493848
+ 51986 string characters out of 1152824
+ 137495 words of memory out of 3000000
+ 6504 multiletter control sequences out of 15000+50000
+ 38768 words of font info for 72 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
  36i,13n,38p,1809b,290s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-texli
-ve/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-texlive/fonts/typ
-e1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-texlive/fonts/type1/public/ams
-fonts/cm/cmr8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy
-8.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmb8a.pfb></usr/share/te
-xmf-texlive/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texmf-texlive/fonts/t
-ype1/urw/times/utmr8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmri
-8a.pfb>
-Output written on quickDough.pdf (11 pages, 1097965 bytes).
+{/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.en
+c}</usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/shar
+e/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-texli
+ve/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-texlive/fonts/type
+1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/
+utmb8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmbi8a.pfb></usr/sh
+are/texmf-texlive/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-texlive/fo
+nts/type1/urw/times/utmri8a.pfb>
+Output written on quickDough.pdf (11 pages, 1106248 bytes).
 PDF statistics:
- 204 PDF objects out of 1000 (max. 8388607)
+ 211 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  71 words of extra memory for PDF output out of 10000 (max. 10000000)
 
