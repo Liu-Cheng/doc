@@ -1,5 +1,5 @@
 \section{Experiments}\label{sec:experiments}
-In this work, we take four applications including matrix multiplication (MM), FIR filter, Kmean and Sobel edge detector as our benchmark. In order to be more representative, each application is further provided with three different data sets ranging from small, medium to large ones. The basic parameters and configurations of the benchmark is explained in the \tabref{tab:benchmark-config}.
+In this work, we take four applications including matrix multiplication (MM), FIR filter, Kmean and Sobel edge detector as our benchmark. To invetigate the scalability of the accelerator design methods, each application is further provided with three different data sets ranging from small, medium to large ones. The basic parameters and configurations of the benchmark is illustrated in the \tabref{tab:benchmark-config}.
 
 \begin{table*}[t]
   \caption{Detailed Configurations of the Benchmark}
@@ -15,17 +15,18 @@ In this work, we take four applications including matrix multiplication (MM), FI
   \end{tabular}
 \end{table*}
 
-
-The benchmark is implemented on Zedboard using both Vivado HLS and QuickDough to build the FPGA acceleration system. Then design productivity, implementation efficiency and performance of the two design methods are compared respectively.
+The benchmark is implemented on Zedboard using both Vivado HLS based design method and QuickDough. Then the design productivity, implementation efficiency and performance of the two design methods are compared respectively.
 
 \subsection{Experiment Setup}
-All the runtimes were obtained from a computer with Intel(R) Core(TM) i5-3230M CPU and 8GB RAM. Vivado HLS 2013.3 is used to transform the compute kernel to hardware IP Catalog. Vivado 2013.3 is then used to integrate the IP core and build the FPGA accelertor on Zedboard. The SCGRA is initially built using ISE 14.7 and then exported as an IP core. Afterwards, it is integrated into the SCGRA based FPGA accelerator using PlanAhead 14.7. Finally, the accelerators are implemented on Zedboard to run the benchmark on bare-metal system mode.
+All the runtimes were obtained from a laptop with Intel(R) Core(TM) i5-3230M CPU and 8GB RAM. Vivado HLS 2013.3 is used to transform the compute kernel to hardware IP Catalog i.e. IP core. Vivado 2013.3 is used to integrate the IP core and build the FPGA accelertor. The SCGRA is initially developed in ISE 14.7, and then the ISE project is imported as an IP core in planAhead 14.7. With the SCGRA IP core, the SCGRA overlay based FPGA accelerator is further built in PlanAhead as well. Finally, the accelerators developed using both design methods target at Zedboard \cite{zedboard} and the system runs in the bare-metal mode.
 
-Vivado HLS typically achieves the trade-off between hardware overhead and performance through altering the loop unrolling factor and loop blocking size. Larger block size is beneficial to data reuse and amortizing the communication cost, but it is usually constrained by the size of on-chip buffer. Similarly, larger loop unrolling factor typically promises better performance, however, hardware resources like DSP blocks will soon be used up and implementation frequency will degrade as well. In this work, two different sets of input/output buffer configurations are applied for the Vivado HLS based acceleration design. One set has fixed 2k-word buffer for both input and output, and the other set has maximum available buffer size and it could use as much as 64k-word for both input and output. \tabref{tab:loop-unrolling-setup-vivado} shows the near optimal blocking and loop unrolling setup for the benchmark. 
+Vivado HLS typically achieves the trade-off between hardware overhead and performance through altering the loop unrolling factors. Larger loop unrolling factors typically promise better performance, but this will not be guaranteed, because more hardware resources like DSP blocks will be required and the implementation frequency may degrade as well. In this work, we set the loop unrolling factor as large as possible and the detailed loop unrolling setup can be found in \tabref{tab:loop-unrolling-setup-vivado}.
+
+As memory mapped IO buffers are used for the communication between FPGA and the accelerator, the compute kernel synthesized must have its input/output fully buffered. When the data set of the compute kernel is large, the on chip buffer will not be able to accommodate it. In this case, loop blocking is employed to divide the original compute kernel loop into loop blocks that fit the on-chip buffer. As presented in \tabref{tab:loop-unrolling-setup-vivado}, 2k-word buffer and 64k-word buffer will result in quite different blocking schemes for large data set. Since larger block size is beneficial to data reuse and amortizing the communication cost, the block size is set to be as large as possible within the on-chip buffer limit.
 
 \begin{table*}[t]
 \centering
-\caption{Loop Unrolling \& Blocking Setup for Vivado HLS Based Accelerator Design}
+\caption{Loop Unrolling \& Blocking Setup Of Accelerators Using Vivado HLS Based Design Method}
 \label{tab:loop-unrolling-setup-vivado}
 \begin{tabular}{|l|l|l|l|l|l|l|}
 \hline
@@ -46,9 +47,9 @@ Vivado HLS typically achieves the trade-off between hardware overhead and perfor
 \end{tabular}
 \end{table*}
 
-SCGRA based FPGA accelerator has similar design chocies to that of Vivado HLS in terms of loop unrolling and blocking. The difference is that the unrolled part of the loop is transformed to DFG which is further scheduled to the SCGRA infrastructure, and the loop unrolling factor is limited by the resources of the SCGRA overlay such as SCGRA size, instruction memory size and data memory size. While the block size is contrained by both the size of input/output buffer and the addr buffer. Currently, we set the data buffer to be 2k-word and addr buffer to be 4k-word. However, addr buffer size is the major constrain of the blocking size as useless addresses are also stored. In this work, both a 2x2 SCGRA and 5x5 SCGRA overlay are used for all these benchmark implementation. \tabref{tab:scgra-config} and \tabref{tab:loop-unrolling-setup-scgra} present the detailed SCGRA overlay configuration and loop unrolling as well as blocking of the benchmark respectively.
+QuickDough has similar design choices to those of Vivado HLS based design method in terms of loop unrolling and blocking. However, the design constrains using the two design methods are different. The unrolled part in QuickDOugh is transformed to DFG which can further be scheduled to the SCGRA overlay, so the loop unrolling factor is mainly constrained by the resources of the SCGRA overlay such as SCGRA size, instruction memory size and data memory size. As for the loop blocking, the design constrain in QuickDough is relatively more complex. On the one hand, the block size is also limited by the size of input/output buffer, which is exactly the same with the constrain using Vivado HLS based design method. On the other hand, the address buffer size can be another major constrain, because we need to store all the IO buffer address sequence of the whole block instead of the DFG. Even though we set address buffer size twice larger than the data buffer size, it can still be a bottleneck in many occasions. The detailed SCGRA overlay configuration and corresponding loop unrolling as well as blocking setup using QuickDough are listed in \tabref{tab:scgra-config} and \tabref{tab:loop-unrolling-setup-scgra} respectively. 
 
-\begin{table}[h]
+\begin{table}[htb]
 \caption{SCGRA Configuration}
 \label{tab:scgra-config}
 \centering
@@ -69,7 +70,7 @@ SCGRA based FPGA accelerator has similar design chocies to that of Vivado HLS in
 
 \begin{table*}[t]
 \centering
-\caption{Loop Unrolling and Blocking Setup for SCGRA Based FPGA Accelerator Design}
+\caption{Loop Unrolling and Blocking Setup For Accelerators Using QuickDough}
 \label{tab:loop-unrolling-setup-scgra}
 \begin{tabular}{|l|l|l|l|l|l|l|l|l|}
 \hline
@@ -91,98 +92,111 @@ SCGRA based FPGA accelerator has similar design chocies to that of Vivado HLS in
 \end{table*}
 
 \subsection{Experiment Results}
-In this section, design productivity, hardware implementation efficiency and performance using both design methodologies are presented. 
+In this section, design productivity, hardware implementation efficiency and performance using both design methodologies are presented and compared. 
 
 \subsubsection{Design Productivity}
-Since design productivity involves many different aspects such as the abstarction level of the design entry, compilation time, design reuse, and design portability, it is difficult to evaluate all aspects especially some of the aspects are not easy to be quantized. In this section, we mainly look at the compilation time and design reuse which are critical angles of design productivity.
+Design productivity involves many different aspects such as the abstraction level of the design entry, compilation time, design reuse, and design portability, and it is difficult to compare all the aspects, especially some of the aspects could hardly be quantized. In this section, we mainly concentrate on the compilation time comparison and analyze the rest briefly.
 
-In order to accelerate an application using FPGA, Vivado HLS based design flow mainly consists of four steps including compute kernel synthesis, kernel IP generation, overall system implementation and software compilation. At the compute kernel synthesis step, high level language program kernel is translated to a HDL model according to the user's synthesis pragma. Then the HDL model is further synthesized and packed to an IP core, which should meet the timing constrain and have the corresponding driver packed, at the kernel IP generation step. Afterwards, it is the system implementation step, where the IP core is integrated into the target system and the accelerator is implemented on FPGA. Finally, the application using the hardware accelerator is compiled to binaray code. The SCGRA based FPGA accelerator design flow also needs four steps to complete the acceleration. The first step is translating the high level language program kernel to DFG, and the DFG is scheduled to a spcified SCGRA overlay at the second step. At the third step, the bitstream is generated and corresponding driver is prepared. The last softeware compilation step is similar to that of the Vivado HLS based design flow. 
+In order to develop an FPGA accelerator for an application, Vivado HLS based design method roughly consists of the following four steps including compute kernel synthesis, kernel IP generation, overall system implementation and software compilation. At the compute kernel synthesis step, high level language program kernel is translated to an HDL model according to the user's synthesis pragma. The next step is to further synthesize it and have it packed as an IP core. At the same time, the timing constrain should be met and the corresponding driver should be generated. Afterwards, the IP core can be integrated into the accelerator and the whole accelerator can be implemented on the FPGA accordingly. Finally, the application employing the FPGA accelertor should be compiled to binary code as conventional software.
 
-\figref{fig:Vivado-HLS-Compilation-Time} and \figref{fig:SCGRA-Overlay-Compilation-Time} shows the compilation time needed to implement the benchmark using both Vivado HLS based design flow and the SCGRA based design flow respectively. Vivado HLS based design method needs lenghty IP core generation and hardware implementation for each application instance, which are the major time consuming processes. Compute kernel synthesis is usually as fast as the software compilation and can be done in a few seconds, but it may take up to 10 minutes when there is a pieplined large loop unrolling. Eventually, it takes the whole design flow 20 minutes to an hour to complete an implementation. With pre-implemented SCGRA overlay, the processing steps except the DFG scheduling of the SCGRA based design flow are quite fast and don't change much across the different applications. DFG scheduling is relatively slower especially when the DFG size and CGRA size are large, but it still can be done in a few seconds. Finally, the SCGRA based design method could produce the bitstream in 5 to 15 seconds and and it is typically two magnitude faster than the SCGRA overlay based design method. 
+The FPGA accelerator developed using QuickDough also needs four steps to complete the application acceleration. The first step is to translate the high level language program kernel to DFG. The second step is to schedule the DFG to the customized SCGRA overlay and dump the scheduling result for the following step. The third step is to integrate the scheduling result and the pre-built accelerator bitstream to produce the new bitstream for target application. Finally, the last step is also a conventional software compilation, which is similar to the fourth compilation step of the Vivado HLS based design method. 
 
-\begin{figure}[H]
-\center{\includegraphics[width=0.95\linewidth]{HLS-Compilation-Time}}
-\caption{Compilation Time Using Vivado HLS Based Design Method}
+\figref{fig:Vivado-HLS-Compilation-Time} and \figref{fig:SCGRA-Overlay-Compilation-Time} present the compilation time of implementing the benchmark using both Vivado HLS based design method and QuickDough respectively. IP core generation and hardware implementation in Vivado HLS based design method is relatively slow. Compute kernel synthesis is usually as fast as the software compilation and can be done in a few seconds, but it may take up to 10 minutes when there is pipelined large loop unrolling involved. The last step is essentially a software compilation, and the time consumed can be negligible. On the whole, the design method takes 20 minutes to an hour to implement an application. With pre-implemented SCGRA overlay, the processing steps except the DFG scheduling of QuickDough are fast and don't change much across the different applications. DFG scheduling is relatively slower especially when the DFG size and CGRA size are large, but it can still be completed in a few seconds. Basically, QuickDough could implement an application in 5 to 15 seconds and it is two magnitude faster than the SCGRA overlay based design method. 
+
+\begin{figure*}[t]
+\center{\includegraphics[width=0.75\linewidth]{HLS-Compilation-Time}}
+\caption{Benchmark Compilation Time Using Vivado HLS Based Design Method}
 \label{fig:Vivado-HLS-Compilation-Time}
-\end{figure}
+\end{figure*}
 
-\begin{figure}[H]
-\center{\includegraphics[width=0.95\linewidth]{QuickDough-Compilation-Time}}
-\caption{Compilation Time Using SCGRA Overlay Based Design Method}
+\begin{figure*}[t]
+\center{\includegraphics[width=0.75\linewidth]{QuickDough-Compilation-Time}}
+\caption{Benchmark Compilation Time Using QuickDough}
 \label{fig:SCGRA-Overlay-Compilation-Time}
-\end{figure}
+\end{figure*}
+
+On top of the compilation time, the abstraction level of the design entry, design reuse and portability are also important aspects that influence the design productivity. Both Vivado HLS based design method and QuickDough adopt sequential high level language C/C++ as design input, but QuickDough still needs further efforts to have the DFG generation done automatically. Vivado HLS based design method needs the compute kernel be synthesized and implemented for each application instance. QuickDough requires compilation for each application instance as well, but could reuse the same hardware infrastructure across the applications in the same domain. It is possible for Vivado HLS based design method to port the synthesized HDL design among different devices and parts, but IP core generation and accelerator implementation depend on specific FPGA device. QuickDough's portability is also limited at HDL level, and complete hardware implementation is needed to port to a different FPGA device.
 
 \subsubsection{Hardware Implementation Efficiency}
-In this section, hardware implementation efficiency including the hardware resource overhead, implementation frequency and implementation scalability using the two accelerator design methods are compared. 
+In this section, hardware implementation efficiency including the hardware resource overhead, implementation frequency and implementation scalability using both Vivado HLS based design method and QuickDough are compared. 
 
-\tabref{tab:hardware-overhead-comparison} exhibits the hardware overhead using both accelerator design methods. It is clear that Vivado HLS based accelrator typically consumes much less FF, LUT and RAM36 due to the delicate customization for each application configuration. However, the number of DSP48 required increases dramatically with the expansion of the application kernel which is mostly induced by loop unrolling. As a result, DSP48 can be the bottleneck that constrains the performance of the accelerator through loop unrolling. SCGRA based accelerator usually costs more FF, LUT and particularly RAM36 as expected, while the DSP consumtion scales linearly with the SCGRA size. Note that the hardware overhead using Vivado HLS based design method in this table refers to the configuration with fixed 2k-word input/output buffer. The overhead with maximum input/output buffer configuration doesn't change the conclusion here and is skipped to save the space. 
+\tabref{tab:hardware-overhead-comparison} exhibits the hardware overhead using both accelerator design methods. It is clear that the accelerators using Vivado HLS based design method typically consume less FF, LUT and RAM36 due to the delicate customization for each application configuration. However, the number of DSP48 required increases dramatically with the expansion of the application kernel and it limits the maximum loop unrolling factors for many applications. The accelerators using QuickDough usually cost comparable DSP48, more FF, LUT and particularly RAM36. Taking consideration of the total resource on FPGA, the overhead of DSP48, FF and LUT are still acceptable, while the RAM36 consumption is really large and it limits the maximum SCGRA that can be implemented on the target FPGA. Accordingly, it further constrains the maximum loop unrolling and blocking as well.
 
-\begin{table}[h]
+\begin{table}[htb]
 \centering
-\caption{Hardware Overhead Using Both Vivado HLS and the SCGRA Based Accelerator Design Methods}
+\caption{Hardware Overhead of The Accelerators Using Both Vivado HLS Bsed Design Method and QuickDough}
 \label{tab:hardware-overhead-comparison}
 \begin{tabular}{|l|l|l|l|l|l|}
 \hline
 \multicolumn{2}{|l|}{} & FF  & LUT & RAM36 & DSP48 \\ \hline
-\multirow{3}{*}{MM}& Small & 5099 & 3730 & 4 & 102 \\ \cline{2-6} 
-                   & Medium & 2778 & 3217 & 4 & 9 \\ \cline{2-6} 
-                   & Large & 8282 & 10228 & 4 & 9 \\ \hline
-\multirow{3}{*}{FIR}& Small & 5287 & 4494 & 4 & 99 \\ \cline{2-6} 
-                   & Medium & 5283 & 4577 & 4 & 99 \\ \cline{2-6} 
-                   & Large & 5283 & 4577 & 4 & 99 \\ \hline
-\multirow{3}{*}{Sobel}& Small & 8503 & 6436 & 4 & 216 \\ \cline{2-6} 
-                   & Medium & 6737 & 5526 & 4 & 144 \\ \cline{2-6} 
-                   & Large & 6755 & 5546 & 4 & 144 \\ \hline
-\multirow{3}{*}{KMean}& Small & 2852 & 3762 & 4 & 24 \\ \cline{2-6} 
-                   & Medium & 5530 & 5427 & 4 & 24 \\ \cline{2-6} 
-                   & Large & 5530 & 5427 & 4 & 24 \\ \hline
-\multicolumn{2}{|l|}{SCGRA 2x2} & 9302 & 5745 & 32 & 4  \\ \hline
-\multicolumn{2}{|l|}{SCGRA 5x5} & 34922 & 21436 & 137 & 25 \\ \hline
+\multirow{3}{*}{\tabincell{c}{MM\\(2K/Max)}}& Small & 4812/4826 & 3390/3390 & 4/128 & 84/84 \\ \cline{2-6} 
+                   & Medium & 4804/4251 & 4703/4866 & 4/128 & 12/9 \\ \cline{2-6} 
+                   & Large & 11107/11024 & 11524/24890 & 4/128 & 12/12 \\ \hline
+\multirow{3}{*}{\tabincell{c}{FIR\\(2K/Max)}}& Small & 3736/3742 & 3570/3570 & 4/128 & 27/27 \\ \cline{2-6} 
+                   & Medium & 3756/3782 & 3872/4246 & 4/128 & 27/27 \\ \cline{2-6} 
+                   & Large & 3756/3792 & 3872/4426 & 4/128 & 27/27 \\ \hline
+\multirow{3}{*}{\tabincell{c}{Sobel\\(2K/Max)}}& Small & 9556/9564 & 6467/6467 & 6/130 & 216/216 \\ \cline{2-6} 
+                   & Medium & 7483/7496 & 5520/5711 & 6/130 & 144/144 \\ \cline{2-6} 
+                   & Large & 7102/7622 & 5501/5904 & 6/130 & 144/144 \\ \hline
+\multirow{3}{*}{\tabincell{c}{KMean\\(2k/Max)}}& Small & 2826/2852 & 3567/3567 & 4/128 & 24/24 \\ \cline{2-6} 
+                   & Medium & 6709/6754 & 8088/8122 & 4/128 & 120/120 \\ \cline{2-6} 
+                   & Large & 6709/6770 & 8088/8205 & 4/128 & 120/120 \\ \hline
+\multicolumn{2}{|l|}{SCGRA 2x2} & 9302 & 5745 & 32 & 24  \\ \hline
+\multicolumn{2}{|l|}{SCGRA 5x5} & 34922 & 21436 & 137 & 150 \\ \hline
 \multicolumn{2}{|l|}{FPGA Resource} & 106400 & 53200 & 140 & 220 \\ \hline
 \end{tabular}
 \end{table}
 
-\figref{fig:impl-freq} shows detailed the implementation frequency of the benchmark using both FPGA accelerator design methods. Vivado HLS based accelerator works at most 100MHz on the Zedboard system due to the slow AXI controller. Even though the accelerator may work at individual clock domain, the synthesized IP core can also be slow especially when relatively larger loop unrolling is employed at high level language program synthesis step. While the SCGRA based is regular and it could works at higher clock domain. To make use of this advantage, the slow AXI controller block and the SCGRA are divided into two separate clock domains. Currently, SCGRA 2x2 works at 200MHz while SCGRA 5x5 works at 167MHz due to the high utilization of BRAM blocks. The controlling logic is slow and works at 100MHz.
+\figref{fig:impl-freq} presents the implementation frequency of the benchmark using both accelerator design methods. Vivado HLS based design method takes timing constrain into consideration at the HLS step, and it could either synthesize the compute kernel to a lower frequency design with better simulation performance or a higher frequency design with worse simulation performance. Neither of them have a clear advantage over the other. While the AXI controller could work at around 100MHz by default and higher frequency design requires delicate placing and routing. Eventually, we set the HLS timing constrain at 100MHz and the whole accelerator could be synchronous. As there are so many different design options, the current design is not necessarily the optimal one, but it is representative. In addition, the synthesized IP core sometimes can be even slower though we set the timing at 100MHz during HLS. In this case, we don't spend time iterating the the HLS and implementing the whole design again. Instead, we just slow down the clock frequency until the timing constrain is met. As a result, sometimes the accelerator can only work at around 60MHz.
 
-\begin{figure}[H]
-\center{\includegraphics[width=0.95\linewidth]{impl-freq}}
-\caption{Implementation Frequency of The Accelerators Using Vivado HLS and QuickDough}
+QuickDough utilizes the SCGRA overlay as the hardware infrastructure. Since the SCGRA overlay is regular and pipelined, the implementation frequency of the accelerator built on top of the SCGRA overlay is much higher than that of the accelerator produced using Vivado HLS. A 2x2 SCGRA based accelerator could run at 200MHz, and a 5x5 SCGRA based accelerator could work at 167MHz. The implementation frequency degrades slightly, because more than 95\% of the BRAM blocks on target FPGA are used and the routing becomes extremely tight. However, the AXI controller block on Zedboard is slower and runs around 100MHz. To take advantage of the higher implementation frequency, simple synchronizers built with consecutive registers are inserted to divide the AXI controller and the SCGRA overlay into two separate clock domains. Also note that the implementation frequency of the SCGRA based accelerators in \figref{fig:impl-freq} actually refers to the SCGRA overlay.
+
+\begin{figure*}[h]
+\center{\includegraphics[width=0.75\linewidth]{impl-freq}}
+\caption{Implementation Frequency of The Accelerators Using Both Vivado HLS Based Design Method and QuickDough}
 \label{fig:impl-freq}
-\end{figure}
+\end{figure*}
 
-When the application data set gets larger, both the accelerator design mathods may further scale the hardware infrastructure through loop unrolling and extending the SCGRA size etc. to accommodate the increased parallelism. Therefore, the scalability of the hardware implementation is also essential for the FPGA acceleration system. Figure xxx shows the implementation frequency of the accelerators kernel on xxx which could accommodate larger design than Zedboard. Since the implementation frequency of the Vivado HLS based accelerator depends on the specific application, we just use the simple matrix multiplication as an example. 
+On top of the hardware overhead and implementation frequency, the scalability of the hardware design is also crucial to tackle larger applications. Since Vivado HLS based design method needs specific circuit for each application instance, we just use matrix multiplication ranging from 5x5 to 20x20 as an example. \emph{xxx} shows the hardware overhead and implementation frequency on ZC706 which is a high-end Zynq system. QuickDough employs SCGRA overlay as the hardware infrastructure, and the hardware implementation doesn't depend on the application mapped to it. In this case, we have a group of SCGRA implemented on the same board. \emph{xxx} shows the corresponding hardware overhead and implementation frequency.  
 
 \subsubsection{Performance}
-In this section, the execution time of the benchmark is taken as the performance metric. Since the execution time of different applications and data sets varies a lot, the performance speedup relative to Vivado HLS based implementation with 2k-Buffer is used instead. \figref{fig:real-perf} shows the performance comparison of four different sets of accelerator implementations including two SCGRA overlay based accelerators and two Vivado HLS based accelerators. According to this figure, Vivado HLS based design method wins the MM-Medium, MM-Large, Sobel-Medium and Sobel-Large, while QuickDough outperforms in FIR with all three data sets, Kmean-Medium and Kmean-Large. The two design methods achieve similar performance on the rest of the benchmark. 
+In this section, the execution time of the benchmark is taken as the performance metric. Since the execution time of different applications and data sets varies a lot, the performance speedup relative to Vivado HLS based implementation with 2k-Buffer configuration is used instead. \figref{fig:real-perf} shows the performance comparison of four different sets of accelerator implementations including two accelerators built with QuickDough and two accelerators developed with Vivado HLS based design method. According to this figure, Vivado HLS based design method wins the MM-Medium, MM-Large, Sobel-Medium and Sobel-Large, while QuickDough outperforms in FIR with all three data sets, Kmean-Medium and Kmean-Large. The two design methods achieve similar performance on the rest of the benchmark. 
 
-\begin{figure}[H]
-\center{\includegraphics[width=0.95\linewidth]{real-perf}}
-\caption{Benchmark Performance Using Both Vivado HLS Based Design Method and The SCGRA Overlay Based Design Method}
+\begin{figure*}[h]
+\center{\includegraphics[width=0.75\linewidth]{real-perf}}
+\caption{Benchmark Performance Using Both Vivado HLS Based Design Method and QuickDough}
 \label{fig:real-perf}
-\end{figure}
+\end{figure*}
 
-To insight in the comparison of the two design methods, \figref{fig:execution-time} presents the execution time decomposition of the benchmark. As the benchmark runs on an ARM + FPGA system where FPGA handles the compute kernel leaving the rest on ARM processor, the execution of the benchmark can be roughly divided into four parts: system initialization such as DMA initialization, communication time between FPGA and ARM processor moving input/output data to/from the FPGA on-chip buffers, FPGA computation and the others such as input/output data reorganization for DMA transmission or corner case processing. The system initialization time is relatively small and is about the same for both design methods. The rest three parts determine the performance of different implementations. In addition, note that the execution time of different applications with diverse data sets varies in a large range. To fit all the data in a single figure, the execution time used in this figure is actually normalized to that of a basic software implementation on ARM. 
+To gain insight into the performance of the two design methods, \figref{fig:execution-time} presents the execution time decomposition of the benchmark. As the execution time of different applications with diverse data sets varies in a large range. To fit all the data in a single figure, the execution time used in this figure is actually normalized to that of a basic software implementation on ARM. The benchmark runs on an ARM + FPGA architecture where FPGA handles the compute kernel leaving the rest on ARM processor, the execution of the benchmark can be roughly divided into four parts: system initialization such as DMA initialization, communication between FPGA and ARM processor moving input/output data to/from the FPGA on-chip buffers, FPGA computation and the others such as input/output data reorganization for DMA transmission or corner case processing. 
 
-According to this figure, Vivado HLS based designs especially the designs with max-buffer configuration perform better performance mainly due to the smaller overhead in communication and others which are essentially the input/output data reorganization time. If we further look at the blocking details in \tabref{tab:loop-unrolling-setup-vivado}, it is clear that Vivado HLS based designs with max-buffer configuration could accommodate both larger data sets and corresponding computation, which could improve data reuse and deduce the amount of communication as well as data reorganization cost eventually. However, when there is little data reuse between the neighboring blocks, the design with larger data block couldn't reduce the amount of communication. Moreover, as the DMA is used to transmit the data between FPGA and Main Memory and it brings additional cost such as DMA setup, communication cost per data can be reduced when the data block per DMA transmission is larger. The benefit will be neglegible when the data set goes upto thousands and the additional DMA cost is amortized, while the exact numer depends on the platform. In all the applications of the benchmark with meidum and large data sets, Vivado HLS based designs especially the Max-Buffer configuration exihibit much smaller communication cost and data reorganization cost.
+According to this figure, accelerators using Vivado HLS based desgin method especially the one with max-buffer configuration perform better performance mainly due to the smaller overhead in communication and the others which are essentially the input/output data reorganization time. As presented in \tabref{tab:loop-unrolling-setup-vivado}, it is clear that accelerators using Vivado HLS based design method with max-buffer configuration could accommodate larger data sets and corresponding computation as well, which may improve the data reuse of the communication and deduce the amount of communication and data reorganization cost. This is one of the major reasons for lower communication cost while using Vivado HLS based design method. Moreover, part of the DMA transmission cost probably induced by DMA initialization routine is independent on the transmitted data size. Therefore, the average communication cost per data can be lower when the data size per DMA transmission is larger. Of course, the benefit will be negligible when the DMA transmission size is big enough to amortize the initialization cost. Because of the reasons mentioned above, for all the applications of the benchmark with medium and large data sets, the accelerators using Vivado HLS based design method especially with the Max-Buffer configuration have smaller communication and data reorganization cost.
 
-\begin{figure}[H]
+\begin{figure*}[h]
 \center{\includegraphics[width=0.95\linewidth]{execution-time}}
-\caption{Implementation Frequency of The Accelerators Using Vivado HLS and QuickDough}
+\caption{Benchmark Execution Time Decomposition Of The Accelerators Using Both Vivado HLS Based Design Method and QuickDough}
 \label{fig:execution-time}
-\end{figure}
+\end{figure*}
 
-Computation time is one of the most significant part of the overal execution time. It basically depends on both the simulation performance in cycles and implementation frequency of the hardware infrastructure. As explained in previous sections, QuickDOugh using SCGRA overlay has regular structure and could provide scalable and higher frequency hardware infrastructure. \figref{fig:kernel-sim-perf} shows the simulation performance which is the product of the block simulation performance and the number of blocks for each application. Apparently, QuickDough still fails to compete with the Vivado HLS based design in Sobel, but the performance gap of MM-Large is much smaller and particularly it shows better simulation performance on almost all the rest of the benchmark. The simulation performance comparison is quite relevant to the depth of the loop unrolling as shown in \tabref{tab:loop-unrolling-setup-vivado} and \tabref{tab:loop-unrolling-setup-scgra}. It indicates that the simulation performance depends heavily on the depth of the loop unrolling no matter HLS based customized circuit or SCGRA based overlay is used as the hardware infrastructure. While QuickDough using SCGRA overlay as the hardware infrastructure has advantages in terms of implementation freqeuncy, it enlarges its advatages in overall computation time as shown in \figref{fig:kernel-real-perf}. 
+Computation time is crucial to the overall execution time. It basically depends on both the simulation performance in cycles and implementation frequency of the hardware infrastructure. \figref{fig:kernel-sim-perf} shows the simulation performance which is the product of the block simulation performance and the number of blocks for each application. From this paper, it is clear that Vivado HLS based design method wins on MM-Large and Sobel while QuickDough outperforms on the rest of the benchmark. Referring to both the simulation performance in this figure and loop unrolling factors in \tabref{tab:loop-unrolling-setup-vivado} and \tabref{tab:loop-unrolling-setup-scgra}, it can be found that the simulation performance is quite relevant to the depth of the loop unrolling. More precisely, the simulation performance mostly depends on the depth of the loop unrolling instead of the specific hardware infrastructure. The only exception is the Sobel benchmark. QuickDough performs more intensive loop unrolling, but the simulation performance is not as good as Vivado HLS. The reason is probably due to the two Sobel operators used in the algorithm. Vivado HLS takes them as constant input and could have special optimization on it. While the DFG generator in QuickDough just takes them as normal variable input and more operations are required. 
 
-\begin{figure}[H]
-\center{\includegraphics[width=0.95\linewidth]{kernel-sim-perf}}
+Loop unrolling factor is crucial to the simulation performance of the compute kernel, while the hardware infrastructure determines how much the loop can be unrolled, which eventually influences the simulation performance of the compute kernel. As presented in \tabref{tab:loop-unrolling-setup-vivado} and \tabref{tab:loop-unrolling-setup-scgra}, the loop unrolling factor with Vivado HLS is smaller than that in QuickDough in many cases. And this explains the comparison of the simulation performance using the two design methods.
+
+\emph{theoretical simulation performance?}
+
+QuickDough using SCGRA overlay as the hardware infrastructure could run at higher frequency, and the advantage of computation time as shown in \figref{fig:kernel-real-perf} is enlarged on top of that in the simulation performance. 
+
+\begin{figure*}[h]
+\center{\includegraphics[width=0.75\linewidth]{kernel-sim-perf}}
 \caption{Simulated Compute Kernel Performance Using Both Vivado HLS Based Design and QuickDough}
 \label{fig:kernel-sim-perf}
-\end{figure}
+\end{figure*}
 
-In summary, Vivado HLS based design could afford larger buffer and accommodate larger block size, which further helps to reduce the communication time and the cost of input/output organization. Therefore, when there are more data reuse among neighboring blocks, the Vivado HLS based design is able to achieve better performance. QuickDough using SCGRA overlay could provide both higher simulation performance with larger loop unrolling in many cases and higher implementation frequency due to its regular structure, so it will win when the target application has smaller data set and more compute intensive kernels.  
+In summary, the accelerators using Vivado HLS based design method could afford larger buffer and accommodate larger block size, which helps to reduce the communication time and the cost of input/output organization. Therefore, when there are more data reuse among neighboring blocks, the accelerators using Vivado HLS based design method achieves better performance. QuickDough using SCGRA overlay could provide both higher simulation performance with larger loop unrolling capability in many cases and higher implementation frequency due to its regular structure, so it wins when the target application has smaller data set or more intensive computation.  
 
-\begin{figure}[H]
-\center{\includegraphics[width=0.95\linewidth]{kernel-real-perf}}
-\caption{Compute Kernel Performance Using Both Vivado HLS Based Design and QuickDough}
+\begin{figure*}[h]
+\center{\includegraphics[width=0.75\linewidth]{kernel-real-perf}}
+\caption{Compute Kernel Performance Using Both Vivado HLS Based Design Method and QuickDough}
 \label{fig:kernel-real-perf}
-\end{figure}
+\end{figure*}
+

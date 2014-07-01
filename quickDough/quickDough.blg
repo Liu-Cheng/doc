@@ -7,45 +7,45 @@ Warning--to sort, need author or key in nios
 Warning--to sort, need author or key in zedboard
 Warning--to sort, need author or key in ROCCC
 Warning--to sort, need author or key in data2mem
-You've used 29 entries,
+You've used 30 entries,
             2118 wiz_defined-function locations,
-            667 strings with 10035 characters,
-and the built_in function-call counts, 11295 in all, are:
-= -- 1113
-> -- 486
+            675 strings with 10138 characters,
+and the built_in function-call counts, 11592 in all, are:
+= -- 1145
+> -- 493
 < -- 17
-+ -- 200
-- -- 164
-* -- 730
-:= -- 1684
-add.period$ -- 93
-call.type$ -- 29
-change.case$ -- 169
++ -- 203
+- -- 166
+* -- 752
+:= -- 1733
+add.period$ -- 96
+call.type$ -- 30
+change.case$ -- 173
 chr.to.int$ -- 0
-cite$ -- 34
-duplicate$ -- 487
-empty$ -- 946
-format.name$ -- 164
-if$ -- 2539
+cite$ -- 35
+duplicate$ -- 498
+empty$ -- 973
+format.name$ -- 166
+if$ -- 2600
 int.to.chr$ -- 0
-int.to.str$ -- 29
-missing$ -- 24
-newline$ -- 148
-num.names$ -- 48
-pop$ -- 238
+int.to.str$ -- 30
+missing$ -- 25
+newline$ -- 153
+num.names$ -- 50
+pop$ -- 240
 preamble$ -- 1
-purify$ -- 140
+purify$ -- 143
 quote$ -- 0
-skip$ -- 386
+skip$ -- 393
 stack$ -- 0
-substring$ -- 659
-swap$ -- 179
+substring$ -- 689
+swap$ -- 180
 text.length$ -- 17
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 116
+type$ -- 120
 warning$ -- 5
-while$ -- 97
-width$ -- 31
-write$ -- 322
+while$ -- 101
+width$ -- 32
+write$ -- 333
 (There were 5 warnings)
