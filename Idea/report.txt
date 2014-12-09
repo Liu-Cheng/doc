@@ -1,0 +1,25 @@
+10-14-2014
+1. Blocking and loop unrolling. There is no direct data dependency between blocking and communication cost.
+Buffer size can be dicided easily based on IO of the loop.
+
+2. IO bandwidth is not an interesting design parameter, as having larger IO bandwidth doesn't have clear design penalty.
+Not an interesting trade-off.
+
+3. The performance model will be the focus of the customization framework and we can't simplify it with a simple opc parameter.
+It determines the loop unrolling factor, CGRA size and interleaving.
+
+4. The performance I get from current scheduler is not enough for modeling. As the performance gets bad when CGRA size goes up for smaller DFGs which are less than 1 thousand.
+
+5. Evolving scheduling algorithm for IO intensive DFG scheduling.
+Load part of the input data, start the computation.
+
+10-21-2014
+1. The design space is not as big as expected.
+2. The impact of the design parameters on performance is usually monotonic. 
+   Loop unrolling --> better performance and larger overhead
+   CGRA size --> better performance and larger overhead
+   IO Buffer size --> better performance and larger overhead
+   IO Buffer bandwidth --> better performance and no clear penalty
+
+   Design goal? performance/cost
+

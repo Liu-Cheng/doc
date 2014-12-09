@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.2-0.9995.2 (TeX Live 2009/Debian) (format=xelatex 2013.9.7)  30 JUN 2014 17:46
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2013.9.7)  4 JUL 2014 12:25
 entering extended mode
  %&-line parsing enabled.
 **benchmark
@@ -20,8 +20,8 @@ istensen
 -- http://www.michaelshell.org/tex/ieeetran/
 \@IEEEtrantmpdimenA=\dimen102
 \@IEEEtrantmpdimenB=\dimen103
-\@IEEEtrantmpcountA=\count80
-\@IEEEtrantmpcountB=\count81
+\@IEEEtrantmpcountA=\count79
+\@IEEEtrantmpcountB=\count80
 \@IEEEtrantmptoksA=\toks14
 LaTeX Font Info:    Try loading font information for OT1+ptm on input line 373.
 
@@ -29,7 +29,7 @@ LaTeX Font Info:    Try loading font information for OT1+ptm on input line 373.
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 -- Using 8.5in x 11in (letter) paper.
--- Using DVI output.
+-- Using PDF output.
 \@IEEEnormalsizeunitybaselineskip=\dimen104
 -- This is a 10 point document.
 \CLASSINFOnormalsizebaselineskip=\dimen105
@@ -84,42 +84,42 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <24> not available
 \IEEEiednormlabelsep=\dimen114
 \IEEEiedmathlabelsep=\dimen115
 \IEEEiedtopsep=\skip41
-\c@section=\count82
-\c@subsection=\count83
-\c@subsubsection=\count84
-\c@paragraph=\count85
-\c@IEEEsubequation=\count86
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@IEEEsubequation=\count85
 \abovecaptionskip=\skip42
 \belowcaptionskip=\skip43
-\c@figure=\count87
-\c@table=\count88
-\@IEEEeqnnumcols=\count89
-\@IEEEeqncolcnt=\count90
+\c@figure=\count86
+\c@table=\count87
+\@IEEEeqnnumcols=\count88
+\@IEEEeqncolcnt=\count89
 \@IEEEtmpitemindent=\dimen116
-\c@IEEEbiography=\count91
+\c@IEEEbiography=\count90
 \@IEEEtranrubishbin=\box26
 ) (/usr/share/texmf-texlive/tex/latex/listings/listings.sty
 (/usr/share/texmf-texlive/tex/latex/graphics/keyval.sty
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks15
 )
-\lst@mode=\count92
+\lst@mode=\count91
 \lst@gtempboxa=\box27
 \lst@token=\toks16
-\lst@length=\count93
+\lst@length=\count92
 \lst@currlwidth=\dimen117
-\lst@column=\count94
-\lst@pos=\count95
+\lst@column=\count93
+\lst@pos=\count94
 \lst@lostspace=\dimen118
 \lst@width=\dimen119
-\lst@newlines=\count96
-\lst@lineno=\count97
+\lst@newlines=\count95
+\lst@lineno=\count96
 \lst@maxwidth=\dimen120
 
 (/usr/share/texmf-texlive/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
-\c@lstnumber=\count98
-\lst@skipnumbers=\count99
+\c@lstnumber=\count97
+\lst@skipnumbers=\count98
 \lst@framebox=\box28
 )
 (/usr/share/texmf-texlive/tex/latex/listings/listings.cfg
@@ -142,11 +142,11 @@ Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 (/etc/texmf/tex/latex/config/graphics.cfg
 File: graphics.cfg 2009/08/28 v1.8 graphics configuration of TeX Live
 )
-Package graphics Info: Driver file: xetex.def on input line 91.
+Package graphics Info: Driver file: pdftex.def on input line 91.
 
-(/usr/share/texmf-texlive/tex/xelatex/xetex-def/xetex.def
-File: xetex.def 2009/11/22 v0.94 LaTeX color/graphics driver for XeTeX (RRM/JK)
-
+(/usr/share/texmf-texlive/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2010/03/12 v0.04p Graphics/color for pdfTeX
+\Gread@gobject=\count99
 ))
 \Gin@req@height=\dimen121
 \Gin@req@width=\dimen122
@@ -173,6 +173,20 @@ LaTeX Font Info:    ... okay on input line 357.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 357.
 LaTeX Font Info:    ... okay on input line 357.
 \c@lstlisting=\count100
+
+(/usr/share/texmf-texlive/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count101
+\scratchdimen=\dimen125
+\scratchbox=\box29
+\nofMPsegments=\count102
+\nofMParguments=\count103
+\everyMPshowfont=\toks17
+\MPscratchCnt=\count104
+\MPscratchDim=\dimen126
+\MPnumerator=\count105
+\everyMPtoPDFconversion=\toks18
+)
 LaTeX Font Info:    Calculating math sizes for size <11> on input line 408.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <11> on input line 408.
@@ -184,111 +198,40 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 408.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 408.
-
-
-LaTeX Warning: Citation `martin2009high' on page 1 undefined on input line 460.
-
-
-
-LaTeX Warning: Citation `dutt1992benchmarks' on page 1 undefined on input line 
-491.
-
-
-LaTeX Warning: Citation `panda19951995' on page 1 undefined on input line 491.
-
-
-LaTeX Warning: Citation `dutt1992benchmarks' on page 1 undefined on input line 
-491.
-
-
-LaTeX Warning: Citation `panda19951995' on page 1 undefined on input line 491.
-
-
-LaTeX Warning: Citation `hara2008chstone' on page 1 undefined on input line 493
-.
-
-[1
+ [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
 ]
-
-LaTeX Warning: Citation `carrions2cbench' on page 2 undefined on input line 495
-.
-
-
-Overfull \hbox (20.05444pt too wide) in paragraph at lines 569--607
+Overfull \hbox (20.05444pt too wide) in paragraph at lines 554--592
 [][] 
  []
 
-
-LaTeX Warning: Citation `guthaus2001mibench' on page 2 undefined on input line 
-620.
-
 [2]
-
-LaTeX Warning: Citation `fowler1999refactoring' on page 3 undefined on input li
-ne 657.
-
-[3]
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 666.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 650.
 
  (/usr/share/texmf-texlive/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <8> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 666.
-LaTeX Font Info:    Try loading font information for OML+ptm on input line 689.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 650.
+LaTeX Font Info:    Try loading font information for OML+ptm on input line 673.
 
 
 (/usr/share/texmf-texlive/tex/latex/psnfss/omlptm.fd
 File: omlptm.fd 
 )
 LaTeX Font Info:    Font shape `OML/ptm/m/n' in size <8> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 689.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[4]
-
-LaTeX Warning: File `bitmap.png' not found on input line 780.
-
-! Unable to load picture or PDF file 'bitmap.png'.
-<to be read again> 
-                   }
-l.780     \includegraphics[scale=0.3]{bitmap.png}
-                                                 \\
-? 
-File: bitmap.png Graphic file (type QTm)
-<use  "bitmap.png" >
-! Unable to load picture or PDF file 'bitmap.png'.
-<to be read again> 
-                   \GXT@clipend 
-l.780     \includegraphics[scale=0.3]{bitmap.png}
-                                                 \\
-? 
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 673.
+ [3]
+<bitmap.pdf, id=20, 554.07pt x 280.04625pt>
+File: bitmap.pdf Graphic file (type pdf)
+ <use bitmap.pdf>
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 792.
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[5]
-
-LaTeX Warning: Citation `sedgewick1978implementing' on page 6 undefined on inpu
-t line 878.
-
+(Font)              <6> on input line 761.
+ [4 <./bitmap.pdf>]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 886.
-
-LaTeX Warning: Citation `feist2012vivado' on page 6 undefined on input line 936
-.
-
-
-LaTeX Warning: Citation `volder1959cordic' on page 6 undefined on input line 10
-95.
-
-[6]
-No file benchmark.bbl.
+(Font)              <8> on input line 853.
+(./benchmark.bbl)
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -300,18 +243,28 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[7] (./benchmark.aux)
-
-LaTeX Warning: There were undefined references.
-
- ) 
+[5] [6] (./benchmark.aux) ) 
 Here is how much of TeX's memory you used:
- 2630 strings out of 494665
- 40407 string characters out of 1166478
- 129426 words of memory out of 3000000
- 5882 multiletter control sequences out of 15000+50000
- 29248 words of font info for 66 fonts, out of 3000000 for 9000
- 672 hyphenation exceptions out of 8191
+ 2991 strings out of 493848
+ 45226 string characters out of 1152824
+ 152558 words of memory out of 3000000
+ 6270 multiletter control sequences out of 15000+50000
+ 42376 words of font info for 78 fonts, out of 3000000 for 9000
+ 717 hyphenation exceptions out of 8191
  32i,8n,32p,1359b,1225s stack positions out of 5000i,500n,10000p,200000b,50000s
+{/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.en
+c}</usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/sha
+re/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-tex
+live/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-texlive/fonts/ty
+pe1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1/public/
+amsfonts/cm/cmsy6.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/
+cmsy7.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy8.pfb></
+usr/share/texmf-texlive/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf-texl
+ive/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texmf-texlive/fonts/type1/urw
+/times/utmr8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmri8a.pfb>
+Output written on benchmark.pdf (6 pages, 261766 bytes).
+PDF statistics:
+ 76 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
-Output written on benchmark.pdf (7 pages).

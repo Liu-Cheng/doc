@@ -1,25 +1,43 @@
-\documentclass[journal]{IEEEtran}
+\documentclass[prodmode,acmtrets]{acmsmall}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage[algo2e]{algorithm2e}
+\renewcommand{\algorithmcfname}{ALGORITHM}
+\SetAlFnt{\small}
+\SetAlCapFnt{\small}
+\SetAlCapNameFnt{\small}
+\SetAlCapHSkip{0pt}
+\IncMargin{-\parindent}
+
+% Metadata Information
+\acmVolume{0}
+\acmNumber{0}
+\acmArticle{1}
+\acmYear{2014}
+\acmMonth{0}
+
 \usepackage{graphicx}
 \usepackage{multirow}
 \usepackage[caption=false,font=footnotesize]{subfig}
 \usepackage{dblfloatfix}
-\usepackage{algorithmic}
-\usepackage{algorithm}
 \usepackage{xspace}
 \usepackage{url}
 \usepackage[square, comma, sort&compress, numbers]{natbib}
 
-%\renewcommand{\topfraction}{0.5}
-%\renewcommand{\dbltopfraction}{0.5}
+\setlength{\parskip}{0pt}
+\renewcommand{\topfraction}{1}
+\renewcommand{\textfraction}{0.15}
+\renewcommand{\dbltopfraction}{1}
 
 \renewcommand\floatpagefraction{.9}
 \renewcommand\topfraction{.9}
 \renewcommand\bottomfraction{.9}
 \renewcommand\dbltopfraction{.9}
 \renewcommand\textfraction{.1}   
-\setcounter{totalnumber}{50}
-\setcounter{topnumber}{50}
-\setcounter{bottomnumber}{50}
+\setcounter{totalnumber}{4}
+\setcounter{topnumber}{8}
+\setcounter{bottomnumber}{4}
+\setcounter{dbltopnumber}{4}
 
 \newcommand{\eqnref}[1]{(\ref{#1})}
 \newcommand{\figref}[1]{Figure~\ref{#1}}
@@ -33,23 +51,39 @@
 
 \begin{document}
 
-\title{QuickDough: A Rapid FPGA Accelerator Design Method Using Soft Coarse-Grained Reconfigurable Array Overlay}
-\author{Michael~Shell,~\IEEEmembership{Member,~IEEE,}
-John~Doe,~\IEEEmembership{Fellow,~OSA,}
-and~Jane~Doe,~\IEEEmembership{Life~Fellow,~IEEE}% <-this % stops a space
-\thanks{M. Shell is with the Department of Electrical and Computer Engineering, Georgia Institute of Technology, Atlanta,GA, 30332 USA e-mail: (see http://www.michaelshell.org/contact.html).} % <-this % stops a space
-\thanks{J. Doe and J. Doe are with Anonymous University.}% <-this % stops a space
-\thanks{Manuscript received April 19, 2005; revised January 11, 2007.}
+\markboth{C.Liu et al.}{QuickDough: A Rapid FPGA Accel. Design Framework using SCGRA Overlay}
+
+\title{QuickDough: A Rapid FPGA Accelerator Design Framework using Soft Coarse-Grained Reconfigurable Array Overlay}
+\author{CHENG LIU
+\affil{The University of Hong Kong}
+COLIN YU LIN
+\affil{The University of Hong Kong}
+HAYDEN KWOK-HAY SO
+\affil{The University of Hong Kong}
 }
-\maketitle
 
 \begin{abstract}
     \input{abstract}
 \end{abstract}
 
-\begin{IEEEkeywords}
-    Overlay, FPGA Accelerator, Soft Coarse Grain Reconfigurable Array, Design Productivity
-\end{IEEEkeywords}
+\terms{Design, FPGA, Overlay, CGRA}
+\keywords{Overlay, FPGA Accelerator, Soft Coarse 
+Grain Reconfigurable Array, Design Productivity}
+
+\acmformat{Cheng Liu, Colin Yu Lin, and Hayden Kwok-Hay So, 2014. 
+QuickDough: A Rapid FPGA Accelerator Design Methodology Using Soft 
+Coarse-Grained Reconfigurable Array Overlay.}
+
+\begin{bottomstuff}
+This work is supported by xxx
+
+Author's addresses: Cheng Liu, Colin Yu Lin, and Hayden Kwok-Hay So
+Department of Electrical and Electronic Engineering, The University of
+Hong Kong, Pokfulam Road, Hong Kong
+
+\end{bottomstuff}
+
+\maketitle
 
 \input{introduction}
 \input{relatedwork}
@@ -59,7 +93,7 @@ and~Jane~Doe,~\IEEEmembership{Life~Fellow,~IEEE}% <-this % stops a space
 \input{experiments}
 \input{conclusions}
 
-\bibliographystyle{plain}
+\bibliographystyle{newapa}
 \bibliography{refs}
 
 \end{document}

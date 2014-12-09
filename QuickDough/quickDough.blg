@@ -1,51 +1,45 @@
 This is BibTeX, Version 0.99c (TeX Live 2009/Debian)
 The top-level auxiliary file: quickDough.aux
-The style file: plain.bst
+The style file: newapa.bst
 Database file #1: refs.bib
-Warning--to sort, need author or key in microblaze
-Warning--to sort, need author or key in nios
-Warning--to sort, need author or key in zedboard
-Warning--to sort, need author or key in ROCCC
-Warning--to sort, need author or key in data2mem
-You've used 30 entries,
-            2118 wiz_defined-function locations,
-            675 strings with 10138 characters,
-and the built_in function-call counts, 11592 in all, are:
-= -- 1145
-> -- 493
-< -- 17
-+ -- 203
-- -- 166
-* -- 752
-:= -- 1733
-add.period$ -- 96
-call.type$ -- 30
-change.case$ -- 173
-chr.to.int$ -- 0
-cite$ -- 35
-duplicate$ -- 498
-empty$ -- 973
-format.name$ -- 166
-if$ -- 2600
-int.to.chr$ -- 0
-int.to.str$ -- 30
-missing$ -- 25
-newline$ -- 153
-num.names$ -- 50
-pop$ -- 240
+You've used 29 entries,
+            2708 wiz_defined-function locations,
+            759 strings with 10711 characters,
+and the built_in function-call counts, 16024 in all, are:
+= -- 1475
+> -- 794
+< -- 29
++ -- 317
+- -- 303
+* -- 1422
+:= -- 2933
+add.period$ -- 98
+call.type$ -- 29
+change.case$ -- 275
+chr.to.int$ -- 29
+cite$ -- 29
+duplicate$ -- 648
+empty$ -- 1013
+format.name$ -- 346
+if$ -- 3082
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 26
+newline$ -- 151
+num.names$ -- 116
+pop$ -- 274
 preamble$ -- 1
-purify$ -- 143
+purify$ -- 304
 quote$ -- 0
-skip$ -- 393
+skip$ -- 487
 stack$ -- 0
-substring$ -- 689
-swap$ -- 180
+substring$ -- 899
+swap$ -- 217
 text.length$ -- 17
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 120
-warning$ -- 5
-while$ -- 101
-width$ -- 32
-write$ -- 333
-(There were 5 warnings)
+type$ -- 174
+warning$ -- 0
+while$ -- 141
+width$ -- 0
+write$ -- 394

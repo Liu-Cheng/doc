@@ -8,10 +8,10 @@ IMGFILES=
 #	pdflatex codes1078-so
 
 $(TITLE).pdf : $(FILES) $(BIBFILES) $(IMGFILES)
-	xelatex $(TITLE)
+	pdflatex $(TITLE)
 	bibtex $(TITLE)
-	xelatex $(TITLE)
-	xelatex $(TITLE)
+	pdflatex $(TITLE)
+	pdflatex $(TITLE)
 
 .PHONY : clean
 clean :

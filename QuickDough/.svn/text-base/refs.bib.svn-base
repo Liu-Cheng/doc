@@ -1,11 +1,11 @@
 @inproceedings{zuma2013carl, 
-    author={Brant, A. and Lemieux, G.G.F.}, 
-    booktitle={Field-Programmable Custom Computing Machines (FCCM), 2012 IEEE 20th Annual
-        International Symposium on}, 
-    title={ZUMA: An Open FPGA Overlay Architecture}, 
-    year={2012}, 
-    pages={93-96}, 
-    abstract={This paper presents the ZUMA open FPGA overlay architecture. It is an open-source,
+    author = {Brant, A. and Lemieux, G.G.F.}, 
+    booktitle = {Field-Programmable Custom Computing Machines (FCCM), 
+2012 IEEE 20th Annual International Symposium on}, 
+    title = {ZUMA: An Open FPGA Overlay Architecture}, 
+    year = {2012}, 
+    pages = {93--96}, 
+    abstract = {This paper presents the ZUMA open FPGA overlay architecture. It is an open-source,
         cross-compatible embedded FPGA architecture that is intended to overlay on top of an
             existing FPGA, in essence an ”FPGA-on-an-FPGA.” This approach has a number of benefits,
         including bitstream compatibility between different vendors and parts, compatibility with
@@ -17,7 +17,7 @@
             elements of the host architecture, ZUMA reduces this penalty to as low as 40x. Using the
             VTR (VPR6) academic tool How, we have been able to compile the entire MCNC benchmark
             suite to ZUMA. We invite authors of other tool Hows to target ZUMA.}, 
-    keywords={embedded systems;field programmable gate arrays;programmable logic devices;public
+    keywords = {embedded systems;field programmable gate arrays;programmable logic devices;public
         domain software;reconfigurable architectures;FPGA-on-an-FPGA;MCNC benchmark suite;VPR6
             academic tool;VTR academic tool;ZUMA open FPGA overlay architecture;bitstream
             compatibility;commercial FPGA;designer productivity;low-level elements;master
@@ -25,7 +25,7 @@
             architecture;programmable logic;Design automation;Field programmable gate
             arrays;Hardware design languages;Routing;Switches;Table lookup;Field programmable gate
             arrays;Reconfigurable architectures;productivity}, 
-    doi={10.1109/FCCM.2012.25}
+    doi = {10.1109/FCCM.2012.25}
 }
 
 @article{cong2011high,
@@ -39,14 +39,6 @@
   publisher={IEEE}
 }
 
-@article{zhang2008autopilot,
-  title={{AutoPilot}: A platform-based {ESL} synthesis system},
-  author={Zhang, Z. and Fan, Y. and Jiang, W. and Han, G. and Yang, C. and Cong, J.},
-  journal={High-Level Synthesis: From Algorithm to Digital Circuit},
-  pages={99--112},
-  year={2008},
-  publisher={Springer, New York, NY, USA}
-}
 
 @inproceedings{cong2006platform,
   title={Platform-based behavior-level and system-level synthesis},
@@ -107,10 +99,20 @@ ISSN={},}
 }
 
 @misc{data2mem,
+   author = "Xilinx",
+   year = 2012,
    title = "data2mem",
    howpublished ="\url{http://www.xilinx.com/support/documentation/sw_manuals/xilinx11/data2mem.pdf}",
    note = "[Online; accessed 19-September-2012]"
  }
+
+@misc{VivadoHLS,
+  author = "Xilinx",
+  year = "2014",
+  title = "Vivado HLS",
+  howpublished = "\url{http://www.xilinx.com/products/design-tools/vivado/integration/esl-design/}",
+  note = "[Online; accessed 18-October-2014]"
+}
 
 @article{meeus2012overview,
   title={An overview of today’s high-level synthesis tools},
@@ -122,30 +124,40 @@ ISSN={},}
 }
 
 @misc{llvm,
+   author = "LLVM",
+   year = "2013",
    title = "The {LLVM} compiler framework",
    howpublished = "\url{http://llvm.org}",
    note = "[Online; accessed 19-September-2013]"
  }
 
 @misc{ROCCC,
+   author = "ROCCC",
+   year = "2014",
    title = "ROCCC2.0",
    howpublished = "\url{http://www.jacquardcomputing.com/roccc/}",
    note = "[Online; accessed 19-January-2014]"
  }
 
 @misc{microblaze,
+  author = "Xilinx",
+  year = "2014",
   title = "MicroBlaze Soft Processor Core",
   howpublished = "\url{http://www.xilinx.com/tools/microblaze.htm}",
   note = "[Online; accessed 25-June-2014]"
 }
 
 @misc{nios,
+  author = "Altera",
+  year = "2014",
   title = "Nios Embedded Processor",
   howpublished = "\url{http://www.altera.com/products/ip/processors/nios/nio-index.html}",
   note = "[Online; accessed 25-June-2014]"
 }
 
 @misc{zedboard,
+  author = "Avnet",
+  year = "2014",
   title = "Zedboard",
   howpublished = "\url{http://www.zedboard.org/}",
   note = "[Online; accessed 25-June-2014]"
@@ -206,7 +218,7 @@ year={2010},
 month={april},
 volume={},
 number={},
-pages={1 -8},
+pages={1--8},
 keywords={PATIS dynamic floorplanner;Xilinx tools;area optimization;large-scale static design;multicore platforms;multiprocessor platforms;partial reconfiguration design flow;reconfigurable hardware development;run-time module swapping;software-like productivity;static FPGA design productivity;structured physical interfaces;synthesized logic analysis circuitry;field programmable gate arrays;logic design;microprocessor chips;},
 doi={10.1109/IPDPSW.2010.5470755},
 ISSN={},}
@@ -252,14 +264,11 @@ ISSN={},}
 }
 
 @article{Jeffrey2011potential,
-  author    = {Jeffrey Kingyens and
-               J. Gregory Steffan},
+  author    = {Jeffrey Kingyens and J. Gregory Steffan},
   title     = {The Potential for a GPU-Like Overlay Architecture for FPGAs},
   journal   = {Int. J. Reconfig. Comp.},
   volume    = {2011},
   year      = {2011},
-  ee        = {http://dx.doi.org/10.1155/2011/514581},
-  bibsource = {DBLP, http://dblp.uni-trier.de}
 }
 
 @INPROCEEDINGS{unnikrishnan2009application, 
@@ -298,7 +307,7 @@ booktitle={Field-Programmable Technology (FPT), 2012 International Conference on
 title={VENICE: A compact vector processor for FPGA applications}, 
 year={2012}, 
 month={Dec}, 
-pages={261-268}, 
+pages={261--268}, 
 abstract={This paper presents VENICE, a new soft vector processor (SVP) for FPGA applications. VENICE differs from previous SVPs in that it was designed for maximum throughput with a small number (1 to 4) of ALUs. By increasing clockspeed and eliminating bottlenecks in ALU utilization, VENICE can achieve over 2x better performance-per-logic block than VEGAS, the previous best SVP. While VENICE can scale to a large number of ALUs, a multiprocessor system of smaller VENICE SVPs is shown to scale better for benchmarks with limited innerloop parallelism. VENICE is also simpler to program, as its instructions use standard C pointers into a scratchpad memory rather than vector registers.}, 
 keywords={field programmable gate arrays;multiprocessing systems;vector processor systems;ALU;FPGA applications;SVP;VEGAS;VENICE;compact vector processor;multiprocessor system;Engines;Field programmable gate arrays;Parallel processing;Program processors;Programming;Registers;Vectors;FPGA;SIMD;scratchpad memory;soft processors;vector}, 
 doi={10.1109/FPT.2012.6412146},}
@@ -309,7 +318,7 @@ booktitle={Emerging VLSI Technologies and Architectures, 2006. IEEE Computer Soc
 title={QUKU: a two-level reconfigurable architecture}, 
 year={2006}, 
 month={March}, 
-pages={6 pp.-}, 
+pages={}, 
 abstract={FPGAs have been used for prototyping of ASICs, for low-volume ASIC replacement and for systems requiring in-field hardware upgrades. However, the potential to use dynamic reconfiguration to adapt FPGA operation to changing application requirements has been hampered by slow reconfiguration times, and poor CAD tool support. In this paper, a new architecture, QUKU (pronounced cuckoo), is described which uses a coarse-grained reconfigurable PE array (CGRA) overlaid on an FPGA. The low-speed reconfigurability of the FPGA is used to optimize the CGRA for different applications, while the high-speed CGRA reconfiguration is used within an application for operator re-use. An FIR filter kernel has been implemented on QUKU and is shown to have performance which bridges the gap between softcore CPUs and custom FPGA filter circuits}, 
 keywords={application specific integrated circuits;field programmable gate arrays;logic design;reconfigurable architectures;ASIC;CGRA reconfiguration;FIR filter kernel;FPGA;QUKU;coarse-grained reconfigurable PE array;two-level reconfigurable architecture;Application software;Application specific integrated circuits;Bandwidth;Bridge circuits;Field programmable gate arrays;Finite impulse response filter;Hardware;Microprocessors;Prototypes;Reconfigurable architectures}, 
 doi={10.1109/ISVLSI.2006.76},}
@@ -320,7 +329,7 @@ booktitle={Field-Programmable Technology (FPT), 2012 International Conference on
 title={Guppy: A GPU-like soft-core processor}, 
 year={2012}, 
 month={Dec}, 
-pages={57-60}, 
+pages={57--60}, 
 abstract={The popularity of GPU programming languages that explicitly express thread-level parallelism leads to the question of whether they can also be used for programming reconfigurable accelerators. This paper describes Guppy, a GPU-like softcore processor based on the in-order LEON3 core. Our long-term vision is to have a unified programming paradigm for accelerators - regardless of whether they are FPGA or GPU based. While others have explored this from a high level hardware synthesis perspective, we chose to adopt the approach of a parametrically reconfigurable softcore. We will discuss the main architecture features of Guppy, compare its performance to the original core. Our design has been synthesized on a Xilinx Virtex 5 FPGA.}, 
 keywords={field programmable gate arrays;graphics processing units;logic design;reconfigurable architectures;GPU programming languages;GPU-like soft-core processor;Guppy;LEON3 core;Xilinx Virtex 5 FPGA;architecture features;reconfigurable accelerator programming;reconfigurable softcore;unified programming paradigm;Field programmable gate arrays;Graphics processing units;Hardware;Pipelines;Programming;Registers;Switches}, 
 doi={10.1109/FPT.2012.6412112},}
@@ -349,7 +358,7 @@ booktitle={Field-Programmable Technology, 2009. FPT 2009. International Conferen
 title={An architecture for exploiting coarse-grain parallelism on FPGAs}, 
 year={2009}, 
 month={Dec}, 
-pages={285-291}, 
+pages={285--291}, 
 abstract={We propose the use of a novel architecture, called the multi-level computing architecture (MLCA) to efficiently exploit coarse-grain parallelism on FPGAs. The central component of the MLCA is its control processor (CP), which is analogous to an out-of-order scheduling unit of a superscalar processor. The CP schedules coarse-grain units of computation, or tasks, onto processing units (PUs). In this paper, we explore the FPGA implementation of the CP and demonstrate the scalability of the MLCA for multimedia applications. We design, test and evaluate an 8-PU MLCA system. Our evaluation using 4 realistic multimedia applications indicates that the applications exhibit good scalability up to 8 PUs. Furthermore, the evaluation indicates that our CP design poses no bottlenecks to performance and has little overhead in terms of resource usage.}, 
 keywords={field programmable gate arrays;microprocessor chips;multimedia systems;coarse-grain parallelism;control processor;field programmable gate array;multilevel computing architecture;multimedia applications;out-of-order scheduling unit;processing units;superscalar processor;Centralized control;Computer architecture;Concurrent computing;Field programmable gate arrays;Out of order;Parallel processing;Process control;Processor scheduling;Scalability;System testing}, 
 doi={10.1109/FPT.2009.5377658},}
@@ -389,10 +398,10 @@ ISSN={0278-0070},}
 }
 
 
-@INPROCEEDINGS{Kock2013CI, 
+@INPROCEEDINGS{Koch2013CI, 
 author={Koch, D. and Beckhoff, C. and Lemieux, G.G.F.}, 
 booktitle={Field Programmable Logic and Applications (FPL), 2013 23rd International Conference on}, 
-title={An efficient FPGA overlay for portable custom instruction set extensions}, 
+title={An efficient {FPGA} overlay for portable custom instruction set extensions}, 
 year={2013}, 
 month={Sept}, 
 pages={1-8}, 
@@ -438,3 +447,39 @@ keywords={electronic engineering computing;field programmable gate arrays;hardwa
  address = {New York, NY, USA},
  keywords = {CSoC, code generation, hw/sw co-design},
 } 
+
+@inproceedings{Canis:2011:LHS:1950413.1950423,
+ author = {Canis, Andrew and Choi, Jongsok and Aldham, Mark and Zhang, Victor and Kammoona, Ahmed and Anderson, Jason H. and Brown, Stephen and Czajkowski, Tomasz},
+ title = {{LegUp: High-level Synthesis for FPGA-based Processor/Accelerator Systems}},
+ booktitle = {Proceedings of the 19th ACM/SIGDA International Symposium on Field Programmable Gate Arrays},
+ series = {FPGA '11},
+ year = {2011},
+ isbn = {978-1-4503-0554-9},
+ location = {Monterey, CA, USA},
+ pages = {33--36},
+ numpages = {4},
+ url = {http://doi.acm.org/10.1145/1950413.1950423},
+ doi = {10.1145/1950413.1950423},
+ acmid = {1950423},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {field-programmable gate arrays, fpgas, hardware/software co-design, high-level synthesis},
+} 
+
+
+@article{chen2005xpilot,
+  title={xpilot: A platform-based behavioral synthesis system},
+  author={Chen, Deming and Cong, Jason and Fan, Yiping and Han, Guoling and Jiang, Wei and Zhang, Zhiru},
+  journal={SRC TechCon},
+  volume={5},
+  year={2005}
+}
+
+@incollection{zhang2008autopilot,
+  title={AutoPilot: A platform-based ESL synthesis system},
+  author={Zhang, Zhiru and Fan, Yiping and Jiang, Wei and Han, Guoling and Yang, Changqi and Cong, Jason},
+  booktitle={High-Level Synthesis},
+  pages={99--112},
+  year={2008},
+  publisher={Springer}
+}

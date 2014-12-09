@@ -410,7 +410,7 @@ $\S$ Corresponding Author: yanghg@mail.ie.ac.cn}}
 
 \begin{abstract}
 %\boldmath
-Due to the lack of benchmarks, currently, FPGA High Level Synthesis(HLS) tools cannot be evaluated effectively. To solve this problem, this paper develops a suite of open-source benchmarks in C/C++ format for HLS. 20 benchmarks, which cover numerous fields including network, communication, multimedia and image processing, are carefully selected from the well-known SPEC CPU 2006, MiBench, MediaBench and LINPACK benchmarks. Since the current High Level Synthesis is not supportive of specific characteristics in C/C++, to apply CPU benchmarks to HLS, modifications and refactoring of code are carried on the 20 C/C++ benchmarks without changing the original functions. During the process, this paper proposes template metaprogramming to accommodate the recursion algorithm in HLS and an efficient memory allocation algorithm to support functions for dynamically allocating memory, such as malloc. After conversion, we implement the 20 benchmarks on Vivado, Xinlinx, and evaluate the resources cost by each benchmark. The experimental results show that the benchmark suite cost BRAM from 124KB to 321451KB, DSP from 1232 to 23455,  FF from 4566 to 12256, and LUT from 2134 to 124324.
+Due to the lack of benchmarks, currently, the FPGA High Level Synthesis(HLS) tool cannot be evaluated effectively. To solve this problem, this paper develops a suit of open-source benchmarks in C/C++ format for HLS. 20 benchmarks, which cover numerous fields including network, communication, multimedia and image processing, are carefully selected from the well-known SPEC CPU 2006, MiBench, MediaBench and LINPACK benchmarks. Since the current High Level Synthesis is not supportive of specific characteristics in C/C++, to apply CPU benchmarks to HLS, modifications and refactoring of code are carried on the 20 C/C++ benchmarks without changing the original functions. During the process, this paper proposes template metaprogramming to accommodate the recursion algorithm in HLS and an efficient memory allocation algorithm to support functions for dynamically allocating memory, such as malloc. After conversion, we implement the 20 benchmarks on Vivado, Xinlinx, and evaluate the resources cost by each benchmark. The experimental results show that the benchmark suit cost BRAM from 124KB to 321451KB, DSP from 1232 to 23455,  FF from 4566 to 12256, and LUT from 2134 to 124324.
 \end{abstract}
 % IEEEtran.cls defaults to using nonbold math in the Abstract.
 % This preserves the distinction between vectors and scalars. However,
@@ -420,6 +420,9 @@ Due to the lack of benchmarks, currently, FPGA High Level Synthesis(HLS) tools c
 % math in the abstract anyway.
 
 % no keywords
+
+
+
 
 % For peer review papers, you can put extra information on the cover
 % page as needed:
@@ -459,15 +462,15 @@ Due to the lack of benchmarks, currently, FPGA High Level Synthesis(HLS) tools c
 
 The increasing design complexity pushes the design community to seek high level design abstractions with higher productivity over the conventional register transfer level (RTL). High-level synthesis (HLS), which enables the automatic synthesis of high-level specifications to low-level cycle-accurate RTL specifications for efficient implementation on ASICs and particularly FPGAs, is one of the most promising solutions. There are already a great number of HLS tools so far from both the industry and academia as summarized in~\cite{martin2009high}. 
 
-However, the HLS tools usually could only support a subset characteristics of a specified high level language and the synthesizable subsets also vary a lot, therefore, a benchmark that could fit most of the HLS tools is still greatly needed. In addition, HLS tools target random logic synthesis and the benchmark should cover a large number of representative domains of applications. For these purposes, we build a benchmark HLS-Bench which involves 20 applications selected from LINPACK, MediaBench, MiBench, and SPEC CPU 2006. It covers various application domains including networking, communication, security, multimedia, image processing and so on. In addition, instead of using a static data set, we have three diverse data sets for each of the application, which helps insight in the scalability of the HLS tools. To make sure the benchmark be easily supported by the general HLS tools, we have performed a series of code transformation like replacing dynamic link list data structure with static arrays, changing the recursive implementation with non-recursive one, developing dynamic memory manager to support some of the \emph{malloc} and \emph{free} and so on. This benchmark suite is available \emph{HLS-Bench} under LGPL license.
+However, the HLS tools usually could only support a subset features of an high level language and the synthesizable subset also varies a lot. Therefore, a benchmark that could fit most of the HLS tools is still greatly needed. As HLS tools target random logic synthesis, the benchmark should cover a large number of representative domains of applications. For these purposes, we build a benchmark HLS-Bench which involves 20 applications selected from LINPACK, MediaBench, MiBench, and SPEC CPU 2006. It consists of various application domains including networking, communication, security, multimedia, image processing and so on. In addition, instead of using a static data set, we have three diverse data sets for each of the application, which helps to gain insight in the scalability of the HLS tools. To make sure the benchmark be easily supported by the general HLS tools, we further performed a series of code transformation like replacing dynamic link list data structure with static arrays, changing the recursive implementation with non-recursive one, developing dynamic memory manager to support some of the \emph{malloc} and \emph{free} and so on. This benchmark suite is available \emph{HLS-Bench} under LGPL license.
 
-Finally, we have the benchmark implemented using Xilinx Vivado HLS and evaluate the timing, performance as well as the hardware overhead. The experiments show that the benchmark covers a diverse scale of implementation where bram, dsp, ff and lut consumption range from 124kb to 321451kb, 1232 to 23455, 4566 to 12256 and 2134 to 124324 respectively.  
+Finally, we have the benchmark implemented using Xilinx Vivado HLS and evaluate the timing as well as the hardware overhead. The experiments show that the benchmark covers a distinct scale of implementations where BRAM, DSP48, FF and LUT consumption range from 124kb to 321451kb, 1232 to 23455, 4566 to 12256 and 2134 to 124324 respectively.  
 
 The contributions of this paper can be summarized as below:
 \begin{itemize}
   \item An open source benchmark suite in c/c++ for FPGA HLS is presented, which covers a wide range of application domains.
-  \item Code transformations are studied and implemented to fit various HLS tools with limited syntax support
-  \item A state-of-art commercial FPGA HLS tool is evaluated using the HLS-Bench.
+  \item Code transformations are studied and implemented to fit various HLS tools with limited syntax support.
+  \item A state-of-art commercial FPGA HLS tool is evaluated using HLS-Bench.
 \end{itemize}
 
 In Section~\ref{section_related_work}, we review the evolution of both ASIC and FPGA HLS benchmarks. In Section~\ref{section_benchmark_suite}, we briefly describe features of each application in HLS-Bench. In Section~\ref{section_code_transforming}, code transformation strategies that the ease the availability of HLS tools are discussed. In Section~\ref{section_experiment}, we present the implementation results of HLS-Bench using Vivado HLS. Finally, in Section~\ref{section_conclusions}, we conclude this paper.
@@ -486,38 +489,23 @@ In Section~\ref{section_related_work}, we review the evolution of both ASIC and 
 %CHStone and S2CBench benchmarks are not targeted for FPGA HLS but ASICs HLS. However, in industry, there is a benchmark suite targeting for FPGA HLS. That is BDTI High-Level Synthesis Tool Certification Program. In 2009, Berkeley Design Technology Inc. (BDTI), an independent benchmarking and analysis firm, launched the BDTI High-Level Synthesis Tool Certification Program to evaluate high-level synthesis tools for FPGAs. It takes as their input a high-level representation of an application (written in C or MATLAB, for example) and generate a register-transfer-level (RTL) implementation for an FPGA. Two high-level synthesis tools, AutoESL's AutoPilot~\cite{zhang2008autopilot} and Synfora's PICO~\cite{synforatechnology}, have been certified under the program. BDTI's evaluation program uses two example applications, a video motion analysis application and a wireless receiver, to evaluate high-level synthesis tools. Though BDTI's two HLS benchmarks are targeted for FPGA HLS, but they just cover only video motion and wireless communication fields. It is not convinced, made someone be suspicious of the integrity and validity of evaluating FPGA HLS tools.
 
 
-
-
 Some of the commencing efforts in HLS benchmarking were made in the late 1980s. High Level Synthesis Workshop 1992 Benchmarks~\cite{dutt1992benchmarks} and 1995 High Level Synthesis Design Repository~\cite{panda19951995} were two standard benchmarks released for HLS. However, HLS tools in ~\cite{dutt1992benchmarks} ~\cite{panda19951995} actually referred to compiling the HDL code to circuits and they were written in VHDL. These benchmarks were transplanted to C later, but they were tiny including less than one hundred lines of C code. Therefore, they are no longer suitable for benchmarking the latest HLS tools. 
 
-CHStone~\cite{hara2008chstone} is then proposed to provide a more practical benchmark suite for the HLS tools. It consists of 12 easy-to-use programs written in C and includes a number of application domains such as arithmetic, security, microprocessor, media processing and so on. Moreover, the programs in CHStone are much larger compared with the HLS92 and HLS95. \emph{However, construct data structure and dynamic memory allocation, which are removed for the HLS tools at that time, now turn to important supporting features of the latest HLS tools.} Moreover, just as the authors declared, CHStone doesn't intend to evaluate the commercial HLS tools. 
+CHStone~\cite{hara2008chstone} is then proposed to provide a more practical benchmark suite for the HLS tools. It consists of 12 easy-to-use programs written in C and includes a number of application domains such as arithmetic, security, microprocessor, media processing and so on. Moreover, the programs in CHStone are much larger compared with the HLS92 and HLS95. However, the application domain included is quite limited. Also construct data structure and dynamic memory allocation, which are removed for the HLS tools at that time, now turn to important supporting features of the latest HLS tools. In addition, just as the authors declared, CHStone doesn't intend to evaluate the commercial HLS tools. 
 
 S2CBench written in SystemC was proposed  to enable the direct comparison of commercial HLS tools~\cite{carrions2cbench}. It consists of 12+1 programs which target a variety of applications. The 12 benchmarks comply with the latest SystemC synthesizable subset draft, while the rest one is FFT and it is non-synthesizable due to the trigonometric and floating point operations. The non-synthesizable FFT is added in order to help the users to understand how the different HLS tools work around these special occasions. Another unique feature of S2CBench is that each application is accompanied by its corresponding testbench. Nevertheless, the application domain covered in S2CBench is relatively limited. Typical applications such as Multimedia and network are not involved. 
 
-BDTI High-Level Synthesis Tool Certification Program \emph{citation is needed} adopts a video motion analysis application and a wireless receiver to evaluate the high-level synthesis tools. The application is big enough for evaluation but the application domain is again quite limited.  
+BDTI High-Level Synthesis Tool Certification Program \textbf{citation is needed} adopts a video motion analysis application and a wireless receiver to evaluate the high-level synthesis tools. The application is big enough for evaluation but the application domain is again quite limited.  
 
-HLS-Bench developed in this paper covered a large range of application domains. Also it uses data structures and syntax supported in the latest HLS tools, which helps evaluate the HLS tools. Moreover, each application is provided with three diverse data sets and it is beneficial to gaining insight into the HLS tools.  
+HLS-Bench developed in this paper includes a large range of application domains. Also it have data structures and syntax supported in the latest HLS tools, which helps evaluate the HLS tools. Moreover, each application is provided with three diverse data sets and it is beneficial to gaining insight into the HLS tools.  
 
-
-
-
-\section{Benchmark Suite for FPGA HLS}\label{section_benchmark_suite}
-In this section, we describe a brief overview of Benchmark Suite for FPGA HLS, and then features of individual programs in our benchmarks are summarized.
+\section{HLS-Bench Suite}\label{section_benchmark_suite}
+In this section, we present an overview of HLS-Bench, and then briefly introduce features of each application in the benchmark suite. 
 
 \subsection{Overview}
-FPGA HLS suite is a collection of 20 C/C++ programs. Some of the main objectives of our benchmarks are:
-1) To evaluate performance of commercial HLS tools such as synthesis optimization techniques.
-2) To provide FPGA HLS researchers a set of benchmark programs which are easy to use.
-3) To provide FPGA HLS designer some utilized functions such as rewrited string library functions and techniques such as dynamically memory allocation.
+HLS-Bench is a collection of 20 C/C++ programs selected from well-known benchmarks such as SPEC CPU2006, MiBench, MediaBench and LINPACK as shown in \ref{table_benchmark}. It covers a wide range of application domains including network, communication, safety, multimedia, image processing and so on, which are suitable for implementing on FPGA.  
 
-Our 20 benchmark programs which have been selected from various application domains covering most fields like network, communication, safety, multimedia, image processing and so on. They are from the well-known CPU benchmarks such as SPEC CPU 2006, MiBench, MediaBench and LINPACK benchmarks. Tables \ref{table_benchmark} summarize the features of the benchmark programs. It shows the
-brief description and the sources of the programs. Table \ref{table_benchmark2} describes some characteristics of the programs such as the number of lines of C code, the number of loop and condition clause, the number of struct type and the number of dynamically memory allocation and deallocation clause. As shown in two tables, the characteristics of our benchmark programs are:
-1) Contain eight complex multimedia processing algorithms including the encoding and decoing of image, audio and video. Their number of lines of C/C++ code exceeds 1500.
-2) Have composite data types such as struct which is supported for most nowaday FPGA HLS tools.
-3) Involved with dynamic memory allocation and deallocation. ???(number) benchmark programs contains malloc and free function in C language.
-4) Two CPU benchmarks (qsort and bitcount) involves recursion, we change it in a iterative way.
-In a word, our benchmark programs are brought from widely-used applications in the real world. They cover most of the C/C++ features which FPGA HLS designers usually expect to be included in their design.
-
+On top of the broad application domains, programs involved in HLS-Bench are big enough to cover all the basic code structures like loop and condition. In addition, some of the syntax or features such as construct data structure and constant dynamic memory allocation are not well supported in earlier HLS tools, but they are gradually supported in the latest HLS tools. Therefore, they are also included in this benchmark. Finally, recursive algorithms in the benchmark that is still not supported in HLS tools are reconstructed as normal loops. \ref{table_benchmark2} presented a detailed statistic of all these features mentioned above, which will hopefully give the users an insight into the benchmark. 
 
 \begin{table}
 \caption{FPGA HLS Benchmarks}\label{table_benchmark}
@@ -560,9 +548,6 @@ More... &  & \tabularnewline
 \hline
 \end{tabular}
 \end{table}
-
-
-
 
 \begin{table*}[!t]
 \caption{FPGA HLS Benchmarks}\label{table_benchmark2}
@@ -608,59 +593,58 @@ More & TOADD &  &  &  &  & \tabularnewline
 \end{table*}
 
 
-
-
 \subsection{Benchmark programs}
-Every program in our FPGA HLS benchmarks is described below. It is a brief overview of the programs included in the benchmark suite.
+In this section, each application included in the benchmark is briefly introduced.
 
-(FIXME change font)linpack: It is a measure of a system's floating point computing power. It measures how fast to solve a dense n by n system of linear equations Ax = b, which is a common task in engineering.
+(FIXME change font)linpack: It is a linear equation solver of Ax = b, where A is a dense matrix and b is a vector. It is widely used in engineering.
 
-astar: It is a computer algorithm that is widely used in pathfinding and graph traversal. It uses a best-first search and finds a least-cost path from a given initial node to one goal node (out of one or more possible goals). As astar traverses the graph, it follows a path of the lowest expected total cost or distance, keeping a sorted priority queue of alternate path segments along the way.
+astar: It is a computer algorithm that is widely used in pathfinding and graph traversal. It uses a best-first search and finds a least-cost path from a given initial node to target nodes.
 
-qsort:  The qsort test sorts a large array of strings into ascending order using the well known quick sort algorithm. Sorting of information is important for systems so that priorities can be made, output can be better interpreted, data can be organized and the overall run-time of programs reduced~\cite{guthaus2001mibench}.
+qsort: qsort is a classical divide and conquer algorithm and is widely used for sorting ~\cite{guthaus2001mibench}.
 
-stringsearch: This benchmark searches for given words in phrases using a case insensitive comparison algorithm.
+stringsearch: \textbf{what is the name of the stringsearch algorithm, please specify it}.
 
-fft:  This benchmark performs a Fast Fourier Transform on an array of data. Fourier transforms are used in digital signal processing to find the frequencies contained in a given input signal.
+fft: It is used to perform the discrete Fourier Transform and inverse. It can convert time to frequency and vice versa and is widely used in engineering.
 
-crc32:  This benchmark performs a 32-bit Cyclic Redundancy Check (CRC) on a file(FIXME). CRC checks are often used to detect errors in data transmission.
+crc32: It is used to perform a 32-bit Cyclic Redundancy Check (CRC) on a file(FIXME). 
 
-adpcm:  Adaptive Differential Pulse Code Modulation (ADPCM) is a variation of the well-known standard Pulse Code Modulation (PCM). A common implementation takes 16-bit linear PCM samples and converts them to 4-bit samples, yielding a compression rate of 4:1.
+adpcm: Adaptive Differential Pulse Code Modulation (ADPCM) is a variation of the well-known standard Pulse Code Modulation (PCM). A typical implementation could convert 16-bit linear PCM samples to 4-bit samples, yielding a compression rate of 4:1.
 
-susan:  Susan is an image recognition package. It was developed for recognizing corners and edges in Magnetic Resonance Images of the brain. It is typical of a real world program that would be employed for a vision based quality assurance application. It can smooth an image and has adjustments for threshold, brightness, and spatial control.
-
+susan: Susan is an image recognition package. It can be used to smooth an image and perform adjustments for threshold, brightness, and spatial control and is widely used in recognizing corners and edges in Magnetic Resonance Images of the brain. \textbf{I don't know this algorithm, but I think it is better to describe its main functionality first and typical application implemented in the benchmark later.}
 
 ispell: Ispell is a fast spelling checker. It supports English word spell correction suggestions.
 
+Dijkstra: Dijkstra's algorithm is a well known solution to the shortest path problem and can be completed in O($n^2$) time.
 
-Dijkstra: The Dijkstra benchmark constructs a large graph in an adjacency matrix representation and then calculates the shortest path between every pair of nodes using repeated applications of Dijkstra's algorithm. Dijkstra's algorithm is a well known solution to the shortest path problem and completes in O($n^2$) time.
+basicmath: The basic math program includes a group of typical mathematical calculations such as cubic function solving, integer square root as well as degree and radian conversion.
 
-basicmath: The basic math test performs simple mathematical calculations. For example, cubic function solving, integer square root and angle conversions from degrees to radians are all necessary calculations for calculating road speed or other vector values.
+bitcount: The bitcount program is used to count the number of bits of an integer. Five different algorithms including an optimized 1-bit per loop counter, recursive bit count by nibbles, non-recursive bit count by nibbles using a look-up table, non-recursive bit count by bytes using a look-up table and shifting and accumulation \textbf{not sure about the last algorithms described here, please double check}.
 
-bitcount: The bit count algorithm tests the bit manipulation abilities by counting the number of bits in an array of integers. It does this using five methods including an optimized 1-bit per loop counter, recursive bit count by nibbles, non-recursive bit count by nibbles using a table look-up, nonrecursive bit count by bytes using a table look-up and shift and count bits.
+rijndael encrypt/decrypt: Rijndael is a block cipher with the option of 128-bit, 192-bit and 256-bit keys and blocks. It is in the National Institute of Standards and Technologies Advanced Encryption Standard (AES). 
 
-rijndael encrypt/decrypt: Rijndael was selected as the National Institute of Standards and Technologies Advanced Encryption Standard (AES). It is a block cipher with the option of 128-, 192-, and 256-bit keys and blocks.
+sha: SHA is a secure hash algorithm and it will produce a 160-bit message digest for a given input. It is widely used for cryptographic key exchange, digital signature generation and well-known MD4 and MD5 hashing.
 
-sha: SHA is the secure hash algorithm that produces a 160-bit message digest for a given input. It is often used in the secure exchange of cryptographic keys and for generating digital signatures. It is also used in the well-known MD4 and MD5 hashing functions.
+blowfish encrypt/decrypt: Blowfish is a symmetric block cipher with a variable length key. Its key length ranges from 32 to 448 bits and it is suitable for domestic and exportable encryption.
 
+patricia: a patricia trie is an efficient data structure to represent full trees with sparse leaf nodes. It helps reduce the traversal time, and are typically used to implement routing tables in network applications. 
 
-blowfish encrypt/decrypt: Blowfish is a symmetric block cipher with a variable length key. It was developed in 1993 by Bruce Schneider. Since its key length can range from 32 to 448 bits, it is ideal for domestic and exportable encryption.
+h263enc/h263dec: H.263 is a video compression standard originally designed as a low-bitrate compressed format for video conferencing. h263enc and h263dec are used for encoding and decoding respectively.
 
-
-TODO: add more benchmarks here...
-
+mp3enc/mp3dec: They come from LAME benchmark in Mibench. LAME is a free software codec used to encode/compress audio into the lossy MP3 file format. 
+Mp3enc encodes a raw (headerless) PCM stream or Waveform Audio File Format (commonly known as WAV due to its filename extension) to MP3. It supports constant, average and variable bit-rate encoding. Mp3dec decodes the input MP3 to WAV or raw PCM format.
 
 \section{Code Transformations}\label{section_code_transforming}
-We select 20 benchmarks from the well-known CPU benchmarks. As mentined above, to apply these benchmarks to FPGA HLS, some important refactoring and modifications to the original benchmark codes should be done. This section will discuss some code transforming ttrategy for FPGA HLS benchmark.
+As the benchmarks are selected from conventional CPU benchmarks, some of them can't be used for FPGA HLS directly. Therefore, refactoring and modification are crucial for implementing these algorithms using FPGA HLS tools. While these processing is actually what a software developer may confront using HLS tools, we detail the processing in this section. Hopefully, it may help the software developer to access the FPGA HLS tools.
 
 \subsection{Code Refactoring}
-Code refactoring is the process of restructing existing computer code - changing the factoring - that either presevers the behavior of the software, or at least does not modify its conformance to functional requirements~\cite{fowler1999refactoring}. It improves the code readability and reduced complexity, making the source code of more maintainability and extensibility. Some of choosed CPU benchmarks code mixed data process logic with the data input (such as read processing data from file which is not synthesizable by FPGA HLS tools) or output (such as write processed data to file or add some timing function to calculate the procecure executing time). We have to take the data process logic apart and let it be the FPGA HLS benchmark. Besides, some functions of the benchmarks are too long, we trimed them with severval smaller functions. Good news is that most CPU benchmarks have test input file and the golden result output file,  we can quickly find the error of illegal code modifications. So the code refactoring work is of not too much impedient.
+As FPGA HLS tools couldn't support file reading and writing, they are removed from the original source code and replaced with \textbf{How did you replace the file reading and writing? What do you mean by data processing and controlling? On top of the file reading and writing, are there any other "data controlling"?}. Execution time extraction code which is useless for FPGA HLS is also removed accordingly.
+%Code refactoring is the process of restructing existing computer code - changing the factoring - that either presevers the behavior of the software, or at least does not modify its conformance to functional requirements~\cite{fowler1999refactoring}. It improves the code readability and reduced complexity, making the source code of more maintainability and extensibility. Some of choosed CPU benchmarks code mixed data process logic with the data input (such as read processing data from file which is not synthesizable by FPGA HLS tools) or output (such as write processed data to file or add some timing function to calculate the procecure executing time). We have to take the data process logic apart and let it be the FPGA HLS benchmark. Besides, some functions of the benchmarks are too long, we trimed them with severval smaller functions. Good news is that most CPU benchmarks have test input file and the golden result output file,  we can quickly find the error of illegal code modifications. So the code refactoring work is of not too much impedient.
 
 \subsection{Pointer}
 \label{subsection-pointer}
-A pointer is an address to a location in memory. Some of the common uses for pointers in a C/C++ program are function parameters, array handling, pointer to pointer, and type casting. The inherent flexibility of this language construct makes it a useful and popular element of C/C++ code. However, The FPGA HLS compiler supports pointer usage that can be completely analyzed at compile time. An analyzable pointer usage is usage that can be fully expressed and computed without the need for runtime information. Thus, the use of a pointer to reference a dynamically allocated region in memory such malloc, new function call in C/C++ code is is not supported with HLS, because the destination address of the pointer is only known during program execution, see Figure \ref{Unsupported-Dynamic-Memory}. This does not mean that pointer usage for memory management is unsupported when using the HLS compiler. Figure \ref{Supported-Pointer-in-HLS} shows a valid coding style in which pointers are used to access a memory. This code is valid, because all uses of pointer pointer\_to\_data can be analyzed and mapped back to array data. Because array data is created by automatic memory allocation, HLS can fully determine the properties of data.
+A pointer is an address to a location in memory and it can used as function parameters, array handling, pointer to pointer, and type casting. Despite of the convenience brought by the pointer, FPGA HLS tools could mainly support the pointers that are known at compilation time. While the pointers that are known at runtime are just partially supported at the moment. Figure \ref{Unsupported-Dynamic-Memory} and Figure \ref{Supported-Pointer-in-HLS} present two typical code styles that are un-synthesizable and synthesizable respectively.
 
-\begin{figure}[h]\centering
+\begin{figure}[htb]\centering
 {\fontsize{8}{8}\selectfont
 \begin{lstlisting}[frame=lines]
 int *pointer_runtime = malloc(sizeof(int) * 100);
@@ -669,7 +653,7 @@ int *pointer_runtime = malloc(sizeof(int) * 100);
 \caption{Unsupported Dynamic Memory Allocation in HLS}\label{Unsupported-Dynamic-Memory}
 \end{figure}
 
-\begin{figure}[h]\centering
+\begin{figure}[htb]\centering
 {\fontsize{8}{8}\selectfont
 \begin{lstlisting}[frame=lines]
 int data[100];
@@ -679,9 +663,9 @@ int *pointer_to_data = data;
 \caption{Supported Pointer in HLS: Managing Array Access with a Pointery}\label{Supported-Pointer-in-HLS}
 \end{figure}
 
-Another supported pointers is in accessing external memory. When using HLS, any pointer access on function parameters implies either a variable or an external memory. HLS defines an external memory as any memory outside of the scope of the compiler-generated RTL. This means that the memory might be located in another function in the FPGA or in part of an off-chip memory, such as DDR???. But you should tell the HLS compiler the memory size so as to let  pointer be completely analyzed at compile time. Take Figure \ref{Unsynthesizable-code} of accumulating an array data as example. This code is invalid, because the data pointer is (or contains) an array with unknown size at compile time. Figure \ref{Supported-Pointer-in-HLS} is the fixed version of Figure \ref{Unsynthesizable-code}. It is synthesizable because the array size of data is certain at compile time.
+Although dynamic pointers are not well supported inner the function to be synthesized, they can actually be perfectly synthesized at the interface. The pointers at the interface can either be synthesized as a memory-mapped IO or stream IO. For memory mapped IO, it is required to specify the memory size at compilation time. Fortunately, you can specify it using the compilation pragma or directives instead of source code directly. If it is a streamed IO, hand shaking protocol will be synthesized and you don't have to specify the size of the input. Figure \ref{Unsynthesizable-code} and Figure \ref{Supported-Pointer-in-HLS} are examples of dynamic pointer synthesis at the interface.
 
-\begin{figure}[h]\centering
+\begin{figure}[htb]\centering
 {\fontsize{8}{8}\selectfont
 \begin{lstlisting}[frame=lines]
 int accumulate1(int *data,int length) {
@@ -697,7 +681,7 @@ int accumulate1(int *data,int length) {
 \end{figure}
 
 
-\begin{figure}[h]\centering
+\begin{figure}[htb]\centering
 {\fontsize{8}{8}\selectfont
 \begin{lstlisting}[frame=lines]
 #define LENGTH 100
@@ -713,12 +697,12 @@ int accumulate2(int data[LENGTH]) {
 \caption{Synthesizable code: accumulate an array.}\label{Synthesizable-code}
 \end{figure}
 
-During the code transforming for FPGA HLS benchmarks from CPU benchmarks, there is much pointer usage as function parameter like accumulate1 in Figure \ref{Unsynthesizable-code}. Thus, we have to change it in form of size-fixed array pointer as shown in Figure \ref{Synthesizable-code}.
+As explained above, the dynamic pointers inner the function to be synthesized in the benchmark source code are replaced with static allocation. The ones at the interface will be left unchanged.
 
 \subsection{Library Functions}
-In CPU benchmarks, there are many C string and memory library functions call such as memset, memcpy, strlen and strcmp and so on. But these functions are unsupported in FPGA HLS compiler. We rewrite them in our own way. It is a simple case, taking the rewrited string lengh calculating function strlen as example in Figure \ref{hls_strlen}.
+There are many C string and memory library functions such as memset, memcpy, strlen and strcmp in the original benchmark. Although they can actually be implemented on FPGA, they are not supported in FPGA HLS tools at the moment. To bridge this gap, we develop a synthesizable library for the benchmarks so that the original can be updated with minimal efforts. Figure \ref{hls_strlen} shows a simple example on how the synthesizable library be used.
 
-\begin{figure}[h]\centering
+\begin{figure}[htb]\centering
 {\fontsize{8}{8}\selectfont
 \begin{lstlisting}[frame=lines]
 #define MAX_CHAR_SIZE 1024
@@ -734,13 +718,9 @@ unsigned hls_strlen(char string[MAX_CHAR_SIZE]) {
 \end{figure}
 
 \subsection{Dynamic Memory Allocation}\label{section_malloc}
-Dynamic memory allocation is one of the memory management techniques available in the C and C++ programming languages. In this method, the user can allocate as much memory as necessary during program runtime. The size of the allocated memory can vary between executions of the program and is allocated from a central physical pool of memory in computer. The function calls typically associated with dynamic memory allocation are malloc, new for allocating memory and free, delete for deallocating memory. An FPGA does not have a fixed memory architecture onto which the HLS compiler must fit the user application. Instead, HLS synthesizes the memory architecture based on the unique requirements of the algorithm. As discussed in \ref{subsection-pointer}, all code provided to the HLS compiler for implementation in an FPGA must use compile time analyzable memory allocation only. It is the responsibility of the user to manually change the code and remove all instances of dynamic memory allocation.
+Dynamic memory allocation is one of the typical memory management techniques in C and C++ programming languages. It can be used to allocate or release resource as needed at runtime. Essentially, this feature helps to share the limited physical memory. However, when the dynamic memory behaviour is compiled from high level language program to FPGA using HLS tools, it is actually different, though the synthesized hardware may still maintain the same functionality of the original program. The main reason is that the declared memory is implemented in a static way on FPGA and can't be released until the FPGA is reconfigured.
 
-There are two memory allocation ways that are supported by a C/C++ program and HLS compiler. They are automatic memory allocation and static memory allocation.
-
-The code in Figure \ref{Automatic-Memory-Allocation} shows automatic memory allocation by a HLS compiler. HLS implements this memory style in strict accordance with the behavior stipulated by C/C++. This means that the memory created to store array only stores valid data values during the duration of the function call containing this array. Therefore, the function call is responsible for populating array with valid data before each use.
-
-\begin{figure}[h]\centering
+\begin{figure}[htb]\centering
 {\fontsize{8}{8}\selectfont
 \begin{lstlisting}[frame=lines]
 int array[100];
@@ -749,10 +729,7 @@ int array[100];
 \caption{HLS-Compliant Automatic Memory Allocation}\label{Automatic-Memory-Allocation}
 \end{figure}
 
-
-The code in Figure \ref{Static-Memory-Allocation} shows static memory allocation by a HLS compiler. The behavior for this type of memory allocation dictates that the contents of array are valid across function calls until the program is completely shut down. When working with HLS, the memory that is implemented for array A contains valid data as long as there is power to the circuit.
-
-\begin{figure}[h]\centering
+\begin{figure}[htb]\centering
 {\fontsize{8}{8}\selectfont
 \begin{lstlisting}[frame=lines]
 static int array[100];
@@ -761,9 +738,7 @@ static int array[100];
 \caption{HLS-Compliant Static Memory Allocation}\label{Static-Memory-Allocation}
 \end{figure}
 
-As discussed before, the code in Figure \ref{Dynamic-Memory-Allocation} is not supported by HLS compiler. It allocates a region in memory to store allocated\_size  values of 32-bit integer. We should consider to solve this problem in two cases whether the allocated\_size is constant or not.
-
-\begin{figure}[h]\centering
+\begin{figure}[htb]\centering
 {\fontsize{8}{8}\selectfont
 \begin{lstlisting}[frame=lines]
 int *array = malloc(sizeof(int) * allocated_size);
@@ -772,20 +747,14 @@ int *array = malloc(sizeof(int) * allocated_size);
 \caption{Dynamic Memory Allocation}\label{Dynamic-Memory-Allocation}
 \end{figure}
 
-If the allocated\_size is constant and can be analyzed in compile time, use automatic and static memory allocation techniques are possible methods of modifying this code to comply with HLS. Just modify them with size-fixed array such as in Figure \ref{Automatic-Memory-Allocation} or  \ref{Static-Memory-Allocation}.
+To keep the memory behaviour the same with that described in high level language program, we develop a memory allocation algorithm that could support dynamic memory allocation and sharing as software. The dynamic memory allocation algorithm is detailed in Algorithm \ref{algorithm_hls_malloc}. First of all, we declare a static array which can be synthesized as a shared static memory using FPGA HLS tools. Then the shared memory is divided into multiple chunks logically and the availability of each chunk of the memory is recorded in a bitmap as shown in Figure \ref{fig_bitmap}. Whenever there is a memory allocation request, corresponding amount of memory is allocated in chunks and the bitmap is updated as well. When the allocated memory is released, the bits in bitmap are reset accordingly. \textbf{As the mmeory allocation and release are usually sequential, the memory manger is actually simple and will not cost much hardware. In addition, bitmap is small even when the chunk size is tiny, thus the overhead can be negligible.} While the main challenge is the size of the pre-allocated shared memory, because it must be big enough to meet all the memory allocations request involved. And the exact number depends on the target benchmark. 
 
-In CPU benchmarks, there are a few dynamically allocating memory code in the form of constant allocated size. More is in form of non-constant allocated size. In such a situation, we propose a dynamically allocating memory algorithm using bitmaps to solve this problem. Since the allocated memory size is merely known during runtime execution and the user usually deallocate this memory when the application exits, we use static memory allocation technique in our algorithm. With a bitmap, the static memory is divided into allocation chunks. Every chunk has units with a certain size. One unit can be as small as a byte or as large as several kilobytes. It is up to the size of basic data structure such as C/C++ char, int or struct in which type data is to be allocated dynamically at runtime. Corresponding to each allocation unit is a bit in the bitmap, which is 0 if the unit is free and 1 if it is occupied (or vice versa). Figure \ref{fig_bitmap} shows five chunks of memory of static memory and the corresponding bitmap.
-
-\begin{figure}[t]\centering
-    \includegraphics[scale=0.3]{bitmap.png}\\
+\begin{figure}[htb]\centering
+    \includegraphics[scale=0.3]{bitmap}\\
     \caption{TODO FIXME (a) HLS static memory with five memory allocation chunks. Every chunk has eight units. The shaded regions (0 in the bitmap) are free. (b) The corresponding bitmap.}    \label{fig_bitmap}
 \end{figure}
 
-A bitmap provides a simple way to keep track of memory in a fixed amount of memory because the size of the bitmap depends only on the size of memory and the size of the allocation chunk. The size of the allocation chunks is an important design issue. The smaller the allocation chunk, the larger the bitmap. During FPGA HLS design, the static memory is stored externally. What this can often imply when hardware is synthesized is that either the data in memory is expected every clock cycle, or there is some sort of off-chip storage in either registers or memory. More memory allocation chunks can increase data access parallelism in the HLS generated implementation. However, even with an unit as small as 4 bytes, 32 bits of memory will require only 1 bit of the map. A memory of 32n bits will use n map bits, so the bitmap will take up only 1/33 of memory. If the allocation chunk is chosen large, the bitmap will be smaller and has an adverse effect on data access parallelism in FPGA HLS design.
-
-The dynamically allocating memory algorithm is shown in Algorithm \ref{algorithm_hls_malloc}.  When the user request K units memory at runtime, it will search the bitmap to find a run of K consecutive 0 bits in the map and return corresponding memory location in the static area to user. Finally, set the K consecutive 0 bits in bitmap to 1.
-
-\begin{figure}[h]\centering
+\begin{figure}[htb]\centering
 {\fontsize{6}{6}\selectfont
 \begin{lstlisting}[frame=lines]
 Prerequisite:
@@ -803,6 +772,11 @@ Record F, K and the above returned result in S.
 }
 \caption{(TODO, FIXME) Dynamic Memory Allocation Algorithm in HLS}\label{algorithm_hls_malloc}
 \end{figure}
+
+
+%The proposed memory allocation algorithm makes the A bitmap provides a simple way to keep track of memory in a fixed amount of memory because the size of the bitmap depends only on the size of memory and the size of the allocation chunk. The size of the allocation chunks is an important design issue. The smaller the allocation chunk, the larger the bitmap. During FPGA HLS design, the static memory is stored externally. What this can often imply when hardware is synthesized is that either the data in memory is expected every clock cycle, or there is some sort of off-chip storage in either registers or memory. More memory allocation chunks can increase data access parallelism in the HLS generated implementation. However, even with an unit as small as 4 bytes, 32 bits of memory will require only 1 bit of the map. A memory of 32n bits will use n map bits, so the bitmap will take up only 1/33 of memory. If the allocation chunk is chosen large, the bitmap will be smaller and has an adverse effect on data access parallelism in FPGA HLS design.
+
+
 
 %\begin{figure}[h]\centering
 %{\fontsize{8}{8}\selectfont
@@ -823,10 +797,6 @@ Record F, K and the above returned result in S.
 %\caption{(TODO, FIXME) Dynamic Memory Allocation Algorithm in HLS}\label{algorithm_hls_malloc}
 %\end{figure}
 
-
-The dynamically deallocating memory algorithm is simple. As shown in Algorithm \ref{algorithm_hls_malloc}. There is a record for user requested memory allocation every time. Thus, when user wants to deallocate the requested memory at runtime, just find the corresponding location in bitmap and set them to 0.
-
-(FIXME ugly)The proposed dynamically allocating memory algorithm using bitmaps make HLS support functions as malloc and free. The work transforming CPU benchmarks to FPGA HLS is more convenient and efficient.
 %
 %int accumulate3(int (&data)[LENGTH]) {
 %    int sum = 0;
@@ -852,11 +822,10 @@ The dynamically deallocating memory algorithm is simple. As shown in Algorithm \
 %
 
 \subsection{Data Structure and Algorithm Modifications}
-In some cases when applying the CPU benchmarks to FPGA HLS, we have to modify the basic data structures utilized in these benchmarks. The reason lies in that the current HLS compiler constrains the use of pointer, which makes it unable to use the pointer variable in the C/C++ struct. This means that the HLS can not use the data structure like list, which usually contains the pointer variables pointing to the next node in one of its nodes' struct. Thus, we have to modify the list and the corresponding algorithm of the benchmarks which use it. Since the HLS compiler supports fixed-size data array, the data array can be utilized to replace list. Employing this idea, we do modifications to the benchmarks as follows.
-1) We realize the queue in dijkstra CPU benchmark with array instead of the list.
-2) The original hash table data structure in ispell benchmark utilized list to solve the collision existing in hash, whereas we make use of quadratic probing to achieve this and employ the way based on array copy to realize the rehasing by using the HLS dynamically allocating algorithm discussed in section \ref{section_malloc}.
-
-It is a relatively difficult and rather time-consuming work to modify the data structure of benchmarks. In order to modify them, it is necessary to understand most parts of the benchmarks' codes, especially the code related to critical data structure and algorithm. The test sets and the golden results provided in the original CPU benchmarks gurantee the correctness of modifications we do on the benchmarks.
+%In some cases when applying the CPU benchmarks to FPGA HLS, we have to modify the basic data structures utilized in these benchmarks. The reason lies in that the current HLS compiler constrains the use of pointer, which makes it unable to use the pointer variable in the C/C++ struct. This means that the HLS can not use the data structure like list, which usually contains the pointer variables pointing to the next node in one of its nodes' struct. Thus, we have to modify the list and the corresponding algorithm of the benchmarks which use it. Since the HLS compiler supports fixed-size data array, the data array can be utilized to replace list. Employing this idea, we do modifications to the benchmarks as follows.
+%1) We realize the queue in dijkstra CPU benchmark with array instead of the list.
+%2) The original hash table data structure in ispell benchmark utilized list to solve the collision existing in hash, whereas we make use of quadratic probing to achieve this and employ the way based on array copy to realize the rehasing by using the HLS dynamically allocating algorithm discussed in section \ref{section_malloc}.
+Dynamic data structures such as list constructed with link list are not supported by the HLS tools, and they are re-implemented using static data structures like array instead. Note that the array can be allocated dynamically taking advantage of the proposed dynamic memory allocation algorithm as discussed in section \ref{section_malloc}. 
 
 %在将CPU benchmarks应用于FPGA HLS的过程中，少数情况下我们不得不修改基本benchark中表示的基本数据结构。
 %根本原因在于当前HLS compiler对指针使用的限制，你无法在C/C++ struct中使用指针变量。
@@ -871,13 +840,11 @@ It is a relatively difficult and rather time-consuming work to modify the data s
 
 
 \subsection{Recursive Algorithm}
-Recursion is the process a  procudure goes through when one of the steps of the procecure involves invoking the procecure itself. A procecure that goes through recursion is said to be recursive. As a computer programming technique, this is called divide and conquer and is key to the design of  many important algorithms.
+%Recursion is the process a procudure goes through when one of the steps of the procecure involves invoking the procecure itself. A procecure that goes through recursion is said to be recursive. As a computer programming technique, this is called divide and conquer and is key to the design of  many important algorithms.
 
-However, recursion is not supported by nowaday hls compiler. Some specific recursion can be solved to obtain a non-recursive definition. Thus we have to change some recursive algorithms in CPU benchmark to non-recursive way(FIXME ugly!).
+Recusion provides an effective way to implement many recursive algorithms. However, its dynamic characteristic makes it tricky for hardware design let alone HLS tools. Therefore, all the recursive implementation is replaced with a plain loop instead. Figure \ref{figure_qsort_recursive} and \ref{figure_qsort_iterative} give an example how a recursive quicksort algorthm is implemented using plain loop.
 
-For example, in qsort CPU benchmark, it uses the system library function qsort to utilize the sort of points data in three dimension space. The qsort library function uses classic recursion algorithms to implement quick sort, given in Figure \ref{figure_qsort_recursive} in pseudocode. It sorts elements low through high of an array. If you want to get more details about the quick sort, you can refer to \cite{sedgewick1978implementing}.
-
-\begin{figure}[h]\centering
+\begin{figure}[htb]\centering
 {\fontsize{8}{8}\selectfont
 \begin{lstlisting}[frame=lines]
 quicksort(array, low, high):
@@ -890,9 +857,7 @@ quicksort(array, low, high):
 \caption{Pseudocode of Recursive quick sort Function.}\label{figure_qsort_recursive}
 \end{figure}
 
-We modified the recursive version of quick sort in iterative way as shown in Figure \ref{figure_qsort_iterative}. As you see, we make a stack using array to store array element position.
-
-\begin{figure}[h]\centering
+\begin{figure}[htb]\centering
 {\fontsize{8}{8}\selectfont
 \begin{lstlisting}[frame=lines]
 iterative-quicksort(array, low, high):
@@ -910,7 +875,7 @@ iterative-quicksort(array, low, high):
 \caption{Pseudocode of iterative quck sort Function.}\label{figure_qsort_iterative}
 \end{figure}
 
-Some specific recursion can be solved to obtain a non-recursive definition such as the iterative quick sort discussed above. In some cases, it is hard even impossible to ``translate" from recursion to non-recursion. But there is not much complex recursion in CPU benchmarks during our transforming code work.
+%Some specific recursion can be solved to obtain a non-recursive definition such as the iterative quick sort discussed above. In some cases, it is hard even impossible to ``translate" from recursion to non-recursion. But there is not much complex recursion in CPU benchmarks during our transforming code work.
 % A classic example of recursion is the definition of the factorial function, given in Figure \ref{figure_fact} in C code.
 %
 %\begin{figure}[h]\centering
@@ -933,12 +898,14 @@ Some specific recursion can be solved to obtain a non-recursive definition such 
 %However, recursion is not supported by nowaday hls compiler. Some specific recursion can be solved to obtain a non-recursive definition. The recursive version of factorial can be modified with iterative version.
 
 \section{Experiments}\label{section_experiment}
-Most of our FPGA HLS benchmark programs are large applications consisting of multiple hundreds lines of code. We have confirmed that all of the programs are synthesizable. In this section, we synthesize the FPGA HLS benchmarks proposed in this paper in FPGA HLS tool to watch the resource cost and timing information. The commercial Xilinx Vivado~\cite{feist2012vivado} (2013.4 Version) is employed as the FPGA HLS tool in this experiment. Meanwhile, the benchmarks are implemented on xc7v2000tflg1925-1 device, one typical chip in virtex-7 series whose speed grade is -1. The reason why we choose the chip is that its available resources are sufficient so that we can implement our benchmarks without warrying the lack of resources.
+In this section, we have HLS-Bench synthesized using the latest commercial HLS tools and then the hardware overhead of the benchmark is analyzed.
 
-The available resources on this chip are summarized in table \ref{table_available_resources}. The BRAM Block (BRAM) is a configurable memory module that attaches to a variety of BRAM Interface Controllers. It is a dual-port RAM module instantiated into the FPGA fabric to provide on-chip storage for a relatively large set of data. The type of BRAM memories available in xc7v2000tflg1925-1 device can hold either 18k bits. The DSP48E block is an arithmetic logic unit (ALU) embedded into the fabric of the FPGA. It supports many independent functions of digital signal processing. These functions include multiply, multiply accumulate (MACC), multiply add and so on. As shown in table \ref{table_available_resources},  the DSP48E block in xc7v2000tflg1925-1 device available  is 2160.
+In the experiments, Xilinx Vivado HLS ~\cite{feist2012vivado} (2013.4 Version) is used. xc7v2000tflg1925-1, which is large enough as shown in \ref{table_available_resources} to accommodate any of the application in the benchmark, is chosen as the target device. Timing constrain is set to be 100MHz and default synthesis options are used directly. \textbf{I guess it will be better to have some basic optimization strategy such as interface setup? loop unrolling strategy? pipelined or not?. But it seems that we don't have time to do that...}
 
+%The available resources on this chip are summarized in table . The BRAM Block (BRAM) is a configurable memory module that attaches to a variety of BRAM Interface Controllers. It is a dual-port RAM module instantiated into the FPGA fabric to provide on-chip storage for a relatively large set of data. The type of BRAM memories available in xc7v2000tflg1925-1 device can hold either 18k bits. The DSP48E block is an arithmetic logic unit (ALU) embedded into the fabric of the FPGA. It supports many independent functions of digital signal processing. These functions include multiply, multiply accumulate (MACC), multiply add and so on. As shown in table \ref{table_available_resources},  the DSP48E block in xc7v2000tflg1925-1 device available  is 2160.
 %
-\begin{table}
+
+\begin{table}[htb]
 \caption{Available resources of xc7v2000tflg1925-1}\label{table_available_resources}
 \begin{tabular}{|c|c|c|c|}
 \hline
@@ -950,10 +917,11 @@ BRAM\_18K & DSP48E & Flip-Flop & LUT\tabularnewline
 \end{tabular}
 \end{table}
 
-
-During experiment, We set the target clock period to 10ns, and other options to default. Beisides, we do not do optimizations on benchmarks during the experiment. The sythesis result for FPGA HLS benchmark programs are shown in Table \ref{table_systhesis_result}.
+%During experiment, We set the target clock period to 10ns, and other options to default. Beisides, we do not do optimizations on benchmarks during the experiment. The sythesis result for FPGA HLS benchmark programs are shown in Table \ref{table_systhesis_result}.
 
 %
+
+
 \begin{table*}[!t]
 \caption{Sythesis result for FPGA HLS benchmark programs}\label{table_systhesis_result}
 
@@ -1042,16 +1010,21 @@ basicmath (performs simple mathematical calculations) & - & 8.64 & 38 & 199 & 24
 \hline
 bitcount (counts the number of bits in an array of integers) & - & 8 & 7 & 0 & 468 & 1191\tabularnewline
 \hline
+patricia (searchs an IP in routing tables represented by Patricia trie) & - & 7.25 & 68 & 0 & 220 & 430\tabularnewline
+\hline
+h263enc (encodes a frame of H.263 video) & - & 8.7 & 1231 & 135 & 16483 & 35098\tabularnewline
+\hline
+h263dec (decodes a frame of H.263 video) & - & 8.7 & 259 & 314 & 71890 & 162082\tabularnewline
+\hline
+mp3enc (encodes a frame of MP3 audio) & - & 8.71 & 197 & 718  & 105880  & 160235\tabularnewline
+\hline
+mp3dec (decodes a frame of MP3 audio) & - & 8.70 & 194 & 681 & 85291 & 140049\tabularnewline
+\hline
 \end{tabular}
 
 
 \end{table*}
 
-
-
-
-
-%
 \begin{table}
 \caption{HLS sythesis result for cosine, sine and exponent, logarithm function}\label{table_cos_sine}
 
@@ -1074,33 +1047,32 @@ log & 0 & 61 & 1755 & 1464\tabularnewline
 \end{tabular}
 \end{table}
 
-Since the bitcount, basicmath and blowfish benchmarks do not rely on any specific parameters, the variety of FPGA resources utilized are not included in Table \ref{table_systhesis_result}.
-According to Table \ref{table_systhesis_result}, we can draw conclusions as follows
-(1) The clock period of the benchmarks do not change with the scale of data processed.
-(2) The utilization of DSP increases slowly with the input parameters, in some cases keeps unchanged.
-(3) Dijkstra, stringsearch and astars use more RAM with input paramters increasing while other benchmarks use the same RAM.
-The reason lies in that Dijkstra, stringsearch and astars use global variables to solve problems.
-For example, the Dijkstra benchmark uses a global array to store the distance information between graph nodes and the space needed by these global variables increases with the scale of the data processed.
-Since the global variables are stored in the FPGA RAM in HLS, the utilization of RAM increases with the input parameters.
-For the benchmarks which do not consume changed RAM with input parameters, they hardly use global variables and almost use the divide and conquer algorithm to implement the benchmark.
-For example, the AES algorithm utilized in the rijndael benchmark does not encrypt directly on the whole input data flow, but divides the data to 16 blocks, and processes the small data blocks in turn, through which reduces the use of memory.
+Typically each application in the benchmark is provided with three different data sets for more extensive exploration of the HLS tools. While bitcount, basicmath and blowfish do not depend on any specific parameters, and they have only a single implementation instance in the experiments. 
 
-Among the HLS benchmarks, the program basicmath costs the FF and LUT most while there is only 1 conditional block and 4 circulation blocks in less than its 350 lines of code.
-In addition, this program neither includes dynamic memory allocation, nor uses global or static variabilities.
-However, 38 BRAM\_18K are consumed by basicmath.
-Through analysis, we discover that basicmath employs trigonometric functions, cosine and sine, exponent and logarithm operation to slove a cubic polynomial.
-We analysize and show the resources cost by the functions mentioned above in basicmath in Table .
-It can be seen that the cosine and sine functions cost lots of FPGA resources. It consumes 17 BRAM\_18K to solve a single cosine or sine function.
-Moreover, we check the verilog codes generated by Vivado through HLS to find that cosine and sine trigonometric functions use CORDIC (for COordinate Rotation DIgital Computer) algorithm to implement, which was first described in 1959 by Jack E. Volder. CORDIC is a simple and efficient algorithm to calculate hyperbolic and trigonometric functions.
-It is commonly used in microcontrollers and FPGAs as the only operations it requires are addition, subtraction, bitshift and table lookup.~\cite{volder1959cordic}
-It is the table lookup employed by CORDIC in solving the cosine and sine functions that leads to the huge consume of RAM.
-Also, the frequent use of ddition, subtraction, bitshift operations results in more use of DSP, FF and LUT resources.
-Table \ref{table_cos_sine} shows us that the exponent and logarithm operations also make an ignorable contribution to the cost of FF and LUT,.
-Because of the reasons above, the basicmath benchmark consumes the most FF and LUT resources.
+The experiment results are displayed in Table \ref{table_systhesis_result}. It is clear that the DSP48 consumption doesn't have much difference among diverse data sets. The main reason is that there is no loop unrolling and the loop bodies implemented are about the same. Applications with large arrays tend to consume more BRAM blocks as the arrays are typically implemented as memory. 
+
+%The reason lies in that Dijkstra, stringsearch and astars use global variables to solve problems.
+%For example, the Dijkstra benchmark uses a global array to store the distance information between graph nodes and the space needed by these global variables increases with the scale of the data processed.
+%Since the global variables are stored in the FPGA RAM in HLS, the utilization of RAM increases with the input parameters.
+%For the benchmarks which do not consume changed RAM with input parameters, they hardly use global variables and almost use the divide and conquer algorithm to implement the benchmark.
+%AES algorithm utilized in the rijndael benchmark does not encrypt directly on the whole input data flow, but divides the data to 16 blocks, and processes the small data blocks in turn, through which reduces the use of memory.
+
+basicmath costs the largest amount of FF and LUT due to the exponent and logarithm operations that need a lot of FF and LUT as shown in Table \ref{table_cos_sine}. It also consumes moderate number of BRAM blocks because of the cosine and sine function implemented with lookup table. 
+
+%In addition, this program neither includes dynamic memory allocation, nor uses global or static variabilities.
+%However, 38 BRAM\_18K are consumed by basicmath.
+%Through analysis, we discover that basicmath employs trigonometric functions, cosine and sine, exponent and logarithm operation to slove a cubic polynomial.
+%We analysize and show the resources cost by the functions mentioned above in basicmath in Table .
+%It can be seen that the cosine and sine functions cost lots of FPGA resources. It consumes 17 BRAM\_18K to solve a single cosine or sine function.
+%Moreover, we check the verilog codes generated by Vivado through HLS to find that cosine and sine trigonometric functions use CORDIC (for COordinate Rotation DIgital Computer) algorithm to implement, which was first described in 1959 by Jack E. Volder. CORDIC is a simple and efficient algorithm to calculate hyperbolic and trigonometric functions.
+%It is commonly used in microcontrollers and FPGAs as the only operations it requires are addition, subtraction, bitshift and table lookup.~\cite{volder1959cordic}
+%It is the table lookup employed by CORDIC in solving the cosine and sine functions that leads to the huge consume of RAM.
 
 
 \section{Conclusions}\label{section_conclusions}
-This paper presented an open-source C/C++ benchmark suite  for  FPGA high-level synthesis which is mainly targeted for designers wanting to evaluate different commercial HLS tools. These benchmarks are carefully selected from well-known  CPU benchmarks to represent different application domains. This paper also described synthesis results based on commercial Xilinx Vivado. In addition, we presented some important code transforming strategy such as dynamically memory allocation support in HLS, which is very useful for FPGA HLS designers.
+This paper present an open-source C/C++ benchmark suite selected form well-known CPU benchmarks for FPGA high-level synthesis tools. It covers a number of typical application domains. We further provide each benchmark with diverse data sets to facilitate the exploration of HLS tools. The benchmark is implemented using the latest Xilinx Vivado HLS. The experiments show that the benchmark consumes a large range of hardware overhead and computation, which makes it representative for HLS benchmarking. 
+
+%which is mainly targeted for designers wanting to evaluate different commercial HLS tools. These benchmarks are carefully selected from well-known  CPU benchmarks to represent different application domains. This paper also described synthesis results based on commercial Xilinx Vivado. In addition, we presented some important code transforming strategy such as dynamically memory allocation support in HLS, which is very useful for FPGA HLS designers.
 
 % An example of a floating figure using the graphicx package.
 % Note that \label must occur AFTER (or within) \caption.

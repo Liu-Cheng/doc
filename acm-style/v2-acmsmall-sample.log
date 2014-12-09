@@ -1,0 +1,304 @@
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2013.9.7)  12 OCT 2014 16:36
+entering extended mode
+ %&-line parsing enabled.
+**v2-acmsmall-sample
+(./v2-acmsmall-sample.tex
+LaTeX2e <2009/09/24>
+Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
+yphenation, farsi, arabic, croatian, bulgarian, ukrainian, russian, czech, slov
+ak, danish, dutch, finnish, french, basque, ngerman, german, german-x-2009-06-1
+9, ngerman-x-2009-06-19, ibycus, monogreek, greek, ancientgreek, hungarian, san
+skrit, italian, latin, latvian, lithuanian, mongolian2a, mongolian, bokmal, nyn
+orsk, romanian, irish, coptic, serbian, turkish, welsh, esperanto, uppersorbian
+, estonian, indonesian, interlingua, icelandic, kurmanji, slovenian, polish, po
+rtuguese, spanish, galician, catalan, swedish, ukenglish, pinyin, loaded.
+(./acmsmall.cls
+Document Class: acmsmall 2012/03/05, fonts included on 28 June 2010
+(./url.sty
+\Urlmuskip=\muskip10
+Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
+)
+ACM, Production Font style: 2010/06/28 by Aptara
+
+Using ACM, TECS option: 2010/05/04 by Aptara
+
+(/usr/share/texmf-texlive/tex/latex/base/latexsym.sty
+Package: latexsym 1998/08/17 v2.2e Standard LaTeX package (lasy symbols)
+\symlasy=\mathgroup4
+LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
+(Font)                  U/lasy/m/n --> U/lasy/b/n on input line 47.
+)
+(/usr/share/texmf-texlive/tex/latex/graphics/color.sty
+Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
+
+(/etc/texmf/tex/latex/config/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: pdftex.def on input line 130.
+
+(/usr/share/texmf-texlive/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2010/03/12 v0.04p Graphics/color for pdfTeX
+\Gread@gobject=\count79
+))
+(/usr/share/texmf-texlive/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf-texlive/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(/usr/share/texmf-texlive/tex/latex/graphics/graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf-texlive/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/etc/texmf/tex/latex/config/graphics.cfg
+File: graphics.cfg 2009/08/28 v1.8 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+)
+\Gin@req@height=\dimen102
+\Gin@req@width=\dimen103
+)
+Document Class `acmsmall' Electronic Submissions v1.4 <July 09, 2012> (ACM).
+\@firstpg=\count80
+\@lastpg=\count81
+\trimheight=\dimen104
+\trimwidth=\dimen105
+\normaltextheight=\dimen106
+\tempdimen=\dimen107
+\tempbox=\box26
+\tbbox=\box27
+\tabledim=\dimen108
+\symnewlargesymbols=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \bigsqcup on input line 2319.
+\normalparindent=\dimen109
+\footheight=\skip41
+\@maxsep=\skip42
+\@dblmaxsep=\skip43
+\@totalpg=\count82
+\@abstract=\box28
+\@permissionbox=\box29
+\c@part=\count83
+\c@section=\count84
+\c@subsection=\count85
+\c@subsubsection=\count86
+\c@paragraph=\count87
+\enumdim=\dimen110
+\c@theorem=\count88
+\belowcaptionskip=\skip44
+\abovecaptionskip=\skip45
+\c@figure=\count89
+\c@table=\count90
+\@narrowfig=\dimen111
+\@nfigbox=\box30
+\@nfcapbox=\box31
+\@nfigbox=\box32
+\@nfcapbox=\box33
+\bibindent=\dimen112
+LaTeX Font Info:    Overwriting math alphabet `\mathbb' in version `normal'
+(Font)                  OT1/ams/bx/n --> OT1/ams/bx/n on input line 3901.
+LaTeX Font Info:    Overwriting math alphabet `\mathbb' in version `bold'
+(Font)                  OT1/ams/bx/n --> OT1/ams/bx/n on input line 3902.
+) (./algorithm2e.sty
+Package: algorithm2e 2008/00/00 v3.10 algorithms environments
+\c@AlgoLine=\count91
+ (/usr/share/texmf-texlive/tex/latex/base/ifthen.sty
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+(/usr/share/texmf-texlive/tex/latex/tools/xspace.sty
+Package: xspace 2006/05/08 v1.12 Space after command names (DPC,MH)
+)
+(/usr/share/texmf-texlive/tex/latex/ltxmisc/relsize.sty
+Package: relsize 2003/07/04 ver 3.1
+)
+********************************************************
+Package `algorithm2e' Release 4.01 -- december 14 2009 --
+- algorithm2e-announce@lirmm.fr mailing list for announcement about releases
+- algorithm2e-discussion@lirmm.fr mailing list for discussion about package
+subscribe by emailing sympa@lirmm.fr with 'subscribe <list> <firstname name>'
+- Author: Christophe Fiorio (fiorio@lirmm.fr)
+********************************************************
+\skiptotal=\skip46
+\skiplinenumber=\skip47
+\skiprule=\skip48
+\skiphlne=\skip49
+\skiptext=\skip50
+\skiplength=\skip51
+\algomargin=\skip52
+\skipalgocfslide=\skip53
+\algowidth=\dimen113
+\inoutsize=\dimen114
+\inoutline=\dimen115
+\interspacetitleruled=\dimen116
+\interspacealgoruled=\dimen117
+\interspacetitleboxruled=\dimen118
+\algocf@inoutbox=\box34
+\algocf@inputbox=\box35
+\AlCapSkip=\skip54
+\AlCapHSkip=\skip55
+\algocf@nlbox=\box36
+\algocf@hangingbox=\box37
+\algocf@capbox=\box38
+\algoheightruledefault=\skip56
+\algoheightrule=\skip57
+\algotitleheightruledefault=\skip58
+\algotitleheightrule=\skip59
+\c@algocfline=\count92
+\c@algocfproc=\count93
+\c@algocf=\count94
+\algocf@algoframe=\box39
+\algocf@algobox=\box40
+) (./v2-acmsmall-sample.aux)
+\openout1 = `v2-acmsmall-sample.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Try loading font information for OT1+pnc on input line 33.
+
+(/usr/share/texmf-texlive/tex/latex/psnfss/ot1pnc.fd
+File: ot1pnc.fd 2001/06/04 font definitions for OT1/pnc.
+)
+(/usr/share/texmf-texlive/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count95
+\scratchdimen=\dimen119
+\scratchbox=\box41
+\nofMPsegments=\count96
+\nofMParguments=\count97
+\everyMPshowfont=\toks15
+\MPscratchCnt=\count98
+\MPscratchDim=\dimen120
+\MPnumerator=\count99
+\everyMPtoPDFconversion=\toks16
+)
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 113.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 113.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 113.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 113.
+ (/usr/share/texmf-texlive/tex/latex/base/ulasy.fd
+File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
+)
+LaTeX Font Info:    Try loading font information for OMS+pnc on input line 113.
+
+
+(/usr/share/texmf-texlive/tex/latex/psnfss/omspnc.fd
+File: omspnc.fd 
+)
+LaTeX Font Info:    Font shape `OMS/pnc/m/n' in size <8> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 113.
+LaTeX Font Info:    Try loading font information for OT1+phv on input line 115.
+
+
+(/usr/share/texmf-texlive/tex/latex/psnfss/ot1phv.fd
+File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
+)
+LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <12> not available
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 115.
+LaTeX Font Info:    Font shape `OT1/pnc/bx/n' in size <8> not available
+(Font)              Font shape `OT1/pnc/b/n' tried instead on input line 115.
+LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <9> not available
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 118.
+
+Overfull \vbox (72.27pt too high) has occurred while \output is active []
+
+ [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+Non-PDF special ignored!
+
+]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 169.
+
+Underfull \hbox (badness 10000) in paragraph at lines 189--199
+[]\OT1/pnc/m/n/10 So pro-to-cols [Bahl 2002,Culler 2001,Zhou 2006,Adya 2001,Cul
+ler 2001;
+ []
+
+LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <9> not available
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 203.
+[2]
+LaTeX Font Info:    Font shape `OT1/pnc/bx/n' in size <9> not available
+(Font)              Font shape `OT1/pnc/b/n' tried instead on input line 226.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <9> on input line 226.
+LaTeX Font Info:    Font shape `OT1/pnc/bx/n' in size <10> not available
+(Font)              Font shape `OT1/pnc/b/n' tried instead on input line 247.
+ [3] <acmsmall-mouse.pdf, id=32, 151.56625pt x 134.5025pt>
+File: acmsmall-mouse.pdf Graphic file (type pdf)
+
+<use acmsmall-mouse.pdf> [4 <./acmsmall-mouse.pdf>] [5]
+(./v2-acmsmall-sample.bbl [6]
+Underfull \hbox (badness 5217) in paragraph at lines 243--250
+[]\OT1/pnc/m/n/8 Dave No-vak. 2003. Sol-der man. Video. In \OT1/pnc/m/it/8 ACM 
+SIG-GRAPH 2003 Video Re-view on An-i-ma-
+ []
+
+
+Underfull \hbox (badness 1953) in paragraph at lines 243--250
+\OT1/pnc/m/it/8 tion the-ater Pro-gram: Part I - Vol. 145 (July 27--27, 2003)\O
+T1/pnc/m/n/8 . ACM Press, New York, NY, 4.
+ []
+
+
+Underfull \hbox (badness 2103) in paragraph at lines 316--324
+\OT1/pnc/m/n/8 In \OT1/pnc/m/it/8 Pro-ceed-ings of the 3rd. an-nual work-shop o
+n Li-brar-i-ans and Com-put-ers (LAC '10)\OT1/pnc/m/n/8 , Regi-
+ []
+
+
+Underfull \hbox (badness 2005) in paragraph at lines 316--324
+\OT1/pnc/m/n/8 nald N. Smythe and Alexan-der No-ble (Eds.), Vol. 3. Pa-parazzi 
+Press, Mi-lan Italy, 422--431.
+ []
+
+) [7] [1
+
+] (./v2-acmsmall-sample.aux) ) 
+Here is how much of TeX's memory you used:
+ 2836 strings out of 493848
+ 35130 string characters out of 1152824
+ 114607 words of memory out of 3000000
+ 6095 multiletter control sequences out of 15000+50000
+ 32253 words of font info for 65 fonts, out of 3000000 for 9000
+ 714 hyphenation exceptions out of 8191
+ 32i,17n,27p,311b,497s stack positions out of 5000i,500n,10000p,200000b,50000s
+{/usr/share/texmf-texlive/fonts/enc/dvips/base/8r
+.enc}</usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/
+share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texmf-
+texlive/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-texlive/font
+s/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-texlive/fonts/type1/publ
+ic/amsfonts/cm/cmmi9.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/
+cm/cmr10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr5.pfb>
+</usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/t
+exmf-texlive/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-texlive/
+fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-texlive/fonts/type1/p
+ublic/amsfonts/cm/cmr9.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfont
+s/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy6.
+pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/sh
+are/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texmf-te
+xlive/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/share/texmf-texlive/fonts/
+type1/urw/helvetic/uhvb8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/helveti
+c/uhvr8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/helvetic/uhvro8a.pfb></u
+sr/share/texmf-texlive/fonts/type1/urw/ncntrsbk/uncb8a.pfb></usr/share/texmf-te
+xlive/fonts/type1/urw/ncntrsbk/uncr8a.pfb></usr/share/texmf-texlive/fonts/type1
+/urw/ncntrsbk/uncri8a.pfb>
+Output written on v2-acmsmall-sample.pdf (8 pages, 248463 bytes).
+PDF statistics:
+ 123 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+

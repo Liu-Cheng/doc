@@ -1,0 +1,67 @@
+\documentclass[journal]{IEEEtran}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage[caption=false,font=footnotesize]{subfig}
+\usepackage{dblfloatfix}
+\usepackage{algorithmic}
+\usepackage{algorithm}
+\usepackage{xspace}
+\usepackage{url}
+\usepackage[square, comma, sort&compress, numbers]{natbib}
+
+\setlength{\parskip}{0pt}
+\renewcommand{\topfraction}{1}
+\renewcommand{\textfraction}{0.15}
+\renewcommand{\dbltopfraction}{1}
+
+\renewcommand\floatpagefraction{.9}
+\renewcommand\topfraction{.9}
+\renewcommand\bottomfraction{.9}
+\renewcommand\dbltopfraction{.9}
+\renewcommand\textfraction{.1}   
+\setcounter{totalnumber}{4}
+\setcounter{topnumber}{8}
+\setcounter{bottomnumber}{4}
+\setcounter{dbltopnumber}{4}
+
+\newcommand{\eqnref}[1]{(\ref{#1})}
+\newcommand{\figref}[1]{Figure~\ref{#1}}
+\newcommand{\algref}[1]{Algorithm~\ref{#1}}
+\newcommand{\secref}[1]{Section~\ref{#1}}
+\newcommand{\tabref}[1]{Table~\ref{#1}}
+
+\newcommand{\tabincell}[2]{\begin{tabular}{@{}#1@{}}#2\end{tabular}}
+
+\graphicspath{{./figures/}}
+
+\begin{document}
+
+\title{Flex-Pipe: A Flexibly Pipelined Soft Coarse-Grained Reconfigurable Array Overlay For Data Flow Computing}
+\author{Cheng Liu,
+and Hayden Kwok-Hay So% <-this % stops a space
+
+\thanks{}
+}
+\maketitle
+
+\begin{abstract}
+    \input{abstract}
+\end{abstract}
+
+\begin{IEEEkeywords}
+    Overlay, Pipeline, Soft Coarse Grain Reconfigurable Array, Data Flow Computing
+\end{IEEEkeywords}
+
+\input{introduction}
+\input{relatedwork}
+\input{framework}
+\input{scgraimplement}
+\input{scgracompile}
+\input{experiments}
+\input{conclusions}
+
+\bibliographystyle{plain}
+\bibliography{refs}
+
+\end{document}
+
