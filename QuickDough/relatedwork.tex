@@ -1,9 +1,9 @@
 \section{Related Work}\label{sec:relatedwork}
 Despite their promising performance advantage, the relatively low design productivity of developing FPGA applications remains a major obstacle that hinders widespread adoption of FPGAs as commodity computing devices.
-To address this problem, the design of QuickDough was inspired by the recent success in high-level synthesis tools.  It also took advantage of modern FPGAs' capabilities to allow for an additional overlay architecture be employed for productivity sake.
+To address this problem, the design of QuickDough was inspired by the recent success in HLS tools.  It also took advantage of modern FPGAs' capabilities to allow for an additional overlay architecture be employed for productivity sake.
 
 \subsection{High-Level Synthesis}
-To bridge the design productivity gap between software and hardware application development, many researchers have turned to the use of high-level synthesis (HLS) techniques \cite{cong2011high}.
+To bridge the design productivity gap between software and hardware application development, many researchers have turned to the use of HLS techniques \cite{cong2011high}.
 By raising the abstraction level of the physical hardware, HLS allows designers to express hardware designs using familiar high-level, software-like description languages such as C, Java, or Python \cite{cardoso2010compiling,Canis:2011:LHS:1950413.1950423}.
 The low-level hardware implementations are then left to the tools to synthesize and optimize.
 Indeed, with decades of research, some early results in HLS have already found their ways into FPGA vendors' commercial tools in recent years \cite{chen2005xpilot, zhang2008autopilot, VivadoHLS}.

@@ -63,8 +63,8 @@ On one hand, the design of the PE must be simple with low overhead to reduce are
 On the other hand, the design of PE must also be flexible enough that it can support all required operations in the target application.
 
 \begin{figure}
-\center{\includegraphics[width=0.7\linewidth]{pe}}
-\caption{Fully Pipelined PE structure}
+\center{\includegraphics[width=0.6\linewidth]{pe}}
+\caption{Fully pipelined PE structure. Each PE can be connected to at most 4 neighbours.}
 \label{fig:pe}
 \end{figure}
 
@@ -92,8 +92,8 @@ Currently, 3 true dual port memory blocks that contain replicated data are emplo
 At the heart of the proposed PE is the ALU that carries out the computations of the given application.  As an overlay, the QuickDough ALU must be simple, regular, and flexible such that it may easily be customized with different operations specifically for any given user application.  In addition, it must also be fully pipelined in order to achieve high clock frequency and thus higher overall performance.  \figref{fig:ALU} shows the current design of the ALU used in the QuickDough overlay.
 
 \begin{figure}
-\center{\includegraphics[width=0.6\linewidth]{alu-v2}}
-\caption{The QuickDough ALU.   It supports up to 16 fully pipelined 3-input operations.}
+\center{\includegraphics[width=0.49\linewidth]{alu-v2}}
+\caption{The QuickDough ALU. It supports up to 16 fully pipelined 3-input operations.}
 \label{fig:ALU}
 \end{figure} 
 
@@ -122,9 +122,10 @@ These operators in the ALU may execute concurrently in a pipelined fashion and m
 
 
 \begin{table}
-\tbl{Operation Set Implemented in ALU\label{tab:operations}}{
-
+\tbl{Operation Set Implemented in ALU. It covers all the four applications used in the experiments.\label{tab:operations}}{
+\footnotesize 
 \centering
+\resizebox{0.5\columnwidth}{!}{
 \begin{tabular}{l|c|l}
 \hline
 Type & Opcode & Expression \\
@@ -168,11 +169,12 @@ ANDAND & 1100 & {Dst = (Src0 \& Src1) \& Src2} \\
 \hline
 \end{tabular}
 }
+}
 \end{table}
 
 \subsection{Load/Store Interface}
 For the PEs that also serve as IO interface to the SCGRA, they have an additional load path and a store path as shown in \ref{fig:pe}. The data loading path and the SCGRA neighboring input share a single data memory write port, and an additional pipeline stage is added to keep the balance of the pipeline.
-Similarly, the data storing path has an additional data multiplexor as well, but it doesn't influence the pipeline of the design. 
+Similarly, the data storing path has an additional data multiplier as well, but it doesn't influence the pipeline of the design. 
 
 
 

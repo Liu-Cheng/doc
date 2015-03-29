@@ -2,44 +2,44 @@ This is BibTeX, Version 0.99c (TeX Live 2009/Debian)
 The top-level auxiliary file: quickDough.aux
 The style file: newapa.bst
 Database file #1: refs.bib
-You've used 29 entries,
+You've used 28 entries,
             2708 wiz_defined-function locations,
-            759 strings with 10711 characters,
-and the built_in function-call counts, 16024 in all, are:
-= -- 1475
-> -- 794
-< -- 29
-+ -- 317
-- -- 303
-* -- 1422
-:= -- 2933
-add.period$ -- 98
-call.type$ -- 29
-change.case$ -- 275
-chr.to.int$ -- 29
-cite$ -- 29
-duplicate$ -- 648
-empty$ -- 1013
-format.name$ -- 346
-if$ -- 3082
+            754 strings with 10663 characters,
+and the built_in function-call counts, 15724 in all, are:
+= -- 1446
+> -- 784
+< -- 28
++ -- 314
+- -- 300
+* -- 1401
+:= -- 2871
+add.period$ -- 94
+call.type$ -- 28
+change.case$ -- 268
+chr.to.int$ -- 28
+cite$ -- 28
+duplicate$ -- 636
+empty$ -- 995
+format.name$ -- 342
+if$ -- 3030
 int.to.chr$ -- 1
 int.to.str$ -- 0
 missing$ -- 26
-newline$ -- 151
-num.names$ -- 116
-pop$ -- 274
+newline$ -- 145
+num.names$ -- 112
+pop$ -- 271
 preamble$ -- 1
-purify$ -- 304
+purify$ -- 296
 quote$ -- 0
-skip$ -- 487
+skip$ -- 476
 stack$ -- 0
-substring$ -- 899
-swap$ -- 217
+substring$ -- 886
+swap$ -- 214
 text.length$ -- 17
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 174
+type$ -- 168
 warning$ -- 0
-while$ -- 141
+while$ -- 138
 width$ -- 0
-write$ -- 394
+write$ -- 380

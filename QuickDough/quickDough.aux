@@ -7,118 +7,145 @@
 \citation{chen2005xpilot,zhang2008autopilot,VivadoHLS}
 \@writefile{toc}{\contentsline {section}{\numberline {2}Related Work}{2}}
 \newlabel{sec:relatedwork}{{2}{2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}High-Level Synthesis}{2}}
 \citation{lavin2010using,lavin2011}
 \citation{Frangieh2010}
 \citation{zuma2013carl,Grant2011Malibu,Coole2010Intermediate,Koch2013CI}
 \citation{tessier2001reconfigurable}
 \citation{compton2002reconfigurable}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}High-Level Synthesis}{3}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Overlay Architectures}{3}}
 \citation{kissler2006dynamically}
 \citation{ferreira2011fpga}
 \citation{shukla2006quku}
 \citation{capalijia2013pipelined}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Overlay Architectures}{3}}
 \citation{Lebedev2010}
 \citation{Jeffrey2011potential}
+\@writefile{toc}{\contentsline {section}{\numberline {3}QuickDough Framework}{4}}
+\newlabel{sec:framework}{{3}{4}}
 \newlabel{fig:hls-accelerator}{{1a}{5}}
 \newlabel{sub@fig:hls-accelerator}{{(a)}{a}}
 \newlabel{fig:scgra-accelerator}{{1b}{5}}
 \newlabel{sub@fig:scgra-accelerator}{{(b)}{b}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {}}}{5}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {}}}{5}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {HLS Based FPGA Accelerator}}}{5}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {SCGRA Based FPGA Accelerator}}}{5}}
 \newlabel{fig:FPGA-accelerator}{{1}{5}}
-\@writefile{toc}{\contentsline {section}{\numberline {3}QuickDough Framework}{5}}
-\newlabel{sec:framework}{{3}{5}}
-\newlabel{fig:framework}{{2}{6}}
+\newlabel{fig:framework}{{2}{5}}
 \@writefile{toc}{\contentsline {section}{\numberline {4}The QuickDough Overlay}{6}}
 \newlabel{sec:scgraimplement}{{4}{6}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Reconfiguration}{6}}
 \newlabel{fig:pe}{{3}{7}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Reconfiguration}{7}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Processing Element (PE)}{7}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.1}Instruction Memory and Data Memory}{7}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.2}ALU}{7}}
 \newlabel{fig:ALU}{{4}{8}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.1}Instruction Memory and Data Memory}{8}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.2}ALU}{8}}
-\newlabel{tab:operations}{{I}{9}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Load/Store Interface}{9}}
-\@writefile{toc}{\contentsline {section}{\numberline {5}SCGRA Compilation}{9}}
-\newlabel{sec:scgracompile}{{5}{9}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Overview Of SCGRA Compilation}{9}}
+\newlabel{tab:operations}{{I}{8}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Load/Store Interface}{8}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Application Compilation}{8}}
+\newlabel{sec:scgracompile}{{5}{8}}
 \newlabel{fig:scgra-compile}{{5}{9}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Block and DFG Generation}{10}}
-\newlabel{fig:blocking-and-dfg-gen}{{6}{10}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}SCGRA Customization}{10}}
+\newlabel{fig:blocking-and-dfg-gen}{{6}{9}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}DFG Generation \& Grouping}{9}}
 \citation{schutten1996list}
 \citation{colinheart}
 \citation{data2mem}
 \citation{beckhoff2011xilinx}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.4}Operation Scheduler}{11}}
-\@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces The SCGRA scheduling algorithm.}}{11}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Overlay Generation}{10}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Operation Scheduling}{10}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces The QuickDough scheduling algorithm.}}{11}}
 \newlabel{alg:scheduling}{{1}{11}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.5}Bitstream Integration}{11}}
-\citation{zedboard}
-\@writefile{toc}{\contentsline {section}{\numberline {6}Experiments}{12}}
-\newlabel{sec:experiments}{{6}{12}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4}Bitstream Integration}{11}}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Experiments}{11}}
+\newlabel{sec:experiments}{{6}{11}}
 \newlabel{tab:benchmark-config}{{II}{12}}
-\newlabel{tab:loop-structure}{{III}{12}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}Experiment Setup}{12}}
-\newlabel{tab:loop-unrolling-setup-vivado}{{IV}{13}}
-\newlabel{tab:scgra-config}{{V}{13}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.2}Design Productivity}{13}}
-\newlabel{tab:loop-unrolling-setup-scgra}{{VI}{14}}
-\newlabel{fig:Vivado-HLS-Compilation-Time}{{7}{15}}
-\newlabel{fig:SCGRA-Overlay-Compilation-Time}{{8}{15}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.3}Hardware Implementation Efficiency}{15}}
-\newlabel{tab:hardware-overhead-comparison}{{VII}{16}}
-\newlabel{fig:hardware-saving}{{9}{16}}
-\newlabel{fig:impl-freq}{{10}{17}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.4}Performance}{17}}
-\newlabel{fig:real-perf}{{11}{17}}
-\newlabel{fig:execution-time}{{12}{18}}
-\newlabel{fig:kernel-real-perf}{{13}{19}}
-\newlabel{fig:kernel-sim-perf}{{14}{19}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.5}Scalability}{19}}
-\newlabel{fig:mm-sim-perf1}{{15a}{20}}
+\newlabel{tab:scgra-config}{{III}{12}}
+\newlabel{tab:loop-structure}{{IV}{12}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}Benchmark}{12}}
+\newlabel{subsec:benchmark}{{6.1}{12}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2}Experiment Setup}{12}}
+\newlabel{subsec:setup}{{6.2}{12}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.2.1}Loop unrolling and grouping}{12}}
+\newlabel{tab:loop-unrolling-setup-vivado}{{V}{13}}
+\newlabel{tab:loop-unrolling-setup-scgra}{{VI}{13}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3}Performance}{13}}
+\newlabel{subsec:performance}{{6.3}{13}}
+\newlabel{fig:mm-real-perf}{{7a}{14}}
+\newlabel{sub@fig:mm-real-perf}{{(a)}{a}}
+\newlabel{fig:fir-real-perf}{{7b}{14}}
+\newlabel{sub@fig:fir-real-perf}{{(b)}{b}}
+\newlabel{fig:sobel-real-perf}{{7c}{14}}
+\newlabel{sub@fig:sobel-real-perf}{{(c)}{c}}
+\newlabel{fig:kmean-real-perf}{{7d}{14}}
+\newlabel{sub@fig:kmean-real-perf}{{(d)}{d}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {MM}}}{14}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {FIR}}}{14}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {SE}}}{14}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {KM}}}{14}}
+\newlabel{fig:real-perf}{{7}{14}}
+\newlabel{fig:kernel-sim-perf}{{8}{15}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.3.1}Implementation Frequency}{15}}
+\newlabel{fig:impl-freq}{{9}{16}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.4}Compilation Time}{16}}
+\newlabel{subsec:compilation}{{6.4}{16}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.4.1}Direct HLS-based design}{16}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.4.2}QuickDough Compilation Time}{16}}
+\newlabel{fig:Vivado-HLS-Compilation-Time}{{10}{17}}
+\newlabel{fig:SCGRA-Overlay-Compilation-Time}{{11}{17}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.5}Implementation Overhead}{17}}
+\newlabel{subsec:impl}{{6.5}{17}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.5.1}General Overlay Architecture}{17}}
+\newlabel{tab:hardware-overhead-comparison}{{VII}{18}}
+\newlabel{fig:hardware-saving}{{12}{18}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.5.2}Overlay Customization}{18}}
+\newlabel{fig:mm-sim-perf1}{{13a}{19}}
 \newlabel{sub@fig:mm-sim-perf1}{{(a)}{a}}
-\newlabel{fig:mm-sim-perf2}{{15b}{20}}
+\newlabel{fig:mm-sim-perf2}{{13b}{19}}
 \newlabel{sub@fig:mm-sim-perf2}{{(b)}{b}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {}}}{20}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {}}}{20}}
-\newlabel{fig:mm-sim-perf}{{15}{20}}
-\newlabel{fig:loop-unroll-and-pipeline}{{16}{20}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {}}}{19}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {}}}{19}}
+\newlabel{fig:mm-sim-perf}{{13}{19}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.6}Scalability}{19}}
+\newlabel{subsec:scalability}{{6.6}{19}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.6.1}Problem Size}{19}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.6.2}Overlay Processing Array Size}{19}}
+\newlabel{fig:loop-unroll-and-pipeline}{{14}{20}}
+\newlabel{fig:scalability-performance}{{15a}{20}}
+\newlabel{sub@fig:scalability-performance}{{(a)}{a}}
+\newlabel{fig:scgra-overhead-scalability}{{15b}{20}}
+\newlabel{sub@fig:scgra-overhead-scalability}{{(b)}{b}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Performance}}}{20}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Overhead \& frequency}}}{20}}
+\@writefile{toc}{\contentsline {section}{\numberline {7}Limitations and Future Work}{20}}
+\newlabel{sec:discussion}{{7}{20}}
 \bibstyle{newapa}
 \bibdata{refs}
-\bibcite{zedboard}{{1}{2014}{{Avnet}}{{Avnet}}}
-\bibcite{beckhoff2011xilinx}{{2}{2011}{{Beckhoff et~al.}}{{Beckhoff, Koch \& Torresen}}}
-\newlabel{fig:scgra-overhead-scalability}{{17}{21}}
-\@writefile{toc}{\contentsline {section}{\numberline {7}Limitations and Future Work}{21}}
-\newlabel{sec:discussion}{{7}{21}}
+\bibcite{beckhoff2011xilinx}{{1}{2011}{{Beckhoff et~al.}}{{Beckhoff, Koch \& Torresen}}}
+\bibcite{zuma2013carl}{{2}{2012}{{Brant \& Lemieux}}{{Brant \& Lemieux}}}
+\bibcite{Canis:2011:LHS:1950413.1950423}{{3}{2011}{{Canis et~al.}}{{Canis, Choi, Aldham, Zhang, Kammoona, Anderson, Brown \& Czajkowski}}}
+\bibcite{capalijia2013pipelined}{{4}{2013}{{Capalija \& Abdelrahman}}{{Capalija \& Abdelrahman}}}
+\bibcite{cardoso2010compiling}{{5}{2010}{{Cardoso et~al.}}{{Cardoso, Diniz \& Weinhardt}}}
+\bibcite{chen2005xpilot}{{6}{2005}{{Chen et~al.}}{{Chen, Cong, Fan, Han, Jiang \& Zhang}}}
+\bibcite{compton2002reconfigurable}{{7}{2002}{{Compton \& Hauck}}{{Compton \& Hauck}}}
+\bibcite{cong2011high}{{8}{2011}{{Cong et~al.}}{{Cong, Liu, Neuendorffer, Noguera, Vissers \& Zhang}}}
+\bibcite{Coole2010Intermediate}{{9}{2010}{{Coole \& Stitt}}{{Coole \& Stitt}}}
 \@writefile{toc}{\contentsline {section}{\numberline {8}Conclusions}{21}}
 \newlabel{sec:conclusions}{{8}{21}}
-\bibcite{zuma2013carl}{{3}{2012}{{Brant \& Lemieux}}{{Brant \& Lemieux}}}
-\bibcite{Canis:2011:LHS:1950413.1950423}{{4}{2011}{{Canis et~al.}}{{Canis, Choi, Aldham, Zhang, Kammoona, Anderson, Brown \& Czajkowski}}}
-\bibcite{capalijia2013pipelined}{{5}{2013}{{Capalija \& Abdelrahman}}{{Capalija \& Abdelrahman}}}
-\bibcite{cardoso2010compiling}{{6}{2010}{{Cardoso et~al.}}{{Cardoso, Diniz \& Weinhardt}}}
-\bibcite{chen2005xpilot}{{7}{2005}{{Chen et~al.}}{{Chen, Cong, Fan, Han, Jiang \& Zhang}}}
-\bibcite{compton2002reconfigurable}{{8}{2002}{{Compton \& Hauck}}{{Compton \& Hauck}}}
-\bibcite{cong2011high}{{9}{2011}{{Cong et~al.}}{{Cong, Liu, Neuendorffer, Noguera, Vissers \& Zhang}}}
-\bibcite{Coole2010Intermediate}{{10}{2010}{{Coole \& Stitt}}{{Coole \& Stitt}}}
-\bibcite{ferreira2011fpga}{{11}{2011}{{Ferreira et~al.}}{{Ferreira, Vendramini, Mucida, Pereira \& Carro}}}
-\bibcite{Frangieh2010}{{12}{2010}{{Frangieh et~al.}}{{Frangieh, Chandrasekharan, Rajagopalan, Iskander, Craven \& Patterson}}}
-\bibcite{Grant2011Malibu}{{13}{2011}{{Grant et~al.}}{{Grant, Wang \& Lemieux}}}
-\bibcite{Jeffrey2011potential}{{14}{2011}{{Kingyens \& Steffan}}{{Kingyens \& Steffan}}}
-\bibcite{kissler2006dynamically}{{15}{2006}{{Kissler et~al.}}{{Kissler, Hannig, Kupriyanov \& Teich}}}
-\bibcite{Koch2013CI}{{16}{2013}{{Koch et~al.}}{{Koch, Beckhoff \& Lemieux}}}
-\bibcite{lavin2010using}{{17}{2010}{{Lavin et~al.}}{{Lavin, Padilla, Ghosh, Nelson, Hutchings \& Wirthlin}}}
-\bibcite{lavin2011}{{18}{2011}{{Lavin et~al.}}{{Lavin, Padilla, Lamprecht, Lundrigan, Nelson \& Hutchings}}}
-\bibcite{Lebedev2010}{{19}{2010}{{Lebedev et~al.}}{{Lebedev, Cheng, Doupnik, Martin, Fletcher, Burke, Lin \& Wawrzynek}}}
-\bibcite{schutten1996list}{{20}{1996}{{Schutten}}{{Schutten}}}
-\bibcite{Guy2012VENICE}{{21}{2012}{{Severance \& Lemieux}}{{Severance \& Lemieux}}}
-\bibcite{shukla2006quku}{{22}{2006}{{Shukla et~al.}}{{Shukla, Bergmann \& Becker}}}
-\bibcite{tessier2001reconfigurable}{{23}{2001}{{Tessier \& Burleson}}{{Tessier \& Burleson}}}
-\bibcite{unnikrishnan2009application}{{24}{2009}{{Unnikrishnan et~al.}}{{Unnikrishnan, Zhao \& Tessier}}}
-\bibcite{data2mem}{{25}{2012}{{Xilinx}}{{Xilinx}}}
-\bibcite{VivadoHLS}{{26}{2014}{{Xilinx}}{{Xilinx}}}
-\bibcite{Yiannacouras2009FPS}{{27}{2009}{{Yiannacouras et~al.}}{{Yiannacouras, Steffan \& Rose}}}
-\bibcite{colinheart}{{28}{2012}{{Yu}}{{Yu}}}
-\bibcite{zhang2008autopilot}{{29}{2008}{{Zhang et~al.}}{{Zhang, Fan, Jiang, Han, Yang \& Cong}}}
-\lastpage{23}
+\bibcite{ferreira2011fpga}{{10}{2011}{{Ferreira et~al.}}{{Ferreira, Vendramini, Mucida, Pereira \& Carro}}}
+\bibcite{Frangieh2010}{{11}{2010}{{Frangieh et~al.}}{{Frangieh, Chandrasekharan, Rajagopalan, Iskander, Craven \& Patterson}}}
+\bibcite{Grant2011Malibu}{{12}{2011}{{Grant et~al.}}{{Grant, Wang \& Lemieux}}}
+\bibcite{Jeffrey2011potential}{{13}{2011}{{Kingyens \& Steffan}}{{Kingyens \& Steffan}}}
+\bibcite{kissler2006dynamically}{{14}{2006}{{Kissler et~al.}}{{Kissler, Hannig, Kupriyanov \& Teich}}}
+\bibcite{Koch2013CI}{{15}{2013}{{Koch et~al.}}{{Koch, Beckhoff \& Lemieux}}}
+\bibcite{lavin2010using}{{16}{2010}{{Lavin et~al.}}{{Lavin, Padilla, Ghosh, Nelson, Hutchings \& Wirthlin}}}
+\bibcite{lavin2011}{{17}{2011}{{Lavin et~al.}}{{Lavin, Padilla, Lamprecht, Lundrigan, Nelson \& Hutchings}}}
+\bibcite{Lebedev2010}{{18}{2010}{{Lebedev et~al.}}{{Lebedev, Cheng, Doupnik, Martin, Fletcher, Burke, Lin \& Wawrzynek}}}
+\bibcite{schutten1996list}{{19}{1996}{{Schutten}}{{Schutten}}}
+\bibcite{Guy2012VENICE}{{20}{2012}{{Severance \& Lemieux}}{{Severance \& Lemieux}}}
+\bibcite{shukla2006quku}{{21}{2006}{{Shukla et~al.}}{{Shukla, Bergmann \& Becker}}}
+\bibcite{tessier2001reconfigurable}{{22}{2001}{{Tessier \& Burleson}}{{Tessier \& Burleson}}}
+\bibcite{unnikrishnan2009application}{{23}{2009}{{Unnikrishnan et~al.}}{{Unnikrishnan, Zhao \& Tessier}}}
+\bibcite{data2mem}{{24}{2012}{{Xilinx}}{{Xilinx}}}
+\bibcite{VivadoHLS}{{25}{2014}{{Xilinx}}{{Xilinx}}}
+\bibcite{Yiannacouras2009FPS}{{26}{2009}{{Yiannacouras et~al.}}{{Yiannacouras, Steffan \& Rose}}}
+\bibcite{colinheart}{{27}{2012}{{Yu}}{{Yu}}}
+\bibcite{zhang2008autopilot}{{28}{2008}{{Zhang et~al.}}{{Zhang, Fan, Jiang, Han, Yang \& Cong}}}
+\lastpage{22}

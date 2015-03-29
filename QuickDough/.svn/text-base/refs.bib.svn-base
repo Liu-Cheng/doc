@@ -2,7 +2,7 @@
     author = {Brant, A. and Lemieux, G.G.F.}, 
     booktitle = {Field-Programmable Custom Computing Machines (FCCM), 
 2012 IEEE 20th Annual International Symposium on}, 
-    title = {ZUMA: An Open FPGA Overlay Architecture}, 
+    title = {{ZUMA}: An Open {FPGA} Overlay Architecture}, 
     year = {2012}, 
     pages = {93--96}, 
     abstract = {This paper presents the ZUMA open FPGA overlay architecture. It is an open-source,
@@ -109,7 +109,7 @@ ISSN={},}
 @misc{VivadoHLS,
   author = "Xilinx",
   year = "2014",
-  title = "Vivado HLS",
+  title = "{Vivado HLS}",
   howpublished = "\url{http://www.xilinx.com/products/design-tools/vivado/integration/esl-design/}",
   note = "[Online; accessed 18-October-2014]"
 }
@@ -134,7 +134,7 @@ ISSN={},}
 @misc{ROCCC,
    author = "ROCCC",
    year = "2014",
-   title = "ROCCC2.0",
+   title = "{ROCCC2.0}",
    howpublished = "\url{http://www.jacquardcomputing.com/roccc/}",
    note = "[Online; accessed 19-January-2014]"
  }
@@ -142,7 +142,7 @@ ISSN={},}
 @misc{microblaze,
   author = "Xilinx",
   year = "2014",
-  title = "MicroBlaze Soft Processor Core",
+  title = "{MicroBlaze} Soft Processor Core",
   howpublished = "\url{http://www.xilinx.com/tools/microblaze.htm}",
   note = "[Online; accessed 25-June-2014]"
 }
@@ -255,7 +255,7 @@ ISSN={},}
 }
 
 @inproceedings{ferreira2011fpga,
-  title={An FPGA-based heterogeneous coarse-grained dynamically reconfigurable architecture},
+  title={An {FPGA-based} heterogeneous coarse-grained dynamically reconfigurable architecture},
   author={Ferreira, R. and Vendramini, J.G. and Mucida, L. and Pereira, M.M. and Carro, L.},
   booktitle={Proceedings of the 14th international conference on Compilers, architectures and synthesis for embedded systems},
   pages={195--204},
@@ -265,7 +265,7 @@ ISSN={},}
 
 @article{Jeffrey2011potential,
   author    = {Jeffrey Kingyens and J. Gregory Steffan},
-  title     = {The Potential for a GPU-Like Overlay Architecture for FPGAs},
+  title     = {The Potential for a {GPU-Like} Overlay Architecture for {FPGA}s},
   journal   = {Int. J. Reconfig. Comp.},
   volume    = {2011},
   year      = {2011},
@@ -304,7 +304,7 @@ doi={10.1109/FCCM.2009.41},}
 @INPROCEEDINGS{Guy2012VENICE, 
 author={Severance, A. and Lemieux, G.}, 
 booktitle={Field-Programmable Technology (FPT), 2012 International Conference on}, 
-title={VENICE: A compact vector processor for FPGA applications}, 
+title={{VENICE}: A compact vector processor for {FPGA} applications}, 
 year={2012}, 
 month={Dec}, 
 pages={261--268}, 
@@ -314,8 +314,8 @@ doi={10.1109/FPT.2012.6412146},}
 
 @INPROCEEDINGS{Shukla2006QUKU, 
 author={Shukla, S. and Bergmann, N.W. and Becker, J.}, 
-booktitle={Emerging VLSI Technologies and Architectures, 2006. IEEE Computer Society Annual Symposium on}, 
-title={QUKU: a two-level reconfigurable architecture}, 
+booktitle={Emerging {VLSI} Technologies and Architectures, 2006. IEEE Computer Society Annual Symposium on}, 
+title={{QUKU}: a two-level reconfigurable architecture}, 
 year={2006}, 
 month={March}, 
 pages={}, 
@@ -326,7 +326,7 @@ doi={10.1109/ISVLSI.2006.76},}
 @INPROCEEDINGS{Guppy2012GPU-Like, 
 author={Al-Dujaili, A. and Deragisch, F. and Hagiescu, A. and Weng-Fai Wong}, 
 booktitle={Field-Programmable Technology (FPT), 2012 International Conference on}, 
-title={Guppy: A GPU-like soft-core processor}, 
+title={Guppy: A {GPU-like} soft-core processor}, 
 year={2012}, 
 month={Dec}, 
 pages={57--60}, 
@@ -336,7 +336,7 @@ doi={10.1109/FPT.2012.6412112},}
 
 @inproceedings{Grant2011Malibu,
  author = {Grant, David and Wang, Chris and Lemieux, Guy G.F.},
- title = {A CAD Framework for Malibu: An FPGA with Time-multiplexed Coarse-grained Elements},
+ title = {A {CAD} Framework for {Malibu}: An {FPGA} with Time-multiplexed Coarse-grained Elements},
  booktitle = {Proceedings of the 19th ACM/SIGDA International Symposium on Field Programmable Gate Arrays},
  series = {FPGA '11},
  year = {2011},
@@ -355,7 +355,7 @@ doi={10.1109/FPT.2012.6412112},}
 @INPROCEEDINGS{Capalija2009coarse-grain, 
 author={Capalija, D. and Abdelrahman, T.S.}, 
 booktitle={Field-Programmable Technology, 2009. FPT 2009. International Conference on}, 
-title={An architecture for exploiting coarse-grain parallelism on FPGAs}, 
+title={An architecture for exploiting coarse-grain parallelism on {FPGA}s}, 
 year={2009}, 
 month={Dec}, 
 pages={285--291}, 
@@ -378,7 +378,7 @@ doi={10.1109/FPL.2013.6645515},}
 @ARTICLE{Yiannacouras2007Exploration, 
 author={Yiannacouras, P. and Steffan, J.G. and Rose, J.}, 
 journal={Computer-Aided Design of Integrated Circuits and Systems, IEEE Transactions on}, 
-title={Exploration and Customization of FPGA-Based Soft Processors}, 
+title={Exploration and Customization of {FPGA-Based} Soft Processors}, 
 year={2007}, 
 month={Feb}, 
 volume={26}, 
@@ -390,7 +390,8 @@ doi={10.1109/TCAD.2006.887921},
 ISSN={0278-0070},}
 
 @inproceedings{grad2009woolcano,
-  title={Woolcano: An Architecture And Tool Flow For Dynamic Instruction Set Extension On Xilinx Virtex-4 FX.},
+  title={{Woolcano}: An Architecture And Tool Flow For Dynamic Instruction Set Extension On {Xilinx}
+      {Virtex-4} FX.},
   author={Grad, Mariusz and Plessl, Christian},
   booktitle={ERSA},
   pages={319--322},
@@ -432,7 +433,7 @@ keywords={electronic engineering computing;field programmable gate arrays;hardwa
 
 @inproceedings{Baleani2002HW-SW,
  author = {Baleani, Massimo and Gennari, Frank and Jiang, Yunjian and Patel, Yatish and Brayton, Robert K. and Sangiovanni-Vincentelli, Alberto},
- title = {HW/SW Partitioning and Code Generation of Embedded Control Applications on a Reconfigurable Architecture Platform},
+ title = {{HW/SW} Partitioning and Code Generation of Embedded Control Applications on a Reconfigurable Architecture Platform},
  booktitle = {Proceedings of the Tenth International Symposium on Hardware/Software Codesign},
  series = {CODES '02},
  year = {2002},
@@ -450,7 +451,7 @@ keywords={electronic engineering computing;field programmable gate arrays;hardwa
 
 @inproceedings{Canis:2011:LHS:1950413.1950423,
  author = {Canis, Andrew and Choi, Jongsok and Aldham, Mark and Zhang, Victor and Kammoona, Ahmed and Anderson, Jason H. and Brown, Stephen and Czajkowski, Tomasz},
- title = {{LegUp: High-level Synthesis for FPGA-based Processor/Accelerator Systems}},
+ title = {{{LegUp}: High-level Synthesis for {FPGA-based} Processor/Accelerator Systems}},
  booktitle = {Proceedings of the 19th ACM/SIGDA International Symposium on Field Programmable Gate Arrays},
  series = {FPGA '11},
  year = {2011},
@@ -468,7 +469,7 @@ keywords={electronic engineering computing;field programmable gate arrays;hardwa
 
 
 @article{chen2005xpilot,
-  title={xpilot: A platform-based behavioral synthesis system},
+  title={Xpilot: A platform-based behavioral synthesis system},
   author={Chen, Deming and Cong, Jason and Fan, Yiping and Han, Guoling and Jiang, Wei and Zhang, Zhiru},
   journal={SRC TechCon},
   volume={5},
@@ -476,7 +477,7 @@ keywords={electronic engineering computing;field programmable gate arrays;hardwa
 }
 
 @incollection{zhang2008autopilot,
-  title={AutoPilot: A platform-based ESL synthesis system},
+  title={{AutoPilot}: A platform-based {ESL} synthesis system},
   author={Zhang, Zhiru and Fan, Yiping and Jiang, Wei and Han, Guoling and Yang, Changqi and Cong, Jason},
   booktitle={High-Level Synthesis},
   pages={99--112},

@@ -1,4 +1,8 @@
-\documentclass[prodmode,acmtrets]{acmsmall}
+\pdfminorversion=4
+%\documentclass[prodmode,acmtrets]{acmsmall}
+\documentclass[acmtrets]{acmsmall}
+\usepackage[binary-units]{siunitx}
+\usepackage{enumitem}
 \usepackage{algorithm}
 \usepackage{algorithmic}
 \usepackage[algo2e]{algorithm2e}
@@ -24,6 +28,11 @@
 \usepackage{url}
 \usepackage[square, comma, sort&compress, numbers]{natbib}
 
+% \usepackage{draftwatermark}%
+% \SetWatermarkFontSize{20cm}%
+% \SetWatermarkScale{2}%
+% \SetWatermarkText{DRAFT Do not distribute}%
+
 \setlength{\parskip}{0pt}
 \renewcommand{\topfraction}{1}
 \renewcommand{\textfraction}{0.15}
@@ -44,6 +53,7 @@
 \newcommand{\algref}[1]{Algorithm~\ref{#1}}
 \newcommand{\secref}[1]{Section~\ref{#1}}
 \newcommand{\tabref}[1]{Table~\ref{#1}}
+\newcommand{\code}[1]{\texttt{#1}}
 
 \newcommand{\tabincell}[2]{\begin{tabular}{@{}#1@{}}#2\end{tabular}}
 
@@ -75,7 +85,9 @@ QuickDough: A Rapid FPGA Accelerator Design Methodology Using Soft
 Coarse-Grained Reconfigurable Array Overlay.}
 
 \begin{bottomstuff}
-This work is supported by xxx
+This work is supported in part by the Research Grant Concil of Hong
+Kong, under the General Research Fund project 716510 and in part by
+the Croucher Innovation Award of the Croucher Foundation.
 
 Author's addresses: Cheng Liu, Colin Yu Lin, and Hayden Kwok-Hay So
 Department of Electrical and Electronic Engineering, The University of
@@ -94,7 +106,7 @@ Hong Kong, Pokfulam Road, Hong Kong
 \input{conclusions}
 
 \bibliographystyle{newapa}
-\bibliography{refs}
+{\small\bibliography{refs}}
 
 \end{document}
 

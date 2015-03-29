@@ -124,7 +124,7 @@
      inkscape:groupmode="layer"
      id="layer1">
     <rect
-       style="fill:#ffb380;fill-opacity:1;stroke:#010000;stroke-width:0.5;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       style="fill:#ffffff;fill-opacity:1;stroke:#010000;stroke-width:0.50000000000000000;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
        id="rect3053"
        width="137.60992"
        height="147.74039"
@@ -189,7 +189,7 @@
          x="68.08934"
          y="24.291933">Original code</tspan></text>
     <rect
-       style="fill:#ffb380;fill-opacity:1;stroke:#010000;stroke-width:0.49999997;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       style="fill:#ffffff;fill-opacity:1;stroke:#010000;stroke-width:0.49999997000000002;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
        id="rect3053-5"
        width="153.62167"
        height="147.47681"
@@ -205,7 +205,7 @@
          sodipodi:role="line"
          x="203.59413"
          y="53.79459"
-         id="tspan4717-1">// Block Size: B</tspan><tspan
+         id="tspan4717-1">// Group Size: G</tspan><tspan
          id="tspan3321"
          sodipodi:role="line"
          x="203.59413"
@@ -213,7 +213,7 @@
          sodipodi:role="line"
          x="203.59413"
          y="83.794586"
-         id="tspan4723-4">#define B 10</tspan><tspan
+         id="tspan4723-4">#define G 10</tspan><tspan
          sodipodi:role="line"
          x="203.59413"
          y="98.794586"
@@ -221,22 +221,22 @@
          sodipodi:role="line"
          x="203.59413"
          y="113.79459"
-         id="tspan3226">for(i=0; i&lt;N/B; i++){</tspan><tspan
+         id="tspan3226">for(i=0; i&lt;N/G; i++){</tspan><tspan
          id="tspan3325"
          sodipodi:role="line"
          x="203.59413"
          y="128.79459"
-         style="font-style:italic;font-weight:normal;-inkscape-font-specification:Sans Italic">    To_FPGA(a[B], b[B])</tspan><tspan
+         style="font-style:italic;font-weight:normal;-inkscape-font-specification:Sans Italic">    To_FPGA(a[G], b[G])</tspan><tspan
          style="font-weight:bold;-inkscape-font-specification:Sans Bold"
          sodipodi:role="line"
          x="203.59413"
          y="143.79459"
-         id="tspan3012-9">    Block_Execution();</tspan><tspan
+         id="tspan3012-9">    Group_Execution();</tspan><tspan
          id="tspan3327"
          sodipodi:role="line"
          x="203.59413"
          y="158.79459"
-         style="font-style:italic;font-weight:normal;-inkscape-font-specification:Sans Italic">    To_Main_Mem(c[B])</tspan><tspan
+         style="font-style:italic;font-weight:normal;-inkscape-font-specification:Sans Italic">    To_Main_Mem(c[G])</tspan><tspan
          sodipodi:role="line"
          x="203.59413"
          y="173.79459"
@@ -253,7 +253,7 @@
          x="226.12343"
          y="26.51259">Compute kernel</tspan></text>
     <rect
-       style="fill:#ffb380;fill-opacity:1;stroke:#010000;stroke-width:0.49999994;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       style="fill:#ffffff;fill-opacity:1;stroke:#010000;stroke-width:0.49999993999999998;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
        id="rect3066"
        width="149.74472"
        height="119.82491"
@@ -277,7 +277,7 @@
          sodipodi:role="line"
          x="381.28235"
          y="96.528656"
-         id="tspan3256">#define B 10</tspan><tspan
+         id="tspan3256">#define G 10</tspan><tspan
          sodipodi:role="line"
          x="381.28235"
          y="111.52866"
@@ -289,7 +289,7 @@
          sodipodi:role="line"
          x="381.28235"
          y="141.52866"
-         id="tspan3034">for(i=0; i&lt;B/U; i++){</tspan><tspan
+         id="tspan3034">for(i=0; i&lt;G/U; i++){</tspan><tspan
          sodipodi:role="line"
          x="381.28235"
          y="156.52866"
@@ -309,9 +309,9 @@
          sodipodi:role="line"
          id="tspan3514"
          x="426.28918"
-         y="54.761456">Block</tspan></text>
+         y="54.761456">Group</tspan></text>
     <rect
-       style="fill:#ffb380;fill-opacity:1;stroke:#010000;stroke-width:0.5;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       style="fill:#ffffff;fill-opacity:1;stroke:#010000;stroke-width:0.50000000000000000;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
        id="rect3084"
        width="136.7233"
        height="89.100571"

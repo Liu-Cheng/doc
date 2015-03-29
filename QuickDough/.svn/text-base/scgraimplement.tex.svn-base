@@ -63,8 +63,8 @@ On one hand, the design of the PE must be simple with low overhead to reduce are
 On the other hand, the design of PE must also be flexible enough that it can support all required operations in the target application.
 
 \begin{figure}
-\center{\includegraphics[width=0.7\linewidth]{pe}}
-\caption{Fully Pipelined PE structure}
+\center{\includegraphics[width=0.6\linewidth]{pe}}
+\caption{Fully pipelined PE structure. Each PE can be connected to at most 4 neighbours.}
 \label{fig:pe}
 \end{figure}
 
@@ -92,12 +92,12 @@ Currently, 3 true dual port memory blocks that contain replicated data are emplo
 At the heart of the proposed PE is the ALU that carries out the computations of the given application.  As an overlay, the QuickDough ALU must be simple, regular, and flexible such that it may easily be customized with different operations specifically for any given user application.  In addition, it must also be fully pipelined in order to achieve high clock frequency and thus higher overall performance.  \figref{fig:ALU} shows the current design of the ALU used in the QuickDough overlay.
 
 \begin{figure}
-\center{\includegraphics[width=0.6\linewidth]{alu-v2}}
-\caption{The QuickDough ALU.   It supports up to 16 fully pipelined 3-input operations.}
+\center{\includegraphics[width=0.49\linewidth]{alu-v2}}
+\caption{The QuickDough ALU. It supports up to 16 fully pipelined 3-input operations.}
 \label{fig:ALU}
 \end{figure} 
 
-The QuickDough ALU supports up to 16 fully pipelined 3-input operations.  Depending on the area-performance requirements, the ALU may be customized with operations specifically designed for the application.  It may also be customized to support the common set of operations for multiple compute kernels. For example, \tabref{tab:operations} shows the set of operations we have developed for all the benchmarks in \secref{sec:result}.  \figref{fig:ALU} shows the current set of operation.
+The QuickDough ALU supports up to 16 fully pipelined 3-input operations.  Depending on the area-performance requirements, the ALU may be customized with operations specifically designed for the application.  It may also be customized to support the common set of operations for multiple compute kernels. For example, \tabref{tab:operations} shows the set of operations we have developed for all the benchmarks in \secref{sec:experiments}.  \figref{fig:ALU} shows the current set of operation.
 
 These operators in the ALU may execute concurrently in a pipelined fashion and must complete in a deterministic number of cycle.  Given the deterministic nature of the operators, the QuickDough scheduler will ensure that there is never conflict at the output multiplexor.
 
@@ -122,9 +122,10 @@ These operators in the ALU may execute concurrently in a pipelined fashion and m
 
 
 \begin{table}
-\tbl{Operation Set Implemented in ALU\label{tab:operations}}{
-
+\tbl{Operation Set Implemented in ALU. It covers all the four applications used in the experiments.\label{tab:operations}}{
+\footnotesize 
 \centering
+\resizebox{0.5\columnwidth}{!}{
 \begin{tabular}{l|c|l}
 \hline
 Type & Opcode & Expression \\
@@ -167,6 +168,7 @@ ANDAND & 1100 & {Dst = (Src0 \& Src1) \& Src2} \\
 
 \hline
 \end{tabular}
+}
 }
 \end{table}
 

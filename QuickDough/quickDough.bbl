@@ -1,11 +1,5 @@
 \begin{thebibliography}{}
 
-\bibitem[\protect\citeauthoryear{Avnet}{Avnet}{2014}]{zedboard}
-Avnet (2014).
-\newblock Zedboard.
-\newblock \url{http://www.zedboard.org/}.
-\newblock [Online; accessed 25-June-2014].
-
 \bibitem[\protect\citeauthoryear{Beckhoff, Koch \& Torresen}{Beckhoff
   et~al.}{2011}]{beckhoff2011xilinx}
 Beckhoff, C., Koch, D., \& Torresen, J. (2011).
@@ -16,7 +10,7 @@ Beckhoff, C., Koch, D., \& Torresen, J. (2011).
 \bibitem[\protect\citeauthoryear{Brant \& Lemieux}{Brant \&
   Lemieux}{2012}]{zuma2013carl}
 Brant, A. \& Lemieux, G. (2012).
-\newblock Zuma: An open fpga overlay architecture.
+\newblock {ZUMA}: An open {FPGA} overlay architecture.
 \newblock In {\em Field-Programmable Custom Computing Machines (FCCM), 2012
   IEEE 20th Annual International Symposium on}, (pp.\ 93--96).
 
@@ -25,7 +19,7 @@ Brant, A. \& Lemieux, G. (2012).
   et~al.}{2011}]{Canis:2011:LHS:1950413.1950423}
 Canis, A., Choi, J., Aldham, M., Zhang, V., Kammoona, A., Anderson, J.~H.,
   Brown, S., \& Czajkowski, T. (2011).
-\newblock {LegUp: High-level Synthesis for FPGA-based Processor/Accelerator
+\newblock {{LegUp}: High-level Synthesis for {FPGA-based} Processor/Accelerator
   Systems}.
 \newblock In {\em Proceedings of the 19th ACM/SIGDA International Symposium on
   Field Programmable Gate Arrays}, FPGA '11, (pp.\ 33--36)., New York, NY, USA.
@@ -48,7 +42,7 @@ Cardoso, J., Diniz, P., \& Weinhardt, M. (2010).
 \bibitem[\protect\citeauthoryear{Chen, Cong, Fan, Han, Jiang \& Zhang}{Chen
   et~al.}{2005}]{chen2005xpilot}
 Chen, D., Cong, J., Fan, Y., Han, G., Jiang, W., \& Zhang, Z. (2005).
-\newblock xpilot: A platform-based behavioral synthesis system.
+\newblock Xpilot: A platform-based behavioral synthesis system.
 \newblock {\em SRC TechCon}, {\em 5}.
 
 \bibitem[\protect\citeauthoryear{Compton \& Hauck}{Compton \&
@@ -76,8 +70,8 @@ Coole, J. \& Stitt, G. (2010).
 \bibitem[\protect\citeauthoryear{Ferreira, Vendramini, Mucida, Pereira \&
   Carro}{Ferreira et~al.}{2011}]{ferreira2011fpga}
 Ferreira, R., Vendramini, J., Mucida, L., Pereira, M., \& Carro, L. (2011).
-\newblock An fpga-based heterogeneous coarse-grained dynamically reconfigurable
-  architecture.
+\newblock An {FPGA-based} heterogeneous coarse-grained dynamically
+  reconfigurable architecture.
 \newblock In {\em Proceedings of the 14th international conference on
   Compilers, architectures and synthesis for embedded systems}, (pp.\
   195--204). ACM.
@@ -94,7 +88,7 @@ Frangieh, T., Chandrasekharan, A., Rajagopalan, S., Iskander, Y., Craven, S.,
 \bibitem[\protect\citeauthoryear{Grant, Wang \& Lemieux}{Grant
   et~al.}{2011}]{Grant2011Malibu}
 Grant, D., Wang, C., \& Lemieux, G.~G. (2011).
-\newblock A cad framework for malibu: An fpga with time-multiplexed
+\newblock A {CAD} framework for {Malibu}: An {FPGA} with time-multiplexed
   coarse-grained elements.
 \newblock In {\em Proceedings of the 19th ACM/SIGDA International Symposium on
   Field Programmable Gate Arrays}, FPGA '11, (pp.\ 123--132)., New York, NY,
@@ -103,7 +97,7 @@ Grant, D., Wang, C., \& Lemieux, G.~G. (2011).
 \bibitem[\protect\citeauthoryear{Kingyens \& Steffan}{Kingyens \&
   Steffan}{2011}]{Jeffrey2011potential}
 Kingyens, J. \& Steffan, J.~G. (2011).
-\newblock The potential for a gpu-like overlay architecture for fpgas.
+\newblock The potential for a {GPU-Like} overlay architecture for {FPGA}s.
 \newblock {\em Int. J. Reconfig. Comp.}, {\em 2011}.
 
 \bibitem[\protect\citeauthoryear{Kissler, Hannig, Kupriyanov \& Teich}{Kissler
@@ -154,15 +148,15 @@ Schutten, J. (1996).
 \bibitem[\protect\citeauthoryear{Severance \& Lemieux}{Severance \&
   Lemieux}{2012}]{Guy2012VENICE}
 Severance, A. \& Lemieux, G. (2012).
-\newblock Venice: A compact vector processor for fpga applications.
+\newblock {VENICE}: A compact vector processor for {FPGA} applications.
 \newblock In {\em Field-Programmable Technology (FPT), 2012 International
   Conference on}, (pp.\ 261--268).
 
 \bibitem[\protect\citeauthoryear{Shukla, Bergmann \& Becker}{Shukla
   et~al.}{2006}]{shukla2006quku}
 Shukla, S., Bergmann, N., \& Becker, J. (2006).
-\newblock Quku: a two-level reconfigurable architecture.
-\newblock In {\em Emerging VLSI Technologies and Architectures, 2006. IEEE
+\newblock {QUKU}: a two-level reconfigurable architecture.
+\newblock In {\em Emerging {VLSI} Technologies and Architectures, 2006. IEEE
   Computer Society Annual Symposium on}.
 
 \bibitem[\protect\citeauthoryear{Tessier \& Burleson}{Tessier \&
@@ -189,7 +183,7 @@ m.pdf}.
 
 \bibitem[\protect\citeauthoryear{Xilinx}{Xilinx}{2014}]{VivadoHLS}
 Xilinx (2014).
-\newblock Vivado hls.
+\newblock {Vivado HLS}.
 \newblock
   \url{http://www.xilinx.com/products/design-tools/vivado/integration/esl-desi%
 gn/}.
@@ -213,7 +207,7 @@ Yu, Colin Lin.~So, H. K.-H. (2012).
 \bibitem[\protect\citeauthoryear{Zhang, Fan, Jiang, Han, Yang \& Cong}{Zhang
   et~al.}{2008}]{zhang2008autopilot}
 Zhang, Z., Fan, Y., Jiang, W., Han, G., Yang, C., \& Cong, J. (2008).
-\newblock Autopilot: A platform-based esl synthesis system.
+\newblock {AutoPilot}: A platform-based {ESL} synthesis system.
 \newblock In {\em High-Level Synthesis}  (pp.\ 99--112). Springer.
 
 \end{thebibliography}
