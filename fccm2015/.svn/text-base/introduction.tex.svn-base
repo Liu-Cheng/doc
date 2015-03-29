@@ -1,0 +1,31 @@
+\section{Introduction}
+Overlay architectures are intermediate virtual architectures overlaid on top of the physical FPGA fabric.
+As demonstrated by many researchers, the use of overlay architectures is a useful technique to improve designers' productivity, security, and portability \cite{scgra, Lebedev2010, 
+    kissler2006dynamically, ferreira2011fpga, Grant2011Malibu,
+    Guppy2012GPU-Like, unnikrishnan2009application, Yiannacouras2009FPS, 
+Capalija2009coarse-grain}.
+As a virtual architecture, utilizing overlays provide a unique opportunity to significantly improve power-performance of the synthesized designs through architectural customization.
+Unfortunately, to take advantage of this potential, users must navigate through a labyrinth of architectural design parameters, making non-trivial design choices along the way.
+
+To allow users to fully exploit this opportunity, an automatic overlay customization framework is presented here.
+Our customization framework targets the soft coarse-grained reconfigurable array (SCGRA) overlay as presented in \cite{scgra}.
+Nested loops expressed in high-level languages are accelerated on a hybrid CPU-FPGA platform, with the accelerated loops executed on the FPGA while the rest of the user application runs on the CPU.
+Given the user application, the proposed customization framework automatically explores the design space in producing the optimal overlay architecture.
+It achieves that by first pruning the overall design space into a feasible space, followed by searching the optimal configuration within this feasible space.
+
+As part of a high-productivity compilation framework, it is desirable that this customization should not become a new run-time bottleneck of its own.
+With the observation that the major overlay design parameters such as loop unrolling factor and SCGRA overlay size typically have monotonic influence on performance, a marginal performance revenue aware algorithm is proposed for the design space exploration (DSE).
+This algorithm is straightforward yet effective to prune the design space and reduce the number of the invocation of the SCGRA compilation, which is the most time-consuming step of the DSE.
+
+With the feasible design space is determined, we can further perform customization for various design goals such as minimum energy and minimum energy delay product (EDP).
+As the structure of the SCGRA overlay is quite regular, it is relatively straightforward to predict its hardware overhead, implementation frequency and power.
+This helps to estimate the final design goals rapidly through simple models. 
+
+Experiments using a real-world benchmark show that the proposed DSE achieves similar results as an exhaustive search while reducing its run time by 2 orders of magnitude on average.  It delivers similar Pareto optimal in performance-overhead tradeoff, and provides optimal EDP customization as those results from an exhaustive search.   
+
+In \secref{sec:background}, the SCGRA overlay compilation process that this work bases on is briefly introduced and the observation that leads to the proposed DSE algorithm is presented. The automatic overlay customization 
+framework is elaborated in \secref{sec:dse-framework}. 
+Then, experimental results are presented in \secref{sec:result} and 
+related work is introduced in \secref{sec:relatedwork}. Finally, 
+we conclude this paper in \secref{sec:conclusion}.
+

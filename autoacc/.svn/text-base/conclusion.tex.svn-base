@@ -1,0 +1,26 @@
+\section{conclusion} \label{sec:conclusion}
+In this work, we have presented an automatic nested loop acceleration 
+framework based on a homogeneous SCGRA overlay built on top of 
+off-the-shelf FPGA devices. Given high level user constraints and design goals, 
+the framework performs an intensive system customization specifically 
+to a nested loop. When the optimized design configuration is 
+acquired after the customization, the HDL model of the resulting accelerator  
+as well as the communication interface can be generated. Finally, the accelerator 
+and the software running on the host CPU can further be compiled rapidly to 
+the hybrid CPU-FPGA system.
+
+Particularly, by taking advantage of the regularity of 
+the SCGRA overlay, various metrics of the accelerator such as overhead 
+and energy consumption can be effectively evaluated via analytical models. 
+This unique characteristic allows us to reduce the complex system 
+customization to a simpler sub design space exploration and a 
+straightforward search over the sub design space. Compared to an 
+exhaustive search through the entire design space, the proposed 
+two-step customization method reduces runtime by 2 orders of magnitude 
+on average while achieving quite similar energy-performance Pareto-optimal 
+curve and the same customized architecture that produces 
+minimum energy consumption. When compared to the implementations using 
+a state-of-the-art HLS tool, the customized design exhibits competitive 
+performance. 
+
+

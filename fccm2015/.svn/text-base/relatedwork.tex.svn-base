@@ -1,0 +1,37 @@
+\section{Related Work} \label{sec:relatedwork}
+FPGA design productivity has become a major obstacle that hinders the 
+widespread adoption of FPGA as commodity computing devices. To address 
+the problem, the community has developed a number of design tools that 
+can compile high level applications all the way to FPGA 
+\cite{zhang2008autopilot, Legup, VivadoHLS, ROCCC} and design 
+frameworks that can provide automatic customization to achieve better 
+design trade-off \cite{dataflowcustomization, 
+mlcustomization, genericcustomization, DCcustomization, onlinecustomization, 
+RCcustomization, colinheart}.
+
+High level synthesis (HLS) is one of the most widely adopted methods to 
+compile high level applications to FPGA circuits. Thus previous automatic 
+customization frameworks were mostly developed on top of the HLS tools 
+\cite{dataflowcustomization, mlcustomization, 
+genericcustomization, DCcustomization, onlinecustomization}. 
+They typically considered an HLS tool as a black box. Generic algorithms 
+were adopted to perform the DSE and customization in
+\cite{mlcustomization, genericcustomization, onlinecustomization}. 
+Divide and conquer method was used in \cite{DCcustomization} and 
+A calibration tree algorithm was used in \cite{RCcustomization}.  
+
+Overlay which is an intermediate layer built on top of the 
+off-the-shelf FPGA devices has been demonstrated to be an 
+effective way to improve the FPGA design productivity\cite{scgra, ferreira2011fpga}. 
+A number of different types of overlays \cite{Lebedev2010, kissler2006dynamically, 
+    ferreira2011fpga, Grant2011Malibu, Guppy2012GPU-Like, unnikrishnan2009application, 
+Yiannacouras2009FPS, Capalija2009coarse-grain} have been developed for different 
+trade-offs between flexibility and overhead. SCGRA overlay is one of the most 
+promising overlays for compute intensive application acceleration on FPGA 
+\cite{scgra, colinheart}. The authors in \cite{colinheart} focused
+on topology customization and showed the potential benefits of the SCGRA overlay 
+customization. This work will provide a more intensive customization for nested loop
+acceleration on a hybrid CPU-FPGA system. It will not only include the overlay 
+fabric customization but also the compilation customization such as loop unrolling 
+and communication customization between the FPGA and host CPU.
+

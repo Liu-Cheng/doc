@@ -1,0 +1,7 @@
+\section{conclusion} \label{sec:conclusion}
+In this work, we have presented an automatic SCGRA overlay customization framework for nested loop acceleration on a hybrid CPU-FPGA system.
+By utilizing a marginal performance revenue metric, it effectively prunes the design space to a small feasible region. In the feasible design space, customization for different design goals can be obtained rapidly. 
+When compared to an exhaustive search, the proposed customization framework reduces run time by 2
+orders of magnitude on average while achieving comparable Pareto-optimal in performance-overhead
+tradeoff and the same customized architecture that results in minimum energy and minimum energy-delay product.
+

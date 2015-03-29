@@ -1,0 +1,94 @@
+% Paper draft for FPGA 2013
+\documentclass{acm_proc_article-sp}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage[caption=true,font=footnotesize]{subfig}
+\usepackage{dblfloatfix}
+\usepackage{algorithmic}
+\usepackage{algorithm}
+\usepackage{xspace}
+\usepackage{url}
+\usepackage{bm}
+%\renewcommand{\topfraction}{0.5}
+%\renewcommand{\dbltopfraction}{0.5}
+
+\renewcommand\floatpagefraction{.9}
+\renewcommand\topfraction{.9}
+\renewcommand\bottomfraction{.9}
+\renewcommand\dbltopfraction{.9}
+\renewcommand\textfraction{.1}   
+\setcounter{totalnumber}{50}
+\setcounter{topnumber}{50}
+\setcounter{bottomnumber}{50}
+
+\newcommand{\eqnref}[1]{(\ref{#1})}
+\newcommand{\figref}[1]{Figure~\ref{#1}}
+\newcommand{\algref}[1]{Algorithm~\ref{#1}}
+\newcommand{\secref}[1]{Section~\ref{#1}}
+\newcommand{\tabref}[1]{Table~\ref{#1}}
+\newcommand{\autoesl}{AutoESL\xspace}
+\newcommand{\tabincell}[2]{\begin{tabular}{@{}#1@{}}#2\end{tabular}}
+
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\maketitle}{\@copyrightspace}{}{}{}
+\makeatother
+\graphicspath{{./figures/}}
+
+\begin{document}
+
+\title{Automatic Overlay Customization For High-Productivity Nested Loop Acceleration On FPGA}
+
+\numberofauthors{1}
+ \author{
+% % 1st. author
+ \alignauthor
+% \affaddr{The University of Hong Kong}\\
+% \email{xxx@hku.hk}
+% % 2nd. author
+% \alignauthor
+% name2\\
+%        \affaddr{Electrical and Electronic Engineering}\\
+%        \affaddr{The University of Hong Kong}\\
+%        \email{email2}
+% % 3rd. author
+% \alignauthor
+% name3\\
+%        \affaddr{Electrical and Electronic Engineering}\\
+%        \affaddr{The University of Hong Kong}\\
+%        \email{email3}
+ }
+
+%\author{}
+\maketitle
+
+\begin{abstract}
+\input{abstract}
+\end{abstract}
+ 
+% A category with the (minimum) three required fields
+%\category{H.4}{Information Systems Applications}{Miscellaneous}
+% A category including the fourth, optional field follows...
+%\category{D.2.3}{Hardware Engineering}{Metrics}[complexity measures, performance measures]
+%\terms{Theory}
+%\keywords{High Level Synthesis, Soft Coarse Grain Reconfigurable Array, Design Productivity, High Frequency FPGA Design}
+
+%\input{related}
+%\input{methodology}
+%\input{scgra}
+%\input{results}
+%\input{conclusions}
+
+\input{introduction}
+\input{background}
+\input{framework}
+\input{experiments}
+\input{relatedwork}
+\input{conclusion}
+
+\bibliographystyle{plain}
+\bibliography{refs}
+
+%\balancecolumns
+\end{document}
+

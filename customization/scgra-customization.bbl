@@ -1,0 +1,142 @@
+\begin{thebibliography}{10}
+
+\bibitem{Guppy2012GPU-Like}
+A.~Al-Dujaili, F.~Deragisch, A.~Hagiescu, and Weng-Fai Wong.
+\newblock Guppy: A gpu-like soft-core processor.
+\newblock In {\em Field-Programmable Technology (FPT), 2012 International
+  Conference on}, pages 57--60, Dec 2012.
+
+\bibitem{zedboard}
+Avnet.
+\newblock Zedboard.
+\newblock \url{http://www.zedboard.org/}, 2014.
+\newblock [Online; accessed 25-June-2014].
+
+\bibitem{Legup}
+Andrew Canis, Jongsok Choi, Mark Aldham, Victor Zhang, Ahmed Kammoona, Jason~H.
+  Anderson, Stephen Brown, and Tomasz Czajkowski.
+\newblock {LegUp: High-level Synthesis for FPGA-based Processor/Accelerator
+  Systems}.
+\newblock In {\em Proceedings of the 19th ACM/SIGDA International Symposium on
+  Field Programmable Gate Arrays}, FPGA '11, pages 33--36, New York, NY, USA,
+  2011. ACM.
+
+\bibitem{Capalija2009coarse-grain}
+D.~Capalija and T.S. Abdelrahman.
+\newblock An architecture for exploiting coarse-grain parallelism on fpgas.
+\newblock In {\em Field-Programmable Technology, 2009. FPT 2009. International
+  Conference on}, pages 285--291, Dec 2009.
+
+\bibitem{mlcustomization}
+B.~Carrion~Schafer and K.~Wakabayashi.
+\newblock Machine learning predictive modelling high-level synthesis design
+  space exploration.
+\newblock {\em Computers Digital Techniques, IET}, 6(3):153--159, May 2012.
+
+\bibitem{ferreira2011fpga}
+R.~Ferreira, J.G. Vendramini, L.~Mucida, M.M. Pereira, and L.~Carro.
+\newblock An fpga-based heterogeneous coarse-grained dynamically reconfigurable
+  architecture.
+\newblock In {\em Proceedings of the 14th international conference on
+  Compilers, architectures and synthesis for embedded systems}, pages 195--204.
+  ACM, 2011.
+
+\bibitem{Grant2011Malibu}
+David Grant, Chris Wang, and Guy~G.F. Lemieux.
+\newblock A cad framework for malibu: An fpga with time-multiplexed
+  coarse-grained elements.
+\newblock In {\em Proceedings of the 19th ACM/SIGDA International Symposium on
+  Field Programmable Gate Arrays}, FPGA '11, pages 123--132, New York, NY, USA,
+  2011. ACM.
+
+\bibitem{genericcustomization}
+M.~Holzer, B.~Knerr, and M.~Rupp.
+\newblock Design space exploration with evolutionary multi-objective
+  optimisation.
+\newblock In {\em Industrial Embedded Systems, 2007. SIES '07. International
+  Symposium on}, pages 126--133, July 2007.
+
+\bibitem{kissler2006dynamically}
+Dmitrij Kissler, Frank Hannig, Alexey Kupriyanov, and J{\"u}rgen Teich.
+\newblock A dynamically reconfigurable weakly programmable processor array
+  architecture template.
+\newblock In {\em ReCoSoC}, pages 31--37, 2006.
+
+\bibitem{RCcustomization}
+Maciej Kurek, Tobias Becker, Thomas~C.P. Chau, and Wayne Luk.
+\newblock Automating optimization of reconfigurable designs.
+\newblock In {\em Field-Programmable Custom Computing Machines (FCCM), 2014
+  IEEE 22nd Annual International Symposium on}, pages 210--213, May 2014.
+
+\bibitem{Lebedev2010}
+I.~Lebedev, Shaoyi Cheng, A.~Doupnik, J.~Martin, C.~Fletcher, D.~Burke, Mingjie
+  Lin, and J.~Wawrzynek.
+\newblock {MARC}: A many-core approach to reconfigurable computing.
+\newblock In {\em Reconfigurable Computing and FPGAs (ReConFig), 2010
+  International Conference on}, pages 7 --12, dec. 2010.
+
+\bibitem{onlinecustomization}
+Hung-Yi Liu and L.P. Carloni.
+\newblock On learning-based methods for design-space exploration with
+  high-level synthesis.
+\newblock In {\em Design Automation Conference (DAC), 2013 50th ACM / EDAC /
+  IEEE}, pages 1--7, May 2013.
+
+\bibitem{scgra}
+removed.
+\newblock removed for blind review.
+
+\bibitem{ROCCC}
+ROCCC.
+\newblock Roccc2.0.
+\newblock \url{http://www.jacquardcomputing.com/roccc/}, 2014.
+\newblock [Online; accessed 19-January-2014].
+
+\bibitem{DCcustomization}
+Benjamin~Carrion Schafer and Kazutoshi Wakabayashi.
+\newblock Divide and conquer high-level synthesis design space exploration.
+\newblock {\em ACM Trans. Des. Autom. Electron. Syst.}, 17(3):29:1--29:19, July
+  2012.
+
+\bibitem{unnikrishnan2009application}
+D.~Unnikrishnan, Jia Zhao, and R.~Tessier.
+\newblock Application specific customization and scalability of soft
+  multiprocessors.
+\newblock In {\em Field Programmable Custom Computing Machines, 2009. FCCM '09.
+  17th IEEE Symposium on}, pages 123--130, April 2009.
+
+\bibitem{VivadoHLS}
+Xilinx.
+\newblock Vivado hls.
+\newblock
+  \url{http://www.xilinx.com/products/design-tools/vivado/integration/esl-desi%
+gn/}, 2014.
+\newblock [Online; accessed 18-October-2014].
+
+\bibitem{Yiannacouras2009FPS}
+Peter Yiannacouras, J.~Gregory Steffan, and Jonathan Rose.
+\newblock Fine-grain performance scaling of soft vector processors.
+\newblock In {\em Proceedings of the 2009 International Conference on
+  Compilers, Architecture, and Synthesis for Embedded Systems}, CASES '09,
+  pages 97--106, New York, NY, USA, 2009. ACM.
+
+\bibitem{colinheart}
+Hayden Kwok-Hay. Yu, Colin Lin.~So.
+\newblock Energy-efficient dataflow computations on {FPGA}s using
+  application-specific coarse-grain architecture synthesis.
+\newblock In {\em Highly Efficient Accelerators and Reconfigurable
+  Technologies, The 4th International Workshop on}. IEEE, 2012.
+
+\bibitem{zhang2008autopilot}
+Zhiru Zhang, Yiping Fan, Wei Jiang, Guoling Han, Changqi Yang, and Jason Cong.
+\newblock Autopilot: A platform-based esl synthesis system.
+\newblock In {\em High-Level Synthesis}, pages 99--112. Springer, 2008.
+
+\bibitem{dataflowcustomization}
+Guanwen Zhong, V.~Venkataramani, Yun Liang, T.~Mitra, and S.~Niar.
+\newblock Design space exploration of multiple loops on fpgas using high level
+  synthesis.
+\newblock In {\em Computer Design (ICCD), 2014 32nd IEEE International
+  Conference on}, pages 456--463, Oct 2014.
+
+\end{thebibliography}
