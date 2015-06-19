@@ -1,0 +1,371 @@
+\section{Experiments}\label{sec:experiments}
+With an objective to improve designers' productivity in developing FPGA accelerators, the key goal
+of QuickDough is to reduce FPGA loop accelerator development time for a hybrid CPU-FPGA system.
+By using four typical loop kernels as the benchmark, we have evaluated the FPGA accelerator generation 
+time with QuickDough. Meanwhile, to warrant the merit of such framework, the performance of the 
+generated acceleration system should remain competitive. For that purpose, the performance is then 
+compared against to that of software executed on an ARM processor. Finally, the pre-built accelerator 
+library that affects both the design productivity and overhead of the resulting accelerators is also
+discussed.
+
+The experiment section is organized as follows. We will first briefly introduce the benchmark
+programs in the following subsection and explain the basic experiment setup in
+\secref{subsec:setup}. Then we will discuss the accelerator library update in
+\secref{subsec:lib-update}. Finally, we will elaborate the loop accelerator generation time, 
+performance and implementation overhead in \secref{subsec:acc-gen}, \secref{subsec:acc-perf} and
+\secref{subsec:acc-impl} respectively. 
+
+\subsection{Benchmark} \label{subsec:benchmark}
+Four applications were used as benchmark in this work, namely, a matrix-matrix multiplication (MM), a
+finite impulse response (FIR) filter, a K-mean clustering algorithm (KM) and a Sobel edge detector
+(SE). The basic parameters and configurations of the benchmark are illustrated in 
+\tabref{tab:benchmark-config}. 
+
+\begin{table}[htb]
+    \centering
+    \caption{Detailed Configurations of the Benchmark \label{tab:benchmark-config}}{
+        \centering
+        \resizebox{0.99\columnwidth}{!}{
+            \begin{tabular}{l|l|l|l}
+                \hline
+                MM & FIR & SE & KM \\ \hline
+                Matrix Size & \tabincell{l}{\# of Input/\\ \# of Taps+1} & \tabincell{l}{ \# of Vertical Pixels/\\ \# of Horizontal Pixels} & \tabincell{l}{\# of Nodes/Centroids/\\Dimension} \\ \hline
+                100 & 10000/50 & 128/128 & 5000/4/2  \\ \hline
+                1000 & 100000/50 & 1024/1024 & 50000/4/2 \\ \hline
+            \end{tabular}
+        }
+    }
+\end{table}
+
+\subsection{Experiment Setup} \label{subsec:setup}
+The Xilinx implementation tools were run on a computer with Intel Core i5-3230M CPU and
+\SI{8}{\giga\byte} of RAM. The resulting hardware-software platform was targeted at 
+the Zedboard with both a hard ARM processor and an XC7Z020 FPGA. Software runtime was obtained 
+from the ARM processor with -O3 compiling option. The accelerators were implemented on 
+the FPGA of Zedboard. PlanAhead 14.7 was used to implement the overlay based FPGA accelerators. 
+
+The acceleration system handles the input data loading, accelerator computation and output data
+storing sequentially. The performance of the accelerators is calculated using \eqnref{eq:perf}. 
+Communication latency is an accumulation of all the data transfer latency between 
+the accelerator and host host processing system. The transfer latency is estimated based on  
+Zedboard DMA between main memory and FPGA on-chip buffer through AXI high-performance port. The
+transfer latency is detailed in \tabref{tab:latency}. When the transfer size is not included in the
+table, a simple linear model is used to estimate its latency. Fmax and the number of cycles were
+extracted from the PlanAhead14.7 and SCGRA scheduler respectively. 
+\begin{equation} \label{eq:perf}
+    Perf = \sum_{i}^{}TransCost_i + Num\_Of\_Cycles/Fmax
+\end{equation}
+ 
+\begin{table}
+    \centering
+    \caption{DMA transfer latency on Zedboard through AXI high performance port \label{tab:latency}}{
+        \centering
+        \resizebox{0.99\columnwidth}{!}{
+            \begin{tabular}{c|c|c|c|c|c|c|c}
+                \hline
+                \tabincell{c}{transfer \\ size (word, 32bit)} & $\geq$512 & 256 & 128 & 64 & 32
+                                                                  & 16 & $\leq$8  \\ \hline
+                \tabincell{c}{Latency per \\ word (ns)}  & 10.08 & 11.28 & 13.32 & 15.18 & 21.45 & 36.24 & 63 \\ \hline
+            \end{tabular}
+        }
+    }
+\end{table}
+
+Loop unrolling is a critical design parameter for FPGA loop accelerators developed 
+using QuickDough. \tabref{tab:unrolling-setup} shows the loop unrolling factor that 
+is used for the loop accelerator generation. To produce an accelerator, user also needs to specify
+an SCGRA overlay size. It is not an compulsory design input. $2\times 2$ will be adopted as a
+default option. In this work, we took four different overlays ranging from $2 \times 2$(Q2x2), $3
+\times 3$(Q3x3), $4 \times 4$(Q4x4) to $5 \times 5$(Q5x5) as the user input. Note that when the
+accelerator with the specified SCGRA size in the library doesn't fit the loop kernel for reasons
+such as insufficient instruction memory, accelerator with a smaller SCGRA size will be automatically
+adopted.
+
+\begin{table}
+\footnotesize
+\centering
+\caption{QuickDough unrolling setup \label{tab:unrolling-setup}}{
+    \resizebox{0.99\columnwidth}{!}{
+        \begin{tabular}{l|l|l|l|l}
+            \hline
+           & MM & FIR & SE & KM \\ \hline
+            Unrolling & $1 \times 5 \times 100$ & $50 \times 50$ & $16 \times 16 \times 3 \times 3$ &
+            $125\times 4 \times 2$ \\ \hline
+            Full Loop & $100 \times 100 \times 100$ &  $10000 \times 50$ & $128 \times 128 \times 3
+            \times 3$ & $5000 \times 4 \times 2$ \\ \hline
+        \end{tabular}
+    }
+}
+\end{table}
+
+\subsection{Accelerator library update} \label{subsec:lib-update}
+To ensure the rapid FPGA accelerator generation, we have implemented a group of 
+SCGRAs based accelerators as the pre-built library by using the SCGRA overlay template. 
+The library is developed to support all the four loop kernels, and it includes 12 
+3-source-1-destination operations as presented in \tabref{tab:opset}. In addition, 
+the pre-built accelerators share the same basic configurations as listed in 
+\tabref{tab:scgra-config}.  
+
+\begin{table}
+    \centering
+\caption{Operation Set. It covers all the four applications used in the experiments.
+    \label{tab:opset}}{
+\footnotesize 
+\centering
+\resizebox{0.6\columnwidth}{!}{
+\begin{tabular}{l|c|l}
+\hline
+Type & Opcode & Expression \\
+
+\hline
+MULADD & 0001 & {Dst = (Src0 $\times$ Src1) + Src2} \\
+\hline
+MULSUB & 0010 & {Dst = (Src0 $\times$ Src1) - Src2} \\
+\hline
+ADDADD & 0011 & {Dst = (Src0 + Src1) + Src2} \\
+\hline
+ADDSUB & 0100 & {Dst = (Src0 + Src1) - Src2} \\
+\hline
+SUBSUB & 0101 & {Dst = (Src0 - Src1) - Src2} \\
+\hline 
+PHI & 0110 & {Dst = Src0 ? Src1 : Src2} \\
+\hline
+RSFAND & 0111 & {Dst = (Src0 $\gg$ Src1) \& Src2} \\
+\hline
+LSFADD & 1000 & {Dst = (Src0 $\ll$ Src1) + Src2} \\
+\hline
+ABS & 1001 & {Dst = abs(Src0)} \\
+\hline
+GT & 1010 & {Dst = (Src0 $>$ Src1) ? 1 : 0} \\
+\hline
+LET & 1011 & {Dst = (Src0 $\leq$ Src1) ? 1 : 0} \\
+\hline
+ANDAND & 1100 & {Dst = (Src0 \& Src1) \& Src2} \\
+\hline
+\end{tabular}
+}
+}
+\end{table}
+
+\begin{table}
+\footnotesize 
+\caption{SCGRA Configuration \label{tab:scgra-config}}{
+\centering
+  \resizebox{0.99\columnwidth}{!}{
+\begin{tabular}{c|c|c|c|c}
+
+\hline
+{SCGRA Topology} & {\tabincell{c}{Instruction \\ Memory Width}} & {Data Memory} & {\tabincell{c}{I/O
+Data \\ Buffer Width}} & {\tabincell{c}{I/O Addr \\ Buffer Width}} \\ \hline
+{Torus} & {72 bits} & {$256 \times 32$ bits} & {32 bits} & {18 bits} \\ \hline
+\end{tabular}
+}
+}
+\end{table}
+
+In addition, empirical settings are adopted to reduce the number of accelerators to be built in
+library. Input and output buffer depth are set to be the same. The depth of the address buffers are
+set to be twice with that of the I/O buffer depth. The data memory in each PE consumes only one
+primitive block RAM. The SCGRA overlay adopts a torus topology, and the row size is set to be equal
+to the column size or larger by one for the sake of performance. Eventually, different accelerator
+configurations merely differ on the on-chip buffer depth, SCGRA size and instruction memory depth
+when the data width is determined. 
+
+To explore the library update efficiency, we have evaluated the number of accelerators included in
+the accelerator library and the time consumption to implement the library when different block RAM
+budgets ranging from 70, 140, 210, 280 to 350 and different instruction memory depth exploration
+steps ranging from 0.5K, 1K to 2K are provided (Note that there are 140 RAMB36 on Zedboard FPGA). As
+presented in \figref{fig:lib-impl-time}, when the BRAM budget increases, the number of accelerators
+in the library increases linearly. The library implementation time increases slightly faster as the
+SCGRA overlay size gets larger for larger resource budget. It can also be found that coarser
+instruction memory exploration step helps to reduce the number of accelerators in the library as
+well as the library implementation time. With this observation, coarser instruction memory depth
+exploration step will be adopted for larger BRAM budget to restrict the library implementation time
+while finer exploration step will be used for a smaller BRAM budget to maintain the coverage of the
+library. With this strategy, the suggested accelerator library update for different resource budgets
+is shown in \figref{fig:lib-impl-time} as well. The accelerator library implementation time ranges
+from 170 minutes to 530 minutes.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.99\linewidth]{lib-impl-time}
+\caption{Accelerator library size and implementation time given different BRAM budgets.}
+\label{fig:lib-impl-time}
+\end{figure}
+
+\subsection{Accelerator generation time} \label{subsec:acc-gen}
+In this section, the loop accelerator generation time of QuickDough is evaluated. 
+It is used as an indicator on the designer's productivity as it greatly limits 
+the number of debug-edit-implementation cycles achievable per day. 
+
+In order to evaluate the loop accelerator generation time, we took the FPGA resource on Zedboard as
+the resource budget and pre-built the accelerator library with 1K instruction memory depth step.
+Each application in the benchmark is provided with four typical SCGRA size including Q2x2, Q3x3, Q4x4 and Q5x5 as
+the initial user input. Then QuickDough generates accelerators based on the pre-built accelerator
+library for each of them. 
+
+\tabref{tab:final-acc-config} shows the configurations of the resulting
+FPGA accelerators. It can be found that QuickDough fulfills almost
+all of the applications by providing accelerators with the required SCGRA overlay size, though the
+accelerators may have diverse configurations. The only exception is highlighted in the table.
+QuickDough fails to find an accelerator with $5 \times 5$ SCGRA overlay in the library for SE
+because the accelerators with $5 \times 5$ SCGRA overlay in the library have only 1K-depth instruction memory due
+to the limited block RAM resource budget and the 1K-depth instruction memory can't accommodate all
+the control words generated by QuickDough. As a result, QuickDough has to iterate the scheduling
+process to find an accelerator with smaller SCGRA size in the library. Both accelerators with $5
+\times 5$ and $5 \times 4$ SCGRA overlays fail to fit the SE loop kernel and an accelerator with $4
+\times 4$ SCGRA overlay is adopted in the end.
+
+\begin{table}
+\centering
+\caption{Accelerators generated using QuickDough \label{tab:final-acc-config}}{
+    \resizebox{0.99\columnwidth}{!}{
+        \begin{tabular}{l|l|l|l|l|l}
+            \hline
+            \tabincell{c}{User \\ input} & \tabincell{c}{Resulting \\ Accel. Config.} & MM & FIR & SE & KM \\ \hline
+            \multirow{4}{*}{Q2x2}  & SCGRA size & $2 \times 2$ & $2 \times 2$ & $2 \times 2$ & $2 \times 2$ \\ \cline{2-6} 
+                                & Inst. Mem depth & 1K  & 2K & 4K & 3K \\ \cline{2-6} 
+                                & Grouping factor & $100 \times 100 \times 100$ &  $100 \times 100 \times 100$&  $100 \times 100 \times 100$& $100 \times 100 \times 100$\\ \cline{2-6}   
+                                & I/O buffer depth & 30K & 28K & 24K & 26K \\ \hline
+            \multirow{4}{*}{Q3x3}  & SCGRA size & $3 \times 3$  & $3 \times 3$  & $3 \times 3$  & $3 \times 3$  \\ \cline{2-6} 
+                                & Inst. Mem depth & 1K & 1K & 3K & 2K \\ \cline{2-6} 
+                                & Grouping factor & & & & \\ \cline{2-6}
+                                & I/O buffer depth & 23K & 23K & 14K & 19K \\ \hline
+            \multirow{4}{*}{Q4x4}  & SCGRA size & $4 \times 4$ & $4 \times 4$  & $4 \times 4$  & $4
+            \times 4$  \\ \cline{2-6} 
+                                & Inst. Mem depth & 1K & 1K & 2K & 2K \\ \cline{2-6} 
+                                & Grouping factor & & & & \\ \cline{2-6}
+                                & I/O buffer depth & 15K & 15K & 7K & 7K \\ \hline
+
+            \multirow{4}{*}{Q5x5}  & SCGRA size & $5 \times 5$ & $5 \times 5$  & \cellcolor{red!25} $4 \times 4$  & $5 \times 5$  \\ \cline{2-6} 
+                                & Inst. Mem depth & 1K & 1K & 2K & 1K \\ \cline{2-6} 
+                                & Grouping factor & & & & \\ \cline{2-6}
+                                & I/O buffer depth & 3K & 3K & 7K & 3K \\ \hline
+        \end{tabular}
+    }
+}
+\end{table}
+
+Every implementation iterations in QuickDough involves 3 steps:
+\begin{itemize}[label=\textbullet,leftmargin=2em,rightmargin=\leftmargin]
+\item DFG generation: The compute kernel is translated to corresponding DFG.
+\item DFG scheduling: Select an accelerator configuration and schedule the DFG to it through an
+    operation scheduling. 
+\item Bitstream generation: The scheduling result is embedded into a pre-built accelerator bitstream 
+to produce the final FPGA bitstream of the compute kernel.
+\end{itemize}
+
+\figref{fig:SCGRA-Overlay-Compilation-Time} shows loop accelerator generation time of QuickDough.
+DFG generation step is very fast and it is almost negligible compared to the rest two steps. The DFG
+scheduling is relatively slower, but it usually completes in a few seconds.
+It is possible that the DFG scheduling process must be repeated and thus the time consumption
+increases accordingly when QuickDough can't find the accelerator with the user specified SCGRA
+overlay size in the accelerator library. This explains the relatively longer accelerator generation
+time for SE with $5 \times 5$ SCGRA overlay input. Fortunately, it is not a frequent situation and
+the worse case finishes in 25 seconds. The bitstream generation step typically takes a few seconds, and
+accelerators with larger SCGRA overlay are relatively slower.
+
+Typically QuickDough produces an loop accelerator in seconds to a dozen seconds. Even though
+QuickDough may fail to provide accelerators with specified SCGRA overlay size sometimes, a smaller
+SCGRA overlay will be able to find immediately and the overall loop accelerator generation is still
+able to complete within a minute.
+\begin{figure}
+\centering
+\includegraphics[width=0.85\linewidth]{QuickDough-Compilation-Time}
+\caption{Time consumption of loop accelerator generation using QuickDough.}
+\label{fig:SCGRA-Overlay-Compilation-Time}
+\end{figure}
+
+Clearly, the designer must spend the time to physically pre-implement 
+the overlay architecture on the target FPGA, spending considerable 
+time on the implementation tools. However, it can be reused by the whole benchmark.
+Moreover, the designer may iterate via the above rapid steps during 
+design and debugging phases using an initial overlay implementation.
+Once the functionality is frozen, the designer may then opt to further optimize 
+performance through more intensive overlay customization and update the library. 
+We argue that the ability to separate functionality and optimization 
+concern, and the possibility of performing rapid debug-edit-implement 
+iterations in QuickDough are crucial factors that contribute to a high-productivity 
+design experience.
+
+\subsection{Performance} \label{subsec:acc-perf}
+While improving designers' productivity is the primary goal of QuickDough, the FPGA accelerators it
+generates must remain competitive in performance to software executed on general 
+purposed processors. Therefore, execution time of the loop kernels executed on ARM 
+processor of Zedboard and FPGA accelerators generated using QuickDough are compared.
+
+\figref{fig:real-perf} shows the accelerator performance speedup over software execution on the ARM processor 
+and execution time decomposition of the 4 benchmark programs. The reported loop execution
+time on the accelerators includes time spent on I/O data communication between FPGA and the 
+ARM processor as well as FPGA computation.
+
+\begin{figure}
+\centering
+\subfloat[MM]{
+\label{fig:mm-real-perf}
+\includegraphics[width=0.44\linewidth]{mm-perf}}
+\qquad
+\subfloat[FIR]{
+\label{fig:fir-real-perf}
+\includegraphics[width=0.44\linewidth]{fir-perf}}
+\qquad
+\subfloat[SE]{
+\label{fig:sobel-real-perf}
+\includegraphics[width=0.44\linewidth]{se-perf}}
+\qquad
+\subfloat[KM]{
+\label{fig:kmean-real-perf}
+\includegraphics[width=0.44\linewidth]{km-perf}}
+\caption{Benchmark performance speedup over software executed on ARM processor and execution time 
+    decomposition of loop accelerators generated using QuickDough.}
+\label{fig:real-perf}
+\end{figure}
+
+The results in \figref{fig:real-perf} show that the accelerators generated using QuickDough are 
+capable to provide 1X-10X performance speedup over software executed on ARM processor. For FIR, SE 
+as well as KM which have abundant parallelism and moderate I/O requirements, the maximum speedup
+goes up to 10X, 6X and 7X respectively. Even when smaller SCGRA overlays are specified, clear
+performance speedup can be observed. MM optimized by simple loop unrolling is eventually reduced to
+a matrix-vector multiplication, so the compute kernel has low compute-to-IO rate and the single port
+connection between compute logic and input/output buffers becomes the bottleneck hindering
+the performance of the accelerator.  
+
+According to \figref{fig:real-perf}, accelerators with larger SCGRA overlay size typically achieve
+better performance than the ones with smaller overlay size. However, larger SCGRA overlay will not
+guarantee better performance for a few reasons. First of all, accelerators with larger overlay size consume
+more block RAM for instruction memory leaving less block RAM for I/O buffer. As a result, the I/O
+buffer may limit the transfer size between main memory and FPGA on-chip I/O buffer and reduce the
+chance of data reuse between DFGs included in a single group. This increased number of transfer
+between main memory and FPGA significantly limits the overall performance accordingly. This explains
+the performance degradation for the accelerator of MM with $5 \times 5$ overlay size. Secondly, 
+accelerator with larger SCGRA overlay may confront scheduling problem as larger SCGRA
+overlay requires larger average cost between PEs and the compute performance may degrade as well.
+This is the major reason that accelerator performance of FIR with $5 \times 5$ SCGRA overlay degrades.
+
+\subsection{Implementation frequency and hardware overhead} \label{subsec:acc-impl}
+One advantage of employing a simple and regular overlay architecture allows highly 
+pipelined implementations with much higher frequencies as shown in \figref{fig:impl-freq}. 
+The increased running frequency in turns results in higher overall 
+performance of the system. Though both larger SCGRA overlay size 
+and deeper instruction memory may degrade the implementation frequency, they can typically 
+runs at more than 250MHz on Zedboard FPGA which is much higher than random logic synthesis on
+Zedboard.
+
+\begin{figure}[tb]
+\center{\includegraphics[width=0.8\linewidth]{impl-freq}}
+\caption{Implementation frequency of the accelerators using QuickDough}
+\label{fig:impl-freq}
+\end{figure}
+
+Block RAM is the resource bottleneck for the SCGRA overlay based FPGA accelerators and it is
+almost fully utilized. LUT, FF and DSP48 overhead mainly depends on the SCGRA overlay size and only
+a portion of them are utilized. \figref{fig:hw-overhead} presents the detailed hardware overhead
+utilization of the accelerators for MM. Hardware overhead utilization of the rest accelerators is
+quite similar to that of MM accelerators and is not presented here in case of redundancy.
+\begin{figure}[tb]
+\center{\includegraphics[width=0.65\linewidth]{hw-overhead}}
+\caption{Hardware overhead utilization of accelerators for MM}
+\label{fig:hw-overhead}
+\end{figure}
+
+

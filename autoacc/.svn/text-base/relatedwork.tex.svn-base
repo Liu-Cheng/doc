@@ -1,5 +1,5 @@
 \section{Related Work} \label{sec:relatedwork}
-Despite of the performance and power advantages, the design 
+Despite the performance and power advantages, the design 
 productivity of developing FPGA applications remains low 
 due to the lengthy compilation and complex application-specific 
 customization. And it has become the major obstacle 
@@ -53,7 +53,7 @@ productivity challenge.
 Various overlays with diverse configuration granularities and flexibility 
 ranging from virtual FPGAs \cite{Grant2011Malibu, ZUMA2012}, 
 array-of-FUs \cite{mesh-FUs,ferreira2011fpga}, soft 
-CGRA \cite{kissler2006dynamically, scgra-orig}, soft GPU \cite{Guppy2012GPU-Like}, 
+CGRA \cite{kissler2006dynamically, scgra}, soft GPU \cite{Guppy2012GPU-Like}, 
 vector processors\cite{Yiannacouras2009FPS, MXP2013} to 
 configurable processors or multi-core processors \cite{unnikrishnan2009application, 
 MARC2010, Yiannacouras2007Exploration, Capalija2009coarse-grain, OCTAVO2012, iDEA2012} 
@@ -63,29 +63,24 @@ and performance for compute intensive nested loops as demonstrated
 by numerous ASIC CGRAs \cite{tessier2001reconfigurable, compton2002reconfigurable}.
 Most importantly, it allows both rapid compilation by taking advantage of 
 the overlays' tiling structure \cite{ROB2014} and efficient bitstream 
-reuse within the design iterations of an application \cite{scgra-orig}, 
+reuse within the design iterations of an application \cite{scgra}, 
 thus it is particularly promising for high productivity nested loop acceleration.
 
-Despite of the promising potential, a complete automatic customization 
-framework that enables application-specific optimization is still highly 
-anticipated for the sake of design productivity and performance. 
-The authors in \cite{colinheart} developed an SCGRA topology customization method 
-using genetic algorithm and showed the potential benefits of the SCGRA 
-overlay customization. However, the rest system design parameters such as 
-on chip buffer size, loop unrolling factor etc. are not covered. 
-
 Indeed, SCGRA overlays have many similarities in terms of array structure 
-and scheduling algorithm with ASIC CGRAs. Nevertheless, ASIC CGRAs emphasize 
+and scheduling algorithm with ASIC CGRAs. ASIC CGRAs emphasize 
 more on configuration capability and limited customization is allowed due 
 to the overhead constraints \cite{zhou2014application, miniskar2014retargetable} 
 while SCGRA overlays allow more intensive architectural customization 
 because of the FPGA's inherent programmability. Moreover, hardware resources such as 
 DSP blocks and RAM blocks available on FPGAs are discrete, which results in different 
-design constraints for SCGRA overlay customization as well. 
+design constraints for SCGRA overlay customization. 
 
-By utilizing the SCGRA overlay as the backbone of the FPGA accelerator, 
-a complete nested loop acceleration framework 
-targeting CPU-FPGA system is developed. It supports intensive application-specific
+The authors in \cite{colinheart} developed an SCGRA topology customization method using 
+genetic algorithm and showed the potential benefits of the SCGRA overlay customization, 
+but the rest of the system design parameters were not covered.
+In order to achieve both high design productivity and high performance with low overhead,  
+a complete nested loop acceleration framework targeting CPU-FPGA system 
+is developed in this work. It supports intensive application-specific
 customization including the overlay architectural customization, 
 the compilation customization and communication interface customization 
 for various design goals. When the customized design parameters are determined, 

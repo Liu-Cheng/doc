@@ -6,14 +6,14 @@ SCGRA overlay based FPGA accelerators. In the second part, we benchmark the
 efficiency and quality of the proposed customization framework.
 
 \subsection{Experiment Setup}
-All the run time was obtained from a computer with Intel(R) Core(TM) 
+All the run time was obtained using a computer with Intel(R) Core(TM) 
 i5-3230M CPU and 8GB RAM. Zedboard which has an ARM processor and 
 an FPGA was used as the hybrid computation system. Vivado 2013.3 was 
 used for the HLS based design and PlanAhead 14.7 was used for the SCGRA overlay based 
 design. 
 
-The overlay implementations on Zedboard typically run at 200MHz and we 
-assume the implementation frequency can be scalable to all the 
+The overlay implementations on Zedboard typically run at 200MHz. We conducted various 
+experiments and found that the implementation frequency is almost the same for all the 
 different overlay configurations. The power consumption used in this work was 
 obtained from XPower which is part of the Xilinx design suite.
 
@@ -23,9 +23,9 @@ based FPGA accelerators, we had three groups of accelerators
 (SCGRA1, SCGRA2, SCGRA3) implemented on Zedboard. The configurations 
 are detailed in \tabref{tab:config}. Despite of the diverse 
 configurations, all the implementations could meet 200MHz 
-timing constrain. With this timing constrain, 
-hardware overhead and power consumption are analyzed in the 
-following sub sections.
+timing constrain. With this timing constraint, 
+hardware overhead and power consumption are analyzed, which are described 
+in the following sub sections.
 \begin{table}[tb]
     \small
     \centering
@@ -107,12 +107,13 @@ In this work, we take four applications including Matrix Multiplication (MM),
 FIR, Kmean(KM) and Sobel Edge Detector (SE) as our benchmark. The 
 configurations of the benchmark are detailed in \tabref{tab:benchmark-config}. 
 In order to evaluate the efficiency and quality of the proposed design 
-framework, we have the benchmark implemented using both the proposed 
+framework, we implemented the benchmark using both the proposed 
 two-step customization (TS) method and an exhaustive search (ES) 
 method. Then we compared the Pareto-optimal curves acquired 
-using both methods. In addition, we also have the benchmark 
-implemented using Vivado HLS with moderate manual optimization 
-and compare the implementations with our customized implementations. 
+using both methods. In addition, we implemented the benchmark 
+using Vivado HLS with moderate manual optimization and compared 
+the implementations with the ones obtained using the proposed 
+customization framework. 
 
 \begin{table}[tb]
     \small
@@ -132,10 +133,10 @@ and compare the implementations with our customized implementations.
 \subsubsection{Customization Methods Comparison}
 \figref{fig:DSE-Time} shows the DSE time of both the TS DSE and ES DSE. 
 The proposed TS DSE is around 100x faster than the ES DSE on 
-average. In particular, it can be found that ES DSE can be 
-extremely slow on MM which has three levels of loop with relatively large 
+average. In particular, ES DSE is extremely slow on MM 
+which has three levels of loop with relatively large 
 loop count and thus larger design space. Though TS DSE also needs 
-longer time to complete the DSE of MM, it can skip most 
+longer time to complete the DSE of MM, it skips most 
 of the unfeasible configurations and the runtime is 
 less sensitive to the size of the design space. 
 
@@ -161,14 +162,14 @@ less sensitive to the size of the design space.
 %\end{table}
 
 In order to demonstrate the quality of proposed framework, we presented the 
-Pareto-optimal curves acquired from both DSE methods as shown in \figref{fig:DSE}. 
-It is clear that the Pareto-optimal curves obtained via the two DSE methods are quite 
-close. Since TS DSE may prune the design options that involve a larger 
+Pareto-optimal curves acquired from both DSE methods. As shown in \figref{fig:DSE}, 
+the Pareto-optimal curves obtained using the two DSE methods are quite 
+close to each other. Since TS DSE may prune the design options that involve a larger 
 overlay size and better performance according to the sub DSE metric, 
 the Pareto-optimal curves may deviate slightly at the higher performance area. 
-Fortunately, this can be improved by lowering user defined metric $\epsilon$ 
+Fortunately, this can be improved by lowering the user defined metric $\epsilon$ 
 while affording longer DSE time. When we customize the design for minimum energy 
-consumption, TS DSE can achieve the optimal design in all the benchmarks. 
+consumption, TS DSE achieves the optimal design in all the benchmarks. 
 
 \begin{figure}[tb]
 	\subfloat[MM]{%
@@ -191,11 +192,14 @@ consumption, TS DSE can achieve the optimal design in all the benchmarks.
 \subsubsection{Design Tools Comparison}
 The proposed design framework will not be as useful if the performance of the 
 generated system is not at least on par with similar systems created with 
-conventional high-level synthesis tools. For that, we further implemented the 
-benchmarks using Vivado HLS with moderate effort. The loops in the benchmark will 
-be unrolled as much as possible and the input/output buffers are set as large 
-as possible. Then the accelerators generated using both tools are compared. 
-Since similar comparison has already been done in previous work \cite{scgra-orig}, 
+conventional HLS tools. For that, we further implemented the 
+benchmarks using Vivado HLS with moderate effort. The loops in the benchmark 
+were unrolled as much as possible and the input/output buffers were set as large 
+as possible. The accelerators generated using HLS run at 100MHz, the accelerators 
+built on top of SCGRA overlay have the computation array running at 200MHz 
+and the communication fabrics running at 100MHz. Then the accelerators 
+generated using both tools were compared. 
+Since similar comparison has already been done in previous work \cite{scgra}, 
 we just brief the performance comparison for a quick reference.
 
 \begin{figure}[tb]
@@ -219,15 +223,17 @@ we just brief the performance comparison for a quick reference.
 \end{figure}
 
 
-\figref{fig:hls-cp} shows the performance of the implementations using 
+\figref{fig:hls-cp} shows the performance comparison of the implementations using 
 both design tools. The proposed customization framework utilizes 
 SCGRA overlay as the backbone and it can't afford large 
-BRAM for input/output buffers. As a result, the communication time is larger 
-especially when there is a lot of data reuse between consecutive data transmission.
-For instance, HLS based design can afford a 32k-word input buffer storing all 
+BRAM blocks for input/output buffers. As a result, the communication time is larger 
+especially when there is a lot of data reuse between consecutive data transmissions.
+For instance, HLS based design for MM can afford a 32k-word input buffer storing all 
 the input data. However, the SCGRA overlay based design can only 
 provide a 4k-word input buffer and it needs to transmit the same data 
-multiple times to complete the matrix multiplication. Direct HLS can't support large 
+multiple times to complete the matrix multiplication (Note that it is 
+possible to partly reuse data transmissions of different groups, but it is 
+not supported in the experiments). Direct HLS can't support large 
 loop unrolling due to the DSP resource constrain. SCGRA overlay based accelerator 
 has a lot of distributed intermediate buffers and can accommodate larger loop unrolling.
 Therefore, the accelerators generated using the proposed framework provides competitive 

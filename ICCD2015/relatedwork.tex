@@ -1,0 +1,37 @@
+\section{Related Work}\label{sec:relatedwork}
+Researchers have approached the challenge of lengthy hardware implementation tool run time from many angles.  Focusing on the low-level FPGA EDA tools, researchers have looked improving their run time by making quality-runtime trade-offs \cite{mulpuri2001runtime} and by parallelizing the tools themselves \cite{moctar2014parallel, goeders2011deterministic, altera-pc, 
+xilinx-pc}.
+Other researchers take advantages of the dynamic partial reconfiguration capabilities of modern FPGAs to shorten run time by effectively reducing the user design size \cite{Frangieh2010}.
+Yet another group of researchers approach the problem from a higher level, innovating on how these tools are being used from a design methodology's point of view.  The use of modular design flow and by using pre-built hard macros \cite{lavin2013improving, korf2011automatic} have thus been explored.
+While these approaches have significantly reduced the hardware implementation time, they remain at least 2 orders of magnitude slower when compared to a the software compilation experience. 
+
+In recent years, there has been an increased interest in applying the concept 
+of \emph{overlay architectures} as a way to address this productivity challenge. 
+An overlay architecture is a virtual intermediate architecture that is overlaid 
+on top of the physical configurable fabric of an FPGA. Overlays with different 
+granularity ranging from virtual FPGAs \cite{zuma2013carl,Grant2011Malibu,
+Coole2010Intermediate,Koch2013CI}, CGRA overlays \cite{kissler2006dynamically, 
+ferreira2011fpga, shukla2006quku, capalijia2013pipelined, dsp2015cgra} to soft 
+processors \cite{Lebedev2010} and GPU-like overlays \cite{Jeffrey2011potential} 
+have been developed. 
+
+Among these overlays, CGRA overlays are particularly suitable for compute intensive loop acceleration as demonstrated by numerous prior works 
+\cite{tessier2001reconfigurable,compton2002reconfigurable}.
+A large number of CGRAs with different features have been developed and 
+prototyped on FPGAs. A VLIW architecture based CGRA overlay was developed  
+\cite{kissler2006dynamically}, which support dynamic topology customization. 
+A heterogeneous CGRA overlay was proposed \cite{ferreira2011fpga} that utilized a global multi-stage interconnection to achieve topology customization 
+to adapt to different applications. A customized CGRA overlay called 
+QUKU \cite{shukla2006quku} was developed for DSP algorithms and it supported fast configuration for similarly to this work applications and slow configuration for distinct applications.
+Finally High-speed CGRA overlays were built in \cite{capalijia2013pipelined} and \cite{dsp2015cgra} by using the elastic pipeline technique and smart DSP reuse respectively to achieve better performance and higher throughput.
+
+
+
+Our proposed fully pipelined synchronous coarse-grained reconfigurable array overlay continues this trend of exploiting coarse-grain reconfigurability to improve both design productivity and the resulting accelerator speed. 
+In addition, QuickDough pays particular attention to data I/O between the host and the accelerator, which often becomes the bottleneck both in terms of performance and designer productivity.  For that, QuickDough provides buffer optimization and communication scheduling between hardware and software automatically, creating a seamless hardware-software codesign experience for the user.
+Finally, our overlay was designed to be \emph{soft} from the beginning, featuring a template system to allow for rapid overlay generation with different CGRA topology and compute operations.  
+An extensive application-specific customization framework that is able to automatically update the overlay library is in progress and is left as future work.
+
+
+%In general, previous CGRA overlays have demonstrated the promising performance acceleration capability for compute intensive applications. They typically have few or even no intermediate buffer included and assume small pipelined DFGs as design entry. They focus on hardware infrastructure design as well as corresponding mapping and scheduling. However, they are still lack of consideration on on-chip buffering and the communication with host, which are essential for FPGA accelerator design and exposing the accelerators to high-level application developers.
+

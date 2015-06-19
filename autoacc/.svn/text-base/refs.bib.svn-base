@@ -244,7 +244,7 @@ doi={10.1109/FPL.2013.6645515},}
     publisher={University of British Columbia}
 }
 
-@PROCEEDINGS{Chung2010, 
+@INPROCEEDINGS{Chung2010, 
     author={Chung, E.S. and Milder, P.A. and Hoe, J.C. and Ken Mai}, 
     booktitle={Microarchitecture (MICRO), 2010 43rd Annual IEEE/ACM 
         International Symposium on}, 
@@ -253,12 +253,6 @@ doi={10.1109/FPL.2013.6645515},}
     year={2010}, 
     month={Dec}, 
     pages={225-236}, 
-    keywords={application specific integrated circuits;computer graphic
-        equipment;coprocessors;electronic engineering computing;energy conservation;field
-            programmable gate arrays;multiprocessing systems;ASIC;FPGA;GPGPU;ITRS road
-            map;U-cores;custom logic;energy efficiency;future chip multiprocessors;
-        heterogeneous multicores;single-chip heterogeneous
-            computing;asic;fpga;gpu;heterogeneous;itrs;multicore;technology scaling}, 
     doi={10.1109/MICRO.2010.36}, 
     ISSN={1072-4451},}
 

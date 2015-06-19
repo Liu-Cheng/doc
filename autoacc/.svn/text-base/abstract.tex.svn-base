@@ -1,10 +1,10 @@
-Offloading compute intensive nested loops to an FPGA accelerator 
-has been demonstrated by numerous researchers as an effective solution 
-to meet the performance requirement across many application domains. 
+Offloading compute intensive nested loops to execute on FPGA accelerators
+have been demonstrated by numerous researchers as an effective
+performance enhancement technique across numerous application domains. 
 However, the relatively low design productivity caused by compiling 
 high level loops to FPGA accelerators and customizing 
-the resulting FPGA accelerators to specific applications has become the major 
-obstacle to the wide adoption of FPGAs as computing devices. 
+the resulting FPGA accelerators to specific applications remains a major 
+challenge to the wide adoption of FPGAs as computing devices. 
 
 To address the productivity and performance problems, an automatic 
 nested loop acceleration framework on a hybrid CPU-FPGA system is 

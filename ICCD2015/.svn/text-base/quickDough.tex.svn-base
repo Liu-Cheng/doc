@@ -1,0 +1,121 @@
+\pdfminorversion=4
+\documentclass[conference]{IEEEtran}
+\usepackage[binary-units]{siunitx}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage[caption=false,font=footnotesize]{subfig}
+\usepackage{dblfloatfix}
+\usepackage{xspace}
+\usepackage{url}
+%\usepackage[square, comma, sort&compress, numbers]{natbib}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage[algo2e]{algorithm2e}
+\usepackage{amsmath}
+\usepackage[table]{xcolor}
+
+
+% \usepackage{draftwatermark}%
+% \SetWatermarkFontSize{20cm}%
+% \SetWatermarkScale{2}%
+% \SetWatermarkText{DRAFT Do not distribute}%
+
+\setlength{\parskip}{0pt}
+\renewcommand{\topfraction}{1}
+\renewcommand{\textfraction}{0.15}
+\renewcommand{\dbltopfraction}{1}
+
+\renewcommand\floatpagefraction{.9}
+\renewcommand\topfraction{.9}
+\renewcommand\bottomfraction{.9}
+\renewcommand\dbltopfraction{.9}
+\renewcommand\textfraction{.1}   
+\setcounter{totalnumber}{4}
+\setcounter{topnumber}{8}
+\setcounter{bottomnumber}{4}
+\setcounter{dbltopnumber}{4}
+
+\newcommand{\eqnref}[1]{Equation~\ref{#1}}
+%\newcommand{\eqnref}[1]{(\ref{#1})}
+\newcommand{\figref}[1]{Figure~\ref{#1}}
+\newcommand{\algref}[1]{Algorithm~\ref{#1}}
+\newcommand{\secref}[1]{Section~\ref{#1}}
+\newcommand{\tabref}[1]{Table~\ref{#1}}
+\newcommand{\code}[1]{\texttt{#1}}
+\newcommand{\tabincell}[2]{\begin{tabular}{@{}#1@{}}#2\end{tabular}}
+\renewcommand{\algorithmcfname}{ALGORITHM}
+\SetAlFnt{\small}
+\SetAlCapFnt{\small}
+\SetAlCapNameFnt{\small}
+\SetAlCapHSkip{0pt}
+\IncMargin{-\parindent}
+
+
+
+\graphicspath{{./figures/}}
+
+
+\begin{document}
+\bstctlcite{IEEEexample:BSTcontrol}
+%
+% paper title
+% can use linebreaks \\ within to get better formatting as desired
+\title{QuickDough: A Rapid FPGA Loop Accelerator Design Framework Using Soft CGRA Overlay}
+
+
+% author names and affiliations
+% use a multiple column layout for up to three different
+% affiliations
+
+%% Original
+% \author{\IEEEauthorblockN{Cheng Liu, Colin Yu Lin, Hayden Kwok-Hay So}
+% \IEEEauthorblockA{Department of Electrical and Electronic Engineering\\
+% The University of Hong Kong\\
+% \{liucheng,linyu,hso\}@eee.hku.hk}}
+
+%% Blind
+\author{\IEEEauthorblockN{}
+\IEEEauthorblockA{}}
+
+
+% conference papers do not typically use \thanks and this command
+% is locked out in conference mode. If really needed, such as for
+% the acknowledgment of grants, issue a \IEEEoverridecommandlockouts
+% after \documentclass
+
+% for over three affiliations, or if they all won't fit within the width
+% of the page, use this alternative format:
+% 
+%\author{\IEEEauthorblockN{Michael Shell\IEEEauthorrefmark{1},
+%Homer Simpson\IEEEauthorrefmark{2},
+%James Kirk\IEEEauthorrefmark{3}, 
+%Montgomery Scott\IEEEauthorrefmark{3} and
+%Eldon Tyrell\IEEEauthorrefmark{4}}
+%\IEEEauthorblockA{\IEEEauthorrefmark{1}School of Electrical and Computer Engineering\\
+%Georgia Institute of Technology,
+%Atlanta, Georgia 30332--0250\\ Email: see http://www.michaelshell.org/contact.html}
+%\IEEEauthorblockA{\IEEEauthorrefmark{2}Twentieth Century Fox, Springfield, USA\\
+%Email: homer@thesimpsons.com}
+%\IEEEauthorblockA{\IEEEauthorrefmark{3}Starfleet Academy, San Francisco, California 96678-2391\\
+%Telephone: (800) 555--1212, Fax: (888) 555--1212}
+%\IEEEauthorblockA{\IEEEauthorrefmark{4}Tyrell Inc., 123 Replicant Street, Los Angeles, California 90210--4321}}
+
+% make the title area
+\maketitle
+
+\begin{abstract}
+\input{abstract}
+\end{abstract}
+
+\input{introduction}
+\input{framework}
+\input{experiments}
+\input{relatedwork}
+\input{conclusions}
+
+\bibliographystyle{IEEEtran}
+\bibliography{refs,ieeebstctl}
+
+\end{document}
+

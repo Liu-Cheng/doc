@@ -1,0 +1,22 @@
+%\section{Limitations and Future Work}\label{sec:discussion}
+%While the current implementation of QuickDough has demonstrated promising initial results, there are a number of limitations that must be acknowledged and possibly addressed in future work.
+
+%First and foremost, the proposed method is designed to synthesize parallel compute kernels to execute on FPGAs only. As such, it is not a generic method to perform high-level synthesis on random logic.
+
+%Secondly, the proposed method is intended to serve as part of a larger HW/SW synthesis framework that targets hybrid CPU-FPGA systems. Therefore, many high-level design decisions such as the identification of compute kernel to offload to FPGAs are not handled in this work. In particular, the generation of data flow graphs from the user design currently involves several manual conversion steps to match the user design with the target overlay. It is anticipated that an automated process that is able to analyze the user application and generate the corresponding DFG suitable for the overlay will be developed.
+
+%Thirdly, even with as simple an overlay architecture as presented in this work, there remains a vast design space with a labyrinth of parameters to adjust that will affect the power-performance of the resulting accelerators.  In this work, we have chosen only 2 specific configurations in the experiments as representations, a fully automatic overlay customization framework is being developed to assist designers in making design choices.
+
+%Finally, the capacity of the address buffers used in the accelerator is currently limiting the DFG grouping factor that can be adopted to the FPGA in a many cases.  In the future, optimized address encoding and compression scheme will be adopted to further improve the resulting accelerator performance.
+ 
+\section{Conclusions}\label{sec:conclusions}
+In this work, we have presented the QuickDough compilation framework for high productivity
+development of FPGA-based accelerators.  QuickDough makes use of a soft coarse-grained
+reconfigurable array as an overlay architecture to greatly improve the designer's compilation
+experience.  The QuickDough overlay is simple, regular, deterministic, and is highly scalable to
+future devices.  Taking advantage of the overlay, the lengthy low-level implementation tool flow is
+reduced to a rapid operation scheduling problem and the compilation time of QuickDough is reduced to
+seconds, which contributes directly into higher application designers' productivity.
+Despite the use of an additional layer of overlay architecture on the target FPGA, the overall
+application performance remains competitive in many cases.
+

@@ -1,0 +1,166 @@
+%********************************************************** 
+% Version 0.1 Junying Chen, 1/8/2012
+% Version 0.2 Cheng Liu, 20/4/2015
+%*********************************************************
+
+
+\documentclass[12pt,a4paper]{report}
+\usepackage{setspace} % Set line spacing package
+\doublespacing
+\usepackage{mathptmx} % Times Roman typeface
+\usepackage[latin1]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{float}
+\usepackage{graphicx}
+\graphicspath{{../figure/}}
+\usepackage[small]{caption} % Small font size of figure caption
+\usepackage{caption}
+\usepackage{subcaption}
+
+% citation package
+\usepackage[numbers, sort&compress]{natbib}
+
+% hyperlink
+\usepackage[linktoc=all, bookmarks=true]{hyperref}
+
+%% Additional packages
+\usepackage{times,amsmath,epsfig}
+\usepackage{verbatim}
+\usepackage{array}
+
+%\usepackage[margin=1.5cm]{geometry}  % the easy way to set page margins
+\usepackage[top=25mm, bottom=25mm, left=35mm, right=35mm]{geometry}
+
+\usepackage{url} % Add online resources in references
+
+% references commands
+\newcommand{\eqnref}[1]{(\ref{#1})}
+\newcommand{\figref}[1]{Figure~\ref{#1}}
+\newcommand{\secref}[1]{Section~\ref{#1}}
+\newcommand{\chapref}[1]{Chapter~\ref{#1}}
+\newcommand{\tabref}[1]{Table~\ref{#1}}
+
+%\def\PDFFIG[#1]#2#3#4{  %[#parameter]#image_name#caption#label
+%\begin{figure}[H]
+%\centering
+%\includegraphics[#1]{#2}
+%\caption{#3}
+%\label{#4}
+%\end{figure}
+%}
+
+\begin{document}
+\input{front_page}
+%\input{abstract}
+\hfill
+
+\title{QuickDough: A Rapid FPGA Accelerator Design 
+Framework Using Soft Coarse-Grained Reconfigurable Array Overlay}
+
+\author{Cheng Liu\\
+B.E. (Harbin Institute of Technology, China)~~2007\\
+M.E. (Harbin Institute of Technology, China)~~2009\\
+\\
+A dissertation submitted in partial fulfillment of the\\
+requirements for the degree of\\
+Doctor of Philosophy\\
+in\\
+Department of Electrical and Electronic Engineering\\
+of\\
+The University of Hong Kong} 
+
+\date{30 September 2015}
+\maketitle
+
+%\begin{figure}
+%\centering
+%\includegraphics[width=0.15\columnwidth]{HKUshield}
+%\end{figure}
+
+%%============================================================
+
+
+\newpage
+\section*{\centering{Declaration}}
+\input{declaration}
+\hfill
+
+%%============================================================
+
+\newpage
+%\leavevmode
+%\vfill{
+%\centering{
+\begin{center}
+\leavevmode
+\vfill
+\begin{quotation}
+\textit{If everyone is thinking alike then somebody isn't thinking.}
+
+\hfill \textsl{--- George Smith Patton, Jr.}
+
+\vspace{1cm}
+
+\textit{No Problem can withstand the assault of sustained thinking.}
+
+\hfill \textsl{--- Voltaire}
+
+\vspace{1cm}
+
+\textit{I've failed over and over and over again in my life and that is why I succeed. I can accept failure. Everyone fails at something. But I can't accept not trying.}
+
+\hfill \textsl{--- Michael Jordan}
+\end{quotation}
+\vfill
+\end{center}
+
+%%============================================================
+
+\newpage
+\section*{\centering{Abstract}}
+%\input{abstract}
+\hfill
+\hfill
+
+%%============================================================
+
+\newpage
+\section*{\centering{Acknowledgement}}
+\begin{quotation}
+\textit{Talent wins games, but teamwork and intelligence wins championships.}
+
+\hfill \textsl{--- Michael Jordan}
+\end{quotation}
+
+%\input{ack}
+\hfill
+
+%%============================================================
+
+\tableofcontents
+\cleardoublepage
+
+\listoffigures	% print list of figures
+\listoftables  % print list of tables
+
+%%============================================================
+
+%\input{chapter1_intro}
+%\input{chapter2_litrev}
+%\input{chapter3_background}
+%\input{chapter4_impact}
+%\input{chapter5_impl}
+%\input{chapter6_eval}
+%\input{chapter7_con}
+
+\hfill
+\hfill
+
+\bibliographystyle{plainnat}
+\bibliography{IEEEabrv, refs}
+
+\end{document}
+
+

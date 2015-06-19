@@ -1593,7 +1593,7 @@
      inkscape:pageshadow="2"
      inkscape:zoom="1.4"
      inkscape:cx="216.5465"
-     inkscape:cy="633.55154"
+     inkscape:cy="692.9365"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -1632,18 +1632,18 @@
     <text
        xml:space="preserve"
        style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans"
-       x="178.89917"
+       x="182.89917"
        y="127.27182"
        id="text12763-3-5-1-9-2-0-1-2"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
-         x="181.44604"
+         x="185.44604"
          y="127.27182"
-         id="tspan3187">High Level </tspan><tspan
+         id="tspan3187">High-level </tspan><tspan
          sodipodi:role="line"
-         x="178.89917"
+         x="182.89917"
          y="147.27182"
-         id="tspan3275">Application</tspan></text>
+         id="tspan3275">application</tspan></text>
     <rect
        id="rect12754-3-34-1-4-5-3-5-6"
        style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.99999981999999998;stroke-miterlimit:1;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
@@ -1661,7 +1661,7 @@
          sodipodi:role="line"
          x="264.43433"
          y="284.92419"
-         id="tspan3304">System Customization</tspan></text>
+         id="tspan3304">System customization</tspan></text>
     <path
        style="fill:none;stroke:#010000;stroke-width:0.85426158;stroke-linejoin:round;stroke-miterlimit:1;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
        d="m 199.4371,248.90054 -5.9985,0.006 0,-19.62496 -6.32883,0 0,19.62496 -5.99852,-0.006 9.16293,8.3674 9.16292,-8.3674 z"
@@ -1693,15 +1693,15 @@
          sodipodi:role="line"
          x="346.99881"
          y="469.9129"
-         id="tspan3187-6-7">SCGRA Overlay </tspan><tspan
+         id="tspan3187-6-7">SCGRA overlay </tspan><tspan
          sodipodi:role="line"
          x="346.99881"
          y="489.9129"
-         id="tspan3362">Based FPGA Accel. </tspan><tspan
+         id="tspan3362">based FPGA Accel. </tspan><tspan
          sodipodi:role="line"
          x="344.45193"
          y="509.9129"
-         id="tspan4804">Compilation</tspan></text>
+         id="tspan4804">compilation</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans"
@@ -1712,11 +1712,11 @@
          sodipodi:role="line"
          x="182.05902"
          y="431.80231"
-         id="tspan5464">Accel. Commu-</tspan><tspan
+         id="tspan5464">Accel. commu-</tspan><tspan
          sodipodi:role="line"
          x="182.05902"
          y="451.80231"
-         id="tspan3272">nication Interface</tspan></text>
+         id="tspan3272">nication interface</tspan></text>
     <path
        style="fill:none;stroke:#010000;stroke-width:0.85426158;stroke-linejoin:round;stroke-miterlimit:1;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
        d="m 193.28909,483.53511 -5.9985,0.006 0,-19.62496 -6.32883,0 0,19.62496 -5.99852,-0.006 9.16293,8.3674 9.16292,-8.3674 z"
@@ -1747,7 +1747,7 @@
          sodipodi:role="line"
          x="152.6698"
          y="531.6543"
-         id="tspan3489-9">Compilation</tspan></text>
+         id="tspan3489-9">compilation</tspan></text>
     <rect
        id="rect12754-3-34-1-4-5-3-43-5-0-9"
        style="fill:none;stroke:#000000;stroke-width:1;stroke-miterlimit:1;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
@@ -1770,7 +1770,7 @@
          sodipodi:role="line"
          x="254.19684"
          y="600.48669"
-         id="tspan3187-4">Hybrid CPU-FPGA Computing System</tspan></text>
+         id="tspan3187-4">Hybrid CPU-FPGA computing system</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans"
@@ -1781,11 +1781,11 @@
          sodipodi:role="line"
          x="191.36166"
          y="200.36993"
-         id="tspan3303">Compute Intensive </tspan><tspan
+         id="tspan3303">Compute intensive </tspan><tspan
          sodipodi:role="line"
          x="188.81479"
          y="220.36993"
-         id="tspan3959">Nested Loop</tspan></text>
+         id="tspan3959">nested loop</tspan></text>
     <path
        sodipodi:nodetypes="cssccccc"
        inkscape:connector-curvature="0"
@@ -1807,11 +1807,11 @@
          sodipodi:role="line"
          x="266.92679"
          y="352.90295"
-         id="tspan3260">Customizaed Design </tspan><tspan
+         id="tspan3260">Customizaed design </tspan><tspan
          sodipodi:role="line"
          x="264.37991"
          y="372.90295"
-         id="tspan3264">Parameters</tspan></text>
+         id="tspan3264">parameters</tspan></text>
     <path
        sodipodi:nodetypes="cssccccc"
        inkscape:connector-curvature="0"
@@ -1842,13 +1842,13 @@
        id="text12763-3-5-1-9-2-0-1-2-5"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
-         x="368.06488"
+         x="370.61176"
          y="128.87234"
-         id="tspan3187-7">User</tspan><tspan
+         id="tspan3273">Constraints, </tspan><tspan
          sodipodi:role="line"
          x="368.06488"
          y="148.87234"
-         id="tspan3273">Constraints</tspan></text>
+         id="tspan3255">design goals</tspan></text>
     <path
        style="fill:none;stroke:#010000;stroke-width:0.85399997;stroke-linejoin:round;stroke-miterlimit:1;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
        d="M 366.0625 157.9375 L 366.0625 228.875 L 366.03125 228.875 L 366.03125 248.5 L 360.03125 248.5 L 369.1875 256.875 L 378.34375 248.5 L 372.375 248.5 L 372.375 228.875 L 372.3125 228.875 L 372.3125 157.9375 L 366.0625 157.9375 z "

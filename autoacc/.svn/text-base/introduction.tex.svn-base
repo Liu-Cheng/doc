@@ -1,79 +1,114 @@
 \section{Introduction}
-Nested loops with abundant parallelism are usually 
-critical to the performance of an application and offloading them to 
-FPGA accelerators has been demonstrated to be an effective 
-solution to meet the performance requirements across many 
-application domains \cite{Chung2010}. However, the low productivity 
-of developing FPGA-based compute applications has become a major obstacle 
-that hinders the widespread of FPGA computing \cite{cong2011high}.
+Offloading compute intensive nested loops to FPGA accelerators has 
+been demonstrated by many researchers to be an effective solution 
+for performance enhancement across many application domains \cite{Chung2010}. 
+However, the relatively low productivity in developing FPGA-based 
+compute applications remains a major obstacle that hinders 
+their widespread employment \cite{cong2011high}.
 
-High level synthesis (HLS) tools that allow the designers to express hardware 
-designs using familiar high-level description languages greatly alleviate the 
-design productivity challenge, but lengthy back-end hardware implementation 
-which dramatically limits the number of compile-debug-edit cycles per day is 
-still inevitable. Coarse-grained reconfigurable array (CGRA) overlay 
-which consists of an array of connected processing elements (PEs) overlaid 
-on top of the physical FPGA fabric is emerging as a promising technique to tackle 
-the design productivity challenge, as it allows both high-level design entry and 
-rapid back-end implementation through a hard-macro based compilation 
-\cite{ROB2014} as well as bitstream reuse \cite{scgra-orig}. Nevertheless, 
-achieving the increasingly stringent energy and performance requirements 
-still requires intensive system customization specifically to a user application, 
-while navigating through a labyrinth of architectural design parameters and 
-compilation parameters for the customization is extremely slow and contradicts 
-with the intension of an high-productivity computing. 
+To address this productivity challenge, researchers have recently 
+turned to the use of virtual FPGA overlay architectures and 
+high-level compilation tools that, when combined properly, 
+are able to produce high-performance accelerators at near
+software compilation speed \cite{Grant2011Malibu, ZUMA2012, 
+mesh-FUs, ferreira2011fpga, kissler2006dynamically, scgra}.
+Not only have these early works illustrated the promise of using overlays 
+to improve productivity, they have also highlighted a unique potential 
+of overlays --- By customizing the architectures of these \emph{virtual} 
+yet often regular overlays for a target user design, in theory, it is 
+possible to significantly improve the power-performance of the 
+resulting accelerator. In practice, however, navigating through a 
+labyrinth of architectural and compilation parameters to fine-tune 
+an accelerator's power-performance is a slow and non-trivial process. 
+To require a user to manually explore such vast design space is going 
+to counteract the productivity benefit of the utilizing overlay 
+in the first place.
+
+
+% High level synthesis (HLS) tools that allow the designers to express hardware designs using familiar high-level description languages promise to greatly alleviate this design productivity challenge.  From a user's perspective, the ability to express complex hardware designs in a familiar high-language design environment is very attractive, and it provides the much needed incentive for a novice user to endeavor into the this unfamiliar territory of hardware acceleration.  Unfortunately, despite the promising design front-end, the lengthy back-end hardware implementation process quickly becomes the productivity bottleneck in the design process.  This hardware implementation process is lengthy and error-prone, significantly limiting the number of possible compile-debug-edit cycles per day.  Most importantly, performance of the resulting accelerator can be significantly affected by the implementation details as well as the intricate communication between the host and the accelerators.
+
+% To that end, the use of overlay architectures such as a coarse-grained reconfigurable array (CGRA) consists of an array of connected processing elements (PEs) overlaid on top of the physical FPGA fabric is emerging as a promising technique to tackle this design productivity challenge.  It allows both high-level design entry and rapid back-end implementation through a hard-macro based compilation \cite{ROB2014} as well as bitstream reuse \cite{scgra}. Nevertheless, achieving the increasingly stringent energy and performance requirements still requires intensive system customization specifically to a user application, while navigating through a labyrinth of architectural design parameters and compilation parameters for the customization is extremely slow and contradicts with the intension of an high-productivity computing. 
 
 To address both the design productivity and performance challenge, 
-we developed a soft CGRA (SCGRA) overlay based 
-automatic nested loop acceleration framework targeting a hybrid CPU-FPGA 
-system. In this framework, nested loops expressed in high-level languages 
-will be compiled and executed on the SCGRA overlay while the rest of the 
-user application remains running on the host CPU.
-Given an user application and the design constraints, the framework will
-automatically explore the design space and tune the design parameters 
-specifically to the user application. When the optimal design parameters 
-fulfilling the design goals and constraints are acquired, 
-corresponding hardware accelerator and communication interfaces 
-will be generated. Finally, both hardware accelerator
-and software are compiled to the hybrid CPU-FPGA system.  
+we have developed a soft CGRA (SCGRA) overlay based automatic 
+nested loop acceleration framework targeting a hybrid CPU-FPGA system.
+In this framework, nested loops expressed in high-level languages are 
+compiled and executed on the SCGRA overlay while the rest of the user 
+application remains running on the host CPU.
+Given high-level design goals and design constraints, 
+the framework automatically explores the design space and 
+customizes architectural parameters specifically to the user application.
+In addition, the framework also exploits loop unrolling 
+and hardware-software communication strategies in combination 
+with buffer sizing as a performance enhancing technique.
+Once the design goals and constraints are fulfilled, the 
+corresponding hardware accelerator and communication interface 
+are generated and both the hardware accelerator and software 
+are compiled to the hybrid CPU-FPGA system.  
 
-Since the SCGRA overlay has quite regular structure, its implementation 
-scales well and it is relatively straightforward to predict its 
-hardware overhead and power consumption with simple 
-analytical models. Furthermore, given the SCGRA overlay scheduling 
-result, a lot of design metrics such as the nested loop performance, 
-energy consumption and energy delay product (EDP) can also be 
-estimated easily. While SCGRA overlay scheduling merely 
-depends on the overlay size and loop unrolling factor, the overall 
-nested loop acceleration customization problem can be reduced to a much simpler 
-sub design space exploration (DSE) centering the overlay scheduling. 
-Basically, the overall customization can be divided into a small sub DSE step 
-and an analytical customization step, and both steps are effective and fast.
+Particularly, by taking advantage of the regularity of the SCGRA overlay, 
+a multitude of design metrics such as performance and energy consumption can 
+be accurately estimated using analytical models once the overlay scheduling 
+result is available. While the overlay scheduling depends on much less design 
+parameters, the overall customization framework can be dramatically simplified.
+Moreover, the regular tiling SCGRA overlay allows prompt implementation by 
+using macro-based compilation techniques \cite{ROB2014} and 
+efficient bitstream reuse \cite{scgra} during 
+design iterations of an application. As a result, the overall design 
+automation framework with rapid back-end compilation and fast application specific 
+customization ensures both high design productivity and 
+high performance of the resulting accelerators at the same time.
 
-After the customization, both the hardware accelerator and communication 
-interfaces can be generated. As the accelerator utilizes the regular tiling 
-SCGRA overlay as the backbone, it can be implemented rapidly using macro based 
-compilation techniques as presented in \cite{ROB2014}. Moreover, when minor 
-modification is applied to the high level nested loop description during 
-the design iterations, the FPGA accelerator implementation can be reused 
-and the compilation process can further be reduced to seconds as demonstrated in 
-\cite{scgra-orig}. Therefore, the rapid back-end compilation together with the fast 
-the application specific customization will guarantee the design productivity 
-of the overall design automation framework. 
+%By taking advantage of the regularity of the SCGRA overlay, 
+%a multitude of design metrics including performance, energy consumption and energy delay 
+%product (EDP) can be estimated once the operation scheduling result is 
+%available. While SCGRA overlay scheduling merely depends on the 
+%overlay size and loop unrolling factor, the overall nested loop 
+%acceleration customization problem can be reduced to a much simpler 
+%sub design space exploration (DSE) centering the overlay scheduling and
+%a simple customization on top of the sub design space. Both the sub DSE and 
+%customization are fast, so the optimized design parameters can be 
+%obtained rapidly and the hardware accelerator as well as the communication 
+%interfaces can be then generated. Afterwards, the regular tiling SCGRA overlay 
+%based accelerator can be implemented promptly using macro based 
+%compilation techniques as presented in \cite{ROB2014}. Moreover, when minor 
+%modifications are applied to the high level nested loop description during 
+%the design iterations, the FPGA accelerator implementation can be reused 
+%and the compilation process can further be reduced to seconds as demonstrated in 
+%\cite{scgra}. As a result, the overall design automation framework 
+%with rapid back-end compilation and fast application specific 
+%customization ensures both high design productivity and 
+%high performance of the resulting accelerators at the same time.
 
 We performed a series of experiments to evaluate the efficiency 
 and quality of the proposed design framework using a real-world 
 benchmark. Compared to an exhaustive search, the proposed 
 customization achieves similar results while reducing its 
 runtime by 2 orders of magnitude on average. When compared to 
-HLS implementations with moderate manual optimization, 
+HLS implementations with moderate manual optimizations that can reasonably be expected from a novice user, 
 the customized accelerators produced using the proposed framework 
-exhibit competitive performance as well. 
+has demonstrated competitive performance as well. 
+
+With that, we consider the main contribution of this work is in the following areas:
+\begin{itemize}[nosep]
+\item We have developed a \emph{rapid} customization framework that 
+    performs automatic design parameter tuning for the SCGRA 
+    overlay and hardware-software development. The result is 
+    comparable to an exhaustive design space search while 
+    it runs at a fraction of time.
+\item We have developed a \emph{rapid} hardware-software compilation 
+    framework for a hybrid CPU-FPGA platform based on a SCGRA 
+    overlay. The compilation speed is high while the resulting system's 
+    performance is competitive.
+\end{itemize}
 
 In \secref{sec:relatedwork}, related work is briefly introduced. 
 The automatic SCGRA overlay based nested loop acceleration 
 framework is illustrated in \secref{sec:acc-framework}. Then the 
 SCGRA overlay customization are further detailed in 
-\secref{sec:customization-framework}. Finally, experimental results are 
-presented in \secref{sec:result} and the paper is concluded in \secref{sec:conclusion}.
+\secref{sec:customization-framework}. Experimental results are 
+presented in \secref{sec:result} and limitations are 
+discussed in \secref{sec:limitations}. Finally, the paper is 
+concluded in \secref{sec:conclusion}.
+
 
