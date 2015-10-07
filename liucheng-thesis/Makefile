@@ -1,5 +1,5 @@
 TITLE=liucheng-thesis
-TEXORIG=liucheng-thesis.tex
+TEXORIG=liucheng-thesis.tex abstract.tex
 
 BIBFILES=refs.bib 
 IMGFILES=
