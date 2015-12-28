@@ -1,4 +1,10 @@
-The QuickDough design framework is presented as a way to address productivity issues of developing high-performance FPGA accelerators.  QuickDough utilizes a soft coarse-grained reconfigurable array (SCGRA) as an overlay on top of off-the-shelf FPGAs for rapid accelerator developments.
-Instead of compiling high-level applications directly to HDL circuits, the compilation step is reduced to a simpler operation scheduling task targeting the SCGRA overlay, significantly reducing compilation time and increasing possible numbers of debug-cycle-per-day as a result.
-The softness of the SCGRA allows highly customized domain-specific design while the regular structure of the SCGRA makes the implementation scalable and reusable.
-When compared to a conventional design methodology using off-the-shelf high-level synthesis tools, QuickDough achieves competitive end-to-end application performance while reducing the compilation time by two orders of magnitude. 
+The QuickDough design framework is presented as a way to address productivity issues of developing
+high-performance FPGA accelerators. QuickDough utilizes a soft coarse-grained reconfigurable array
+(SCGRA) as an overlay on top of off-the-shelf FPGAs for rapid accelerator developments.
+Instead of compiling high-level applications directly to HDL circuits, the compilation step is
+reduced to a simpler operation scheduling task targeting the SCGRA overlay, significantly reducing
+compilation time and increasing possible numbers of debug-cycle-per-day as a result.
+The softness of the SCGRA allows highly customized application-specific design while the regular
+structure of the SCGRA makes the customization much easier. When compared to the
+execution on a general purposed processor, the accelerators generated using QuickDough achieves up
+to 9X performance speedup.

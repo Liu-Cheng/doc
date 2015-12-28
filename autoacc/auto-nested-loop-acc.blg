@@ -1,49 +1,58 @@
 This is BibTeX, Version 0.99d (TeX Live 2014)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: auto-nested-loop-acc.aux
-The style file: acm.bst
+The style file: IEEEtran.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: refs.bib
-Warning--empty booktitle in scgra
-Warning--empty journal in ROB2014
-You've used 41 entries,
-            2253 wiz_defined-function locations,
-            775 strings with 12619 characters,
-and the built_in function-call counts, 16399 in all, are:
-= -- 1590
-> -- 697
-< -- 0
-+ -- 293
-- -- 246
-* -- 1187
-:= -- 2452
-add.period$ -- 126
-call.type$ -- 41
-change.case$ -- 246
-chr.to.int$ -- 0
-cite$ -- 43
-duplicate$ -- 722
-empty$ -- 1401
-format.name$ -- 246
-if$ -- 3605
+Database file #2: ieeebstctl.bib
+-- IEEEtran.bst version 1.13 (2008/09/30) by Michael Shell.
+-- http://www.michaelshell.org/tex/ieeetran/bibtex/
+-- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+** IEEEtran BST control entry "IEEEexample:BSTcontrol" detected.
+
+Done.
+You've used 29 entries,
+            4039 wiz_defined-function locations,
+            1001 strings with 13898 characters,
+and the built_in function-call counts, 23546 in all, are:
+= -- 1863
+> -- 462
+< -- 214
++ -- 265
+- -- 67
+* -- 1141
+:= -- 3404
+add.period$ -- 61
+call.type$ -- 29
+change.case$ -- 29
+chr.to.int$ -- 529
+cite$ -- 29
+duplicate$ -- 1688
+empty$ -- 2068
+format.name$ -- 93
+if$ -- 5531
 int.to.chr$ -- 0
-int.to.str$ -- 41
-missing$ -- 37
-newline$ -- 210
-num.names$ -- 82
-pop$ -- 339
+int.to.str$ -- 28
+missing$ -- 282
+newline$ -- 117
+num.names$ -- 28
+pop$ -- 631
 preamble$ -- 1
-purify$ -- 205
-quote$ -- 0
-skip$ -- 507
+purify$ -- 0
+quote$ -- 4
+skip$ -- 1849
 stack$ -- 0
-substring$ -- 1030
-swap$ -- 244
-text.length$ -- 0
+substring$ -- 1236
+swap$ -- 1358
+text.length$ -- 41
 text.prefix$ -- 0
-top$ -- 0
-type$ -- 164
-warning$ -- 2
-while$ -- 166
-width$ -- 43
-write$ -- 433
-(There were 2 warnings)
+top$ -- 6
+type$ -- 29
+warning$ -- 0
+while$ -- 130
+width$ -- 30
+write$ -- 303

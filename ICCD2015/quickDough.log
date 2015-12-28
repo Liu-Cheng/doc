@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.3.25)  16 JUN 2015 16:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.3.25)  5 DEC 2015 09:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -657,6 +657,12 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
 )
+(/usr/local/texlive/2014/texmf-dist/tex/latex/cite/cite.sty
+LaTeX Info: Redefining \cite on input line 302.
+LaTeX Info: Redefining \nocite on input line 332.
+Package: cite 2015/02/27  v 5.5
+)
+** ATTENTION: Overriding command lockouts (line 58).
 (./quickDough.aux)
 \openout1 = `quickDough.aux'.
 
@@ -750,6 +756,16 @@ Package caption Info: End \AtBeginDocument code.
 \c__siunitx_mathtt_int=\count180
 
 (./abstract.tex) (./introduction.tex) (./framework.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 3.
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/omsptm.fd
+File: omsptm.fd 
+)
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <8> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 3.
+
 pdfTeX warning (Object streams): \pdfobjcompresslevel > 0 requires \pdfminorver
 sion > 4. Object streams disabled now.
 [1{/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
@@ -759,44 +775,41 @@ sion > 4. Object streams disabled now.
 
 pdfTeX warning: pdflatex (file ./figures/framework.pdf): PDF inclusion: found P
 DF version <1.5>, but at most version <1.4> allowed
-<./figures/framework.pdf, id=9, 457.71pt x 391.4625pt>
+<./figures/framework.pdf, id=12, 457.71pt x 391.4625pt>
 File: ./figures/framework.pdf Graphic file (type pdf)
 
 <use ./figures/framework.pdf>
-Package pdftex.def Info: ./figures/framework.pdf used on input line 15.
+Package pdftex.def Info: ./figures/framework.pdf used on input line 9.
 (pdftex.def)             Requested size: 202.44066pt x 173.14pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
 
 
 pdfTeX warning: pdflatex (file ./figures/scgra-accelerator.pdf): PDF inclusion:
  found PDF version <1.5>, but at most version <1.4> allowed
-<./figures/scgra-accelerator.pdf, id=10, 113.42375pt x 68.255pt>
+<./figures/scgra-accelerator.pdf, id=13, 113.42375pt x 68.255pt>
 File: ./figures/scgra-accelerator.pdf Graphic file (type pdf)
 
 <use ./figures/scgra-accelerator.pdf>
-Package pdftex.def Info: ./figures/scgra-accelerator.pdf used on input line 58.
+Package pdftex.def Info: ./figures/scgra-accelerator.pdf used on input line 28.
 
 (pdftex.def)             Requested size: 164.48087pt x 98.98073pt.
 
 
 pdfTeX warning: pdflatex (file ./figures/pe.pdf): PDF inclusion: found PDF vers
 ion <1.5>, but at most version <1.4> allowed
-<./figures/pe.pdf, id=11, 335.2525pt x 186.6975pt>
+<./figures/pe.pdf, id=14, 335.2525pt x 186.6975pt>
 File: ./figures/pe.pdf Graphic file (type pdf)
  <use ./figures/pe.pdf>
-Package pdftex.def Info: ./figures/pe.pdf used on input line 64.
-(pdftex.def)             Requested size: 164.48087pt x 91.59651pt.
+Package pdftex.def Info: ./figures/pe.pdf used on input line 34.
+(pdftex.def)             Requested size: 177.13412pt x 98.64153pt.
 
 
 pdfTeX warning: pdflatex (file ./figures/alu-v2.pdf): PDF inclusion: found PDF 
 version <1.5>, but at most version <1.4> allowed
-<./figures/alu-v2.pdf, id=12, 226.8475pt x 116.435pt>
+<./figures/alu-v2.pdf, id=15, 226.8475pt x 116.435pt>
 File: ./figures/alu-v2.pdf Graphic file (type pdf)
 
 <use ./figures/alu-v2.pdf>
-Package pdftex.def Info: ./figures/alu-v2.pdf used on input line 70.
+Package pdftex.def Info: ./figures/alu-v2.pdf used on input line 40.
 (pdftex.def)             Requested size: 164.48087pt x 84.42474pt.
  [2 <./figures/framework.pdf> <./figures/scgra-accelerator.pdf
 
@@ -814,86 +827,83 @@ dfs with page group included in a single page
 
 pdfTeX warning: pdflatex (file ./figures/dfg-gen.pdf): PDF inclusion: found PDF
  version <1.5>, but at most version <1.4> allowed
-<./figures/dfg-gen.pdf, id=71, 441.65pt x 349.305pt>
+<./figures/dfg-gen.pdf, id=74, 441.65pt x 349.305pt>
 File: ./figures/dfg-gen.pdf Graphic file (type pdf)
 
 <use ./figures/dfg-gen.pdf>
-Package pdftex.def Info: ./figures/dfg-gen.pdf used on input line 129.
+Package pdftex.def Info: ./figures/dfg-gen.pdf used on input line 59.
 (pdftex.def)             Requested size: 189.7874pt x 150.10228pt.
 
-Underfull \vbox (badness 1783) has occurred while \output is active []
 
+LaTeX Font Warning: Command \footnotesize invalid in math mode on input line 87
+.
 
-
-LaTeX Font Warning: Command \footnotesize invalid in math mode on input line 15
-7.
-
-LaTeX Font Info:    Calculating math sizes for size <> on input line 159.
+LaTeX Font Info:    Calculating math sizes for size <> on input line 90.
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <> not available
-(Font)              size <5> substituted on input line 159.
+(Font)              size <5> substituted on input line 90.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <0.7> not available
-(Font)              size <5> substituted on input line 159.
+(Font)              size <5> substituted on input line 90.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <0.5> not available
-(Font)              size <5> substituted on input line 159.
+(Font)              size <5> substituted on input line 90.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <> not available
-(Font)              size <5> substituted on input line 159.
+(Font)              size <5> substituted on input line 90.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <0.7> not available
-(Font)              size <5> substituted on input line 159.
+(Font)              size <5> substituted on input line 90.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <0.5> not available
-(Font)              size <5> substituted on input line 159.
+(Font)              size <5> substituted on input line 90.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <> not available
-(Font)              size <5> substituted on input line 159.
+(Font)              size <5> substituted on input line 90.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <0.7> not available
-(Font)              size <5> substituted on input line 159.
+(Font)              size <5> substituted on input line 90.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <0.5> not available
-(Font)              size <5> substituted on input line 159.
+(Font)              size <5> substituted on input line 90.
 
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <> not available
-(Font)              size <5> substituted on input line 159.
+(Font)              size <5> substituted on input line 90.
 
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <0.7> not available
-(Font)              size <5> substituted on input line 159.
+(Font)              size <5> substituted on input line 90.
 
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <0.5> not available
-(Font)              size <5> substituted on input line 159.
+(Font)              size <5> substituted on input line 90.
 
 
 LaTeX Font Warning: Font shape `OT1/cmtt/m/n' in size <> not available
-(Font)              size <5> substituted on input line 159.
+(Font)              size <5> substituted on input line 90.
 
 
 LaTeX Font Warning: Font shape `OT1/cmtt/m/n' in size <0.7> not available
-(Font)              size <5> substituted on input line 159.
+(Font)              size <5> substituted on input line 90.
 
 
 LaTeX Font Warning: Font shape `OT1/cmtt/m/n' in size <0.5> not available
-(Font)              size <5> substituted on input line 159.
+(Font)              size <5> substituted on input line 90.
 
 
-LaTeX Font Warning: Command \footnotesize invalid in math mode on input line 16
-3.
+LaTeX Font Warning: Command \footnotesize invalid in math mode on input line 94
+.
 
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 200.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 131.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
@@ -901,108 +911,101 @@ File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 
 pdfTeX warning: pdflatex (file ./figures/lib-gen.pdf): PDF inclusion: found PDF
  version <1.5>, but at most version <1.4> allowed
-<./figures/lib-gen.pdf, id=160, 122.4575pt x 283.0575pt>
+<./figures/lib-gen.pdf, id=161, 122.4575pt x 283.0575pt>
 File: ./figures/lib-gen.pdf Graphic file (type pdf)
 
 <use ./figures/lib-gen.pdf>
-Package pdftex.def Info: ./figures/lib-gen.pdf used on input line 225.
-(pdftex.def)             Requested size: 113.87166pt x 263.21915pt.
+Package pdftex.def Info: ./figures/lib-gen.pdf used on input line 152.
+(pdftex.def)             Requested size: 121.46284pt x 280.76765pt.
 
 
-LaTeX Font Warning: Command \footnotesize invalid in math mode on input line 25
-3.
+LaTeX Font Warning: Command \footnotesize invalid in math mode on input line 17
+6.
 
-) (./experiments.tex
-Underfull \vbox (badness 1062) has occurred while \output is active []
-
- [4 <./figures/lib-gen.pdf>] [5]
-<./figures/lib-impl-time.pdf, id=189, 490.83376pt x 183.68625pt>
+) (./experiments.tex [4 <./figures/lib-gen.pdf>]
+<./figures/lib-impl-time.pdf, id=185, 640.3925pt x 330.23375pt>
 File: ./figures/lib-impl-time.pdf Graphic file (type pdf)
 
 <use ./figures/lib-impl-time.pdf>
-Package pdftex.def Info: ./figures/lib-impl-time.pdf used on input line 185.
-(pdftex.def)             Requested size: 240.39659pt x 89.965pt.
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 229.
-
-
-(/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/omsptm.fd
-File: omsptm.fd 
-)
+Package pdftex.def Info: ./figures/lib-impl-time.pdf used on input line 172.
+(pdftex.def)             Requested size: 189.7874pt x 97.86656pt.
+ [5 <./figures/lib-impl-time.pdf>]
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 229.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 219.
 
-<./figures/QuickDough-Compilation-Time.pdf, id=190, 660.4675pt x 247.92625pt>
-File: ./figures/QuickDough-Compilation-Time.pdf Graphic file (type pdf)
+<./figures/quickdough-runtime.pdf, id=201, 481.8pt x 228.855pt>
+File: ./figures/quickdough-runtime.pdf Graphic file (type pdf)
 
-<use ./figures/QuickDough-Compilation-Time.pdf>
-Package pdftex.def Info: ./figures/QuickDough-Compilation-Time.pdf used on inpu
-t line 252.
-(pdftex.def)             Requested size: 215.09392pt x 80.74153pt.
+<use ./figures/quickdough-runtime.pdf>
+Package pdftex.def Info: ./figures/quickdough-runtime.pdf used on input line 24
+2.
+(pdftex.def)             Requested size: 215.09392pt x 102.16666pt.
 
-<./figures/mm-perf.pdf, id=191, 474.77374pt x 250.9375pt>
+<./figures/mm-perf.pdf, id=202, 628.3475pt x 332.24126pt>
 File: ./figures/mm-perf.pdf Graphic file (type pdf)
 
 <use ./figures/mm-perf.pdf>
-Package pdftex.def Info: ./figures/mm-perf.pdf used on input line 284.
-(pdftex.def)             Requested size: 111.34254pt x 58.84778pt.
+Package pdftex.def Info: ./figures/mm-perf.pdf used on input line 275.
+(pdftex.def)             Requested size: 111.34254pt x 58.86803pt.
 
-<./figures/fir-perf.pdf, id=192, 474.77374pt x 250.9375pt>
+<./figures/fir-perf.pdf, id=203, 632.3625pt x 332.24126pt>
 File: ./figures/fir-perf.pdf Graphic file (type pdf)
 
 <use ./figures/fir-perf.pdf>
-Package pdftex.def Info: ./figures/fir-perf.pdf used on input line 288.
-(pdftex.def)             Requested size: 111.34254pt x 58.84778pt.
+Package pdftex.def Info: ./figures/fir-perf.pdf used on input line 279.
+(pdftex.def)             Requested size: 111.34254pt x 58.49796pt.
 
-<./figures/se-perf.pdf, id=193, 474.77374pt x 250.9375pt>
+<./figures/se-perf.pdf, id=204, 632.3625pt x 332.24126pt>
 File: ./figures/se-perf.pdf Graphic file (type pdf)
 
 <use ./figures/se-perf.pdf>
-Package pdftex.def Info: ./figures/se-perf.pdf used on input line 292.
-(pdftex.def)             Requested size: 111.34254pt x 58.84778pt.
+Package pdftex.def Info: ./figures/se-perf.pdf used on input line 283.
+(pdftex.def)             Requested size: 111.34254pt x 58.49796pt.
 
-<./figures/km-perf.pdf, id=194, 474.77374pt x 250.9375pt>
+<./figures/km-perf.pdf, id=205, 632.3625pt x 331.2375pt>
 File: ./figures/km-perf.pdf Graphic file (type pdf)
 
 <use ./figures/km-perf.pdf>
-Package pdftex.def Info: ./figures/km-perf.pdf used on input line 296.
-(pdftex.def)             Requested size: 111.34254pt x 58.84778pt.
- [6 <./figures/lib-impl-time.pdf> <./figures/QuickDough-Compilation-Time.pdf>]
-<./figures/impl-freq.pdf, id=215, 488.82625pt x 172.645pt>
+Package pdftex.def Info: ./figures/km-perf.pdf used on input line 287.
+(pdftex.def)             Requested size: 111.34254pt x 58.32123pt.
+ [6 <./figures/quickdough-runtime.pdf> <./figures/mm-perf.pdf> <./figures/fir-p
+erf.pdf> <./figures/se-perf.pdf> <./figures/km-perf.pdf>] <./figures/impl-freq.
+pdf, id=260, 645.41125pt x 335.2525pt>
 File: ./figures/impl-freq.pdf Graphic file (type pdf)
 
 <use ./figures/impl-freq.pdf>
-Package pdftex.def Info: ./figures/impl-freq.pdf used on input line 333.
-(pdftex.def)             Requested size: 202.44066pt x 71.49881pt.
+Package pdftex.def Info: ./figures/impl-freq.pdf used on input line 328.
+(pdftex.def)             Requested size: 164.48087pt x 85.43454pt.
 
-<./figures/hw-overhead.pdf, id=216, 644.4075pt x 337.26pt>
+<./figures/hw-overhead.pdf, id=261, 488.82625pt x 159.59625pt>
 File: ./figures/hw-overhead.pdf Graphic file (type pdf)
 
 <use ./figures/hw-overhead.pdf>
-Package pdftex.def Info: ./figures/hw-overhead.pdf used on input line 344.
-(pdftex.def)             Requested size: 164.48087pt x 86.08507pt.
-) (./relatedwork.tex [7 <./figures/mm-perf.pdf> <./figures/fir-perf.pdf> <./fig
-ures/se-perf.pdf> <./figures/km-perf.pdf> <./figures/impl-freq.pdf> <./figures/
-hw-overhead.pdf>]) (./conclusions.tex)
-(./quickDough.bbl
-Underfull \hbox (badness 10000) in paragraph at lines 35--38
+Package pdftex.def Info: ./figures/hw-overhead.pdf used on input line 340.
+(pdftex.def)             Requested size: 202.44066pt x 66.09482pt.
+) (./relatedwork.tex) (./conclusions.tex)
+Underfull \vbox (badness 1152) has occurred while \output is active []
+
+ [7 <./figures/impl-freq.pdf> <./figures/hw-overhead.pdf>] (./quickDough.bbl
+Underfull \hbox (badness 10000) in paragraph at lines 59--62
 []\OT1/ptm/m/n/8 Xilinx, ``Sdac-cel,'' $http : / / www . xilinx . com / product
 s / design-[]tools / sdx /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 70--73
+Underfull \hbox (badness 10000) in paragraph at lines 94--97
 []\OT1/ptm/m/n/8 Xilinx, ``data2mem,'' $http : / / www . xilinx . com / support
  / documentation /
  []
 
 
-Underfull \hbox (badness 5756) in paragraph at lines 70--73
+Underfull \hbox (badness 5756) in paragraph at lines 94--97
 \OT1/ptm/m/n/8 sw[]manuals / xilinx11 / data2mem . pdf$, 2012, [On-line; ac-ces
 sed 19-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 109--112
+Underfull \hbox (badness 10000) in paragraph at lines 142--145
 \OT1/ptm/m/n/8 com / support / documentation / sw[]manuals / xilinx14[]7 / devr
 ef . pdf$, 2015,
  []
@@ -1024,32 +1027,36 @@ Before submitting the final camera ready copy, remember to:
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 4.5pt have occurred.
 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
  ) 
 Here is how much of TeX's memory you used:
- 14748 strings out of 493109
- 292538 string characters out of 6135010
- 340612 words of memory out of 5000000
- 18039 multiletter control sequences out of 15000+600000
- 42642 words of font info for 91 fonts, out of 8000000 for 9000
+ 14846 strings out of 493109
+ 293799 string characters out of 6135010
+ 342987 words of memory out of 5000000
+ 18133 multiletter control sequences out of 15000+600000
+ 43720 words of font info for 92 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,17n,47p,10394b,784s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/te
-xlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texl
-ive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texliv
-e/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2
-014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2014
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2014/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2014/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2014/texm
-f-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2014/texmf-dist/f
-onts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1
-/urw/times/utmbi8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/time
-s/utmr8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/times/utmri8a.
-pfb>
-Output written on quickDough.pdf (8 pages, 1045717 bytes).
+xlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texl
+ive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texliv
+e/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/
+2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/201
+4/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2014/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2014/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2014/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2014/texmf-
+dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2014/texmf-dist/fon
+ts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/u
+rw/times/utmbi8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/times/
+utmr8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/times/utmri8a.pf
+b>
+Output written on quickDough.pdf (8 pages, 1039832 bytes).
 PDF statistics:
- 326 PDF objects out of 1000 (max. 8388607)
+ 330 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  71 words of extra memory for PDF output out of 10000 (max. 10000000)
 

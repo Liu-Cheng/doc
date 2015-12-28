@@ -1,23 +1,21 @@
 \relax 
 \citation{IEEEexample:BSTcontrol}
-\citation{bing2014FPGA}
-\citation{openCL}
-\citation{SDAccel}
-\citation{SoTECS:2008}
-\citation{Lubbers:2009}
-\citation{Ismail:2011}
+\citation{SAT04Survey,Biocomp10Survey,bing2014FPGA}
+\citation{VivadoHLS,legup}
+\citation{openCL,SDAccel}
+\citation{SoTECS:2008,Lubbers:2009,Ismail:2011}
 \@writefile{toc}{\contentsline {section}{\numberline {I}Introduction}{1}}
 \newlabel{sec:introduction}{{I}{1}}
-\@writefile{toc}{\contentsline {section}{\numberline {II}QuickDough Framework}{1}}
-\newlabel{sec:framework}{{II}{1}}
 \@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces QuickDough: FPGA loop accelerator design framework using SCGRA overlay. The compute intensive loop kernel of an application is compiled to the SCGRA overlay based FPGA accelerator while the rest is compiled to the host processor.}}{2}}
 \newlabel{fig:framework}{{1}{2}}
+\@writefile{toc}{\contentsline {section}{\numberline {II}QuickDough Framework}{2}}
+\newlabel{sec:framework}{{II}{2}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {II-A}}QuickDough Overview}{2}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces SCGRA Overlay Based FPGA Accelerator}}{2}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces SCGRA overlay based FPGA accelerator}}{2}}
 \newlabel{fig:scgra-accelerator}{{2}{2}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Fully pipelined PE structure. Each PE can be connected to at most 4 neighbours.}}{2}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Fully pipelined PE structure.}}{2}}
 \newlabel{fig:pe}{{3}{2}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces The QuickDough ALU. It supports up to 16 fully pipelined 3-input operations.}}{2}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces QuickDough ALU supporting up to 16 pipelined 3-input operations.}}{2}}
 \newlabel{fig:ALU}{{4}{2}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {II-B}}SCGRA overlay based FPGA accelerator}{2}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {II-B}1}PE template}{2}}
@@ -35,17 +33,18 @@
 \newlabel{eq:comp-lat}{{1}{3}}
 \newlabel{eq:comm-lat}{{2}{3}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {II-D}3}DFG Scheduling}{3}}
-\citation{ROB2014}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {II-D}4}Accelerator bitstream generation}{4}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {II-D}4}Accelerator bitstream generation}{3}}
+\citation{ROB2015}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Automatic SCGRA overlay based FPGA accelerator library update}}{4}}
+\newlabel{fig:auto-lib-gen}{{6}{4}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {II-E}}Accelerator library update}{4}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {II-E}1}Common operation analysis}{4}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {II-E}2}Minimum accelerator configuration set analysis}{4}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Automatic SCGRA overlay based FPGA accelerator library update}}{4}}
-\newlabel{fig:auto-lib-gen}{{6}{4}}
 \newlabel{eq:lib-gen}{{3}{4}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {II-E}3}Accelerator HDL model generation and implementation}{4}}
-\@writefile{toc}{\contentsline {section}{\numberline {III}Experiments}{5}}
-\newlabel{sec:experiments}{{III}{5}}
+\@writefile{toc}{\contentsline {section}{\numberline {III}Experiments}{4}}
+\newlabel{sec:experiments}{{III}{4}}
+\citation{scgra-customization}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {III-A}}Benchmark}{5}}
 \newlabel{subsec:benchmark}{{\unhbox \voidb@x \hbox {III-A}}{5}}
 \@writefile{lot}{\contentsline {table}{\numberline {I}{\ignorespaces Detailed Configurations of the Benchmark }}{5}}
@@ -62,98 +61,93 @@
 \newlabel{tab:opset}{{IV}{5}}
 \@writefile{lot}{\contentsline {table}{\numberline {V}{\ignorespaces SCGRA Configuration }}{5}}
 \newlabel{tab:scgra-config}{{V}{5}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Accelerator library size and implementation time given different BRAM budgets.}}{6}}
-\newlabel{fig:lib-impl-time}{{7}{6}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Accelerator library size and implementation time given different BRAM budgets.}}{5}}
+\newlabel{fig:lib-impl-time}{{7}{5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {III-D}}Accelerator generation time}{5}}
+\newlabel{subsec:acc-gen}{{\unhbox \voidb@x \hbox {III-D}}{5}}
 \@writefile{lot}{\contentsline {table}{\numberline {VI}{\ignorespaces Accelerators generated using QuickDough }}{6}}
 \newlabel{tab:final-acc-config}{{VI}{6}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {III-D}}Accelerator generation time}{6}}
-\newlabel{subsec:acc-gen}{{\unhbox \voidb@x \hbox {III-D}}{6}}
 \@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Time consumption of loop accelerator generation using QuickDough.}}{6}}
 \newlabel{fig:SCGRA-Overlay-Compilation-Time}{{8}{6}}
+\newlabel{fig:mm-real-perf}{{9a}{6}}
+\newlabel{sub@fig:mm-real-perf}{{(a)}{a}}
+\newlabel{fig:fir-real-perf}{{9b}{6}}
+\newlabel{sub@fig:fir-real-perf}{{(b)}{b}}
+\newlabel{fig:sobel-real-perf}{{9c}{6}}
+\newlabel{sub@fig:sobel-real-perf}{{(c)}{c}}
+\newlabel{fig:kmean-real-perf}{{9d}{6}}
+\newlabel{sub@fig:kmean-real-perf}{{(d)}{d}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Benchmark performance speedup over software executed on ARM processor and execution time decomposition of loop accelerators generated using QuickDough.}}{6}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {MM}}}{6}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {FIR}}}{6}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {SE}}}{6}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {KM}}}{6}}
+\newlabel{fig:real-perf}{{9}{6}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {III-E}}Performance}{6}}
 \newlabel{subsec:acc-perf}{{\unhbox \voidb@x \hbox {III-E}}{6}}
 \citation{mulpuri2001runtime}
-\citation{moctar2014parallel}
-\citation{goeders2011deterministic}
-\citation{altera-pc}
-\citation{xilinx-pc}
+\citation{moctar2014parallel,goeders2011deterministic,altera-pc,xilinx-pc}
 \citation{Frangieh2010}
-\citation{lavin2013improving}
-\citation{korf2011automatic}
-\citation{zuma2013carl}
-\citation{Grant2011Malibu}
-\citation{Coole2010Intermediate}
-\citation{Koch2013CI}
-\citation{kissler2006dynamically}
-\citation{ferreira2011fpga}
-\citation{shukla2006quku}
-\citation{capalijia2013pipelined}
-\citation{dsp2015cgra}
-\citation{Lebedev2010}
+\citation{lavin2013improving,korf2011automatic}
+\citation{zuma2013carl,Grant2011Malibu,Coole2010Intermediate,Koch2013CI}
+\citation{kissler2006dynamically,ferreira2011fpga,shukla2006quku,capalijia2013pipelined,dsp2015cgra}
+\citation{Lebedev2010,hannig2014invasive,boppu2014compact}
 \citation{Jeffrey2011potential}
-\citation{tessier2001reconfigurable}
-\citation{compton2002reconfigurable}
+\citation{tessier2001reconfigurable,compton2002reconfigurable}
 \citation{kissler2006dynamically}
 \citation{ferreira2011fpga}
 \citation{shukla2006quku}
 \citation{capalijia2013pipelined}
 \citation{dsp2015cgra}
-\newlabel{fig:mm-real-perf}{{9a}{7}}
-\newlabel{sub@fig:mm-real-perf}{{(a)}{a}}
-\newlabel{fig:fir-real-perf}{{9b}{7}}
-\newlabel{sub@fig:fir-real-perf}{{(b)}{b}}
-\newlabel{fig:sobel-real-perf}{{9c}{7}}
-\newlabel{sub@fig:sobel-real-perf}{{(c)}{c}}
-\newlabel{fig:kmean-real-perf}{{9d}{7}}
-\newlabel{sub@fig:kmean-real-perf}{{(d)}{d}}
-\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Benchmark performance speedup over software executed on ARM processor and execution time decomposition of loop accelerators generated using QuickDough.}}{7}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {MM}}}{7}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {FIR}}}{7}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {SE}}}{7}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {KM}}}{7}}
-\newlabel{fig:real-perf}{{9}{7}}
-\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Implementation frequency of the accelerators using QuickDough}}{7}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Fmax of the accelerators generated using QuickDough}}{7}}
 \newlabel{fig:impl-freq}{{10}{7}}
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces FPGA accelerator recource utilization}}{7}}
+\newlabel{fig:hw-overhead}{{11}{7}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {III-F}}Implementation frequency and hardware overhead}{7}}
 \newlabel{subsec:acc-impl}{{\unhbox \voidb@x \hbox {III-F}}{7}}
-\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Hardware overhead utilization of accelerators for MM}}{7}}
-\newlabel{fig:hw-overhead}{{11}{7}}
 \@writefile{toc}{\contentsline {section}{\numberline {IV}Related Work}{7}}
 \newlabel{sec:relatedwork}{{IV}{7}}
+\@writefile{toc}{\contentsline {section}{\numberline {V}Conclusions}{7}}
+\newlabel{sec:conclusions}{{V}{7}}
 \bibstyle{IEEEtran}
 \bibdata{refs,ieeebstctl}
-\bibcite{bing2014FPGA}{1}
-\bibcite{openCL}{2}
-\bibcite{SDAccel}{3}
-\bibcite{SoTECS:2008}{4}
-\bibcite{Lubbers:2009}{5}
-\bibcite{Ismail:2011}{6}
-\bibcite{schutten1996list}{7}
-\bibcite{colinheart}{8}
-\bibcite{data2mem}{9}
-\bibcite{beckhoff2011xilinx}{10}
-\bibcite{ROB2014}{11}
-\bibcite{mulpuri2001runtime}{12}
-\bibcite{moctar2014parallel}{13}
-\bibcite{goeders2011deterministic}{14}
-\bibcite{altera-pc}{15}
-\bibcite{xilinx-pc}{16}
-\bibcite{Frangieh2010}{17}
-\bibcite{lavin2013improving}{18}
-\bibcite{korf2011automatic}{19}
-\bibcite{zuma2013carl}{20}
-\bibcite{Grant2011Malibu}{21}
-\bibcite{Coole2010Intermediate}{22}
-\bibcite{Koch2013CI}{23}
-\bibcite{kissler2006dynamically}{24}
-\bibcite{ferreira2011fpga}{25}
-\bibcite{shukla2006quku}{26}
-\bibcite{capalijia2013pipelined}{27}
-\bibcite{dsp2015cgra}{28}
-\bibcite{Lebedev2010}{29}
-\bibcite{Jeffrey2011potential}{30}
-\bibcite{tessier2001reconfigurable}{31}
-\bibcite{compton2002reconfigurable}{32}
-\@writefile{toc}{\contentsline {section}{\numberline {V}Conclusions}{8}}
-\newlabel{sec:conclusions}{{V}{8}}
+\bibcite{SAT04Survey}{1}
+\bibcite{Biocomp10Survey}{2}
+\bibcite{bing2014FPGA}{3}
+\bibcite{VivadoHLS}{4}
+\bibcite{legup}{5}
+\bibcite{openCL}{6}
+\bibcite{SDAccel}{7}
+\bibcite{SoTECS:2008}{8}
+\bibcite{Lubbers:2009}{9}
+\bibcite{Ismail:2011}{10}
+\bibcite{schutten1996list}{11}
+\bibcite{colinheart}{12}
+\bibcite{data2mem}{13}
+\bibcite{beckhoff2011xilinx}{14}
+\bibcite{ROB2015}{15}
+\bibcite{scgra-customization}{16}
+\bibcite{mulpuri2001runtime}{17}
+\bibcite{moctar2014parallel}{18}
+\bibcite{goeders2011deterministic}{19}
+\bibcite{altera-pc}{20}
+\bibcite{xilinx-pc}{21}
+\bibcite{Frangieh2010}{22}
+\bibcite{lavin2013improving}{23}
+\bibcite{korf2011automatic}{24}
+\bibcite{zuma2013carl}{25}
+\bibcite{Grant2011Malibu}{26}
+\bibcite{Coole2010Intermediate}{27}
+\bibcite{Koch2013CI}{28}
+\bibcite{kissler2006dynamically}{29}
+\bibcite{ferreira2011fpga}{30}
+\bibcite{shukla2006quku}{31}
+\bibcite{capalijia2013pipelined}{32}
+\bibcite{dsp2015cgra}{33}
+\bibcite{Lebedev2010}{34}
+\bibcite{hannig2014invasive}{35}
+\bibcite{boppu2014compact}{36}
+\bibcite{Jeffrey2011potential}{37}
+\bibcite{tessier2001reconfigurable}{38}
+\bibcite{compton2002reconfigurable}{39}
 \@writefile{toc}{\contentsline {section}{References}{8}}

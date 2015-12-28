@@ -21,11 +21,35 @@
 \providecommand{\BIBdecl}{\relax}
 \BIBdecl
 
+\bibitem{SAT04Survey}
+I.~Skliarova and A.~D.~B. Ferrari, ``{Reconfigurable Hardware SAT Solvers: A
+  Survey of Systems},'' \emph{IEEE Transactions on Computers}, vol.~53, pp.
+  1449--1461, 2004.
+
+\bibitem{Biocomp10Survey}
+S.~Sarkar \emph{et~al.}, ``{Hardware accelerators for biocomputing: A
+  survey},'' in \emph{IEEE International Symposium on Circuits and Systems},
+  2010, pp. 3789--3792.
+
 \bibitem{bing2014FPGA}
 A.~Putnam \emph{et~al.}, ``A reconfigurable fabric for accelerating large-scale
   datacenter services,'' in \emph{Computer Architecture (ISCA), 2014 ACM/IEEE
   41st International Symposium on}.\hskip 1em plus 0.5em minus 0.4em\relax
   IEEE, 2014, pp. 13--24.
+
+\bibitem{VivadoHLS}
+Xilinx, ``{Vivado HLS},''
+  \url{http://www.xilinx.com/products/design-tools/vivado/}, 2014, [Online;
+  accessed 18-October-2014].
+
+\bibitem{legup}
+\BIBentryALTinterwordspacing
+A.~Canis \emph{et~al.}, ``{{LegUp}: High-level Synthesis for {FPGA-based}
+  Processor/Accelerator Systems},'' in \emph{Proceedings of the 19th ACM/SIGDA
+  International Symposium on Field Programmable Gate Arrays}, ser. FPGA
+  '11.\hskip 1em plus 0.5em minus 0.4em\relax New York, NY, USA: ACM, 2011, pp.
+  33--36. [Online]. Available: \url{http://doi.acm.org/10.1145/1950413.1950423}
+\BIBentrySTDinterwordspacing
 
 \bibitem{openCL}
 Khronos, ``Opencl,'' \url{https://www.khronos.org/opencl}, 2015, [Online;
@@ -77,8 +101,17 @@ C.~Beckhoff, D.~Koch, and J.~Torresen, ``The {Xilinx} design language ({XDL}):
   Systems-on-Chip ({ReCoSoC}), 2011 6th International Workshop on}.\hskip 1em
   plus 0.5em minus 0.4em\relax IEEE, 2011, pp. 1--8.
 
-\bibitem{ROB2014}
-X.~Yue, ``Rapid overlay builder for xilinx fpgas,'' 2014.
+\bibitem{ROB2015}
+M.~Yue, D.~Koch, and G.~Lemieux, ``Rapid overlay builder for xilinx fpgas,'' in
+  \emph{Field-Programmable Custom Computing Machines (FCCM), 2015 IEEE 23rd
+  Annual International Symposium on}, May 2015, pp. 17--20.
+
+\bibitem{scgra-customization}
+\BIBentryALTinterwordspacing
+C.~Liu, H.~Ng, and H.~K. So, ``Automatic nested loop acceleration on fpgas
+  using soft {CGRA} overlay,'' \emph{CoRR}, vol. abs/1509.00042, 2015.
+  [Online]. Available: \url{http://arxiv.org/abs/1509.00042}
+\BIBentrySTDinterwordspacing
 
 \bibitem{mulpuri2001runtime}
 C.~Mulpuri and S.~Hauck, ``Runtime and quality tradeoffs in fpga placement and
@@ -186,6 +219,17 @@ A.~K. Jain, S.~A. Fahmy, and D.~L. Maskell, ``Efficient overlay architecture
 I.~Lebedev \emph{et~al.}, ``{MARC}: A many-core approach to reconfigurable
   computing,'' in \emph{Reconfigurable Computing and FPGAs (ReConFig), 2010
   International Conference on}, dec. 2010, pp. 7 --12.
+
+\bibitem{hannig2014invasive}
+F.~Hannig \emph{et~al.}, ``Invasive tightly-coupled processor arrays: A
+  domain-specific architecture/compiler co-design approach,'' \emph{ACM
+  Transactions on Embedded Computing Systems (TECS)}, vol.~13, no.~4s, p. 133,
+  2014.
+
+\bibitem{boppu2014compact}
+S.~Boppu, F.~Hannig, and J.~Teich, ``Compact code generation for
+  tightly-coupled processor arrays,'' \emph{Journal of Signal Processing
+  Systems}, vol.~77, no. 1-2, pp. 5--29, 2014.
 
 \bibitem{Jeffrey2011potential}
 J.~Kingyens and J.~G. Steffan, ``The potential for a {GPU-Like} overlay

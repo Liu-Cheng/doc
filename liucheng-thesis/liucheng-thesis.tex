@@ -7,6 +7,7 @@
 \documentclass[12pt,a4paper]{report}
 \usepackage{setspace} % Set line spacing package
 \doublespacing
+\usepackage[binary-units]{siunitx}
 \usepackage{mathptmx} % Times Roman typeface
 \usepackage[latin1]{inputenc}
 \usepackage{amsmath}
@@ -14,10 +15,18 @@
 \usepackage{amssymb}
 \usepackage{float}
 \usepackage{graphicx}
-\graphicspath{{../figure/}}
+\graphicspath{{./figures/}}
 \usepackage[small]{caption} % Small font size of figure caption
 \usepackage{caption}
-\usepackage{subcaption}
+\usepackage{subfigure}
+\usepackage{enumerate}
+\usepackage{bm}
+
+% algorithm package
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage[algo2e]{algorithm2e}
+\renewcommand{\algorithmcfname}{ALGORITHM}
 
 % citation package
 \usepackage[numbers, sort&compress]{natbib}
@@ -29,6 +38,7 @@
 \usepackage{times,amsmath,epsfig}
 \usepackage{verbatim}
 \usepackage{array}
+\usepackage{multirow}
 
 %\usepackage[margin=1.5cm]{geometry}  % the easy way to set page margins
 \usepackage[top=25mm, bottom=25mm, left=35mm, right=35mm]{geometry}
@@ -41,6 +51,9 @@
 \newcommand{\secref}[1]{Section~\ref{#1}}
 \newcommand{\chapref}[1]{Chapter~\ref{#1}}
 \newcommand{\tabref}[1]{Table~\ref{#1}}
+\newcommand{\algref}[1]{Algorithm~\ref{#1}}
+\newcommand{\code}[1]{\texttt{#1}}
+\newcommand{\tabincell}[2]{\begin{tabular}{@{}#1@{}}#2\end{tabular}}
 
 %\def\PDFFIG[#1]#2#3#4{  %[#parameter]#image_name#caption#label
 %\begin{figure}[H]
@@ -52,7 +65,7 @@
 %}
 
 \begin{document}
-\input{front_page}
+\input{front-page}
 \input{abstract}
 \hfill
 
@@ -81,7 +94,6 @@ The University of Hong Kong}
 
 %%============================================================
 
-
 \newpage
 \section*{\centering{Declaration}}
 \input{declaration}
@@ -89,54 +101,11 @@ The University of Hong Kong}
 
 %%============================================================
 
-\newpage
-%\leavevmode
-%\vfill{
-%\centering{
-\begin{center}
-\leavevmode
-\vfill
-\begin{quotation}
-\textit{If everyone is thinking alike then somebody isn't thinking.}
-
-\hfill \textsl{--- George Smith Patton, Jr.}
-
-\vspace{1cm}
-
-\textit{No Problem can withstand the assault of sustained thinking.}
-
-\hfill \textsl{--- Voltaire}
-
-\vspace{1cm}
-
-\textit{I've failed over and over and over again in my life and that is why I succeed. I can accept failure. Everyone fails at something. But I can't accept not trying.}
-
-\hfill \textsl{--- Michael Jordan}
-\end{quotation}
-\vfill
-\end{center}
-
-%%============================================================
-
-\newpage
-\section*{\centering{Abstract}}
-%\input{abstract}
-\hfill
-\hfill
-
-%%============================================================
-
-\newpage
-\section*{\centering{Acknowledgement}}
-\begin{quotation}
-\textit{Talent wins games, but teamwork and intelligence wins championships.}
-
-\hfill \textsl{--- Michael Jordan}
-\end{quotation}
-
-%\input{ack}
-\hfill
-
+%\newpage
+%\section*{\centering{List of Publication}}
+%\input{publist}
+%\hfill
+%
 %%============================================================
 
 \tableofcontents
@@ -147,19 +116,18 @@ The University of Hong Kong}
 
 %%============================================================
 
-%\input{chapter1_intro}
-%\input{chapter2_litrev}
-%\input{chapter3_framework}
-%\input{chapter4_overlay}
-%\input{chapter5_customization}
-%\input{chapter6_experiments}
-%\input{chapter7_conclusion}
+\input{chapter1-intro}
+\input{chapter2-litrev}
+\input{chapter3-overlay}
+\input{chapter4-framework}
+\input{chapter5-customization}
+\input{chapter6-conclusion}
 
 \hfill
 \hfill
 
 \bibliographystyle{plainnat}
-\bibliography{IEEEabrv, refs}
+\bibliography{refs,IEEEabrv}
 
 \end{document}
 

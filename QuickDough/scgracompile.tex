@@ -38,9 +38,6 @@ While grouping data transfers helps amortize the communication cost between CPU 
 As a result, the unrolling factor $U$ and grouping factor $G$ has to be co-optimized to balance performance and on-chip resource utilization.
 For instance, increasing $U$ leads to a larger DFG to be executed in the QuickDough overlay, which may be benefited from a larger processing array.  However, the increased processing array limits the amount of on-chip buffer available for data and address buffer.  As a result, the amount of DFG grouping $G$ is limited and may lead to higher performance penalty due to communication.
 
-A fully automated customization framework that optimizes such parameters is beyond the scope of this work.  However, different unrolling and grouping factors in the benchmark will be explored in \secref{sec:experiments}.
-
-
 
 %The communication between the processor and the accelerator is costly. When the data size of a DFG is small, data transmission for each DFG execution may compromise all the benefits of the accelerator. To solve this problem, we have the accelerator to repeat the DFG execution multiple times and combine them as a block. Data transmission is performed with the granularity of a block instead of a DFG which helps to amortize the initial communication overhead especially for the DMA transmission. \figref{fig:blocking-and-dfg-gen} shows the relation among the compute kernel, block and DFG using a simple example. 
 

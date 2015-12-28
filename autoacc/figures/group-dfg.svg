@@ -100,8 +100,8 @@
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="1215"
-     inkscape:window-height="936"
+     inkscape:window-width="1535"
+     inkscape:window-height="772"
      inkscape:window-x="65"
      inkscape:window-y="24"
      inkscape:window-maximized="1"
@@ -140,7 +140,7 @@
          sodipodi:role="line"
          x="41.340466"
          y="51.815445"
-         id="tspan4717">#define N 10000</tspan><tspan
+         id="tspan4717">#define L 10000</tspan><tspan
          sodipodi:role="line"
          x="41.340466"
          y="66.815445"
@@ -162,7 +162,7 @@
          x="41.340466"
          y="126.81544"
          id="tspan3203"
-         style="font-weight:bold;-inkscape-font-specification:Sans Bold">for(i=0; i&lt;N; i++){</tspan><tspan
+         style="font-weight:bold;-inkscape-font-specification:Sans Bold">for(i=0; i&lt;L; i++){</tspan><tspan
          sodipodi:role="line"
          x="41.340466"
          y="141.81544"
@@ -212,7 +212,7 @@
            y="250.83221"
            x="33.994808"
            sodipodi:role="line"
-           id="tspan3321">#define N 10000</tspan><tspan
+           id="tspan3321">#define L 10000</tspan><tspan
            id="tspan4723-4"
            y="265.83221"
            x="33.994808"
@@ -224,7 +224,7 @@
            id="tspan3226"
            y="295.83221"
            x="33.994808"
-           sodipodi:role="line">for(i=0; i&lt;N/G; i++){</tspan><tspan
+           sodipodi:role="line">for(i=0; i&lt;L/G; i++){</tspan><tspan
            style="font-style:italic;font-weight:normal;-inkscape-font-specification:Sans Italic"
            y="310.83221"
            x="33.994808"

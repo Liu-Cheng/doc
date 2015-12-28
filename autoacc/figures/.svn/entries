@@ -1,14 +1,14 @@
 10
 
 dir
-3954
+4083
 svn+ssh://liucheng@bluemountain/svnrepos/private/autoacc/figures
 svn+ssh://liucheng@bluemountain/svnrepos
 
 
 
-2015-03-30T07:30:28.258122Z
-3942
+2015-08-14T20:11:48.930051Z
+4073
 liucheng
 
 
@@ -32,10 +32,10 @@ file
 
 
 
-2015-03-20T15:09:22.938742Z
-380e5fc3420626d30f0c6fba0311cb6a
-2015-03-20T15:25:50.751262Z
-3912
+2015-08-14T04:52:57.450966Z
+f4ca4c4e73eb5294ea4ad91ff07c50ae
+2015-08-14T05:04:52.856454Z
+4067
 liucheng
 has-props
 
@@ -58,7 +58,7 @@ has-props
 
 
 
-13230
+12153
 
 scgrasize-impl.pdf
 file
@@ -94,40 +94,6 @@ has-props
 
 95087
 
-customization-framework.svg
-file
-
-
-
-
-2015-03-13T08:53:58.807100Z
-7e1538a53c4d94fbca6fb714decc16df
-2015-03-20T04:24:37.665471Z
-3909
-liucheng
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-99863
-
 sobel-overhead-perf.pdf
 file
 
@@ -161,6 +127,108 @@ has-props
 
 
 105288
+
+customization-framework.svg
+file
+
+
+
+
+2015-06-29T04:02:43.577582Z
+1a7737d136340ec2779df21a0a10f73b
+2015-06-29T12:58:24.895611Z
+4012
+liucheng
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+99078
+
+pe.svg
+file
+
+
+
+
+2015-06-28T12:40:25.577715Z
+db30467dc5eef3d788c8f2a8093182b8
+2015-06-29T12:58:24.895611Z
+4012
+liucheng
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+130169
+
+se-hls-cp.pdf
+file
+
+
+
+
+2015-03-24T10:42:39.279948Z
+6efce21e6b6116ed7f8958af5cb4f20b
+2015-03-24T11:55:17.520082Z
+3916
+liucheng
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+89832
 
 km-hls-cp.pdf
 file
@@ -196,16 +264,16 @@ has-props
 
 88211
 
-se-hls-cp.pdf
+perf-cp.pdf
 file
 
 
 
 
-2015-03-24T10:42:39.279948Z
-6efce21e6b6116ed7f8958af5cb4f20b
-2015-03-24T11:55:17.520082Z
-3916
+2015-08-14T20:10:22.970950Z
+287b0b0332d73ee38d8c2e66a471a597
+2015-08-14T20:11:48.930051Z
+4073
 liucheng
 has-props
 
@@ -228,7 +296,7 @@ has-props
 
 
 
-89832
+92778
 
 mm-hls-cp.pdf
 file
@@ -366,40 +434,6 @@ has-props
 
 105626
 
-sobel-EDP-perf.pdf
-file
-
-
-
-
-2015-03-06T09:23:48.015345Z
-63e6e7b99a36bcb96c4a0e558902d541
-2015-03-20T04:24:37.665471Z
-3909
-liucheng
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-97542
-
 Base-Power.pdf
 file
 
@@ -433,6 +467,40 @@ has-props
 
 
 89644
+
+sobel-EDP-perf.pdf
+file
+
+
+
+
+2015-03-06T09:23:48.015345Z
+63e6e7b99a36bcb96c4a0e558902d541
+2015-03-20T04:24:37.665471Z
+3909
+liucheng
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+97542
 
 fir-hls-cp.pdf
 file
@@ -468,40 +536,6 @@ has-props
 
 89031
 
-fir-overhead-perf.pdf
-file
-
-
-
-
-2015-03-06T09:23:48.067344Z
-8db21414e05f028b7356c4e36a6fbb05
-2015-03-20T04:24:37.665471Z
-3909
-liucheng
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-102319
-
 scgra-customization.pdf
 file
 
@@ -536,16 +570,50 @@ has-props
 
 12814
 
+fir-overhead-perf.pdf
+file
+
+
+
+
+2015-03-06T09:23:48.067344Z
+8db21414e05f028b7356c4e36a6fbb05
+2015-03-20T04:24:37.665471Z
+3909
+liucheng
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+102319
+
 scgra-accelerator.svg
 file
 
 
 
 
-2015-03-28T13:27:21.605188Z
-9fa1f554a058131aabdf5d2b0e8e3034
-2015-03-28T13:42:25.457544Z
-3930
+2015-08-13T08:41:47.796548Z
+54093c0bfc1fbba8e93728236a906e10
+2015-08-13T13:38:28.295742Z
+4065
 liucheng
 
 
@@ -568,7 +636,7 @@ liucheng
 
 
 
-81870
+186785
 
 mm-EDP-perf.pdf
 file
@@ -678,10 +746,10 @@ file
 
 
 
-2015-03-20T15:09:03.901228Z
-f97db46b971960422d1870367aeb1c24
-2015-03-20T15:25:50.751262Z
-3912
+2015-08-14T04:52:33.739264Z
+c9a13bac8ed7811ca15ef2c080a553c4
+2015-08-14T05:04:52.856454Z
+4067
 liucheng
 
 
@@ -704,7 +772,7 @@ liucheng
 
 
 
-83747
+69813
 
 fir-EDP-perf.pdf
 file
@@ -774,6 +842,40 @@ liucheng
 
 19743
 
+scgrasize-perf.pdf
+file
+
+
+
+
+2015-03-27T02:36:10.088596Z
+72549ec74b08b7a7fa05bb84a55749bf
+2015-08-14T10:59:01.252199Z
+4068
+liucheng
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+92588
+
 scgrasize-power.pdf
 file
 
@@ -808,40 +910,6 @@ has-props
 
 86743
 
-scgrasize-perf.pdf
-file
-
-
-
-
-2015-03-27T02:36:09.808459Z
-8a64033fa633654bddbbb8790ac5647b
-2015-03-27T02:45:44.151588Z
-3924
-liucheng
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-94385
-
 FF-Overhead.pdf
 file
 
@@ -875,40 +943,6 @@ has-props
 
 
 87444
-
-auto-acc-framework.pdf
-file
-
-
-
-
-2015-03-30T07:08:20.668610Z
-18a3fd2451d5f01fe50d2b268b471d14
-2015-03-30T07:30:28.258122Z
-3942
-liucheng
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-10946
 
 sobel-ExeTime-Energy.pdf
 file
@@ -950,10 +984,10 @@ file
 
 
 
-2015-03-11T17:24:50.309643Z
-e9ed7ad11e2d8fc2620beffa7bb7423b
-2015-03-20T04:24:37.665471Z
-3909
+2015-08-14T04:52:57.750962Z
+f41c9ec3f950b7c514bab1a86e2f08f3
+2015-08-14T05:04:52.856454Z
+4067
 liucheng
 has-props
 
@@ -976,7 +1010,7 @@ has-props
 
 
 
-21817
+22373
 
 mm-energy-perf.pdf
 file
@@ -1188,10 +1222,10 @@ file
 
 
 
-2015-03-06T09:23:47.979345Z
-00d20b36369d354716ff6370fd9e2b7e
-2015-03-20T04:24:37.665471Z
-3909
+2015-06-29T09:51:24.674368Z
+c3d2d18357060242166d453c39ddd4de
+2015-06-29T12:58:24.895611Z
+4012
 liucheng
 has-props
 
@@ -1214,41 +1248,7 @@ has-props
 
 
 
-13322
-
-mm-ExeTime-Energy.pdf
-file
-
-
-
-
-2015-03-06T09:23:48.067344Z
-c82f0f4df2abeee48df9377990fbaf0b
-2015-03-20T04:24:37.665471Z
-3909
-liucheng
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-22611
+12676
 
 mm-overhead-perf.pdf
 file
@@ -1284,14 +1284,14 @@ has-props
 
 100310
 
-kmean-ExeTime-EDP.pdf
+mm-ExeTime-Energy.pdf
 file
 
 
 
 
-2015-03-06T09:23:48.007345Z
-42a6b11930edc7de307953c7a5d4bd20
+2015-03-06T09:23:48.067344Z
+c82f0f4df2abeee48df9377990fbaf0b
 2015-03-20T04:24:37.665471Z
 3909
 liucheng
@@ -1316,7 +1316,7 @@ has-props
 
 
 
-23127
+22611
 
 mm-energy-performance.pdf
 file
@@ -1351,6 +1351,40 @@ has-props
 
 
 92454
+
+kmean-ExeTime-EDP.pdf
+file
+
+
+
+
+2015-03-06T09:23:48.007345Z
+42a6b11930edc7de307953c7a5d4bd20
+2015-03-20T04:24:37.665471Z
+3909
+liucheng
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+23127
 
 mycrop
 file
@@ -1392,10 +1426,10 @@ file
 
 
 
-2015-03-13T08:54:20.571099Z
-7ea4cf8ef88ae9e70a4dc37b14a93802
-2015-03-20T04:24:37.665471Z
-3909
+2015-06-29T04:03:41.853584Z
+6124c575ca6a0c776d7d9a1e157ee2ac
+2015-06-29T12:58:24.895611Z
+4012
 liucheng
 has-props
 
@@ -1418,7 +1452,7 @@ has-props
 
 
 
-12969
+12418
 
 unrolling-perf.pdf
 file
@@ -1426,10 +1460,10 @@ file
 
 
 
-2015-03-27T02:36:10.088596Z
-72549ec74b08b7a7fa05bb84a55749bf
-2015-03-27T02:45:44.151588Z
-3924
+2015-03-27T02:36:09.808459Z
+8a64033fa633654bddbbb8790ac5647b
+2015-08-14T10:59:01.252199Z
+4068
 liucheng
 has-props
 
@@ -1452,7 +1486,41 @@ has-props
 
 
 
-92588
+94385
+
+pe.pdf
+file
+
+
+
+
+2015-06-28T12:40:25.577715Z
+b813985406be327f05f583816f72ddd2
+2015-06-29T12:58:24.895611Z
+4012
+liucheng
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+15399
 
 fir-ExeTime-Energy.pdf
 file
@@ -1528,10 +1596,10 @@ file
 
 
 
-2015-03-24T02:28:06.727748Z
-caef1b5b1f1a563e598c870f773420d1
-2015-03-24T03:51:23.412534Z
-3915
+2015-08-14T16:20:37.228261Z
+7846e1e54531c9403715a7e5d7723c9b
+2015-08-14T17:33:07.556530Z
+4071
 liucheng
 has-props
 
@@ -1554,41 +1622,7 @@ has-props
 
 
 
-88628
-
-sobel-ExeTime-EDP.pdf
-file
-
-
-
-
-2015-03-06T09:23:48.099344Z
-a852dd78fbd4b7ab8bea55bed1089f4f
-2015-03-20T04:24:37.665471Z
-3909
-liucheng
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-22510
+87149
 
 fir-ExeTime-Power.pdf
 file
@@ -1623,6 +1657,40 @@ has-props
 
 
 19344
+
+sobel-ExeTime-EDP.pdf
+file
+
+
+
+
+2015-03-06T09:23:48.099344Z
+a852dd78fbd4b7ab8bea55bed1089f4f
+2015-03-20T04:24:37.665471Z
+3909
+liucheng
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+22510
 
 BRAM-Power.pdf
 file
@@ -1692,51 +1760,18 @@ has-props
 
 106117
 
-auto-acc-framework.svg
+kmean-ExeTime-Energy.pdf
 file
 
 
 
 
-2015-03-30T07:08:05.008981Z
-59d6abc3dbc299b8ef89d548b9652d36
-2015-03-30T07:30:28.258122Z
-3942
-liucheng
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-72680
-
-group-dfg.svg
-file
-
-
-
-
-2015-03-11T17:24:36.453644Z
-06cadffc530bb76b31f9f29064050727
+2015-03-06T09:23:48.383340Z
+7bfb6ea94d860a71c7399171232fa4bb
 2015-03-20T04:24:37.665471Z
 3909
 liucheng
+has-props
 
 
 
@@ -1757,8 +1792,7 @@ liucheng
 
 
 
-
-14749
+21631
 
 kmean-overhead-perf.pdf
 file
@@ -1794,18 +1828,17 @@ has-props
 
 112771
 
-kmean-ExeTime-Energy.pdf
+group-dfg.svg
 file
 
 
 
 
-2015-03-06T09:23:48.383340Z
-7bfb6ea94d860a71c7399171232fa4bb
-2015-03-20T04:24:37.665471Z
-3909
+2015-08-14T04:22:47.737717Z
+1f58b0f0804c20d4827fd4210dd0b996
+2015-08-14T05:04:52.856454Z
+4067
 liucheng
-has-props
 
 
 
@@ -1826,7 +1859,8 @@ has-props
 
 
 
-21631
+
+14749
 
 DSP-Overhead.pdf
 file
@@ -1868,10 +1902,10 @@ file
 
 
 
-2015-03-28T13:27:43.860030Z
-86c602ffaaa47e1873cb9a1ec23ca714
-2015-03-28T13:42:25.457544Z
-3930
+2015-08-13T08:42:14.484212Z
+abd0e4b97639122303a7dbdbfe70e138
+2015-08-13T13:38:28.295742Z
+4065
 liucheng
 has-props
 
@@ -1894,7 +1928,7 @@ has-props
 
 
 
-15049
+23821
 
 framework.svg
 file
@@ -1902,10 +1936,10 @@ file
 
 
 
-2015-03-06T09:23:48.091344Z
-493c0e4df7a3b42c8dec053ecc057f7e
-2015-03-20T04:24:37.665471Z
-3909
+2015-06-29T09:51:03.326368Z
+7d0e95c0891978184079df0934b8a5f8
+2015-06-29T12:58:24.895611Z
+4012
 liucheng
 
 
@@ -1928,7 +1962,7 @@ liucheng
 
 
 
-73958
+40853
 
 fir-ExeTime-EDP.pdf
 file

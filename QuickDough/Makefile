@@ -1,5 +1,5 @@
 TITLE=quickDough
-TEXORIG=quickDough.tex abstract.tex introduction.tex framework.tex scgracompile.tex scgraimplement.tex experiments.tex conclusions.tex relatedwork.tex
+TEXORIG=quickDough.tex abstract.tex introduction.tex framework.tex scgracompile.tex scgraimplement.tex experiments.tex conclusions.tex relatedwork.tex customization.tex
 
 BIBFILES=refs.bib 
 IMGFILES=

@@ -14,7 +14,7 @@
 \usepackage[algo2e]{algorithm2e}
 \usepackage{amsmath}
 \usepackage[table]{xcolor}
-
+\usepackage{cite}
 
 % \usepackage{draftwatermark}%
 % \SetWatermarkFontSize{20cm}%
@@ -36,6 +36,7 @@
 \setcounter{bottomnumber}{4}
 \setcounter{dbltopnumber}{4}
 
+\newcommand*{\Scale}[2][4]{\scalebox{#1}{$#2$}}
 \newcommand{\eqnref}[1]{Equation~\ref{#1}}
 %\newcommand{\eqnref}[1]{(\ref{#1})}
 \newcommand{\figref}[1]{Figure~\ref{#1}}
@@ -51,11 +52,11 @@
 \SetAlCapHSkip{0pt}
 \IncMargin{-\parindent}
 
-
-
 \graphicspath{{./figures/}}
 
 
+\IEEEoverridecommandlockouts
+\IEEEpubid{\makebox{978-1-4673-9091-0/15/\$31.00~\copyright~2015 IEEE \hfill} \hspace{\columnsep}\makebox[\columnwidth]{}}
 \begin{document}
 \bstctlcite{IEEEexample:BSTcontrol}
 %
@@ -69,14 +70,10 @@
 % affiliations
 
 %% Original
-% \author{\IEEEauthorblockN{Cheng Liu, Colin Yu Lin, Hayden Kwok-Hay So}
-% \IEEEauthorblockA{Department of Electrical and Electronic Engineering\\
-% The University of Hong Kong\\
-% \{liucheng,linyu,hso\}@eee.hku.hk}}
-
-%% Blind
-\author{\IEEEauthorblockN{}
-\IEEEauthorblockA{}}
+ \author{\IEEEauthorblockN{Cheng Liu, Ho-Cheung Ng, Hayden Kwok-Hay So}
+ \IEEEauthorblockA{Department of Electrical and Electronic Engineering,\\ 
+ The University of Hong Kong\\
+ liucheng@eee.hku.hk, nghocheung@gmail.com, hso@eee.hku.hk}}
 
 
 % conference papers do not typically use \thanks and this command
@@ -113,6 +110,10 @@
 \input{experiments}
 \input{relatedwork}
 \input{conclusions}
+
+\section*{Acknowledgment}
+This work was supported in part by the Research Grants Council of Hong Kong project ECS 720012E and
+the Croucher Innovation Award 2013. 
 
 \bibliographystyle{IEEEtran}
 \bibliography{refs,ieeebstctl}

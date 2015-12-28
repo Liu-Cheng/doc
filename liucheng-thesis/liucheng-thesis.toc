@@ -1,0 +1,66 @@
+\contentsline {chapter}{\numberline {1}Introduction}{9}{chapter.1}
+\contentsline {section}{\numberline {1.1}High-level Synthesis}{10}{section.1.1}
+\contentsline {section}{\numberline {1.2}Overlay Architecture}{12}{section.1.2}
+\contentsline {section}{\numberline {1.3}Soft CGRA Overlay Based FPGA Accelerator}{13}{section.1.3}
+\contentsline {section}{\numberline {1.4}Project Contribution}{16}{section.1.4}
+\contentsline {section}{\numberline {1.5}Thesis Roadmap}{17}{section.1.5}
+\contentsline {chapter}{\numberline {2}Literature Review}{18}{chapter.2}
+\contentsline {section}{\numberline {2.1}Approaches to Improve FPGA Design Productivity}{19}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Raising the Abstraction Level}{19}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.2}Providing HW/SW Support}{20}{subsection.2.1.2}
+\contentsline {subsection}{\numberline {2.1.3}Reducing FPGA Implementation Time}{20}{subsection.2.1.3}
+\contentsline {subsection}{\numberline {2.1.4}Offering FPGA Debugging Facilities}{21}{subsection.2.1.4}
+\contentsline {subsection}{\numberline {2.1.5}Automating Design Space Exploration (DSE)}{21}{subsection.2.1.5}
+\contentsline {section}{\numberline {2.2}Overlay Architectures}{23}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Virtual FPGA Overlay}{23}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Coarse-Grained Reconfigurable Array Overlay}{24}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}Processor-Like Overlays}{25}{subsection.2.2.3}
+\contentsline {section}{\numberline {2.3}Overlay Customization}{27}{section.2.3}
+\contentsline {chapter}{\numberline {3}Soft CGRA Overlay Based FPGA Accelerator}{29}{chapter.3}
+\contentsline {section}{\numberline {3.1}Reconfiguration}{31}{section.3.1}
+\contentsline {section}{\numberline {3.2}Processing Element (PE)}{31}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Instruction Memory and Data Memory}{32}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}ALU}{34}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}Load/Store Interface}{34}{subsection.3.2.3}
+\contentsline {section}{\numberline {3.3}Accelerator Buffers}{35}{section.3.3}
+\contentsline {section}{\numberline {3.4}Accelerator Controller}{36}{section.3.4}
+\contentsline {section}{\numberline {3.5}Experiments}{36}{section.3.5}
+\contentsline {subsection}{\numberline {3.5.1}Experiment Setup}{37}{subsection.3.5.1}
+\contentsline {subsection}{\numberline {3.5.2}Pipelining}{38}{subsection.3.5.2}
+\contentsline {subsection}{\numberline {3.5.3}Scalability}{41}{subsection.3.5.3}
+\contentsline {section}{\numberline {3.6}Summary}{45}{section.3.6}
+\contentsline {chapter}{\numberline {4}QuickDough Design Framework}{46}{chapter.4}
+\contentsline {section}{\numberline {4.1}QuickDough Overview}{47}{section.4.1}
+\contentsline {section}{\numberline {4.2}Rapid Accelerator Generation}{49}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}DFG Generation and Loop Execution}{50}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}DFG Scheduling}{51}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.3}Accelerator Selection}{53}{subsection.4.2.3}
+\contentsline {subsection}{\numberline {4.2.4}Bitstream Integration}{54}{subsection.4.2.4}
+\contentsline {section}{\numberline {4.3}Accelerator Library Update}{55}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Common Operation Analysis}{56}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Minimum Accelerator Configuration Set Analysis}{56}{subsection.4.3.2}
+\contentsline {subsection}{\numberline {4.3.3}Accelerator HDL Model Generation and Implementation}{57}{subsection.4.3.3}
+\contentsline {section}{\numberline {4.4}Experiments}{57}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}Benchmark}{58}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.2}Experiment Setup}{58}{subsection.4.4.2}
+\contentsline {subsection}{\numberline {4.4.3}Accelerator Library Update}{59}{subsection.4.4.3}
+\contentsline {subsection}{\numberline {4.4.4}Accelerator Generation Time}{60}{subsection.4.4.4}
+\contentsline {subsection}{\numberline {4.4.5}Performance}{62}{subsection.4.4.5}
+\contentsline {subsection}{\numberline {4.4.6}Implementation Frequency and Hardware Overhead}{64}{subsection.4.4.6}
+\contentsline {section}{\numberline {4.5}Summary}{65}{section.4.5}
+\contentsline {chapter}{\numberline {5}Loop Accelerator Customization}{66}{chapter.5}
+\contentsline {section}{\numberline {5.1}Customization Problem Formulation}{67}{section.5.1}
+\contentsline {section}{\numberline {5.2}Customization Method}{71}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Sub Design Space Exploration}{72}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Overall Customization}{75}{subsection.5.2.2}
+\contentsline {section}{\numberline {5.3}Experiments}{78}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Experiment Setup}{78}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}SCGRA Overlay Implementation Analysis}{79}{subsection.5.3.2}
+\contentsline {subsection}{\numberline {5.3.3}Customization Time}{82}{subsection.5.3.3}
+\contentsline {subsection}{\numberline {5.3.4}Customized Accelerator Performance}{83}{subsection.5.3.4}
+\contentsline {section}{\numberline {5.4}Summary}{85}{section.5.4}
+\contentsline {chapter}{\numberline {6}Conclusion and Future Work}{87}{chapter.6}
+\contentsline {section}{\numberline {6.1}Future Work}{89}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}High Level Compilation}{89}{subsection.6.1.1}
+\contentsline {subsection}{\numberline {6.1.2}Heterogeneous SCGRA Overlay}{90}{subsection.6.1.2}
+\contentsline {subsection}{\numberline {6.1.3}SCGRA Computing Model}{91}{subsection.6.1.3}

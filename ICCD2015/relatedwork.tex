@@ -11,8 +11,7 @@ An overlay architecture is a virtual intermediate architecture that is overlaid
 on top of the physical configurable fabric of an FPGA. Overlays with different 
 granularity ranging from virtual FPGAs \cite{zuma2013carl,Grant2011Malibu,
 Coole2010Intermediate,Koch2013CI}, CGRA overlays \cite{kissler2006dynamically, 
-ferreira2011fpga, shukla2006quku, capalijia2013pipelined, dsp2015cgra} to soft 
-processors \cite{Lebedev2010} and GPU-like overlays \cite{Jeffrey2011potential} 
+ferreira2011fpga, shukla2006quku, capalijia2013pipelined, dsp2015cgra} to many-core processor arrays \cite{Lebedev2010, hannig2014invasive, boppu2014compact} and GPU-like overlays \cite{Jeffrey2011potential} 
 have been developed. 
 
 Among these overlays, CGRA overlays are particularly suitable for compute intensive loop acceleration as demonstrated by numerous prior works 
@@ -26,12 +25,15 @@ QUKU \cite{shukla2006quku} was developed for DSP algorithms and it supported fas
 Finally High-speed CGRA overlays were built in \cite{capalijia2013pipelined} and \cite{dsp2015cgra} by using the elastic pipeline technique and smart DSP reuse respectively to achieve better performance and higher throughput.
 
 
+Our proposed fully pipelined synchronous coarse-grained reconfigurable array overlay continues this
+trend of exploiting coarse-grain reconfigurability to improve both design productivity and the
+resulting accelerator performance. We particularly focus on using the overlay as the backbone of
+FPGA loop accelerators targeting a hybrid CPU-FPGA computing system. With the pre-built library,
+the loop accelerator can be generated in seconds. In addition, QuickDough pays particular attention
+to the communication between the host processor and the accelerator and provides communication optimization
+automatically, creating a seamless hardware-software co-design experience for the user.
+Finally, our overlay was designed to be \emph{soft} from the beginning, featuring a template system
+to allow for rapid overlay generation for either a single application or a domain of applications. 
 
-Our proposed fully pipelined synchronous coarse-grained reconfigurable array overlay continues this trend of exploiting coarse-grain reconfigurability to improve both design productivity and the resulting accelerator speed. 
-In addition, QuickDough pays particular attention to data I/O between the host and the accelerator, which often becomes the bottleneck both in terms of performance and designer productivity.  For that, QuickDough provides buffer optimization and communication scheduling between hardware and software automatically, creating a seamless hardware-software codesign experience for the user.
-Finally, our overlay was designed to be \emph{soft} from the beginning, featuring a template system to allow for rapid overlay generation with different CGRA topology and compute operations.  
-An extensive application-specific customization framework that is able to automatically update the overlay library is in progress and is left as future work.
 
-
-%In general, previous CGRA overlays have demonstrated the promising performance acceleration capability for compute intensive applications. They typically have few or even no intermediate buffer included and assume small pipelined DFGs as design entry. They focus on hardware infrastructure design as well as corresponding mapping and scheduling. However, they are still lack of consideration on on-chip buffering and the communication with host, which are essential for FPGA accelerator design and exposing the accelerators to high-level application developers.
 

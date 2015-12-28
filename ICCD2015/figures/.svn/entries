@@ -1,14 +1,14 @@
 10
 
 dir
-3990
+4156
 svn+ssh://liucheng@bluemountain/svnrepos/private/ICCD2015/figures
 svn+ssh://liucheng@bluemountain/svnrepos
 
 
 
-2015-06-05T12:04:54.845701Z
-3990
+2015-11-11T02:56:01.394579Z
+4136
 liucheng
 
 
@@ -25,754 +25,6 @@ liucheng
 
 
 009cdf83-2097-406a-9066-eb8c59b8b4c2
-
-performanceCP.pdf
-file
-
-
-
-
-2015-05-25T17:33:16.692227Z
-7848df06766d23b9777abb1a54ebf5b0
-2015-05-19T12:51:46.985242Z
-3967
-liucheng
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-93335
-
-full-scgra-compile.pdf
-file
-
-
-
-
-2015-05-25T17:33:16.648227Z
-b8b3ddb1dfbb15d678a9c6970ed58c35
-2015-05-19T12:51:46.985242Z
-3967
-liucheng
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-15601
-
-typical-FPGA-accelerator.svg
-file
-
-
-
-
-2015-05-25T17:33:16.684227Z
-39b92ca851739f970c60ed68483349d8
-2015-05-19T12:51:46.985242Z
-3967
-liucheng
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-28273
-
-dfg-gen.svg
-file
-
-
-
-
-2015-06-02T14:43:37.045182Z
-7ef69eeb98f8d243d5f8dfdaa83ff17d
-2015-06-05T12:04:54.845701Z
-3990
-liucheng
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-58457
-
-real-perf1.pdf
-file
-
-
-
-
-2015-05-25T17:33:16.928224Z
-dce05fa1a7ed9404887913c88367aca8
-2015-05-19T12:51:46.985242Z
-3967
-liucheng
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-96356
-
-execution-time.pdf
-file
-
-
-
-
-2015-05-25T17:33:16.656227Z
-80f2203dbc9dd3baacac46a1f294ed63
-2015-05-19T12:51:46.985242Z
-3967
-liucheng
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-97045
-
-real-perf2.pdf
-file
-
-
-
-
-2015-05-25T17:33:16.668227Z
-1474194aa36f850f6ecdbc393ede75da
-2015-05-19T12:51:46.985242Z
-3967
-liucheng
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-97528
-
-kernel-sim-perf.pdf
-file
-
-
-
-
-2015-05-25T17:33:16.584228Z
-7d59ebd5db608ed9460ee3747a803f9b
-2015-05-19T12:51:46.985242Z
-3967
-liucheng
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-90784
-
-lib-impl-time.pdf
-file
-
-
-
-
-2015-06-04T17:48:56.591791Z
-785c8f2feb72fa9729d9aa2206b8c2b0
-2015-06-05T12:04:54.845701Z
-3990
-liucheng
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-93722
-
-mycrop
-file
-
-
-
-
-2015-05-25T17:33:16.640227Z
-568c49d1d9922205645dc7713d7bc812
-2015-05-22T07:27:47.628136Z
-3974
-liucheng
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-38527
-
-pe.pdf
-file
-
-
-
-
-2015-05-25T17:33:16.692227Z
-d35b26458d734ead7cbf33394c7c7e4f
-2015-05-19T12:51:46.985242Z
-3967
-liucheng
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-15413
-
-alu-v1.pdf
-file
-
-
-
-
-2015-05-25T17:33:16.688227Z
-8da69caa5609278f71402acdadd77999
-2015-05-19T12:51:46.985242Z
-3967
-liucheng
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-14259
-
-kmean-real-perf.pdf
-file
-
-
-
-
-2015-05-25T17:33:16.692227Z
-70235ee3d0e9fb4347ed4b1be5e71594
-2015-05-19T12:51:46.985242Z
-3967
-liucheng
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-95588
-
-alu-v2.pdf
-file
-
-
-
-
-2015-05-25T17:33:16.628227Z
-50fbe05bd248ab621535d5bc947a29dd
-2015-05-23T13:16:13.011392Z
-3977
-liucheng
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-11336
-
-scgra-accelerator.svg
-file
-
-
-
-
-2015-05-25T17:33:16.672227Z
-b9e9036eb9fe050eba518be49a8a970c
-2015-05-19T12:51:46.985242Z
-3967
-liucheng
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-82784
-
-hls-accelerator.pdf
-file
-
-
-
-
-2015-05-25T17:33:16.684227Z
-0b74ef005a08f573de67708d69dd6886
-2015-05-19T12:51:46.985242Z
-3967
-liucheng
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-16842
-
-fir-perf.pdf
-file
-
-
-
-
-2015-06-04T05:29:21.666868Z
-9279a505dd824c9dc0c01f90468e2d04
-2015-06-05T12:04:54.845701Z
-3990
-liucheng
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-91571
-
-QuickDough-Compilation-Time.pdf
-file
-
-
-
-
-2015-06-04T14:35:33.911069Z
-16a2f604007b559d6f402fc32ba51015
-2015-06-05T12:04:54.845701Z
-3990
-liucheng
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-92363
-
-full-scgra-compile.svg
-file
-
-
-
-
-2015-05-25T17:33:16.692227Z
-4705791cd00f1a17b99952bb34cb0031
-2015-05-19T12:51:46.985242Z
-3967
-liucheng
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-93710
-
-lib-gen.pdf
-file
-
-
-
-
-2015-06-03T05:58:22.647176Z
-fed6d8a8a0820e769b9e0f948229ff7f
-2015-06-05T12:04:54.845701Z
-3990
-liucheng
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-17380
-
-sobel-real-perf.pdf
-file
-
-
-
-
-2015-05-25T17:33:16.640227Z
-7433e4a50210534bc15ec5fd44323523
-2015-05-19T12:51:46.985242Z
-3967
-liucheng
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-96243
-
-alu.pdf
-file
-
-
-
-
-2015-05-25T17:33:16.640227Z
-5c7d4a6459db525af65a9321b17eec2d
-2015-05-19T12:51:46.985242Z
-3967
-liucheng
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-13723
 
 perf-scale.pdf
 file
@@ -808,16 +60,16 @@ has-props
 
 93608
 
-hardware-saving.pdf
+scgra-accelerator.pdf
 file
 
 
 
 
-2015-05-25T17:33:16.628227Z
-fd6eb8083e24655e19a3e89ae09c8e32
-2015-05-19T12:51:46.985242Z
-3967
+2015-06-26T03:04:54.272483Z
+6dc3a6e00e70c556d356867c9db711bb
+2015-06-26T03:09:56.478991Z
+4005
 liucheng
 has-props
 
@@ -840,7 +92,75 @@ has-props
 
 
 
-96207
+14993
+
+framework.svg
+file
+
+
+
+
+2015-06-11T14:16:10.228484Z
+dd42d8bfcf3763226725e20940f055f6
+2015-06-24T05:33:12.387604Z
+4000
+liucheng
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+48466
+
+quickdough-runtime.pdf
+file
+
+
+
+
+2015-06-23T05:58:34.476638Z
+7be0150ff80c9a455a00a6e2b991c27c
+2015-06-24T05:33:51.895721Z
+4001
+liucheng
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+92913
 
 mm-real-perf.pdf
 file
@@ -876,14 +196,14 @@ has-props
 
 95644
 
-scgra-compile.pdf
+performanceCP.pdf
 file
 
 
 
 
-2015-05-25T17:33:16.656227Z
-2f5d1fc89b9bd87dc3e71c65e4e394bc
+2015-05-25T17:33:16.692227Z
+7848df06766d23b9777abb1a54ebf5b0
 2015-05-19T12:51:46.985242Z
 3967
 liucheng
@@ -908,7 +228,7 @@ has-props
 
 
 
-13903
+93335
 
 loop-unroll-and-pipeline.pdf
 file
@@ -978,50 +298,16 @@ has-props
 
 88
 
-execution-model.svg
-file
-
-
-
-
-2015-05-25T17:33:16.628227Z
-c339ac8f60e4100bf678ca02951bf9ad
-2015-05-19T12:51:46.985242Z
-3967
-liucheng
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-15989
-
 pe.svg
 file
 
 
 
 
-2015-05-25T17:33:16.664227Z
-72d9b6dc915eb938c095ee1c5a039f04
-2015-05-19T12:51:46.985242Z
-3967
+2015-06-26T02:58:55.720470Z
+db30467dc5eef3d788c8f2a8093182b8
+2015-06-26T03:09:56.478991Z
+4005
 liucheng
 
 
@@ -1044,41 +330,7 @@ liucheng
 
 
 
-130170
-
-fir-real-perf.pdf
-file
-
-
-
-
-2015-05-25T17:33:16.628227Z
-7f145a773f20e8ef1a15ec776097cd21
-2015-05-19T12:51:46.985242Z
-3967
-liucheng
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-95580
+130169
 
 alu-v1.svg
 file
@@ -1148,40 +400,6 @@ has-props
 
 95598
 
-impl-freq.pdf
-file
-
-
-
-
-2015-06-05T11:53:55.003150Z
-770750169c6f2a6594006b40f6a35c16
-2015-06-05T12:04:54.845701Z
-3990
-liucheng
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-91627
-
 scgra-impl-scalability.pdf
 file
 
@@ -1250,50 +468,16 @@ liucheng
 
 92247
 
-framework.pdf
+dfg-gen.svg
 file
 
 
 
 
-2015-06-03T03:22:10.061006Z
-bc648f33edf5fdab483e40e4d189f2a8
-2015-06-05T12:04:54.845701Z
-3990
-liucheng
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-14037
-
-hls-accelerator.svg
-file
-
-
-
-
-2015-05-25T17:33:16.928224Z
-d68382de634c644b0a7e91dd81279b62
-2015-05-19T12:51:46.985242Z
-3967
+2015-08-03T15:29:58.203058Z
+85b095e85078b0e277952689715b1f5c
+2015-11-11T02:56:01.394579Z
+4136
 liucheng
 
 
@@ -1316,7 +500,7 @@ liucheng
 
 
 
-102977
+62275
 
 HLS-Compilation-Time.pdf
 file
@@ -1352,16 +536,16 @@ has-props
 
 90685
 
-km-perf.pdf
+kernel-sim-perf.pdf
 file
 
 
 
 
-2015-06-04T05:29:22.354859Z
-43bd649a288c1ed07e6763cd113735d6
-2015-06-05T12:04:54.845701Z
-3990
+2015-05-25T17:33:16.584228Z
+7d59ebd5db608ed9460ee3747a803f9b
+2015-05-19T12:51:46.985242Z
+3967
 liucheng
 has-props
 
@@ -1384,18 +568,18 @@ has-props
 
 
 
-92218
+90784
 
-se-perf.pdf
+lib-impl-time.pdf
 file
 
 
 
 
-2015-06-05T11:53:55.283286Z
-57cb6573245b10b7ca4ae58ac4e7b53a
-2015-06-05T12:04:54.845701Z
-3990
+2015-06-23T05:58:33.900645Z
+449626a2dd65726635fed1bb2836e693
+2015-06-24T05:33:12.387604Z
+4000
 liucheng
 has-props
 
@@ -1418,7 +602,7 @@ has-props
 
 
 
-93074
+91386
 
 typical-FPGA-accelerator.pdf
 file
@@ -1454,14 +638,252 @@ has-props
 
 10521
 
-mm-perf.pdf
+typical-FPGA-multiple-accelerators.svg
 file
 
 
 
 
-2015-06-04T05:29:22.702855Z
-f7e19fbcf4910257d3ad3623b48e1038
+2015-05-25T17:33:16.636227Z
+5e1c04a45e33a21f25d8e9220d2a2b62
+2015-05-19T12:51:46.985242Z
+3967
+liucheng
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+38949
+
+kmean-real-perf.pdf
+file
+
+
+
+
+2015-05-25T17:33:16.692227Z
+70235ee3d0e9fb4347ed4b1be5e71594
+2015-05-19T12:51:46.985242Z
+3967
+liucheng
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+95588
+
+pe-array.svg
+file
+
+
+
+
+2015-05-25T17:33:16.660227Z
+9c70ae64eb71074922102010618a6c2f
+2015-05-19T12:51:46.985242Z
+3967
+liucheng
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+44727
+
+scgra-accelerator.svg
+file
+
+
+
+
+2015-06-26T03:03:53.440481Z
+fa6fbf51d39997fad5e0bf25926b56d8
+2015-06-26T03:09:56.478991Z
+4005
+liucheng
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+80930
+
+hls-accelerator.pdf
+file
+
+
+
+
+2015-05-25T17:33:16.684227Z
+0b74ef005a08f573de67708d69dd6886
+2015-05-19T12:51:46.985242Z
+3967
+liucheng
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+16842
+
+mm-sim-perf1.pdf
+file
+
+
+
+
+2015-05-25T17:33:16.672227Z
+b42215e3d5bc099692288266354158de
+2015-05-19T12:51:46.985242Z
+3967
+liucheng
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+96516
+
+mm-sim-perf2.pdf
+file
+
+
+
+
+2015-05-25T17:33:16.684227Z
+0867880c607daba8c4c88075cdf2825c
+2015-05-19T12:51:46.985242Z
+3967
+liucheng
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+97345
+
+lib-gen.pdf
+file
+
+
+
+
+2015-06-03T05:58:22.647176Z
+fed6d8a8a0820e769b9e0f948229ff7f
 2015-06-05T12:04:54.845701Z
 3990
 liucheng
@@ -1486,7 +908,687 @@ has-props
 
 
 
-92165
+17380
+
+sobel-real-perf.pdf
+file
+
+
+
+
+2015-05-25T17:33:16.640227Z
+7433e4a50210534bc15ec5fd44323523
+2015-05-19T12:51:46.985242Z
+3967
+liucheng
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+96243
+
+framework2.pdf
+file
+
+
+
+
+2015-08-04T03:58:05.338750Z
+6f62ddd36db085a230090422be61e79c
+2015-11-11T02:56:01.394579Z
+4136
+liucheng
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+13488
+
+alu.pdf
+file
+
+
+
+
+2015-05-25T17:33:16.640227Z
+5c7d4a6459db525af65a9321b17eec2d
+2015-05-19T12:51:46.985242Z
+3967
+liucheng
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+13723
+
+hardware-saving.pdf
+file
+
+
+
+
+2015-05-25T17:33:16.628227Z
+fd6eb8083e24655e19a3e89ae09c8e32
+2015-05-19T12:51:46.985242Z
+3967
+liucheng
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+96207
+
+svn-commit.tmp
+file
+
+
+
+
+2015-05-25T17:33:16.668227Z
+1bcf8e325709c3f23d4ea286212ebd1a
+2015-05-19T12:51:46.985242Z
+3967
+liucheng
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+89
+
+scgra-compile.pdf
+file
+
+
+
+
+2015-05-25T17:33:16.656227Z
+2f5d1fc89b9bd87dc3e71c65e4e394bc
+2015-05-19T12:51:46.985242Z
+3967
+liucheng
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+13903
+
+full-scgra-compile.pdf
+file
+
+
+
+
+2015-05-25T17:33:16.648227Z
+b8b3ddb1dfbb15d678a9c6970ed58c35
+2015-05-19T12:51:46.985242Z
+3967
+liucheng
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+15601
+
+execution-model.svg
+file
+
+
+
+
+2015-05-25T17:33:16.628227Z
+c339ac8f60e4100bf678ca02951bf9ad
+2015-05-19T12:51:46.985242Z
+3967
+liucheng
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+15989
+
+typical-FPGA-accelerator.svg
+file
+
+
+
+
+2015-05-25T17:33:16.684227Z
+39b92ca851739f970c60ed68483349d8
+2015-05-19T12:51:46.985242Z
+3967
+liucheng
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+28273
+
+fir-real-perf.pdf
+file
+
+
+
+
+2015-05-25T17:33:16.628227Z
+7f145a773f20e8ef1a15ec776097cd21
+2015-05-19T12:51:46.985242Z
+3967
+liucheng
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+95580
+
+impl-freq.pdf
+file
+
+
+
+
+2015-07-06T06:08:36.823478Z
+37b61b89ed7445153c3002cb0074fb87
+2015-08-01T12:18:17.509435Z
+4028
+liucheng
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+86740
+
+framework.pdf
+file
+
+
+
+
+2015-06-11T14:16:55.235918Z
+a33aabc505bc5eafc35c36c498768efe
+2015-06-24T05:33:12.387604Z
+4000
+liucheng
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+13853
+
+real-perf1.pdf
+file
+
+
+
+
+2015-05-25T17:33:16.928224Z
+dce05fa1a7ed9404887913c88367aca8
+2015-05-19T12:51:46.985242Z
+3967
+liucheng
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+96356
+
+hls-accelerator.svg
+file
+
+
+
+
+2015-05-25T17:33:16.928224Z
+d68382de634c644b0a7e91dd81279b62
+2015-05-19T12:51:46.985242Z
+3967
+liucheng
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+102977
+
+execution-time.pdf
+file
+
+
+
+
+2015-05-25T17:33:16.656227Z
+80f2203dbc9dd3baacac46a1f294ed63
+2015-05-19T12:51:46.985242Z
+3967
+liucheng
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+97045
+
+real-perf2.pdf
+file
+
+
+
+
+2015-05-25T17:33:16.668227Z
+1474194aa36f850f6ecdbc393ede75da
+2015-05-19T12:51:46.985242Z
+3967
+liucheng
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+97528
+
+mycrop
+file
+
+
+
+
+2015-05-25T17:33:16.640227Z
+568c49d1d9922205645dc7713d7bc812
+2015-05-22T07:27:47.628136Z
+3974
+liucheng
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+38527
+
+se-perf.pdf
+file
+
+
+
+
+2015-10-27T04:01:46.512645Z
+9599c1be0533ac627f3dddc46af60d19
+2015-11-11T02:56:01.394579Z
+4136
+liucheng
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+89917
+
+km-perf.pdf
+file
+
+
+
+
+2015-10-27T04:01:45.972645Z
+87b5fc46d7b5450893180d2e49445a8d
+2015-11-11T02:56:01.394579Z
+4136
+liucheng
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+89525
+
+mm-perf.pdf
+file
+
+
+
+
+2015-10-27T04:01:46.248645Z
+7e8876205a477118fd68c101a3685c2f
+2015-11-11T02:56:01.394579Z
+4136
+liucheng
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+89012
 
 lib-gen.svg
 file
@@ -1522,17 +1624,18 @@ liucheng
 
 41972
 
-typical-FPGA-multiple-accelerators.svg
+pe.pdf
 file
 
 
 
 
-2015-05-25T17:33:16.636227Z
-5e1c04a45e33a21f25d8e9220d2a2b62
-2015-05-19T12:51:46.985242Z
-3967
+2015-06-26T03:04:54.020483Z
+b813985406be327f05f583816f72ddd2
+2015-06-26T03:09:56.478991Z
+4005
 liucheng
+has-props
 
 
 
@@ -1553,19 +1656,18 @@ liucheng
 
 
 
-
-38949
+15399
 
-pe-array.svg
+framework2.svg
 file
 
 
 
 
-2015-05-25T17:33:16.660227Z
-9c70ae64eb71074922102010618a6c2f
-2015-05-19T12:51:46.985242Z
-3967
+2015-08-04T03:56:11.752178Z
+c03eecd4b12fdf771d70f3ee6641bbfc
+2015-11-11T02:56:01.394579Z
+4136
 liucheng
 
 
@@ -1588,7 +1690,75 @@ liucheng
 
 
 
-44727
+44934
+
+alu-v1.pdf
+file
+
+
+
+
+2015-05-25T17:33:16.688227Z
+8da69caa5609278f71402acdadd77999
+2015-05-19T12:51:46.985242Z
+3967
+liucheng
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+14259
+
+alu-v2.pdf
+file
+
+
+
+
+2015-05-25T17:33:16.628227Z
+50fbe05bd248ab621535d5bc947a29dd
+2015-05-23T13:16:13.011392Z
+3977
+liucheng
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+11336
 
 hls-loop-unroll.pdf
 file
@@ -1630,10 +1800,10 @@ file
 
 
 
-2015-06-02T14:43:52.644985Z
-8198558e69e572590e9d005e14ffb265
-2015-06-05T12:04:54.845701Z
-3990
+2015-08-03T15:35:26.642929Z
+db6f21edbf240f9865a91c1dfd35fa0b
+2015-11-11T02:56:01.394579Z
+4136
 liucheng
 has-props
 
@@ -1656,7 +1826,7 @@ has-props
 
 
 
-34850
+35286
 
 alu.svg
 file
@@ -1732,10 +1902,10 @@ file
 
 
 
-2015-06-05T11:53:54.731017Z
-ca5f8768fd432fb0c49b60f339b6bdc0
-2015-06-05T12:04:54.845701Z
-3990
+2015-10-27T04:01:45.696645Z
+05f5039229ed138ff53e36b20d90a4ff
+2015-11-11T02:56:01.394579Z
+4136
 liucheng
 has-props
 
@@ -1758,18 +1928,18 @@ has-props
 
 
 
-92316
+94999
 
-mm-sim-perf1.pdf
+fir-perf.pdf
 file
 
 
 
 
-2015-05-25T17:33:16.672227Z
-b42215e3d5bc099692288266354158de
-2015-05-19T12:51:46.985242Z
-3967
+2015-10-27T04:01:45.408645Z
+8df784471af19b7f5b98e179c758d6a2
+2015-11-11T02:56:01.394579Z
+4136
 liucheng
 has-props
 
@@ -1792,20 +1962,19 @@ has-props
 
 
 
-96516
+88664
 
-mm-sim-perf2.pdf
+full-scgra-compile.svg
 file
 
 
 
 
-2015-05-25T17:33:16.684227Z
-0867880c607daba8c4c88075cdf2825c
+2015-05-25T17:33:16.692227Z
+4705791cd00f1a17b99952bb34cb0031
 2015-05-19T12:51:46.985242Z
 3967
 liucheng
-has-props
 
 
 
@@ -1826,7 +1995,8 @@ has-props
 
 
 
-97345
+
+93710
 
 scgra-compile.svg
 file
@@ -1895,106 +2065,4 @@ has-props
 
 
 94707
-
-scgra-accelerator.pdf
-file
-
-
-
-
-2015-05-25T17:33:16.656227Z
-1c104c73453818ea114cce881c2968e0
-2015-05-19T12:51:46.985242Z
-3967
-liucheng
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-15158
-
-svn-commit.tmp
-file
-
-
-
-
-2015-05-25T17:33:16.668227Z
-1bcf8e325709c3f23d4ea286212ebd1a
-2015-05-19T12:51:46.985242Z
-3967
-liucheng
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-89
-
-framework.svg
-file
-
-
-
-
-2015-06-03T03:21:21.457617Z
-6b52d78d06b8f089c5e8cb72ae751033
-2015-06-05T12:04:54.845701Z
-3990
-liucheng
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-47234
 

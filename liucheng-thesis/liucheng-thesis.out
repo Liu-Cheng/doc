@@ -1,0 +1,66 @@
+\BOOKMARK [0][-]{chapter.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.1.1}{High-level Synthesis}{chapter.1}% 2
+\BOOKMARK [1][-]{section.1.2}{Overlay Architecture}{chapter.1}% 3
+\BOOKMARK [1][-]{section.1.3}{Soft CGRA Overlay Based FPGA Accelerator}{chapter.1}% 4
+\BOOKMARK [1][-]{section.1.4}{Project Contribution}{chapter.1}% 5
+\BOOKMARK [1][-]{section.1.5}{Thesis Roadmap}{chapter.1}% 6
+\BOOKMARK [0][-]{chapter.2}{Literature Review}{}% 7
+\BOOKMARK [1][-]{section.2.1}{Approaches to Improve FPGA Design Productivity}{chapter.2}% 8
+\BOOKMARK [2][-]{subsection.2.1.1}{Raising the Abstraction Level}{section.2.1}% 9
+\BOOKMARK [2][-]{subsection.2.1.2}{Providing HW/SW Support}{section.2.1}% 10
+\BOOKMARK [2][-]{subsection.2.1.3}{Reducing FPGA Implementation Time}{section.2.1}% 11
+\BOOKMARK [2][-]{subsection.2.1.4}{Offering FPGA Debugging Facilities}{section.2.1}% 12
+\BOOKMARK [2][-]{subsection.2.1.5}{Automating Design Space Exploration \(DSE\)}{section.2.1}% 13
+\BOOKMARK [1][-]{section.2.2}{Overlay Architectures}{chapter.2}% 14
+\BOOKMARK [2][-]{subsection.2.2.1}{Virtual FPGA Overlay}{section.2.2}% 15
+\BOOKMARK [2][-]{subsection.2.2.2}{Coarse-Grained Reconfigurable Array Overlay}{section.2.2}% 16
+\BOOKMARK [2][-]{subsection.2.2.3}{Processor-Like Overlays}{section.2.2}% 17
+\BOOKMARK [1][-]{section.2.3}{Overlay Customization}{chapter.2}% 18
+\BOOKMARK [0][-]{chapter.3}{Soft CGRA Overlay Based FPGA Accelerator}{}% 19
+\BOOKMARK [1][-]{section.3.1}{Reconfiguration}{chapter.3}% 20
+\BOOKMARK [1][-]{section.3.2}{Processing Element \(PE\)}{chapter.3}% 21
+\BOOKMARK [2][-]{subsection.3.2.1}{Instruction Memory and Data Memory}{section.3.2}% 22
+\BOOKMARK [2][-]{subsection.3.2.2}{ALU}{section.3.2}% 23
+\BOOKMARK [2][-]{subsection.3.2.3}{Load/Store Interface}{section.3.2}% 24
+\BOOKMARK [1][-]{section.3.3}{Accelerator Buffers}{chapter.3}% 25
+\BOOKMARK [1][-]{section.3.4}{Accelerator Controller}{chapter.3}% 26
+\BOOKMARK [1][-]{section.3.5}{Experiments}{chapter.3}% 27
+\BOOKMARK [2][-]{subsection.3.5.1}{Experiment Setup}{section.3.5}% 28
+\BOOKMARK [2][-]{subsection.3.5.2}{Pipelining}{section.3.5}% 29
+\BOOKMARK [2][-]{subsection.3.5.3}{Scalability}{section.3.5}% 30
+\BOOKMARK [1][-]{section.3.6}{Summary}{chapter.3}% 31
+\BOOKMARK [0][-]{chapter.4}{QuickDough Design Framework}{}% 32
+\BOOKMARK [1][-]{section.4.1}{QuickDough Overview}{chapter.4}% 33
+\BOOKMARK [1][-]{section.4.2}{Rapid Accelerator Generation}{chapter.4}% 34
+\BOOKMARK [2][-]{subsection.4.2.1}{DFG Generation and Loop Execution}{section.4.2}% 35
+\BOOKMARK [2][-]{subsection.4.2.2}{DFG Scheduling}{section.4.2}% 36
+\BOOKMARK [2][-]{subsection.4.2.3}{Accelerator Selection}{section.4.2}% 37
+\BOOKMARK [2][-]{subsection.4.2.4}{Bitstream Integration}{section.4.2}% 38
+\BOOKMARK [1][-]{section.4.3}{Accelerator Library Update}{chapter.4}% 39
+\BOOKMARK [2][-]{subsection.4.3.1}{Common Operation Analysis}{section.4.3}% 40
+\BOOKMARK [2][-]{subsection.4.3.2}{Minimum Accelerator Configuration Set Analysis}{section.4.3}% 41
+\BOOKMARK [2][-]{subsection.4.3.3}{Accelerator HDL Model Generation and Implementation}{section.4.3}% 42
+\BOOKMARK [1][-]{section.4.4}{Experiments}{chapter.4}% 43
+\BOOKMARK [2][-]{subsection.4.4.1}{Benchmark}{section.4.4}% 44
+\BOOKMARK [2][-]{subsection.4.4.2}{Experiment Setup}{section.4.4}% 45
+\BOOKMARK [2][-]{subsection.4.4.3}{Accelerator Library Update}{section.4.4}% 46
+\BOOKMARK [2][-]{subsection.4.4.4}{Accelerator Generation Time}{section.4.4}% 47
+\BOOKMARK [2][-]{subsection.4.4.5}{Performance}{section.4.4}% 48
+\BOOKMARK [2][-]{subsection.4.4.6}{Implementation Frequency and Hardware Overhead}{section.4.4}% 49
+\BOOKMARK [1][-]{section.4.5}{Summary}{chapter.4}% 50
+\BOOKMARK [0][-]{chapter.5}{Loop Accelerator Customization}{}% 51
+\BOOKMARK [1][-]{section.5.1}{Customization Problem Formulation}{chapter.5}% 52
+\BOOKMARK [1][-]{section.5.2}{Customization Method}{chapter.5}% 53
+\BOOKMARK [2][-]{subsection.5.2.1}{Sub Design Space Exploration}{section.5.2}% 54
+\BOOKMARK [2][-]{subsection.5.2.2}{Overall Customization}{section.5.2}% 55
+\BOOKMARK [1][-]{section.5.3}{Experiments}{chapter.5}% 56
+\BOOKMARK [2][-]{subsection.5.3.1}{Experiment Setup}{section.5.3}% 57
+\BOOKMARK [2][-]{subsection.5.3.2}{SCGRA Overlay Implementation Analysis}{section.5.3}% 58
+\BOOKMARK [2][-]{subsection.5.3.3}{Customization Time}{section.5.3}% 59
+\BOOKMARK [2][-]{subsection.5.3.4}{Customized Accelerator Performance}{section.5.3}% 60
+\BOOKMARK [1][-]{section.5.4}{Summary}{chapter.5}% 61
+\BOOKMARK [0][-]{chapter.6}{Conclusion and Future Work}{}% 62
+\BOOKMARK [1][-]{section.6.1}{Future Work}{chapter.6}% 63
+\BOOKMARK [2][-]{subsection.6.1.1}{High Level Compilation}{section.6.1}% 64
+\BOOKMARK [2][-]{subsection.6.1.2}{Heterogeneous SCGRA Overlay}{section.6.1}% 65
+\BOOKMARK [2][-]{subsection.6.1.3}{SCGRA Computing Model}{section.6.1}% 66

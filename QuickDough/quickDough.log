@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.3.25)  17 APR 2015 22:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.3.25)  20 JUL 2015 08:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -420,31 +420,23 @@ Package: translator 2010/06/12 ver 1.10
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/beamer/translator/translator-lang
 uage-mappings.tex)))
-(/usr/local/texlive/2014/texmf-dist/tex/latex/enumitem/enumitem.sty
-Package: enumitem 2011/09/28 v3.5.2 Customized lists
-\labelindent=\skip58
-\enit@outerparindent=\dimen159
-\enit@toks=\toks17
-\enit@inbox=\box56
-\enitdp@description=\count137
-)
 (/usr/local/texlive/2014/texmf-dist/tex/latex/algorithms/algorithm.sty
 Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
 nment
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count138
-\float@exts=\toks18
-\float@box=\box57
-\@float@everytoks=\toks19
-\@floatcapt=\box58
+\c@float@type=\count137
+\float@exts=\toks17
+\float@box=\box56
+\@float@everytoks=\toks18
+\@floatcapt=\box57
 )
 (/usr/local/texlive/2014/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
-\@float@every@algorithm=\toks20
-\c@algorithm=\count139
+\@float@every@algorithm=\toks19
+\c@algorithm=\count138
 )
 (./algorithmic.sty
 Package: algorithmic 2006/06/02
@@ -452,26 +444,26 @@ Package: algorithmic 2006/06/02
 Document Style `algorithmic' - environment
 (/usr/local/texlive/2014/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count140
-\calc@Bcount=\count141
-\calc@Adimen=\dimen160
-\calc@Bdimen=\dimen161
-\calc@Askip=\skip59
-\calc@Bskip=\skip60
+\calc@Acount=\count139
+\calc@Bcount=\count140
+\calc@Adimen=\dimen159
+\calc@Bdimen=\dimen160
+\calc@Askip=\skip58
+\calc@Bskip=\skip59
 LaTeX Info: Redefining \setlength on input line 75.
 LaTeX Info: Redefining \addtolength on input line 76.
-\calc@Ccount=\count142
-\calc@Cskip=\skip61
+\calc@Ccount=\count141
+\calc@Cskip=\skip60
 )
-\c@ALC@line=\count143
-\c@ALC@rem=\count144
-\c@ALC@depth=\count145
-\ALC@tlm=\skip62
-\algorithmicindent=\skip63
+\c@ALC@line=\count142
+\c@ALC@rem=\count143
+\c@ALC@depth=\count144
+\ALC@tlm=\skip61
+\algorithmicindent=\skip62
 )
 (./algorithm2e.sty
 Package: algorithm2e 2008/00/00 v3.10 algorithms environments
-\c@AlgoLine=\count146
+\c@AlgoLine=\count145
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/tools/xspace.sty
 Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
@@ -486,38 +478,99 @@ Package `algorithm2e' Release 4.01 -- december 14 2009 --
 subscribe by emailing sympa@lirmm.fr with 'subscribe <list> <firstname name>'
 - Author: Christophe Fiorio (fiorio@lirmm.fr)
 ********************************************************
-\skiptotal=\skip64
-\skiplinenumber=\skip65
-\skiprule=\skip66
-\skiphlne=\skip67
-\skiptext=\skip68
-\skiplength=\skip69
-\algomargin=\skip70
-\skipalgocfslide=\skip71
-\algowidth=\dimen162
-\inoutsize=\dimen163
-\inoutline=\dimen164
-\interspacetitleruled=\dimen165
-\interspacealgoruled=\dimen166
-\interspacetitleboxruled=\dimen167
-\algocf@inoutbox=\box59
-\algocf@inputbox=\box60
-\AlCapSkip=\skip72
-\AlCapHSkip=\skip73
-\algocf@nlbox=\box61
-\algocf@hangingbox=\box62
-\algocf@capbox=\box63
-\algoheightruledefault=\skip74
-\algoheightrule=\skip75
-\algotitleheightruledefault=\skip76
-\algotitleheightrule=\skip77
-\c@algocfline=\count147
-\c@algocfproc=\count148
-\c@algocf=\count149
-\algocf@algoframe=\box64
-\algocf@algobox=\box65
-) (/usr/local/texlive/2014/texmf-dist/tex/latex/multirow/multirow.sty
-\bigstrutjot=\dimen168
+\skiptotal=\skip63
+\skiplinenumber=\skip64
+\skiprule=\skip65
+\skiphlne=\skip66
+\skiptext=\skip67
+\skiplength=\skip68
+\algomargin=\skip69
+\skipalgocfslide=\skip70
+\algowidth=\dimen161
+\inoutsize=\dimen162
+\inoutline=\dimen163
+\interspacetitleruled=\dimen164
+\interspacealgoruled=\dimen165
+\interspacetitleboxruled=\dimen166
+\algocf@inoutbox=\box58
+\algocf@inputbox=\box59
+\AlCapSkip=\skip71
+\AlCapHSkip=\skip72
+\algocf@nlbox=\box60
+\algocf@hangingbox=\box61
+\algocf@capbox=\box62
+\algoheightruledefault=\skip73
+\algoheightrule=\skip74
+\algotitleheightruledefault=\skip75
+\algotitleheightrule=\skip76
+\c@algocfline=\count146
+\c@algocfproc=\count147
+\c@algocf=\count148
+\algocf@algoframe=\box63
+\algocf@algobox=\box64
+) (/usr/local/texlive/2014/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2013/01/14 v2.14 AMS math features
+\@mathmargin=\skip77
+
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2014/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen167
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count149
+LaTeX Info: Redefining \frac on input line 210.
+\uproot@=\count150
+\leftroot@=\count151
+LaTeX Info: Redefining \overline on input line 306.
+\classnum@=\count152
+\DOTSCASE@=\count153
+LaTeX Info: Redefining \ldots on input line 378.
+LaTeX Info: Redefining \dots on input line 381.
+LaTeX Info: Redefining \cdots on input line 466.
+\Mathstrutbox@=\box65
+\strutbox@=\box66
+\big@size=\dimen168
+LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
+\macc@depth=\count154
+\c@MaxMatrixCols=\count155
+\dotsspace@=\muskip17
+\c@parentequation=\count156
+\dspbrk@lvl=\count157
+\tag@help=\toks20
+\row@=\count158
+\column@=\count159
+\maxfields@=\count160
+\andhelp@=\toks21
+\eqnshift@=\dimen169
+\alignsep@=\dimen170
+\tagshift@=\dimen171
+\tagwidth@=\dimen172
+\totwidth@=\dimen173
+\lineht@=\dimen174
+\@envbody=\toks22
+\multlinegap=\skip78
+\multlinetaggap=\skip79
+\mathdisplay@stack=\toks23
+LaTeX Info: Redefining \[ on input line 2665.
+LaTeX Info: Redefining \] on input line 2666.
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/threeparttable/threeparttable.sty
+Package: threeparttable 2003/06/13  v 3.0
+\@tempboxb=\box67
+) (/usr/local/texlive/2014/texmf-dist/tex/latex/enumitem/enumitem.sty
+Package: enumitem 2011/09/28 v3.5.2 Customized lists
+\labelindent=\skip80
+\enit@outerparindent=\dimen175
+\enit@toks=\toks24
+\enit@inbox=\box68
+\enitdp@description=\count161
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/multirow/multirow.sty
+\bigstrutjot=\dimen176
 )
 (/usr/local/texlive/2014/texmf-dist/tex/latex/subfig/subfig.sty
 Package: subfig 2005/06/28 ver: 1.3 subfig package
@@ -525,29 +578,29 @@ Package: subfig 2005/06/28 ver: 1.3 subfig package
 (/usr/local/texlive/2014/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2013/05/02 v1.6-88 caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 57.
-\captionmargin=\dimen169
-\captionmargin@=\dimen170
-\captionwidth=\dimen171
-\caption@tempdima=\dimen172
-\caption@indent=\dimen173
-\caption@parindent=\dimen174
-\caption@hangindent=\dimen175
+\captionmargin=\dimen177
+\captionmargin@=\dimen178
+\captionwidth=\dimen179
+\caption@tempdima=\dimen180
+\caption@indent=\dimen181
+\caption@parindent=\dimen182
+\caption@hangindent=\dimen183
 Package caption Info: Unknown document class (or package),
 (caption)             standard defaults will be used.
 )
-\c@KVtest=\count150
-\sf@farskip=\skip78
-\sf@captopadj=\dimen176
-\sf@capskip=\skip79
-\sf@nearskip=\skip80
-\c@subfigure=\count151
-\c@subfigure@save=\count152
-\c@lofdepth=\count153
-\c@subtable=\count154
-\c@subtable@save=\count155
-\c@lotdepth=\count156
-\sf@top=\skip81
-\sf@bottom=\skip82
+\c@KVtest=\count162
+\sf@farskip=\skip81
+\sf@captopadj=\dimen184
+\sf@capskip=\skip82
+\sf@nearskip=\skip83
+\c@subfigure=\count163
+\c@subfigure@save=\count164
+\c@lofdepth=\count165
+\c@subtable=\count166
+\c@subtable@save=\count167
+\c@lotdepth=\count168
+\sf@top=\skip84
+\sf@bottom=\skip85
 )
 (/usr/local/texlive/2014/texmf-dist/tex/latex/dblfloatfix/dblfloatfix.sty
 Package: dblfloatfix 2012/12/31 v1.0a (JAW)
@@ -555,46 +608,48 @@ Package: dblfloatfix 2012/12/31 v1.0a (JAW)
 (/usr/local/texlive/2014/texmf-dist/tex/latex/base/fixltx2e.sty
 Package: fixltx2e 2014/09/29 v1.1s fixes to LaTeX
 LaTeX Info: Redefining \em on input line 430.
+LaTeX Info: The control sequence `\[' is already robust on input line 481.
+LaTeX Info: The control sequence `\]' is already robust on input line 482.
 )
-\@dblbotnum=\count157
-\c@dblbotnumber=\count158
+\@dblbotnum=\count169
+\c@dblbotnumber=\count170
 )
 (/usr/local/texlive/2014/texmf-dist/tex/latex/natbib/natbib.sty
 Package: natbib 2010/09/13 8.31b (PWD, AO)
-\bibhang=\skip83
-\bibsep=\skip84
+\bibhang=\skip86
+\bibsep=\skip87
 LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count159
+\c@NAT@ctr=\count171
 )
 (./quickDough.aux)
 \openout1 = `quickDough.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
 
 (/usr/local/texlive/2014/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count160
-\scratchdimen=\dimen177
-\scratchbox=\box66
-\nofMPsegments=\count161
-\nofMParguments=\count162
-\everyMPshowfont=\toks21
-\MPscratchCnt=\count163
-\MPscratchDim=\dimen178
-\MPnumerator=\count164
-\makeMPintoPDFobject=\count165
-\everyMPtoPDFconversion=\toks22
+\scratchcounter=\count172
+\scratchdimen=\dimen185
+\scratchbox=\box69
+\nofMPsegments=\count173
+\nofMParguments=\count174
+\everyMPshowfont=\toks25
+\MPscratchCnt=\count175
+\MPscratchDim=\dimen186
+\MPnumerator=\count176
+\makeMPintoPDFobject=\count177
+\everyMPtoPDFconversion=\toks26
 ) (/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
@@ -655,29 +710,21 @@ File: siunitx-binary.cfg 2015/01/21 v2.6e siunitx: Binary units
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: End \AtBeginDocument code.
-\c__siunitx_mathsf_int=\count166
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 62.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 62.
-LaTeX Font Info:    Try loading font information for U+lasy on input line 62.
+\c__siunitx_mathsf_int=\count178
+LaTeX Font Info:    Try loading font information for U+lasy on input line 64.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-\c__siunitx_mathtt_int=\count167
+\c__siunitx_mathtt_int=\count179
  (./abstract.tex)
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 96.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 96.
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 96.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 98.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <8> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 96.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 98.
 
 (./introduction.tex
 Overfull \vbox (72.27pt too high) has occurred while \output is active []
@@ -696,7 +743,7 @@ ound PDF version <1.5>, but at most version <1.4> allowed
 File: ./figures/hls-accelerator.pdf Graphic file (type pdf)
 
 <use ./figures/hls-accelerator.pdf>
-Package pdftex.def Info: ./figures/hls-accelerator.pdf used on input line 10.
+Package pdftex.def Info: ./figures/hls-accelerator.pdf used on input line 13.
 (pdftex.def)             Requested size: 186.12048pt x 112.00243pt.
 
 
@@ -706,20 +753,21 @@ pdfTeX warning: pdflatex (file ./figures/scgra-accelerator.pdf): PDF inclusion:
 File: ./figures/scgra-accelerator.pdf Graphic file (type pdf)
 
 <use ./figures/scgra-accelerator.pdf>
-Package pdftex.def Info: ./figures/scgra-accelerator.pdf used on input line 15.
+Package pdftex.def Info: ./figures/scgra-accelerator.pdf used on input line 18.
 
 (pdftex.def)             Requested size: 186.12048pt x 112.00243pt.
- [4]
+
 
 pdfTeX warning: pdflatex (file ./figures/framework.pdf): PDF inclusion: found P
 DF version <1.5>, but at most version <1.4> allowed
-<./figures/framework.pdf, id=27, 446.66875pt x 293.095pt>
+<./figures/framework.pdf, id=24, 466.74374pt x 299.1175pt>
 File: ./figures/framework.pdf Graphic file (type pdf)
 
 <use ./figures/framework.pdf>
-Package pdftex.def Info: ./figures/framework.pdf used on input line 26.
-(pdftex.def)             Requested size: 257.39758pt x 168.8995pt.
- [5 <./figures/hls-accelerator.pdf> <./figures/scgra-accelerator.pdf
+Package pdftex.def Info: ./figures/framework.pdf used on input line 34.
+(pdftex.def)             Requested size: 257.39758pt x 164.96242pt.
+ [4]) (./scgraimplement.tex [5 <./figures/hls-accelerator.pdf> <./figures/scgra
+-accelerator.pdf
 
 pdfTeX warning: pdflatex (file ./figures/scgra-accelerator.pdf): PDF inclusion:
  multiple pdfs with page group included in a single page
@@ -727,221 +775,390 @@ pdfTeX warning: pdflatex (file ./figures/scgra-accelerator.pdf): PDF inclusion:
 
 pdfTeX warning: pdflatex (file ./figures/framework.pdf): PDF inclusion: multipl
 e pdfs with page group included in a single page
->]) (./scgraimplement.tex [6]
+>]
 
 pdfTeX warning: pdflatex (file ./figures/pe.pdf): PDF inclusion: found PDF vers
 ion <1.5>, but at most version <1.4> allowed
-<./figures/pe.pdf, id=79, 335.2525pt x 186.6975pt>
+<./figures/pe.pdf, id=66, 335.2525pt x 186.6975pt>
 File: ./figures/pe.pdf Graphic file (type pdf)
  <use ./figures/pe.pdf>
-Package pdftex.def Info: ./figures/pe.pdf used on input line 66.
+Package pdftex.def Info: ./figures/pe.pdf used on input line 69.
 (pdftex.def)             Requested size: 237.60242pt x 132.31685pt.
 
+Underfull \vbox (badness 1424) has occurred while \output is active []
+
+ [6]
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/it' in size <9> not available
-(Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 80.
+(Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 83.
 
 
 
 pdfTeX warning: pdflatex (file ./figures/alu-v2.pdf): PDF inclusion: found PDF 
 version <1.5>, but at most version <1.4> allowed
-<./figures/alu-v2.pdf, id=80, 226.8475pt x 116.435pt>
+<./figures/alu-v2.pdf, id=71, 226.8475pt x 116.435pt>
 File: ./figures/alu-v2.pdf Graphic file (type pdf)
 
 <use ./figures/alu-v2.pdf>
-Package pdftex.def Info: ./figures/alu-v2.pdf used on input line 95.
+Package pdftex.def Info: ./figures/alu-v2.pdf used on input line 98.
 (pdftex.def)             Requested size: 194.04218pt x 99.59737pt.
- [7 <./figures/pe.pdf>]) (./scgracompile.tex
+ [7 <./figures/pe.pdf> <./figures/alu-v2.pdf
+
+pdfTeX warning: pdflatex (file ./figures/alu-v2.pdf): PDF inclusion: multiple p
+dfs with page group included in a single page
+>]
+
+pdfTeX warning: pdflatex (file ./figures/buffer-type0.pdf): PDF inclusion: foun
+d PDF version <1.5>, but at most version <1.4> allowed
+<./figures/buffer-type0.pdf, id=100, 213.79875pt x 43.16125pt>
+File: ./figures/buffer-type0.pdf Graphic file (type pdf)
+
+<use ./figures/buffer-type0.pdf>
+Package pdftex.def Info: ./figures/buffer-type0.pdf used on input line 218.
+(pdftex.def)             Requested size: 118.80121pt x 23.98308pt.
+
+
+pdfTeX warning: pdflatex (file ./figures/buffer-type1.pdf): PDF inclusion: foun
+d PDF version <1.5>, but at most version <1.4> allowed
+<./figures/buffer-type1.pdf, id=101, 215.80624pt x 71.26625pt>
+File: ./figures/buffer-type1.pdf Graphic file (type pdf)
+
+<use ./figures/buffer-type1.pdf>
+Package pdftex.def Info: ./figures/buffer-type1.pdf used on input line 222.
+(pdftex.def)             Requested size: 138.60242pt x 45.77225pt.
+
+
+pdfTeX warning: pdflatex (file ./figures/buffer-type2.pdf): PDF inclusion: foun
+d PDF version <1.5>, but at most version <1.4> allowed
+<./figures/buffer-type2.pdf, id=102, 287.0725pt x 116.435pt>
+File: ./figures/buffer-type2.pdf Graphic file (type pdf)
+
+<use ./figures/buffer-type2.pdf>
+Package pdftex.def Info: ./figures/buffer-type2.pdf used on input line 227.
+(pdftex.def)             Requested size: 178.19879pt x 72.27777pt.
+
+
+pdfTeX warning: pdflatex (file ./figures/buffer-type3.pdf): PDF inclusion: foun
+d PDF version <1.5>, but at most version <1.4> allowed
+<./figures/buffer-type3.pdf, id=103, 329.23pt x 151.56625pt>
+File: ./figures/buffer-type3.pdf Graphic file (type pdf)
+
+<use ./figures/buffer-type3.pdf>
+Package pdftex.def Info: ./figures/buffer-type3.pdf used on input line 231.
+(pdftex.def)             Requested size: 217.80121pt x 100.26991pt.
+
+Overfull \hbox (6.66666pt too wide) in paragraph at lines 218--232
+ [][] 
+ []
+
+
+Underfull \vbox (badness 2772) has occurred while \output is active []
+
+ [8]
+
+pdfTeX warning: pdflatex (file ./figures/buffer-pipelining.pdf): PDF inclusion:
+ found PDF version <1.5>, but at most version <1.4> allowed
+<./figures/buffer-pipelining.pdf, id=108, 517.935pt x 94.3525pt>
+File: ./figures/buffer-pipelining.pdf Graphic file (type pdf)
+
+<use ./figures/buffer-pipelining.pdf>
+Package pdftex.def Info: ./figures/buffer-pipelining.pdf used on input line 254
+.
+(pdftex.def)             Requested size: 356.39758pt x 64.92763pt.
+) (./scgracompile.tex
 
 pdfTeX warning: pdflatex (file ./figures/scgra-compile.pdf): PDF inclusion: fou
 nd PDF version <1.5>, but at most version <1.4> allowed
-<./figures/scgra-compile.pdf, id=98, 591.20876pt x 294.09875pt>
+<./figures/scgra-compile.pdf, id=109, 591.20876pt x 294.09875pt>
 File: ./figures/scgra-compile.pdf Graphic file (type pdf)
 
 <use ./figures/scgra-compile.pdf>
 Package pdftex.def Info: ./figures/scgra-compile.pdf used on input line 8.
 (pdftex.def)             Requested size: 316.80121pt x 157.59482pt.
- [8 <./figures/alu-v2.pdf>]
+ [9 <./figures/buffer-type0.pdf> <./figures/buffer-type1.pdf
+
+pdfTeX warning: pdflatex (file ./figures/buffer-type1.pdf): PDF inclusion: mult
+iple pdfs with page group included in a single page
+> <./figures/buffer-type2.pdf
+
+pdfTeX warning: pdflatex (file ./figures/buffer-type2.pdf): PDF inclusion: mult
+iple pdfs with page group included in a single page
+> <./figures/buffer-type3.pdf
+
+pdfTeX warning: pdflatex (file ./figures/buffer-type3.pdf): PDF inclusion: mult
+iple pdfs with page group included in a single page
+> <./figures/buffer-pipelining.pdf
+
+pdfTeX warning: pdflatex (file ./figures/buffer-pipelining.pdf): PDF inclusion:
+ multiple pdfs with page group included in a single page
+>]
 
 pdfTeX warning: pdflatex (file ./figures/dfg-gen.pdf): PDF inclusion: found PDF
  version <1.5>, but at most version <1.4> allowed
-<./figures/dfg-gen.pdf, id=115, 515.9275pt x 137.51375pt>
+<./figures/dfg-gen.pdf, id=202, 515.9275pt x 137.51375pt>
 File: ./figures/dfg-gen.pdf Graphic file (type pdf)
 
 <use ./figures/dfg-gen.pdf>
 Package pdftex.def Info: ./figures/dfg-gen.pdf used on input line 26.
 (pdftex.def)             Requested size: 316.80121pt x 84.4414pt.
- [9 <./figures/scgra-compile.pdf> <./figures/dfg-gen.pdf
+ [10 <./figures/scgra-compile.pdf> <./figures/dfg-gen.pdf
 
 pdfTeX warning: pdflatex (file ./figures/dfg-gen.pdf): PDF inclusion: multiple 
 pdfs with page group included in a single page
->]
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 77.
+>] [11]) (./customization.tex
+LaTeX Font Info:    Font shape `U/lasy/b/n' in size <8> not available
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 44.
+LaTeX Font Info:    Font shape `U/lasy/b/n' in size <6> not available
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 44.
+LaTeX Font Info:    Font shape `U/lasy/b/n' in size <5> not available
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 44.
+LaTeX Font Info:    Font shape `U/lasy/b/n' in size <7> not available
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 48.
+ [12]
 
+LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 69.
+
+
+LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 74.
+
+
+Underfull \hbox (badness 2469) in paragraph at lines 91--97
+\OT1/cmr/m/n/10 uled to the SC-GRA over-lay. Thus the DFG com-pu-ta-tion time i
+s es-sen-tially a
+ []
+
+
+Underfull \hbox (badness 3635) in paragraph at lines 91--97
+\OT1/cmr/m/n/10 func-tion of $\OT1/cmr/bx/n/10 u$\OT1/cmr/m/n/10 , $\OML/cmm/m/
+it/10 ipNum\OT1/cmr/m/n/10 2$, $\OML/cmm/m/it/10 opNum\OT1/cmr/m/n/10 2$, $\OML
+/cmm/m/it/10 r$ \OT1/cmr/m/n/10 and $\OML/cmm/m/it/10 c$\OT1/cmr/m/n/10 , and i
+t can also be de-noted by
+ []
+
+
+LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 98.
+
+
+LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 108.
+
+
+[13]
+
+LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 121.
+
+
+
+LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 125.
+
+
+
+
+pdfTeX warning: pdflatex (file ./figures/customization-framework.pdf): PDF incl
+usion: found PDF version <1.5>, but at most version <1.4> allowed
+<./figures/customization-framework.pdf, id=272, 422.57875pt x 526.96875pt>
+File: ./figures/customization-framework.pdf Graphic file (type pdf)
+
+<use ./figures/customization-framework.pdf>
+Package pdftex.def Info: ./figures/customization-framework.pdf used on input li
+ne 149.
+(pdftex.def)             Requested size: 178.19879pt x 222.22594pt.
+
+
+LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 161.
+
+
+[14 <./figures/customization-framework.pdf>]
+
+LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 170.
+
+
+<./figures/scgrasize-perf.pdf, id=288, 455.7025pt x 442.65375pt>
+File: ./figures/scgrasize-perf.pdf Graphic file (type pdf)
+
+<use ./figures/scgrasize-perf.pdf>
+Package pdftex.def Info: ./figures/scgrasize-perf.pdf used on input line 234.
+(pdftex.def)             Requested size: 93.06024pt x 90.39337pt.
+
+<./figures/unrolling-perf.pdf, id=289, 435.6275pt x 443.6575pt>
+File: ./figures/unrolling-perf.pdf Graphic file (type pdf)
+
+<use ./figures/unrolling-perf.pdf>
+Package pdftex.def Info: ./figures/unrolling-perf.pdf used on input line 238.
+(pdftex.def)             Requested size: 87.12048pt x 88.72314pt.
+) (./experiments.tex [15 <./figures/scgrasize-perf.pdf> <./figures/unrolling-pe
+rf.pdf>] [16]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [10])
-(./experiments.tex
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [11]
-[12]
-Underfull \vbox (badness 1019) has occurred while \output is active []
-
- [13]
-<./figures/mm-real-perf.pdf, id=178, 465.74pt x 281.05pt>
+ [17]
+<./figures/mm-real-perf.pdf, id=321, 465.74pt x 281.05pt>
 File: ./figures/mm-real-perf.pdf Graphic file (type pdf)
 
 <use ./figures/mm-real-perf.pdf>
 Package pdftex.def Info: ./figures/mm-real-perf.pdf used on input line 221.
 (pdftex.def)             Requested size: 182.16266pt x 109.92639pt.
 
-<./figures/fir-real-perf.pdf, id=179, 465.74pt x 281.05pt>
+<./figures/fir-real-perf.pdf, id=322, 465.74pt x 281.05pt>
 File: ./figures/fir-real-perf.pdf Graphic file (type pdf)
 
 <use ./figures/fir-real-perf.pdf>
 Package pdftex.def Info: ./figures/fir-real-perf.pdf used on input line 225.
 (pdftex.def)             Requested size: 182.16266pt x 109.92639pt.
 
-<./figures/sobel-real-perf.pdf, id=180, 469.755pt x 281.05pt>
+<./figures/sobel-real-perf.pdf, id=323, 469.755pt x 281.05pt>
 File: ./figures/sobel-real-perf.pdf Graphic file (type pdf)
 
 <use ./figures/sobel-real-perf.pdf>
 Package pdftex.def Info: ./figures/sobel-real-perf.pdf used on input line 229.
 (pdftex.def)             Requested size: 182.16266pt x 108.98293pt.
 
-<./figures/kmean-real-perf.pdf, id=181, 469.755pt x 281.05pt>
+<./figures/kmean-real-perf.pdf, id=324, 469.755pt x 281.05pt>
 File: ./figures/kmean-real-perf.pdf Graphic file (type pdf)
 
 <use ./figures/kmean-real-perf.pdf>
 Package pdftex.def Info: ./figures/kmean-real-perf.pdf used on input line 233.
 (pdftex.def)             Requested size: 182.16266pt x 108.98293pt.
 
-<./figures/kernel-sim-perf.pdf, id=182, 677.53125pt x 194.7275pt>
+<./figures/kernel-sim-perf.pdf, id=325, 677.53125pt x 194.7275pt>
 File: ./figures/kernel-sim-perf.pdf Graphic file (type pdf)
 
 <use ./figures/kernel-sim-perf.pdf>
 Package pdftex.def Info: ./figures/kernel-sim-perf.pdf used on input line 254.
 (pdftex.def)             Requested size: 316.80121pt x 91.05246pt.
- [14 <./figures/mm-real-perf.pdf> <./figures/fir-real-perf.pdf> <./figures/sobe
-l-real-perf.pdf> <./figures/kmean-real-perf.pdf>] <./figures/impl-freq.pdf, id=
-226, 676.5275pt x 180.675pt>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [18 <./figures/mm-real-perf.pdf> <./figures/fir-real-perf.pdf> <./figures/sobe
+l-real-perf.pdf> <./figures/kmean-real-perf.pdf>]
+<./figures/impl-freq.pdf, id=369, 676.5275pt x 180.675pt>
 File: ./figures/impl-freq.pdf Graphic file (type pdf)
 
 <use ./figures/impl-freq.pdf>
 Package pdftex.def Info: ./figures/impl-freq.pdf used on input line 305.
 (pdftex.def)             Requested size: 316.80121pt x 84.60847pt.
 
-Underfull \vbox (badness 1881) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [15 <./figures/kernel-sim-perf.pdf>]
-<./figures/HLS-Compilation-Time.pdf, id=240, 478.78876pt x 125.46875pt>
+ [19 <./figures/kernel-sim-perf.pdf>]
+<./figures/HLS-Compilation-Time.pdf, id=384, 478.78876pt x 125.46875pt>
 File: ./figures/HLS-Compilation-Time.pdf Graphic file (type pdf)
 
 <use ./figures/HLS-Compilation-Time.pdf>
 Package pdftex.def Info: ./figures/HLS-Compilation-Time.pdf used on input line 
 348.
 (pdftex.def)             Requested size: 316.80121pt x 83.0202pt.
- [16 <./figures/impl-freq.pdf>]
-<./figures/QuickDough-Compilation-Time.pdf, id=257, 677.53125pt x 177.66376pt>
+ [20 <./figures/impl-freq.pdf>]
+<./figures/QuickDough-Compilation-Time.pdf, id=401, 677.53125pt x 177.66376pt>
 File: ./figures/QuickDough-Compilation-Time.pdf Graphic file (type pdf)
 
 <use ./figures/QuickDough-Compilation-Time.pdf>
 Package pdftex.def Info: ./figures/QuickDough-Compilation-Time.pdf used on inpu
 t line 375.
 (pdftex.def)             Requested size: 316.80121pt x 83.07364pt.
- [17 <./figures/HLS-Compilation-Time.pdf> <./figures/QuickDough-Compilation-Tim
+ [21 <./figures/HLS-Compilation-Time.pdf> <./figures/QuickDough-Compilation-Tim
 e.pdf>]
-<./figures/hardware-saving.pdf, id=277, 676.5275pt x 189.70876pt>
+<./figures/hardware-saving.pdf, id=421, 676.5275pt x 189.70876pt>
 File: ./figures/hardware-saving.pdf Graphic file (type pdf)
 
 <use ./figures/hardware-saving.pdf>
 Package pdftex.def Info: ./figures/hardware-saving.pdf used on input line 457.
 (pdftex.def)             Requested size: 277.19879pt x 77.73187pt.
- [18 <./figures/hardware-saving.pdf>]
-<./figures/mm-sim-perf1.pdf, id=297, 600.2425pt x 457.71pt>
+ [22]
+<./figures/mm-sim-perf1.pdf, id=425, 600.2425pt x 457.71pt>
 File: ./figures/mm-sim-perf1.pdf Graphic file (type pdf)
 
 <use ./figures/mm-sim-perf1.pdf>
 Package pdftex.def Info: ./figures/mm-sim-perf1.pdf used on input line 484.
 (pdftex.def)             Requested size: 178.19879pt x 135.88232pt.
 
-<./figures/mm-sim-perf2.pdf, id=298, 468.75125pt x 356.33125pt>
+<./figures/mm-sim-perf2.pdf, id=426, 468.75125pt x 356.33125pt>
 File: ./figures/mm-sim-perf2.pdf Graphic file (type pdf)
 
 <use ./figures/mm-sim-perf2.pdf>
 Package pdftex.def Info: ./figures/mm-sim-perf2.pdf used on input line 488.
 (pdftex.def)             Requested size: 178.19879pt x 135.4562pt.
 
-<./figures/hls-loop-unroll.pdf, id=299, 663.47874pt x 255.95625pt>
+<./figures/hls-loop-unroll.pdf, id=427, 663.47874pt x 255.95625pt>
 File: ./figures/hls-loop-unroll.pdf Graphic file (type pdf)
 
 <use ./figures/hls-loop-unroll.pdf>
 Package pdftex.def Info: ./figures/hls-loop-unroll.pdf used on input line 503.
 (pdftex.def)             Requested size: 277.19879pt x 106.93848pt.
 
-Underfull \vbox (badness 1603) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [19 <./figures/mm-sim-perf1.pdf> <./figures/mm-sim-perf2.pdf>]
-<./figures/perf-scale.pdf, id=324, 692.5875pt x 354.32375pt>
+ [23 <./figures/hardware-saving.pdf> <./figures/mm-sim-perf1.pdf> <./figures/mm
+-sim-perf2.pdf>] <./figures/perf-scale.pdf, id=467, 692.5875pt x 354.32375pt>
 File: ./figures/perf-scale.pdf Graphic file (type pdf)
 
 <use ./figures/perf-scale.pdf>
 Package pdftex.def Info: ./figures/perf-scale.pdf used on input line 528.
 (pdftex.def)             Requested size: 178.19879pt x 91.16504pt.
 
-<./figures/scgra-impl-scalability.pdf, id=325, 650.43pt x 332.24126pt>
+<./figures/scgra-impl-scalability.pdf, id=468, 650.43pt x 332.24126pt>
 File: ./figures/scgra-impl-scalability.pdf Graphic file (type pdf)
 
 <use ./figures/scgra-impl-scalability.pdf>
 Package pdftex.def Info: ./figures/scgra-impl-scalability.pdf used on input lin
 e 530.
 (pdftex.def)             Requested size: 178.19879pt x 91.02441pt.
-) (./conclusions.tex [20 <./figures/hls-loop-unroll.pdf> <./figures/perf-scale.
-pdf> <./figures/scgra-impl-scalability.pdf>]) (./quickDough.bbl
+) (./conclusions.tex
+Underfull \vbox (badness 1596) has occurred while \output is active []
+
+ [24 <./figures/hls-loop-unroll.pdf> <./figures/perf-scale.pdf> <./figures/scgr
+a-impl-scalability.pdf>]) (./quickDough.bbl
+Underfull \vbox (badness 4467) has occurred while \output is active []
+
+ [25]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [21])
-[22] (./quickDough.aux)
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- ) 
+ [26])
+[27] (./quickDough.aux) ) 
 Here is how much of TeX's memory you used:
- 13914 strings out of 493109
- 279319 string characters out of 6135010
- 330841 words of memory out of 5000000
- 17201 multiletter control sequences out of 15000+600000
- 13230 words of font info for 52 fonts, out of 8000000 for 9000
+ 14629 strings out of 493109
+ 288540 string characters out of 6135010
+ 343017 words of memory out of 5000000
+ 17875 multiletter control sequences out of 15000+600000
+ 18454 words of font info for 71 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 39i,17n,47p,10394b,784s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
-></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb><
-/usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></u
-sr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></us
-r/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/
-local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/lo
-cal/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/loca
-l/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/t
-exlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texl
-ive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive
-/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/
-2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/texlive/20
-14/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/local/texlive/2014
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texlive/201
-4/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi9.pfb></usr/local/texlive/2014
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2014/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2014/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2014/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2014/texmf
--dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2014/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2014/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/local/texlive/2014/texmf-dist
-/fonts/type1/public/amsfonts/latxfont/lcircle1.pfb>
-Output written on quickDough.pdf (22 pages, 1859496 bytes).
+ 39i,20n,47p,10395b,784s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2014/texmf-dist/fonts/type1/public
+/amsfonts/cmextra/cmbsy5.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmbx7.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmbx8.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmbx9.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/am
+sfonts/cmextra/cmex7.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmmi5.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmmi7.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmmi8.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmmi9.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmmib10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts
+/cmextra/cmmib7.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsf
+onts/cmextra/cmmib8.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmr10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmr5.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmr6.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmr7.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmr8.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+r9.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmss1
+0.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.
+pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pf
+b></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.p
+fb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi9.pf
+b></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
+></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb><
+/usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></u
+sr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr
+/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/
+local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/lo
+cal/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/loca
+l/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local
+/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/local/t
+exlive/2014/texmf-dist/fonts/type1/public/amsfonts/latxfont/lcircle1.pfb>
+Output written on quickDough.pdf (27 pages, 2256003 bytes).
 PDF statistics:
- 457 PDF objects out of 1000 (max. 8388607)
+ 640 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 106 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 146 words of extra memory for PDF output out of 10000 (max. 10000000)
 
