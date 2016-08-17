@@ -1,0 +1,58 @@
+Over the years, quite a few works on FPGA overlays have been developed.
+In this section, we will take a quick walk through some of them and also look at various types of FPGA overlays that have been explored in the past decade.
+
+\subsection{Virtual FPGAs}
+To begin, one of the most easiest to understand categories of overlay are virtual FPGAs\cite{vFPGA,zuma2012,Grant2011Malibu,Coole2010Intermediate,Koch2013CI}. They are built either virtually or physically on top of off-the-shelf FPGA devices. These overlays have different configuration granularity but typically feature coarser configuration granularity than a typical FPGA device. Similar to virtual machines running on a typical computer, such virtual FPGA provides an additional layer that improves application portability and compatibility. Furthermore, because of the coarser-grained configurable fabric, implementing designs on such overlay is relatively easier than on a fine-grained device. However, the additional layer imposes restrictions on the underlying fabrics' capability and usually results in moderate hardware overhead and timing degradation.
+
+In one of the earlier works, Lysecky et al. developed a relatively fine-grained virtual FPGA as firm cores expressed as structural VHDL \cite{vFPGA}. The virtual layer provides effective portability yet incurs relatively high performance and hardware overhead.
+In \cite{Grant2011Malibu}, Grant et al. proposed a time-multiplexed virtual FPGA CAD framework MALIBU. The virtual FPGA used in MALIBU has both fine-grain and coarse-grain processing elements integrated into each logic cluster and can be used to reduce the compilation time significantly with moderate timing penalty. Around the same time, Coole and Stitt also proposed another island-style coarse-grained overlay called Intermediate Fabric \cite{Coole2010Intermediate}. It uses coarse-grained operators such as adders instead of logic clusters and routes data through 8 to 32 bit buses achieving both portability and fast compilation. Finally, Koch et al. developed a fine-grained FPGA overlay in \cite{Koch2013CI} to implement customized instructions on FPGAs from different vendors providing a portable application consisting of a program binary and an overlay configuration in a completely heterogeneous environment.
+
+\subsection{Coarse-Grained Reconfigurable Arrays}
+Another category of overlay architecture commonly employed is in the form of coarse-grained reconfigurable arrays (CGRAs) \cite{kissler2006dynamically, ferreira2011fpga, shukla2006quku, Lin:2012:EDC:2460216.2460227,capalijia2013pipelined, dspoverlay}. The use of CGRAs provides an efficient tradeoff between flexibility of software and performance of hardware especially for compute intensive applications as demonstrated by numerous earlier works \cite{tessier01reconfigurable,compton02reconfigurable}.
+%Indeed, CGRAs on FPGA and ASIC have many similarities in terms of the scheduling algorithm and array structure. However, they have quite different trade-offs between flexibility and performance. In a nutshell, CGRAs on ASIC emphasize more on flexibility to cover more applications or at least a domain of applications, while FPGAs' inherent programmability greatly alleviates the concern. Instead, CGRAs on FPGA may take advantage of the configurability of the underlying fabric to allow more intensive customization tailored to the target application for better performance and lower hardware overhead.
+
+In one of the earlier works in the area, Kissler et al. developed WPPA (weakly programmable processor array), a VLIW architecture based parameterizable CGRA overlay~\cite{kissler2006dynamically}. It featured an interconnection wrapper unit for each processing element (PE) that could be used for dynamic CGRAs topology customization. 
+%Unfortunately, programming and compilation on WPPA were not presented. 
+Around the same time in \cite{shukla2006quku}, a customized CGRA overlay called QUKU was developed for DSP algorithms. It had a two-level configuration capability, while the high-speed configuration was used for operator reuse within an application and low-speed reconfiguration was used for optimization between different applications. 
+%Nevertheless, the hardware infrastructure was consist of simple operation elements which can only be adapted to a few specified DSP algorithms.
+In \cite{ferreira2011fpga}, Ferreira et al. proposed a heterogeneous CGRA overlay with a global multi-stage interconnection on FPGA. Compiling applications onto the overlay took only milliseconds for smaller DFGs. 
+%However, the global multi-stage interconnection required multiple stages for communication between each pair of PEs and resulted in either low implementation frequency or large communication latency in terms of cycles. In addition, there was no intermediate storage except the pipeline registers in the CGRA and it limited the performance of the operation scheduling.
+In \cite{Lin:2012:EDC:2460216.2460227}, Lin and So also proposed a soft CGRA overlay for rapid compilation.  In addition, they demonstrated that by customizing the overlay connection between PEs on a per-application basis, improvement in energy-efficiency could be obtained in the expense of longer tool run time.
+The authors in \cite{capalijia2013pipelined} built a generic high speed mesh CGRA overlay using the elastic pipeline technique to achieve the maximum throughput. It adopted a data-driven execution flow and was suitable for smaller pipelined DFG execution.
+%, while it would be difficult to handle applications with random IO access.
+Recently in \cite{dspoverlay}, Jain et al. also proposed an overlay that is constructed around the primitive FPGA DSP blocks to achieve high-frequency implementation and high throughput result.
+Also, in \cite{adjustable2015}, Coole and Stitt proposed to provide the overlay with limited flexibility instead of full configurability specifically to a group of design. With this customization, the area overhead was reduced significantly.
+
+
+
+
+%In general, previous CGRA overlays have demonstrated the promising performance acceleration capability for compute intensive applications. They typically take DFG as design entry and focus on hardware infrastructure design as well as corresponding mapping and scheduling. However, they are still lack of consideration on proper loop unrolling for DFG generation, on-chip buffering, the communication with host and even end-to-end performance which are essential for FPGA accelerator design especially from a HW/SW co-design engineer's perspective.
+
+\subsection{Processor-Like Overlays}
+A third category of overlay moves away from the traditional FPGA architectures and instead explores using processor-like designs as an intermediate layer.
+The main concern for works in this category are usually compatibility and usability of the overlay from a user's perspective.  To provide the necessary performance, these overlay architectures usually feature a high degree of control and provide ample of data parallelism to make them suitable for FPGA accelerations.
+As an early attempt, Yiannacouras et al. explored the use of a fine-grained scalable vector processor for code acceleration in embedded systems \cite{Yiannacouras2009FPS}.
+Later in \cite{Guy2012VENICE}, Severance and Lemieux proposed a soft vector processor named VENICE to allow easy FPGA application development.  It accepts simple C program as input and execute the code on the highly optimized vector processor on the FPGA for performance.
+%
+%Various processor architectures have been implemented as overlays on top of FPGAs and have been demonstrated to be efficient solutions in many occasions. Soft general purpose processors and soft vector processors are presented in \cite{microblaze, nios} and \cite{Yiannacouras2009FPS, Guy2012VENICE} respectively. 
+%
+In the work of MARC, Lebedev et al. explored the use of a many-core processor template as an intermediate compilation target \cite{Lebedev2010}.  In that work, they have demonstrated improved usability with the model while also highlighting the need for customizing computational cores for sake of performance.
+To explore the integration between processor and FPGA accelerators, a portable machine model with multiple computing architectures called MURAC was explored in \cite{Hamilton:14:FPL}.
+Finally, a GPU-like overlay was proposed in \cite{Jeffrey2011potential} that demonstrate good performance while maintaining a compatible programming model for the users.
+
+
+\iffalse
+\subsection{Other Related Works}
+It is worth noting that the concept of FPGA overlay has been evolved out of many related earlier works in related areas.  Some of them are listed below.
+
+To address the lengthy tool run time, researchers and tool vendors have been exploring the use of macro-based techniques for a while.  In the work of HMFlow \cite{lavin2010, lavin2011}, Lavin et al. explored the tradeoffs between implementation flexibility and compilation by incorporating hard macros into the design flow.  In the same work, they also 
+
+On top of the various overlay architectures, there are techniques that are complementary to the FPGA
+overlays. First of all, Macros based compilation techniques \cite{lavin2010, lavin2011} help to
+improve both design portability and improve design productivity. 
+
+Particularly, the authors in
+\cite{ROB2015} proposed a rapid FPGA overlay builder by using techniques including module
+relocation, module stitching and module variants. 
+
+\fi

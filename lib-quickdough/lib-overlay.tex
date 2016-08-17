@@ -1,0 +1,76 @@
+\documentclass[journal]{IEEEtran}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage[caption=false,font=footnotesize]{subfig}
+\usepackage{dblfloatfix}
+\usepackage{xspace}
+\usepackage{url}
+\usepackage[square, comma, sort&compress, numbers]{natbib}
+
+\usepackage[binary-units]{siunitx}
+\usepackage{mathptmx} % Times Roman typeface
+\usepackage[latin1]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+% algorithm package
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage[algo2e]{algorithm2e}
+\renewcommand{\algorithmcfname}{ALGORITHM}
+
+
+\setlength{\parskip}{0pt}
+\renewcommand{\topfraction}{1}
+\renewcommand{\textfraction}{0.15}
+\renewcommand{\dbltopfraction}{1}
+
+\renewcommand\floatpagefraction{.9}
+\renewcommand\topfraction{.9}
+\renewcommand\bottomfraction{.9}
+\renewcommand\dbltopfraction{.9}
+\renewcommand\textfraction{.1}   
+\setcounter{totalnumber}{4}
+\setcounter{topnumber}{8}
+\setcounter{bottomnumber}{4}
+\setcounter{dbltopnumber}{4}
+
+\newcommand{\eqnref}[1]{(\ref{#1})}
+\newcommand{\figref}[1]{Figure~\ref{#1}}
+\newcommand{\algref}[1]{Algorithm~\ref{#1}}
+\newcommand{\secref}[1]{Section~\ref{#1}}
+\newcommand{\tabref}[1]{Table~\ref{#1}}
+\newcommand{\code}[1]{\texttt{#1}}
+\newcommand{\tabincell}[2]{\begin{tabular}{@{}#1@{}}#2\end{tabular}}
+
+\graphicspath{{./figures/}}
+
+\begin{document}
+
+\title{Soft CGRA Overlay Library Assisted Rapid FPGA Loop Accedlerator Generation}
+\author{Cheng Liu, Ho-Cheung and Hayden Kwok-Hay So% <-this % stops a space
+\thanks{}
+}
+\maketitle
+
+\begin{abstract}
+    \input{abstract}
+\end{abstract}
+
+\begin{IEEEkeywords}
+Soft CGRA Overlay, Loop Accelerator Generation, Design Productivity, Accelerator Library
+\end{IEEEkeywords}
+
+\input{introduction}
+\input{relatedwork}
+\input{framework}
+\input{lib-build}
+\input{experiments}
+\input{conclusions}
+
+\bibliographystyle{plain}
+\bibliography{refs}
+
+\end{document}
+

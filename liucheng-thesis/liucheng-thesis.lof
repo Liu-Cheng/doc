@@ -1,0 +1,70 @@
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces FPGA Design Flow Using Conventional HDL and HLS.\relax }}{3}{figure.caption.6}
+\contentsline {figure}{\numberline {1.2}{\ignorespaces Overlay Based 2-layer Approach to FPGA Application Development. Overlay may be designed as a virtual FPGA, or it may implement an entirely different compute architecture such as a coarse-grained reconfigurable array (CGRA), vector processor, multi-core processor, or even a GPU.\relax }}{4}{figure.caption.7}
+\contentsline {figure}{\numberline {1.3}{\ignorespaces QuickDough Overview, it takes user-designated loop kernels as input and generates corresponding hardware acceleration system through a soft CGRA overlay targeting a hybrid CPU-FPGA computing system.\relax }}{7}{figure.caption.8}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Hybrid CPU-FPGA Computation System\relax }}{22}{figure.caption.9}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Conventional FPGA Accelerator}}}{22}{figure.caption.9}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {SCGRA Based FPGA Accelerator}}}{22}{figure.caption.9}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Fully pipelined PE structure. Each PE can be connected to at most 4 neighbours.\relax }}{24}{figure.caption.10}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Instruction Memory\relax }}{25}{figure.caption.11}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Multi-ported Data Memory, It makes best use of the primitive block RAM on FPGAs, though the read ports and write ports in the same group (e.g. Doa, Addra and Dina, Wea, Clka belong to the same group) are not allowed to act in parallel.\relax }}{26}{figure.caption.12}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces ALU of the SCGRA Overlay. It supports up to 16 fully pipelined 3-input operations.\relax }}{26}{figure.caption.13}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces The Number of Cycles of DFG Execution on SCGRA Overlays with Different Pipelining\relax }}{31}{figure.caption.19}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {SCGRA$2 \times 2$}}}{31}{figure.caption.19}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {SCGRA $5 \times 5$}}}{31}{figure.caption.19}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Overall DFG Execution Time on SCGRA Overlays with Different Pipelining\relax }}{32}{figure.caption.20}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {SCGRA$2 \times 2$}}}{32}{figure.caption.20}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {SCGRA $5 \times 5$}}}{32}{figure.caption.20}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Hardware Resource Utilization of SCGRA Overlays with Different Pipelining\relax }}{32}{figure.caption.21}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Power Consumption of SCGRA Overlays with Different Pipelining\relax }}{33}{figure.caption.22}
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Energy Delay Product of SCGRA Overlays with Different Pipelining\relax }}{33}{figure.caption.23}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {SCGRA$2 \times 2$}}}{33}{figure.caption.23}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {SCGRA $5 \times 5$}}}{33}{figure.caption.23}
+\contentsline {figure}{\numberline {3.11}{\ignorespaces \# of cycles of MM Execution on Both HLS Based Design and SCGRA Overlay\relax }}{34}{figure.caption.24}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{34}{figure.caption.24}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{34}{figure.caption.24}
+\contentsline {figure}{\numberline {3.12}{\ignorespaces MM 20x20 Implemented Using Direct HLS with Various Loop Unrolling\relax }}{35}{figure.caption.25}
+\contentsline {figure}{\numberline {3.13}{\ignorespaces Performance, and Resource Consumption of MM-20 implemented with increasing SCGRA overlay size.\relax }}{36}{figure.caption.26}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Performance}}}{36}{figure.caption.26}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Resource Consumption}}}{36}{figure.caption.26}
+\contentsline {figure}{\numberline {3.14}{\ignorespaces fmax of SCGRA Overlay with Various Configurations\relax }}{36}{figure.caption.28}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces QuickDough: FPGA Loop Accelerator Design Framework Using SCGRA Overlay.\relax }}{40}{figure.caption.29}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Loop execution on an SCGRA overlay based FPGA accelerator\relax }}{44}{figure.caption.30}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Automatic SCGRA overlay based FPGA accelerator library update\relax }}{48}{figure.caption.31}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Accelerator library size and implementation time given different BRAM budgets.\relax }}{52}{figure.caption.35}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Time Consumption of Loop Accelerator Generation Using QuickDough.\relax }}{54}{figure.caption.37}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Benchmark performance speedup over software executed on ARM processor and execution time decomposition of loop accelerators generated using QuickDough.\relax }}{55}{figure.caption.38}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {MM}}}{55}{figure.caption.38}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {FIR}}}{55}{figure.caption.38}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {SE}}}{55}{figure.caption.38}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {KM}}}{55}{figure.caption.38}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces fmax of The Accelerators Generated Using QuickDough\relax }}{57}{figure.caption.39}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces FPGA Accelerator Recource Utilization\relax }}{57}{figure.caption.40}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Two-Step Customization Method\relax }}{65}{figure.caption.42}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces The design parameters typically have monotonic influence on the loop computation time and the computation time benefit degrades with the increase of the design parameter. (a) SCGRA Size, the SCGRA topology used are torus with $2 \times 2$, $3 \times 2$, $3 \times 3$, ... while DFG-1, DFG-2 and DFG-3 are DFGs extracted from matrix-matrix multiplication, fir and Kmean respectively. (b) Unrolling Factor, the loop used is a 63-tap Fir with 1024 input.\relax }}{66}{figure.caption.43}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {SCGRA Size}}}{66}{figure.caption.43}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Loop Unrolling}}}{66}{figure.caption.43}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Customization Time Using Both TS and ES\relax }}{71}{figure.caption.44}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces $\epsilon $ Influence on FIR Customization Time and Resulting Accelerator Run-time\relax }}{72}{figure.caption.45}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Customized FPGA Loop Accelerator Performance Comparison\relax }}{73}{figure.caption.47}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {MM}}}{73}{figure.caption.47}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {FIR}}}{73}{figure.caption.47}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {SE}}}{73}{figure.caption.47}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {KM}}}{73}{figure.caption.47}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Block RAM Consumption Comparison\relax }}{74}{figure.caption.48}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {B.1}{\ignorespaces Relation between The Accelerators' FPGA Resource Consumption and The SCGRA Overlay Size, (a) FF Consumption, (b) LUT Consumption, (c)DSP Consumption, (d)BRAM Consumption\relax }}{84}{figure.caption.50}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{84}{figure.caption.50}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{84}{figure.caption.50}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{84}{figure.caption.50}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {}}}{84}{figure.caption.50}
+\contentsline {figure}{\numberline {B.2}{\ignorespaces Power Consumption of the SCGRA Overlay Based FPGA Accelerators, (a) Base System Power Including DSP Power, Clock power, Signal Power, etc., (b) BRAM Power\relax }}{85}{figure.caption.51}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{85}{figure.caption.51}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{85}{figure.caption.51}
+\contentsline {figure}{\numberline {B.3}{\ignorespaces Zedboard DMA Transfer Latency Per Word\relax }}{86}{figure.caption.52}

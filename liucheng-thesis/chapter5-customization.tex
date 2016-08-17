@@ -1,12 +1,12 @@
 \chapter{Loop Accelerator Customization} \label{chapter:customization}
-Despite the great advantages on design productivity, the additional layer on top of the physical FPGA inevitably introduces performance and resource consumption penalty. An overlay must ensure that the overall FPGA acceleration performance remains competitive. Otherwise, mapping the loop kernels to the overlay based FPGA accelerators will not be as useful. Therefore, the capability to customize the overlay specifically to an application or a domain of application is essential to the overlay based FPGA accelerator design. However, navigating through a labyrinth of architectural and compilation parameters to fine-tune an accelerator's performance is a slow and non-trivial process. To require a user to manually explore such vast design space is going to counteract the productivity benefit of the utilizing overlay in the first place.
+Despite the great advantages on design productivity, the additional layer on top of the physical FPGA inevitably imposes performance and resource consumption penalty. An overlay must ensure that the overall FPGA acceleration performance remains competitive. Otherwise, mapping the loop kernels to the overlay based FPGA accelerators will not be as useful. While a random SCGRA overlay configuration can rarely meet the performance requirements and the resource consumption budgets, therefore the capability to customize the overlay specifically to an application or a domain of application is essential to the overlay based FPGA accelerator design. However, navigating through a labyrinth of architectural and compilation parameters to fine-tune an accelerator's performance is a slow and non-trivial process. To require a user to manually explore such vast design space is going to counteract the productivity benefit of the utilizing overlay in the first place.
 
-In order to address this problem, QuickDough as described in previous chapter also allows automatically customizing the overlay architectural parameters, exploiting loop unrolling and hardware-software communication in combination with buffer sizing specifically to a high-level compute intensive loop kernel with given high-level resource constraints. Most importantly, the customization makes all the hardware design details transparent to the users, which makes the whole system accessible to high-level designers. The user may choose to perform the customization only when the loop is changed dramatically and previous customization doesn't fit the updated loop kernel. In particular, by taking advantage of the regularity of the SCGRA overlay, a multitude of design metrics such as performance, hardware consumption and energy efficiency can be accurately estimated using analytical models once the overlay scheduling result is available. While the overlay scheduling depends on much less design parameters, the overall customization framework can be dramatically simplified. With both the efficient application-specific customization and rapid compilation, the proposed design framework ensures both high design productivity and high performance of FPGA loop acceleration.
+In order to address this problem, QuickDough can also automatically customize the overlay architectural parameters and exploit the optimized loop unrolling and hardware-software communication as well as buffer sizing specifically to a high-level compute intensive loop kernel with given high-level resource constraints. Most importantly, the customization makes all the hardware design and optimization details transparent to the users, which makes the whole system accessible to high-level designers. The user may choose to perform the customization only when the loop is changed dramatically and previous customization doesn't fit the updated loop kernel. In particular, by taking advantage of the regularity of the SCGRA overlay, a multitude of design metrics such as performance, hardware consumption and energy efficiency can be accurately estimated using analytical models once the overlay scheduling result is available. Since the overlay scheduling depends on much fewer design parameters, the overall customization framework can be dramatically simplified. With both the efficient application-specific customization and rapid compilation, the proposed design framework ensures both high design productivity and high performance of FPGA loop acceleration.
 
 Application-specific customization provides unique opportunity to reduce the resource consumption and improve performance and energy efficiency of the resulting accelerators. However, taking the system as a black box and exhaustively searching all the possible configurations can be inefficient and slow. In this work, by taking advantage of the regularity of the SCGRA overlay based FPGA accelerator, we can reduce the complex customization problem to a much simpler sub design space exploration (DSE) together with a simplified search problem. With the customization, optimized application-specific nested loop accelerator can be produced efficiently.
 
 \section{Customization Problem Formulation}
-In this section, the customization problem of the nested loop acceleration on an SCGRA overlay based FPGA accelerator is formalized. Various design metrics including performance which is expressed as loop run time, energy consumption, energy efficiency and hardware resource consumption can either be used as the optimization goals or design constraints. However, the accelerator with smallest SCGRA overlay configuration and input/output data buffer apparently consumes the least FPGA resources while the resulting performance usually will not be acceptable, which is not quite useful in reality. Typically resource consumption will be used as design constraints instead of design goals. Energy consumption is not an appropriate design goal as well while the reason is not as obvious. As the power consumption model used in this work doesn't take the circuit activity into consideration, the power consumption is proportional to the SCGRA overlay size while the accelerator performance improves slower with the increase of the SCGRA overlay size. As a result, accelerator with a single PE will consume the least energy with little performance benefit. Basically both the energy consumption and the resource consumption are used as design constraints. In this formulation, performance is set to be the design goal while the rest metrics are used as design constraints. 
+In this section, the customization problem of the nested loop acceleration on an SCGRA overlay based FPGA accelerator is formalized. Various design metrics including performance which is expressed as loop run time, energy consumption, energy efficiency and hardware resource consumption can either be used as the optimization goals or design constraints. However, the accelerator with smallest SCGRA overlay configuration and input/output data buffer apparently consumes the least FPGA resources while the resulting performance usually will not be acceptable, which is not quite useful in reality. Typically resource consumption will be used as design constraints instead of design goals. Energy consumption is not an appropriate design goal as well while the reason is not as obvious. As the power consumption model used in this work doesn't take the circuit activity into consideration, the power consumption is proportional to the SCGRA overlay size while the accelerator performance improves slower with the increase of the SCGRA overlay size. As a result, accelerator with a single PE will consume the least energy with little performance benefit. Basically both the energy consumption and the resource consumption are used as optional design constraints. In this formulation, performance is set to be the design goal while the rest metrics are used as design constraints. 
 
 \begin{table}[htb]
     \centering
@@ -69,9 +69,9 @@ subject to
 DFGCompuTime(\bm{C}) \leq D_3
 \end{equation}
 
-The estimated hardware consumption, energy consumption and energy delay product should be within the budgets of the users, and the high-level constraints shown in \eqnref{eq:constraints1} should be fulfilled. On top of the basic high-level design constraints, there are a number of accelerator architectural constraints. As the accelerator transfer data in the granularity of a group, the input/output buffers should be able to accommodate all the input/output data of a group and constraints in \eqnref{eq:constraints2} should be satisfied. While the address buffers contain all the load/store addresses of DFGs in the same group, the total amount of the address buffers should be equal to or larger than the total amount of input/output of the DFGs in a group. As there may be data reuse between neghboring DFGs, the address buffer depth should be usually larger than the total amount of input/output of a group as shown in \eqnref{eq:constraints3}. The instruction memory stores the control words of every cycle of PEs. Therefore, the instruction memory depth should be equal to or larger than the number of cycles of DFG execution as shown in \eqnref{eq:constraints4}.
+The estimated hardware consumption, energy consumption and energy delay product should be within the budgets of the users, and the high-level constraints shown in \eqnref{eq:constraints1} should be fulfilled. On top of the basic high-level design constraints, there are a number of accelerator architectural constraints. As the accelerator transfers data in the granularity of a group, the input/output buffers should be able to accommodate all the input/output data of a group and constraints in \eqnref{eq:constraints2} should be satisfied. While the address buffers contain all the load/store addresses of DFGs in the same group, the total amount of the address buffers should be equal to or larger than the total amount of input/output of the DFGs in a group. As there may be data reuse between neghboring DFGs, the address buffer depth should be usually larger than the total amount of input/output of a group as shown in \eqnref{eq:constraints3}. The instruction memory stores the control words of every cycle of PEs. Therefore, the instruction memory depth should be equal to or larger than the number of cycles of DFG execution as shown in \eqnref{eq:constraints4}.
 
-$RunTime(\bm{C})$ represents the number of cycles needed to compute the loop on the CPU-FPGA system. It consists of both the time consumed for computing on FPGA and communication between FPGA and host CPU, and it can be calculated using \eqnref{eq:runtime}.
+$RunTime(\bm{C})$ represents the number of cycles needed to compute the loop on the CPU-FPGA system. It consists of both the time consumed for computing on FPGA and communication between FPGA and host CPU. Assume there is no pre-fetching or overlap between computing and communication, and then $RunTime(\bm{C})$ can be calculated using \eqnref{eq:runtime}.
 
 Since the unrolled part of the loop will be translated to DFG and then scheduled to the SCGRA overlay. Thus the DFG computation time is essentially a function of $\mathbf{u}$, $r$ and $c$, and it can also be denoted by $DFGCompuTime(\mathbf{u},r,c)$. The nested loop is computed by repeating the same DFG execution, and the nested loop computation can be calculated using \eqnref{eq:loopexetime}.
 
@@ -79,37 +79,18 @@ Since the unrolled part of the loop will be translated to DFG and then scheduled
     CompuTime(\bm{C})=\displaystyle \prod_{i=1}^{n} \frac{l_i}{u_i} \times DFGCompuTime(\mathbf{u},r,c)
 \end{equation}
 
-DMA is typically used for the bulk data transmission. Communication cost per data can be modeled with a piecewise linear function and thus DMA latency can be calculated using $DMA(x)$ where $x$ represents the amount of DMA transmission. The communication time of the whole nested loop can be calculated by \eqnref{eq:commu}.
+DMA is typically used for the bulk data transmission. Communication cost per data can be modeled with a piecewise linear function and thus DMA latency can be calculated using $DMA(x)$ where $x$ represents the amount of DMA transmission. Assume the input data and output data are transferred sequentially, and then the communication time of the whole nested loop can be calculated by \eqnref{eq:commu}.
 \begin{equation} \label{eq:commu}
     CommuTime(\bm{C})=\displaystyle \prod_{i=1}^{n} \frac{l_i}{g_i} \times 
     (DMA(In(\mathbf{g}))+DMA(Out(\mathbf{g})))
 \end{equation}
 
-Hardware resource on FPGA mainly includes DSP, LUT, FF and BRAM (block RAM). LUT, FF and DSP consumption can be roughly estimated with a linear function of SCGRA size and can be calculated using \eqnref{eq:dsplutff}. BRAM consumption $ResConsumption(\bm{C}, 1)$ which is slightly different from LUT, FF and DSP consumption can be calculated precisely based on the memory block configurations. 
-\begin{equation} \label{eq:dsplutff}
-    ResConsumption(\bm{C}, i)=\alpha_i \times r \times c + \beta_i, (i=2,3,4)
-\end{equation}
-
-Power consumption is consisted of block RAM power, clock power, signal power, DSP power and so on according to the XPower report. The block BRAM power consumption shows very good linearity with the amount of block RAM consumption while the rest part of the power is linear to the SCGRA size. Thus the power consumption can be calculated by \eqref{eq:power}. 
-
-\begin{equation}\label{eq:power}
-Power(\bm{C}) = ResConsumption(\bm{C}, 1) \times \alpha_5 + \alpha_6 \times r \times c + \beta_5
-\end{equation}
-
-With the performance and power models, the energy consumption which is the production of power and loop execution time can be obtained using \eqnref{eq:energy}. Finally, energy efficiency represented by energy delay product which is the production of energy consumption and loop execution time can be calculated using \eqnref{eq:edp}.
-
-\begin{equation} \label{eq:energy}
-Energy(\bm{C}) = Power(\bm{C}) \times RunTime(\bm{C}) / f
-\end{equation}
-
-\begin{equation} \label{eq:edp}
-EDP(\bm{C}) = Energy(\bm{c}) \times RunTime(\bm{C}) / f
-\end{equation}
-
+On top of the performance model, we futher developed energy model and energy efficiency model. These models can be found in the appendix. 
+ 
 \section{Customization Method}
-To solve the customization problem as formalized in previous section, an automatic FPGA loop accelerator customization method based on the QuickDough compilation framework is presented as shwon in \figref{fig:customization-framework}. 
+To solve the customization problem as formalized in previous section, an automatic FPGA loop accelerator customization method based on the QuickDough compilation framework is presented as shown in \figref{fig:customization-framework}. 
 
-The customization method can be roughly divided into two steps. In the first step, a sub DSE targeting loop execution time is performed and the feasible design space can be obtained. Since loop execution time is mostly determined by the operation scheduling which simply depends on the loop unrolling factor and SCGRA size, the sub DSE is much simpler compared to the overall system DSE which includes more than 10 design parameters. In the second step, each configuration in the feasible design space will be evaluated. Instead of using simulation based methods, analytical models as proposed in previous section are employed to estimate the accelerator metrics including performance, energy consumption, energy efficiency and hardware resource consumption. These analytical models are accurate because of the regularity of the SCGRA overlay. Even though the feasible design space is still large, it is much faster to evaluate all the configurations in it. After the evaluation process, customization for best performance becomes trivial and the customized design parameters can be obtained immediately.
+The customization method can be roughly divided into two steps. In the first step, a sub DSE targeting loop execution time is performed and the feasible design space can be obtained. Since loop execution time is mostly determined by the operation scheduling which simply depends on the loop unrolling factor and SCGRA size, the sub DSE is much simpler compared to the overall system DSE which includes more than 10 design parameters. In the second step, each configuration in the feasible design space will be evaluated. Instead of using simulation based methods, analytical models as proposed in previous section are employed to estimate the accelerator metrics including performance, energy consumption, energy efficiency and hardware resource consumption. These analytical models are accurate because of the regularity of the SCGRA overlay. Even though the feasible design space is still large, it is very fast to evaluate all the configurations in it when compared to the time cost of the SCGRA scheduling process. After the evaluation process, customization for best performance becomes trivial and the optimized design parameters can be obtained immediately.
 
 \begin{figure}[t]
 \center{\includegraphics[width=0.6\linewidth]{customization-framework}}
@@ -118,7 +99,7 @@ The customization method can be roughly divided into two steps. In the first ste
 \end{figure}
 
 \subsection{Sub Design Space Exploration}
-The first step of the customization method is to perform the sub DSE for shorter loop computation time. As shown in \figref{fig:customization-framework}, this sub DSE mainly centers the operation scheduler. The operation scheduling process is fast but not trivial. Although the sub DSE is already much simpler than the overall system DSE, it still requires to repeat the operation scheduling many times and straightforward sub DSE will take a large amount of time.Fortunately, it is clear that the operation scheduling only depends on the SCGRA overlay size and the loop unrolling factor. In addition, the two design parameters basically have monotonic influence on the DFG execution time according to our experiments as shown in \figref{fig:observation}. Typically both the larger loop unroilling factor and SCGRA size help to improve the performance of the DFGs mapped to the SCGRA overlay, though there are minor exceptions caused by the complex operation scheduling. Meanwhile, it can be found that the improvement slows down when the two design parameters get larger. When the improvement reaches a threshold, the increase of the design parameters has negligible influence on the DFG execution time. 
+The first step of the customization method is to perform the sub DSE for shorter loop computation time. As shown in \figref{fig:customization-framework}, this sub DSE focuses on the operation scheduler. The operation scheduling process is fast but not trivial. Although the sub DSE is already much simpler than the overall system DSE, it still requires to repeat the operation scheduling many times and straightforward sub DSE will take a large amount of time. Fortunately, it is clear that the operation scheduling only depends on the SCGRA overlay size and the loop unrolling factor. In addition, the two design parameters basically have monotonic influence on the DFG execution time according to our experiments as shown in \figref{fig:observation}. Typically both the larger loop unrolling factor and SCGRA size help to improve the performance of the DFGs mapped to the SCGRA overlay, though there are minor exceptions caused by the complex operation scheduling. Meanwhile, it can be found that the improvement slows down when the two design parameters get larger. When the improvement reaches a threshold, the increase of the design parameters has negligible influence on the DFG execution time. 
 
 \begin{figure}[tb]
     \centering
@@ -230,82 +211,8 @@ The customization run-time was obtained using a computer with Intel(R) Core(TM) 
 
 In this section, four applications including Matrix Multiplication (MM), FIR, Kmean(KM) and Sobel Edge Detector (SE) are used as the benchmark. The configurations of the benchmark are the same with that detailed in the experiments in \chapref{chapter:framework}. 
 
-\subsection{SCGRA Overlay Implementation Analysis}
-In order to analyze the FPGA resource consumption and power consumption of the SCGRA overlay based FPGA accelerators, three groups of accelerators including SCGRA1, SCGRA2 and SCGRA3 with various configurations as detailed in \tabref{tab:config} are implemented on Zedboard. Based on the implementation results, the FPGA resource consumption and power consumption are analyzed respectively in the section.
-
-\begin{table}[tb]
-    \footnotesize
-    \centering
-    \caption{SCGRA Based FPGA Accelerator Configuration \label{tab:config}}{
-        \begin{tabular}{c|c|c|c|c|c}
-            \hline
-            Group & Size & \tabincell{c}{Inst. \\ Rom} & 
-            \tabincell{c}{Data \\ Mem} & \tabincell{c}{IBuf \\ /OBuf} & 
-            \tabincell{c}{Addr \\Buf} \\ \hline
-
-            SCGRA1 & \tabincell{l}{2x2, 3x2, \\ 3x3, 4x3, \\ 4x4, 5x4} & 
-            1kx72 & 256x32 & 2kx32 & 4kx16\\ \hline
-
-            SCGRA2 & \tabincell{l}{2x2, 3x2, \\ 3x3, 4x3, \\4x4} & 
-            2kx72 & 256x32 & 2kx32 & 4kx16\\ \hline
-
-            SCGRA3 & \tabincell{l}{2x2, \\ 3x2, \\ 3x3 } &  
-            4kx72 & 256x32 & 2kx32 & 4kx16\\ \hline
-        \end{tabular}
-    }
-\end{table}
-
-\figref{fig:SCGRA-Overhead} shows the relation between the four types of FPGA resource consumption and SCGRA overlay size. It can be found that the consumption of FF, LUT and DSP does not change much with the memory configurations and they present very good linearity to the SCGRA overlay size. Therefore, they can be estimated with linear models. Block RAM consumption depends on both the overlay size and the memory configurations, and single variable linear model will not work for the estimation. Fortunately, all the memory components in the SCGRA overlay are implemented using primitive block RAMs and they can be calculated precisely with the memory configurations. 
-
-\begin{figure}[tb]
-\centering
-    \subfigure[\label{fig:FF-Overhead}]{%
-      \includegraphics[width=0.45\textwidth]{FF-Overhead}
-    }
-    \subfigure[\label{fig:LUT-Overhead}]{%
-      \includegraphics[width=0.45\textwidth]{LUT-Overhead}
-    }
-    \hfill
-    \subfigure[\label{fig:DSP-Overhead}]{%
-      \includegraphics[width=0.45\textwidth]{DSP-Overhead}
-    }
-    \subfigure[\label{fig:BRAM-Overhead}]{%
-      \includegraphics[width=0.45\textwidth]{BRAM-Overhead}
-    }
-    \caption{Relation between The Accelerators' FPGA Resource Consumption and The SCGRA Overlay Size, 
-    (a) FF Consumption, (b) LUT Consumption, (c)DSP Consumption, (d)BRAM Consumption}
-    \label{fig:SCGRA-Overhead}
-\end{figure}
-
-According to the power decomposition in Xpower, the power consumption of an FPGA design includes signal power, clock power, BRAM power and so on. To simplify the power model of the SCGRA overlay based FPGA accelerator, the power consumption is divided into BRAM power and base system power which essentially includes the power consumption of the rest part of the system. As shown in \figref{fig:SCGRA-Power}, the base system power exhibits good linearity over the SCGRA overlay size while the BRAM power is near linear to the BRAM consumption. As mentioned in previous paragraph, the BRAM consumption can be immediately calculated given the SCGRA overlay configuration. Therefore, both of the two parts of the power consumption can be estimated. 
-
-\begin{figure}[htb]
-\centering
-    \subfigure[\label{fig:Base-Power}]{%
-      \includegraphics[width=0.4\textwidth]{Base-Power}
-    }
-    \subfigure[\label{fig:BRAM-Power}]{%
-      \includegraphics[width=0.4\textwidth]{BRAM-Power}
-    }
-    \caption{Power Consumption of the SCGRA Overlay Based FPGA Accelerators, (a) Base System Power Including DSP Power, Clock power, Signal Power, etc., (b) BRAM Power}
-    \label{fig:SCGRA-Power}
-\end{figure}
-
-On top of the FPGA resource consumption and power consumption, the implementation frequency of the accelerators is also relatively predictable as shown in experiments in \chapref{chapter:overlay}. With all the highly predictable implementation features, it is convenient to further estimate the energy consumption and energy efficiency and present insight on the FPGA loop accelerator in early design stage. Although the experiments are still limited to Zedboard, it is believed that similar highly predictable implementation results can be observed on a different platform as the predictability comes from the regularity of the underlying SCGRA overlay. This is one of the advantages adopting SCGRA overlay for FPGA loop accelerator design compared to the design flow using conventional HDL or HLS which rarely guarantees the implementation details due to the extremely complex placing and routing process of the FPGA implementation.  
-
-The data transfer between the accelerator and main memory is also very important to the FPGA loop accelerator customization. In this work, the communication latency is modeled based on DMA latency obtained from Zedboard. The FPGA accelerator implemented on programmable logic and the main memory may either communicate through a general purpose (GP) AXI port or a high performance AXI port, and the communication latency per word i.e. 32 bit data is presented in \figref{fig:dma-latency}. Despite the two different DMA engines, the basic trend of the communication cost per word is very similar. When the data transfer size is small, DMA communication cost per word is much larger due to the initial DMA transfer cost. When the data transfer size goes up, the initial DMA cost is amortized and communication cost per word is almost a constant. To estimate the data communication cost, a piece-wise linear function is used to model the DMA transfer. 
-
-According to the experiment, it can be found that the data transfer between FPGA accelerator and the main memory should be large enough to amortize the initial DMA cost, otherwise the communication cost can be 6X to 8X times larger which dramatically decreases the overall performance speedup achieved by the FPGA accelerator. This is also one of the major reasons that additional loop grouping strategy is adopted in QuickDough. 
-
-\begin{figure}[htb]
-    \centering
-    \includegraphics[width=0.6\textwidth]{dma-latency}
-    \caption{Zedboard DMA Transfer Latency Per Word}
-    \label{fig:dma-latency}
-\end{figure}
-
 \subsection{Customization Time}
-Although customization is not a frequent process of QuickDough, it is also important to the productivity of the designers. \figref{fig:DSE-Time} shows the customization time of both the proposed two step (TS) customization and an exhaustive search based customization (ES). TS typically completes the customization in 10 minutes to 20 minutes and it is around 100X faster than the ES on average. In particular, ES is extremely slow on MM which has three levels of loop with relatively large loop count and thus larger design space. Though TS also needs longer time to complete the customization, it skips most of the unfeasible configurations and the run time is less sensitive to the size of the design space. 
+Although customization is not a frequent process of QuickDough, it is also important to the productivity of the designers. \figref{fig:DSE-Time} shows the customization time of both the proposed two step (TS) customization and an exhaustive search based customization (ES). TS typically completes the customization in 10 minutes to 20 minutes and it is around 100X faster than the ES on average. In particular, ES is extremely slow on MM which has three levels of loop with relatively large loop count and thus larger design space. Though TS does need a dozen of minutes to complete the customization, it skips most of the unfeasible configurations and the run time is less sensitive to the size of the design space. 
 
 \begin{figure}[htb]
     \centering
@@ -328,7 +235,7 @@ Although customization is not a frequent process of QuickDough, it is also impor
 %    }
 %\end{table}
 
-In order to evaluate the sensitivity of the threshold $\epsilon$ to the customization, both of the customization time and the resulting accelerator run-time is analyzed with a set of different $\epsilon$ setup. \figref{fig:epsilon-sensitivity} shows the influence of the $\epsilon$ on the customization of FIR. When the $\epsilon$ is large, the customization time is much faster while the resulting accelerator performance is not optimized. On the other hand, smaller $\epsilon$ typically helps to produce accelerators with better performance, but customization time increases dramatically. In particular, when $\epsilon$ is small enough and optimized accelerator has already been found, even smaller $\epsilon$ will not lead to accelerators with better performance. Experiments on the rest of the applications show similar results and they are omitted to save the space. The optimal $\epsilon$ is up to the target application, while 0.05 works fine for all the applications in this benchmark.
+In order to evaluate the sensitivity of the threshold $\epsilon$ to the customization, both of the customization time and the resulting accelerator run-time is analyzed with a set of different $\epsilon$ setup. \figref{fig:epsilon-sensitivity} shows the influence of the $\epsilon$ on the customization of FIR. When the $\epsilon$ is large, the customization time is much faster while the resulting accelerator performance is not optimized. On the other hand, smaller $\epsilon$ typically helps to produce accelerators with shorter runtime of accelerators, but customization time increases dramatically. In particular, when $\epsilon$ is small enough and optimized accelerator has already been found, even smaller $\epsilon$ will not lead to accelerators with better performance. Experiments on the rest of the applications show similar results and they are omitted to save the space. The optimal $\epsilon$ is up to the target application, while 0.05 works fine for all the applications in this benchmark.
 
 \begin{figure}[htb]
     \centering
@@ -338,7 +245,7 @@ In order to evaluate the sensitivity of the threshold $\epsilon$ to the customiz
 \end{figure}
  
 \subsection{Customized Accelerator Performance}
-The proposed design framework will not be as useful if the performance of the generated system fails to provide competitive performance speedup over a general purpose processor where software designers can easily work with. Therefore, the computer kernel run-time on an ARM processor is presented as a basic comparison. In addition, in order to demonstrate both the necessity of the customization and the quality of proposed two-step customization method, the performance of the accelerators with a random configuration and customized configurations obtained using ES are compared with the performance of the accelerators customized using the proposed TS method. The detailed configurations of the accelerators are listed in \tabref{tab:acc-config}. Basically, the random configurations may come from an user who doesn't quite understand the underlying overlay architectures. The configurations generated using ES may cover all the possible configurations. The configurations generated using TS only explores the representative configurations expressed by the proposed models.
+The proposed design framework will not be as useful if the performance of the generated system fails to provide competitive performance speedup over a general purpose processor which software designers can easily work with. Therefore, the computer kernel run-time on an ARM processor is presented as a basic comparison. In addition, in order to demonstrate both the necessity of the customization and the quality of proposed two-step customization method, the performance of the accelerators with a random configuration and customized configurations obtained using ES are compared with the performance of the accelerators customized using the proposed TS method. The detailed configurations of the accelerators are listed in \tabref{tab:acc-config}. Basically, the random configurations may come from an user who doesn't quite understand the underlying overlay architectures. The configurations generated using ES may cover all the possible configurations. The configurations generated using TS only explores the representative configurations expressed by the proposed models.
 
 \begin{table}[htb]
     \footnotesize
@@ -406,4 +313,4 @@ Finally, the FPGA resource consumption of the resulting accelerators are also co
 \end{figure}
 
 \section{Summary}
-In this work, an automatic nested loop accelerator customization framework that is based on a soft coarse-grained reconfigurable array overlay is presented. By taking advantage of the regularity of the SCGRA overlay, a two-step customization method is proposed for intensive system customization specific to the given user application. According to the experiments, it can be performed efficiently, resulting in up to \num{5} times performance improvement over solutions without customization at the cost of \num{10} to \num{20} minutes additional tools run time. Overall, the framework is able to generate accelerators that achieve up to \num{10} times speed up over software running on the host processor, resulting in a high design productivity experience for software programmers.
+In this work, an automatic nested loop accelerator customization framework that is based on a soft coarse-grained reconfigurable array overlay is presented. By taking advantage of the regularity of the SCGRA overlay, a two-step customization method is proposed for intensive system customization specific to the given user application. According to the experiments, it can be performed efficiently, resulting in up to \num{5} times performance improvement over solutions without customization at the cost of \num{10} to \num{20} minutes additional tools run time (The run time here means the customization time. If the configuration of the customized accelerator doesn't exist in the library, additional implementation time is required). Overall, the framework is able to generate accelerators that achieve up to \num{10} times speed up over software running on the host processor, resulting in a high design productivity experience for software programmers.

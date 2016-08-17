@@ -3,7 +3,7 @@ QuickDough is a development framework for FPGA-accelerated applications. It gene
 
 The overall design goal of QuickDough is to enhance the designer's productivity by greatly reducing the hardware generation time and by providing automatic optimization of the data I/O between the host software and the accelerator. Instead of spending hours on conventional hardware implementation tools, QuickDough is capable of producing the targeted hardware-software system in the order of seconds. By doing so, it provides a rapid development experience that is compatible with that expected by most software programmers.
 
-To achieve this compilation speed, while maintaining a reasonable accelerator performance, QuickDough avoids the creation of custom hardware directly for each application. Instead, the compute kernel loop bodies are scheduled to execute on a CGRA overlay, which is selected from a library of pre-implemented hardware library. By sidestepping the time-consuming low-level hardware implementation tool flow, the time to implementing an accelerator in QuickDough is reduced to essentially just the time spent on overlay selection and scheduling compute operations on the resulting overlay. In addition, taking advantage of the overlay's softness and regularity, QuickDough allows users to perform trade-off between compilation time and performance by selecting and customizing the overlay on a per application basis. The result is a unified design framework that seamlessly produces the entire hardware-software infrastructure with a design experience similar to developing conventional software.
+To achieve this compilation speed, while maintaining a reasonable accelerator performance, QuickDough avoids the creation of custom hardware directly for each application. Instead, the compute kernel loop bodies are scheduled to execute on a CGRA overlay, which is selected from a pre-implemented CGRA based accelerator library. By sidestepping the time-consuming low-level hardware implementation tool flow, the time to implementing an accelerator in QuickDough is reduced to essentially just the time spent on overlay selection and scheduling compute operations on the resulting overlay. In addition, taking advantage of the overlay's softness and regularity, QuickDough allows users to perform trade-off between compilation time and performance by selecting and customizing the overlay on a per application basis. The result is a unified design framework that seamlessly produces the entire hardware-software infrastructure with a design experience similar to developing conventional software.
 
 This chapter mainly focuses on the the basic compilation flow from high-level loop kernels to the SCGRA overlay based FPGA accelerator bitstream and it will be organized as follows. The overall QuickDough design framework will be presented in the next section. The processes in the rapid QuickDough compilation flow will be detailed in \secref{sec:loop-compilation}. Finally, the accelerator library used in the rapid compilation flow as well as its pre-building process will be explained in \secref{sec:library-update}.    
 
@@ -30,11 +30,11 @@ The rapid acceleration generation path of QuickDough consists of a series of int
 \subsection{DFG Generation and Loop Execution}
 The main input to the QuickDough framework for acceleration are compute intensive kernels extracted from the user applications. The first step of the compilation process is therefore to extract data flow graphs (DFGs) from these kernels that are often expressed as inner loop bodies. In order to express the loop bodies as DFGs, data dependency in the loop body must be known at compilation time. Similar to LLVM intermediate representation \cite{llvm}, branches in the loop bodies can be removed by using PHI instructions which can be further mapped to the PHI operation as described in previous chapter. While this strategy helps to extend the reach of the SCGRA overlay based loop acceleration, it remains challenging to convert large and complex branches. In this work, a C++ library is built to help automate the DFG generation with specified operation set and loop unrolling.
 
-The loop kernels are mostly partially unrolled, transformed to DFGs and scheduled to the SCGRA overlays of the accelerators. A straightforward way to perform the whole loop computation on the overlay is to repeat the same DFG computation until the end of the loop. Nevertheless, this may require data transfer between host processor and I/O buffer for each DFG computation. As a result, the communication cost increases dramatically especially when the amount of each data transfer is small. Worse still, input data of the consecutive DFGs may be reused and the straightforward data transfer strategy may greatly increase the total amount of data transfer through out the loop computation. 
+The loop kernels are partially unrolled, transformed to DFGs and scheduled to the SCGRA overlays of the accelerators. A straightforward way to perform the whole loop computation on the overlay is to repeat the same DFG computation until the end of the loop. Nevertheless, this may require data transfer between host processor and I/O buffer for each DFG computation. As a result, the communication cost increases dramatically especially when the amount of each data transfer is small. Worse still, input data of the consecutive DFGs may be reused and the straightforward data transfer strategy may greatly increase the total amount of data transfer through out the loop computation. 
 
 To alleviate this problem, we have proposed to batch data transfers for multiple executions of the same DFG into groups as shown in \figref{fig:blocking-and-dfg-gen}. Specifically, after the loop is unrolled $U$ times, $G$ of them are grouped together for each data transfer. This group strategy helps to amortize the initial communication cost between host processor and the accelerator. In addition, it allows input data to be reused for different DFG computation in the same group and the group size is mainly limited by the I/O buffer depth. Meanwhile, the accelerator communicates with host processor for each group execution, and thus the accelerator driver that handles the communication depends on the I/O buffer depth as well. 
 
-While grouping data transfers helps amortize the communication cost between CPU and the accelerator, it also imposes additional requirement for on-chip memory to serve as buffer for the extra data transferred. As a result, the unrolling factor $U$ and grouping factor $G$ has to be co-optimized to balance performance and on-chip resource utilization. For instance, increasing $U$ leads to a larger DFG to be executed in the QuickDough overlay, which may be benefited from a larger processing array. However, the increased processing array limits the amount of on-chip buffer available for data and address buffer. As a result, the amount of DFG grouping $G$ is limited and may lead to higher performance penalty due to communication. In addition, the proposed accelerator employs address buffers to store all the on chip buffer accessing addresses of the whole group execution. While the addresses of different DFG execution in a group can't be reused, the capacity of the address buffers is the production of the number of input/output addresses of a DFG and the number of DFGs in a group, which is usually larger than the capacity of the input/output buffers especially when there are a large amount of input/output data reuse between different DFGs in the same group. 
+While grouping data transfers helps amortize the communication cost between CPU and the accelerator, it also imposes additional requirement for on-chip memory to serve as buffer for the extra data transferred. As a result, the unrolling factor $U$ and grouping factor $G$ has to be co-optimized to balance performance and on-chip resource utilization. For instance, increasing $U$ leads to a larger DFG to be executed in the QuickDough overlay, which may be benefited from a larger processing array. However, the increased processing array limits the amount of on-chip buffer available for data and address buffer. As a result, the amount of DFG grouping $G$ is limited and may lead to higher performance penalty due to communication. In addition, the proposed accelerator employs address buffers to store all the on chip buffer accessing addresses of the whole group execution. While the addresses of different DFG execution in a group can't be reused, the capacity of the address buffers is the product of the number of input/output addresses of a DFG and the number of DFGs in a group, which is usually larger than the capacity of the input/output buffers especially when there are a large amount of input/output data reuse between different DFGs in the same group. 
 
 \begin{figure}
 \center{\includegraphics[width=0.75\linewidth]{dfg-gen}}
@@ -53,8 +53,8 @@ The operations from the user DFG are scheduled to execute on the reconfigurable 
  \PROCEDURE{ListScheduling}
  \STATE Initialize the operation ready list $L$
  \WHILE {$L$ is not empty}
- \STATE select a PE $p$
- \STATE select an operation $l$
+ \STATE select a PE $p$ with lowest utilization
+ \STATE select an operation $l$ that completes computing earliest
  \STATE OPScheduling($p$, $l$)
  \STATE Update $L$
  \ENDWHILE
@@ -72,7 +72,7 @@ The operations from the user DFG are scheduled to execute on the reconfigurable 
  \end{algorithmic}
  \end{algorithm}
 
-\algref{alg:scheduling} briefly illustrates the scheduling algorithm implemented in QuickDough. Initially, an operation ready list is created to represent all operations that are ready to be scheduled. The next step is to select a PE from the SCGRA and an operation from the ready list using a combined communication and load balance metric. When both the PE and the operation to be scheduled are determined, the \code{OPScheduling} procedure starts. It determines an optimized routing path, moves the source operands to the selected PE along the path, and schedules the selected operation to execute accordingly. After this step, the ready list is updated as the latest scheduling may produce more ready operations. This \code{OPScheduling} procedure is repeated until the ready list is empty. Finally, given the operation schedule, the corresponding control words for each PE and the IO buffer accessing sequence will be produced. These control words will subsequently be used for bitstream generation in the following compilation step.
+\algref{alg:scheduling} briefly illustrates the scheduling algorithm implemented in QuickDough. Initially, an operation ready list is created to represent all operations that are ready to be scheduled. The next step is to select a PE from the SCGRA and an operation from the ready list using a combined communication and load balance metric. Basically the PE with lowest utilization is choosen as the target processing element for the next operation. Then estimate the execution time of all the ready operations on the selected PE. The operation that completes computing earliest will be selected and scheduled. When both the PE and the operation to be scheduled are determined, the \code{OPScheduling} procedure starts. It determines an optimized routing path, moves the source operands to the selected PE along the path, and schedules the selected operation to execute accordingly. After this step, the ready list is updated as the latest scheduling may produce more ready operations. This \code{OPScheduling} procedure is repeated until the ready list is empty. Finally, given the operation schedule, the corresponding control words for each PE and the IO buffer accessing sequence will be produced. These control words will subsequently be used for bitstream generation in the following compilation step.
 
 \subsection{Accelerator Selection} \label{sec:accel-sel}
 Accelerator selection process selects an accelerator from the accelerator library based on the performance of the resulting accelerator which mainly depends on the computation latency and communication latency. The computation latency of the loop kernel can be calculated using \eqnref{eq:comp-lat}. $DFG\_Lat$ stands for the number of cycles needed to complete the SCGRA scheduling and mostly depends on the SCGRA overlay size while $Freq$ stands for the pre-built accelerator implementation frequency. The communication latency can be calculated using \eqref{eq:comm-lat} where $Trans()$ represents the data transfer latency function of the target platform and $GpIn$ and $GpOut$ represent the amount of data transfer of a group which is limited by the capacity of the I/O buffers. 
@@ -89,9 +89,9 @@ Accelerator selection process selects an accelerator from the accelerator librar
 \end{equation}
 
 
-In summary, the performance of the accelerator can be estimated with analytical models when the scheduling performance is obtained through the DFG scheduling while the scheduling performance is mostly determined by the SCGRA overlay size. The analytical estimation is fast while the scheduling process is relatively slow. Therefore, the accelerator selection process essentially centers the SCGRA overlay size selection and then explores all the accelerator configurations with the same SCGRA overlay size. 
+In summary, the performance of the accelerator can be estimated with analytical models when the scheduling performance is obtained through the DFG scheduling while the scheduling performance is mostly determined by the SCGRA overlay size. The analytical estimation is fast while the scheduling process is relatively slow. Therefore, the accelerator selection process essentially centers the SCGRA overlay size selection and then explores all the accelerator configurations (such as on chip buffer size, instruction memory depth and data memory size) with the same SCGRA overlay size. 
 
-To compromise the loop accelerator generation time and performance, three different levels of accelerator selection optimization levels are provided in this framework namely O0, O1 and O2 centering the SCGRA overlay size selection. O0 doesn't provide any optimization, and it selects an accelerator with the smallest SCGRA overlay. O1 estimates three typical accelerators with the smallest SCGRA overlay, a medium one and the largest SCGRA overlay. Then the one that provides the best performance will be adopted. O3 explores all the accelerators in the library and searches for the best accelerator configuration. With the increase of the optimization level, the accelerator selection process spends more efforts in searching the accelerator library for better performance and thus results in longer acceleration generation time.
+To compromise the loop accelerator generation time and performance, three different levels of accelerator selection optimization levels are provided in this framework namely O0, O1 and O2 centering the SCGRA overlay size selection. O0 doesn't provide any optimization, and it selects an accelerator with the smallest SCGRA overlay. O1 estimates three typical accelerators with the smallest SCGRA overlay, a medium one and the largest SCGRA overlay. Then the one that provides the best performance will be adopted. O2 explores all the accelerators in the library and searches for the best accelerator configuration. With the increase of the optimization level, the accelerator selection process spends more effort in searching the accelerator library for better performance and thus results in longer compilation time.
 
 \subsection{Bitstream Integration}
 The final step of the compilation is to generate the instructions for each PE and the address sequences for the I/O buffers according to the scheduler's result, which will subsequently be incorporated into the configuration bitstream of the overlay produced from previous steps.
@@ -100,11 +100,11 @@ Instead, we take advantage of the reconfigurability of SRAM based FPGAs and stor
 This bitstream integration process costs only a few seconds of the compilation time.
 
 \section{Accelerator Library Update} \label{sec:library-update}
-Accelerator library consists of a number of pre-built SCGRA overlay based accelerators with different configurations. It is the basis for the proposed rapid FPGA loop accelerator generation framework. In this section, we will illustrate how the accelerator library is updated given the hardware resource budget and target loop kernels.
+The accelerator library consists of a number of pre-built SCGRA overlay based accelerators with different configurations. It is the basis for the proposed rapid FPGA loop accelerator generation framework. In this section, we will illustrate how the accelerator library is updated given the hardware resource budget and target loop kernels.
 
-Accelerator library update is essentially to pre-implement a group of SCGRA overlay based FPGA accelerators upon users' request, which may either target a specified application or a domain of applications. As QuickDough aims to enhance the designers' productivity and make FPGA accelerator design accessible to high-level application designers, the library update which involves low-level circuit design and optimization is thus automated so that it will not become a new barrier to the application developers.
+An accelerator library update is essentially to pre-implement a group of SCGRA overlay based FPGA accelerators upon the users' request, which may either target a specified application or a domain of applications. As QuickDough aims to enhance the designers' productivity and make FPGA accelerator design accessible to high-level application designers, the library update which involves low-level circuit design and optimization is thus automated so that it will not become a new barrier to the application developer.
 
-\figref{fig:auto-lib-gen} presents the proposed automatic accelerator library update flow. It roughly consists of four steps i.e. DFG generation, common operation analysis, minimum accelerator configuration set analysis, and accelerator HDL model generation and implementation. Since DFG generation has been discussed in previous section, we will mainly detail the rest three steps in this section.
+\figref{fig:auto-lib-gen} presents the proposed automatic accelerator library update flow. It roughly consists of four steps i.e. DFG generation, common operation analysis, minimum accelerator configuration set analysis, and accelerator HDL model generation and implementation. Since DFG generation has been discussed in previous section, we will mainly detail the remaining three steps in this section.
 
 \begin{figure}
 \center{\includegraphics[width=0.8\linewidth]{lib-gen}}
@@ -123,7 +123,7 @@ time.
 
 The proposed SCGRA overlay based FPGA accelerator utilizes
 block RAM to implement the instruction memory, data memory, on-chip buffer as well as the address
-buffer, and block RAM is the hardware resource bottleneck. As a result, the library basically depends on how
+buffer. As a result, the block RAM becomes the hardware resource bottleneck and the library basically depends on how
 the block RAM budget is allocated to different components of the accelerators. Therefore, the
 minimum library can be obtained using equation \eqnref{eq:lib-gen}. $Row$ and $Col$ stand for the SCGRA
 overlay size and they are integers. $IM$, $DM$, $AIOB$ and $DIOB$ stand for the instruction memory capacity,
@@ -220,7 +220,7 @@ when the data width is determined.
 
 To explore the library update process efficiency, we have evaluated the number of accelerators included in
 the accelerator library and the time consumed to implement the library when different block RAM
-budgets ranging from 70, 140, 210, 280 to 350 (Note that there are 140 RAMB36 on Zedboard FPGA) are
+budgets ranging from 70, 140, 210, 280 to 350 RABM36 (Note that there are 140 RAMB36 on Zedboard FPGA) are
 provided. As presented in \figref{fig:lib-impl-time}, when the BRAM budget increases, the number of accelerators
 in the library and the library implementation time increase almost linearly. With a single
 computer, the accelerator library implementation time ranges from 164 minutes to 3035 minutes.
@@ -272,11 +272,10 @@ FPGA accelerators as well as corresponding grouping factors.
     }
 \end{table}
 
-With the pre-built library, every implementation iterations in QuickDough involves 3 steps:
+With the pre-built library, every implementation iteration in QuickDough involves 3 steps:
 \begin{itemize}
 \item DFG generation: The compute kernel is translated to corresponding DFG.
-\item DFG scheduling: Select an accelerator configuration and schedule the DFG to it through an
-    operation scheduling. 
+\item Accelerator selection and DFG scheduling: Select an accelerator configuration and schedule the DFG to it through an operation scheduling. 
 \item Bitstream generation: The scheduling result is embedded into a pre-built accelerator bitstream 
 to produce the final FPGA bitstream of the compute kernel.
 \end{itemize}
@@ -302,28 +301,12 @@ generated in one or two minutes.
 \label{fig:SCGRA-Overlay-Compilation-Time}
 \end{figure}
 
-Clearly, the designer must spend the time to physically pre-implement 
-the overlay architecture on the target FPGA, spending considerable 
-time on the implementation tools. However, it can be reused by the whole benchmark.
-Moreover, the designer may iterate via the above rapid steps during 
-design and debugging phases using an initial overlay implementation.
-Once the functionality is frozen, the designer may then opt to further optimize 
-performance through more intensive overlay customization and update the library. 
-We argue that the ability to separate functionality and optimization 
-concern, and the possibility of performing rapid debug-edit-implement 
-iterations in QuickDough are crucial factors that contribute to a high-productivity 
-design experience.
+Clearly, the designer must spend the time to physically pre-implement the overlay architecture on the target FPGA, spending considerable time on the implementation tools. However, it can be reused by the whole benchmark. Moreover, the designer may iterate via the above rapid steps during design and debugging phases using an initial overlay implementation. Once the functionality is frozen, the designer may then opt to further optimize performance through more intensive overlay customization and update the library. We argue that the ability to separate functionality and optimization concern, and the possibility of performing rapid debug-edit-implement iterations in QuickDough are crucial factors that contribute to a high-productivity design experience.
 
 \subsection{Performance} \label{subsec:acc-perf}
-While improving designers' productivity is the primary goal of QuickDough, the FPGA accelerators it
-generates must remain competitive in performance to software executed on general 
-purposed processors. Therefore, execution time of the loop kernels executed on ARM 
-processor of Zedboard and FPGA accelerators generated using QuickDough are compared.
+While improving designers' productivity is the primary goal of QuickDough, the FPGA accelerators that it generates must remain competitive in terms of performance when compared to corresponding software executed on general purposed processors. Therefore, execution time of the loop kernels executed on ARM processor of Zedboard and FPGA accelerators generated using QuickDough are compared.
 
-\figref{fig:real-perf} shows the accelerator performance speedup over software execution on the ARM processor 
-and execution time decomposition of the 4 benchmark programs. The reported loop execution
-time on the accelerators includes time spent on I/O data communication between FPGA and the 
-ARM processor as well as FPGA computation.
+\figref{fig:real-perf} shows the accelerator performance speedup over software execution on the ARM processor and execution time decomposition of the 4 benchmark programs. The reported loop execution time on the accelerators includes time spent on I/O data communication between FPGA and the ARM processor as well as FPGA computation.
 
 \begin{figure}
 \centering
@@ -354,11 +337,9 @@ goes up to 9X, 6X and 6X respectively. Even with simple acceleration selection a
 size, clear performance speedup can be observed. MM optimized by simple loop unrolling is eventually reduced to
 a matrix-vector multiplication, so the compute kernel has low compute-to-IO rate and the single port
 connection between compute logic and input/output buffers becomes the bottleneck hindering
-the performance of the accelerator.  
+the performance of the accelerator. (Note that the communication time in \figref{fig:real-perf} simply shows the data movement time from/to main memory to/from accelerator IO buffers, it is NOT a sign of compute-to-IO rate. Usually, we may use operations per IO as the metric of compute-to-IO while IO indicates the load/store from/in input/output buffers.)
 
-Accelerators with larger SCGRA overlay size typically achieve
-better performance than the ones with smaller overlay size. However, larger SCGRA overlay will not
-guarantee better performance for a few reasons. First of all, accelerators with larger overlay size consume
+Accelerators with larger SCGRA overlay size typically achieve better performance than the ones with smaller overlay size. However, larger SCGRA overlay will not always guarantee better performance. As shown in the experiments, the largest $5 \times 5$ SCGRA overlay based accelerator is only optimal for KM. There are a few reasons for such an accelerator selection. First of all, accelerators with larger overlay size consume 
 more block RAM for instruction memory leaving less block RAM for I/O buffer. As a result, the I/O
 buffer may limit the transfer size between main memory and FPGA on-chip I/O buffer and reduce the
 chance of data reuse between DFGs included in a single group. This increased number of transfer

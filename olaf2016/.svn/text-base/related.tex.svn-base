@@ -1,0 +1,28 @@
+\section{Related Work}
+\label{sec:related}
+
+In many cases, FPGA overlay is implemented as CGRA to provide an efficient trade-off between flexibility of software and hardware acceleration for computationally intensive applications. Research works include QUKU~\cite{quku}, WPPA~\cite{Kissler}, dynamic CGRA with SRP~\cite{Ricardo} and QuickDough~\cite{quickdough_fsp, quickdough} have demonstrated the possibility of improving designer's productivity while maintaining excellent performance.
+ 
+%Despite the above advantages, the execution of entire application also necessitates collaboration with an instruction set processor. According to~\cite{com_arc_book}, a program executes 90\% of its instructions in 10\% of its code. These 10\% of codes is usually the computational intensive kernels which are highly parallelizable and can be mapped onto hardware accelerator such as CGRA to achieve better performance. The remaining 90\% of instructions that appears in only 10\% of the entire execution is normally handled by an instruction set processor.
+
+In spite of this, research that focuses on the integration between the processor and accelerator remains uncommon. The coupling between these two has not been strictly defined or specified. Therefore in many of the existing overlay works, diverse choice of soft/ hard processors~\cite{Kissler,Ricardo,quickdough} are used and the integration between the processor and accelerator varies from one work to another.
+
+The closest work that is designed to resolve the above coupling problem is ADRES~\cite{adres}. Mei et al. proposed an architecture that contains a VLIW processor tightly-coupled with a coarse-grained reconfigurable matrix. By integrating these two entities together, substantial resource sharing and reduced communication can be obtained. However, it is noticed that ADRES is focusing on enhancing the performance of the entire architecture. The design portability and compatibility of the ADRES framework and the resource consumption of the processor on FPGA are not the major concerns in their work.
+
+The work on soft processors, on the other hand, is extensive both in the industry and academia.
+Commercial cores such as MicroBlaze~\cite{microblaze} and Nios II~\cite{niosII} are the most commonly used soft processors on FPGA. However, design portability of these cores is relatively limited since they are generally restricted to their own platform, and as a result are less favourable for deployment in FPGA overlay.
+
+In academia, many research works on soft processors concentrate on the influence of underlying FPGA architecture. In particular, the processor architecture that is best suitable for the underlying structures of FPGA is comprehensively studied so as to maximize the performance of soft processors~\cite{idea, octavo}. 
+
+In addition, soft vector processors~\cite{guy_vector, vespa, vegas}, soft VLIW processors~\cite{delay_vliw, custom_vliw}, multi-thread soft processors~\cite{wayne_custard, spree} and application-specific soft processors~\cite{network_processor, network_processor_cn} are also extensively studied and developed on FPGA to analyze the performance and to demonstrate the benefits of soft processors.
+
+Although the above cores are optimized for performance by customizing the processors architectures according to the underlying FPGA structures, design portability and resource consumption are not the primary concerns in these works and therefore porting these soft cores onto other platforms as part of the FPGA overlay framework could require tremendous amount of efforts.
+
+Some existing open source soft processors do focus on area optimization and portability such as Plasma~\cite{plasma} and MB-LITE \cite{mblite}. They are light-weight implementations that can be ported to different platforms in a relatively efficient manner. However, as they are based on MIPS~\cite{mips} and MicroBlaze ISA respectively, they suffer from patent and trademark issues when being employed commercially.
+
+%In view of this, we develop an open source, small and efficient soft processor that is based on RISC-V \code{RV32I} to tightly-couple with a FPGA accelerator. 
+Moreover, there exists some lightweight \code{RV32I} designs such as zscale~\cite{zscale}, GRVI~\cite{grvi} or ORCA~\cite{vectorblox} which are similar to the proposed processor. Zscale is a single-issue 3-stage pipeline that is suited for embedded systems. However, its design is not optimized for soft processor implementation and therefore zscale is less desirable for FPGA overlay framework.
+
+GRVI~\cite{grvi} core, on the other hand, is an efficient, FPGA-optimized 3-stage pipeline implementation that is specifically designed for Phalanx framework. It consumes 320 LUTS and runs at \SI{375}{\mega\hertz} on Kintex Ultrascale-2 FPGA. Compared with GRVI, the proposed processor puts emphasis on design portability and compatibility as well as architectural extension to the tightly-coupled accelerator. 
+
+%In view of this, we propose an open source, small and efficient soft processor design that is based on RISC-V \code{RV32I} to resolve the integration problem. In particular, this processor can support cross-platforms and cross-vendors FPGA in order to fulfil the portability and computability requirement and to achieve hardware virtualization for FPGA overlay.

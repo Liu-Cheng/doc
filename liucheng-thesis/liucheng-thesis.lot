@@ -1,0 +1,21 @@
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {3.1}{\ignorespaces Operation Set Implemented in ALU. It covers all the four applications used in the experiments. \relax }}{27}{table.caption.14}
+\contentsline {table}{\numberline {3.2}{\ignorespaces Pipeline Configurations \relax }}{29}{table.caption.15}
+\contentsline {table}{\numberline {3.3}{\ignorespaces SCGRA Configuration \relax }}{29}{table.caption.16}
+\contentsline {table}{\numberline {3.4}{\ignorespaces Detailed Configurations of the Benchmark \relax }}{30}{table.caption.17}
+\contentsline {table}{\numberline {3.5}{\ignorespaces DFG Information (\# of Input/ \# of Output/ \# of Operations) \relax }}{30}{table.caption.18}
+\contentsline {table}{\numberline {3.6}{\ignorespaces SCGRA Based FPGA Accelerator Configuration \relax }}{36}{table.caption.27}
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {4.1}{\ignorespaces Detailed Configurations of the Benchmark \relax }}{50}{table.caption.32}
+\contentsline {table}{\numberline {4.2}{\ignorespaces DMA transfer latency on Zedboard through AXI high performance port \relax }}{51}{table.caption.33}
+\contentsline {table}{\numberline {4.3}{\ignorespaces QuickDough unrolling setup \relax }}{51}{table.caption.34}
+\contentsline {table}{\numberline {4.4}{\ignorespaces Accelerators generated using QuickDough \relax }}{53}{table.caption.36}
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {5.1}{\ignorespaces Design Parameters of Nested Loop Acceleration \relax }}{61}{table.caption.41}
+\contentsline {table}{\numberline {5.2}{\ignorespaces Accelerator configurations (Note that the configurations include loop unrolling factor, grouping factor, SCGRA array size, instruction memory depth and IO buffer depth) \relax }}{73}{table.caption.46}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {B.1}{\ignorespaces SCGRA Based FPGA Accelerator Configuration \relax }}{83}{table.caption.49}

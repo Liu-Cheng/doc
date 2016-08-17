@@ -1,5 +1,7 @@
-TITLE=presentation
-FILES=presentation.tex 
+#TITLE=presentation
+#FILES=presentation.tex
+TITLE=intro
+FILES=intro.tex
 
 BIBFILES= 
 IMGFILES=
@@ -16,4 +18,4 @@ $(TITLE).pdf : $(FILES) $(BIBFILES) $(IMGFILES)
 
 .PHONY : clean
 clean :
-	\rm -f *~ *.log $(TITLE).pdf *.aux *.bbl *.blg *.lot *.lof *.snm *.toc *.nav *.vrb *.out
+	\rm -f *~ *.log $(TITLE).pdf *.aux *.bbl *.blg *.lot *.lof *.snm *.toc *.nav *.vrb *.out *.ps *.eps

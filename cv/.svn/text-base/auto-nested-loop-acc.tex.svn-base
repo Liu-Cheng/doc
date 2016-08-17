@@ -1,0 +1,99 @@
+% Paper draft for FPGA 2013
+\pdfminorversion=5
+\documentclass[conference]{IEEEtran}
+\usepackage[binary-units]{siunitx}
+\sisetup{detect-weight=true, detect-family=true}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage[caption=false,font=footnotesize]{subfig}
+\usepackage{dblfloatfix}
+\usepackage{xspace}
+\usepackage{url}
+%\usepackage[square, comma, sort&compress, numbers]{natbib}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage[algo2e]{algorithm2e}
+\usepackage{amsmath}
+\usepackage{bm}
+\usepackage[table]{xcolor}
+\usepackage{tablefootnote}
+
+% \usepackage{draftwatermark}%
+% \SetWatermarkFontSize{20cm}%
+% \SetWatermarkScale{2}%
+% \SetWatermarkText{DRAFT Do not distribute}%
+
+\setlength{\parskip}{0pt}
+\renewcommand{\topfraction}{1}
+\renewcommand{\textfraction}{0.15}
+\renewcommand{\dbltopfraction}{1}
+
+\renewcommand\floatpagefraction{.9}
+\renewcommand\topfraction{.9}
+\renewcommand\bottomfraction{.9}
+\renewcommand\dbltopfraction{.9}
+\renewcommand\textfraction{.1}   
+\setcounter{totalnumber}{4}
+\setcounter{topnumber}{8}
+\setcounter{bottomnumber}{4}
+\setcounter{dbltopnumber}{4}
+
+\newcommand*{\Scale}[2][4]{\scalebox{#1}{$#2$}}
+\newcommand{\eqnref}[1]{Equation~\ref{#1}}
+%\newcommand{\eqnref}[1]{(\ref{#1})}
+\newcommand{\figref}[1]{Figure~\ref{#1}}
+\newcommand{\algref}[1]{Algorithm~\ref{#1}}
+\newcommand{\secref}[1]{Section~\ref{#1}}
+\newcommand{\tabref}[1]{Table~\ref{#1}}
+\newcommand{\code}[1]{\texttt{#1}}
+\newcommand{\tabincell}[2]{\begin{tabular}{@{}#1@{}}#2\end{tabular}}
+\renewcommand{\algorithmcfname}{ALGORITHM}
+\SetAlFnt{\small}
+\SetAlCapFnt{\small}
+\SetAlCapNameFnt{\small}
+\SetAlCapHSkip{0pt}
+\IncMargin{-\parindent}
+
+\graphicspath{{./figures/}}
+
+\begin{document}
+\bstctlcite{IEEEexample:BSTcontrol}
+\title{Automatic Nested Loop Acceleration on FPGAs Using Soft CGRA Overlay}
+
+\author{\IEEEauthorblockN{Cheng Liu, Ho-Cheung Ng and Hayden Kwok-Hay So}
+\IEEEauthorblockA{Department of Electrical and Electronic Engineering\\
+The University of Hong Kong\\
+Email: \{liucheng, hcng, hso\}@eee.hku.hk}
+}
+\maketitle
+
+\begin{abstract}
+\input{abstract}
+\end{abstract}
+ 
+% A category with the (minimum) three required fields
+%\category{H.4}{Information Systems Applications}{Miscellaneous}
+% A category including the fourth, optional field follows...
+%\category{D.2.3}{Hardware Engineering}{Metrics}[complexity measures, performance measures]
+%\terms{Theory}
+%\keywords{High Level Synthesis, Soft Coarse Grain Reconfigurable Array, Design Productivity, High Frequency FPGA Design}
+
+\input{introduction}
+\input{relatedwork}
+\input{acc-framework}
+\input{customization-framework}
+\input{experiments}
+\input{conclusion}
+
+\section*{Acknowledgment}
+This work was supported in part by the Research Grants Council of Hong Kong project ECS 720012E and
+the Croucher Innovation Award 2013. 
+
+
+\bibliographystyle{IEEEtran}
+\bibliography{refs,ieeebstctl}
+
+%\balancecolumns
+\end{document}
+

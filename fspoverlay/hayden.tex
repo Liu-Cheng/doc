@@ -1,0 +1,142 @@
+=== Hayden's Draft ===
+
+Hardware compilation experience:
+slow (minutes vs days for the largest designs)
+portable across devices within family only when timing allows
+rarely portable across vendor (different memory, different FIFO timing, etc)
+Not even portable to different accelerator systems with the same FPGA devices due to different connections.
+
+
+Overall idea and benefits of using overlays on FPGAs
+Definition:
+
+
+A virtual reconfigurable architecture that overlays on top of the physical FPGA configurable fabric.
+	
+
+It is ``virtual'', because the overlay architecture may not necessarily be implemented physically in the final design.  It is ``reconfigurable'', because the overlay has to support customization for more than one applications.
+
+
+Unfortunately, and also fortunately, because of the flexibility of FPGAs, the exact definition of an overlay can sometimes be difficult to precisely define.  If you implement a Commodore 64 system on an FPGA so you can play your favorite 8-bit games on FPGA, are you implementing a game system or is it already a ``overlay’’ in the form of a CPU system?
+What if you now upgrade this classic system to become a massively multi-core processor system for parallel execution of game code?  Would that make it more of an overlay than the simple soft CPU core?
+
+
+In the straightest sense according to the above definition, a simple soft CPU core implemented on FPGA can be called an overlay -- it is virtual as you can implement the same CPU differently on different FPGAs, providing portability and compatibility.  At the same time, it is also reconfigurable, as you can obviously execute a broad range of applications on this CPU by programming it with different software.
+
+
+In practice, however, the concept of an FPGA overlay is a lot more far reaching than a simple soft CPU core.  It encompass all sort of compute architectures one can imagine, with many of them designed specifically for the purpose of serving as an overlay.  These overlay are specifically designed for the goal at hand: for virtualization, for efficiency, for power-performance tradeoff, for design productivity.  They are also specially designed for use in FPGA with low overhead.
+
+
+Sometimes such overlay may not even literally exist in the final physical design.  For example a word-based FPGA may exist only in the form of design constraint or is embedded in the design language, while its architectural features may not necessarily be implemented on the FPGA (e.g. any unused word-mux defined in the architecture doesn't need to be implemented.)  It is as opposed to constructing this word-based FPGA physically on silicon.
+
+
+== Random Draft ==
+
+
+What are not overlays?
+
+
+A custom architecture for a specific problem.  For example, you have designed a new architecture for performing FFT on FPGAs, say it is FFTA, that is very efficient for your own application A.  It works well on your own application, but it may or may not be directly reusable in another application.  I may be reused as a hard IP block, or even a retargetable library component, but it can hardly be called an overlay.  But the line starts to blur if this FFT block is indeed highly parameterizable and is implemented as an intermediate virtual layer in certain design framework.
+
+
+Similarly, an array of flexible processing element connected in a mesh 
+
+
+===
+RANDOM DRAFT
+
+
+--
+In many ways, an overlay architecture is similar to an overlay network -- An overlay architecture exists be fulfill certain technological requirements.  In the case of an overlay network, it may be designed so as to provide better quality of service, or to provide better security, or even better management domain.  Similarly, researchers have developed a wide range of overlay architectures to improve the FPGA design experience.  
+
+
+--
+
+
+The easiest way to understand what an FPGA overlay is, is to consider building a \emph{virtual} FPGA (\textsc{vf}) using the configurable fabric of a physical FPGA (\textsc{pf}).  By doing so, you now have an FPGA overlay architecture in the form of \textsc{vf} overlaying on top of \textsc{pf}.  We say that \textsc{vf} is essentially ``virtual’’ because architectural features of \textsc{vf}, such as its muxes or an I/O blocks, may not necessarily be presence in a \textsc{pf}.  Yet, if the overlay is constructed correctly, any design that was originally targetting \textsc{vf} may now execute unmodified on top of \textsc{pf} without knowing the details of \textsc{pf}.
+
+
+Now why would you want to overlay \textsc{vf} on top of \textsc{pf}?  The list of reasons is long but essentially similar to the reason why overlay network or architecture virtualization are performed: security, isolation, compatibility, virtualization, etc.  With this, you can imagine running design originally compiled for FPGA from vendor A to run on FPGAs from vendor B, or to allow legacy design to run on newer generations of FPGAs from the same vendor.
+
+
+The power of FPGA overlay becomes even more apparent when you consider the wide varieties of compute architectures that can be constructed as overlays.  In fact, over the past decade, a wide range of coarse grained reconfigurable architectures have been explored to serve as overlays \cite{}, and has arguably become the de facto definition of many recent overlay designs \cite{}.
+
+
+Coarse-Grained Architecture
+The basic idea of a coarse-grained architecture is to reduce the configuration granularity of an FPGA from its physical fine-grained configurable fabric (LUT, routing) to one with coarser reconfiguration granularity.  The fundamental goal is thus to improve power-performance and design productivity of the resulting fabric by trading off design flexibility.
+
+
+This notion of reduced granularity works very well in overlay design as a way to improve design productivity.  Coarse-grained architectures improve a designer’s productivity in two fundamental ways.  First, by constraining the flexibility of an FPGA, a coarse-grained architecture reduces the design space significantly, which reduces implementation tool flow run time considerably \cite{quickdough,hmflow}. In addition, many coarse-grained architectures implement a compute models that are more familiar to software designers, considerably lowering the barrier-to-entry to employ such designs.  For instance, many recent overlays are implemented as coarse-grained reconfigurable arrays (CGRAs), where computation is carried out by a connected array of processing elements (PEs) instead of relying on user-generated random logic implemented on the FPGA.  To many software programmer, programming a parallel processor array, while a daunting task in its own right, is still a lot easier than to implement designs on the native FPGA configurable fabric.
+
+
+--
+
+
+Different CGRA architectures differ considerably.  At one end of the spectrum, researchers have proposed various configurable coarse grained hardware.  The blocks are in the level of arithmetic units.  Users configure the their design by specifying the static route between these blocks.
+
+
+On the other end of the spectrum, there are multi-core processors connected with an elaborated on-chip packet switching network, essentially forming a system-on-chip.
+
+
+---
+
+
+Imagine, for example, to construct a previous generation FPGA using a newer generation FPGA.  By imposing this hypothetical overlay architecture of another FPGA, user can now experience something new:
+
+\begin{itemize}
+\item isolation
+\item backward compatibility
+\item virtualization
+\end{itemize}
+
+These are very similar benefits to that provided through virtualization of conventional CPU-based system.  But just like CPU virtualization, it comes at a price:
+
+\begin{itemize}
+\item speed
+\item cost
+\item power
+\end{itemize}
+
+
+=== RANDOM DRAFT ===
+
+
+---- From Old Paper ---
+To improve the speed of low-level implementation tools, researchers have explored various approaches over the past decades.
+Inspired by application specific integrated circuit (ASIC) design flows, researchers and vendors have developed modular design flow and explored the use of pre-compiled hard macros \cite{lavin2010using,lavin2011} as implementation library.
+In addition, researchers have also exploited the use of dynamic partial reconfiguration capabilities in FPGAs \cite{Frangieh2010} as a way to improve productivity.
+In recent years, there has been an increased interest in applying the concept of \emph{overlay architectures} as a way to address this productivity challenge.  
+
+
+
+
+An overlay architecture is a virtual intermediate architecture that is overlaid on top of the physical configurable fabric of an FPGA.  They are employed during the FPGA application implementation process for purposes such as to improve portability, security, and also productivity.
+%Depending on the design goal, overlays have manifested in various forms, including HDL models, pre-synthesized or pre-implemented coarse-grained circuits, or even arrays of processing elements with various granularity.
+
+
+One of the most familiar categories of overlay consists of virtual FPGAs \cite{zuma2013carl,Grant2011Malibu,Coole2010Intermediate,Koch2013CI}. They are built either virtually or physically on top of off-the-shelf FPGA devices and typically feature coarser configuration granularity than the physical device.
+Similar to virtual machines running on a typical computer, such virtual FPGA provides an additional layer that improves application portability and security.
+Furthermore, because of the coarser-grained configurable fabric, implementing designs on such overlay is relatively easier than on a fine-grained device.
+However, the additional layer imposes restrictions on the underlying fabrics' capability and usually results in moderate hardware overhead and timing degradation.
+
+
+Another category of overlay architecture commonly employed is in the form of coarse-grained reconfigurable arrays (CGRAs).
+The use of CGRAs provides unique advantages of compromising hardware implementation and performance especially for compute intensive applications as demonstrated by numerous ASIC CGRAs \cite{tessier2001reconfigurable} \cite{compton2002reconfigurable}.
+Indeed, CGRAs on FPGA and ASIC have many similarities in terms of the scheduling algorithm and array structure.
+However, they have quite different trade-offs in terms of configuration flexibility, overhead and performance.
+In a nutshell, CGRAs on ASIC emphasize more on configuration capability to cover more applications, while FPGAs' inherent programmability greatly alleviates the concern.
+Instead, CGRAs on FPGA may take advantage of the configurability of the underlying fabric to allow more intensive customization tailored to the target application.
+
+
+The authors in \cite{kissler2006dynamically} developed WPPA (weakly programmable processor array), a VLIW architecture based parameterizable CGRA overlay. It featured an interconnection wrapper unit for each processing element (PE) that could be used for dynamic CGRAs topology customization. Unfortunately, programming and compilation on WPPA were not presented. The authors in \cite{ferreira2011fpga} proposed a heterogeneous CGRA overlay with a global multi-stage interconnection on FPGA. Compiling applications onto the overlay took only milliseconds for smaller DFGs. However, the global multi-stage interconnection required multiple stages for communication between each pair of PEs and resulted in either low implementation frequency or large communication latency in terms of cycles. In addition, there was no intermediate storage except the pipeline registers in the CGRA and it limited the performance of the operation scheduling.
+In \cite{shukla2006quku}, a customized CGRA overlay called QUKU was developed for DSP algorithms. It had two-level configuration capability, while the low-speed configuration was used for operator reuse within an application and high-speed reconfiguration was used for optimization between different applications. Nevertheless, the hardware infrastructure was consist of simple operation elements which can only be adapted to a few specified DSP algorithms.
+The authors in \cite{capalijia2013pipelined} built a more generic high speed mesh CGRA overlay using the elastic pipeline technique to achieve the maximum throughput. It adopted a data-driven execution flow and was suitable for smaller pipelined DFG execution, while it would be difficult to handle applications with random IO access.
+
+
+In general, previous CGRA overlays have demonstrated the promising performance acceleration capability for compute intensive applications. They typically take DFG as design entry and focus on hardware infrastructure design as well as corresponding mapping and scheduling. However, they are still lack of consideration on proper loop unrolling for DFG generation, on-chip buffering, the communication with host and even end-to-end performance which are essential for FPGA accelerator design especially from a HW/SW co-design engineer's perspective.
+
+
+
+
+Finally, a third category of overlay features soft-processor-like architectures with high degree of control and data parallelism suitable for FPGA accelerations.  For example, in the work of MARC \cite{Lebedev2010}, a many-core overlay with customizable data path was proposed.  Similarly, a GPU-like overlay was proposed in \cite{Jeffrey2011potential}.
+

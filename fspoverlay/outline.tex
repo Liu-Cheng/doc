@@ -1,0 +1,90 @@
+\begin{center}
+\Large Outline
+\end{center}
+
+\begin{raggedleft}
+\footnotesize
+
+\begin{itemize}[nosep]
+\item Motivation
+\begin{itemize}[nosep]
+\item Difference in hardware and software design experience
+\item Many features trivially expected by modern software designers are not available in hardware -- high design productivity, fast debug cycles, relocatable code, portability, virtualization, etc.
+\item  Overlay provides many of such features
+\end{itemize} % 1st level
+\item FPGA Overlays
+
+\begin{itemize}[nosep] % 2nd level
+
+\item
+Definition of overlay
+\begin{itemize}[nosep]
+\item Definition: A virtual reconfigurable architecture that overlays on top of the physical FPGA configurable fabric.
+\end{itemize}
+
+\item
+Overlay vs Custom Design vs CGRA
+\begin{itemize}[nosep]
+\item  Although very similar, overlay $\ne$ custom design
+\item Overlays are designed to be somewhat general purpose (or at least compatible with a domain of applications)
+\item  Overlay $\ne$ plain, hard, CGRA
+\item The use of CGRA is a mean to achieve other goals in the overlay.
+\item  The CGRA is ``soft'' by design
+\end{itemize}
+
+\item
+Benefits of Overlays
+\begin{itemize}[nosep]
+\item Virtualization
+\begin{itemize}
+\item Portability
+\item Security
+\item Compatibility
+\end{itemize}
+\item Design productivity
+\begin{itemize}
+\item Compilation time
+\item Debugging facilities
+\end{itemize}
+\item HW/SW Separation of Concerns 
+\begin{itemize}
+\item SW: map application to overlay, which is more software friendly
+\item HW: map overlay to physical hardware
+\end{itemize}
+
+\end{itemize}
+
+\item
+Short Survey of existing Overlay Designs
+\begin{itemize}[nosep]
+\item Virtual FPGAs
+%\item Hard macro/modular design methodologies
+\item CGRAs
+\item Multi-core/MPPA/Other processor arrays
+\item GPU / OpenCL overlay
+\item etc
+\end{itemize}
+(Questions: maybe we want to categorize overlays according to the intended uses (e.g. security, portability, etc)
+(Another way to categorize them will be by their different architecture)
+(The work presented at OLAF can be a good starting point on a survey of existing overlay projects.)
+\end{itemize} %end 2nd level
+
+\item
+Case Studies
+Here we show various examples of overlays as “case studies”.
+
+\begin{itemize}[nosep]
+\item QuickDough
+\item Malibu? Zuma?
+\end{itemize}
+
+\item
+State-of-the-art and availability/usability for software engineers
+\begin{itemize}[nosep]
+\item (I don’t think there is any commercially available overlay offer.  Software compatibility layers may be available in some way.
+\item e.g. Think of VPR and the “virtual” target FPGA. It can be a compatibility target for different FPGA vendors if needed.)
+\item Tools for Overlays?
+\end{itemize}
+\end{itemize}
+
+\end{raggedleft}

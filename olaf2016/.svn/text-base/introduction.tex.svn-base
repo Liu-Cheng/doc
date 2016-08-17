@@ -1,0 +1,67 @@
+\section{Introduction}
+\label{sec:introduction}
+By raising the abstraction level of the underlying configurable fabric, many early works have already demonstrated the promise of using FPGA overlays to improve designer's productivity in developing hardware accelerators~\cite{quickdough_fsp, quickdough}.
+While such hardware accelerators can often deliver significant performance improvement over their software counterparts, they are often fixed in functionality and lack the flexibility to process irregular input or data that depends on run-time dynamics.
+To truly take advantage of the performance benefit of hardware accelerators, it is therefore desirable to have an efficient CPU in the overlay tightly-coupled with the accelerator to control its operations and to maintain compatibility with the rest of the software system.
+
+%In the area of high-performance computing, heterogeneous computer is becoming increasingly important in assisting the conventional processor to provide acceleration. In particular, the use of FPGAs in heterogeneous computer has demonstrated promising results in accelerating many computationally demanding applications while improving power-efficiency in programs execution~\cite{candice, mingo}.%microsoft
+
+%In spite of the success of FPGA accelerators, the use of FPGAs in modern and mainstream computing systems remains limited and has yet to receive widespread adoption among software engineers. The steep learning curve of the complex design tool, the non-trivial hardware design methodology, as well as the long implementation tool run time are all contributing to such high barrier-to-entry for software programmers.
+
+%FPGA overlay has the potential to alleviate these problems by providing a virtual layer that is conceptually located between the user applications and the physical FPGA devices~\cite{quickdough_fsp}. This virtual layer can be soft GPU or CGRA which composed of coarse-grained functional blocks. With the reduced reconfiguration granularity, abstraction layer is raised from hardware design level to software-liked methodologies. Hardware generation speed is also increased significantly and that allows faster design iterations, which subsequently improves designers' productivity.
+
+%In spite of these advantages, the above virtual reconfigurable architecture often needs to collaborate with a software to ensure correct execution flow and computation. This software is responsible for processing data that cannot be covered by the hardware accelerator, and providing controls over the hardware accelerator in runtime.
+
+To illustrate these intricate hardware-software codesign challenges, Algorithm~\ref{alg:sobel} shows a simple design that accelerates the Sobel edge detection algorithm in such heterogeneous system.  In this implementation, an accelerator that computes $16\times 16$ output pixels at a time is implemented in FPGA.  During run time, depending on the user input image size, the software reuses this hardware accelerator for as many \emph{complete} $16\times 16$ output pixels as possible.  The remaining odd pixels, as well as pixels on the boundary of the image where the standard filter kernel cannot readily operate on, are handled in software.
+
+\IncMargin{1em}
+\begin{algorithm}
+\footnotesize
+	%\KwData{Pixels of size $N \times N$, where $N-2$ is a multiple of BUF }
+	\KwData{Pixels of size $N \times N$}
+	\# define BUF 16
+	%\tcc{Assume the accelerator computes 16x16 output pixels each time}
+	\tcp*[f]{HW computes 16x16 output pixels}\\
+	%\BlankLine
+	%\For{$i=1, 1+BUF, ...$ \KwTo $width-1$}{
+	\For{$r:=0$ \KwTo $N-1$}{
+		\For{$c:=0$ \KwTo $N-1$}{
+		%\For{$j=1, 1+BUF, ...$ \KwTo $height-1$}{
+			%\If{i == 1 or j == 1 or }{
+			%	
+			%}
+			\uIf{pixel[$r, c$] is edge}{
+   				SW\textunderscore SOBEL( pixel, $r, c$ )\;
+   			}\uElseIf{($(r-1)$ \% BUF) $==0$ \&\& \\ \quad \quad \quad$(c-1)$ \% BUF) $==0$}{
+   				HW\textunderscore SOBEL( pixel, $r, c$ )\;
+   			}\Else{
+   				continue\;
+   			}
+		}
+	}
+	%\BlankLine
+	\caption{Pseudocode for Sobel edge detector.  As the hardware accelerator operates on a fixed $16\times 16$ array of output pixel at a time, software passes control to the accelerator only for cases when all $17 \times 17$ pixels are available.  Otherwise, the computation is carried out in software.  Assume $N-2$ is a multiple of \texttt{BUF}.}
+	\label{alg:sobel}
+\end{algorithm}
+\DecMargin{1em}
+
+While the design of Algorithm~\ref{alg:sobel} may be specific to the particular implementation of Sobel edge detection, it highlights several challenges commonly faced by many real-world hardware-software designers.  First of all, because of the limited flexibility of most hardware accelerators, the controlling software must ensure the necessary input data are available before the accelerator is launched.  Furthermore, unless the hardware accelerator is arbitrarily flexible, software running in the CPU must also be able to process any run time data that cannot readily be processed by the accelerator.
+
+
+%CGRA alone is usually incapable of executing the entire application based on the well-known 90/ 10 locality rule~\cite{com_arc_book}. In general, computational intensive kernels can be executed on CGRA for acceleration while the rest of the execution, i.e. miscellaneous controls for the CGRA, often necessitates a highly efficient processor.
+
+
+ 
+
+In view of the above, this paper proposes the use of a \emph{small}, \emph{open source} soft processor to provide fine-grained control for the hardware accelerator in the context of an overlay framework.
+The core is designed to be \emph{tightly-coupled} with the hardware accelerator in order to minimize the overhead involved with switching control between hardware and software.
+RISC-V \code{RV32I}~\cite{riscv} is chosen as the ISA for its openness and simplicity.  Finally, the core is generically designed in order to promote design portability and compatibility.
+
+%We acknowledge that there are certainly many ways a heterogeneous system may handle the aforementioned hardware-software challenges, for instances, by using predicated operations in the accelerators and by using complex controlling state machine in hardware.  However, we argue that a CPU tightly-coupled with the accelerator would offer the most flexible and portable heterogeneous architecture to serve as an FPGA overlay. 
+
+As such, we consider the main contribution of this work rests on the demonstration of the benefits of tightly-coupling a lightweight CPU with hardware accelerator to serve within a combined overlay architecture.  We also demonstrated that a simple RISC-V CPU with 4-stage pipeline is adequate to provide control while delivering reasonable performance and maintaining software compatibility.
+%  By providing a unified programming model for FPGA overlays, we anticipate that the proposed tightly-coupled architecture can eventually promote portability across platforms and productivity of application designers.
+
+In the next section, we elaborate on the design and implementation of the soft processor and the tightly-coupled architecture. We then evaluate the performance of the proposed architecture in \secref{sec:evaluation} and discuss related work in \secref{sec:related}. We make conclusions in \secref{sec:conclusion}.
+%In the next section, related work will first be covered. The design and implementation of the soft processor and the tightly-coupled architecture are described in \secref{sec:implementation}. \secref{sec:evaluation} will evaluate the proposed architecture and conclusion is drawn in \secref{sec:conclusion}.
+

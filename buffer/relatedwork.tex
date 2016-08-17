@@ -1,0 +1,88 @@
+\section{Related Work} \label{sec:relatedwork}
+Despite the performance and power advantages, the design 
+productivity of developing FPGA applications remains low 
+due to the lengthy compilation and complex application-specific 
+customization. And it has become the major obstacle 
+that hinders the wide adoption of FPGAs as commodity computing devices. 
+The community from both the industry and academia have developed 
+many different methods from diverse angles to tackle the problem. 
+These methods can be roughly classified into three categories. 
+The first category mainly focuses on improving the low-level 
+implementation tools. A number of approaches such as making 
+quality/runtime trade-offs \cite{mulpuri2001runtime}, parallel 
+compilation \cite{moctar2014parallel,goeders2011deterministic,altera-pc,xilinx-pc} 
+and using hard-macro techniques \cite{lavin2013improving,korf2011automatic} have been explored from this angle. The second 
+category mainly centers the HLS design flow while the third one 
+primarily relies on the overlay concept. They later two categories 
+will be detailed in the following sections.
+
+\subsection{High-Level Synthesis} 
+With many years of continuous endeavor, a number of tools have emerged as 
+mature solutions for HLS \cite{VivadoHLS,Legup,zhang2008autopilot}. They typically 
+allow designers to express hardware designs using high-level  
+description languages such as C, C++ etc. and also enable evaluation of different 
+design choices using pragmas or directives. Indeed, they significantly improve 
+the design productivity compared to the conventional hardware design flow using 
+hardware description languages. However, when considering the overall design 
+productivity of developing hybrid software-gateware applications, HLS is 
+only addressing part of the problem, as the lengthy low-level compilation 
+including synthesis, mapping, placing and routing remains a bottleneck for 
+an application designer \cite{ROB2014,capalija2014tile}.
+
+Customizing the generated hardware specifically to an user 
+application is also time-consuming for designers and thus critical to the design 
+productivity. A number of algorithms such as generic algorithms 
+relied on local-search techniques \cite{schafer2009adaptive,sengupta1997genetic}, 
+learning-based methods \cite{onlinecustomization,carrion2012machine}, 
+divide and conquer algorithm \cite{DCcustomization} 
+and a calibration free algorithm \cite{RCcustomization} etc. have been developed 
+to perform the DSE on top of HLS tools. The algorithms can efficiently help automate the 
+customization or DSE process. However, the algorithms must rely on HLS tools 
+to estimate the implementation information such as implementation frequency, 
+overhead or power for the corresponding customization. While the hardware generated 
+can be irregular and may vary dramatically, thus the accuracy of the estimation 
+especially on implementation frequency and power can be rather limited, which may
+fail to optimize an HW/SW co-design problem.  
+
+\subsection{Overlay Architectures}
+Overlay architecture which is a virtual intermediate architecture overlaid on 
+top of off-the-shelf FPGA is increasingly applied as a way to address the 
+productivity challenge. 
+
+Various overlays with diverse configuration granularities and flexibility 
+ranging from virtual FPGAs \cite{Grant2011Malibu,ZUMA2012}, 
+array-of-FUs \cite{mesh-FUs,ferreira2011fpga}, soft 
+CGRA \cite{kissler2006dynamically,scgra}, soft GPU \cite{Guppy2012GPU-Like}, 
+vector processors\cite{Yiannacouras2009FPS,MXP2013} to 
+configurable processors or multi-core processors 
+\cite{unnikrishnan2009application,MARC2010,Yiannacouras2007Exploration,Capalija2009coarse-grain,OCTAVO2012,iDEA2012} 
+have been developed over the years. SCGRA overlay provides unique 
+advantages on compromising hardware implementation 
+and performance for compute intensive nested loops as demonstrated 
+by numerous ASIC CGRAs \cite{tessier2001reconfigurable,compton2002reconfigurable}.
+Most importantly, it allows both rapid compilation by taking advantage of 
+the overlays' tiling structure \cite{ROB2014} and efficient bitstream 
+reuse within the design iterations of an application \cite{scgra}, 
+thus it is particularly promising for high productivity nested loop acceleration.
+
+Indeed, SCGRA overlays have many similarities in terms of array structure 
+and scheduling algorithm with ASIC CGRAs. ASIC CGRAs emphasize 
+more on configuration capability and limited customization is allowed due 
+to the overhead constraints \cite{zhou2014application,miniskar2014retargetable} 
+while SCGRA overlays allow more intensive architectural customization 
+because of the FPGA's inherent programmability. Moreover, hardware resources such as 
+DSP blocks and RAM blocks available on FPGAs are discrete, which results in different 
+design constraints for SCGRA overlay customization. 
+
+The authors in \cite{colinheart} developed an SCGRA topology customization method using 
+genetic algorithm and showed the potential benefits of the SCGRA overlay customization, 
+but the rest of the system design parameters were not covered.
+In order to achieve both high design productivity and high performance with low overhead,  
+a complete nested loop acceleration framework targeting CPU-FPGA system 
+is developed in this work. It supports intensive application-specific
+customization including the overlay architectural customization, 
+the compilation customization and communication interface customization 
+for various design goals. When the customized design parameters are determined, 
+corresponding hardware accelerator and software can be compiled to the target 
+CPU-FPGA system rapidly eventually providing a push-button solution for a nested loop 
+acceleration. 

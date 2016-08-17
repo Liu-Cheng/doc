@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="744.09448819"
+   height="1052.3622047"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.3.1 r9886"
+   sodipodi:docname="group-dfg.svg">
+  <defs
+     id="defs4">
+    <marker
+       inkscape:stockid="Arrow1Mend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Mend"
+       style="overflow:visible;">
+      <path
+         id="path4236"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt;"
+         transform="scale(0.4) rotate(180) translate(10,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Mend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Mend-3"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path4236-9"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         transform="matrix(-0.4,0,0,-0.4,-4,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Mend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker4412"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path4414"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         transform="matrix(-0.4,0,0,-0.4,-4,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Mend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Mend-6"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path4236-1"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         transform="matrix(-0.4,0,0,-0.4,-4,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Mend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker4568"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path4570"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         transform="matrix(-0.4,0,0,-0.4,-4,0)" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.3018996"
+     inkscape:cx="160.80782"
+     inkscape:cy="860.11819"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1215"
+     inkscape:window-height="936"
+     inkscape:window-x="65"
+     inkscape:window-y="24"
+     inkscape:window-maximized="1"
+     showguides="true"
+     inkscape:guide-bbox="true" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#010000;stroke-width:0.5;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       id="rect3053"
+       width="152.97209"
+       height="147.74039"
+       x="27.592747"
+       y="34.370575" />
+    <text
+       xml:space="preserve"
+       style="font-size:12px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="41.340466"
+       y="51.815445"
+       id="text3006"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="41.340466"
+         y="51.815445"
+         id="tspan4717">#define N 10000</tspan><tspan
+         sodipodi:role="line"
+         x="41.340466"
+         y="66.815445"
+         id="tspan4546" /><tspan
+         sodipodi:role="line"
+         x="41.340466"
+         y="81.815445"
+         id="tspan3018">...</tspan><tspan
+         sodipodi:role="line"
+         x="41.340466"
+         y="96.815445"
+         id="tspan3045">...</tspan><tspan
+         sodipodi:role="line"
+         x="41.340466"
+         y="111.81544"
+         id="tspan4552"
+         style="font-weight:normal;-inkscape-font-specification:Sans">//Loop kernel</tspan><tspan
+         sodipodi:role="line"
+         x="41.340466"
+         y="126.81544"
+         id="tspan3203"
+         style="font-weight:bold;-inkscape-font-specification:Sans Bold">for(i=0; i&lt;N; i++){</tspan><tspan
+         sodipodi:role="line"
+         x="41.340466"
+         y="141.81544"
+         id="tspan3012"
+         style="font-weight:bold;-inkscape-font-specification:Sans Bold">    c[i] = a[i] x b[i] </tspan><tspan
+         sodipodi:role="line"
+         x="41.340466"
+         y="156.81544"
+         id="tspan3010"
+         style="font-weight:bold;-inkscape-font-specification:Sans Bold">}</tspan><tspan
+         sodipodi:role="line"
+         x="41.340466"
+         y="171.81544"
+         id="tspan4550">...</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:12px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="64.637344"
+       y="24.292013"
+       id="text3400"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3402"
+         x="64.637344"
+         y="24.292013">Original code</tspan></text>
+    <g
+       id="g3047"
+       transform="translate(188.18655,-183.5779)">
+      <rect
+         y="216.99939"
+         x="27.267956"
+         height="147.47681"
+         width="153.62167"
+         id="rect3053-5"
+         style="fill:#ffffff;fill-opacity:1;stroke:#010000;stroke-width:0.49999997;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text3006-8"
+         y="235.83221"
+         x="33.994808"
+         style="font-size:12px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           id="tspan4717-1"
+           y="235.83221"
+           x="33.994808"
+           sodipodi:role="line">// Group Size: G</tspan><tspan
+           y="250.83221"
+           x="33.994808"
+           sodipodi:role="line"
+           id="tspan3321">#define N 10000</tspan><tspan
+           id="tspan4723-4"
+           y="265.83221"
+           x="33.994808"
+           sodipodi:role="line">#define G 10</tspan><tspan
+           id="tspan3018-8"
+           y="280.83221"
+           x="33.994808"
+           sodipodi:role="line" /><tspan
+           id="tspan3226"
+           y="295.83221"
+           x="33.994808"
+           sodipodi:role="line">for(i=0; i&lt;N/G; i++){</tspan><tspan
+           style="font-style:italic;font-weight:normal;-inkscape-font-specification:Sans Italic"
+           y="310.83221"
+           x="33.994808"
+           sodipodi:role="line"
+           id="tspan3325">    To_FPGA(a[G], b[G])</tspan><tspan
+           id="tspan3012-9"
+           y="325.83221"
+           x="33.994808"
+           sodipodi:role="line"
+           style="font-weight:bold;-inkscape-font-specification:Sans Bold">    Group_Execution();</tspan><tspan
+           style="font-style:italic;font-weight:normal;-inkscape-font-specification:Sans Italic"
+           y="340.83221"
+           x="33.994808"
+           sodipodi:role="line"
+           id="tspan3327">    To_Main_Mem(c[G])</tspan><tspan
+           id="tspan3010-4"
+           y="355.83221"
+           x="33.994808"
+           sodipodi:role="line">}</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text3404"
+         y="208.55022"
+         x="56.524105"
+         style="font-size:12px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           y="208.55022"
+           x="56.524105"
+           id="tspan3406"
+           sodipodi:role="line">Loop kernel</tspan></text>
+    </g>
+    <g
+       id="g3056"
+       transform="translate(188.55595,-188.67497)">
+      <rect
+         y="407.60706"
+         x="34.213799"
+         height="119.82491"
+         width="149.74472"
+         id="rect3066"
+         style="fill:#ffffff;fill-opacity:1;stroke:#010000;stroke-width:0.49999994;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text3022"
+         y="409.87311"
+         x="43.314659"
+         style="font-size:12px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           id="tspan4745"
+           y="409.87311"
+           x="43.314659"
+           sodipodi:role="line" /><tspan
+           y="424.87311"
+           x="43.314659"
+           sodipodi:role="line"
+           id="tspan3353">// Unrolling factor: 2</tspan><tspan
+           id="tspan3256"
+           y="439.87311"
+           x="43.314659"
+           sodipodi:role="line">#define G 10</tspan><tspan
+           id="tspan3054"
+           y="454.87311"
+           x="43.314659"
+           sodipodi:role="line">#define U 2</tspan><tspan
+           id="tspan3241"
+           y="469.87311"
+           x="43.314659"
+           sodipodi:role="line" /><tspan
+           id="tspan3034"
+           y="484.87311"
+           x="43.314659"
+           sodipodi:role="line">for(i=0; i&lt;G/U; i++){</tspan><tspan
+           style="font-weight:bold;-inkscape-font-specification:Sans Bold"
+           id="tspan3026"
+           y="499.87311"
+           x="43.314659"
+           sodipodi:role="line">    DFG_Execution();</tspan><tspan
+           id="tspan3028"
+           y="514.87311"
+           x="43.314659"
+           sodipodi:role="line">}</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text3512"
+         y="398.1059"
+         x="88.321495"
+         style="font-size:12px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           y="398.1059"
+           x="88.321495"
+           id="tspan3514"
+           sodipodi:role="line">Group</tspan></text>
+    </g>
+    <g
+       id="g3045"
+       transform="translate(8.4491922,-306.47523)">
+      <rect
+         y="553.42413"
+         x="35.717144"
+         height="89.100571"
+         width="136.7233"
+         id="rect3084"
+         style="fill:#ffffff;fill-opacity:1;stroke:#010000;stroke-width:0.5;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text3044"
+         y="572.30072"
+         x="46.882488"
+         style="font-size:12px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           id="tspan3058"
+           y="572.30072"
+           x="46.882488"
+           sodipodi:role="line">#define U 2</tspan><tspan
+           id="tspan3062"
+           y="587.30072"
+           x="46.882488"
+           sodipodi:role="line" /><tspan
+           id="tspan3050"
+           y="602.30072"
+           x="46.882488"
+           sodipodi:role="line">for(i=0; i&lt;U; i++){</tspan><tspan
+           id="tspan3064"
+           y="617.30072"
+           x="46.882488"
+           sodipodi:role="line">    c[i] = a[i] x b[i] </tspan><tspan
+           id="tspan3066"
+           y="632.30072"
+           x="46.882488"
+           sodipodi:role="line">}</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text3534"
+         y="546.25891"
+         x="88.818031"
+         style="font-size:12px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           y="546.25891"
+           x="88.818031"
+           id="tspan3536"
+           sodipodi:role="line">DFG</tspan></text>
+    </g>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Mend)"
+       d="M 172.06052,125.94843 213.13666,35.995132"
+       id="path3258"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.9999997px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Mend)"
+       d="m 174.90144,132.99479 38.4368,45.78241"
+       id="path4216"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Mend)"
+       d="M 236.40051,304.06427 181.5825,251.23288"
+       id="path3258-0"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.99999994px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Mend)"
+       d="m 237.25607,314.04968 -54.94005,21.15631"
+       id="path4216-8"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Mend)"
+       d="M 359.41352,152.20429 223.50419,215.70213"
+       id="path3258-7"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.9999997px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Mend)"
+       d="m 362.01738,148.89996 0.67713,65.11511"
+       id="path4216-2"
+       inkscape:connector-curvature="0" />
+  </g>
+</svg>

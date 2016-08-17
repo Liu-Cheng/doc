@@ -1,0 +1,232 @@
+\subsection{QuickDough}
+QuickDough is a nested loop accelerator generation framework that produces hardware accelerators at software compilation speed~\cite{archsyn,Liu:2015:FPT,Liu:2015:FSP}.
+The key technology that enables such rapid hardware compilation rests on its systematic use of a soft coarse-grained reconfigurable array overlay to flexibly carry out the hardware acceleration tasks.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.9\linewidth]{qd_overview}
+\caption{QuickDough takes a user-designated loop as input and generate the corresponding hardware accelerator system using a soft coarse-grained reconfigurable array overlay.}
+\label{fig:qd_overview}
+\end{figure}
+
+
+In a nutshell, given a user-designated loop for acceleration, QuickDough automatically generates and optimizes the corresponding hardware accelerator and its associated data I/O facilities with the host software (\figref{fig:qd_overview}.  As QuickDough is capable of producing such accelerated hardware-software system in the order of seconds, it provides a rapid development experience that is compatible with that expected by most software programmers.
+
+To achieve this compilation speed, while maintaining reasonable accelerator performances, QuickDough avoids the creation of custom hardware directly for each application.
+Instead, the compute kernel loop bodies are scheduled to execute on a CGRA overlay, which is selected from a library of pre-implemented hardware library.
+By sidestepping the time-consuming low-level hardware implementation tool flow, the time to implementing an accelerator in QuickDough is reduced to essentially just the time spent on overlay selection and scheduling compute operations on the resulting overlay.
+In addition, taking advantage of the overlay's softness and regularity, QuickDough allows users to perform tradeoff between compilation time and performance by selecting and customizing the overlay on a per application basis.  The result is a unified design framework that seamlessly produces all hardware and software infrastructure for executing accelerated code all compiled in a software-centric fashion.
+
+Through these facilities and through carefully partitioning the design process, QuickDough strives to improve design productivity of software programmers utilizing FPGA accelerators in 3 aspects:
+
+\begin{enumerate}[nosep]
+\item QuickDough automates most of the hardware accelerator generation process, requiring only minimum input from the application designer;
+\item QuickDough produces functional hardware designs at software compilation speed (order of seconds), greatly increasing the number of debug-edit-implement cycles per day achievable;
+\item QuickDough allows software programmers to progressively improve performance of the generated accelerator through subsequent optimization phases, which helps separating the functional verification and optimization process of application development.
+\end{enumerate}
+
+In the following subsections, an overview of QuickDough is presented to illustrate how it achieves the above goals.  For details, please refer to \cite{Liu:2015:FPT,Liu:2015:FSP}.
+
+\subsubsection{Generation Framework}
+\figref{fig:framework} shows an overview of the QuickDough compilation flow.
+<<<<<<< .mine
+The target of QuickDough are hybrid CPU-FPGA systems that include FPGA accelerators connected to the a host CPU system, such as that found on a Xilinx Zynq platform.
+The key to rapid accelerator generation in QuickDough is to divide the overlay hardware-software compilation flow into a fast and a slow path. 
+=======
+The key to rapid accelerator generation in QuickDough is to partition the complex hardware-software compilation flow into a fast and a slow path. 
+>>>>>>> .r4036
+
+\begin{figure}
+    \center{\includegraphics[width=0.8\linewidth]{quickdough_framework}}
+    \caption{QuickDough: FPGA loop accelerator design framework using 
+        SCGRA overlay. The compute intensive loop kernel of an 
+        application is compiled to the SCGRA overlay based FPGA
+    accelerator while the rest is compiled to the host processor.}
+    \label{fig:framework}
+\end{figure}
+
+The fast path of QuickDough consists of all the steps necessary to generate a functional loop accelerator, which are shown in orange for hardware and in green for software generation in \figref{fig:framework}.
+To begin generating a loop accelerator, QuickDough first partially unroll the compute kernel loop and extract the loop body into its corresponding data flow graph (DFG).
+Subsequently, a suitable overlay configuration is selected from the pre-built implementation library, and the DFG is scheduled to execute on this overlay.
+The resulting scheduling performance, together with the estimated communication cost may then optionally be used to refine the overlay selection should the user choose to.
+The selected pre-built overlay implementation is then updated with the corresponding scheduling result to create the final FPGA configuration bitstream.
+Finally, this updated bitstream is combined with the rest of the software to form the final application that will be executed on the target CPU-FPGA system. 
+
+While there are quite a few steps involved in this fast path, all of them run relatively quickly.
+Furthermore, the only loop in this compilation flow is the accelerator selection process, which as explained is an optional step that can be bypassed if the user opt for speed over quality.
+The result is that the run time of this fast path is in the order of tens of seconds, allowing users to perform rapid design iterations, which is particularly important during early application development phases.
+
+On the other hand, the slow path of QuickDough consists of optimization steps for performance enhancement, library updates, and/or overlay customizations that are executed only upon a user's request.
+
+\textbf{Need to add mentioning of customization here}
+For performance enhancement, users may provide the hardware resource budget to QuickDough.
+Then target operations to be supported will be decided automatically by analyzing the DFGs produced by the DFG generator.
+With the resource budget and the supported operation set, a set of representative accelerator HDL models will be generated by utilizing the overlay template.
+Finally, the accelerator HDL models are implemented on target FPGA platforms and further updated to the accelerator library.
+ \textbf{Need double check on wordings}
+
+
+\subsubsection{The QuickDough Overlay}
+The QuickDough overlay consists of an array of simple processing 
+elements (PEs) connected by a direct network executing 
+synchronously as shown in \figref{fig:scgra-accelerator}.
+Each PE computes and forwards data in lock steps, allowing deterministic 
+multi-hop data communication that overlaps with computations.
+The action of each PE in each cycle is controlled by an instruction 
+ROM that is populated with instructions generated by the design framework.
+Finally, a data memory is featured on each PE to serve as a temporary 
+storage for run-time data that may be reused in the same PE or be 
+forwarded in subsequent steps.
+
+\begin{figure}
+    \center{\includegraphics[width=0.65\linewidth]{scgra-accelerator}}
+    \caption{SCGRA Overlay Based FPGA Accelerator}
+    \label{fig:scgra-accelerator}
+\end{figure}
+
+
+Communication between the accelerator and the host processor is 
+carried through a pair of input/output buffers.
+Accesses to these I/O buffers from the SCGRA array take place in 
+lock step with the rest of the system.
+The exact buffer location to be accessed is controlled by the 
+AddrIBuf and AddrOBuf blocks. Both of them are ROM populated with 
+address information generated from the QuickDough compiler.
+
+\subparagraph{PE template}
+\begin{figure}
+\center{\includegraphics[width=0.65\linewidth]{pe}}
+\caption{Fully pipelined PE structure. Each PE can be connected to at most 4 neighbours.}
+\label{fig:pe}
+\end{figure}
+
+
+\figref{fig:pe} shows the current implementation of a QuickDough 
+PE template that features an optional load/store path. 
+At the heart of the PE is an ALU, which is supported by a multi-port 
+data memory and an instruction memory.
+Three of the data memory's read ports are connected to the ALU as inputs, 
+while the remaining ports are sent to the output multiplexors for 
+connection to neighboring PEs and the optional store path to 
+OBuf external to the PE. At the same time, this data memory takes 
+input from the ALU output, data arriving from neighboring PEs, as well 
+as from the optional IBuf loading path.
+The action of the PE is controlled by the AddrCtrl unit that reads from the instruction memory.
+Finally, a global signal from the AccCtrl block controls the start/stop of all PEs in the array.
+
+\subparagraph{ALU template}
+\begin{figure}
+\center{\includegraphics[width=0.65\linewidth]{alu-v2}}
+\caption{The QuickDough ALU. It supports up to 16 fully pipelined 3-input operations.}
+\label{fig:ALU}
+\end{figure} 
+
+At the heart of the proposed PE is the ALU and it can easily be 
+customized with different operations specifically for any given user 
+applications. \figref{fig:ALU} shows the ALU template used 
+in the QuickDough overlay. These operators in the ALU may execute 
+concurrently in a pipelined fashion and must complete in a 
+deterministic number of cycle. Given the deterministic nature of 
+the operators, the QuickDough scheduler will 
+ensure that there is never conflict at the output multiplexor.
+
+\subsection{Loop execution on the accelerator}
+The loop kernels are mostly partially unrolled, transformed to DFG and scheduled to the SCGRA
+overlay of the accelerator. A straightforward way to complete the whole loop computation on top of the SCGRA
+overlay is to repeat the same DFG computation until the end of the loop. Nevertheless, this may
+require data transfer between host processor and I/O buffer for each DFG computation. As a result,
+the communication cost increases dramatically especially when the amount of each data transfer is
+small. Worse still, input data of the consecutive DFGs may be reused and the straightforward
+data transfer strategy may greatly increase the total amount of data transfer through out the loop
+computation. 
+
+To alleviate this problem, we have proposed to batch data transfers for multiple executions of the
+same DFG into groups as shown in \figref{fig:blocking-and-dfg-gen}. Specifically, after the loop is
+unrolled $U$ times, $G$ of them are grouped together for each data transfer. This group strategy
+helps to amortize the initial communication cost between host processor and the accelerator. In
+addition, it allows input data to be reused for different DFG computation in the same group and the
+group size is mainly limited by the I/O buffer depth. Meanwhile, the accelerator communicates with
+host processor for each group execution, and thus the accelerator driver that handles the communication
+depends on the I/O buffer depth as well. Clearly, accelerator with larger I/O buffer is
+preferable when the rest part of the accelerator configuration fulfills the requirements. 
+
+\begin{figure}
+\center{\includegraphics[width=0.75\linewidth]{dfg-gen}}
+\caption{Loop execution on an SCGRA overlay based FPGA accelerator}
+\label{fig:blocking-and-dfg-gen}
+\end{figure}
+
+
+
+\subsubsection{FPGA loop accelerator generation}
+The FPGA loop accelerator generation path is a common path and is critical for QuickDough to produce
+FPGA loop accelerator rapidly. The major processes on the path are detailed in this section.
+
+\subparagraph{DFG generation}
+In order to produce an FPGA loop accelerator using SCGRA overlay, DFGs are extracted from the kernel
+that is often expressed as inner loop body. The users may further unroll the loops multiple times to
+increase the amount of operation parallelism in the generated DFG. In this work, we have developed a
+C++ library to help automate the DFG generation with specified loop unrolling factor.
+
+\subparagraph{Accelerator selection}
+Accelerator selection process selects an accelerator from the accelerator library based on the
+performance of the resulting accelerator which mainly depends on the computation latency and
+communication latency. The computation latency of the loop kernel can be calculated using
+\eqnref{eq:comp-lat} where $DFG\_Lat$ stands for the number of cycles needed to complete the SCGRA
+scheduling and mostly depends on the SCGRA overlay size and $Freq$ stands for the pre-built
+accelerator implementation frequency. The communication latency can be
+calculated using \eqref{eq:comm-lat} where $Trans()$ represents the
+data transfer latency function of the target platform and $GpIn$ and $GpOut$ represent the amount of
+data transfer of a group which is determined by the capacity of the I/O buffers. 
+
+\begin{equation} \label{eq:comp-lat}
+    \footnotesize
+    CompLat = DFG\_per\_Loop \times DFG\_Lat / Freq
+\end{equation}
+
+
+\begin{equation} \label{eq:comm-lat}
+    \footnotesize
+    CommLat = Gp\_per\_Loop \times (Trans(GpIn) + Trans(GpOut))
+\end{equation}
+
+
+In summary, the performance of the accelerator can be estimated with analytical models when the scheduling
+performance is obtained through the DFG scheduling while the scheduling performance is mostly determined
+by the SCGRA overlay size. The analytical estimation is fast while the scheduling process is
+relatively slow. Therefore, the accelerator selection process essentially centers the SCGRA
+overlay size selection and then explores all the accelerator configurations with the same SCGRA overlay size. 
+
+To compromise the loop accelerator generation time and performance, three different levels of
+accelerator selection optimization levels are provided in this framework namely O0, O1 and O2
+centering the SCGRA overlay size selection.
+O0 doesn't provide any optimization, and it selects an accelerator with the smallest SCGRA overlay.
+O1 estimates three typical accelerators with the smallest SCGRA overlay, a medium one and the
+largest SCGRA overlay. Then the one that provides the best performance will be adopted. O3 explores all
+the accelerators in the library and searches for the best accelerator configuration. With the
+increase of the optimization level, the accelerator selection process spends more efforts in
+searching the accelerator library for better performance and thus results in longer acceleration
+generation time.
+
+\subparagraph{DFG Scheduling}
+When a DFG is extracted from the loop kernel, it can be then scheduled to execute on the
+SCGRA overlay of the accelerator. Since the target DFGs typically include thousands of nodes, a
+classical list scheduling algorithm \cite{schutten1996list} was adopted. A scheduling metric as
+presented in \cite{colinheart}, considering both load balancing and communication cost was adopted
+in our current implementation. 
+
+\subparagraph{Accelerator bitstream generation}
+The final step of the accelerator generation is to generate 
+the instructions for each PE and the address sequences for the 
+I/O buffers according to the scheduler's result, which will subsequently 
+be incorporated into the configuration bitstream of the overlay produced 
+from previous steps. Then we take advantage of the reconfigurability 
+of SRAM based FPGAs and store the cycle-by-cycle configuration words 
+using on-chip ROMs. The content of the ROMs are embedded in the 
+bitstream and the \code{data2mem} tool from Xilinx \cite{data2mem} is 
+used to update the ROM content of the pre-built bitstream directly. 
+To complete the bitstream integration, \code{BMM} file that describes 
+the organization and placements of the ROMs in the overlay is extracted 
+from \code{XDL} file corresponding to the overlay implementation \cite{beckhoff2011xilinx}.
+This bitstream integration process costs only a few seconds of the compilation time.
+

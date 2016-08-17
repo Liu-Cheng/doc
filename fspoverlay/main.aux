@@ -1,0 +1,147 @@
+\relax 
+\@writefile{toc}{\contentsline {chapter}{\numberline {1}FPGA Overlays}{1}}
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\@writefile{lof}{\contentsline {xchapter}{FPGA Overlays}{1}}
+\@writefile{lot}{\contentsline {xchapter}{FPGA Overlays}{1}}
+\newlabel{Chap:Overlays}{{1}{1}}
+\@writefile{toc}{\contentsline {section}{\numberline {1.1}Overview}{1}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.1}{\ignorespaces Using an overlay to form a 2-layer approach to FPGA application development. Overlay may be designed as a virtual FPGA, or it may implement an entirely different compute architecture such as a coarse-grained reconfigurable array (CGRA), vector processor, multi-core process, or even an GPU.}}{2}}
+\newlabel{fig:overlay_overview}{{1.1}{2}}
+\citation{lavin2011}
+\citation{kissler2006dynamically}
+\citation{ferreira2011fpga}
+\citation{shukla2006quku}
+\citation{Lin:2012:EDC:2460216.2460227}
+\citation{capalijia2013pipelined}
+\citation{dspoverlay}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.1.1}Coarse-Grained Architectures}{3}}
+\citation{Trimberger97}
+\citation{virtualwire}
+\citation{score}
+\citation{Lubbers:2009:RMP:1596532.1596540}
+\citation{SoTECS08}
+\citation{Fu:2005:FCCM}
+\citation{zuma2012}
+\@writefile{toc}{\contentsline {section}{\numberline {1.2}Benefits of Overlays}{4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.2.1}Virtualization}{4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.2.2}Reduced Compilation Time}{4}}
+\citation{Coole2010Intermediate}
+\citation{Hung:2014:VLSI}
+\citation{Hung:2013:TSO:2435264.2435272}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.2.3}Improved Debugging Capabilities}{5}}
+\citation{lavin2011}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.2.4}Separation of Hardware and Software Concerns}{6}}
+\@writefile{toc}{\contentsline {section}{\numberline {1.3}Types of Overlays}{6}}
+\citation{vFPGA}
+\citation{zuma2012}
+\citation{Grant2011Malibu}
+\citation{Coole2010Intermediate}
+\citation{Koch2013CI}
+\citation{vFPGA}
+\citation{Grant2011Malibu}
+\citation{Coole2010Intermediate}
+\citation{Koch2013CI}
+\citation{kissler2006dynamically}
+\citation{ferreira2011fpga}
+\citation{shukla2006quku}
+\citation{Lin:2012:EDC:2460216.2460227}
+\citation{capalijia2013pipelined}
+\citation{dspoverlay}
+\citation{tessier01reconfigurable}
+\citation{compton02reconfigurable}
+\citation{kissler2006dynamically}
+\citation{shukla2006quku}
+\citation{ferreira2011fpga}
+\citation{Lin:2012:EDC:2460216.2460227}
+\citation{capalijia2013pipelined}
+\citation{dspoverlay}
+\citation{adjustable2015}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.3.1}Virtual FPGAs}{7}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.3.2}Coarse-Grained Reconfigurable Arrays}{7}}
+\citation{Yiannacouras2009FPS}
+\citation{Guy2012VENICE}
+\citation{Lebedev2010}
+\citation{Hamilton:14:FPL}
+\citation{Jeffrey2011potential}
+\citation{Lin:2012:EDC:2460216.2460227}
+\citation{Liu:2015:FSP}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.3.3}Processor-Like Overlays}{8}}
+\@writefile{toc}{\contentsline {section}{\numberline {1.4}Case Study -- QuickDough}{8}}
+\citation{Lin:2012:EDC:2460216.2460227}
+\citation{Liu:2015:FSP}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.2}{\ignorespaces QuickDough takes a user-designated loop as input and generate the corresponding hardware accelerator system using a soft coarse-grained reconfigurable array overlay.}}{9}}
+\newlabel{fig:qd_overview}{{1.2}{9}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.3}{\ignorespaces QuickDough: FPGA loop accelerator design framework using SCGRA overlay. The compute intensive loop kernel of an application is compiled to the SCGRA overlay based FPGA accelerator while the rest is compiled to the host processor.}}{10}}
+\newlabel{fig:framework}{{1.3}{10}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.4.1}Generation Framework}{10}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.4.2}The QuickDough Overlay}{11}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.4}{\ignorespaces Overview of the QuickDough generated system. Implemented on the FPGA is the QuickDough overlay, which is an array of PEs connected with a direct network, and the communication infrastructure with the host.}}{12}}
+\newlabel{fig:qd_overlay}{{1.4}{12}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.4.3}Loop Accelerator Generation}{12}}
+\@writefile{toc}{\contentsline {subsubsection}{DFG Generation}{12}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.5}{\ignorespaces Loop execution on an SCGRA overlay based FPGA accelerator}}{13}}
+\newlabel{fig:blocking-and-dfg-gen}{{1.5}{13}}
+\@writefile{toc}{\contentsline {subsubsection}{Accelerator Selection}{13}}
+\citation{schutten1996list}
+\citation{Lin:2012:EDC:2460216.2460227}
+\@writefile{toc}{\contentsline {subsubsection}{DFG Scheduling}{14}}
+\citation{beckhoff2011xilinx}
+\citation{data2mem}
+\@writefile{toc}{\contentsline {subsubsection}{Accelerator Bitstream Generation}{15}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.4.4}Customization \& Optimization}{15}}
+\@writefile{toc}{\contentsline {subsubsection}{What can be customized?}{16}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.4.5}Summary}{16}}
+\citation{Hung:2013:TSO:2435264.2435272}
+\newlabel{fig:qd_customization_ex}{{1.6(a)}{17}}
+\newlabel{sub@fig:qd_customization_ex}{{(a)}{17}}
+\newlabel{fig:qd_customization_resource}{{1.6(b)}{17}}
+\newlabel{sub@fig:qd_customization_resource}{{(b)}{17}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.6}{\ignorespaces Effect of overlay customization on performance and resource consumption. Example here shows the result of an FIR filter using QuickDough with 3 different overlay configurations over a base design.}}{17}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Performance}}}{17}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Resource Consumptions}}}{17}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {Overlay configuration}}}{17}}
+\newlabel{fig:qd_customization_fir}{{1.6}{17}}
+\@writefile{toc}{\contentsline {section}{\numberline {1.5}Research Challenges \& Opportunities}{17}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.5.1}Reducing Overhead}{17}}
+\citation{capalijia2013pipelined}
+\citation{Lebedev2010}
+\citation{Lin:2012:EDC:2460216.2460227}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.5.2}Enhancing Customization}{18}}
+\bibstyle{alpha}
+\bibdata{literature}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.5.3}Closing Thoughts}{19}}
+\bibcite{beckhoff2011xilinx}{BKT11}
+\bibcite{zuma2012}{BL12}
+\bibcite{virtualwire}{BTA93}
+\bibcite{capalijia2013pipelined}{CA13}
+\bibcite{compton02reconfigurable}{CH02}
+\bibcite{Coole2010Intermediate}{CS10}
+\bibcite{adjustable2015}{CS15}
+\bibcite{score}{DMC{$^{+}$}06}
+\bibcite{Fu:2005:FCCM}{FC05}
+\bibcite{ferreira2011fpga}{FVM{$^{+}$}11}
+\@writefile{@@@}{\chapterbegin }
+\bibcite{Grant2011Malibu}{GWL11}
+\bibcite{Hamilton:14:FPL}{HIS14}
+\bibcite{Hung:2013:TSO:2435264.2435272}{HW13}
+\bibcite{Hung:2014:VLSI}{HW14}
+\bibcite{dspoverlay}{JFM15}
+\bibcite{Koch2013CI}{KBL13}
+\bibcite{kissler2006dynamically}{KHKT06}
+\bibcite{Jeffrey2011potential}{KS11}
+\bibcite{Lebedev2010}{LCD{$^{+}$}10}
+\bibcite{vFPGA}{LMVV05}
+\bibcite{Lubbers:2009:RMP:1596532.1596540}{LP09}
+\bibcite{lavin2011}{LPL{$^{+}$}11}
+\bibcite{Lin:2012:EDC:2460216.2460227}{LS12}
+\bibcite{Liu:2015:FSP}{LS15}
+\bibcite{SoTECS08}{SB08}
+\bibcite{shukla2006quku}{SBB06}
+\bibcite{schutten1996list}{Sch96}
+\bibcite{Guy2012VENICE}{SL12}
+\bibcite{tessier01reconfigurable}{TB01}
+\bibcite{Trimberger97}{TCJW97}
+\bibcite{data2mem}{Xil11}
+\bibcite{Yiannacouras2009FPS}{YSR09}
+\global\mtcsecondpartfalse

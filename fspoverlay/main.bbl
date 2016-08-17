@@ -1,0 +1,208 @@
+\newcommand{\etalchar}[1]{$^{#1}$}
+\begin{thebibliography}{DMC{\etalchar{+}}06}
+
+\bibitem[BKT11]{beckhoff2011xilinx}
+C.~Beckhoff, D.~Koch, and J.~Torresen.
+\newblock The {Xilinx} design language ({XDL}): Tutorial and use cases.
+\newblock In {\em Reconfigurable Communication-centric Systems-on-Chip
+  ({ReCoSoC}), 2011 6th International Workshop on}, pages 1--8. IEEE, 2011.
+
+\bibitem[BL12]{zuma2012}
+A.~Brant and G.G.F. Lemieux.
+\newblock {ZUMA}: An open {FPGA} overlay architecture.
+\newblock In {\em Field-Programmable Custom Computing Machines (FCCM), 2012
+  IEEE 20th Annual International Symposium on}, pages 93--96, 2012.
+
+\bibitem[BTA93]{virtualwire}
+J.~Babb, R.~Tessier, and A.~Agarwal.
+\newblock Virtual wires: overcoming pin limitations in {FPGA}-based logic
+  emulators.
+\newblock In {\em FPGAs for Custom Computing Machines, 1993. Proceedings. IEEE
+  Workshop on}, pages 142--151, Apr 1993.
+
+\bibitem[CA13]{capalijia2013pipelined}
+D.~Capalija and T.S. Abdelrahman.
+\newblock A high-performance overlay architecture for pipelined execution of
+  data flow graphs.
+\newblock In {\em Field Programmable Logic and Applications (FPL), 2013 23rd
+  International Conference on}, pages 1--8, Sept 2013.
+
+\bibitem[CH02]{compton02reconfigurable}
+Katherine Compton and Scott Hauck.
+\newblock Reconfigurable computing: a survey of systems and software.
+\newblock {\em ACM Computing Surveys (csuR)}, 34(2):171--210, 2002.
+
+\bibitem[CS10]{Coole2010Intermediate}
+J.~Coole and G.~Stitt.
+\newblock Intermediate fabrics: Virtual architectures for circuit portability
+  and fast placement and routing.
+\newblock In {\em Hardware/Software Codesign and System Synthesis (CODES+ISSS),
+  2010 IEEE/ACM/IFIP International Conference on}, pages 13--22, Oct 2010.
+
+\bibitem[CS15]{adjustable2015}
+James Coole and Greg Stitt.
+\newblock Adjustable-cost overlays for runtime compilation.
+\newblock In {\em Field-Programmable Custom Computing Machines (FCCM), 2015
+  IEEE 23rd Annual International Symposium on}, pages 21--24, May 2015.
+
+\bibitem[DMC{\etalchar{+}}06]{score}
+Andr\'{e} DeHon, Yury Markovsky, Eylon Caspi, Michael Chu, Randy Huang,
+  Stylianos Perissakis, Laura Pozzi, Joseph Yeh, and John Wawrzynek.
+\newblock Stream computations organized for reconfigurable execution.
+\newblock {\em Microprocessors and Microsystems}, 30:334--354, 9 2006.
+
+\bibitem[FC05]{Fu:2005:FCCM}
+W.~Fu and K.~Compton.
+\newblock An execution environment for reconfigurable computing.
+\newblock In {\em Field-Programmable Custom Computing Machines, 2005. FCCM
+  2005. 13th Annual IEEE Symposium on}, pages 149 -- 158, april 2005.
+
+\bibitem[FVM{\etalchar{+}}11]{ferreira2011fpga}
+R.~Ferreira, J.G. Vendramini, L.~Mucida, M.M. Pereira, and L.~Carro.
+\newblock An {FPGA-based} heterogeneous coarse-grained dynamically
+  reconfigurable architecture.
+\newblock In {\em Proceedings of the 14th international conference on
+  Compilers, architectures and synthesis for embedded systems}, pages 195--204.
+  ACM, 2011.
+
+\bibitem[GWL11]{Grant2011Malibu}
+David Grant, Chris Wang, and Guy~G.F. Lemieux.
+\newblock A {CAD} framework for {Malibu}: An {FPGA} with time-multiplexed
+  coarse-grained elements.
+\newblock In {\em Proceedings of the 19th ACM/SIGDA International Symposium on
+  Field Programmable Gate Arrays}, FPGA '11, pages 123--132, New York, NY, USA,
+  2011. ACM.
+
+\bibitem[HIS14]{Hamilton:14:FPL}
+B.K. Hamilton, M.~Inggs, and H.K.-H. So.
+\newblock Mixed-architecture process scheduling on tightly coupled
+  reconfigurable computers.
+\newblock In {\em Field Programmable Logic and Applications (FPL), 2014 24th
+  International Conference on}, pages 1--4, Sept 2014.
+
+\bibitem[HW13]{Hung:2013:TSO:2435264.2435272}
+Eddie Hung and Steven~J.E. Wilton.
+\newblock Towards simulator-like observability for {FPGAs}: A virtual overlay
+  network for trace-buffers.
+\newblock In {\em Proceedings of the ACM/SIGDA International Symposium on Field
+  Programmable Gate Arrays}, FPGA '13, pages 19--28, New York, NY, USA, 2013.
+  ACM.
+
+\bibitem[HW14]{Hung:2014:VLSI}
+E.~Hung and S.J.E. Wilton.
+\newblock Incremental trace-buffer insertion for {FPGA} debug.
+\newblock {\em Very Large Scale Integration (VLSI) Systems, IEEE Transactions
+  on}, 22(4):850--863, April 2014.
+
+\bibitem[JFM15]{dspoverlay}
+Abhishek~Kumar Jain, Suhaib~A. Fahmy, and Douglas~L. Maskell.
+\newblock Efficient overlay architecture based on dsp blocks.
+\newblock In {\em Field-Programmable Custom Computing Machines (FCCM), 2015
+  IEEE 23rd Annual International Symposium on}, pages 25--28, May 2015.
+
+\bibitem[KBL13]{Koch2013CI}
+D.~Koch, C.~Beckhoff, and G.G.F. Lemieux.
+\newblock An efficient {FPGA} overlay for portable custom instruction set
+  extensions.
+\newblock In {\em Field Programmable Logic and Applications (FPL), 2013 23rd
+  International Conference on}, pages 1--8, Sept 2013.
+
+\bibitem[KHKT06]{kissler2006dynamically}
+Dmitrij Kissler, Frank Hannig, Alexey Kupriyanov, and J{\"u}rgen Teich.
+\newblock A dynamically reconfigurable weakly programmable processor array
+  architecture template.
+\newblock In {\em ReCoSoC}, pages 31--37, 2006.
+
+\bibitem[KS11]{Jeffrey2011potential}
+Jeffrey Kingyens and J.~Gregory Steffan.
+\newblock The potential for a {GPU-Like} overlay architecture for {FPGA}s.
+\newblock {\em Int. J. Reconfig. Comp.}, 2011, 2011.
+
+\bibitem[LCD{\etalchar{+}}10]{Lebedev2010}
+I.~Lebedev, Shaoyi Cheng, A.~Doupnik, J.~Martin, C.~Fletcher, D.~Burke, Mingjie
+  Lin, and J.~Wawrzynek.
+\newblock {MARC}: A many-core approach to reconfigurable computing.
+\newblock In {\em Reconfigurable Computing and FPGAs (ReConFig), 2010
+  International Conference on}, pages 7 --12, dec. 2010.
+
+\bibitem[LMVV05]{vFPGA}
+Roman Lysecky, Kris Miller, Frank Vahid, and Kees Vissers.
+\newblock Firm-core virtual {FPGA} for just-in-time {FPGA} compilation.
+\newblock In {\em Proceedings of the 2005 ACM/SIGDA 13th International
+  Symposium on Field-programmable Gate Arrays}, FPGA '05, pages 271--271, New
+  York, NY, USA, 2005. ACM.
+
+\bibitem[LP09]{Lubbers:2009:RMP:1596532.1596540}
+Enno L\"{u}bbers and Marco Platzner.
+\newblock {ReconOS}: Multithreaded programming for reconfigurable computers.
+\newblock {\em {ACM Trans. Embed. Comput. Syst.}}, 9(1):8:1--8:33, October
+  2009.
+
+\bibitem[LPL{\etalchar{+}}11]{lavin2011}
+C.~Lavin, M.~Padilla, J.~Lamprecht, P.~Lundrigan, B.~Nelson, and B.~Hutchings.
+\newblock {HMFlow}: Accelerating {FPGA} compilation with hard macros for rapid
+  prototyping.
+\newblock In {\em Field-Programmable Custom Computing Machines ({FCCM}), 2011
+  {IEEE} 19th Annual International Symposium on}, pages 117 --124, may 2011.
+
+\bibitem[LS12]{Lin:2012:EDC:2460216.2460227}
+Colin~Yu Lin and Hayden Kwok-Hay So.
+\newblock Energy-efficient dataflow computations on {FPGAs} using
+  application-specific coarse-grain architecture synthesis.
+\newblock {\em SIGARCH Comput. Archit. News}, 40(5):58--63, March 2012.
+
+\bibitem[LS15]{Liu:2015:FSP}
+Cheng Liu and Hayden Kwok-Hay So.
+\newblock Automatic nested loop acceleration on {FPGAs} using soft {CGRA}
+  overlay.
+\newblock In {\em FPGAs for Software Programmers (FSP), Second International
+  Workshop on}, Sept 2015.
+
+\bibitem[SB08]{SoTECS08}
+Hayden Kwok-Hay So and Robert Brodersen.
+\newblock A unified hardware/software runtime environment for {FPGA}-based
+  reconfigurable computers using {BORPH}.
+\newblock {\em Transactions on Embedded Computing Systems}, 7(2):1--28, 2008.
+
+\bibitem[SBB06]{shukla2006quku}
+S.~Shukla, N.W. Bergmann, and J.~Becker.
+\newblock {QUKU}: a two-level reconfigurable architecture.
+\newblock In {\em Emerging {VLSI} Technologies and Architectures, 2006. IEEE
+  Computer Society Annual Symposium on}, March 2006.
+
+\bibitem[Sch96]{schutten1996list}
+JMJ Schutten.
+\newblock List scheduling revisited.
+\newblock {\em Operations Research Letters}, 18(4):167--170, 1996.
+
+\bibitem[SL12]{Guy2012VENICE}
+A.~Severance and G.~Lemieux.
+\newblock {VENICE}: A compact vector processor for {FPGA} applications.
+\newblock In {\em Field-Programmable Technology (FPT), 2012 International
+  Conference on}, pages 261--268, Dec 2012.
+
+\bibitem[TB01]{tessier01reconfigurable}
+Russell Tessier and Wayne Burleson.
+\newblock Reconfigurable computing for digital signal processing: A survey.
+\newblock {\em Journal of {VLSI} Signal Processing}, 28(1):7--27, June 2001.
+
+\bibitem[TCJW97]{Trimberger97}
+S.~Trimberger, D.~Carberry, A.~Johnson, and J.~Wong.
+\newblock A time-multiplexed {FPGA}.
+\newblock In {\em FCCM '97: Proceedings of the 5th IEEE Symposium on FPGA-Based
+  Custom Computing Machines}, page~22, Washington, DC, USA, 1997. IEEE Computer
+  Society.
+
+\bibitem[Xil11]{data2mem}
+Xilinx.
+\newblock {\em Data2MEM User Guide}, ug658 (v13.3) edition, Oct 2011.
+\newblock [Online; accessed 19-September-2012].
+
+\bibitem[YSR09]{Yiannacouras2009FPS}
+Peter Yiannacouras, J.~Gregory Steffan, and Jonathan Rose.
+\newblock Fine-grain performance scaling of soft vector processors.
+\newblock In {\em Proceedings of the 2009 International Conference on
+  Compilers, Architecture, and Synthesis for Embedded Systems}, CASES '09,
+  pages 97--106, New York, NY, USA, 2009. ACM.
+
+\end{thebibliography}

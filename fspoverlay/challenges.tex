@@ -1,0 +1,47 @@
+While the early results of using FPGA overlay are encouraging, there remain many challenges that must be overcome before its full potential can be unleashed.
+%
+%While the potential of FPGA overlay is plentiful, there remain many challenges lying ahead that warrant future research.
+In particular, for FPGA overlays to be useful, future research must be able to address two important challenges: reduce overhead and enhance customization.
+
+\subsubsection{Reducing Overhead}
+By introducing an additional architectural layer between a user application and the physical fabric, an FPGA overlay inevitably incurs additional performance and area overhead to the system.
+It is especially important when the FPGA is used as an accelerator in a processor-based system. 
+If the overhead is so large that the FPGA is no longer offering any significant performance enhancement, then software programmers will have little incentive to devote effort into using them.
+
+From a hardware implementation's point of view, the additional layer must also incur additional area overhead.
+Such overhead usually manifests as additional usage of configurable fabric and on-chip memory.
+In some cases where spare resources are available, the effect of such area overhead may not be apparent.
+In fact, as illustrated earlier, researchers have deduced ways to make sure of such spare resources for debugging purposes \cite{Hung:2013:TSO:2435264.2435272}.
+However, in other cases where the area of FPGA overlay results in a reduction of resources available to implement a user's design, then it is likely that this area overhead will translate into performance overhead.
+On a circuit level, such area overhead may also manifest as additional delays impose on the critical path, resulting in overall performance loss.
+Therefore in short, area overhead, if not well controlled, may easily translate into performance overhead.
+
+Luckily, as mentioned in some early works, despite such overhead, the use of an overlay may still be worthwhile from a performance perspective.  For example in \cite{capalijia2013pipelined}, Capalija and Abdelrahman has demonstrated that by taking advantage of the regularity of its overlay and with the help of detailed floor planning, they were able to control the overhead while maintaining reasonable throughput performance when compared to a simple push-button synthesis flow.
+The very use of overlay allows amortization of the optimization effort in the long run as the overlay structure may be reused many times.
+
+\subsubsection{Enhancing Customization}
+Another major challenge faced by overlay designers is the very notion of using FPGA overlay in the first place:
+``If by overlaying a different architecture over an FPGA may provide all sort of nice properties, then why not implement the overlay architecture directly on silicon to enjoy all the benefits instead?''
+For example, if a GPU overlay provides good performance and good programmability, then maybe the design should be implemented on an actual GPU instead of a GPU overlaying on top of an FPGA.
+
+Indeed, if the so called ``overlay'' in question is simply a fixed reimplementation of another architecture on an FPGA, then the only incentive to so are probably to provide compatibility through virtualization, or simply to save cost on silicon implementation.
+In the latter case, this intermediate architecture may hardly be called an ``overlay'' any more.
+
+However, the true power of FPGA overlays is that they can be adapted to the application through \emph{customization}.
+As a virtual architecture, many aspects of an overlay architecture can be customized to the target application to improve power-performance.
+In \cite{Lebedev2010}, for example, the computational core in the multi-core overlay may be customized to the specific targeted application.
+By customizing the core to their targeted application, almost 10x improvement in the overlay performance can be observed, bring the overlay performance to be within factor of 3 of the reference custom FPGA design.
+In \cite{Lin:2012:EDC:2460216.2460227}, the direct connection topology among the process elements in coarse-grained reconfigurable array overlay was customized against the input application. 
+When compared to the best predefined topology, the application-specific interconnect provides up to 28\% improvement in resulting energy-delay product.
+
+The improved results should come at no surprise: the extreme case of an overlay customization is simply a full-custom design of the application on the target FPGA, which is supposed to have the best possible performance if designed correctly.
+What is challenging is therefore to ability to fine-tune the tradeoff among design productivity, virtualization and performance of the resulting system.
+In other word, the research question to ask in the future should therefore be: ``How to improve performance of an overlaying system through customization without significantly sacrificing the benefits of using an overlay?''
+The answer to this question is going to open up a wide field of exciting research in FPGA-based reconfigurable systems.
+
+\subsubsection{Closing Thoughts}
+FPGA overlay is without doubt going to be an important part of future FPGA-based reconfigurable systems.
+The potential is plentiful and we anticipate that overlaying technology will benefit all aspects of future reconfigurable systems, especially on the important aspect of design productivity.
+With silicon technologies continue to evolve, the amount of available on-chip configurable resource is going to increase.
+The abundance of high-performance configurable resources on FPGA will enable a new generation of systems that relies heavily on advanced overlay architectures for virtualization and to improve design productivity. 
+

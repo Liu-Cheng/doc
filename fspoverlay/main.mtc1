@@ -1,0 +1,22 @@
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {1.1}Motivation}{\reset@font\mtcSfont 4}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {1.2}FPGA Overlays}{\reset@font\mtcSfont 4}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode What is an FPGA Overlay?}{\reset@font\mtcSSSfont 4}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {1.2.1}Benefits of Overlays}{\reset@font\mtcSSfont 5}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Virtualization}{\reset@font\mtcSSSfont 6}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Improved Design Productivity}{\reset@font\mtcSSSfont 6}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Separation of Hardware and Software Concerns}{\reset@font\mtcSSSfont 6}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {1.2.2}Challenges}{\reset@font\mtcSSfont 6}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {1.3}Types of Overlays}{\reset@font\mtcSfont 6}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {1.4}Case Studies}{\reset@font\mtcSfont 8}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {1.4.1}QuickDough}{\reset@font\mtcSSfont 8}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Generation Framework}{\reset@font\mtcSSSfont 9}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode SCGRA overlay based FPGA accelerator}{\reset@font\mtcSSSfont 11}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode PE template}{\reset@font\mtcSSSfont 11}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode ALU template}{\reset@font\mtcSSSfont 12}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {1.4.2}Loop execution on the accelerator}{\reset@font\mtcSSfont 13}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {1.4.3}FPGA loop accelerator generation}{\reset@font\mtcSSfont 13}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode DFG generation}{\reset@font\mtcSSSfont 13}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Accelerator selection}{\reset@font\mtcSSSfont 14}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode DFG Scheduling}{\reset@font\mtcSSSfont 15}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Accelerator bitstream generation}{\reset@font\mtcSSSfont 15}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {1.5}State-of-the-art and availability/usability for software engineers}{\reset@font\mtcSfont 15}}

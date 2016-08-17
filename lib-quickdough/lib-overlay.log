@@ -1,0 +1,1065 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.3.25)  3 APR 2016 19:44
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**lib-overlay
+(./lib-overlay.tex
+LaTeX2e <2014/05/01>
+Babel <3.9l> and hyphenation patterns for 79 languages loaded.
+(/usr/local/texlive/2014/texmf-dist/tex/latex/IEEEtran/IEEEtran.cls
+Document Class: IEEEtran 2014/09/17 V1.8a by Michael Shell
+-- See the "IEEEtran_HOWTO" manual for usage information.
+-- http://www.michaelshell.org/tex/ieeetran/
+\@IEEEtrantmpdimenA=\dimen102
+\@IEEEtrantmpdimenB=\dimen103
+\@IEEEtrantmpdimenC=\dimen104
+\@IEEEtrantmpcountA=\count79
+\@IEEEtrantmpcountB=\count80
+\@IEEEtrantmpcountC=\count81
+\@IEEEtrantmptoksA=\toks14
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 458.
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+-- Using 8.5in x 11in (letter) paper.
+-- Using PDF output.
+\@IEEEnormalsizeunitybaselineskip=\dimen105
+-- This is a 10 point document.
+\CLASSINFOnormalsizebaselineskip=\dimen106
+\CLASSINFOnormalsizeunitybaselineskip=\dimen107
+\IEEEnormaljot=\dimen108
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1039.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <5> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1039.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1039.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1039.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1039.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1039.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1039.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1039.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1039.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1039.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <11> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1039.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <11> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1039.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1039.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1039.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1039.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <17> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1039.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <20> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1039.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <20> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1039.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1039.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <24> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1039.
+
+\IEEEquantizedlength=\dimen109
+\IEEEquantizedlengthdiff=\dimen110
+\IEEEquantizedtextheightdiff=\dimen111
+\IEEEilabelindentA=\dimen112
+\IEEEilabelindentB=\dimen113
+\IEEEilabelindent=\dimen114
+\IEEEelabelindent=\dimen115
+\IEEEdlabelindent=\dimen116
+\IEEElabelindent=\dimen117
+\IEEEiednormlabelsep=\dimen118
+\IEEEiedmathlabelsep=\dimen119
+\IEEEiedtopsep=\skip41
+\c@section=\count82
+\c@subsection=\count83
+\c@subsubsection=\count84
+\c@paragraph=\count85
+\c@IEEEsubequation=\count86
+\abovecaptionskip=\skip42
+\belowcaptionskip=\skip43
+\c@figure=\count87
+\c@table=\count88
+\@IEEEeqnnumcols=\count89
+\@IEEEeqncolcnt=\count90
+\@IEEEsubeqnnumrollback=\count91
+\@IEEEquantizeheightA=\dimen120
+\@IEEEquantizeheightB=\dimen121
+\@IEEEquantizeheightC=\dimen122
+\@IEEEquantizeprevdepth=\dimen123
+\@IEEEquantizemultiple=\count92
+\@IEEEquantizeboxA=\box26
+\@IEEEtmpitemindent=\dimen124
+\c@IEEEbiography=\count93
+\@IEEEtranrubishbin=\box27
+) (/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks15
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2014/10/28 v1.0p Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count94
+))
+\Gin@req@height=\dimen125
+\Gin@req@width=\dimen126
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/multirow/multirow.sty
+\bigstrutjot=\dimen127
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/subfig/subfig.sty
+Package: subfig 2005/06/28 ver: 1.3 subfig package
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2013/05/02 v1.6-88 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 57.
+\captionmargin=\dimen128
+\captionmargin@=\dimen129
+\captionwidth=\dimen130
+\caption@tempdima=\dimen131
+\caption@indent=\dimen132
+\caption@parindent=\dimen133
+\caption@hangindent=\dimen134
+Package caption Info: Unknown document class (or package),
+(caption)             standard defaults will be used.
+)
+\c@KVtest=\count95
+\sf@farskip=\skip44
+\sf@captopadj=\dimen135
+\sf@capskip=\skip45
+\sf@nearskip=\skip46
+\c@subfigure=\count96
+\c@subfigure@save=\count97
+\c@lofdepth=\count98
+\c@subtable=\count99
+\c@subtable@save=\count100
+\c@lotdepth=\count101
+\sf@top=\skip47
+\sf@bottom=\skip48
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/dblfloatfix/dblfloatfix.sty
+Package: dblfloatfix 2012/12/31 v1.0a (JAW)
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/base/fixltx2e.sty
+Package: fixltx2e 2014/09/29 v1.1s fixes to LaTeX
+LaTeX Info: Redefining \em on input line 430.
+)
+\@dblbotnum=\count102
+\c@dblbotnumber=\count103
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/tools/xspace.sty
+Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip10
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/natbib/natbib.sty
+Package: natbib 2010/09/13 8.31b (PWD, AO)
+\bibhang=\skip49
+\bibsep=\skip50
+LaTeX Info: Redefining \cite on input line 694.
+\c@NAT@ctr=\count104
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/siunitx/siunitx.sty
+(/usr/local/texlive/2014/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2015/03/01 v5547 L3 programming layer (loader) 
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/l3kernel/expl3-code.tex
+Package: expl3 2015/03/01 v5547 L3 programming layer (code) 
+L3 Module: l3bootstrap 2015/02/28 v5542 L3 Bootstrap code
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/etex-pkg/etex.sty
+Package: etex 2015/03/02 v2.1 eTeX basic definition package (PEB,DPC)
+\et@xins=\count105
+)
+L3 Module: l3names 2015/02/24 v5535 L3 Namespace for primitives
+L3 Module: l3basics 2015/01/27 v5500 L3 Basic definitions
+L3 Module: l3expan 2014/11/27 v5472 L3 Argument expansion
+L3 Module: l3tl 2015/01/27 v5500 L3 Token lists
+L3 Module: l3str 2015/03/01 v5545 L3 Strings
+L3 Module: l3seq 2014/08/23 v5354 L3 Sequences and stacks
+L3 Module: l3int 2015/02/21 v5529 L3 Integers
+\c_max_int=\count106
+\l_tmpa_int=\count107
+\l_tmpb_int=\count108
+\g_tmpa_int=\count109
+\g_tmpb_int=\count110
+L3 Module: l3quark 2014/08/23 v5354 L3 Quarks
+L3 Module: l3prg 2014/08/23 v5354 L3 Control structures
+\g__prg_map_int=\count111
+L3 Module: l3clist 2014/08/23 v5354 L3 Comma separated lists
+L3 Module: l3token 2014/09/15 v5422 L3 Experimental token manipulation
+L3 Module: l3prop 2014/08/23 v5354 L3 Property lists
+L3 Module: l3msg 2015/02/26 v5537 L3 Messages
+L3 Module: l3file 2014/08/24 v5369 L3 File and I/O operations
+\l_iow_line_count_int=\count112
+\l__iow_target_count_int=\count113
+\l__iow_current_line_int=\count114
+\l__iow_current_word_int=\count115
+\l__iow_current_indentation_int=\count116
+L3 Module: l3skip 2014/08/23 v5354 L3 Dimensions and skips
+\c_zero_dim=\dimen136
+\c_max_dim=\dimen137
+\l_tmpa_dim=\dimen138
+\l_tmpb_dim=\dimen139
+\g_tmpa_dim=\dimen140
+\g_tmpb_dim=\dimen141
+\c_zero_skip=\skip51
+\c_max_skip=\skip52
+\l_tmpa_skip=\skip53
+\l_tmpb_skip=\skip54
+\g_tmpa_skip=\skip55
+\g_tmpb_skip=\skip56
+\c_zero_muskip=\muskip11
+\c_max_muskip=\muskip12
+\l_tmpa_muskip=\muskip13
+\l_tmpb_muskip=\muskip14
+\g_tmpa_muskip=\muskip15
+\g_tmpb_muskip=\muskip16
+L3 Module: l3keys 2015/01/27 v5500 L3 Key-value interfaces
+\g__keyval_level_int=\count117
+\l_keys_choice_int=\count118
+L3 Module: l3fp 2014/08/22 v5336 L3 Floating points
+\c__fp_leading_shift_int=\count119
+\c__fp_middle_shift_int=\count120
+\c__fp_trailing_shift_int=\count121
+\c__fp_big_leading_shift_int=\count122
+\c__fp_big_middle_shift_int=\count123
+\c__fp_big_trailing_shift_int=\count124
+\c__fp_Bigg_leading_shift_int=\count125
+\c__fp_Bigg_middle_shift_int=\count126
+\c__fp_Bigg_trailing_shift_int=\count127
+L3 Module: l3box 2014/08/23 v5354 L3 Experimental boxes
+\c_empty_box=\box28
+\l_tmpa_box=\box29
+\l_tmpb_box=\box30
+\g_tmpa_box=\box31
+\g_tmpb_box=\box32
+L3 Module: l3coffins 2014/08/23 v5354 L3 Coffin code layer
+\l__coffin_internal_box=\box33
+\l__coffin_internal_dim=\dimen142
+\l__coffin_offset_x_dim=\dimen143
+\l__coffin_offset_y_dim=\dimen144
+\l__coffin_x_dim=\dimen145
+\l__coffin_y_dim=\dimen146
+\l__coffin_x_prime_dim=\dimen147
+\l__coffin_y_prime_dim=\dimen148
+\c_empty_coffin=\box34
+\l__coffin_aligned_coffin=\box35
+\l__coffin_aligned_internal_coffin=\box36
+\l_tmpa_coffin=\box37
+\l_tmpb_coffin=\box38
+\l__coffin_display_coffin=\box39
+\l__coffin_display_coord_coffin=\box40
+\l__coffin_display_pole_coffin=\box41
+\l__coffin_display_offset_dim=\dimen149
+\l__coffin_display_x_dim=\dimen150
+\l__coffin_display_y_dim=\dimen151
+L3 Module: l3color 2014/08/23 v5354 L3 Experimental color support
+L3 Module: l3candidates 2015/03/01 v5544 L3 Experimental additions to l3kernel
+\l__box_top_dim=\dimen152
+\l__box_bottom_dim=\dimen153
+\l__box_left_dim=\dimen154
+\l__box_right_dim=\dimen155
+\l__box_top_new_dim=\dimen156
+\l__box_bottom_new_dim=\dimen157
+\l__box_left_new_dim=\dimen158
+\l__box_right_new_dim=\dimen159
+\l__box_internal_box=\box42
+\l__coffin_bounding_shift_dim=\dimen160
+\l__coffin_left_corner_dim=\dimen161
+\l__coffin_right_corner_dim=\dimen162
+\l__coffin_bottom_corner_dim=\dimen163
+\l__coffin_top_corner_dim=\dimen164
+\l__coffin_scaled_total_height_dim=\dimen165
+\l__coffin_scaled_width_dim=\dimen166
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/l3kernel/l3unicode-data.def
+File: l3unicode-data.def 2015/03/01 v5544 L3 Unicode data
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/l3kernel/l3pdfmode.def
+File: l3pdfmode.def 2015/03/01 v5544 L3 Experimental driver: PDF mode
+\l__driver_color_stack_int=\count128
+))
+(/usr/local/texlive/2014/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
+Package: xparse 2014/11/25 v5471 L3 Experimental document command parser
+\l__xparse_current_arg_int=\count129
+\l__xparse_m_args_int=\count130
+\l__xparse_mandatory_args_int=\count131
+\l__xparse_processor_int=\count132
+\l__xparse_v_nesting_int=\count133
+)
+Package: siunitx 2015/01/21 v2.6e A comprehensive (SI) units package
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks16
+\ex@=\dimen167
+))
+(/usr/local/texlive/2014/texmf-dist/tex/latex/tools/array.sty
+Package: array 2014/10/28 v2.4c Tabular extension package (FMi)
+\col@sep=\dimen168
+\extrarowheight=\dimen169
+\NC@list=\toks17
+\extratabsurround=\skip57
+\backup@length=\skip58
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
+Package: l3keys2e 2014/11/25 v5471 LaTeX2e option processing using LaTeX3 keys
+)
+Variant \tl_if_blank:VTF already defined; not changing it on line 50
+\l__siunitx_tmp_box=\box43
+\l__siunitx_tmp_dim=\dimen170
+\l__siunitx_tmp_int=\count134
+Variant \prop_get:NVNT already defined; not changing it on line 380
+Variant \prop_get:NVNF already defined; not changing it on line 381
+Variant \prop_get:NVNTF already defined; not changing it on line 382
+\l__siunitx_number_mantissa_length_int=\count135
+\l__siunitx_number_uncert_length_int=\count136
+\l__siunitx_round_int=\count137
+\l__siunitx_process_decimal_int=\count138
+\l__siunitx_process_uncertainty_int=\count139
+\l__siunitx_process_fixed_int=\count140
+\l__siunitx_process_integer_min_int=\count141
+\l__siunitx_process_precision_int=\count142
+\l__siunitx_group_min_int=\count143
+\l__siunitx_angle_marker_box=\box44
+\l__siunitx_angle_unit_box=\box45
+\l__siunitx_angle_marker_dim=\dimen171
+\l__siunitx_angle_unit_dim=\dimen172
+\l__siunitx_unit_int=\count144
+\l__siunitx_unit_denominator_int=\count145
+\l__siunitx_unit_numerator_int=\count146
+\l__siunitx_unit_prefix_int=\count147
+\l__siunitx_unit_prefix_base_int=\count148
+\l__siunitx_unit_prefix_gram_int=\count149
+\l__siunitx_number_product_int=\count150
+\c__siunitx_one_fill_skip=\skip59
+\l__siunitx_table_unit_align_skip=\skip60
+\l__siunitx_table_exponent_dim=\dimen173
+\l__siunitx_table_integer_dim=\dimen174
+\l__siunitx_table_mantissa_dim=\dimen175
+\l__siunitx_table_marker_dim=\dimen176
+\l__siunitx_table_result_dim=\dimen177
+\l__siunitx_table_uncert_dim=\dimen178
+\l__siunitx_table_fill_pre_dim=\dimen179
+\l__siunitx_table_fill_post_dim=\dimen180
+\l__siunitx_table_fill_mid_dim=\dimen181
+\l__siunitx_table_pre_box=\box46
+\l__siunitx_table_post_box=\box47
+\l__siunitx_table_mantissa_box=\box48
+\l__siunitx_table_result_box=\box49
+\l__siunitx_table_number_align_skip=\skip61
+\l__siunitx_table_text_align_skip=\skip62
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \DeclareBinaryPrefix with sig. 'mmm' on line 7176.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \DeclareSIPostPower with sig. 'mm' on line 7179.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \DeclareSIPrefix with sig. 'mmm' on line 7182.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \DeclareSIPrePower with sig. 'mm' on line 7185.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \DeclareSIQualifier with sig. 'mm' on line 7188.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \DeclareSIUnit with sig. 'O{}mm' on line 7191.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \DeclareSIUnitWithOptions with sig. 'mmm' on line 7194.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \ang with sig. 'o>{\SplitArgument {2}{;}}m' on line 7209.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \num with sig. 'om' on line 7217.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \numlist with sig. 'o>{\SplitList {;}}m' on line 7225.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \numrange with sig. 'omm' on line 7233.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \SIlist with sig. 'o>{\SplitList {;}}mm' on line 7244.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \SIrange with sig. 'ommm' on line 7255.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \SI with sig. 'omom' on line 7266.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \sisetup with sig. 'm' on line 7269.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \tablenum with sig. 'om' on line 7281.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \si with sig. 'om' on line 7292.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \__siunitx_bookmark_num:w with sig. 'om' on line 7339.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \__siunitx_bookmark_numrange:w with sig. 'omm' on line
+. 7341.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \__siunitx_bookmark_SI:w with sig. 'omom' on line 7343.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \__siunitx_bookmark_SIlist:w with sig. 'omm' on line 7345.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \__siunitx_bookmark_SIrange:w with sig. 'ommm' on line
+. 7347.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \__siunitx_bookmark_si:w with sig. 'om' on line 7348.
+.................................................
+\g__file_internal_ior=\read1
+(/usr/local/texlive/2014/texmf-dist/tex/latex/beamer/translator/translator.sty
+Package: translator 2010/06/12 ver 1.10
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/beamer/translator/translator-lang
+uage-mappings.tex)))
+(/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/mathptmx.sty
+Package: mathptmx 2005/04/12 PSNFSS-v9.2a Times w/ Math, improved (SPQR, WaS) 
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 28.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> OT1/ztmcm/m/n on input line 28.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/ztmcm/m/n on input line 28.
+LaTeX Font Info:    Redeclaring symbol font `letters' on input line 29.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> OML/ztmcm/m/it on input line 29.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> OML/ztmcm/m/it on input line 29.
+LaTeX Font Info:    Redeclaring symbol font `symbols' on input line 30.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> OMS/ztmcm/m/n on input line 30.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> OMS/ztmcm/m/n on input line 30.
+LaTeX Font Info:    Redeclaring symbol font `largesymbols' on input line 31.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> OMX/ztmcm/m/n on input line 31.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> OMX/ztmcm/m/n on input line 31.
+\symbold=\mathgroup4
+\symitalic=\mathgroup5
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> OT1/ptm/bx/n on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/ptm/bx/n on input line 34.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 35.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> OT1/ptm/m/it on input line 35.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> OT1/ptm/m/it on input line 35.
+LaTeX Info: Redefining \hbar on input line 50.
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2014/04/30 v1.2b Input encoding file
+\inpenc@prehook=\toks18
+\inpenc@posthook=\toks19
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/base/latin1.def
+File: latin1.def 2014/04/30 v1.2b Input encoding file
+))
+(/usr/local/texlive/2014/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2013/01/14 v2.14 AMS math features
+\@mathmargin=\skip63
+
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2014/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen182
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count151
+LaTeX Info: Redefining \frac on input line 210.
+\uproot@=\count152
+\leftroot@=\count153
+LaTeX Info: Redefining \overline on input line 306.
+\classnum@=\count154
+\DOTSCASE@=\count155
+LaTeX Info: Redefining \ldots on input line 378.
+LaTeX Info: Redefining \dots on input line 381.
+LaTeX Info: Redefining \cdots on input line 466.
+\Mathstrutbox@=\box50
+\strutbox@=\box51
+\big@size=\dimen183
+LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
+\macc@depth=\count156
+\c@MaxMatrixCols=\count157
+\dotsspace@=\muskip17
+\c@parentequation=\count158
+\dspbrk@lvl=\count159
+\tag@help=\toks20
+\row@=\count160
+\column@=\count161
+\maxfields@=\count162
+\andhelp@=\toks21
+\eqnshift@=\dimen184
+\alignsep@=\dimen185
+\tagshift@=\dimen186
+\tagwidth@=\dimen187
+\totwidth@=\dimen188
+\lineht@=\dimen189
+\@envbody=\toks22
+\multlinegap=\skip64
+\multlinetaggap=\skip65
+\mathdisplay@stack=\toks23
+LaTeX Info: Redefining \[ on input line 2665.
+LaTeX Info: Redefining \] on input line 2666.
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup6
+\symAMSb=\mathgroup7
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/algorithms/algorithm.sty
+Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
+nment
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count163
+\float@exts=\toks24
+\float@box=\box52
+\@float@everytoks=\toks25
+\@floatcapt=\box53
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\@float@every@algorithm=\toks26
+\c@algorithm=\count164
+)
+(./algorithmic.sty
+Package: algorithmic 2006/06/02
+
+Document Style `algorithmic' - environment
+(/usr/local/texlive/2014/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count165
+\calc@Bcount=\count166
+\calc@Adimen=\dimen190
+\calc@Bdimen=\dimen191
+\calc@Askip=\skip66
+\calc@Bskip=\skip67
+LaTeX Info: Redefining \setlength on input line 75.
+LaTeX Info: Redefining \addtolength on input line 76.
+\calc@Ccount=\count167
+\calc@Cskip=\skip68
+)
+\c@ALC@line=\count168
+\c@ALC@rem=\count169
+\c@ALC@depth=\count170
+\ALC@tlm=\skip69
+\algorithmicindent=\skip70
+)
+(./algorithm2e.sty
+Package: algorithm2e 2008/00/00 v3.10 algorithms environments
+\c@AlgoLine=\count171
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/relsize/relsize.sty
+Package: relsize 2013/03/29 ver 4.1
+)
+********************************************************
+Package `algorithm2e' Release 4.01 -- december 14 2009 --
+- algorithm2e-announce@lirmm.fr mailing list for announcement about releases
+- algorithm2e-discussion@lirmm.fr mailing list for discussion about package
+subscribe by emailing sympa@lirmm.fr with 'subscribe <list> <firstname name>'
+- Author: Christophe Fiorio (fiorio@lirmm.fr)
+********************************************************
+\skiptotal=\skip71
+\skiplinenumber=\skip72
+\skiprule=\skip73
+\skiphlne=\skip74
+\skiptext=\skip75
+\skiplength=\skip76
+\algomargin=\skip77
+\skipalgocfslide=\skip78
+\algowidth=\dimen192
+\inoutsize=\dimen193
+\inoutline=\dimen194
+\interspacetitleruled=\dimen195
+\interspacealgoruled=\dimen196
+\interspacetitleboxruled=\dimen197
+\algocf@inoutbox=\box54
+\algocf@inputbox=\box55
+\AlCapSkip=\skip79
+\AlCapHSkip=\skip80
+\algocf@nlbox=\box56
+\algocf@hangingbox=\box57
+\algocf@capbox=\box58
+\algoheightruledefault=\skip81
+\algoheightrule=\skip82
+\algotitleheightruledefault=\skip83
+\algotitleheightrule=\skip84
+\c@algocfline=\count172
+\c@algocfproc=\count173
+\c@algocf=\count174
+\algocf@algoframe=\box59
+\algocf@algobox=\box60
+) (./lib-overlay.aux)
+\openout1 = `lib-overlay.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+
+-- Lines per column: 58 (exact).
+(/usr/local/texlive/2014/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count175
+\scratchdimen=\dimen198
+\scratchbox=\box61
+\nofMPsegments=\count176
+\nofMParguments=\count177
+\everyMPshowfont=\toks27
+\MPscratchCnt=\count178
+\MPscratchDim=\dimen199
+\MPnumerator=\count179
+\makeMPintoPDFobject=\count180
+\everyMPtoPDFconversion=\toks28
+) (/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+
+(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+))
+(/usr/local/texlive/2014/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+
+(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+
+(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: subfig package v1.3 is loaded.
+Package caption Info: End \AtBeginDocument code.
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/beamer/translator/dicts/translato
+r-basic-dictionary/translator-basic-dictionary-English.dict
+Dictionary: translator-basic-dictionary, Language: English 
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/siunitx/siunitx-abbreviations.cfg
+File: siunitx-abbreviations.cfg 2015/01/21 v2.6e siunitx: Abbreviated units
+) (/usr/local/texlive/2014/texmf-dist/tex/latex/siunitx/siunitx-binary.cfg
+File: siunitx-binary.cfg 2015/01/21 v2.6e siunitx: Binary units
+)
+\c__siunitx_mathsf_int=\count181
+LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 49
+.
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/ot1ztmcm.fd
+File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
+)
+LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 49
+.
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/omlztmcm.fd
+File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
+)
+LaTeX Font Info:    Try loading font information for OMS+ztmcm on input line 49
+.
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/omsztmcm.fd
+File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
+)
+LaTeX Font Info:    Try loading font information for OMX+ztmcm on input line 49
+.
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/omxztmcm.fd
+File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
+)
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 49.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 49.
+\c__siunitx_mathtt_int=\count182
+
+(./abstract.tex) (./introduction.tex
+
+LaTeX Warning: Reference `lib-build' on page 1 undefined on input line 10.
+
+) (./relatedwork.tex
+Underfull \hbox (badness 2443) in paragraph at lines 2--3
+\OT1/ptm/m/n/10 hin-ders the use of FPGA as com-put-ing de-vices from
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [1{/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+
+
+]
+
+Package natbib Warning: Citation `Frangieh2010' on page 2 undefined on input li
+ne 4.
+
+
+Package natbib Warning: Citation `zuma2013carl' on page 2 undefined on input li
+ne 6.
+
+
+Package natbib Warning: Citation `Koch2013CI' on page 2 undefined on input line
+ 6.
+
+
+Package natbib Warning: Citation `dsp2015cgra' on page 2 undefined on input lin
+e 6.
+
+
+Package natbib Warning: Citation `Lebedev2010' on page 2 undefined on input lin
+e 6.
+
+
+Package natbib Warning: Citation `dsp2015cgra' on page 2 undefined on input lin
+e 9.
+
+) (./framework.tex
+Underfull \hbox (badness 1642) in paragraph at lines 2--3
+[]\OT1/ptm/m/n/10 QuickDough is a de-vel-op-ment frame-work for FPGA-
+ []
+
+<./figures/framework.pdf, id=9, 608.2725pt x 469.755pt>
+File: ./figures/framework.pdf Graphic file (type pdf)
+
+<use ./figures/framework.pdf>
+Package pdftex.def Info: ./figures/framework.pdf used on input line 11.
+(pdftex.def)             Requested size: 239.39923pt x 184.881pt.
+ [2]
+<./figures/scgra-accelerator.pdf, id=14, 113.42375pt x 68.255pt>
+File: ./figures/scgra-accelerator.pdf Graphic file (type pdf)
+
+<use ./figures/scgra-accelerator.pdf>
+Package pdftex.def Info: ./figures/scgra-accelerator.pdf used on input line 27.
+
+(pdftex.def)             Requested size: 163.79846pt x 98.56935pt.
+
+<./figures/pe.pdf, id=15, 335.2525pt x 186.6975pt>
+File: ./figures/pe.pdf Graphic file (type pdf)
+ <use ./figures/pe.pdf>
+Package pdftex.def Info: ./figures/pe.pdf used on input line 33.
+(pdftex.def)             Requested size: 176.39923pt x 98.23415pt.
+
+<./figures/alu.pdf, id=16, 226.8475pt x 116.435pt>
+File: ./figures/alu.pdf Graphic file (type pdf)
+ <use ./figures/alu.pdf>
+Package pdftex.def Info: ./figures/alu.pdf used on input line 39.
+(pdftex.def)             Requested size: 163.79846pt x 84.07297pt.
+
+[3 <./figures/framework.pdf> <./figures/scgra-accelerator.pdf> <./figures/pe.pd
+f
+
+pdfTeX warning: pdflatex (file ./figures/pe.pdf): PDF inclusion: multiple pdfs 
+with page group included in a single page
+> <./figures/alu.pdf
+
+pdfTeX warning: pdflatex (file ./figures/alu.pdf): PDF inclusion: multiple pdfs
+ with page group included in a single page
+>] <./figures/dfg-gen.pdf, id=72, 441.65pt x 349.305pt>
+File: ./figures/dfg-gen.pdf Graphic file (type pdf)
+
+<use ./figures/dfg-gen.pdf>
+Package pdftex.def Info: ./figures/dfg-gen.pdf used on input line 61.
+(pdftex.def)             Requested size: 214.20154pt x 169.41272pt.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 103.
+
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/ot1pcr.fd
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+) [4 <./figures/dfg-gen.pdf>]
+
+LaTeX Font Warning: Command \footnotesize invalid in math mode on input line 10
+9.
+
+LaTeX Font Info:    Calculating math sizes for size <> on input line 112.
+
+LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <> not available
+(Font)              size <5> substituted on input line 112.
+
+
+LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <0.74> not available
+(Font)              size <5> substituted on input line 112.
+
+
+LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <0.6> not available
+(Font)              size <5> substituted on input line 112.
+
+
+LaTeX Font Warning: Font shape `OT1/cmtt/m/n' in size <> not available
+(Font)              size <5> substituted on input line 112.
+
+
+LaTeX Font Warning: Font shape `OT1/cmtt/m/n' in size <0.74> not available
+(Font)              size <5> substituted on input line 112.
+
+
+LaTeX Font Warning: Font shape `OT1/cmtt/m/n' in size <0.6> not available
+(Font)              size <5> substituted on input line 112.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 112.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <0.74> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 112.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <0.6> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 112.
+
+LaTeX Font Warning: Command \footnotesize invalid in math mode on input line 11
+5.
+
+) (./lib-build.tex
+Underfull \hbox (badness 2318) in paragraph at lines 2--3
+[]\OT1/ptm/m/n/10 Accelerator li-brary pre-building is es-sen-tially to pre-
+ []
+
+[5] <./figures/lib-gen.pdf, id=163, 122.4575pt x 283.0575pt>
+File: ./figures/lib-gen.pdf Graphic file (type pdf)
+
+<use ./figures/lib-gen.pdf>
+Package pdftex.def Info: ./figures/lib-gen.pdf used on input line 8.
+(pdftex.def)             Requested size: 126.0pt x 291.25444pt.
+
+
+LaTeX Font Warning: Command \footnotesize invalid in math mode on input line 39
+.
+
+
+Package natbib Warning: Citation `ROB2015' on page 6 undefined on input line 51
+.
+
+) (./experiments.tex [6 <./figures/lib-gen.pdf>]) (./conclusions.tex)
+(./lib-overlay.bbl
+Underfull \hbox (badness 4403) in paragraph at lines 57--63
+[]\OT1/ptm/m/n/10 Altera Cor-po-ra-tion.  Quar-tus II 14.0 hand-book.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 57--63
+\OT1/ptm/m/n/10 https : / / www . altera . com / en[]US / pdfs / literature / h
+b / qts /
+ []
+
+
+Underfull \hbox (badness 5771) in paragraph at lines 57--63
+\OT1/ptm/m/n/10 quartusii[]handbook . pdf$, 2015.  [On-line; ac-cessed
+ []
+
+
+Underfull \hbox (badness 6110) in paragraph at lines 65--71
+[]\OT1/ptm/m/n/10 Xilinx Cor-po-ra-tion.  Com-mand line tools user
+ []
+
+
+Underfull \hbox (badness 1881) in paragraph at lines 65--71
+\OT1/ptm/m/n/10 guide.  $http : / / www . xilinx . com / support / documentatio
+n /
+ []
+
+[7]
+Underfull \hbox (badness 7133) in paragraph at lines 136--140
+\OT1/ptm/m/n/10 efficient dataflow com-pu-ta-tions on FP-GAs us-ing
+ []
+
+
+Underfull \hbox (badness 1354) in paragraph at lines 211--217
+[]\OT1/ptm/m/n/10 Xilinx.  data2mem.  $http : / / www . xilinx . com / support 
+/
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 211--217
+\OT1/ptm/m/n/10 documentation / sw[]manuals / xilinx11 / data2mem . pdf$,
+ []
+
+)
+
+Package natbib Warning: There were undefined citations.
+
+[8] (./lib-overlay.aux)
+
+LaTeX Font Warning: Size substitutions with differences
+(Font)              up to 4.4pt have occurred.
+
+
+LaTeX Warning: There were undefined references.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 14843 strings out of 493109
+ 294698 string characters out of 6135010
+ 329894 words of memory out of 5000000
+ 18102 multiletter control sequences out of 15000+600000
+ 74524 words of font info for 169 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 39i,5n,39p,10418b,523s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
+exlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/te
+xlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texl
+ive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texli
+ve/2014/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2014/
+texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/local/texlive/2014/texmf-dist/
+fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type
+1/urw/times/utmbi8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/tim
+es/utmr8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/times/utmri8a
+.pfb>
+Output written on lib-overlay.pdf (8 pages, 291607 bytes).
+PDF statistics:
+ 226 PDF objects out of 1000 (max. 8388607)
+ 148 compressed objects within 2 object streams
+ 0 named destinations out of 1000 (max. 500000)
+ 31 words of extra memory for PDF output out of 10000 (max. 10000000)
+

@@ -66,26 +66,8 @@
 
 \begin{document}
 \input{front-page}
-\input{abstract}
+\input{cover}
 \hfill
-
-\title{QuickDough: A Rapid FPGA Accelerator Design 
-Framework Using Soft Coarse-Grained Reconfigurable Array Overlay}
-
-\author{Cheng LIU\\
-B.E. (Harbin Institute of Technology, China)~~2007\\
-M.E. (Harbin Institute of Technology, China)~~2009\\
-\\
-A dissertation submitted in partial fulfillment of the\\
-requirements for the degree of\\
-Doctor of Philosophy\\
-in\\
-Department of Electrical and Electronic Engineering\\
-of\\
-The University of Hong Kong} 
-
-\date{30 December 2015}
-\maketitle
 
 %\begin{figure}
 %\centering
@@ -95,8 +77,15 @@ The University of Hong Kong}
 %%============================================================
 
 \newpage
+\pagenumbering{Roman}
 \section*{\centering{Declaration}}
 \input{declaration}
+\hfill
+
+%%============================================================
+\newpage
+\section*{\centering{Acknowledgement}}
+\input{acknowledgement}
 \hfill
 
 %%============================================================
@@ -107,7 +96,6 @@ The University of Hong Kong}
 %\hfill
 %
 %%============================================================
-
 \tableofcontents
 \cleardoublepage
 
@@ -115,13 +103,14 @@ The University of Hong Kong}
 \listoftables  % print list of tables
 
 %%============================================================
-
 \input{chapter1-intro}
 \input{chapter2-litrev}
 \input{chapter3-overlay}
 \input{chapter4-framework}
 \input{chapter5-customization}
 \input{chapter6-conclusion}
+
+\input{appendix}
 
 \hfill
 \hfill

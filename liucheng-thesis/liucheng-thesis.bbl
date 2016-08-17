@@ -1,0 +1,883 @@
+\begin{thebibliography}{118}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Abdelhadi and Lemieux(2014)]{abdelhadi2014modular}
+Ameer Abdelhadi and Guy~GF Lemieux.
+\newblock Modular multi-ported sram-based memories.
+\newblock In \emph{Proceedings of the 2014 ACM/SIGDA international symposium on
+  Field-programmable gate arrays}, pages 35--44. ACM, 2014.
+
+\bibitem[Agron(2009)]{agron2009domain}
+Jason Agron.
+\newblock Domain-specific language for hw/sw co-design for fpgas.
+\newblock In \emph{Domain-Specific Languages}, pages 262--284. Springer, 2009.
+
+\bibitem[Al-Dujaili et~al.(2012)Al-Dujaili, Deragisch, Hagiescu, and
+  Wong]{al-dujaili2012Guppy}
+A.~Al-Dujaili, F.~Deragisch, A.~Hagiescu, and Weng-Fai Wong.
+\newblock Guppy: A {GPU-like} soft-core processor.
+\newblock In \emph{Field-Programmable Technology (FPT), 2012 International
+  Conference on}, pages 57--60, Dec 2012.
+\newblock \doi{10.1109/FPT.2012.6412112}.
+
+\bibitem[Altera(2014)]{nios}
+Altera.
+\newblock Nios embedded processor.
+\newblock
+  \url{http://www.altera.com/products/ip/processors/nios/nio-index.html}, 2014.
+\newblock [Online; accessed 25-June-2014].
+
+\bibitem[{Altera}(2015)]{signaltap}
+{Altera}.
+\newblock {Quartus II Handbook Volume 3: Verification}.
+\newblock
+  \url{https://www.altera.com/content/dam/altera-www/global/en_US/pdfs/literature/hb/qts/qts_qii5v3.pdf},
+  2015.
+\newblock [Online; accessed 31-October-2015].
+
+\bibitem[Andrews et~al.(2008)Andrews, Sass, Anderson, Agron, Peck, Stevens,
+  Baijot, and Komp]{andrews2008achieving}
+David Andrews, Ron Sass, Erik Anderson, Jason Agron, Wesley Peck, Jim Stevens,
+  Fabrice Baijot, and Ed~Komp.
+\newblock Achieving programming model abstractions for reconfigurable
+  computing.
+\newblock \emph{Very Large Scale Integration (VLSI) Systems, IEEE Transactions
+  on}, 16\penalty0 (1):\penalty0 34--44, 2008.
+
+\bibitem[Anjam et~al.(2010)Anjam, Nadeem, and Wong]{anjam2010vliw}
+Fakhar Anjam, Muhammad Nadeem, and Stephan Wong.
+\newblock A vliw softcore processor with dynamically adjustable issue-slots.
+\newblock In \emph{Field-Programmable Technology (FPT), 2010 International
+  Conference on}, pages 393--398. IEEE, 2010.
+
+\bibitem[Asano et~al.(2009)Asano, Maruyama, and
+  Yamaguchi]{asano2009performance}
+Shuichi Asano, Tsutomu Maruyama, and Yoshiki Yamaguchi.
+\newblock Performance comparison of fpga, gpu and cpu in image processing.
+\newblock In \emph{Field Programmable Logic and Applications, 2009. FPL 2009.
+  International Conference on}, pages 126--131. IEEE, 2009.
+
+\bibitem[Baleani et~al.(2002)Baleani, Gennari, Jiang, Patel, Brayton, and
+  Sangiovanni-Vincentelli]{baleani2002HW-SW}
+Massimo Baleani, Frank Gennari, Yunjian Jiang, Yatish Patel, Robert~K. Brayton,
+  and Alberto Sangiovanni-Vincentelli.
+\newblock {HW/SW} partitioning and code generation of embedded control
+  applications on a reconfigurable architecture platform.
+\newblock In \emph{Proceedings of the Tenth International Symposium on
+  Hardware/Software Codesign}, CODES '02, pages 151--156, New York, NY, USA,
+  2002. ACM.
+\newblock ISBN 1-58113-542-4.
+\newblock \doi{10.1145/774789.774820}.
+\newblock URL \url{http://doi.acm.org/10.1145/774789.774820}.
+
+\bibitem[Beckhoff et~al.(2011)Beckhoff, Koch, and Torresen]{beckhoff2011xilinx}
+C.~Beckhoff, D.~Koch, and J.~Torresen.
+\newblock The {Xilinx} design language ({XDL}): Tutorial and use cases.
+\newblock In \emph{Reconfigurable Communication-centric Systems-on-Chip
+  ({ReCoSoC}), 2011 6th International Workshop on}, pages 1--8. IEEE, 2011.
+
+\bibitem[Beckhoff et~al.(2012)Beckhoff, Koch, and Torresen]{beckhoff2012go}
+Christian Beckhoff, Dirk Koch, and Jim Torresen.
+\newblock Go ahead: A partial reconfiguration framework.
+\newblock In \emph{Field-Programmable Custom Computing Machines (FCCM), 2012
+  IEEE 20th Annual International Symposium on}, pages 37--44. IEEE, 2012.
+
+\bibitem[Bondhugula et~al.(2007)Bondhugula, Ramanujam, and
+  Sadayappan]{bondhugula2007automatic}
+Uday Bondhugula, J.~Ramanujam, and P.~Sadayappan.
+\newblock Automatic mapping of nested loops to {FPGAs}.
+\newblock In \emph{Proceedings of the 12th {ACM} {SIGPLAN} Symposium on
+  Principles and Practice of Parallel Programming, {PPOPP} 2007, San Jose,
+  California, USA, March 14-17, 2007}, pages 101--111, 2007.
+\newblock \doi{10.1145/1229428.1229446}.
+\newblock URL \url{http://doi.acm.org/10.1145/1229428.1229446}.
+
+\bibitem[Boppu et~al.(2014)Boppu, Hannig, and Teich]{boppu2014compact}
+Srinivas Boppu, Frank Hannig, and J{\"u}rgen Teich.
+\newblock Compact code generation for tightly-coupled processor arrays.
+\newblock \emph{Journal of Signal Processing Systems}, 77\penalty0
+  (1-2):\penalty0 5--29, 2014.
+
+\bibitem[Bouris et~al.(2010)Bouris, Nikitakis, and
+  Papaefstathiou]{bouris2010fast}
+Dimitris Bouris, Antonis Nikitakis, and Ioannis Papaefstathiou.
+\newblock Fast and efficient fpga-based feature detection employing the surf
+  algorithm.
+\newblock In \emph{Field-Programmable Custom Computing Machines (FCCM), 2010
+  18th IEEE Annual International Symposium on}, pages 3--10. IEEE, 2010.
+
+\bibitem[Brant and Lemieux(2012)]{brant2012ZUMA}
+A.~Brant and G.G.F. Lemieux.
+\newblock {ZUMA}: An open {FPGA} overlay architecture.
+\newblock In \emph{Field-Programmable Custom Computing Machines (FCCM), 2012
+  IEEE 20th Annual International Symposium on}, pages 93--96, April 2012.
+\newblock \doi{10.1109/FCCM.2012.25}.
+
+\bibitem[Buciak and Botwicz(2007)]{buciak2007lightweight}
+Piotr Buciak and Jakub Botwicz.
+\newblock Lightweight multi-threaded network processor core in fpga.
+\newblock In \emph{Design and Diagnostics of Electronic Circuits and Systems,
+  2007. DDECS'07. IEEE}, pages 1--5. IEEE, 2007.
+
+\bibitem[Canis et~al.(2011)Canis, Choi, Aldham, Zhang, Kammoona, Anderson,
+  Brown, and Czajkowski]{canis2011legup}
+Andrew Canis, Jongsok Choi, Mark Aldham, Victor Zhang, Ahmed Kammoona, Jason~H.
+  Anderson, Stephen Brown, and Tomasz Czajkowski.
+\newblock {{LegUp}: High-level Synthesis for {FPGA-based} Processor/Accelerator
+  Systems}.
+\newblock In \emph{Proceedings of the 19th ACM/SIGDA International Symposium on
+  Field Programmable Gate Arrays}, FPGA '11, pages 33--36, New York, NY, USA,
+  2011. ACM.
+\newblock ISBN 978-1-4503-0554-9.
+\newblock \doi{10.1145/1950413.1950423}.
+\newblock URL \url{http://doi.acm.org/10.1145/1950413.1950423}.
+
+\bibitem[Capalija and Abdelrahman(2013)]{capalijia2013pipelined}
+D.~Capalija and T.S. Abdelrahman.
+\newblock A high-performance overlay architecture for pipelined execution of
+  data flow graphs.
+\newblock In \emph{Field Programmable Logic and Applications (FPL), 2013 23rd
+  International Conference on}, pages 1--8, Sept 2013.
+\newblock \doi{10.1109/FPL.2013.6645515}.
+
+\bibitem[Cardoso and Diniz(2011)]{cardoso2011compilation}
+Jo{\~a}o~MP Cardoso and Pedro~C Diniz.
+\newblock \emph{Compilation techniques for reconfigurable architectures},
+  volume~81.
+\newblock Springer Science \& Business Media, 2011.
+
+\bibitem[Carrion~Schafer and Wakabayashi(2012)]{schafer2012machine}
+B.~Carrion~Schafer and K.~Wakabayashi.
+\newblock Machine learning predictive modelling high-level synthesis design
+  space exploration.
+\newblock \emph{Computers Digital Techniques, IET}, 6\penalty0 (3):\penalty0
+  153--159, May 2012.
+\newblock ISSN 1751-8601.
+\newblock \doi{10.1049/iet-cdt.2011.0115}.
+
+\bibitem[Chattopadhyay(2013)]{chattopadhyay2013ingredients}
+Anupam Chattopadhyay.
+\newblock Ingredients of adaptability: A survey of reconfigurable processors.
+\newblock \emph{VLSI Design}, 2013:\penalty0 10, 2013.
+
+\bibitem[Chattopadhyay et~al.(2006)Chattopadhyay, Geukes, Kammler, Witte,
+  Schliebusch, Ishebabi, Leupers, Ascheid, and
+  Meyr]{chattopadhyay2006automatic}
+Anupam Chattopadhyay, B~Geukes, David Kammler, Ernst~Martin Witte, Oliver
+  Schliebusch, Harold Ishebabi, Rainer Leupers, Gerd Ascheid, and Heinrich
+  Meyr.
+\newblock Automatic adl-based operand isolation for embedded processors.
+\newblock In \emph{Design, Automation and Test in Europe, 2006. DATE'06.
+  Proceedings}, volume~1, pages 1--6. IEEE, 2006.
+
+\bibitem[Che et~al.(2008)Che, Li, Sheaffer, Skadron, and
+  Lach]{che2008accelerating}
+Shuai Che, Jie Li, Jeremy~W Sheaffer, Kevin Skadron, and John Lach.
+\newblock Accelerating compute-intensive applications with gpus and fpgas.
+\newblock In \emph{Application Specific Processors, 2008. SASP 2008. Symposium
+  on}, pages 101--107. IEEE, 2008.
+
+\bibitem[Cheah et~al.(2012)Cheah, Fahmy, and Maskell]{cheah2012iDEA}
+Hui~Yan Cheah, S.A. Fahmy, and D.L. Maskell.
+\newblock {iDEA}: A {DSP} block based {FPGA} soft processor.
+\newblock In \emph{Field-Programmable Technology (FPT), 2012 International
+  Conference on}, pages 151--158, Dec 2012.
+\newblock \doi{10.1109/FPT.2012.6412128}.
+
+\bibitem[Chen et~al.(2005)Chen, Cong, Fan, Han, Jiang, and
+  Zhang]{chen2005xpilot}
+Deming Chen, Jason Cong, Yiping Fan, Guoling Han, Wei Jiang, and Zhiru Zhang.
+\newblock Xpilot: A platform-based behavioral synthesis system.
+\newblock \emph{SRC TechCon}, 5, 2005.
+
+\bibitem[Chung et~al.(2011)Chung, Hoe, and Mai]{chung2011coram}
+Eric~S Chung, James~C Hoe, and Ken Mai.
+\newblock Coram: an in-fabric memory architecture for fpga-based computing.
+\newblock In \emph{Proceedings of the 19th ACM/SIGDA international symposium on
+  Field programmable gate arrays}, pages 97--106. ACM, 2011.
+
+\bibitem[COBHAM(2015)]{leon}
+COBHAM.
+\newblock Leon sparc.
+\newblock \url{http://www.gaisler.com/}, 2015.
+\newblock [Online; accessed 9-Dec-2015].
+
+\bibitem[Compton and Hauck(2001)]{compton2001totem}
+K.~Compton and S.~Hauck.
+\newblock Totem: Custom reconfigurable array generation.
+\newblock In \emph{Field-Programmable Custom Computing Machines, 2001. FCCM
+  '01. The 9th Annual IEEE Symposium on}, pages 111--119, March 2001.
+
+\bibitem[Compton and Hauck(2002)]{compton2002reconfigurable}
+Katherine Compton and Scott Hauck.
+\newblock Reconfigurable computing: a survey of systems and software.
+\newblock \emph{ACM Computing Surveys (csuR)}, 34\penalty0 (2):\penalty0
+  171--210, 2002.
+
+\bibitem[Cong et~al.(2011)Cong, Liu, Neuendorffer, Noguera, Vissers, and
+  Zhang]{cong2011high}
+J.~Cong, B.~Liu, S.~Neuendorffer, J.~Noguera, K.~Vissers, and Z.~Zhang.
+\newblock High-level synthesis for {FPGA}s: From prototyping to deployment.
+\newblock \emph{Computer-Aided Design of Integrated Circuits and Systems, IEEE
+  Transactions on}, 30\penalty0 (4):\penalty0 473--491, 2011.
+
+\bibitem[Coole and Stitt(2010)]{coole2010intermediate}
+J.~Coole and G.~Stitt.
+\newblock Intermediate fabrics: Virtual architectures for circuit portability
+  and fast placement and routing.
+\newblock In \emph{Hardware/Software Codesign and System Synthesis
+  (CODES+ISSS), 2010 IEEE/ACM/IFIP International Conference on}, pages 13--22,
+  Oct 2010.
+
+\bibitem[Coole and Stitt(2015)]{coole2015adjustable}
+James Coole and Greg Stitt.
+\newblock Adjustable-cost overlays for runtime compilation.
+\newblock In \emph{Field-Programmable Custom Computing Machines (FCCM), 2015
+  IEEE 23rd Annual International Symposium on}, pages 21--24, May 2015.
+\newblock \doi{10.1109/FCCM.2015.49}.
+
+\bibitem[Corporation(2015{\natexlab{a}})]{altera-pc}
+Altera Corporation.
+\newblock Quartus \uppercase\expandafter{\romannumeral2} 14.0 handbook.
+\newblock
+  \url{https://www.altera.com/en_US/pdfs/literature/hb/qts/quartusii_handbook.pdf},
+  2015{\natexlab{a}}.
+\newblock [Online; accessed 18-March-2015].
+
+\bibitem[Corporation(2015{\natexlab{b}})]{xilinx-pc}
+Xilinx Corporation.
+\newblock Command line tools user guide.
+\newblock
+  \url{http://www.xilinx.com/support/documentation/sw_manuals/xilinx14_7/devref.pdf},
+  2015{\natexlab{b}}.
+\newblock [Online; accessed 18-March-2015].
+
+\bibitem[Dimond et~al.(2005)Dimond, Mencer, and Luk]{dimond2005custard}
+Robert Dimond, Oskar Mencer, and Wayne Luk.
+\newblock Custard-a customisable threaded fpga soft processor and tools.
+\newblock In \emph{Field Programmable Logic and Applications, 2005.
+  International Conference on}, pages 1--6. IEEE, 2005.
+
+\bibitem[Ferreira et~al.(2011)Ferreira, Vendramini, Mucida, Pereira, and
+  Carro]{ferreira2011fpga}
+R.~Ferreira, J.G. Vendramini, L.~Mucida, M.M. Pereira, and L.~Carro.
+\newblock An {FPGA-based} heterogeneous coarse-grained dynamically
+  reconfigurable architecture.
+\newblock In \emph{Proceedings of the 14th international conference on
+  Compilers, architectures and synthesis for embedded systems}, pages 195--204.
+  ACM, 2011.
+
+\bibitem[Fleming et~al.(2014)Fleming, Yang, Adler, and Emer]{fleming2014leap}
+Kermin Fleming, Hsin-Jung Yang, Michael Adler, and Joel Emer.
+\newblock The leap fpga operating system.
+\newblock In \emph{Field Programmable Logic and Applications (FPL), 2014 24th
+  International Conference on}, pages 1--8. IEEE, 2014.
+
+\bibitem[Frangieh et~al.(2010)Frangieh, Chandrasekharan, Rajagopalan, Iskander,
+  Craven, and Patterson]{frangieh2010PATIS}
+T.~Frangieh, A.~Chandrasekharan, S.~Rajagopalan, Y.~Iskander, S.~Craven, and
+  C.~Patterson.
+\newblock {PATIS}: Using partial configuration to improve static {FPGA} design
+  productivity.
+\newblock In \emph{Parallel Distributed Processing, Workshops and Phd Forum
+  ({IPDPSW}), 2010 IEEE International Symposium on}, pages 1--8, april 2010.
+\newblock \doi{10.1109/IPDPSW.2010.5470755}.
+
+\bibitem[{Frank Hannig and Dirk Koch and Daniel Ziener}(2014)]{fsp2014}
+{Frank Hannig and Dirk Koch and Daniel Ziener}.
+\newblock {First International Workshop on FPGAs for Software Programmers}.
+\newblock \url{https://www12.informatik.uni-erlangen.de/ws/fsp2014/}, 2014.
+\newblock [Online; accessed 31-October-2015].
+
+\bibitem[Galuzzi and Bertels(2011)]{galuzzi2011instruction}
+Carlo Galuzzi and Koen Bertels.
+\newblock The instruction-set extension problem: A survey.
+\newblock \emph{ACM Transactions on Reconfigurable Technology and Systems
+  (TRETS)}, 4\penalty0 (2):\penalty0 18, 2011.
+
+\bibitem[Goeders and Wilton(2014)]{goeders2014effective}
+Jeffrey Goeders and Steven~JE Wilton.
+\newblock Effective fpga debug for high-level synthesis generated circuits.
+\newblock In \emph{Field Programmable Logic and Applications (FPL), 2014 24th
+  International Conference on}, pages 1--8. IEEE, 2014.
+
+\bibitem[Goeders et~al.(2011)Goeders, Lemieux, and
+  Wilton]{goeders2011deterministic}
+Jeffrey~B Goeders, Guy~GF Lemieux, and Steven~JE Wilton.
+\newblock Deterministic timing-driven parallel placement by simulated annealing
+  using half-box window decomposition.
+\newblock In \emph{Reconfigurable Computing and FPGAs (ReConFig), 2011
+  International Conference on}, pages 41--48. IEEE, 2011.
+
+\bibitem[Grant et~al.(2011)Grant, Wang, and Lemieux]{grant2011malibu}
+David Grant, Chris Wang, and Guy~G.F. Lemieux.
+\newblock A {CAD} framework for {Malibu}: An {FPGA} with time-multiplexed
+  coarse-grained elements.
+\newblock In \emph{Proceedings of the 19th ACM/SIGDA International Symposium on
+  Field Programmable Gate Arrays}, FPGA '11, pages 123--132, New York, NY, USA,
+  2011. ACM.
+\newblock ISBN 978-1-4503-0554-9.
+\newblock \doi{10.1145/1950413.1950441}.
+\newblock URL \url{http://doi.acm.org/10.1145/1950413.1950441}.
+
+\bibitem[Gries(2004)]{gries2004methods}
+Matthias Gries.
+\newblock Methods for evaluating and covering the design space during early
+  design development.
+\newblock \emph{Integration, the VLSI journal}, 38\penalty0 (2):\penalty0
+  131--183, 2004.
+
+\bibitem[Hannig et~al.(2014)Hannig, Lari, Boppu, Tanase, and
+  Reiche]{hannig2014invasive}
+Frank Hannig, Vahid Lari, Srinivas Boppu, Alexandru Tanase, and Oliver Reiche.
+\newblock Invasive tightly-coupled processor arrays: A domain-specific
+  architecture/compiler co-design approach.
+\newblock \emph{ACM Transactions on Embedded Computing Systems (TECS)},
+  13\penalty0 (4s):\penalty0 133, 2014.
+
+\bibitem[{Hayden So and John Wawrzynek}(2015)]{olaf2013}
+{Hayden So and John Wawrzynek}.
+\newblock {First Workshop on Overlay Architectures for FPGAs}.
+\newblock \url{http://olaf.eecs.berkeley.edu/}, 2015.
+\newblock [Online; accessed 31-October-2015].
+
+\bibitem[Holzer et~al.(2007)Holzer, Knerr, and Rupp]{holzer2007design}
+M.~Holzer, B.~Knerr, and M.~Rupp.
+\newblock Design space exploration with evolutionary multi-objective
+  optimisation.
+\newblock In \emph{Industrial Embedded Systems, 2007. SIES '07. International
+  Symposium on}, pages 126--133, July 2007.
+\newblock \doi{10.1109/SIES.2007.4297326}.
+
+\bibitem[Horta et~al.(2002)Horta, Lockwood, Taylor, and
+  Parlour]{horta2002dynamic}
+Edson~L Horta, John~W Lockwood, David~E Taylor, and David Parlour.
+\newblock Dynamic hardware plugins in an fpga with partial run-time
+  reconfiguration.
+\newblock In \emph{Proceedings of the 39th annual Design Automation
+  Conference}, pages 343--348. ACM, 2002.
+
+\bibitem[Hung and Wilton(2014{\natexlab{a}})]{hung2014accelerating}
+Eddie Hung and Steven~JE Wilton.
+\newblock Accelerating fpga debug: Increasing visibility using a runtime
+  reconfigurable observation and triggering network.
+\newblock \emph{ACM Transactions on Design Automation of Electronic Systems
+  (TODAES)}, 19\penalty0 (2):\penalty0 14, 2014{\natexlab{a}}.
+
+\bibitem[Hung and Wilton(2014{\natexlab{b}})]{hung2014incremental}
+Eddie Hung and Steven~JE Wilton.
+\newblock Incremental trace-buffer insertion for fpga debug.
+\newblock \emph{Very Large Scale Integration (VLSI) Systems, IEEE Transactions
+  on}, 22\penalty0 (4):\penalty0 850--863, 2014{\natexlab{b}}.
+
+\bibitem[Itoh et~al.(2000)Itoh, Higaki, Takeuchi, Kitajima, Imai, Sato, and
+  Shiomi]{itoh2000peas}
+Makiko Itoh, Shigeaki Higaki, Yoshinori Takeuchi, Akira Kitajima, Masaharu
+  Imai, Jun Sato, and Akichika Shiomi.
+\newblock Peas-iii: an asip design environment.
+\newblock In \emph{iccd}, page 430. IEEE, 2000.
+
+\bibitem[Jain et~al.(2015)Jain, Fahmy, and Maskell]{jain2015efficient}
+Abhishek~Kumar Jain, Suhaib~A. Fahmy, and Douglas~L. Maskell.
+\newblock Efficient overlay architecture based on {DSP} blocks.
+\newblock In \emph{Field-Programmable Custom Computing Machines (FCCM), 2015
+  IEEE 23rd Annual International Symposium on}, pages 25--28, May 2015.
+\newblock \doi{10.1109/FCCM.2015.15}.
+
+\bibitem[Kao(2005)]{kao2005benefits}
+Cindy Kao.
+\newblock Benefits of partial reconfiguration.
+\newblock \emph{Xcell journal}, 55:\penalty0 65--67, 2005.
+
+\bibitem[Kapre et~al.(2015)Kapre, Chandrashekaran, Ng, and
+  Teo]{kapre2015driving}
+Nachiket Kapre, Bibin Chandrashekaran, Harnhua Ng, and Kirvy Teo.
+\newblock Driving timing convergence of {FPGA} designs through machine learning
+  and cloud computing.
+\newblock In \emph{23rd {IEEE} Annual International Symposium on
+  Field-Programmable Custom Computing Machines, {FCCM} 2015, Vancouver, BC,
+  Canada, May 2-6, 2015}, pages 119--126, 2015.
+\newblock \doi{10.1109/FCCM.2015.36}.
+\newblock URL \url{http://dx.doi.org/10.1109/FCCM.2015.36}.
+
+\bibitem[Khronos(2015)]{OpenCL}
+Khronos.
+\newblock Opencl.
+\newblock \url{https://www.khronos.org/opencl}, 2015.
+\newblock [Online; accessed 9-May-2015].
+
+\bibitem[Kim et~al.(2014)Kim, Lee, Lee, Jang, Son, Kim, and
+  Lee]{kim2014compression}
+SangDon Kim, SeongMo Lee, SangMuk Lee, JiHoon Jang, Jae-Gi Son, YoungHwan Kim,
+  and SeungEun Lee.
+\newblock Compression accelerator for hadoop appliance.
+\newblock In RobertC.-H. Hsu and Shangguang Wang, editors, \emph{Internet of
+  Vehicles - Technologies and Services}, volume 8662, pages 416--423. Springer
+  International Publishing, 2014.
+
+\bibitem[Kingyens and Steffan(2011)]{jeffrey2011potential}
+Jeffrey Kingyens and J.~Gregory Steffan.
+\newblock The potential for a {GPU-Like} overlay architecture for {FPGA}s.
+\newblock \emph{Int. J. Reconfig. Comp.}, 2011, 2011.
+
+\bibitem[Kissler et~al.(2006)Kissler, Hannig, Kupriyanov, and
+  Teich]{kissler2006dynamically}
+Dmitrij Kissler, Frank Hannig, Alexey Kupriyanov, and J{\"u}rgen Teich.
+\newblock A dynamically reconfigurable weakly programmable processor array
+  architecture template.
+\newblock In \emph{ReCoSoC}, pages 31--37, 2006.
+
+\bibitem[Koch et~al.(2013)Koch, Beckhoff, and Lemieux]{koch2013efficient}
+D.~Koch, C.~Beckhoff, and G.G.F. Lemieux.
+\newblock An efficient {FPGA} overlay for portable custom instruction set
+  extensions.
+\newblock In \emph{Field Programmable Logic and Applications (FPL), 2013 23rd
+  International Conference on}, pages 1--8, Sept 2013.
+\newblock \doi{10.1109/FPL.2013.6645517}.
+
+\bibitem[Korf et~al.(2011)Korf, Cozzi, Koester, Hagemeyer, Porrmann, Ruckert,
+  and Santambrogio]{korf2011automatic}
+Sebastian Korf, Dario Cozzi, Markus Koester, Jens Hagemeyer, Mario Porrmann,
+  U~Ruckert, and Marco~D Santambrogio.
+\newblock Automatic {HDL}-based generation of homogeneous hard macros for
+  {FPGAs}.
+\newblock In \emph{Field-Programmable Custom Computing Machines (FCCM), 2011
+  IEEE 19th Annual International Symposium on}, pages 125--132. IEEE, 2011.
+
+\bibitem[Kurek et~al.(2014)Kurek, Becker, Chau, and Luk]{kurek2014automating}
+Maciej Kurek, Tobias Becker, Thomas~C.P. Chau, and Wayne Luk.
+\newblock Automating optimization of reconfigurable designs.
+\newblock In \emph{Field-Programmable Custom Computing Machines (FCCM), 2014
+  IEEE 22nd Annual International Symposium on}, pages 210--213, May 2014.
+\newblock \doi{10.1109/FCCM.2014.65}.
+
+\bibitem[LaForest and Steffan(2012)]{laforest2012OCTAVO}
+Charles~Eric LaForest and John~Gregory Steffan.
+\newblock {OCTAVO}: An {FPGA}-centric processor family.
+\newblock In \emph{Proceedings of the ACM/SIGDA International Symposium on
+  Field Programmable Gate Arrays}, FPGA '12, pages 219--228, New York, NY, USA,
+  2012. ACM.
+\newblock ISBN 978-1-4503-1155-7.
+\newblock \doi{10.1145/2145694.2145731}.
+\newblock URL \url{http://doi.acm.org/10.1145/2145694.2145731}.
+
+\bibitem[Lavin et~al.(2010)Lavin, Padilla, Ghosh, Nelson, Hutchings, and
+  Wirthlin]{lavin2010using}
+C.~Lavin, M.~Padilla, S.~Ghosh, B.~Nelson, B.~Hutchings, and M.~Wirthlin.
+\newblock Using hard macros to reduce {FPGA} compilation time.
+\newblock In \emph{Field Programmable Logic and Applications ({FPL}), 2010
+  International Conference on}, pages 438--441. IEEE, 2010.
+
+\bibitem[Lavin et~al.(2011)Lavin, Padilla, Lamprecht, Lundrigan, Nelson, and
+  Hutchings]{lavin2011HMFlow}
+C.~Lavin, M.~Padilla, J.~Lamprecht, P.~Lundrigan, B.~Nelson, and B.~Hutchings.
+\newblock {HMFlow}: Accelerating {FPGA} compilation with hard macros for rapid
+  prototyping.
+\newblock In \emph{Field-Programmable Custom Computing Machines ({FCCM}), 2011
+  {IEEE} 19th Annual International Symposium on}, pages 117 --124, may 2011.
+\newblock \doi{10.1109/FCCM.2011.17}.
+
+\bibitem[Lavin et~al.(2013{\natexlab{a}})Lavin, Nelson, and
+  Hutchings]{lavin2013improving}
+Christopher Lavin, Brent Nelson, and Brad Hutchings.
+\newblock Improving clock-rate of hard-macro designs.
+\newblock In \emph{Field-Programmable Technology (FPT), 2013 International
+  Conference on}, pages 246--253. IEEE, 2013{\natexlab{a}}.
+
+\bibitem[Lavin et~al.(2013{\natexlab{b}})Lavin, Nelson, and
+  Hutchings]{lavin2013impact}
+Cristina Lavin, Brent Nelson, and Brad Hutchings.
+\newblock Impact of hard macro size on fpga clock rate and place/route time.
+\newblock In \emph{Field Programmable Logic and Applications (FPL), 2013 23rd
+  International Conference on}, pages 1--6. IEEE, 2013{\natexlab{b}}.
+
+\bibitem[Lebedev et~al.(2010)Lebedev, Cheng, Doupnik, Martin, Fletcher, Burke,
+  Lin, and Wawrzynek]{lebedev2010MARC}
+I.~Lebedev, Shaoyi Cheng, A.~Doupnik, J.~Martin, C.~Fletcher, D.~Burke, Mingjie
+  Lin, and J.~Wawrzynek.
+\newblock {MARC}: A many-core approach to reconfigurable computing.
+\newblock In \emph{Reconfigurable Computing and FPGAs (ReConFig), 2010
+  International Conference on}, pages 7--12, Dec 2010.
+\newblock \doi{10.1109/ReConFig.2010.49}.
+
+\bibitem[Lin and So(2012)]{lin2012energy}
+Colin~Yu Lin and Hayden Kwok-Hay So.
+\newblock Energy-efficient dataflow computations on {FPGAs} using
+  application-specific coarse-grain architecture synthesis.
+\newblock \emph{SIGARCH Comput. Archit. News}, 40\penalty0 (5):\penalty0
+  58--63, March 2012.
+\newblock ISSN 0163-5964.
+\newblock \doi{10.1145/2460216.2460227}.
+\newblock URL \url{http://doi.acm.org/10.1145/2460216.2460227}.
+
+\bibitem[Liu et~al.(2015)Liu, Ng, and So]{liu2015automatic}
+Cheng Liu, Ho{-}Cheung Ng, and Hayden~Kwok{-}Hay So.
+\newblock Automatic nested loop acceleration on fpgas using soft {CGRA}
+  overlay.
+\newblock \emph{CoRR}, abs/1509.00042, 2015.
+\newblock URL \url{http://arxiv.org/abs/1509.00042}.
+
+\bibitem[Liu and Carloni(2013)]{liu2013learning}
+Hung-Yi Liu and L.P. Carloni.
+\newblock On learning-based methods for design-space exploration with
+  high-level synthesis.
+\newblock In \emph{Design Automation Conference (DAC), 2013 50th ACM / EDAC /
+  IEEE}, pages 1--7, May 2013.
+
+\bibitem[Liu et~al.(2004)Liu, Zheng, and Liu]{liu2004fpga}
+Zhen Liu, Kai Zheng, and Bin Liu.
+\newblock Fpga implementation of hierarchical memory architecture for network
+  processors.
+\newblock In \emph{Field-Programmable Technology, 2004. Proceedings. 2004 IEEE
+  International Conference on}, pages 295--298. IEEE, 2004.
+
+\bibitem[LLVM(2013)]{llvm}
+LLVM.
+\newblock The {LLVM} compiler framework.
+\newblock \url{http://llvm.org}, 2013.
+\newblock [Online; accessed 19-September-2013].
+
+\bibitem[Lodi et~al.(2003)Lodi, Toma, and Campi]{lodi2003pipelined}
+Andrea Lodi, Mario Toma, and Fabio Campi.
+\newblock A pipelined configurable gate array for embedded processors.
+\newblock In \emph{Proceedings of the 2003 ACM/SIGDA eleventh international
+  symposium on Field programmable gate arrays}, pages 21--30. ACM, 2003.
+
+\bibitem[L\"{u}bbers and Platzner(2009)]{lubbers2009ReconOS}
+Enno L\"{u}bbers and Marco Platzner.
+\newblock {ReconOS}: Multithreaded programming for reconfigurable computers.
+\newblock \emph{ACM Trans. Embed. Comput. Syst.}, 9\penalty0 (1):\penalty0
+  8:1--8:33, October 2009.
+\newblock ISSN 1539-9087.
+\newblock \doi{10.1145/1596532.1596540}.
+\newblock URL \url{http://doi.acm.org/10.1145/1596532.1596540}.
+
+\bibitem[Lysecky et~al.(2005)Lysecky, Miller, Vahid, and
+  Vissers]{lysecky2005firm}
+Roman Lysecky, Kris Miller, Frank Vahid, and Kees Vissers.
+\newblock Firm-core virtual {FPGA} for just-in-time {FPGA} compilation.
+\newblock In \emph{Proceedings of the 2005 ACM/SIGDA 13th International
+  Symposium on Field-programmable Gate Arrays}, FPGA '05, pages 271--271, New
+  York, NY, USA, 2005. ACM.
+\newblock ISBN 1-59593-029-9.
+\newblock \doi{10.1145/1046192.1046247}.
+\newblock URL \url{http://doi.acm.org/10.1145/1046192.1046247}.
+
+\bibitem[Maidee et~al.(2003)Maidee, Ababei, and Bazargan]{maidee2003fast}
+Pongstorn Maidee, Cristinel Ababei, and Kia Bazargan.
+\newblock Fast timing-driven partitioning-based placement for island style
+  fpgas.
+\newblock In \emph{Proceedings of the 40th annual design automation
+  conference}, pages 598--603. ACM, 2003.
+
+\bibitem[Majumder et~al.(2014)Majumder, Pande, and
+  Kalyanaraman]{majumder2014hardware}
+T.~Majumder, P.P. Pande, and A.~Kalyanaraman.
+\newblock Hardware accelerators in computational biology: Application,
+  potential, and challenges.
+\newblock \emph{Design Test, IEEE}, 31\penalty0 (1):\penalty0 8--18, Feb 2014.
+\newblock ISSN 2168-2356.
+\newblock \doi{10.1109/MDAT.2013.2290118}.
+
+\bibitem[{MathWorks}(2015)]{matlab}
+{MathWorks}.
+\newblock {Matlab Solutions: FPGA Design and SoC Design}.
+\newblock \url{http://www.mathworks.com/solutions/fpga-design/}, 2015.
+\newblock [Online; accessed 31-October-2015].
+
+\bibitem[{Mentor Graphics}(2015)]{certus}
+{Mentor Graphics}.
+\newblock {Certus Silicon Debug}.
+\newblock \url{https://www.mentor.com/products/fv/certus-silicon-debug}, 2015.
+\newblock [Online; accessed 31-October-2015].
+
+\bibitem[{Mentor Graphics Corporation}(2015)]{handel-c}
+{Mentor Graphics Corporation}.
+\newblock {Handel-C}.
+\newblock \url{https://www.mentor.com/products/fpga/handel-c/}, 2015.
+\newblock [Online; accessed 31-October-2015].
+
+\bibitem[Miniskar et~al.(2014)Miniskar, Kohli, Park, and
+  Yoo]{miniskar2014retargetable}
+Narasinga~Rao Miniskar, Soma Kohli, Haewoo Park, and Donghoon Yoo.
+\newblock Retargetable automatic generation of compound instructions for {CGRA}
+  based reconfigurable processor applications.
+\newblock In \emph{Compilers, Architecture and Synthesis for Embedded Systems
+  (CASES), 2014 International Conference on}, pages 1--9. IEEE, 2014.
+
+\bibitem[Moctar and Brisk(2014)]{moctar2014parallel}
+Yehdhih Ould~Mohammed Moctar and Philip Brisk.
+\newblock Parallel fpga routing based on the operator formulation.
+\newblock In \emph{Proceedings of the The 51st Annual Design Automation
+  Conference on Design Automation Conference}, pages 1--6. ACM, 2014.
+
+\bibitem[Mulpuri and Hauck(2001)]{mulpuri2001runtime}
+Chandra Mulpuri and Scott Hauck.
+\newblock Runtime and quality tradeoffs in fpga placement and routing.
+\newblock In \emph{Proceedings of the 2001 ACM/SIGDA ninth international
+  symposium on Field programmable gate arrays}, pages 29--36. ACM, 2001.
+
+\bibitem[{MyHDL}(2015)]{myhdl}
+{MyHDL}.
+\newblock {MyHDL}.
+\newblock \url{http://www.myhdl.org/}, 2015.
+\newblock [Online; accessed 31-October-2015].
+
+\bibitem[Panjkov et~al.(2015)Panjkov, Wasserbauer, Ostermann, and
+  Hagelauer]{panjkov2015hybrid}
+Zdravko Panjkov, Andreas Wasserbauer, Timm Ostermann, and Richard Hagelauer.
+\newblock Hybrid fpga debug approach.
+\newblock In \emph{Field Programmable Logic and Applications (FPL), 2015 25th
+  International Conference on}, pages 1--8. IEEE, 2015.
+
+\bibitem[Putnam et~al.(2014)Putnam, Caulfield, Chung, Chiou, Constantinides,
+  Demme, Esmaeilzadeh, Fowers, Gopal, Gray, Haselman, Hauck, Heil, Hormati,
+  Kim, Lanka, Larus, Peterson, Pope, Smith, Thong, Xiao, and
+  Burger]{putnam2014reconfigurable}
+A.~Putnam, A.M. Caulfield, E.S. Chung, D.~Chiou, K.~Constantinides, J.~Demme,
+  H.~Esmaeilzadeh, J.~Fowers, G.P. Gopal, J.~Gray, M.~Haselman, S.~Hauck,
+  S.~Heil, A.~Hormati, J.-Y. Kim, S.~Lanka, J.~Larus, E.~Peterson, S.~Pope,
+  A.~Smith, J.~Thong, P.Y. Xiao, and D.~Burger.
+\newblock A reconfigurable fabric for accelerating large-scale datacenter
+  services.
+\newblock In \emph{Computer Architecture (ISCA), 2014 ACM/IEEE 41st
+  International Symposium on}, pages 13--24, June 2014.
+\newblock \doi{10.1109/ISCA.2014.6853195}.
+
+\bibitem[Raje(2015)]{raje2015fpl}
+Salil Raje.
+\newblock Extending the power of fpgas to software developers.
+\newblock \url{http://fpl2015.org/pdf/keynotes/1.pdf}, 2015.
+\newblock [Online; accessed 1-November-2015].
+
+\bibitem[ROCCC(2014)]{ROCCC}
+ROCCC.
+\newblock {ROCCC2.0}.
+\newblock \url{http://www.jacquardcomputing.com/roccc/}, 2014.
+\newblock [Online; accessed 19-January-2014].
+
+\bibitem[Sankar and Rose(1999)]{sankar1999trading}
+Yaska Sankar and Jonathan Rose.
+\newblock Trading quality for compile time: Ultra-fast placement for fpgas.
+\newblock In \emph{Proceedings of the 1999 ACM/SIGDA seventh international
+  symposium on Field programmable gate arrays}, pages 157--166. ACM, 1999.
+
+\bibitem[Sarkar et~al.(2010)Sarkar, Majumder, Kalyanaraman, and
+  Pande]{souradip2010hardware}
+Souradip Sarkar, Turbo Majumder, Ananth Kalyanaraman, and Partha~Pratim Pande.
+\newblock {Hardware accelerators for biocomputing: A survey}.
+\newblock In \emph{IEEE International Symposium on Circuits and Systems}, pages
+  3789--3792, 2010.
+\newblock \doi{10.1109/ISCAS.2010.5537736}.
+
+\bibitem[Schafer and Wakabayashi(2012)]{schafer2012divide}
+Benjamin~Carrion Schafer and Kazutoshi Wakabayashi.
+\newblock Divide and conquer high-level synthesis design space exploration.
+\newblock \emph{ACM Trans. Des. Autom. Electron. Syst.}, 17\penalty0
+  (3):\penalty0 29:1--29:19, July 2012.
+\newblock ISSN 1084-4309.
+\newblock \doi{10.1145/2209291.2209302}.
+\newblock URL \url{http://doi.acm.org/10.1145/2209291.2209302}.
+
+\bibitem[Schutten(1996)]{schutten1996list}
+JMJ Schutten.
+\newblock List scheduling revisited.
+\newblock \emph{Operations Research Letters}, 18\penalty0 (4):\penalty0
+  167--170, 1996.
+
+\bibitem[Severance and Lemieux(2012)]{guy2012VENICE}
+A.~Severance and G.~Lemieux.
+\newblock {VENICE}: A compact vector processor for {FPGA} applications.
+\newblock In \emph{Field-Programmable Technology (FPT), 2012 International
+  Conference on}, pages 261--268, Dec 2012.
+\newblock \doi{10.1109/FPT.2012.6412146}.
+
+\bibitem[Shukla et~al.(2006)Shukla, Bergmann, and Becker]{shukla2006quku}
+S.~Shukla, N.W. Bergmann, and J.~Becker.
+\newblock {QUKU}: a two-level reconfigurable architecture.
+\newblock In \emph{Emerging {VLSI} Technologies and Architectures, 2006. IEEE
+  Computer Society Annual Symposium on}, March 2006.
+\newblock \doi{10.1109/ISVLSI.2006.76}.
+
+\bibitem[Skliarova and Ferrari(2004)]{iouliia2004reconfigurable}
+Iouliia Skliarova and Antonio De~Brito Ferrari.
+\newblock {Reconfigurable Hardware SAT Solvers: A Survey of Systems}.
+\newblock \emph{IEEE Transactions on Computers}, 53:\penalty0 1449--1461, 2004.
+\newblock \doi{10.1109/TC.2004.102}.
+
+\bibitem[So and Brodersen(2008)]{so2008unified}
+Hayden Kwok-Hay So and Robert Brodersen.
+\newblock A unified hardware/software runtime environment for {FPGA}-based
+  reconfigurable computers using {BORPH}.
+\newblock \emph{Transactions on Embedded Computing Systems}, 7\penalty0
+  (2):\penalty0 1--28, 2008.
+\newblock ISSN 1539-9087.
+\newblock \doi{http://doi.acm.org/10.1145/1331331.1331338}.
+
+\bibitem[Sukhsawas and Benkrid(2004)]{sukhsawas2004high}
+S~Sukhsawas and Khaled Benkrid.
+\newblock A high-level implementation of a high performance pipeline fft on
+  virtex-e fpgas.
+\newblock In \emph{VLSI, 2004. Proceedings. IEEE Computer society Annual
+  Symposium on}, pages 229--232. IEEE, 2004.
+
+\bibitem[Tessier(2002)]{tessier2002fast}
+Russell Tessier.
+\newblock Fast placement approaches for fpgas.
+\newblock \emph{ACM Transactions on Design Automation of Electronic Systems
+  (TODAES)}, 7\penalty0 (2):\penalty0 284--305, 2002.
+
+\bibitem[Tessier and Burleson(2001)]{tessier2001reconfigurable}
+Russell Tessier and Wayne Burleson.
+\newblock Reconfigurable computing for digital signal processing: A survey.
+\newblock \emph{Journal of VLSI signal processing systems for signal, image and
+  video technology}, 28\penalty0 (1-2):\penalty0 7--27, 2001.
+
+\bibitem[Thomas et~al.(2009)Thomas, Howes, and Luk]{thomas2009comparison}
+David~Barrie Thomas, Lee Howes, and Wayne Luk.
+\newblock A comparison of cpus, gpus, fpgas, and massively parallel processor
+  arrays for random number generation.
+\newblock In \emph{Proceedings of the ACM/SIGDA international symposium on
+  Field programmable gate arrays}, pages 63--72. ACM, 2009.
+
+\bibitem[Tian et~al.(2008)Tian, Benkrid, and Gu]{tian2008high}
+Xiang Tian, Khaled Benkrid, and Xiaochen Gu.
+\newblock High performance monte-carlo based option pricing on fpgas.
+\newblock \emph{Engineering Letters}, 16\penalty0 (3):\penalty0 434--442, 2008.
+
+\bibitem[{Tobias Becker and Frank Hannig and Dirk Koch and Daniel Ziener and
+  Friedrich-Alexander}(2015)]{fsp2015}
+{Tobias Becker and Frank Hannig and Dirk Koch and Daniel Ziener and
+  Friedrich-Alexander}.
+\newblock {Second International Workshop on FPGAs for Software Programmers}.
+\newblock \url{https://www12.informatik.uni-erlangen.de/ws/fsp2015/}, 2015.
+\newblock [Online; accessed 31-October-2015].
+
+\bibitem[{TOP500}(2015)]{top500}
+{TOP500}.
+\newblock Top500 list june 2015.
+\newblock \url{http://top500.org/lists/2015/06}, June 2015.
+\newblock [Online; accessed 18-October-2015].
+
+\bibitem[Wrighton and DeHon(2003)]{wrighton2003hardware}
+Michael~G Wrighton and Andr{\'e}~M DeHon.
+\newblock Hardware-assisted simulated annealing with application for fast fpga
+  placement.
+\newblock In \emph{Proceedings of the 2003 ACM/SIGDA eleventh international
+  symposium on Field programmable gate arrays}, pages 33--42. ACM, 2003.
+
+\bibitem[Wu et~al.(2009)Wu, Dou, Lei, Zhou, Wang, and Jiang]{wu2009fine}
+Guiming Wu, Yong Dou, Yuanwu Lei, Jie Zhou, Miao Wang, and Jingfei Jiang.
+\newblock A fine-grained pipelined implementation of the linpack benchmark on
+  fpgas.
+\newblock In \emph{Field Programmable Custom Computing Machines, 2009. FCCM'09.
+  17th IEEE Symposium on}, pages 183--190. IEEE, 2009.
+
+\bibitem[Xilinx(2012)]{data2mem}
+Xilinx.
+\newblock data2mem.
+\newblock
+  \url{http://www.xilinx.com/support/documentation/sw_manuals/xilinx11/data2mem.pdf},
+  2012.
+\newblock [Online; accessed 19-September-2012].
+
+\bibitem[Xilinx(2014{\natexlab{a}})]{VivadoHLS}
+Xilinx.
+\newblock {Vivado HLS}.
+\newblock \url{http://www.xilinx.com/products/design-tools/vivado/},
+  2014{\natexlab{a}}.
+\newblock [Online; accessed 18-October-2014].
+
+\bibitem[Xilinx(2014{\natexlab{b}})]{microblaze}
+Xilinx.
+\newblock {MicroBlaze} soft processor core.
+\newblock \url{http://www.xilinx.com/tools/microblaze.htm}, 2014{\natexlab{b}}.
+\newblock [Online; accessed 25-June-2014].
+
+\bibitem[{Xilinx}(2015)]{chipscope}
+{Xilinx}.
+\newblock {ChipScope Pro and the Serial I/O Toolkit}.
+\newblock \url{http://www.xilinx.com/tools/cspro.htm}, 2015.
+\newblock [Online; accessed 31-October-2015].
+
+\bibitem[Xilinx(2015)]{virtex-ultrascale}
+Xilinx.
+\newblock Virtex ultrascale+ fpgas.
+\newblock
+  \url{http://www.xilinx.com/products/silicon-devices/fpga/virtex-ultrascale-plus.html},
+  2015.
+\newblock [Online; accessed 1-November-2015].
+
+\bibitem[Yanghua et~al.(2016)Yanghua, Raj, Ng, Teo, and Kapre]{yanghua2016case}
+Que Yanghua, Chinnakkannu~Adaikkala Raj, Harnhua Ng, Kirvy Teo, and Nachiket
+  Kapre.
+\newblock Case for design-specific machine learning in timing closure of {FPGA}
+  designs.
+\newblock In \emph{Proceedings of the 2016 {ACM/SIGDA} International Symposium
+  on Field-Programmable Gate Arrays, Monterey, CA, USA, February 21-23, 2016},
+  pages 169--172, 2016.
+\newblock \doi{10.1145/2847263.2847336}.
+\newblock URL \url{http://doi.acm.org/10.1145/2847263.2847336}.
+
+\bibitem[Yiannacouras et~al.(2007)Yiannacouras, Steffan, and
+  Rose]{yiannacouras2007exploration}
+P.~Yiannacouras, J.G. Steffan, and J.~Rose.
+\newblock Exploration and customization of {FPGA-Based} soft processors.
+\newblock \emph{Computer-Aided Design of Integrated Circuits and Systems, IEEE
+  Transactions on}, 26\penalty0 (2):\penalty0 266--277, Feb 2007.
+\newblock ISSN 0278-0070.
+\newblock \doi{10.1109/TCAD.2006.887921}.
+
+\bibitem[Yiannacouras et~al.(2005)Yiannacouras, Rose, and
+  Steffan]{yiannacouras2005microarchitecture}
+Peter Yiannacouras, Jonathan Rose, and J~Gregory Steffan.
+\newblock The microarchitecture of fpga-based soft processors.
+\newblock In \emph{Proceedings of the 2005 international conference on
+  Compilers, architectures and synthesis for embedded systems}, pages 202--212.
+  ACM, 2005.
+
+\bibitem[Yiannacouras et~al.(2009)Yiannacouras, Steffan, and
+  Rose]{yiannacouras2009fine}
+Peter Yiannacouras, J.~Gregory Steffan, and Jonathan Rose.
+\newblock Fine-grain performance scaling of soft vector processors.
+\newblock In \emph{Proceedings of the 2009 International Conference on
+  Compilers, Architecture, and Synthesis for Embedded Systems}, CASES '09,
+  pages 97--106, New York, NY, USA, 2009. ACM.
+\newblock ISBN 978-1-60558-626-7.
+\newblock \doi{10.1145/1629395.1629411}.
+\newblock URL \url{http://doi.acm.org/10.1145/1629395.1629411}.
+
+\bibitem[Yue et~al.(2015)Yue, Koch, and Lemieux]{yue2015rapid}
+M.X. Yue, D.~Koch, and G.G.F. Lemieux.
+\newblock Rapid overlay builder for xilinx fpgas.
+\newblock In \emph{Field-Programmable Custom Computing Machines (FCCM), 2015
+  IEEE 23rd Annual International Symposium on}, pages 17--20, May 2015.
+\newblock \doi{10.1109/FCCM.2015.48}.
+
+\bibitem[Zhang et~al.(2008)Zhang, Fan, Jiang, Han, Yang, and
+  Cong]{zhang2008autopilot}
+Zhiru Zhang, Yiping Fan, Wei Jiang, Guoling Han, Changqi Yang, and Jason Cong.
+\newblock {AutoPilot}: A platform-based {ESL} synthesis system.
+\newblock In \emph{High-Level Synthesis}, pages 99--112. Springer, 2008.
+
+\bibitem[Zhong et~al.(2014)Zhong, Venkataramani, Liang, Mitra, and
+  Niar]{zhong2014design}
+Guanwen Zhong, V.~Venkataramani, Yun Liang, T.~Mitra, and S.~Niar.
+\newblock Design space exploration of multiple loops on fpgas using high level
+  synthesis.
+\newblock In \emph{Computer Design (ICCD), 2014 32nd IEEE International
+  Conference on}, pages 456--463, Oct 2014.
+\newblock \doi{10.1109/ICCD.2014.6974719}.
+
+\bibitem[Zhou et~al.(2014)Zhou, Liu, Zhang, and Liu]{zhou2014application}
+Li~Zhou, Dongpei Liu, Jianfeng Zhang, and Hengzhu Liu.
+\newblock Application-specific coarse-grained reconfigurable array:
+  architecture and design methodology.
+\newblock \emph{International Journal of Electronics}, \penalty0
+  (ahead-of-print):\penalty0 1--14, 2014.
+
+\end{thebibliography}

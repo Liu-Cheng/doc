@@ -1,5 +1,5 @@
 TITLE=liucheng-thesis
-TEXORIG=liucheng-thesis.tex abstract.tex front-page.tex chapter1-intro.tex chapter2-litrev.tex chapter4-framework.tex chapter3-overlay.tex chapter5-customization.tex chapter6-conclusion.tex 
+TEXORIG=liucheng-thesis.tex acknowledgement.tex cover.tex abstract.tex front-page.tex chapter1-intro.tex chapter2-litrev.tex chapter4-framework.tex chapter3-overlay.tex chapter5-customization.tex chapter6-conclusion.tex appendix.tex
 
 BIBFILES=refs.bib 
 IMGFILES=

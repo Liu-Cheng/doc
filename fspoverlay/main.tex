@@ -1,0 +1,68 @@
+\documentclass{book}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1.5in,bottom=2in,headheight=0.8in,headsep=0.2in,footskip=1in]{geometry}
+
+\usepackage[shortlabels]{enumitem}
+\usepackage{siunitx}
+\usepackage{minitoc}
+\usepackage{calc}
+
+\usepackage{subfigure}
+\usepackage{booktabs}
+
+\usepackage{graphicx}
+\graphicspath{ {figs/} }
+
+% \newcommand{\figref}[1]{Figure~\ref{#1}}
+% \newcommand{\eqref}[1]{(\ref{#1})}
+% \newcommand{\eqnref}[1]{(\ref{#1})}
+%\newcommand{\code}[1]{\texttt{#1}}
+
+\newcommand{\chapterauthor}[1]{\author{#1}}
+
+\title{fspoverlay}
+\date{July 2015}
+
+\begin{document}
+
+\input{chapter}
+
+%\dominitoc% Initialization
+%\tableofcontents
+
+%\chapter[FPGA Overlay]{Coarse-Grained Architectures and Overlays}
+%\minitoc
+
+%\input{outline} % delete me later
+%\section*{Hayden's Draft}
+%\input{hayden} % draft from Hayden
+%\section*{Guy's Draft}
+%\input{guy} % draft from Guy
+
+
+% \noindent
+% \begin{minipage}{\linewidth}
+% \centering
+% \fbox{\Huge\bf Start of Real Content}
+% \end{minipage}
+
+%%%% Real Content %%%%
+%\section{Motivation}
+% \input{motivation}
+% \section{Overview}
+% \input{overlay_overview}
+% \section{Types of Overlays}
+% \input{minisurvey}
+% \section{Case Studies}
+% \input{casestudy}
+% \section{Challenges \& Looking Forward}
+% \input{challenges}
+
+
+%\section{State-of-the-art and availability/usability for software engineers}
+%\input{current}
+
+\bibliographystyle{alpha}
+\bibliography{literature}
+
+\end{document}

@@ -1,0 +1,14 @@
+Developing applications that run on FPGAs is without doubt a very different experience from writing programs in software.
+Not only is the hardware design process fundamentally different from that of software development, software programmers also often find themselves constantly battling with the much lower \emph{design productivity} in developing hardware designs.
+
+To begin, first time FPGA designers are often put off by the steep learning curve of the complex labyrinth of tools involved.
+Beyond that, instead of spending merely seconds to compile and debug a quick-and-dirty proof-of-concept design, software programmers soon also discover that implementing even the simplest FPGA design can consume at least tens of minutes of their development time.
+As the size of their designs increase, the run time of these implementation tools quickly increase to hours or even days, greatly limiting the number of possible debug-edit-implement cycles per day.
+Indeed, to debug, they may turn to the use of a cycle-accurate simulator. 
+Unfortunately, tracing the behaviors of even just a handful of signals through tens of thousands of cycles soon becomes a slow and intractable process.
+
+In this chapter, we explore how the concept of FPGA overlay may be able to alleviate some of these burdens.
+We will look at how by using an overlay architecture, designers are able to compile applications to FPGA hardware in merely seconds instead of hours.
+We will also look at how overlays are able to help with design portability, as well as to improve debugging capabilities of low-level designs.
+Finally, we will explore the challenges and opportunities for future research in this area.
+

@@ -1,0 +1,65 @@
+\section{Introduction}
+Offloading compute intensive nested loops to FPGA accelerators has 
+been demonstrated by many researchers to be an effective solution 
+for performance enhancement across many application domains \cite{Chung2010}. 
+However, the relatively low productivity in developing FPGA-based 
+compute applications remains a major obstacle that hinders 
+their widespread employment \cite{cong2011high}.
+
+To address this productivity challenge, researchers have recently 
+turned to the use of virtual FPGA overlay architectures and 
+high-level compilation tools that, when combined properly, 
+are able to produce high-performance accelerators at near
+software compilation speed \cite{Grant2011Malibu, ZUMA2012, 
+mesh-FUs, ferreira2011fpga, kissler2006dynamically, scgra}.
+Not only have these early works illustrated the promise of using overlays 
+to improve productivity, they have also highlighted a unique potential 
+of overlays --- By customizing the architectures of these \emph{virtual} 
+yet often regular overlays for a target user design, in theory, it is 
+possible to significantly improve the power-performance of the 
+resulting accelerator. In practice, however, navigating through a 
+labyrinth of architectural and compilation parameters to fine-tune 
+an accelerator's power-performance is a slow and non-trivial process. 
+To require a user to manually explore such vast design space is going 
+to counteract the productivity benefit of the utilizing overlay 
+in the first place.
+
+To address both the design productivity and performance challenge, 
+we have developed a soft coarse-grained reconfigurable array (SCGRA) overlay based 
+nested loop acceleration framework targeting a hybrid CPU-FPGA system.
+In this framework, given high-level design constraints, the framework automatically  
+customizes the overlay architectural parameters, exploits loop unrolling 
+and hardware-software communication in combination 
+with buffer sizing specifically to an application.  
+In addition, by taking advantage of the regularity of the SCGRA overlay, 
+a multitude of design metrics such as performance and hardware consumption can 
+be accurately estimated using analytical models once the overlay scheduling 
+result is available. While the overlay scheduling depends on much less design 
+parameters, the overall customization framework can be dramatically simplified.
+When the optimized design parameters are decided, the 
+corresponding hardware accelerator and communication interface 
+are generated and both the hardware accelerator and software 
+are compiled to the hybrid CPU-FPGA system.
+Moreover, the SCGRA overlay allows rapid bitstream reuse \cite{scgra} during 
+design iterations of an application. With an initial overlay implementation, 
+nested loops expressed in high-level languages can be compiled to the SCGRA overlay in seconds. 
+With both the efficient application-specific customization and rapid bitstream reuse,   
+the proposed design framework ensures both high design productivity and 
+high performance of FPGA loop acceleration.
+
+According to the experiments, it takes the proposed design framework around 10 minutes
+to 20 minutes to complete the loop accelerator customization. When compared to the performance of
+the benchmark executed on a hard ARM processor, the resulting FPGA accelerators achieve up to 10X speedup.  
+
+With that, we consider the main contribution of this work is in the following areas:
+\begin{itemize}[nosep]
+\item We have developed an SCGRA overlay based FPGA loop accelerator design framework that 
+    automatically performs FPGA accelerator architectural design parameters, compilation options and
+    communication tuning. The resulting accelerators have shown promising performance speedup over
+    an ARM processor.
+\item By taking advantage of the regularity of the SCGRA overlay based FPGA accelerator, we have
+    built a series of performance and overhead models and further simplified the customization
+    problem using these models.
+\end{itemize}
+
+
