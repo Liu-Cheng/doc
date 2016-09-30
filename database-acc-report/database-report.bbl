@@ -1,0 +1,38 @@
+\begin{thebibliography}{1}
+
+\bibitem{chenaccelerating}
+Ren Chen and Viktor~K Prasanna.
+\newblock Accelerating equi-join on a cpu-fpga heterogeneous platform.
+
+\bibitem{guotowards}
+Cong Guo and Martin Karsten.
+\newblock Towards adaptive resource allocation for database workloads.
+
+\bibitem{papadimitriou2011performance}
+Kyprianos Papadimitriou, Apostolos Dollas, and Scott Hauck.
+\newblock Performance of partial reconfiguration in fpga systems: A survey and
+  a cost model.
+\newblock {\em ACM Transactions on Reconfigurable Technology and Systems
+  (TRETS)}, 4(4):36, 2011.
+
+\bibitem{sadoghi2012multi}
+Mohammad Sadoghi, Rija Javed, Naif Tarafdar, Harsh Singh, Rohan Palaniappan,
+  and Hans-Arno Jacobsen.
+\newblock Multi-query stream processing on fpgas.
+\newblock In {\em 2012 IEEE 28th International Conference on Data Engineering},
+  pages 1229--1232. IEEE, 2012.
+
+\bibitem{soundararajan2009dynamic}
+Gokul Soundararajan, Daniel Lupei, Saeed Ghanbari, Adrian~Daniel Popescu, Jin
+  Chen, and Cristiana Amza.
+\newblock Dynamic resource allocation for database servers running on virtual
+  storage.
+\newblock In {\em FAST}, volume~9, pages 71--84, 2009.
+
+\bibitem{zhang2013omnidb}
+Shuhao Zhang, Jiong He, Bingsheng He, and Mian Lu.
+\newblock Omnidb: Towards portable and efficient query processing on parallel
+  cpu/gpu architectures.
+\newblock {\em Proceedings of the VLDB Endowment}, 6(12):1374--1377, 2013.
+
+\end{thebibliography}

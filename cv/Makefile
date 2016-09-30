@@ -11,6 +11,7 @@ DOCX2TXT := docx2txt.pl
 
 $(TITLE).pdf : $(TEXORIG) $(BIBFILES) $(IMGFILES)
 	pdflatex $(TITLE)
+#	bibtex $(TITLE)
 	pdflatex $(TITLE)
 	pdflatex $(TITLE)
 

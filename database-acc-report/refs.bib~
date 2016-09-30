@@ -1,0 +1,27 @@
+@article{guotowards,
+  title={Towards Adaptive Resource Allocation for Database Workloads},
+  author={Guo, Cong and Karsten, Martin}
+}
+
+@inproceedings{soundararajan2009dynamic,
+  title={Dynamic Resource Allocation for Database Servers Running on Virtual Storage.},
+  author={Soundararajan, Gokul and Lupei, Daniel and Ghanbari, Saeed and Popescu, Adrian Daniel and Chen, Jin and Amza, Cristiana},
+  booktitle={FAST},
+  volume={9},
+  pages={71--84},
+  year={2009}
+}
+
+@inproceedings{sadoghi2012multi,
+  title={Multi-query stream processing on fpgas},
+  author={Sadoghi, Mohammad and Javed, Rija and Tarafdar, Naif and Singh, Harsh and Palaniappan, Rohan and Jacobsen, Hans-Arno},
+  booktitle={2012 IEEE 28th International Conference on Data Engineering},
+  pages={1229--1232},
+  year={2012},
+  organization={IEEE}
+}
+
+@article{chenaccelerating,
+  title={Accelerating Equi-Join on a CPU-FPGA Heterogeneous Platform},
+  author={Chen, Ren and Prasanna, Viktor K}
+}
