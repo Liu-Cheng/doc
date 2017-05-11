@@ -1,0 +1,57 @@
+\begin{thebibliography}{1}
+
+\bibitem{attia2014cygraph}
+Osama~G Attia, Tyler Johnson, Kevin Townsend, Philip Jones, and Joseph
+  Zambreno.
+\newblock Cygraph: A reconfigurable architecture for parallel breadth-first
+  search.
+\newblock In {\em Parallel \& Distributed Processing Symposium Workshops
+  (IPDPSW), 2014 IEEE International}, pages 228--235. IEEE, 2014.
+
+\bibitem{betkaoui2012reconfigurable}
+Brahim Betkaoui, Yu~Wang, David~B Thomas, and Wayne Luk.
+\newblock A reconfigurable computing approach for efficient and scalable
+  parallel graph exploration.
+\newblock In {\em Application-Specific Systems, Architectures and Processors
+  (ASAP), 2012 IEEE 23rd International Conference on}, pages 8--15. IEEE, 2012.
+
+\bibitem{engelhardt2016gravf}
+Nina Engelhardt and Hayden Kwok-Hay So.
+\newblock Gravf: A vertex-centric distributed graph processing framework on
+  fpgas.
+\newblock In {\em Field Programmable Logic and Applications (FPL), 2016 26th
+  International Conference on}, pages 1--4. IEEE, 2016.
+
+\bibitem{ham2016graphicionado}
+Tae~Jun Ham, Lisa Wu, Narayanan Sundaram, Nadathur Satish, and Margaret
+  Martonosi.
+\newblock Graphicionado: A high-performance and energy-efficient accelerator
+  for graph analytics.
+\newblock In {\em Microarchitecture (MICRO), 2016 49th Annual IEEE/ACM
+  International Symposium on}, pages 1--13. IEEE, 2016.
+
+\bibitem{kim2016ramulator}
+Yoongu Kim, Weikun Yang, and Onur Mutlu.
+\newblock Ramulator: A fast and extensible dram simulator.
+\newblock {\em IEEE Computer Architecture Letters}, 15(1):45--49, 2016.
+
+\bibitem{liu2015enterprise}
+Hang Liu and H~Howie Huang.
+\newblock {Enterprise: Breadth-first Graph Traversal on GPUs}.
+\newblock {\em Proceedings of the International Conference for High Performance
+  Computing, Networking, Storage and Analysis}, pages 68:1----68:12, 2015.
+
+\bibitem{oguntebi2016graphops}
+Tayo Oguntebi and Kunle Olukotun.
+\newblock Graphops: A dataflow library for graph analytics acceleration.
+\newblock In {\em Proceedings of the 2016 ACM/SIGDA International Symposium on
+  Field-Programmable Gate Arrays}, pages 111--117. ACM, 2016.
+
+\bibitem{umuroglu2015hybrid}
+Yaman Umuroglu, Donn Morrison, and Magnus Jahre.
+\newblock Hybrid breadth-first search on a single-chip fpga-cpu heterogeneous
+  platform.
+\newblock In {\em Field Programmable Logic and Applications (FPL), 2015 25th
+  International Conference on}, pages 1--8. IEEE, 2015.
+
+\end{thebibliography}

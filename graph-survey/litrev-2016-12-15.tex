@@ -1,0 +1,182 @@
+\section{Data Compression for In-memory Column Databases}
+This work \cite{lin2016data} investigates the commonly used data compression schemes in memory
+column database. The authors believe that it is still beneficial to apply data
+compression for in-memory database. A clear benefit is that compression can save
+memory requirement and some of the compression algorithms including dictionary
+encoding, run-length encoding and bitmap can directly answer
+queries over compressed data, yielding high performance.
+
+Some further questions are
+\begin{itemize}
+    \item Will it be more efficient to have the algorithms implemented on FPGA or
+        GPU?
+    \item How to provide application specific compression support for the database?
+    \item It is possible to provide different compression schemes for different
+        columns of data in the database?
+\end{itemize}
+
+\section{Algorithms for FPGA Implementation of SpMM}
+In this work \cite{jamro2015algorithms}, the authors studied the sparse matrix-matrix
+multiplication. Compared to previous work, higher throughput can be achieved by
+separation of the indices comparison and floating point arithmetic modules. As
+in sparse matrix multiplication, most of the computation is the indices
+comparison. The proposed design offers significant speedup over CPU and GPGPU
+when the matrices sparsity is unstructured and randomly distributed. 
+
+When the sparse matrix design is employed on FPGA for graph processing, the
+matrices transformed from the graph are typically unstructured and thus they will be
+fit perfectly for graph processing on FPGA through SpMM.
+
+\section{GEMS: Graph Engine for Multi-threaded System}
+This paper \cite{morari2015gems} presents GEMS, a software infrastructure that enables large-scale,
+graph database on commodity clusters. Unlike current approaches, GEMS implements
+and explores graph database by employing graph-based methods. This is
+reflected in different layers of the software stack.
+\begin{itemize}
+    \item parallelism and space efficiency of graph data is explored.
+    \item The proposed graph-based methods introduce irregular, fine-grained
+        data access with poor spatial and temporal locality. 
+\end{itemize}
+
+\section{PHAST}
+This work\cite{delling2013phast} presents an algorithm to solve the non-negative single-source
+path (NSSP) problem particularly for low highway dimension graphs such as road
+networks. The paper includes a large number of research advancements on
+accelerating NSSP problem and some of them can actually be generalized in many graph problems. 
+Interesting summaries and algorithms will be put in this survey.
+
+Efficient implementations which typically rely on fast priority queues of the
+Dijkstra's algorithm are listed below (Note that the graph has $n$ vertices and
+$m$ edges):
+\begin{itemize}
+    \item Binary heaps runs in $\mathcal{O}(m\log{}n)$ time. 
+    \item k-heaps
+    \item Fibonacci heaps
+    \item Bucket based implementation when the edges are integers within a small
+        domain.
+    \item Multi-level buckets
+    \item smart queues can run in $\mathcal{O}(m + n \log{}C)$ time
+\end{itemize}
+
+The performance of the Dijkstra's algorithm improves if the vertices are ordered
+such that neighboring vertices tend to have similar IDs. 
+The authors observed that reordering the vertices according to a
+depth-first search order, Dijkstra's algorithm runs faster in many cases.
+
+Contraction Hierarchies (CH) \cite{geisberger2008contraction} is the 
+start point of the PHAST. It essentially reduces the NSSP problem to a traversal
+of shallow acyclic graph and is mainly used in road networks. The basic idea of
+CH is to gradually replace two connected edges with a single equal virtual edge
+i.e. (s, m) + (m, t) is replaced by a virtual edge (s, t) when (s, m) + (m, t) is the only
+shortest path from s to t. At the same time, the rank of vertex m is defined
+based on this. Note that rank(m) < rank(s) and rank(m) < rank(t).
+
+In order to improve memory access efficiency, the graph is represented as a
+cache-efficient manner. Basically, the graph is stored in two different format.
+In the first format, the edges and the vertices are stored in
+separate arrays. The edge array is sorted by tail ID and this ensures the
+outgoing edges are accessed consecutively. The other is the vertex ID array
+which denotes the start position of the outgoing edges. In the other format, the
+storing format is about the same except that in edges are used and sorted.
+With the two graph representation, the level of the vertices are determined.
+When the vertices are processed following the level of the vertices, performance
+can be improved.
+
+PHAST also supports parallel tree searching and most important is that the
+pre-processing can be shared as well.
+
+The two-phase PHAST approach:
+\begin{itemize}
+    \item pre-process network to compute auxiliary data
+    \item use data to speed up queries
+    \item three-criteria optimization (preprocessing time, space and query times)
+\end{itemize}
+
+\textbf{Read the presentation together with the paper. It does help a lot,
+though it is still difficult to fully understand the paper.}
+
+\section{Zedwulf}
+This work \cite{kapre2015case} prototyped a 32-node Zynq SoC cluster and did communication
+optimization for sparse-graph access on the Zynq cluster. An optimized
+graph-oriented global scatter technique using message passing interface (MPI)
+library is developed. 
+
+\section{High-throughput and Energy-efficient Graph Processing on FPGA}
+Interesting statements mentioned in the paper \cite{zhou2016high}.
+Vertex-centric graph processing randomly accesses edges through pointers stored
+with vertices while edge-centric graph processing directly accesses edges from
+external memory in a stream fashion. For graphs with the property that edge set
+is much larger than the vertex set, edge-centric graph processing is often
+advantageous compared to vertex-centric graph processing.
+
+This is a edge-centric graph processing framework. In this work, vertices are
+partitioned. Each partition has an edge list and a
+message list. The edge list stores all the edges whose source vertices are in
+the partition's vertex set. The message list stores all the messages whose
+destination vertices are in the partition's vertex set. Despite the memory
+coalescing, the design still need a permutation network to write back to main
+memory. With the observation that main memory consumes a large amount of power
+under random access, this work developed a permutation network to make sure
+the write operations be aware of the row activation, which is beneficial to the
+overall power efficiency.
+
+\section{Mobile Routing Planning}
+There are many data ordering strategies that are beneficial to the overall
+shortest path calculation in this work \cite{sanders2008mobile}. Here is a list
+of them summarized in the paper.
+\begin{itemize}
+    \item DFS order
+    \item Assign priority using Contraction Hierarchy(CH) and then reorder the
+        vertices with the priority. Some people proposed to divide the nodes
+        into chunks where vertices with similar priorities should be put
+        together for better memory access locality.
+    \item The data structure is also important to the memory access, and a block
+        based data structure is proposed in this work. In addition, the block is
+        the basic processing granularity and dedicated replacement mechanism is
+        used to swap blocks between on-chip memory and external memory.
+\end{itemize}
+
+\section{Efficient Execution of Memory Access Phases Using Dataflow
+Specialization}
+The authors observed \cite{ho2015efficient} that OOO processors perform much better than the in-order
+processor for many compute kernels including the natural phases and induced
+phases. These kernels commonly have abundant instruction-level parallelism and
+memory-level parallelism. They have much dynamic behavior in the cache
+hits/misses, some control flow and commonly have a small static-code footprint
+of 10 to 300 instructions. With this observation, the authors developed a OOO
+style memory access accelerators which helps to improve the performance of
+in-order processors and application accelerators. However, it also consumes
+substantial power. This work separates the memory operations and the computing
+operations. Particularly, the memory parallel operations are extracted and
+implemented on a flexible hardware fabricate i.e. MAD. The same design
+philosophy can be applied in many out of order processors and hardware
+accelerators. It is an interesting paper needed more detailed investigation and
+hopefully it can be adopted in FPGA accelerator design.
+
+\section{SQRL: Hardware Accelerator for Collecting Software Data Structure}
+This work \cite{kumar2014sqrl} proposed SQRL, a hardware accelerator that integrates with the
+last-level-cache and enables energy-efficient iterative computation on data
+structures. SQRL integrates a data-structure-specific LLC refill engine with a
+lightweight compute array that executes the compute kernel. The collector runs
+ahead of the PEs in a decoupled fashion and gathers data objects into the LLC.
+Since data structure traversals are structured, the collector does not require
+memory-disambiguation hardware and address generation logic like conventional
+processors; furthermore, it can exploit the parallelism implicit in the data
+structures.
+
+\section{Stochastic Optimization of Floating-Point Programs with Tunable
+Precision}
+The aggressive optimization \cite{schkufza2014stochastic} of floating point computation is an important
+problem in high-performance computing. Unfortunately, floating-point instruction
+sets have complicated semantics that often force compilers to preserve programs
+as written. This work present a method that treats floating point optimization
+as a stochastic search problem. The authors demonstrate the ability to generate
+reduced precision implementations of Intel's handwritten C numeric library which
+are up to 6 times faster than the original code and achieve end-to-end speedups
+over 30\% on a direct numeric simulation and a ray tracer by optimizing kernels
+that can tolerate a loss of precision while still remaining correct. In
+particular, the authors present a stochastic search techniques for
+characterizing maximum error. The techniques comes with an asymptotic guarantee
+and provides strong evidence of correctness.
+
+

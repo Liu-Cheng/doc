@@ -1,0 +1,161 @@
+\section{MapGraph}
+This work \cite{fu2014mapgraph} is a GPU graph processing framework based on GAS model.
+The major contribution is a combined load balancing strategy. By taking the size of
+the frontier as the metric, MapGraph can choose either a dynamic scheduling
+based balancing or a two-step balancing strategy.
+
+\section{Energy Efficient Scalable SpMV on FPGAs}
+This work \cite{dorrance2014scalable} developed a sparse matrix-vector multiplication computing engine. It
+can make good use of the CSC compression format of the sparse data and allows
+stream processing of the input data. The basic idea is rather simple. Instead of
+performing the vector dot production for the matrix-vector computing, it take
+the computing as a weighted vector addition. This is particularly beneficial
+because of the sequential memory access. According to the experiments on ROACH,
+the design exhibits great performance speedup with higher bandwidth though.
+
+\section{Wukong}
+This work developed a graph database processing framework named Wukong.
+It utilizes the primitive graph for the query processing on distributed
+computing system. Particularly, it emphasizes the adoption of native RDMA for
+better performance. Many other different optimization
+techniques are integrated in this work and here is a brief list.
+
+\section{Dynamic Irregularities Elimination}
+Many parallel applications have dynamic irregular memory access and it causes
+considerable performance degradation when implemented on GPUs. In order to
+coalesce the memory access, this work \cite{Zhang2011elimination} provide a number of strategies such as
+data reallocation, thread swapping and some adaptive control mechanisms. In
+particular, these optimization processing can be done on host processor in
+advance and executed with the GPU threads in a pipelined manner. Here are more
+details about the dynamic irregular memory access elimination. 
+
+\begin{itemize}
+    \item Data reordering: A typical dynamic irregular memory access is A[B[i]].
+        The data reordering logic is simply to reshape the array A to be A' such
+        that A'[i]=A[B[i]]. The major disadvantage, however, is the same data
+        accessed may be replicated in A' which brings additional non-trivial memory
+        overhead.
+    \item Job swapping: The basic process is to change the sequence of the
+        thread ID of the GPU threads to make sure the threads in the same warp
+        avoid accessing data in other warps' local memory. As this may also
+        affect the order of the output, the users must make sure the output are
+        reordered to produce the same output with that of the original program.
+    \item Hybrid transformation: It is a mixed data reordering and job swapping
+        method.
+    \item Adaptive efficiency control: In order to hide the cost of the memory
+        coalescing, the run-time optimization process is pipelined with the GPU
+        execution. The adaptive efficiency control is used to carefully adjust
+        the parameters of the memory coalescing to make sure the memory
+        coalescing will not introduce too much overhead and becomes new
+        performance bottleneck.
+\end{itemize}
+
+Irregular memory access is one of the key factor that limits the performance of
+graph processing on hardware accelerators. So I am thinking if the dynamic
+memory coalescing strategies can be adopted in graph accelerator design. 
+
+\section{Reorganizing Data to Minimize Non-Coalesced Memory Access}
+This paper \cite{wu2013complexity} proves that the problem of data reordering for optimal memory
+coalescing is an NP-complete. Though the data reorganization remains an
+important way to improve the application performance running on GPUs. The
+essence for designing an appropriate data reorganization algorithm can be
+reduced to a trade-off among space, time, and complexity.
+
+After the analysis, the authors proposed two improved optimization algorithms.
+The first is padding algorithm. The padding algorithm tries to avoid some
+unnecessary data copies made in the preliminary reordering algorithms.
+Basically, when two threads from the same warp access the same data elements,
+then there is no need to duplicate them during the re-ordering stage. A simple
+padding may only remove a limited amount of data and improved alternatives are
+discussed in this paper as well.
+
+The second algorithm is sharing algorithm. It uses the shared memory in GPU to
+enlarge the scope of duplication avoidance. The basic idea is to create a copy
+of all the data accessed by a thread block and put them in a consecutive chunk
+of memory. Then it loads these data in a consecutive manner into shared memory.
+
+\section{GraphChi}
+The authors in this work \cite{kyrola2012graphchi} present a disk-based system for computing efficiently
+on graphs with billions of edges. By using a well-known method to break large
+graphs into smaller parts, and a novel parallel sliding windows method, GraphChi
+is able to execute several advanced data mining, graph mining, and machine
+learning algorithms on very large graphs using a single PC.
+The most interesting parts of the graph processing framework is the graph
+partition and parallel sliding windows execution. They will be detailed
+respectively. 
+
+Graph Partition: vertices of the graph are assigned with consecutive integers
+and then divided into multiple intervals by the vertex index. For instance, a
+graph with 6 vertices can be divided into three intervals i.e.interval(0, 1),
+interval (2, 3) and interval (4, 5). The edges of the graph are divided
+into shards based on the intervals. Basically each shard (i.e.a set of edges)
+include all the edges whose destinations fall into the corresponding interval. 
+Also the edges of each shard are sorted based on the indices of the source
+vertices. Then the framework will get to process the big graph with the granularity of the
+intervals following a vertex processing philosophy. Finally, note that the
+intervals are necessarily equally distributed in the intervals and they are
+chosen to balance the number of edges.
+
+Parallel Sliding Window (PSW): the execution mechanism is based on the graph
+partition and it can be done in the following stages. 
+\begin{itemize}
+    \item Load the sub-graph from disk: For each interval processing, an
+        associate shard that stores all the input edges will be loaded first. If
+        the out edges is needed, they should be loaded from the rest of the
+        shards.
+    \item Update vertices and edges: With the update function, edge values can
+        be changed. When both vertices of an edge update in parallel, conflict
+        happens. To avoid this problem, the vertices that have edges with both
+        end-points in the same interval are flagged as critical and must be
+        updated in sequential order while the non-critical vertices can be
+        updated safely in parallel. When the applications that doesn't care
+        about the race conditions, all the vertex update can be done in
+        parallel. 
+    \item Write the updated values to disk: Make sure only the cache blocks that are
+        modified are eventually written back to disk.
+\end{itemize}
+
+Another contribution of this work is to support evolving graph. The framework further
+divides the shard into different sub-shards based on the source of the edge
+vertices in that interval. Each sub-shard has an edge-buffer allowing new edges
+to be added. When the size of a shard is too large, the shard will be divided
+into two with similar number of edges.
+
+GraphChi pre-processing: By computing the prefix sum over the degree sum of the
+graph, the vertices are divided into multiple intervals with approximately the
+same number of in-edges. Then the shard will be generated and stored based on
+the partitioned intervals. Finally, a degree file or data structure that records
+the in- and out-degree of each vertex is needed for more efficient processing.
+
+Selective scheduling: Often computing converges faster on some parts of a graph
+than in others, and it is desirable to focus computing only where is is needed.
+Selective scheduling means an update can flag a neighboring vertex to be updated
+typically when edge value changes significantly. More details can be found in
+\cite{cheng2012kineograph}.
+
+\section{CuSha}
+It follows the basic idea of GraphChi that divides the big graphs into intervals
+and shards for both memory access locality and awareness of memory capacity. The
+major difference is that CuSha \cite{Khorasani2014CuSha} allows multiple smaller shards to be assigned to
+a single GPU warp to improve the hardware utilization as well as graph
+processing performance. 
+
+The major challenges for graph processing on GPUs are listed here.
+\begin{itemize}
+    \item Non-Coalesced Memory Access
+    \item GPU under-utilization and Intra-warp divergence
+\end{itemize}
+To solve these challenges, the authors reorganize the shards with an additional
+mapper to be concatenated Windows such that each window may include relatively
+balanced number of edges for processing.
+
+In the end, this paper also present a rough model for deciding the interval size
+and shard size. According to the experiments, all the setup near the optimized
+points show similar good performance.
+
+\section{Dictionary Encoding of RDF Datasets}
+The authors in \cite{morari2015high} proposed a RDF dictionary encoding that employs a parallel RDF
+parser and a distributed dictionary data structure exploiting RDF-specific
+optimizations. This is part of general graph engine for multithreaded system
+(GEMS) and it maybe a good candidate for hardware acceleration.
+
