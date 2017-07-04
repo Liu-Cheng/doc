@@ -26,7 +26,7 @@
 \usepackage[left=0.75in,top=0.6in,right=0.75in,bottom=0.6in]{geometry} % Document margins
 
 \name{Cheng Liu} % Your name
-\address{+86-1371-3529-934}
+\address{+65-8421-1303}
 \address{Shenzhen, Guangdong, China} % Your secondary addess (optional)
 \address{st.liucheng@gmail.com} % Your phone number and email
 
@@ -49,9 +49,7 @@ B.E. in Electronic Engineering \\
 
 \begin{rSection}{Research Interest}
     \vspace{-1em}
-\item FPGA Acceleration, Reconfigurable Computing, Hardware/Software Co-design
-    \vspace{-0.5em}
-\item Manycore computer architecture, Network-on-Chip 
+\item FPGA Acceleration, Reconfigurable Computing, Hardware/Software Co-design, Network-on-Chip
     \vspace{-0.5em}
 \end{rSection}
 %----------------------------------------------------------------------------------------
@@ -59,35 +57,40 @@ B.E. in Electronic Engineering \\
 %----------------------------------------------------------------------------------------
 \begin{rSection}{Experience}
 \begin{rSubsection}{School of Computing, National University of Singapore}{Dec
-    2016 - present}{Project: Graph Acceleration on FPGAs}{}
-\item This project aims to develop an elastic graph accelerator framework on FPGA
-    using OpenCL. On the one hand, the framework should be easily
-    adapted to a set of basic graph algorithms such as BFS, SSSP, BC and so on. On
-    the other hand, it will allow optimized configuration to fit various hardware constraints
-    on a FPGA cluster with different generations of FPGA devices.
+    2016 - present}{Project: Graph acceleration on heterogeneous CPU-FPGAs}{}
+\item In this project, we aim to develop a high-performance graph accelerator framework for 
+    large scale-free graph analytics on a heterogeneous CPU-FPGA computing platform which has 
+    become important computing infrastructures in the cloud. Here are a few aspects that we 
+    are focusing on at the moment. 1) Explore graph specific optimizations especially for the 
+    memory access efficiency. 2) Automatically tune the graph accelerators for higher performance 
+    or throughput given the memory bandwidth and other resource constraints. 
+    3) Develop a flexible co-design of the graph accelerator that can dynamically 
+    offload sub tasks from CPUs to FPGAs for higher memory bandwidth and computing resource utilization.  
 \end{rSubsection}
 
-\begin{rSubsection}{SenseTime Group Limited}{Apr 2016 - Oct. 2016}{Project: Convolutional Neural Network
+\begin{rSubsection}{SenseTime Group Limited}{Apr 2016 - Oct. 2016}{Project: Convolutional neural network
     (CNN) acceleration on Zynq}{}
-\item I have developed a flexible hardware accelerator for general convolution layer of CNN. It allows
-arbitrary tiling and striding for various CNN configuration. In this project, I am also responsible for the CNN
-ip driver development and the linux kernel customization.
+\item A flexible hardware accelerator for general convolution layer of CNN was developed. It allows
+arbitrary tiling for various CNN configurations such as kernel size and stride size. In this project, 
+I was also responsible for the CNN ip driver development on an embedded Linux system on Zc706.
 \end{rSubsection}
 
-\begin{rSubsection}{The University of Hong Kong}{Sep 2011 - Dec 2015}{Research Project: promoting FPGA design productivity using soft CGRA overlay}{}
+\begin{rSubsection}{The University of Hong Kong}{Sep 2011 - Dec 2015}{Research Project: Promoting FPGA design productivity using soft CGRA overlay}{}
 \item In this project, a rapid FPGA loop accelerator design framework was developed. By using a
     regular soft coarse-grained reconfigurable array (SCGRA) overlay as an intermediate layer, it is
     able to compile a high-level (C/C++) nested loop to an FPGA loop accelerator bitstream in
-    seconds. Meanwhile, it targets a hybrid CPU-FPGA system and the communication interface between
-    the CPU and the resulting FPGA accelerator is also generated automatically making it accessible
-    to software designers. In addition, the overlay allows intensive customization specifically to
-    an application or a domain of applications for the sake of performance.
+    seconds with pre-built empty SCGRA bitstream. In addition, the overlay allows intensive customization 
+    specifically to an application or a domain of applications for the sake of performance with 
+    a few manual optimization routines. To facilitate applying this framework on a CPU-FPGA system,
+    we also provide a template for generating the communication interface between the CPU and 
+    the resulting FPGA accelerator. The framework is demonstrated on Zedboard. The resulting 
+    accelerators exhibit competitive performance over the software counterparts on the ARM processor. 
 \end{rSubsection}
 
 %------------------------------------------------
 
-\begin{rSubsection}{Institute of Computing Technology, Chinese Academy of Sciences}{Sep 2009 - Mar 2011}{Research Project: highly reliable network-on-chip design}{}
-\item This project aimed to enhance NoC reliability by innovating on NoC micro-architecture. With
+\begin{rSubsection}{Institute of Computing Technology, Chinese Academy of Sciences}{Sep 2009 - Mar 2011}{Research Project: Highly reliable network-on-chip design}{}
+\item In this project, we aimed to enhance NoC reliability by innovating on NoC micro-architecture. With
     the observation that Vertical Through Silicon Vias (TSV) in a classical 3D NoC is
     under-utilized, a TSV sharing method was developed for homogeneous 3D NoC with negligible 2D area
     overhead. This can either be used to improve the reliability of 3D NoC or shrink the TSV consumption.
@@ -97,8 +100,8 @@ ip driver development and the linux kernel customization.
 
 %------------------------------------------------
 
-\begin{rSubsection}{Harbin Institute of Technology}{Oct 2006 - Jul 2009}{Research Project: high performance network-on-chip design}{}
-\item This project aimed to improve NoC performance as well as power efficiency. A number a design
+\begin{rSubsection}{Harbin Institute of Technology}{Oct 2006 - Jul 2009}{Research Project: High performance network-on-chip design}{}
+\item In this project, we aimed to improve NoC performance as well as power efficiency. A number of design
 optimization methods were implemented for this purpose: 1) A delicate virtual channel assignment was
 used to improve NoC performance and remove the deadlock in adaptive routing. 2) A lightweight
 dynamic virtual channel sharing architecture was implemented to reduce the chip area as well as the
@@ -120,7 +123,7 @@ power gating scheme was developed to enhance NoC power efficiency.
     \begin{rSubsection} {Journal}{}{}{}
     \item Ying Wang, Yinhe Han, Lei Zhang, Binzhang Fu, \textbf{Cheng Liu}, Huawei Li, and Xiaowei Li.
         "Economizing TSV Resources in 3-D Network-on-Chip Design." Very Large Scale Integration
-        (VLSI) Systems, IEEE Transactions on 23, no. 3 (2015): 493-506. (cited 5)  
+        (VLSI) Systems, IEEE Transactions on 23, no. 3 (2015): 493-506. (cited 12)  
     \item Yinhe Han, \textbf{Cheng Liu}, Hang Lu, Wenbo Li, Lei Zhang, and Xiaowei Li. "RevivePath:
         Resilient network-on-chip design through data path salvaging of router." Journal of Computer
         Science and Technology 28, no. 6 (2013): 1045-1053. (cited 3)
@@ -135,19 +138,19 @@ power gating scheme was developed to enhance NoC power efficiency.
         International Workshop on, pp. 1-6, Feb, 2016. 
     \item \textbf{Cheng Liu}, Ho-Cheung Ng, and Hayden Kwok-Hay So. "Automatic Nested Loop Acceleration on
         FPGAs Using Soft CGRA Overlay", FPGAs for Software Programmers (FSP), 2nd International
-        Workshop on, Sep. 2015. (cited 8)
+        Workshop on, Sep. 2015. (cited 11)
     \item \textbf{Cheng Liu}, Ho-Cheung Ng, and Hayden Kwok-Hay So. "QuickDough: A Rapid FPGA Loop
         Accelerator Design Framework Using Soft CGRA Overlay", Field Programmable Technology,
-        International Conference on (FPT), Dec. 2015 (cited 4) 
+        International Conference on (FPT), Dec. 2015 (cited 5) 
     \item \textbf{Cheng Liu}, Lei Zhang, Yinhe Han, and Xiaowei Li. "Vertical interconnects squeezing in
         symmetric 3D mesh Network-on-Chip." In Proceedings of the 16th Asia and South Pacific Design
-        Automation Conference, pp. 357-362. IEEE Press, 2011. (Cited 46)
+        Automation Conference, pp. 357-362. IEEE Press, 2011. (Cited 54)
     \item \textbf{Cheng Liu}, Lei Zhang, Yinhe Han, and Xiaowei Li. "A resilient on-chip router design
         through data path salvaging." In Proceedings of the 16th Asia and South Pacific Design
-        Automation Conference, pp. 437-442. IEEE Press, 2011. (Cited 17)
+        Automation Conference, pp. 437-442. IEEE Press, 2011. (Cited 21)
     \item Yang Xu, Qing-li Zhang, Fang-fa Fu, Ming-yan Yu, and \textbf{Cheng Liu}. "NISAR: An AXI compliant
         on-chip NI architecture offering transaction reordering processing." In Proceedings of the
-        7th International Conference on ASIC, pp. 890-893. IEEE, 2007. (Cited 22)
+        7th International Conference on ASIC, pp. 890-893. IEEE, 2007. (Cited 23)
 %    \item \textbf{Cheng Liu}, Lei Zhang, Yinhe Han, Xiaowei Li. "Dynamic Buffer Regulator for 3D Mesh
 %        Network-on-Chip." Workshop of 3D Integration - Applications, Technology, Architechture, Design 
 %        Automation and Test in Europe (DATE), Mar 2011.
@@ -166,6 +169,7 @@ power gating scheme was developed to enhance NoC power efficiency.
 \end{rSection}
 
 \begin{rSection}{Teaching Experience}
+    \vspace{-1em}
 \item Teaching Assistant – to Dr. V. Tam \\In ELEC1503, Object Oriented Programming 
 and Data Structures, 2012 \\Performed the lab demonstrations and Q\&A upon request
 
@@ -194,12 +198,8 @@ and Data Structures, 2012 \\Performed the lab demonstrations and Q\&A upon reque
 
 \begin{rSection}{Skills}
     \begin{rSubsection}{Programming Languages}{}{}{}
-    \item Proficient: SystemC, C, C++, Matlab, Verilog, VHDL
-    \item Competent: CUDA, JAVA, Python, Perl
-    \end{rSubsection}
-    \begin{rSubsection}{Simulators and Platforms}{}{}{}
-    \item Proficient: NoC Simulator (booksim, nocsim, CONNECT)
-    \item Competent: LLVM, GEM5
+    \item Proficient: SystemC, C/C++, Matlab, Verilog, VHDL
+    \item Competent: CUDA, JAVA, Python
     \end{rSubsection}
 \end{rSection}
 
