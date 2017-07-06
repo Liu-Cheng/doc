@@ -1,4 +1,11 @@
 \section{Related Work} \label{sec:relatedwork}
+
+While memory is usually critical to the hardware accelerator design especially for the memory intensive applications, memory simulators developed for standalone hardware accelerator design and exploration are necessay. 
+
+Although there are already a number of different memory simulators, they are not sufficient for the increasing hardware accelerator research due to the following two major reasons. First of all, memory simulators such as DRAMSim2 and ramulator are mostly developed for either memory architecture or general processing system research. The memory interface exposed are primitive memory operations and are different from the typical memory operations such as burst transmission, stream transmission etc. that are typically used in a hardware accelerator. Non-trivial work is still required to wrap up the primitive memory operations. There are similar commerical memory simulation models support from EDA vendors, but they are usualy limited to mature DDR memory models and are not accessible to the public. Many new memory architectures that emerge in recently years are not covered which limits the exploration of the hardware accelerators research on emerging memory architectures. Secondly, existing memory simulators seldom support trade-off between simulation speed and simulation accuracy. This is an important feature of the memory simulator needed for the hardware accelerator research. Basically, accurate memory model is preferred when the accelerator is sensitive to the low-level memory architectures while simulation speed becomes a major concern for applications operating on a big data set when high level characteristics of the accelerator are explored. 
+
+
+
 Overlay architecture which is a virtual intermediate architecture overlaid on 
 top of off-the-shelf FPGA is increasingly applied as a way to address the 
 productivity challenge. 

@@ -1,6 +1,51 @@
 \section{Introduction}
-More and more computer architects believe that major improvement in cost-energy-performance will come from domain-specific hardware accelerators as demonstrated in many applications such as deep neural network and graph processing. While memory is usually critical to the hardware accelerator design especially for the memory intensive applications, memory simulators developed for standalone hardware accelerator design and exploration are necessay. 
+Improving general-purpose processing system is getting extremely 
+difficult. More and more computer architects believe that the major 
+improvements in cost-energy-performance will come from domain-specific 
+hardware accelerators. Recent years have already seen a number of successful 
+demonstrations utilizing domain specific hardware accelerators for critical 
+domains of applications such as deep neural network \cite{Jouppi2017tpu, Li2017survey} 
+database operations \cite{Wu2014q100} and graph processing \cite{Jun2016graphicionado, Ozdal2016energy}. 
+In order to explore the hardware accelerator design, a hardware accelerator simulator 
+is usually required. Indeed there are already many exisitng tools \cite{systemc, chisel} and 
+models \cite{dramsim2, ramulator} that can be used to help with the hardware accelerator 
+design, it is non-trivial to develop a hardware accelerator on top of these work. For instance, there 
+is a lack of general public cycle-accurate memory models available in \cite{systemc, chisel} while 
+\cite{dramsim2, ramulator} expose only primitive memory access interface and need to be further 
+wrapped for an accelerator simulator. And a general accelerator simulator 
+framework is highly desired for the hardware accelerator simulator development.
 
-Although there are already a number of different memory simulators, they are not sufficient for the increasing hardware accelerator research due to the following two major reasons. First of all, memory simulators such as DRAMSim2 and ramulator are mostly developed for either memory architecture or general processing system research. The memory interface exposed are primitive memory operations and are different from the typical memory operations such as burst transmission, stream transmission etc. that are typically used in a hardware accelerator. Non-trivial work is still required to wrap up the primitive memory operations. There are similar commerical memory simulation models support from EDA vendors, but they are usualy limited to mature DDR memory models and are not accessible to the public. Many new memory architectures that emerge in recently years are not covered which limits the exploration of the hardware accelerators research on emerging memory architectures. Secondly, existing memory simulators seldom support trade-off between simulation speed and simulation accuracy. This is an important feature of the memory simulator needed for the hardware accelerator research. Basically, accurate memory model is preferred when the accelerator is sensitive to the low-level memory architectures while simulation speed becomes a major concern for applications operating on a big data set when high level characteristics of the accelerator are explored. 
+Despite the difference of the accelerator simulators, we argue that a general 
+accelerator simulator design framework should have three common yet important 
+features. First of all, it should provide memory models of various memory 
+architectures. Basically memory is usually critical to the hardware accelerator 
+and greatly affects the accelerator design. At the same time, memory techniques evolve rapidly 
+over the years and novel memory architectures with distinct features emerge. In order to explore 
+hardware accelerator design, various memory architectures needs to be evaluated. 
+Secondly, it should provide abstract user-frinedly memory interfaces. Hardware accelerators 
+usually have complex memory access patterns such as stream access, burst access as well as random access. 
+Thus higher abstract memory access interface instead of primitive memory access interface should be provided. 
+Thirdly, it should provide trade-off between simulation speed and precision. Hardware accelerators 
+may have distinct simulation speed and precision requirements while exploring the hardware accelerator. 
+For instance, some of the applications such as graph accelerators may process on a big data set. 
+Low-level accurate memory model may result in extremely long simulation. Thus a simplified memory model 
+should be used to obtain the general performance of the accelerators. For applications that are sensitive 
+to the memory access latency, more accurate memory models are preferred.
+
+There is still a lack of general accelerator simulator framework that fullfills 
+all the three features mentioned above. To that end, we proposed a flexible hardware accelerator 
+simulation framework to be reused for general hardware accelerator simulator development. Basically, it 
+integrates ramulator supporting various memory architectures as the underlying memory model and thus allows 
+hardware accelerator exploration over a broad range of memory architectures. In addition, abstract memory 
+interfaces as well as memory content management are provided to faciliate the accelerator accessing 
+the memory model. Finally, it also provides a mix of cycle-accurate memory model and simiplified 
+analytical memory model obtained though sampling to compromise on simulation speed and accuracy.
+
+The rest of the paper is organized as follows. Section 2 is the realted work, Section 3 presents 
+the proposed accelerator simulation framework. Section 4 provides the experimental results 
+and Section 5 concludes this paper.
+
+
+
 
 
