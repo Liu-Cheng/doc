@@ -1,5 +1,5 @@
-TITLE=database-report
-FILES=database-report.tex 
+TITLE=bandwidth-test
+FILES=bandwidth-test.tex 
 
 BIBFILES=refs.bib 
 IMGFILES=

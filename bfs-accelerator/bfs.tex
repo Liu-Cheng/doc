@@ -32,9 +32,7 @@
 \usepackage{xspace}
 \usepackage{url}
 \usepackage{algorithm}
-\usepackage{algorithmic}
-\usepackage[algo2e]{algorithm2e}
-\usepackage{amsmath}
+\usepackage[noend]{algpseudocode}
 \usepackage[table]{xcolor}
 \usepackage{cite}
 \usepackage{url}
@@ -59,7 +57,7 @@
 \center % Center everything on the page
 
 \HRule \\[0.4cm]
-{ \huge \bfseries BFS Accelerator}\\[0.4cm] % Title of your document
+{ \huge \bfseries Strategetic Optimization for BFS Acceleration on FPGAs}\\[0.4cm] % Title of your document
 \HRule \\[1.5cm]
 
 \begin{minipage}{0.4\textwidth}
@@ -81,283 +79,194 @@
 %----------------------------------------------------------------------------------------
 %	INTRODUCTION
 %----------------------------------------------------------------------------------------
-\section{Motivation} % Major section
-In the era of "big data", there has been growing interest in developing graph analytics 
-applications to gain new insights and solutions. While Breadth-First Search (BFS) algorithm 
-is the foundation for many graph processing applications and analytics workloads, many BFS 
-acceleration designs have been proposed targeting multi-core processors, distributed systems, 
-GPUs and FPGAs over the years as listed in Table \ref{table:bfs-literature}. 
-FPGA which allows intensive application-specific customization 
-has been well-known to be energy efficient compared to general purposed computing devices 
-and is usually able to provide unique performance-energy trade-offs. However, the best 
-performance of BFS accelerator reported in literature is only around \numrange{1}{2} billion 
-traverses per second and is far behind that on the counterpart computing platforms 
-which goes up to 120 billion traverse per second in spite of the memory bandwidth gap. 
+\section{Introduction} % Major section
+Graph is a common data representation in a broad domains of applications such 
+as social networks, bioinformatics, metabolic networks and computer networks. 
+As the graph grows in scale in the big data era, graph processing becomes 
+increasingly costly and accelerating the widely used building components 
+such as Breadth-first search (BFS) is of vital importance for high-performance 
+graph processing. 
 
-\begin{table}[htb]
-    \centering
-    \caption{Brief BFS Acceleration Review\label{table:bfs-literature}}{
-        \vspace{1em}
-        \centering
-        \resizebox{0.8\columnwidth}{!}{
-            \begin{tabular}{l|l|l|l|l}
-                \hline
-                Name & Year & Platform & Memory Bandwidth & Performance \\ \hline
-                Enterprise \cite{liu2015enterprise} & 2015 & GPU & \tabincell{l}{300GB/s \\ 600GB/s}  & \tabincell{l}{76 GTEPS \\ 122 GTEPS} \\ \hline
-                ASAP12 \cite{betkaoui2012reconfigurable} & 2012 & FPGA  & 80GB/s & 1.6 GTEPS  \\ \hline
-                IPDPSW14 \cite{attia2014cygraph} & 2014 & FPGA & 80GB/s & 1.9 GTEPS \\ \hline 
-                FPL15 \cite{umuroglu2015hybrid} & 2015 & FPGA & 3.2GB/s & 0.172 GTEPS \\ \hline
-                GraphOps \cite{oguntebi2016graphops} & 2016 & FPGA & 38GB/s & 0.8 GTEPS ? \\ \hline 
-                Graphicionado \cite{ham2016graphicionado} & 2016 & ASIC & 68GB/s & --? \\ \hline
-                GraVF \cite{engelhardt2016gravf} & 2016 & FPGA & -- ? & 3.8GTEPS \\ \hline
-            \end{tabular}
-        }
-    }
-\end{table}
+BFS is notoriously difficult for accelerating on parallel computing architectures 
+because of the irregular memory access and the low computation-to-memory ratio. 
+These characteristics essentially make BFS a memory bandwidth bounded task and 
+challenging for accelerating. To approach this challenge, a number of research 
+have been performed targeting on various platforms including multicore processors, 
+GPUs \cite{liu2015enterprise}, FPGAs \cite{attia2014cygraph, betkaoui2012reconfigurable, 
+umuroglu2015hybrid, oguntebi2016graphops, engelhardt2016gravf}, ASICs 
+\cite{ham2016graphicionadoand} and distributed systems over the past few years. 
 
-When comparing the BFS accelerators on FPGA and GPU, we observe that existing FPGA accelerators 
-mainly fall short on two aspects. First of all, the BFS accelerators on FPGAs have lower 
-memory utilization which is critical to the resulting BFS performance because BFS is a 
-memory-bound computing task due to the irregular memory access. Although the memory utilization 
-may be influenced by many different factors such as the memory hierarchy and processing power 
-difference, one of the primary factors is the amount of memory access needed for the same BFS task. 
-The BFS accelerators on FPGA have few efficient BFS algorithmic strategies supported 
-which are considered to be effective for alleviating the memory bandwidth bottleneck. For example, 
-the adaptive top-down and bottom-up BFS strategy infers the BFS frontier from the 
-visited vertices at the beginning of BFS while doing so from the unvisited vertices 
-when the BFS frontier gets large. Basically, this strategy helps to reduce the amount 
-of memory access while detecting the BFS frontier. Another example is the 
-high degree vertex caching. Vertices with high degree will be cached locally, which can be used 
-to avoid accessing main memory during the traverse and thus also helps alleviate memory 
-bandwidth pressure. With appropriately applying the algorithmic BFS strategies, the memory 
-utilization of the BFS accelerators can be enhanced and thus the performance can be improved 
-eventually.
+With the increased interest on energy efficient computing systems, 
+FPGAs gains increasing popularity and is rapidly moving forward to 
+main-stream computing system and gets adopted in more data centers. 
+Many previous work also demonstrated that building BFS accelerators 
+on FPGAs can provide competitive performance over multi-core CPUs 
+on top of the energy efficiency. In this work, we thus try to explore 
+BFS accelerating on FPGAs and we 
+argue that FPGA is suitable for BFS acceleration mainly for two reasons. 
+First of all, FPGA allows specific memory access infrastructures to be 
+built to fit for various memory access patterns including customized caching, 
+streaming and random memory access. Secondly, BFS is memory bound and suffers 
+relatively long external memory access latency. As a result, it turns to be a 
+good fit to FPGAs with ample parallelism but relatively slow clock speed.
 
-Secondly, the practical graphs are typically scale-free and the vertex degree 
-varies in a large range. As a result, the exploration of different type of vertices 
-may require diverse exploration time. When they are assigned to the processing engines of BFS, 
-the parallel processing engines allocated with low-degree vertices may be under utilized. 
-In addition, inspecting low-degree vertices requires scattered short read over the 
-CSR data stored in main memory while inspecting high-degree vertices mostly has continuous 
-burst memory access. To approach this problem, unlike previous work which usually 
-have homogeneous processing engines implemented on FPGA, we may classify the vertices in 
-the frontier based on the degree of the vertices and allocate them to specifically customized 
-processing engines accordingly. Meanwhile, with appropriate resource allocation, we may 
-statically (or dynamically) adjusting the number of processing engines for different 
-vertices such that the utilization of the processing engines can be balanced.
+BFS will be briefly explained here. Some concepts such as frontier will be 
+introduced here as well.
 
-\section{Proposed BFS Accelerator}
-In this section, the proposed BFS accelerator will be illustrated. It 
-follows the classical BSP model. Basically it will traverse the vertices 
-iteratively from the starting vertex. It will not proceed to the next iteration 
-before all the active vertices (frontier) are explored in current iteration.
+Previous BFS acceleration on FPGA work mainly focused on developing parallel 
+hardware architectures to improve the resulting performance. However, the inherent 
+memory bound characteristic of BFS dramatically limits the benefits brought by more parallel 
+processing logic. In this work, we focus on strategetic optimizations which aims to 
+reduce the amount of memory access and improve the memory bandwidth utilization 
+to directly alleviate the bottleneck of the BFS accelerators on FPGAs and thus 
+enhance the resulting performance. Four BFS optimization strategies 
+are developed to improve the memory bandwidth utilization of the BFS accelerator. 
+
+\begin{itemize}
+	\item The BFS is divided into two phases. In the first phase, the frontier is 
+		inspected from the vertex level information with complete sequential 
+		memory access. In the second phase, it traverses the frontier just as the 
+		conventional level based BFS. Compared to the conventional level based BFS, 
+		the frontier is no longer a shared writing queue among the paralell traverse 
+		processing logic and it ensures no duplicated vertices in the frontier queue. This 
+		strategy thus avoids either complex unique processing of the frontier or 
+		redudant frontier vertices processing. Although additional inspection stage is 
+		needed, it brings just sequential memory access and can be very efficient.
+		Essentially this strategy improves the memory bandwidth utilization.
+
+	\item The frontier vertices are classified into four groups based on 
+		its vertex degree and each group of the frontier vertices will be 
+		processed with specially customized logic. Basically frontier 
+		vertices with higher degree will be handled by processing elements 
+		with burst memory access support, while low-degree vertices will be 
+		passed to process elements with just simple random memory access. 
+		This strategy helps to improve the memory bandwidth utilization as 
+		well as balancing the processing time of different vertices.
+
+	\item A typical top-down based BFS is efficient when the frontier size is small. However, 
+		the vertices in the same frontier may have the same neighbors. When they are 
+		processed in parallel, a large amount of redundant traverse will be incurred at BFS 
+		level with larger frontier size. This problem gets worse for the graphs with 
+		small-world property whose BFS frontier size scales with power law. A bottom-up BFS 
+		can be more efficient for BFS iterations with larger frontier size. Thus a hybrid top-down 
+		and bottom-up BFS is implemented. With a relatively BFS mode switching metric, this hybrid 
+		BFS can reduce the amount of memory access significantly.  
+		
+	\item Real-world graphs have small world property and a small portion of the vertices have high 
+		degree. These high-degree vertices may be referenced many times during the traverse. With this 
+		observation, the high-degree vertex traversal status is cached on FPGA. Whenever a status of 
+		vertex needs to referenced during the traverse, the processing elements will check the 
+		cache first. High degree vertex status cached on-chip will thus help to avoid the repeated 
+		memory access and improves the memory bandwidth utilization eventually. 
+\end{itemize}
+
+The organization of the paper goes as follows. Section 2 presents the background of the BFS 
+algorithms and related work on BFS acceleration. Section 3 gives the overview of the 
+proposed BFS accelerator. Section 4 details the optimization strategies and the corresponding 
+implementations. Section 5 shows the experimental results and analysis. Section 6 concludes 
+this work.
+
+\section{Background and Related Work}
+This section will firstly introduce the background of the BFS algorithms and then 
+review previous BFS acceleration work.
 
 \subsection{Background}
-Before illustrating the proposed BFS accelerator, we will explain the basic concept 
-of BFS with a basic BFS implementation shown in List \ref{lst:seq-bfs}. Suppose $depth[v]$ represents the 
-depth of vertex $v$ in a graph $G$. $s$ stands for the starting vertex of the Graph $G$. 
-Then the sequential BFS algorithm is described as follows. 
+BFS is a widely used graph traversal algorithm in many applications. 
+It traverses the graph by processing all vertices with the same distance from the 
+source vertex iteratively. The set of vertices which have the same distance from the 
+source is defined as frontier. The frontier that is under analysis in the BFS iteration 
+is named as current frontier while the frontier that is inspected from current frontier 
+is called next frontier. By inspecting only the frontier, BFS can be implemented efficiently 
+and thus the frontier concept is utilized in many BFS implementations.
 
-\begin{lstlisting}[caption={Sequential BFS Algorithm}, label={lst:seq-bfs}, language=c, showstringspaces=false]
-// top-down BFS algorithm
-depth[s] = 0;
-level = 0;
-// Overall iteration control
-while(!bfsIsDone(level)){
-    // Inspect depth data and find the vertices in the frontier
-    for(v in G){
-        if (depth[v] == level){ 
-            // Expand the vertices in the frontier
-            for (v' in v.successor()){
-                // update v' depth  if it is unvisited
-                if(depth[v'] == inf){ 
-                    depth[v'] = level + 1;
-                }
-            }
-        }
-    }
+BFS algorithm can be formalized as follows. Assume $G$ is a graph with vertex 
+set $V$ and edge set $E$, BFS finds a shortest path from a source vertex
+$v_s \in V$ to all the other vertices in the graph $G$. For each vertex $v \in V$, 
+BFS will output a level value $l$, indicating its distance from $v_s$ ($v$ can be accessed 
+from $v_s$ by traveling through $l - 1$ edges). 
 
-    // Proceed to the next iteration
-    level++;
-}
+Algorithm \ref{alg:level-bfs} presents a level synchronized BFS algorithm. It has been utilized in many 
+previous BFS accelerators. More explanation will be added here. 
+\begin{algorithm}
+	\caption{Level Synchronized BFS Algorithm} \label{alg:level-bfs}
+	\begin{algorithmic}[1]
+		\Procedure{BFS}{}
+		\State $level[v_k] = -1$ where $v_k \in V$
+		\State $level[v_s] = 1$
+		\State $current\_frontier \gets v_s$
+		\State $current\_level = 1$
+		\While {$current\_frontier$ not empty} 
+		\For{$v \in current\_frontier$}
+		\State $S = {n \in V | (v, n) \in E}$
+		\For {$n \in S$}
+		\If {$level[n] == -1$}
+		\State $level[n] \gets current\_level + 1$
+		\State $next\_frontier \gets n$
+		\EndIf
+		\EndFor
+		\EndFor
+		\State $current\_level = current\_level + 1$
+		\State Swap $current\_frontier$ with $next\_frontier$
+		\EndWhile
+		\EndProcedure
+	\end{algorithmic}
+\end{algorithm}
 
-// When the frontier is empty, the bfs completes.
-bool bfsIsDone(level){
-    int counter = 0;
-    for(v in G){
-        if (depth[v] == level)
-            counter++;
-    }
-    if(counter == 0) return true;
-    else return false;
-}
+\subsection{Related Work}
+to be added.
 
-\end{lstlisting}
 
-Given the algorithm presented above, the BFS can be roughly divided into 
-the following three phases:
+\section{BFS Optimization Strategies}
+The modified BFS algoirithm is presented in \ref{alg:modified-bfs}.
+BFS optimization strategies wll be detailed in this section.
+\begin{algorithm}
+	\caption{Modified BFS Algorithm} \label{alg:modified-bfs}
+	\begin{algorithmic}[1]
+		\Procedure{BFS}{}
+		\State $level[v_k] = -1$ where $v_k \in V$
+		\State $level[v_s] = 0$
+		\State $current\_level = 0$
+		\State $frontier \gets v_s$
 
+		\While {$frontier$ not empty} 
+
+		\For{$v \in V$}
+		\If{$level[v] == current\_level$}
+		\State $frontier \gets v$
+		\EndIf
+		\EndFor
+
+		\For{$v \in frontier$}
+		\State $S = {n \in V | (v, n) \in E}$
+		\For {$n \in S$}
+		\If {$level[n] == -1$}
+		\State $level[n] \gets current\_level + 1$
+		\EndIf
+		\EndFor
+		\EndFor
+		\State $current\_level = current\_level + 1$
+		\EndWhile
+		\EndProcedure
+	\end{algorithmic}
+\end{algorithm}
+
+
+\section{Proposed BFS Accelerator}
+The BFS accelerator overview and hardware modules  developed for the corresponding
+BFS optimization strategies will be detailed here.
+
+\section{Experiments}
+\subsection{Experiment Setup}
+\subsection{Graph Benchmark}
+\subsection{Results}
 \begin{itemize}
-    \item Phase 1: Get the frontier queue based on the status array 
-        (or the depth of the graph) and completes the BFS when the queue is empty. 
-    \item Phase 2: Traverse the successors of vertices in the frontier. 
-    \item Phase 3: If the successors are unvisited, update its depth information 
-        and mark it as visited. When all the vertices in the frontier are explored, 
-        move to the next iteration.
+	\item performance improvements and resource overhead of the optimization strategies
+	\item Reduced communication with the optimized strategies
+	\item Runtime distribution analysis 
 \end{itemize}
 
-\subsection{Proposed Parallel BFS}
-With the sequential BFS, we can further parallelize it. As shown in \ref{lst:parallel-bfs},  
-we keep the same three-phase design and have each phase parallelized and optimized. 
-The details can be found in the comments in the algorithm. On top of the optimizations presented 
-in the algorithm, we still need to perform the adaptive top-down and bottom-up switching.
-It requires minor modifications on most of the basic processing in the algorithm and is omitted for 
-simplicity. 
-
-\begin{lstlisting}[caption={Parallel BFS Algorithm}, label={lst:parallel-bfs}, language=c, showstringspaces=false]
-depth[s] = 0;
-level = 0;
-// Overall iteration control
-while(!bfsIsDone(level)){
-    // Phase 1: Inspect depth of all the vertices 
-    // for frontier vertices, classify the 
-    // frontier vertices into three types, and 
-    // have them stored in three different 
-    // queues respectively. Meanwhile, visited hub 
-    // vertices (vertices with high degree) will be 
-    // cached on chip and it will be used in the 
-    // following processing. In addition, 
-    // the inspecting process can be divided into multiple 
-    // independent tasks as well.
-    for(v in G){ 
-        if (depth[v] == level){
-            if(v.outDegree() < 32){
-                smlQueue.push(v);
-            }
-            else if(v.outDegree() < 256){
-                midQueue.push(v);
-            }
-            else{
-                lrgQueue.push(v);
-            }
-        }
-        // Store visited hub vertices into on chip cache.
-        else if(depth[v] < level and v.degree() > 1024){
-            HubVertexCache(v);
-        }
-    }
-
-    // Phase 2: Expand the vertices in the 
-    // frontier. If the successors of 
-    // the vertices haven't been visited yet, 
-    // they will be send to a update queue 
-    // corresponding to its depth location. 
-    // Basically the vertices in 
-    // different queues can update their depth 
-    // in parallel. Vertices in the same queue 
-    // may probably be reordered for potential 
-    // consecutive write operation. 
-    // Meanwhile, the expansion on each frontier 
-    // queue can also be partitioned for parallel 
-    // processing.
-    for (v in smlQueue){
-        for (v' in v.successor()){
-            // If v' is found in HubVertexCache, 
-            // it means it is visited and thus there is no 
-            // need reading depth[v'] from memory for 
-            // checking if it is visited.
-            if(HubVertexCache[v'] hit){ 
-               continue; 
-            }
-            // update v' depth  if it is unvisited
-            else if(depth[v'] == inf){
-                updateQueue[mod(v', backNum)].push(v');
-            }
-        }
-    }
-
-    // Phase 3: Update depth of the vertices 
-    // in each updateQueue. As there may redundant 
-    // vertices in each updateQueue which may eventually 
-    // results in repeated memory write wasting 
-    // memory bandwidth. Thus we need to 
-    // remove the redundant vertices before 
-    // writing back, though there is no guarantee 
-    // squeezing all the redundant vertices.
-    removeRedundantVertices(updateQueue);
-    for (v in updateQueue){
-        v.depth = level + 1;
-    }
-
-    // Proceed to the next iteration
-    level++;
-}
-\end{lstlisting}
-
-Here is summary of the optimization strategies of the proposed BFS algorithm 
-targeting BFS accelerator design on FPGA or ASIC.
-\begin{itemize}
-    \item Frontier queue inspection partition for parallel processing.
-    \item Frontier vertices classification based on vertex degree.
-    \item Hub vertices caching to avoid repeated memory access.
-    \item Application specific processing logic for different types of 
-        vertices (i.e. vertices in different queues)
-    \item Frontier queue partition for both parallel expansion and balanced expansion time.
-    \item Reordering vertices to be updated to assist the parallel and consecutive depth update.
-    \item Removing redundant vertices in each update queue compromising the hardware 
-        overhead and saving memory bandwidth.
-\end{itemize}
-
-\subsection{The Proposed BFS Accelerator}
-Here is the overview of the proposed BFS accelerator \ref{fig:bfs-overview}. The three phases of the 
-BFS is implemented as three different pipeline stages. Basically, the figure 
-visualizes parallel BFS algorithm. We will not repeat the details that have been explained 
-in previous subsection. Here we will introduce the data storage in the accelerator. 
-All the input data including 
-CSR data and depth information will be stored on DDR directly. While the queues are needed 
-to connect the pipeline stages and handle the mismatched processing speed at run-time.
-In this figure, we assume that the frontier queue between the first pipeline and the second 
-pipeline is implemented on DDR while the queues between the second and the third pipeline 
-utilizes the on-chip storage.
-
-Using DDR as the queue allows the relevant pipeline stages to operate on a 
-larger data set but consumes larger memory bandwidth. Using the on-chip storage 
-for buffering the intermediate data may miss some of the optimized design options, 
-but it will save the on-chip memory bandwidth in general. Here we just show both the possible 
-design options. Probably, the second option may be better, but anyway we will see 
-the experiments in future.  
-
-As the top-down method needs to traverse the successors of the frontier vertices while the 
-bottom-up method needs to traverse the predecessors of the frontier, we need to store both of them 
-in CSR for the adaptive method. 
-
-\begin{figure}[tb]
-\centering
-\includegraphics[width=0.9\linewidth]{bfs-overview}
-\caption{BFS Overview, it consists of three pipelined phases. As the design follows the BSP model, 
-    it will not move to the next iteration until Phase 3 completes. }
-\label{fig:bfs-overview}
-\vspace{-1em}
-\end{figure}
-
-
-\section{About the Experiments}
-I am trying to develop a cycle-accurate simulator using SystemC first so that the design 
-optimization techniques can be easily verified and evaluated. When the optimization techniques 
-are decided, I can further build the real hardware design on the FPGAs with the most effective 
-optimization techniques. I am not sure if it is a good idea to integrate all the optimization 
-techniques in a single FPGA design. Maybe we can focus on one or two of them at a time for example the 
-hub vertex caching and gradually extend the work. 
-
-On top of the BFS accelerator optimization, another 
-thing that I want to explore is how the BFS accelerator scales with the memory bandwidth. As the 
-BFS accelerator is sensitive to the memory bandwidth and different FPGA platforms may have various 
-memory bandwidth available, it may be interesting to develop a bandwidth-aware BFS accelerator or 
-an auto-tuning framework over the existing BFS accelerator design for different FPGA platforms.  
-
-As there is no available SystemC DRAM model, I planned to use DRAMSim2 as the model first. Then I found a 
-new simulator ramulator developed by Prof. Mutlu's group \cite{kim2016ramulator}. It supports many different memory architectures 
-including DDR series, LPDDR series, HBM etc. So I decided to use it instead. Hopefully, we may further extend this work to general graph accelerator design with new memory systems such as 3D-DRAM etc.   
+\section{Conclusion}
+to be added.
 
 %----------------------------------------------------------------------------------------
 %	BIBLIOGRAPHY
