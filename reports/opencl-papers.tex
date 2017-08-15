@@ -1,0 +1,125 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Simple Sectioned Essay Template
+% LaTeX Template
+%
+% This template has been downloaded from:
+% http://www.latextemplates.com
+%
+% Note:
+% The \lipsum[#] commands throughout this template generate dummy text
+% to fill the template out. These commands should all be removed when 
+% writing essay content.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[12pt]{article} % Default font size is 12pt, it can be changed here
+
+\usepackage{geometry} % Required to change the page size to A4
+\geometry{a4paper} % Set the page size to be A4 as opposed to the default US Letter
+
+\usepackage{graphicx} % Required for including pictures
+
+\usepackage{float} % Allows putting an [H] in \begin{figure} to specify the exact location of the figure
+\usepackage{wrapfig} % Allows in-line images such as the example fish picture
+
+\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+
+\usepackage{url}
+
+\linespread{1.2} % Line spacing
+
+%\setlength\parindent{0pt} % Uncomment to remove all indentation from paragraphs
+
+\newcommand{\figref}[1]{Figure~\ref{#1}}
+\graphicspath{{./figures/}} % Specifies the directory where pictures are stored
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\begin{titlepage}
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Defines a new command for the horizontal lines, change thickness here
+
+\center % Center everything on the page
+
+\HRule \\[0.4cm]
+{ \huge \bfseries OpenCL Related FPGA Paper Review}\\[0.4cm] % Title of your document
+\HRule \\[1.5cm]
+
+\begin{minipage}{0.4\textwidth}
+    \centering {Cheng Liu} \\ 
+    \vspace{2em}
+    \centering {\large \today}
+\end{minipage}
+
+\end{titlepage}
+
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS
+%----------------------------------------------------------------------------------------
+
+%\tableofcontents % Include a table of contents
+
+%\newpage % Begins the essay on a new page instead of on the same page as the table of contents 
+
+%----------------------------------------------------------------------------------------
+%	INTRODUCTION
+%----------------------------------------------------------------------------------------
+\section{Paper Review} % Major section
+Here is a list about recent papers on OpenCl based FPGA acceleration.
+\begin{itemize}
+    \item Improving the performance of OepnCL-based FPGA accelerator for convolutional neural network \cite{zhang2017improving}:
+        1) The authors argue that a direct opencl-based OpenCL-based CNN design is insufificient to achieve 
+        the desired performance. To that end, an analytical performance model is used to identify the 
+        performance bottleneck of CNN on FPGAs.
+        2) With the analysis, the authors thus propose a new kernel design to effectively 
+        address the bandwidth optimization. Finally the resulting performance is even better 
+        than previous design (mostly due to the much higher implementation frequency)
+    \item A study of data partitioning on OpenCl based FPGAs \cite{wang2015study}:
+        1) Explore the challenges of porting the opencl design for GPU to opencl design on FPGAs.
+        2) Optimize the data paritioning using opencl optimization techniques such as on chip buckets.
+        3) Develop of a cost model for design parameters optimization.
+
+    \item An OpenCL Deep Learning Accelerator on Arria 10 \cite{aydonat2017opencl}: 
+        1) proposed a methodology to minimize the bandwidth of convolutional layer and 
+        full-connected layer by caching intermediate feature-map in stream buffers.
+        2) proposed a design space exploration that leverages analytical models for 
+        resource consumption and throughput and provides optimized architectural configuration.
+        3) Introduce the Winograd transformation to reduce the amount of convolution operations.
+
+    \item Energy efficient scientific computing on FPGAs using OpenCL: \cite{weller2017energy}:
+        1) Implement partial differential equations (PDE) on FPGA and provide a series of 
+        optimizations including vendor-dependent optimizations and vendor-independent optimizations.
+        2) Discuss the portability of the opencl optimization between different vendors i.e. Xilinx 
+        FPGA and Intel-Altera FPGA.
+        3) Compare the performance and energy efficiency over CPU and GPUs.
+
+    \item Accelerating Database query processing on opencl-based FPGAs \cite{wang2016accelerating}: 
+        1) Implement the SQL query operators using OpenCL on FPGA.
+        2) Build the performance model of the opecl based SQL operator performance. 
+        With the models, optimized query plan can be generated.
+
+    \item Evaluation of an OpenCl-based FPGA platforms for Particle Filter \cite{tatsumi2016evaluation}:
+        1）The authors implemented the particle filter using OpenCL on FPGA.
+        2) It allows the designers to achieve significant performance speedup without 
+        much hardware circuit design expertises. 
+    \item OpenCL-Based FPGA Accelerator for 3D FDTD with periodic and absorbing boundary conditions \cite{waidyasooriya2017opencl}
+        This work also focuses on the opencl based algorithm acceleration.
+\end{itemize}
+
+
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY
+%----------------------------------------------------------------------------------------
+\bibliographystyle{plain}
+\bibliography{refs}
+%----------------------------------------------------------------------------------------
+
+\end{document}
