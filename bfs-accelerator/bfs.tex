@@ -1,278 +1,482 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Simple Sectioned Essay Template
-% LaTeX Template
-%
-% This template has been downloaded from:
-% http://www.latextemplates.com
-%
-% Note:
-% The \lipsum[#] commands throughout this template generate dummy text
-% to fill the template out. These commands should all be removed when 
-% writing essay content.
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%----------------------------------------------------------------------------------------
-%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
-%----------------------------------------------------------------------------------------
+%% bare_conf.tex
+%% V1.4b
+%% 2015/08/26
+%% by Michael Shell
+%% See:
+%% http://www.michaelshell.org/
+%% for current contact information.
+%%
+%% This is a skeleton file demonstrating the use of IEEEtran.cls
+%% (requires IEEEtran.cls version 1.8b or later) with an IEEE
+%% conference paper.
+%%
+%% Support sites:
+%% http://www.michaelshell.org/tex/ieeetran/
+%% http://www.ctan.org/pkg/ieeetran
+%% and
+%% http://www.ieee.org/
 
-\documentclass[12pt]{article} % Default font size is 12pt, it can be changed here
+%%*************************************************************************
+%% Legal Notice:
+%% This code is offered as-is without any warranty either expressed or
+%% implied; without even the implied warranty of MERCHANTABILITY or
+%% FITNESS FOR A PARTICULAR PURPOSE! 
+%% User assumes all risk.
+%% In no event shall the IEEE or any contributor to this code be liable for
+%% any damages or losses, including, but not limited to, incidental,
+%% consequential, or any other damages, resulting from the use or misuse
+%% of any information contained here.
+%%
+%% All comments are the opinions of their respective authors and are not
+%% necessarily endorsed by the IEEE.
+%%
+%% This work is distributed under the LaTeX Project Public License (LPPL)
+%% ( http://www.latex-project.org/ ) version 1.3, and may be freely used,
+%% distributed and modified. A copy of the LPPL, version 1.3, is included
+%% in the base LaTeX documentation of all distributions of LaTeX released
+%% 2003/12/01 or later.
+%% Retain all contribution notices and credits.
+%% ** Modified files should be clearly indicated as such, including  **
+%% ** renaming them and changing author support contact information. **
+%%*************************************************************************
 
-\usepackage{geometry} % Required to change the page size to A4
-\geometry{a4paper} % Set the page size to be A4 as opposed to the default US Letter
-\usepackage{listings} % Insert program segments in the text
-\usepackage{float} % Allows putting an [H] in \begin{figure} to specify the exact location of the figure
-\usepackage{wrapfig} % Allows in-line images such as the example fish picture
-\usepackage[per-mode=fraction]{siunitx}
-\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
-\usepackage{graphicx}
+
+% *** Authors should verify (and, if needed, correct) their LaTeX system  ***
+% *** with the testflow diagnostic prior to trusting their LaTeX platform ***
+% *** with production work. The IEEE's font choices and paper sizes can   ***
+% *** trigger bugs that do not appear when using other class files.       ***                          ***
+% The testflow support page is at:
+% http://www.michaelshell.org/tex/testflow/
+
+
+
+\documentclass[conference]{IEEEtran}
+% Some Computer Society conferences also require the compsoc mode option,
+% but others use the standard conference format.
+%
+% If IEEEtran.cls has not been installed into the LaTeX system files,
+% manually specify the path to it like:
+% \documentclass[conference]{../sty/IEEEtran}
+
+
+
+
+
+% Some very useful LaTeX packages include:
+% (uncomment the ones you want to load)
+
+
+% *** MISC UTILITY PACKAGES ***
+%
+%\usepackage{ifpdf}
+% Heiko Oberdiek's ifpdf.sty is very useful if you need conditional
+% compilation based on whether the output is pdf or dvi.
+% usage:
+% \ifpdf
+%   % pdf code
+% \else
+%   % dvi code
+% \fi
+% The latest version of ifpdf.sty can be obtained from:
+% http://www.ctan.org/pkg/ifpdf
+% Also, note that IEEEtran.cls V1.7 and later provides a builtin
+% \ifCLASSINFOpdf conditional that works the same way.
+% When switching from latex to pdflatex and vice-versa, the compiler may
+% have to be run twice to clear warning/error messages.
+
+
+
+
+
+
+% *** CITATION PACKAGES ***
+%
+%\usepackage{cite}
+% cite.sty was written by Donald Arseneau
+% V1.6 and later of IEEEtran pre-defines the format of the cite.sty package
+% \cite{} output to follow that of the IEEE. Loading the cite package will
+% result in citation numbers being automatically sorted and properly
+% "compressed/ranged". e.g., [1], [9], [2], [7], [5], [6] without using
+% cite.sty will become [1], [2], [5]--[7], [9] using cite.sty. cite.sty's
+% \cite will automatically add leading space, if needed. Use cite.sty's
+% noadjust option (cite.sty V3.8 and later) if you want to turn this off
+% such as if a citation ever needs to be enclosed in parenthesis.
+% cite.sty is already installed on most LaTeX systems. Be sure and use
+% version 5.0 (2009-03-20) and later if using hyperref.sty.
+% The latest version can be obtained at:
+% http://www.ctan.org/pkg/cite
+% The documentation is contained in the cite.sty file itself.
+
+
+
+
+
+
+% *** GRAPHICS RELATED PACKAGES ***
+%
+\ifCLASSINFOpdf
+  % \usepackage[pdftex]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../pdf/}{../jpeg/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+\else
+  % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
+  % will default to the driver specified in the system graphics.cfg if no
+  % driver is specified.
+  % \usepackage[dvips]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../eps/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.eps}
+\fi
+% graphicx was written by David Carlisle and Sebastian Rahtz. It is
+% required if you want graphics, photos, etc. graphicx.sty is already
+% installed on most LaTeX systems. The latest version and documentation
+% can be obtained at: 
+% http://www.ctan.org/pkg/graphicx
+% Another good source of documentation is "Using Imported Graphics in
+% LaTeX2e" by Keith Reckdahl which can be found at:
+% http://www.ctan.org/pkg/epslatex
+%
+% latex, and pdflatex in dvi mode, support graphics in encapsulated
+% postscript (.eps) format. pdflatex in pdf mode supports graphics
+% in .pdf, .jpeg, .png and .mps (metapost) formats. Users should ensure
+% that all non-photo figures use a vector format (.eps, .pdf, .mps) and
+% not a bitmapped formats (.jpeg, .png). The IEEE frowns on bitmapped formats
+% which can result in "jaggedy"/blurry rendering of lines and letters as
+% well as large increases in file sizes.
+%
+% You can find documentation about the pdfTeX application at:
+% http://www.tug.org/applications/pdftex
+
+
+
+
+
+% *** MATH PACKAGES ***
+%
+%\usepackage{amsmath}
+% A popular package from the American Mathematical Society that provides
+% many useful and powerful commands for dealing with mathematics.
+%
+% Note that the amsmath package sets \interdisplaylinepenalty to 10000
+% thus preventing page breaks from occurring within multiline equations. Use:
+%\interdisplaylinepenalty=2500
+% after loading amsmath to restore such page breaks as IEEEtran.cls normally
+% does. amsmath.sty is already installed on most LaTeX systems. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/pkg/amsmath
+
+
+
+
+
+% *** SPECIALIZED LIST PACKAGES ***
+%
+%\usepackage{algorithmic}
+% algorithmic.sty was written by Peter Williams and Rogerio Brito.
+% This package provides an algorithmic environment fo describing algorithms.
+% You can use the algorithmic environment in-text or within a figure
+% environment to provide for a floating algorithm. Do NOT use the algorithm
+% floating environment provided by algorithm.sty (by the same authors) or
+% algorithm2e.sty (by Christophe Fiorio) as the IEEE does not use dedicated
+% algorithm float types and packages that provide these will not provide
+% correct IEEE style captions. The latest version and documentation of
+% algorithmic.sty can be obtained at:
+% http://www.ctan.org/pkg/algorithms
+% Also of interest may be the (relatively newer and more customizable)
+% algorithmicx.sty package by Szasz Janos:
+% http://www.ctan.org/pkg/algorithmicx
+
+
+
+
+% *** ALIGNMENT PACKAGES ***
+%
+%\usepackage{array}
+% Frank Mittelbach's and David Carlisle's array.sty patches and improves
+% the standard LaTeX2e array and tabular environments to provide better
+% appearance and additional user controls. As the default LaTeX2e table
+% generation code is lacking to the point of almost being broken with
+% respect to the quality of the end results, all users are strongly
+% advised to use an enhanced (at the very least that provided by array.sty)
+% set of table tools. array.sty is already installed on most systems. The
+% latest version and documentation can be obtained at:
+% http://www.ctan.org/pkg/array
+
+
+% IEEEtran contains the IEEEeqnarray family of commands that can be used to
+% generate multiline equations as well as matrices, tables, etc., of high
+% quality.
+
+
+
+
+% *** SUBFIGURE PACKAGES ***
+%\ifCLASSOPTIONcompsoc
+%  \usepackage[caption=false,font=normalsize,labelfont=sf,textfont=sf]{subfig}
+%\else
+%  \usepackage[caption=false,font=footnotesize]{subfig}
+%\fi
+% subfig.sty, written by Steven Douglas Cochran, is the modern replacement
+% for subfigure.sty, the latter of which is no longer maintained and is
+% incompatible with some LaTeX packages including fixltx2e. However,
+% subfig.sty requires and automatically loads Axel Sommerfeldt's caption.sty
+% which will override IEEEtran.cls' handling of captions and this will result
+% in non-IEEE style figure/table captions. To prevent this problem, be sure
+% and invoke subfig.sty's "caption=false" package option (available since
+% subfig.sty version 1.3, 2005/06/28) as this is will preserve IEEEtran.cls
+% handling of captions.
+% Note that the Computer Society format requires a larger sans serif font
+% than the serif footnote size font used in traditional IEEE formatting
+% and thus the need to invoke different subfig.sty package options depending
+% on whether compsoc mode has been enabled.
+%
+% The latest version and documentation of subfig.sty can be obtained at:
+% http://www.ctan.org/pkg/subfig
+
+
+
+
+% *** FLOAT PACKAGES ***
+%
+%\usepackage{fixltx2e}
+% fixltx2e, the successor to the earlier fix2col.sty, was written by
+% Frank Mittelbach and David Carlisle. This package corrects a few problems
+% in the LaTeX2e kernel, the most notable of which is that in current
+% LaTeX2e releases, the ordering of single and double column floats is not
+% guaranteed to be preserved. Thus, an unpatched LaTeX2e can allow a
+% single column figure to be placed prior to an earlier double column
+% figure.
+% Be aware that LaTeX2e kernels dated 2015 and later have fixltx2e.sty's
+% corrections already built into the system in which case a warning will
+% be issued if an attempt is made to load fixltx2e.sty as it is no longer
+% needed.
+% The latest version and documentation can be found at:
+% http://www.ctan.org/pkg/fixltx2e
+
+
+%\usepackage{stfloats}
+% stfloats.sty was written by Sigitas Tolusis. This package gives LaTeX2e
+% the ability to do double column floats at the bottom of the page as well
+% as the top. (e.g., "\begin{figure*}[!b]" is not normally possible in
+% LaTeX2e). It also provides a command:
+%\fnbelowfloat
+% to enable the placement of footnotes below bottom floats (the standard
+% LaTeX2e kernel puts them above bottom floats). This is an invasive package
+% which rewrites many portions of the LaTeX2e float routines. It may not work
+% with other packages that modify the LaTeX2e float routines. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/pkg/stfloats
+% Do not use the stfloats baselinefloat ability as the IEEE does not allow
+% \baselineskip to stretch. Authors submitting work to the IEEE should note
+% that the IEEE rarely uses double column equations and that authors should try
+% to avoid such use. Do not be tempted to use the cuted.sty or midfloat.sty
+% packages (also by Sigitas Tolusis) as the IEEE does not format its papers in
+% such ways.
+% Do not attempt to use stfloats with fixltx2e as they are incompatible.
+% Instead, use Morten Hogholm'a dblfloatfix which combines the features
+% of both fixltx2e and stfloats:
+%
+% \usepackage{dblfloatfix}
+% The latest version can be found at:
+% http://www.ctan.org/pkg/dblfloatfix
+
+
+
+
+% *** PDF, URL AND HYPERLINK PACKAGES ***
+%
+%\usepackage{url}
+% url.sty was written by Donald Arseneau. It provides better support for
+% handling and breaking URLs. url.sty is already installed on most LaTeX
+% systems. The latest version and documentation can be obtained at:
+% http://www.ctan.org/pkg/url
+% Basically, \url{my_url_here}.
+
+
+
+
+% *** Do not adjust lengths that control margins, column widths, etc. ***
+% *** Do not use packages that alter fonts (such as pslatex).         ***
+% There should be no need to do such things with IEEEtran.cls V1.6 and later.
+% (Unless specifically asked to do so by the journal or conference you plan
+% to submit to, of course. )
+
+\usepackage{booktabs} % For formal tables
 \usepackage{multirow}
-\usepackage[caption=false,font=footnotesize]{subfig}
-\usepackage{dblfloatfix}
-\usepackage{xspace}
-\usepackage{url}
 \usepackage{algorithm}
 \usepackage[noend]{algpseudocode}
-\usepackage[table]{xcolor}
-\usepackage{cite}
-\usepackage{url}
+\usepackage[pdftex]{graphicx}
+\graphicspath{{./figures/}}
+\algrenewcommand\textproc{}
 
-\newcommand{\tabincell}[2]{\begin{tabular}{@{}#1@{}}#2\end{tabular}}
+%\algsetup{linenosize=\small}
 
-\linespread{1.2} % Line spacing
-%\setlength\parindent{0pt} % Uncomment to remove all indentation from paragraphs
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
 
-\graphicspath{{./figures/}} % Specifies the directory where pictures are stored
 
 \begin{document}
-
-%----------------------------------------------------------------------------------------
-%	TITLE PAGE
-%----------------------------------------------------------------------------------------
-
-\begin{titlepage}
-
-\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Defines a new command for the horizontal lines, change thickness here
-
-\center % Center everything on the page
-
-\HRule \\[0.4cm]
-{ \huge \bfseries Strategetic Optimization for BFS Acceleration on FPGAs}\\[0.4cm] % Title of your document
-\HRule \\[1.5cm]
-
-\begin{minipage}{0.4\textwidth}
-    \centering {Cheng Liu} \\ 
-    \vspace{2em}
-    \centering {\large \today}
-\end{minipage}
-
-\end{titlepage}
-
-%----------------------------------------------------------------------------------------
-%	TABLE OF CONTENTS
-%----------------------------------------------------------------------------------------
-
-%\tableofcontents % Include a table of contents
-
-%\newpage % Begins the essay on a new page instead of on the same page as the table of contents 
-
-%----------------------------------------------------------------------------------------
-%	INTRODUCTION
-%----------------------------------------------------------------------------------------
-\section{Introduction} % Major section
-Graph is a common data representation in a broad domains of applications such 
-as social networks, bioinformatics, metabolic networks and computer networks. 
-As the graph grows in scale in the big data era, graph processing becomes 
-increasingly costly and accelerating the widely used building components 
-such as Breadth-first search (BFS) is of vital importance for high-performance 
-graph processing. 
-
-BFS is notoriously difficult for accelerating on parallel computing architectures 
-because of the irregular memory access and the low computation-to-memory ratio. 
-These characteristics essentially make BFS a memory bandwidth bounded task and 
-challenging for accelerating. To approach this challenge, a number of research 
-have been performed targeting on various platforms including multicore processors, 
-GPUs \cite{liu2015enterprise}, FPGAs \cite{attia2014cygraph, betkaoui2012reconfigurable, 
-umuroglu2015hybrid, oguntebi2016graphops, engelhardt2016gravf}, ASICs 
-\cite{ham2016graphicionadoand} and distributed systems over the past few years. 
-
-With the increased interest on energy efficient computing systems, 
-FPGAs gains increasing popularity and is rapidly moving forward to 
-main-stream computing system and gets adopted in more data centers. 
-Many previous work also demonstrated that building BFS accelerators 
-on FPGAs can provide competitive performance over multi-core CPUs 
-on top of the energy efficiency. In this work, we thus try to explore 
-BFS accelerating on FPGAs and we 
-argue that FPGA is suitable for BFS acceleration mainly for two reasons. 
-First of all, FPGA allows specific memory access infrastructures to be 
-built to fit for various memory access patterns including customized caching, 
-streaming and random memory access. Secondly, BFS is memory bound and suffers 
-relatively long external memory access latency. As a result, it turns to be a 
-good fit to FPGAs with ample parallelism but relatively slow clock speed.
-
-BFS will be briefly explained here. Some concepts such as frontier will be 
-introduced here as well.
-
-Previous BFS acceleration on FPGA work mainly focused on developing parallel 
-hardware architectures to improve the resulting performance. However, the inherent 
-memory bound characteristic of BFS dramatically limits the benefits brought by more parallel 
-processing logic. In this work, we focus on strategetic optimizations which aims to 
-reduce the amount of memory access and improve the memory bandwidth utilization 
-to directly alleviate the bottleneck of the BFS accelerators on FPGAs and thus 
-enhance the resulting performance. Four BFS optimization strategies 
-are developed to improve the memory bandwidth utilization of the BFS accelerator. 
-
-\begin{itemize}
-	\item The BFS is divided into two phases. In the first phase, the frontier is 
-		inspected from the vertex level information with complete sequential 
-		memory access. In the second phase, it traverses the frontier just as the 
-		conventional level based BFS. Compared to the conventional level based BFS, 
-		the frontier is no longer a shared writing queue among the paralell traverse 
-		processing logic and it ensures no duplicated vertices in the frontier queue. This 
-		strategy thus avoids either complex unique processing of the frontier or 
-		redudant frontier vertices processing. Although additional inspection stage is 
-		needed, it brings just sequential memory access and can be very efficient.
-		Essentially this strategy improves the memory bandwidth utilization.
-
-	\item The frontier vertices are classified into four groups based on 
-		its vertex degree and each group of the frontier vertices will be 
-		processed with specially customized logic. Basically frontier 
-		vertices with higher degree will be handled by processing elements 
-		with burst memory access support, while low-degree vertices will be 
-		passed to process elements with just simple random memory access. 
-		This strategy helps to improve the memory bandwidth utilization as 
-		well as balancing the processing time of different vertices.
-
-	\item A typical top-down based BFS is efficient when the frontier size is small. However, 
-		the vertices in the same frontier may have the same neighbors. When they are 
-		processed in parallel, a large amount of redundant traverse will be incurred at BFS 
-		level with larger frontier size. This problem gets worse for the graphs with 
-		small-world property whose BFS frontier size scales with power law. A bottom-up BFS 
-		can be more efficient for BFS iterations with larger frontier size. Thus a hybrid top-down 
-		and bottom-up BFS is implemented. With a relatively BFS mode switching metric, this hybrid 
-		BFS can reduce the amount of memory access significantly.  
-		
-	\item Real-world graphs have small world property and a small portion of the vertices have high 
-		degree. These high-degree vertices may be referenced many times during the traverse. With this 
-		observation, the high-degree vertex traversal status is cached on FPGA. Whenever a status of 
-		vertex needs to referenced during the traverse, the processing elements will check the 
-		cache first. High degree vertex status cached on-chip will thus help to avoid the repeated 
-		memory access and improves the memory bandwidth utilization eventually. 
-\end{itemize}
-
-The organization of the paper goes as follows. Section 2 presents the background of the BFS 
-algorithms and related work on BFS acceleration. Section 3 gives the overview of the 
-proposed BFS accelerator. Section 4 details the optimization strategies and the corresponding 
-implementations. Section 5 shows the experimental results and analysis. Section 6 concludes 
-this work.
-
-\section{Background and Related Work}
-This section will firstly introduce the background of the BFS algorithms and then 
-review previous BFS acceleration work.
-
-\subsection{Background}
-BFS is a widely used graph traversal algorithm in many applications. 
-It traverses the graph by processing all vertices with the same distance from the 
-source vertex iteratively. The set of vertices which have the same distance from the 
-source is defined as frontier. The frontier that is under analysis in the BFS iteration 
-is named as current frontier while the frontier that is inspected from current frontier 
-is called next frontier. By inspecting only the frontier, BFS can be implemented efficiently 
-and thus the frontier concept is utilized in many BFS implementations.
-
-BFS algorithm can be formalized as follows. Assume $G$ is a graph with vertex 
-set $V$ and edge set $E$, BFS finds a shortest path from a source vertex
-$v_s \in V$ to all the other vertices in the graph $G$. For each vertex $v \in V$, 
-BFS will output a level value $l$, indicating its distance from $v_s$ ($v$ can be accessed 
-from $v_s$ by traveling through $l - 1$ edges). 
-
-Algorithm \ref{alg:level-bfs} presents a level synchronized BFS algorithm. It has been utilized in many 
-previous BFS accelerators. More explanation will be added here. 
-\begin{algorithm}
-	\caption{Level Synchronized BFS Algorithm} \label{alg:level-bfs}
-	\begin{algorithmic}[1]
-		\Procedure{BFS}{}
-		\State $level[v_k] = -1$ where $v_k \in V$
-		\State $level[v_s] = 1$
-		\State $current\_frontier \gets v_s$
-		\State $current\_level = 1$
-		\While {$current\_frontier$ not empty} 
-		\For{$v \in current\_frontier$}
-		\State $S = {n \in V | (v, n) \in E}$
-		\For {$n \in S$}
-		\If {$level[n] == -1$}
-		\State $level[n] \gets current\_level + 1$
-		\State $next\_frontier \gets n$
-		\EndIf
-		\EndFor
-		\EndFor
-		\State $current\_level = current\_level + 1$
-		\State Swap $current\_frontier$ with $next\_frontier$
-		\EndWhile
-		\EndProcedure
-	\end{algorithmic}
-\end{algorithm}
-
-\subsection{Related Work}
-to be added.
+%
+% paper title
+% Titles are generally capitalized except for words such as a, an, and, as,
+% at, but, by, for, in, nor, of, on, or, the, to and up, which are usually
+% not capitalized unless they are the first or last word of the title.
+% Linebreaks \\ can be used within to get better formatting as desired.
+% Do not put math or special symbols in the title.
+\title{Breadth First Search on FPGAs: A Pipelined Execution Approach}
 
 
-\section{BFS Optimization Strategies}
-The modified BFS algoirithm is presented in \ref{alg:modified-bfs}.
-BFS optimization strategies wll be detailed in this section.
-\begin{algorithm}
-	\caption{Modified BFS Algorithm} \label{alg:modified-bfs}
-	\begin{algorithmic}[1]
-		\Procedure{BFS}{}
-		\State $level[v_k] = -1$ where $v_k \in V$
-		\State $level[v_s] = 0$
-		\State $current\_level = 0$
-		\State $frontier \gets v_s$
+% author names and affiliations
+% use a multiple column layout for up to three different
+% affiliations
+%\author{\IEEEauthorblockN{Michael Shell}
+%\IEEEauthorblockA{School of Electrical and\\Computer Engineering\\
+%Georgia Institute of Technology\\
+%Atlanta, Georgia 30332--0250\\
+%Email: http://www.michaelshell.org/contact.html}
+%\and
+%\IEEEauthorblockN{Homer Simpson}
+%\IEEEauthorblockA{Twentieth Century Fox\\
+%Springfield, USA\\
+%Email: homer@thesimpsons.com}
+%\and
+%\IEEEauthorblockN{James Kirk\\ and Montgomery Scott}
+%\IEEEauthorblockA{Starfleet Academy\\
+%San Francisco, California 96678--2391\\
+%Telephone: (800) 555--1212\\
+%Fax: (888) 555--1212}}
 
-		\While {$frontier$ not empty} 
+% conference papers do not typically use \thanks and this command
+% is locked out in conference mode. If really needed, such as for
+% the acknowledgment of grants, issue a \IEEEoverridecommandlockouts
+% after \documentclass
 
-		\For{$v \in V$}
-		\If{$level[v] == current\_level$}
-		\State $frontier \gets v$
-		\EndIf
-		\EndFor
-
-		\For{$v \in frontier$}
-		\State $S = {n \in V | (v, n) \in E}$
-		\For {$n \in S$}
-		\If {$level[n] == -1$}
-		\State $level[n] \gets current\_level + 1$
-		\EndIf
-		\EndFor
-		\EndFor
-		\State $current\_level = current\_level + 1$
-		\EndWhile
-		\EndProcedure
-	\end{algorithmic}
-\end{algorithm}
+% for over three affiliations, or if they all won't fit within the width
+% of the page, use this alternative format:
+% 
+%\author{\IEEEauthorblockN{Michael Shell\IEEEauthorrefmark{1},
+%Homer Simpson\IEEEauthorrefmark{2},
+%James Kirk\IEEEauthorrefmark{3}, 
+%Montgomery Scott\IEEEauthorrefmark{3} and
+%Eldon Tyrell\IEEEauthorrefmark{4}}
+%\IEEEauthorblockA{\IEEEauthorrefmark{1}School of Electrical and Computer Engineering\\
+%Georgia Institute of Technology,
+%Atlanta, Georgia 30332--0250\\ Email: see http://www.michaelshell.org/contact.html}
+%\IEEEauthorblockA{\IEEEauthorrefmark{2}Twentieth Century Fox, Springfield, USA\\
+%Email: homer@thesimpsons.com}
+%\IEEEauthorblockA{\IEEEauthorrefmark{3}Starfleet Academy, San Francisco, California 96678-2391\\
+%Telephone: (800) 555--1212, Fax: (888) 555--1212}
+%\IEEEauthorblockA{\IEEEauthorrefmark{4}Tyrell Inc., 123 Replicant Street, Los Angeles, California 90210--4321}}
 
 
-\section{Proposed BFS Accelerator}
-The BFS accelerator overview and hardware modules  developed for the corresponding
-BFS optimization strategies will be detailed here.
 
-\section{Experiments}
-\subsection{Experiment Setup}
-\subsection{Graph Benchmark}
-\subsection{Results}
-\begin{itemize}
-	\item performance improvements and resource overhead of the optimization strategies
-	\item Reduced communication with the optimized strategies
-	\item Runtime distribution analysis 
-\end{itemize}
 
-\section{Conclusion}
-to be added.
+% use for special paper notices
+%\IEEEspecialpapernotice{(Invited Paper)}
 
-%----------------------------------------------------------------------------------------
-%	BIBLIOGRAPHY
-%----------------------------------------------------------------------------------------
-\bibliographystyle{plain}
-\bibliography{refs}
-%----------------------------------------------------------------------------------------
 
+
+
+% make the title area
+\maketitle
+
+% As a general rule, do not put math, special symbols or citations
+% in the abstract
+\begin{abstract}
+
+    Breadth first search (BFS) is one of the most important building blocks of graph processing, 
+    and it is notoriously difficult to accelerate on FPGAs due to the irregular memory access 
+    and low computation-to-memory ratio. Previous work typically accelerated the BFS algorithm 
+    through handcrafted circuit design with hardware description language (HDL). Despite
+    the relatively good performance, the HDL based design incurs extremely low design productivity, 
+    high portability and maintenance cost, which dramatically compensates the performance benefit. 
+    
+    To that end, we opted to develop a BFS accelerator using 
+    high level design tool i.e. Xilinx SDAccel  
+    such that it has the nice software-like features including better portability, 
+    maintenance and ease of use on top of the design productivity. To enhance the 
+    performance of the resulting FPGA accelerator, we further 
+    proposed a set of general high level synthesis (HLS) based 
+    optimization techniques such as pipeling, 
+    hash filtering, prefetching, and caching without loss of the software-like 
+    features. Meanwhile, we can also rapidly tune the design 
+    parameters such as hash size, prefetch buffer and cache size 
+    with specific high level metrics including 
+    hash hit rate, prefetch hit rate and cache hit rate through fast software 
+    emulation of the HLS design. 
+     
+    According to the experiments on a set of big graphs, the optimized HLS based 
+    BFS accelerator achieves up to 70X performance speedup compared to the 
+    baseline HLS design which has best-effort HLS pragma based optimization on 
+    the native BFS code. When compared to the state-of-art handcrafted design on 
+    similar FPGA cards, the BFS accelerator proposed in this work achieves 
+    around 35\% of the performance and even higher per bandwidth MTEPS 
+    in some cases and possesses many software-like features. 
+ 
+\end{abstract}
+
+% no keywords
+
+
+% For peer review papers, you can put extra information on the cover
+% page as needed:
+% \ifCLASSOPTIONpeerreview
+% \begin{center} \bfseries EDICS Category: 3-BBND \end{center}
+% \fi
+%
+% For peerreview papers, this IEEEtran command inserts a page break and
+% creates the second title. It will be ignored for other modes.
+\IEEEpeerreviewmaketitle
+
+\input{main}
+\input{result}
+
+\bibliographystyle{IEEEtran}
+\bibliography{refs} 
+
+
+
+
+% trigger a \newpage just before the given reference
+% number - used to balance the columns on the last page
+% adjust value as needed - may need to be readjusted if
+% the document is modified later
+%\IEEEtriggeratref{8}
+% The "triggered" command can be changed if desired:
+%\IEEEtriggercmd{\enlargethispage{-5in}}
+
+% references section
+
+% can use a bibliography generated by BibTeX as a .bbl file
+% BibTeX documentation can be easily obtained at:
+% http://mirror.ctan.org/biblio/bibtex/contrib/doc/
+% The IEEEtran BibTeX style support page is at:
+% http://www.michaelshell.org/tex/ieeetran/bibtex/
+%\bibliographystyle{IEEEtran}
+% argument is your BibTeX string definitions and bibliography database(s)
+%\bibliography{IEEEabrv,../bib/paper}
+%
+% <OR> manually copy in the resultant .bbl file
+% set second argument of \begin to the number of references
+% (used to reserve space for the reference number labels box)
+%\begin{thebibliography}{1}
+
+%\bibitem{IEEEhowto:kopka}
+%H.~Kopka and P.~W. Daly, \emph{A Guide to \LaTeX}, 3rd~ed.\hskip 1em plus
+%  0.5em minus 0.4em\relax Harlow, England: Addison-Wesley, 1999.
+
+%\end{thebibliography}
+
+
+
+
+% that's all folks
 \end{document}
+
+

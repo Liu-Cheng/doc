@@ -1,0 +1,63 @@
+This is BibTeX, Version 0.99d (TeX Live 2016)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: accsim.aux
+The style file: IEEEtran.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Database file #1: refs.bib
+Database file #2: ieeebstctl.bib
+Warning--I didn't find a database entry for "systemc"
+Warning--I didn't find a database entry for "chisel"
+Warning--I didn't find a database entry for "dramsim2"
+Warning--I didn't find a database entry for "ramulator"
+-- IEEEtran.bst version 1.14 (2015/08/26) by Michael Shell.
+-- http://www.michaelshell.org/tex/ieeetran/bibtex/
+-- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+** IEEEtran BST control entry "IEEEexample:BSTcontrol" detected.
+
+Done.
+You've used 6 entries,
+            4087 wiz_defined-function locations,
+            864 strings with 9884 characters,
+and the built_in function-call counts, 3533 in all, are:
+= -- 290
+> -- 70
+< -- 29
++ -- 39
+- -- 12
+* -- 180
+:= -- 593
+add.period$ -- 10
+call.type$ -- 6
+change.case$ -- 6
+chr.to.int$ -- 73
+cite$ -- 6
+duplicate$ -- 259
+empty$ -- 262
+format.name$ -- 15
+if$ -- 781
+int.to.chr$ -- 0
+int.to.str$ -- 5
+missing$ -- 37
+newline$ -- 42
+num.names$ -- 5
+pop$ -- 74
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 4
+skip$ -- 266
+stack$ -- 0
+substring$ -- 153
+swap$ -- 194
+text.length$ -- 8
+text.prefix$ -- 0
+top$ -- 6
+type$ -- 6
+warning$ -- 0
+while$ -- 21
+width$ -- 6
+write$ -- 74
+(There were 4 warnings)

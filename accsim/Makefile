@@ -1,5 +1,5 @@
 TITLE=accsim
-TEXORIG=accsim.tex abstract.tex introduction.tex acc-framework.tex customization-framework.tex conclusion.tex relatedwork.tex experiments.tex
+TEXORIG=accsim.tex abstract.tex introduction.tex framework.tex conclusion.tex relatedwork.tex experiments.tex
 
 BIBFILES=refs.bib 
 IMGFILES=

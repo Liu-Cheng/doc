@@ -1,1 +1,16 @@
+With the advancement of the FPGA techniques and the increase of successful demonstrations 
+of using FPGAs in data center, more and more cloud computing vendors start to integrate 
+FPGAs as computing resources in the cloud. In order to make best use of the computing resources 
+in the cloud, the computing resources are usually virtualized such that they can be shared by different 
+computing tasks from either a single user or multiple users. Nevertheless, unlike the 
+conventional computing resources such as CPUs and GPUs, FPGAs are difficult to be virtualized 
+and shared at runtime for two reasons. On the one hand, the same FPGA design requires lengthy implementation 
+targeting different types of FPGA devices and thus the same task can't be migrated to 
+a different type of FPGA device. On the other hand, 
+CGRA overlay which is an intermedaite layer built on top of FPGAs can be shared by 
+different applications and also allows efficient runtime context switch. Thus we explores 
+CGRA overlay for the FPGA resource virtualization. 
+
+
+
 The design productivity of FPGA development which remains magnitudes lower compared to typical software development severely hinders the widespread adoption of FPGAs. Particularly, the lengthy low-level FPGA implementation process including synthesis, placing and routing dramatically limits the number of compile-debug-edit cycles per day and lowers the FPGA design productivity. To address this design productivity problem, we have developed a rapid FPGA loop accelerator generation framework called QuickDough. Instead of trying to reduce the implementation time, it reuses a pre-built accelerator library to avoid the lengthy implementation process during design iterations. By utilizing a soft coarse-grained reconfigurable array (SCGRA) overlay built on top of off-the-shelf FPGAs as the backbone of the accelerators in the library, it compiles a high-level loop to the FPGA through a rapid operation scheduling first and then generates the FPGA accelerator bitstream through a rapid integration of the scheduling result and a pre-built accelerator bitstream selected from the library. According to the experiments, QuickDough is able to produce accelerators in the order of seconds while achieving up to 9X performance speedup over the execution of the same software running on a hard ARM processor.  

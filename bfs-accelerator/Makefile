@@ -1,5 +1,5 @@
 TITLE=bfs
-FILES=bfs.tex 
+FILES=bfs.tex main.tex result.tex 
 
 BIBFILES=refs.bib 
 IMGFILES=

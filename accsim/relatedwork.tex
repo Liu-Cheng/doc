@@ -1,49 +1,23 @@
 \section{Related Work} \label{sec:relatedwork}
+Simulator is of vital importance for accelerator design and exploration especially in 
+early design stage. While many accelerator may involve considerable memory access, a memory 
+model should be included in the simulator as well. Although there have been a number of 
+different open-source high-level memory models developed, these memory models are usually developed 
+targeting general computer architectures or memory architectures and can not be easily 
+adapted to a specific accelerator. As a result, developing an 
+accelerator simulator with integrated memory model still takes quite a lot 
+of design efforts. 
 
-While memory is usually critical to the hardware accelerator design especially for the memory intensive applications, memory simulators developed for standalone hardware accelerator design and exploration are necessay. 
+EDA vendors such as Xilinx, Altera and Synopsys also provide accurate memory models 
+as well as ample IPs which are convenient for accelerator development. However, these facilities 
+are mostly used together with a hardware description language (HDL) model for prototyping or 
+fabrication on ASICs. And it takes long time to develop the accelerator and the resulting design 
+is usually not flexible for accelerator architecture exploration. In addition, they typically 
+support only mature DDRx and LPDDRx models and don't cover novel and emerging memory architectures.
+As a result, this also limits the exploration of the accelerator architectural exploration.
 
-Although there are already a number of different memory simulators, they are not sufficient for the increasing hardware accelerator research due to the following two major reasons. First of all, memory simulators such as DRAMSim2 and ramulator are mostly developed for either memory architecture or general processing system research. The memory interface exposed are primitive memory operations and are different from the typical memory operations such as burst transmission, stream transmission etc. that are typically used in a hardware accelerator. Non-trivial work is still required to wrap up the primitive memory operations. There are similar commerical memory simulation models support from EDA vendors, but they are usualy limited to mature DDR memory models and are not accessible to the public. Many new memory architectures that emerge in recently years are not covered which limits the exploration of the hardware accelerators research on emerging memory architectures. Secondly, existing memory simulators seldom support trade-off between simulation speed and simulation accuracy. This is an important feature of the memory simulator needed for the hardware accelerator research. Basically, accurate memory model is preferred when the accelerator is sensitive to the low-level memory architectures while simulation speed becomes a major concern for applications operating on a big data set when high level characteristics of the accelerator are explored. 
-
-
-
-Overlay architecture which is a virtual intermediate architecture overlaid on 
-top of off-the-shelf FPGA is increasingly applied as a way to address the 
-productivity challenge. 
-
-Various overlays with diverse configuration granularities and flexibility 
-ranging from virtual FPGAs \cite{Grant2011Malibu, ZUMA2012, Coole2010Intermediate}, 
-array-of-FUs \cite{mesh-FUs,ferreira2011fpga,dspoverlay}, soft 
-CGRA \cite{kissler2006dynamically, scgra}, soft GPU \cite{Guppy2012GPU-Like}, 
-vector processors\cite{Yiannacouras2009FPS, MXP2013} to 
-configurable processors or multi-core processors \cite{unnikrishnan2009application, 
-MARC2010, Yiannacouras2007Exploration, Capalija2009coarse-grain, OCTAVO2012, iDEA2012} 
-have been developed over the years. SCGRA overlay provides unique 
-advantages on compromising hardware implementation 
-and performance for compute intensive nested loops as demonstrated 
-by numerous ASIC CGRAs \cite{tessier2001reconfigurable, compton2002reconfigurable}.
-Most importantly, it allows both rapid compilation by taking advantage of 
-the overlays' tiling structure \cite{ROB2015} and efficient bitstream 
-reuse within the design iterations of an application \cite{scgra}, 
-thus it is particularly promising for high productivity nested loop acceleration.
-
-In addition, customizing the CGRA specifically for an application or a domain of application
-provides promising performance improvement while saving the hardware resource at the same time as
-demonstrated in CGRA work targeting ASIC design \cite{totem, zhou2014application, miniskar2014retargetable}. 
-While CGRA customization on ASIC is relatively limited due to the tape-out cost, CGRA overlays
-allow more intensive architectural customization providing just enough hardware
-to the target application or application domains because of the FPGA's inherent programmability. 
-In \cite{adjustable2015}, Coole and Stitt proposed to provide the overlay with limited flexibility
-instead of full configurability specifically to a group of design. With this customization, the area
-overhead was reduced significantly. The authors in \cite{Lin:2012:EDC:2460216.2460227} developed an SCGRA topology
-customization method using genetic algorithm and showed the potential benefits of the SCGRA overlay
-customization. Nevertheless, the rest of the system design parameters were not covered. In \cite{BondhugulaRS07},
-the authors formalized the loop acceleration on a regular processing array overlay on FPGA. They
-focused on the hardware resource constrain, IO bandwidth constrain and the loop parallelism partition while
-processing architectural design parameters were not included.
-In order to achieve both high design productivity and high performance with low overhead,  
-a complete nested loop acceleration framework targeting CPU-FPGA system 
-is developed in this work. It supports intensive application-specific
-customization including the overlay architectural customization, 
-the compilation customization and communication interface customization 
-for optimized performance.  
-
+In this work, we developed a flexible accelerator simulation framework for accelerator 
+simulator design and exploration. It wrapps up the ramulator such that various memory 
+models are supported and frequent memory interfaces are provided. In addition, it also 
+allows trade-off between the simulation speed and precision. With this feature, accelerators 
+operating on large data set can also be simulated with moderate accuracy and simulation time. 

@@ -1,5 +1,5 @@
-TITLE=bandwidth-test
-FILES=bandwidth-test.tex 
+TITLE=bfs-progress
+FILES=bfs-progress.tex 
 
 BIBFILES=refs.bib 
 IMGFILES=
