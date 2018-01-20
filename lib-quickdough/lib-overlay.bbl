@@ -1,11 +1,5 @@
 \begin{thebibliography}{10}
 
-\bibitem{asano2009performance}
-Shuichi Asano, Tsutomu Maruyama, and Yoshiki Yamaguchi.
-\newblock Performance comparison of fpga, gpu and cpu in image processing.
-\newblock In {\em Field Programmable Logic and Applications, 2009. FPL 2009.
-  International Conference on}, pages 126--131. IEEE, 2009.
-
 \bibitem{beckhoff2011xilinx}
 C.~Beckhoff, D.~Koch, and J.~Torresen.
 \newblock The {Xilinx} design language ({XDL}): Tutorial and use cases.
@@ -28,12 +22,6 @@ D.~Capalija and T.S. Abdelrahman.
 J.M.P. Cardoso, P.C. Diniz, and M.~Weinhardt.
 \newblock Compiling for reconfigurable computing: A survey.
 \newblock {\em ACM Computing Surveys (CSUR)}, 42(4):13, 2010.
-
-\bibitem{che2008accelerating}
-Shuai Che, Jie Li, Jeremy~W Sheaffer, Kevin Skadron, and John Lach.
-\newblock Accelerating compute-intensive applications with gpus and fpgas.
-\newblock In {\em Application Specific Processors, 2008. SASP 2008. Symposium
-  on}, pages 101--107. IEEE, 2008.
 
 \bibitem{compton2002reconfigurable}
 Katherine Compton and Scott Hauck.
@@ -193,19 +181,6 @@ Russell Tessier and Wayne Burleson.
 \newblock Reconfigurable computing for digital signal processing: A survey.
 \newblock {\em Journal of VLSI signal processing systems for signal, image and
   video technology}, 28(1-2):7--27, 2001.
-
-\bibitem{thomas2009comparison}
-David~Barrie Thomas, Lee Howes, and Wayne Luk.
-\newblock A comparison of cpus, gpus, fpgas, and massively parallel processor
-  arrays for random number generation.
-\newblock In {\em Proceedings of the ACM/SIGDA international symposium on Field
-  programmable gate arrays}, pages 63--72. ACM, 2009.
-
-\bibitem{top500}
-{TOP500}.
-\newblock Top500 list june 2015.
-\newblock \url{http://top500.org/lists/2015/06}, June 2015.
-\newblock [Online; accessed 18-October-2015].
 
 \bibitem{data2mem}
 Xilinx.

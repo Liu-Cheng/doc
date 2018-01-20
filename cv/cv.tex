@@ -22,13 +22,16 @@
 
 \documentclass{resume} % Use the custom resume.cls style
 \hfuzz=100pt
+\usepackage{xeCJK}
+\setCJKfamilyfont{zhsong}{FZShuSong-Z01}
+\setCJKfamilyfont{zhhei}{FZHei-B01}
 \usepackage{natbib, bibentry}
 \usepackage[left=0.75in,top=0.6in,right=0.75in,bottom=0.6in]{geometry} % Document margins
 
 \name{Cheng Liu} % Your name
 \address{+65-8421-1303}
-\address{Shenzhen, Guangdong, China} % Your secondary addess (optional)
-\address{st.liucheng@gmail.com} % Your phone number and email
+\address{School of Computing, National University of Singapore, Singapore} % Your secondary addess (optional)
+\address{liucheng@comp.nus.edu.sg} % Your phone number and email
 
 %----------------------------------------------------------------------------------------
 %	EDUCATION SECTION
@@ -49,7 +52,7 @@ B.E. in Electronic Engineering \\
 
 \begin{rSection}{Research Interest}
     \vspace{-1em}
-\item FPGA Acceleration, Reconfigurable Computing, Hardware/Software Co-design, Network-on-Chip
+\item FPGA Acceleration, FPGA Overlay, Hardware/Software Co-design, Network-on-Chip
     \vspace{-0.5em}
 \end{rSection}
 %----------------------------------------------------------------------------------------
@@ -58,21 +61,21 @@ B.E. in Electronic Engineering \\
 \begin{rSection}{Experience}
 \begin{rSubsection}{School of Computing, National University of Singapore}{Dec
     2016 - present}{Project: Graph acceleration on heterogeneous CPU-FPGAs}{}
-\item In this project, we aim to develop a high-performance graph accelerator framework for 
-    large scale-free graph analytics on a heterogeneous CPU-FPGA computing platform which has 
-    become important computing infrastructures in the cloud. Here are a few aspects that we 
-    are focusing on at the moment. 1) Explore graph specific optimizations especially for the 
-    memory access efficiency. 2) Automatically tune the graph accelerators for higher performance 
-    or throughput given the memory bandwidth and other resource constraints. 
-    3) Develop a flexible co-design of the graph accelerator that can dynamically 
-    offload sub tasks from CPUs to FPGAs for higher memory bandwidth and computing resource utilization.  
+\item In this project, we aim to develop a software programmable high-performance graph 
+    accelerator library targeting large scale-free graph processing on both loosely coupled 
+    and closely coupled CPU-FPGA computing system. Currently, we have implemented an FPGA 
+    resource aware (memory bandwidth and on-chip memory) BFS accelerator 
+    on Alpha-Data FPGA acceleration cards. And we are now exploring the BFS accelerator 
+    optimization on Intel Harp System (Xeon-FPGA) through careful co-design.
 \end{rSubsection}
 
 \begin{rSubsection}{SenseTime Group Limited}{Apr 2016 - Oct. 2016}{Project: Convolutional neural network
     (CNN) acceleration on Zynq}{}
-\item A flexible hardware accelerator for general convolution layer of CNN was developed. It allows
-arbitrary tiling for various CNN configurations such as kernel size and stride size. In this project, 
-I was also responsible for the CNN ip driver development on an embedded Linux system on Zc706.
+\item A highly flexible hardware accelerator for general convolution layer 
+    of CNN was developed. It allows arbitrary tiling for various CNN configurations 
+    such as kernel size and stride size so that it can be rapidly configured for different 
+    application scenarios. The design was implemented on Xilinx ZC706 SoC and used 
+    for face recognition demo.
 \end{rSubsection}
 
 \begin{rSubsection}{The University of Hong Kong}{Sep 2011 - Dec 2015}{Research Project: Promoting FPGA design productivity using soft CGRA overlay}{}
@@ -84,7 +87,12 @@ I was also responsible for the CNN ip driver development on an embedded Linux sy
     a few manual optimization routines. To facilitate applying this framework on a CPU-FPGA system,
     we also provide a template for generating the communication interface between the CPU and 
     the resulting FPGA accelerator. The framework is demonstrated on Zedboard. The resulting 
-    accelerators exhibit competitive performance over the software counterparts on the ARM processor. 
+    accelerators exhibit significant performance speedup on regular 
+    compute inetensive applications over the software counterparts on the ARM processor. 
+\\
+\item We also ported the SCGRA accelerator to a simple RISCV processor 
+    and analyzed the potential benefits of adding configurable accelerator 
+    to the general processor.
 \end{rSubsection}
 
 %------------------------------------------------
@@ -95,7 +103,6 @@ I was also responsible for the CNN ip driver development on an embedded Linux sy
     under-utilized, a TSV sharing method was developed for homogeneous 3D NoC with negligible 2D area
     overhead. This can either be used to improve the reliability of 3D NoC or shrink the TSV consumption.
     For regular 2D NoC, a flexible data path salvaging scheme was proposed to build highly reliable NoC.
-
 \end{rSubsection}
 
 %------------------------------------------------
@@ -138,22 +145,16 @@ power gating scheme was developed to enhance NoC power efficiency.
         International Workshop on, pp. 1-6, Feb, 2016. 
     \item \textbf{Cheng Liu}, Ho-Cheung Ng, and Hayden Kwok-Hay So. "Automatic Nested Loop Acceleration on
         FPGAs Using Soft CGRA Overlay", FPGAs for Software Programmers (FSP), 2nd International
-        Workshop on, Sep. 2015. (cited 11)
+        Workshop on, Sep. 2015. (cited 12)
     \item \textbf{Cheng Liu}, Ho-Cheung Ng, and Hayden Kwok-Hay So. "QuickDough: A Rapid FPGA Loop
         Accelerator Design Framework Using Soft CGRA Overlay", Field Programmable Technology,
-        International Conference on (FPT), Dec. 2015 (cited 5) 
+        International Conference on (FPT), Dec. 2015 (cited 11) 
     \item \textbf{Cheng Liu}, Lei Zhang, Yinhe Han, and Xiaowei Li. "Vertical interconnects squeezing in
         symmetric 3D mesh Network-on-Chip." In Proceedings of the 16th Asia and South Pacific Design
-        Automation Conference, pp. 357-362. IEEE Press, 2011. (Cited 54)
+        Automation Conference, pp. 357-362. IEEE Press, 2011. (Cited 56)
     \item \textbf{Cheng Liu}, Lei Zhang, Yinhe Han, and Xiaowei Li. "A resilient on-chip router design
         through data path salvaging." In Proceedings of the 16th Asia and South Pacific Design
-        Automation Conference, pp. 437-442. IEEE Press, 2011. (Cited 21)
-    \item Yang Xu, Qing-li Zhang, Fang-fa Fu, Ming-yan Yu, and \textbf{Cheng Liu}. "NISAR: An AXI compliant
-        on-chip NI architecture offering transaction reordering processing." In Proceedings of the
-        7th International Conference on ASIC, pp. 890-893. IEEE, 2007. (Cited 23)
-%    \item \textbf{Cheng Liu}, Lei Zhang, Yinhe Han, Xiaowei Li. "Dynamic Buffer Regulator for 3D Mesh
-%        Network-on-Chip." Workshop of 3D Integration - Applications, Technology, Architechture, Design 
-%        Automation and Test in Europe (DATE), Mar 2011.
+        Automation Conference, pp. 437-442. IEEE Press, 2011. (Cited 22)
     \end{rSubsection}
 
     \begin{rSubsection} {Poster}{}{}{}
@@ -192,18 +193,19 @@ and Data Structures, 2012 \\Performed the lab demonstrations and Q\&A upon reque
     \vspace{-0.5em}
 \item Second Award of National Postgraduate Mathematical Modeling Contest, May 2008
     \vspace{-0.5em}
-\item Second Award of Electronic Design Contest, Heilong Jiang Province, Mar 2007
+\item Second Award of Electronic Design Contest, Heilongjiang Province, Mar 2007
     \vspace{-0.5em}
 \end{rSection}
 
 \begin{rSection}{Skills}
     \begin{rSubsection}{Programming Languages}{}{}{}
-    \item Proficient: SystemC, C/C++, Matlab, Verilog, VHDL
-    \item Competent: CUDA, JAVA, Python
+    \item Proficient: SystemC, C/C++, Matlab, Verilog, VHDL, HLS, OpenCL for FPGA
+    \item Competent: JAVA, Python
     \end{rSubsection}
 \end{rSection}
 
 \begin{rSection}{Reference}
+\item Dr. Bingsheng He                              (hebs@comp.nus.edu.sg)
 \item Dr. Hayden Kwok-Hay So                        (hso@eee.hku.hk)
 \item Dr. Jinxiang Wang                             (jxwang@hit.edu.cn)
 \item Dr. Liyi Xiao                                 (xiaoly@hit.edu.cn)

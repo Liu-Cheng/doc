@@ -1,0 +1,27 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.2}{Background and related work}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{High level FPGA design tools}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{BFS Algorithm}{section.2}% 4
+\BOOKMARK [2][-]{subsection.2.3}{Related work}{section.2}% 5
+\BOOKMARK [1][-]{section.3}{Observations on BFS memory access}{}% 6
+\BOOKMARK [1][-]{section.4}{BFS Accelerator Overview}{}% 7
+\BOOKMARK [1][-]{section.5}{HLS based BFS optimization}{}% 8
+\BOOKMARK [2][-]{subsection.5.1}{BFS pipelining}{section.5}% 9
+\BOOKMARK [2][-]{subsection.5.2}{Memory Access Optimization}{section.5}% 10
+\BOOKMARK [3][-]{subsubsection.5.2.1}{Redundancy Removal}{subsection.5.2}% 11
+\BOOKMARK [3][-]{subsubsection.5.2.2}{Caching}{subsection.5.2}% 12
+\BOOKMARK [3][-]{subsubsection.5.2.3}{Prefetching}{subsection.5.2}% 13
+\BOOKMARK [2][-]{subsection.5.3}{General HLS optimization}{section.5}% 14
+\BOOKMARK [3][-]{subsubsection.5.3.1}{Memory bank-aware data layout}{subsection.5.3}% 15
+\BOOKMARK [3][-]{subsubsection.5.3.2}{Data path duplication}{subsection.5.3}% 16
+\BOOKMARK [3][-]{subsubsection.5.3.3}{Data width optimization}{subsection.5.3}% 17
+\BOOKMARK [3][-]{subsubsection.5.3.4}{Deadlock removal}{subsection.5.3}% 18
+\BOOKMARK [2][-]{subsection.5.4}{Parameter Tuning}{section.5}% 19
+\BOOKMARK [1][-]{section.6}{Experiments}{}% 20
+\BOOKMARK [2][-]{subsection.6.1}{Experiment Setup}{section.6}% 21
+\BOOKMARK [2][-]{subsection.6.2}{Performance comparison}{section.6}% 22
+\BOOKMARK [2][-]{subsection.6.3}{Design Configuration and Resource Overhead}{section.6}% 23
+\BOOKMARK [2][-]{subsection.6.4}{Optimization evaluation}{section.6}% 24
+\BOOKMARK [1][-]{section.7}{Discussion}{}% 25
+\BOOKMARK [1][-]{section.8}{Conclusions}{}% 26
+\BOOKMARK [1][-]{section*.1}{References}{}% 27

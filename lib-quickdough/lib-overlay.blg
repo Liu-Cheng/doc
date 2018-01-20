@@ -9,45 +9,45 @@ Warning--I didn't find a database entry for "Koch2013CI"
 Warning--I didn't find a database entry for "dsp2015cgra"
 Warning--I didn't find a database entry for "Lebedev2010"
 Warning--I didn't find a database entry for "ROB2015"
-You've used 33 entries,
+You've used 29 entries,
             2118 wiz_defined-function locations,
-            707 strings with 11478 characters,
-and the built_in function-call counts, 13759 in all, are:
-= -- 1365
-> -- 697
-< -- 18
-+ -- 281
-- -- 240
-* -- 953
-:= -- 2171
-add.period$ -- 115
-call.type$ -- 33
-change.case$ -- 218
+            685 strings with 10632 characters,
+and the built_in function-call counts, 12026 in all, are:
+= -- 1182
+> -- 626
+< -- 15
++ -- 252
+- -- 216
+* -- 849
+:= -- 1915
+add.period$ -- 99
+call.type$ -- 29
+change.case$ -- 194
 chr.to.int$ -- 0
-cite$ -- 33
-duplicate$ -- 532
-empty$ -- 1048
-format.name$ -- 240
-if$ -- 2984
+cite$ -- 29
+duplicate$ -- 458
+empty$ -- 906
+format.name$ -- 216
+if$ -- 2588
 int.to.chr$ -- 0
-int.to.str$ -- 33
-missing$ -- 29
-newline$ -- 172
-num.names$ -- 68
-pop$ -- 263
+int.to.str$ -- 29
+missing$ -- 26
+newline$ -- 151
+num.names$ -- 60
+pop$ -- 226
 preamble$ -- 1
-purify$ -- 185
+purify$ -- 165
 quote$ -- 0
-skip$ -- 403
+skip$ -- 346
 stack$ -- 0
-substring$ -- 797
-swap$ -- 181
-text.length$ -- 18
+substring$ -- 688
+swap$ -- 149
+text.length$ -- 15
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 132
+type$ -- 116
 warning$ -- 0
-while$ -- 131
-width$ -- 35
-write$ -- 383
+while$ -- 114
+width$ -- 31
+write$ -- 335
 (There were 6 warnings)

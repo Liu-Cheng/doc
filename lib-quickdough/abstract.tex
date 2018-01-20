@@ -1,16 +1,23 @@
-With the advancement of the FPGA techniques and the increase of successful demonstrations 
-of using FPGAs in data center, more and more cloud computing vendors start to integrate 
-FPGAs as computing resources in the cloud. In order to make best use of the computing resources 
-in the cloud, the computing resources are usually virtualized such that they can be shared by different 
-computing tasks from either a single user or multiple users. Nevertheless, unlike the 
-conventional computing resources such as CPUs and GPUs, FPGAs are difficult to be virtualized 
-and shared at runtime for two reasons. On the one hand, the same FPGA design requires lengthy implementation 
-targeting different types of FPGA devices and thus the same task can't be migrated to 
-a different type of FPGA device. On the other hand, 
-CGRA overlay which is an intermedaite layer built on top of FPGAs can be shared by 
-different applications and also allows efficient runtime context switch. Thus we explores 
-CGRA overlay for the FPGA resource virtualization. 
+Despite the great advantages of FPGAs on performance and energy efficiency,
+the use of FPGAs remains limited compared to that of CPUs and GPUs. 
+It is believed that the lengthy compilation, which is typically orders of 
+magnitude slower than the software compilation on CPUs and GPUs, has become 
+one of the major obstacles that hinder the widespread adoption of FPGAs.   
+To address the this problem, FPGA overlays built on top of the off-the-shelf 
+FPGAs are proposed recently. By using the overlay as an intermediate layer, 
+applications can be compiled to the overlay rapidly while the lengthy overlay 
+implementation can be performed in advance and reused during the design 
+iterations or even among domains of applications. 
 
+Along this route, we create an open sourced soft coarse-grained reconfigurable array (SCGRA) 
+overlay targeting large data flow graphs (DFGs) extracted 
+from the compute-intensive loop kernels. To make best use of the overlay for rapid 
+accelerator design, we further propose a library based accelerator design 
+framework named QuickDough. With comprehensive experiments, we analyze the 
+compilation time as well as the run-time reconfiguration time of the 
+SCGRA overlay based FPGA accelerator design. Finally,  
+we wrap up the SCGRA overlay based accelerator as an OpenCL kernel 
+and demonstrate a complete SCGRA overlay based acceleration solution 
+on a typical CPU + FPGA card computing system, which exhibits the potential 
+of the SCGRA overlay based accelerator design comprehensively. 
 
-
-The design productivity of FPGA development which remains magnitudes lower compared to typical software development severely hinders the widespread adoption of FPGAs. Particularly, the lengthy low-level FPGA implementation process including synthesis, placing and routing dramatically limits the number of compile-debug-edit cycles per day and lowers the FPGA design productivity. To address this design productivity problem, we have developed a rapid FPGA loop accelerator generation framework called QuickDough. Instead of trying to reduce the implementation time, it reuses a pre-built accelerator library to avoid the lengthy implementation process during design iterations. By utilizing a soft coarse-grained reconfigurable array (SCGRA) overlay built on top of off-the-shelf FPGAs as the backbone of the accelerators in the library, it compiles a high-level loop to the FPGA through a rapid operation scheduling first and then generates the FPGA accelerator bitstream through a rapid integration of the scheduling result and a pre-built accelerator bitstream selected from the library. According to the experiments, QuickDough is able to produce accelerators in the order of seconds while achieving up to 9X performance speedup over the execution of the same software running on a hard ARM processor.  

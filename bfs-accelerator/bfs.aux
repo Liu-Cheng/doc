@@ -1,0 +1,188 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyperFirstAtBeginDocument{\AtBeginDocument}
+\HyperFirstAtBeginDocument{\ifx\hyper@anchor\@undefined
+\global\let\oldcontentsline\contentsline
+\gdef\contentsline#1#2#3#4{\oldcontentsline{#1}{#2}{#3}}
+\global\let\oldnewlabel\newlabel
+\gdef\newlabel#1#2{\newlabelxx{#1}#2}
+\gdef\newlabelxx#1#2#3#4#5#6{\oldnewlabel{#1}{{#2}{#3}}}
+\AtEndDocument{\ifx\hyper@anchor\@undefined
+\let\contentsline\oldcontentsline
+\let\newlabel\oldnewlabel
+\fi}
+\fi}
+\global\let\hyper@last\relax 
+\gdef\HyperFirstAtBeginDocument#1{#1}
+\providecommand\HyField@AuxAddToFields[1]{}
+\providecommand\HyField@AuxAddToCoFields[2]{}
+\citation{attia2014cygraph}
+\citation{betkaoui2012reconfigurable}
+\citation{Dai2017foregraph}
+\citation{Ma2017fpga}
+\citation{umuroglu2015hybrid}
+\citation{oguntebi2016graphops}
+\citation{engelhardt2016gravf}
+\citation{zhou2016high}
+\citation{koch2016fpgas}
+\citation{xilinx-sdaccel}
+\@writefile{toc}{\contentsline {section}{\numberline {I}Introduction}{1}{section.1}}
+\newlabel{sec:intro}{{I}{1}{Introduction}{section.1}{}}
+\citation{nimbix}
+\citation{xilinx-sdaccel}
+\citation{intel-opencl}
+\citation{Nane2016hls-survey}
+\citation{xilinx-sdaccel}
+\citation{nimbix}
+\citation{xilinx-sdaccel}
+\@writefile{toc}{\contentsline {section}{\numberline {II}Background and related work}{2}{section.2}}
+\newlabel{sec:relatedwork}{{II}{2}{Background and related work}{section.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {II-A}}High level FPGA design tools}{2}{subsection.2.1}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Xilinx SDAccel design framework \cite  {xilinx-sdaccel}}}{2}{figure.1}}
+\newlabel{fig:sdaccel}{{1}{2}{Xilinx SDAccel design framework \cite {xilinx-sdaccel}}{figure.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {II-B}}BFS Algorithm}{2}{subsection.2.2}}
+\citation{attia2014cygraph}
+\citation{betkaoui2012reconfigurable}
+\citation{zhang2017boosting}
+\citation{zhang2017boosting}
+\citation{attia2014cygraph}
+\citation{umuroglu2015hybrid}
+\citation{zhou2016high}
+\citation{attia2014cygraph}
+\citation{betkaoui2012reconfigurable}
+\citation{kapre2015custom}
+\citation{wang2010message}
+\citation{engelhardt2016gravf}
+\citation{oguntebi2016graphops}
+\citation{Dai2017foregraph}
+\citation{dai2016fpgp}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces Level Synchronous BFS Algorithm}}{3}{algorithm.1}}
+\newlabel{alg:level-bfs}{{1}{3}{BFS Algorithm}{algorithm.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {II-C}}Related work}{3}{subsection.2.3}}
+\@writefile{toc}{\contentsline {section}{\numberline {III}Observations on BFS memory access}{3}{section.3}}
+\newlabel{sec:observation}{{III}{3}{Observations on BFS memory access}{section.3}{}}
+\citation{weinberg2008chameleon}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Burst length distribution in BFS on Youtube Social Network Graph. Random memory access and short sequential memory access take up the the majority of the memory access overhead of BFS. Multiple parallel lanes of data paths improve the memory bandwidth utilization when the burst lenght is relatively large, but they will not help much for short or random memory accesses.}}{4}{figure.2}}
+\newlabel{fig:burst-len-youtube}{{2}{4}{Burst length distribution in BFS on Youtube Social Network Graph. Random memory access and short sequential memory access take up the the majority of the memory access overhead of BFS. Multiple parallel lanes of data paths improve the memory bandwidth utilization when the burst lenght is relatively large, but they will not help much for short or random memory accesses}{figure.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Unnecessary random vertex status read decomposition. The frontier neighbors consists of three parts including visited vertices in previous BFS iterations (visited vertices), redundant vertices that are repeatedly traversed in one BFS iteration (redundant vertices), and the actual valid vertices that must be traversed (valid vertices). The first two parts of the vertices can be ignored without affecting the correctness of the BFS.}}{4}{figure.3}}
+\newlabel{fig:repeat-neighbor}{{3}{4}{Unnecessary random vertex status read decomposition. The frontier neighbors consists of three parts including visited vertices in previous BFS iterations (visited vertices), redundant vertices that are repeatedly traversed in one BFS iteration (redundant vertices), and the actual valid vertices that must be traversed (valid vertices). The first two parts of the vertices can be ignored without affecting the correctness of the BFS}{figure.3}{}}
+\citation{liu2015enterprise}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Cumulative Distribution Function (CDF) of reuse distance and stride distance. They stand for the temporal locality and spatial locality of the BFS vertex status reads respectively. Note that the accesses with reference distance larger than 4000 are combined as they are difficult to be optimized in hardware design.}}{5}{figure.4}}
+\newlabel{fig:youtube-locality}{{4}{5}{Cumulative Distribution Function (CDF) of reuse distance and stride distance. They stand for the temporal locality and spatial locality of the BFS vertex status reads respectively. Note that the accesses with reference distance larger than 4000 are combined as they are difficult to be optimized in hardware design}{figure.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces BFS accelerator overview}}{5}{figure.5}}
+\newlabel{fig:accelerator-overview}{{5}{5}{BFS accelerator overview}{figure.5}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {IV}BFS Accelerator Overview}{5}{section.4}}
+\newlabel{sec:overview}{{IV}{5}{BFS Accelerator Overview}{section.4}{}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {2}{\ignorespaces Modified BFS Algorithm}}{5}{algorithm.2}}
+\newlabel{alg:modified-bfs}{{2}{5}{BFS Accelerator Overview}{algorithm.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {V}HLS based BFS optimization}{5}{section.5}}
+\newlabel{sec:bfs-opt}{{V}{5}{HLS based BFS optimization}{section.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {V-A}}BFS pipelining}{6}{subsection.5.1}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {3}{\ignorespaces Pipelined BFS Algorithm}}{6}{algorithm.3}}
+\newlabel{alg:bfs-stream}{{3}{6}{BFS pipelining}{algorithm.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Streamed BFS Algorithm}}{7}{figure.6}}
+\newlabel{fig:bfs-stream}{{6}{7}{Streamed BFS Algorithm}{figure.6}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Redundancy removal based on parallel hash tables.}}{7}{figure.7}}
+\newlabel{fig:hash-strategy}{{7}{7}{Redundancy removal based on parallel hash tables}{figure.7}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {V-B}}Memory Access Optimization}{7}{subsection.5.2}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {V-B}1}Redundancy Removal}{7}{subsubsection.5.2.1}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {V-B}2}Caching}{7}{subsubsection.5.2.2}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {V-B}3}Prefetching}{7}{subsubsection.5.2.3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {V-C}}General HLS optimization}{7}{subsection.5.3}}
+\citation{chakrabarti2004rmat}
+\citation{yang2012defining}
+\citation{leskovec2009community}
+\citation{takac2012data}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces pipeline duplication. (a) straightforward pipeline duplication (b) optimized pipeline duplication.}}{8}{figure.8}}
+\newlabel{fig:duplicate-pipeline}{{8}{8}{pipeline duplication. (a) straightforward pipeline duplication (b) optimized pipeline duplication}{figure.8}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {V-C}1}Data path duplication}{8}{subsubsection.5.3.1}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {V-C}2}Data width optimization}{8}{subsubsection.5.3.2}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {V-C}3}Deadlock removal}{8}{subsubsection.5.3.3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {V-D}}Parameter Tuning}{8}{subsection.5.4}}
+\@writefile{toc}{\contentsline {section}{\numberline {VI}Experiments}{8}{section.6}}
+\newlabel{sec:experiment}{{VI}{8}{Experiments}{section.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {VI-A}}Experiment Setup}{8}{subsection.6.1}}
+\citation{yang2012defining}
+\citation{leskovec2009community}
+\citation{takac2012data}
+\citation{zhang2017boosting}
+\citation{zhang2017boosting}
+\citation{dai2016fpgp}
+\citation{nurvitadhi2014graphgen}
+\citation{betkaoui2012reconfigurable}
+\citation{attia2014cygraph}
+\citation{zhang2017boosting}
+\citation{nurvitadhi2014graphgen}
+\citation{dai2016fpgp}
+\@writefile{lot}{\contentsline {table}{\numberline {I}{\ignorespaces Graph Benchmark}}{9}{table.1}}
+\newlabel{tab:graph}{{I}{9}{Graph Benchmark}{table.1}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {II}{\ignorespaces Performance summary}}{9}{table.2}}
+\newlabel{tab:performance-summary}{{II}{9}{Performance summary}{table.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {VI-B}}Performance comparison}{9}{subsection.6.2}}
+\@writefile{lot}{\contentsline {table}{\numberline {III}{\ignorespaces FPGA based BFS accelerator comparison}}{9}{table.3}}
+\newlabel{tab:compare}{{III}{9}{FPGA based BFS accelerator comparison}{table.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Pipeline configurations with various combinations.}}{9}{figure.9}}
+\newlabel{fig:pipeline-config}{{9}{9}{Pipeline configurations with various combinations}{figure.9}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {VI-C}}Pipelining Optimization}{9}{subsection.6.3}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Performance speedup over a baseline design c1.}}{10}{figure.10}}
+\newlabel{fig:pipeline-performance}{{10}{10}{Performance speedup over a baseline design c1}{figure.10}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {IV}{\ignorespaces FPGA resource consumption with different pipelining configurations}}{10}{table.4}}
+\newlabel{tab:hash-resource}{{IV}{10}{FPGA resource consumption with different pipelining configurations}{table.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {VI-D}}Memory access optimization}{10}{subsection.6.4}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {VI-D}1}Redundancy removal analysis}{10}{subsubsection.6.4.1}}
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Correlation between redundancy neighbor vertices removal rate and the hash table size. The redundancy removal rate varies on the different graphs. The optimized hash table size also differs.}}{10}{figure.11}}
+\newlabel{fig:hash-redundancy}{{11}{10}{Correlation between redundancy neighbor vertices removal rate and the hash table size. The redundancy removal rate varies on the different graphs. The optimized hash table size also differs}{figure.11}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {V}{\ignorespaces Hash table size setup}}{10}{table.5}}
+\newlabel{tab:hash-size}{{V}{10}{Hash table size setup}{table.5}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {VI-D}2}Cache analysis}{10}{subsubsection.6.4.2}}
+\@writefile{lot}{\contentsline {table}{\numberline {VI}{\ignorespaces Cache size setup}}{10}{table.6}}
+\newlabel{tab:hash-size}{{VI}{10}{Cache size setup}{table.6}{}}
+\citation{ug902}
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces Cache configurations have significant influence on the cache hit rate. The influence varies on different graph data set, but the trend is similar.}}{11}{figure.12}}
+\newlabel{fig:cache-hit}{{12}{11}{Cache configurations have significant influence on the cache hit rate. The influence varies on different graph data set, but the trend is similar}{figure.12}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces A small prefetch buffer can already achieve high hit rate. Particularly the prefetch buffer size influence on different graph data set is similar.}}{11}{figure.13}}
+\newlabel{fig:prefetch-hit}{{13}{11}{A small prefetch buffer can already achieve high hit rate. Particularly the prefetch buffer size influence on different graph data set is similar}{figure.13}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {VI-D}3}Prefetch buffer analysis}{11}{subsubsection.6.4.3}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {VI-D}4}Parameters of the memory optimizations}{11}{subsubsection.6.4.4}}
+\@writefile{lot}{\contentsline {table}{\numberline {VII}{\ignorespaces Memory optimization parameter setup}}{11}{table.7}}
+\newlabel{tab:parameter-setup}{{VII}{11}{Memory optimization parameter setup}{table.7}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {VIII}{\ignorespaces FPGA resource consumption}}{11}{table.8}}
+\newlabel{tab:mem-resource}{{VIII}{11}{FPGA resource consumption}{table.8}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {VI-E}}General HLS optimizations}{11}{subsection.6.5}}
+\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces Workload distribution on each data path. We take the percentage of the frontier vertices in each BFS iteration as the workload.}}{12}{figure.14}}
+\newlabel{fig:load-balance}{{14}{12}{Workload distribution on each data path. We take the percentage of the frontier vertices in each BFS iteration as the workload}{figure.14}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {IX}{\ignorespaces FPGA resource consumption with data path duplication}}{12}{table.9}}
+\newlabel{tab:duplicate-resource}{{IX}{12}{FPGA resource consumption with data path duplication}{table.9}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces BFS accelerator optimization techqniue evaluation. The performance on all the graphs improves when more optimizations including pipelining, redundancy removal, prefetching, caching, and data path duplication are gradually applied to the design.}}{12}{figure.15}}
+\newlabel{fig:opt-performance}{{15}{12}{BFS accelerator optimization techqniue evaluation. The performance on all the graphs improves when more optimizations including pipelining, redundancy removal, prefetching, caching, and data path duplication are gradually applied to the design}{figure.15}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {VI-F}}Optimization evaluation}{12}{subsection.6.6}}
+\@writefile{toc}{\contentsline {section}{\numberline {VII}Conclusions}{12}{section.7}}
+\newlabel{sec:conclusion}{{VII}{12}{Conclusions}{section.7}{}}
+\bibstyle{IEEEtran}
+\bibdata{refs}
+\bibcite{attia2014cygraph}{1}
+\bibcite{betkaoui2012reconfigurable}{2}
+\bibcite{Dai2017foregraph}{3}
+\bibcite{Ma2017fpga}{4}
+\bibcite{umuroglu2015hybrid}{5}
+\bibcite{oguntebi2016graphops}{6}
+\bibcite{engelhardt2016gravf}{7}
+\bibcite{zhou2016high}{8}
+\bibcite{koch2016fpgas}{9}
+\bibcite{xilinx-sdaccel}{10}
+\bibcite{nimbix}{11}
+\bibcite{intel-opencl}{12}
+\bibcite{Nane2016hls-survey}{13}
+\bibcite{zhang2017boosting}{14}
+\bibcite{kapre2015custom}{15}
+\bibcite{wang2010message}{16}
+\bibcite{dai2016fpgp}{17}
+\bibcite{weinberg2008chameleon}{18}
+\bibcite{liu2015enterprise}{19}
+\bibcite{chakrabarti2004rmat}{20}
+\bibcite{yang2012defining}{21}
+\bibcite{leskovec2009community}{22}
+\bibcite{takac2012data}{23}
+\bibcite{nurvitadhi2014graphgen}{24}
+\bibcite{ug902}{25}
+\@writefile{toc}{\contentsline {section}{References}{13}{section*.1}}

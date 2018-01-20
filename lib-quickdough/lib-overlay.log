@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.10.1)  23 AUG 2017 15:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.10.1)  3 DEC 2017 19:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -823,13 +823,15 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 49.
 \c__siunitx_mathtt_int=\count181
  (./abstract.tex)
-(./introduction.tex [1{/opt/texlive/texmf-var/fonts/map/pdftex/updmap/pdftex.ma
-p}
+(./introduction.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [1{/opt/texlive/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
 ]
 
-LaTeX Warning: Reference `lib-build' on page 2 undefined on input line 10.
+LaTeX Warning: Reference `lib-build' on page 2 undefined on input line 53.
 
 ) (./relatedwork.tex
 Underfull \hbox (badness 2443) in paragraph at lines 2--3
@@ -865,21 +867,14 @@ Underfull \hbox (badness 1642) in paragraph at lines 2--3
 []\OT1/ptm/m/n/10 QuickDough is a de-vel-op-ment frame-work for FPGA-
  []
 
-
-Underfull \vbox (badness 2158) has occurred while \output is active []
-
- [2]
-<./figures/framework.pdf, id=13, 608.2725pt x 469.755pt>
+[2] <./figures/framework.pdf, id=14, 608.2725pt x 469.755pt>
 File: ./figures/framework.pdf Graphic file (type pdf)
 
 <use ./figures/framework.pdf>
 Package pdftex.def Info: ./figures/framework.pdf used on input line 11.
 (pdftex.def)             Requested size: 239.39923pt x 184.881pt.
 
-Underfull \vbox (badness 3375) has occurred while \output is active []
-
-
-<./figures/scgra-accelerator.pdf, id=14, 113.42375pt x 68.255pt>
+<./figures/scgra-accelerator.pdf, id=15, 113.42375pt x 68.255pt>
 File: ./figures/scgra-accelerator.pdf Graphic file (type pdf)
 
 <use ./figures/scgra-accelerator.pdf>
@@ -887,13 +882,13 @@ Package pdftex.def Info: ./figures/scgra-accelerator.pdf used on input line 27.
 
 (pdftex.def)             Requested size: 163.79846pt x 98.56935pt.
 
-<./figures/pe.pdf, id=15, 335.2525pt x 186.6975pt>
+<./figures/pe.pdf, id=16, 335.2525pt x 186.6975pt>
 File: ./figures/pe.pdf Graphic file (type pdf)
  <use ./figures/pe.pdf>
 Package pdftex.def Info: ./figures/pe.pdf used on input line 33.
 (pdftex.def)             Requested size: 176.39923pt x 98.23415pt.
 
-<./figures/alu.pdf, id=16, 226.8475pt x 116.435pt>
+<./figures/alu.pdf, id=17, 226.8475pt x 116.435pt>
 File: ./figures/alu.pdf Graphic file (type pdf)
  <use ./figures/alu.pdf>
 Package pdftex.def Info: ./figures/alu.pdf used on input line 39.
@@ -908,17 +903,19 @@ with page group included in a single page
 
 pdfTeX warning: pdflatex (file ./figures/alu.pdf): PDF inclusion: multiple pdfs
  with page group included in a single page
->] <./figures/dfg-gen.pdf, id=72, 441.65pt x 349.305pt>
+>] <./figures/dfg-gen.pdf, id=73, 441.65pt x 349.305pt>
 File: ./figures/dfg-gen.pdf Graphic file (type pdf)
 
 <use ./figures/dfg-gen.pdf>
 Package pdftex.def Info: ./figures/dfg-gen.pdf used on input line 61.
 (pdftex.def)             Requested size: 214.20154pt x 169.41272pt.
+ [4 <./figures/dfg-gen.pdf>]
 LaTeX Font Info:    Try loading font information for OT1+pcr on input line 103.
 
- (/opt/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
+
+(/opt/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
-) [4 <./figures/dfg-gen.pdf>]
+)
 
 LaTeX Font Warning: Command \footnotesize invalid in math mode on input line 10
 9.
@@ -979,46 +976,46 @@ LaTeX Font Warning: Command \footnotesize invalid in math mode on input line 39
 Package natbib Warning: Citation `ROB2015' on page 7 undefined on input line 51
 .
 
-) (./experiments.tex) (./conclusions.tex) (./lib-overlay.bbl [7]
-Underfull \hbox (badness 4403) in paragraph at lines 57--63
+) (./experiments.tex) (./conclusions.tex) (./lib-overlay.bbl
+Underfull \hbox (badness 4403) in paragraph at lines 45--51
 []\OT1/ptm/m/n/10 Altera Cor-po-ra-tion.  Quar-tus II 14.0 hand-book.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 57--63
+Underfull \hbox (badness 10000) in paragraph at lines 45--51
 \OT1/ptm/m/n/10 https : / / www . altera . com / en[]US / pdfs / literature / h
 b / qts /
  []
 
 
-Underfull \hbox (badness 5771) in paragraph at lines 57--63
+Underfull \hbox (badness 5771) in paragraph at lines 45--51
 \OT1/ptm/m/n/10 quartusii[]handbook . pdf$, 2015.  [On-line; ac-cessed
  []
 
-
-Underfull \hbox (badness 6110) in paragraph at lines 65--71
+[7]
+Underfull \hbox (badness 6110) in paragraph at lines 53--59
 []\OT1/ptm/m/n/10 Xilinx Cor-po-ra-tion.  Com-mand line tools user
  []
 
 
-Underfull \hbox (badness 1881) in paragraph at lines 65--71
+Underfull \hbox (badness 1881) in paragraph at lines 53--59
 \OT1/ptm/m/n/10 guide.  $http : / / www . xilinx . com / support / documentatio
 n /
  []
 
 
-Underfull \hbox (badness 7133) in paragraph at lines 136--140
+Underfull \hbox (badness 7133) in paragraph at lines 124--128
 \OT1/ptm/m/n/10 efficient dataflow com-pu-ta-tions on FP-GAs us-ing
  []
 
-[8]
-Underfull \hbox (badness 1354) in paragraph at lines 211--217
+
+Underfull \hbox (badness 1354) in paragraph at lines 186--192
 []\OT1/ptm/m/n/10 Xilinx.  data2mem.  $http : / / www . xilinx . com / support 
 /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 211--217
+Underfull \hbox (badness 10000) in paragraph at lines 186--192
 \OT1/ptm/m/n/10 documentation / sw[]manuals / xilinx11 / data2mem . pdf$,
  []
 
@@ -1026,9 +1023,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 211--217
 
 Package natbib Warning: There were undefined citations.
 
-[9
-
-] (./lib-overlay.aux)
+[8] (./lib-overlay.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 4.4pt have occurred.
@@ -1038,11 +1033,11 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 15626 strings out of 493014
- 305420 string characters out of 6138385
- 342480 words of memory out of 5000000
- 18965 multiletter control sequences out of 15000+600000
- 74524 words of font info for 169 fonts, out of 8000000 for 9000
+ 15618 strings out of 493014
+ 305151 string characters out of 6138385
+ 341416 words of memory out of 5000000
+ 18953 multiletter control sequences out of 15000+600000
+ 76354 words of font info for 173 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  38i,5n,42p,10402b,523s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/opt/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</opt/texlive/texmf-dist
@@ -1053,10 +1048,10 @@ nts/cm/cmsy10.pfb></opt/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb><
 t/fonts/type1/urw/times/utmb8a.pfb></opt/texlive/texmf-dist/fonts/type1/urw/tim
 es/utmbi8a.pfb></opt/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></opt/
 texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on lib-overlay.pdf (9 pages, 293370 bytes).
+Output written on lib-overlay.pdf (8 pages, 291743 bytes).
 PDF statistics:
- 229 PDF objects out of 1000 (max. 8388607)
- 150 compressed objects within 2 object streams
+ 226 PDF objects out of 1000 (max. 8388607)
+ 148 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  31 words of extra memory for PDF output out of 10000 (max. 10000000)
 

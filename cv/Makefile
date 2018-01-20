@@ -1,8 +1,10 @@
-TITLE=cv
-TEXORIG=cv.tex
+TITLE=cv-ch
+TEXORIG=cv-ch.tex
 
 BIBFILES=
 IMGFILES=
+COMPILE=xelatex
+#COMPILE=pdflatex
 
 DOCX2TXT := docx2txt.pl
 
@@ -10,10 +12,10 @@ DOCX2TXT := docx2txt.pl
 	$(DOCX2TXT) $< $@
 
 $(TITLE).pdf : $(TEXORIG) $(BIBFILES) $(IMGFILES)
-	pdflatex $(TITLE)
+	$(COMPILE) $(TITLE)
 #	bibtex $(TITLE)
-	pdflatex $(TITLE)
-	pdflatex $(TITLE)
+	$(COMPILE) $(TITLE)
+	$(COMPILE) $(TITLE)
 
 .PHONY : clean
 clean :

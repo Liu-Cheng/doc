@@ -1,0 +1,195 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Medium Length Professional CV
+% LaTeX Template
+% Version 2.0 (8/5/13)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Trey Hunner (http://www.treyhunner.com/)
+%
+% Important note:
+% This template requires the resume.cls file to be in the same directory as the
+% .tex file. The resume.cls file provides the resume style used for structuring the
+% document.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass{resume} % Use the custom resume.cls style
+\hfuzz=100pt
+\usepackage[UTF8]{ctex}
+\usepackage{fontspec}
+\usepackage{natbib, bibentry}
+\usepackage[left=0.75in,top=0.6in,right=0.75in,bottom=0.6in]{geometry} % Document margins
+
+\name{刘成} % Your name
+\address{+65-8421-1303}
+\address{新加坡国立大学计算机系} % Your secondary addess (optional)
+\address{liucheng@comp.nus.edu.sg} % Your phone number and email
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION SECTION
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\begin{rSection}{教育}
+
+{\bf 香港大学} \hfill {\em 2011-09 - 2016-04} \\ 
+计算机工程专业，电气与电子工程系\\
+{\bf 哈尔滨工业大学} \hfill {\em 2007-09 - 2009-07} \\
+微电子学与固体电子学专业， 航天学院\\
+{\bf 哈尔滨工业大学} \hfill {\em 2003-09 - 2007-07} \\
+电子信息科学与技术专业，航天学院 \\
+
+\end{rSection}
+
+\begin{rSection}{研究方向}
+    \vspace{-1em}
+\item FPGA 加速, FPGA 虚拟化, 软硬件协同设计, 片上网络
+    \vspace{-0.5em}
+\end{rSection}
+%----------------------------------------------------------------------------------------
+%	WORK EXPERIENCE SECTION
+%----------------------------------------------------------------------------------------
+\begin{rSection}{研究经历}
+\begin{rSubsection}{计算机学院, 新加坡国立大学}{2016-12 - 现在}{
+        项目： 异构CPU-FPGA系统上的图计算加速}{}
+\item 本项目目标是开发一个面向大型图的软件可编程高性能图计算库，
+    可以用于在弱耦合与紧耦合的CPU-FPGA计算系统上的图计算加速。
+    目前已经在Alpha-Data加速卡上实现了一个BFS加速器的设计，并且
+    可以根据FPGA片上资源（访存带宽和片上RAM），调整设计参数，实现性能的优化。
+    正在进行针对紧耦合的CPU-FPGA系统的BFS优化。我们采用Intel的Harp系统也即Xeon-FPGA
+    作为开发平台，从软硬件协同提高内存带宽利用率的角度探索BFS的优化。
+\end{rSubsection}
+
+\begin{rSubsection}{商汤科技}{2016-04 - 2016-10}{
+        项目: Zynq系统上CNN卷积加速器设计}{}
+\item 设计了一个灵活可配置的卷积加速器，能够支持任意的分块以及参数的配置，
+    目标是能够快速的配置，以满足不同场景下不同CNN模型加速的需求。在ZC706上实现，
+    并用于大场景人脸识别的展示系统。
+\end{rSubsection}
+
+\begin{rSubsection}{香港大学}{2011-09 - 2015-12}{
+        项目: 基于软CGRA的FPGA虚拟化研究}{}
+\item 本项目的目标是提供一个FPGA的虚拟层，用于多种相似的计算核心加速逻辑的快速实现，
+    相比通常的高层综合或者HDL的硬件加速方式，可以极大的提高设计效率。为此，我们在FPGA上构建了
+    一个规则的CGRA虚拟层，然后将高层语言的计算核心，编译成数据流图，并进一步调度到
+    指定的CGRA虚拟层上。这样不同但相似的计算核心，在整个设计过程中，可以复用CGRA虚拟层的
+    硬件综合实现。此外，我们进一步针对Xilinx Zynq系统，开发了相应的软硬件接口模板，使得计算核心
+    的加速对用户近乎透明，达到接近软件编译的效率，获得显著的硬件加速。
+\\
+\item 将CGRA虚拟层移植到一个简单的RISC-V处理器上，添加加速逻辑调用指令，
+    分析了在通用处理器上增加可重构加速逻辑的优化潜力。 
+\end{rSubsection}
+
+%------------------------------------------------
+
+\begin{rSubsection}{中科院计算所}{2009-09 - 2011-03}{
+        项目: 高可靠的片上网络微结构研究}{}
+\item 针对3D片上网络的TSV的可靠性问题，设计了TSV共享的片上路由器结构，
+    增加了少量的逻辑，显著的提高了设计的可靠性。
+\end{rSubsection}
+
+%------------------------------------------------
+
+\begin{rSubsection}{哈尔滨工业大学}{2006-10 - 2009-07}{
+       项目: 高性能片上路由器微结构设计}{}
+\item 优化片上网络路由器的流水线，使用tsmc 130 nm工艺，实现了800MHz片上路由器的设计.
+    针对路由器中虚拟通道的开销大的问题，实现了动态虚拟通道共享的设计，减小芯片面积开销。
+\end{rSubsection}
+
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+% Publications
+%----------------------------------------------------------------------------------------
+\begin{rSection}{论文}
+    \begin{rSubsection} {Book Chapter}{}{}{}
+    \item Hayden Kwok-Hay So and \textbf{Cheng Liu}, "FPGA overlays", in press FPGAs for Software
+        Engineers, Dirk Koch, Frank Hannig and Daniel Ziener, Ed., 2016.  
+    \end{rSubsection}
+
+    \begin{rSubsection} {期刊}{}{}{}
+    \item Ying Wang, Yinhe Han, Lei Zhang, Binzhang Fu, \textbf{Cheng Liu}, Huawei Li, and Xiaowei Li.
+        "Economizing TSV Resources in 3-D Network-on-Chip Design." Very Large Scale Integration
+        (VLSI) Systems, IEEE Transactions on 23, no. 3 (2015): 493-506. (cited 12)  
+    \item Yinhe Han, \textbf{Cheng Liu}, Hang Lu, Wenbo Li, Lei Zhang, and Xiaowei Li. "RevivePath:
+        Resilient network-on-chip design through data path salvaging of router." Journal of Computer
+        Science and Technology 28, no. 6 (2013): 1045-1053. (cited 3)
+    \item Qingli Zhang, \textbf{Cheng Liu}, Liyi Xiao, Fangfa Fu.” Low Latency Router Design Supporting both
+        Deterministic Routing and Adaptive Routing.” Journal of Computer-Aided Design \& Computer
+        Graphics, 21(12), 2009 (in Chinese)
+    \end{rSubsection}
+
+    \begin{rSubsection} {会议}{}{}{}
+    \item Ho-Cheung Ng, \textbf{Cheng Liu} and Hayden Kwok-Hay So. "A Soft Processor Overlay with
+        Tightly-coupled FPGA Accelerator," Overlay Architectures for FPGAs (OLAF), Second
+        International Workshop on, pp. 1-6, Feb, 2016. 
+    \item \textbf{Cheng Liu}, Ho-Cheung Ng, and Hayden Kwok-Hay So. "Automatic Nested Loop Acceleration on
+        FPGAs Using Soft CGRA Overlay", FPGAs for Software Programmers (FSP), 2nd International
+        Workshop on, Sep. 2015. (cited 12)
+    \item \textbf{Cheng Liu}, Ho-Cheung Ng, and Hayden Kwok-Hay So. "QuickDough: A Rapid FPGA Loop
+        Accelerator Design Framework Using Soft CGRA Overlay", Field Programmable Technology,
+        International Conference on (FPT), Dec. 2015 (cited 11) 
+    \item \textbf{Cheng Liu}, Lei Zhang, Yinhe Han, and Xiaowei Li. "Vertical interconnects squeezing in
+        symmetric 3D mesh Network-on-Chip." In Proceedings of the 16th Asia and South Pacific Design
+        Automation Conference, pp. 357-362. IEEE Press, 2011. (Cited 56)
+    \item \textbf{Cheng Liu}, Lei Zhang, Yinhe Han, and Xiaowei Li. "A resilient on-chip router design
+        through data path salvaging." In Proceedings of the 16th Asia and South Pacific Design
+        Automation Conference, pp. 437-442. IEEE Press, 2011. (Cited 22)
+    \end{rSubsection}
+
+    \begin{rSubsection} {Poster}{}{}{}
+    \item \textbf{Cheng Liu}, and Hayden Kwok-Hay So. "Automatic Soft CGRA Overlay Customization for
+        High-Productivity Nested Loop Acceleration on FPGAs." In Field-Programmable Custom Computing
+        Machines (FCCM), 2015 IEEE 23rd Annual International Symposium on, pp. 101-101. IEEE, 2015.
+    \item \textbf{Cheng Liu}, Colin Lin Yu, and Hayden Kwok-Hay So. "A soft coarse-grained reconfigurable
+        array based high-level synthesis methodology: Promoting design productivity and exploring
+        extreme FPGA frequency." In Field-Programmable Custom Computing Machines (FCCM), 2013 IEEE
+        21st Annual International Symposium on, pp. 228-228. IEEE, 2013. (cited 3)
+    \end{rSubsection}
+
+\end{rSection}
+
+\begin{rSection}{教学}
+    \vspace{-1em}
+\item 助教 – to Dr. V. Tam \\In ELEC1503, Object Oriented Programming 
+and Data Structures, 2012 \\实验上机指导和答疑
+
+\item 助教 – to Dr. Hayden So \\In ELEC3441 Computer Architecture, 2014-2015
+\\协助设计基于RISC-V的课程作业和实验以及答疑.
+
+\item Teaching Assistant – to Dr. Hayden So, Dr. Edmund Lam, and Dr. Kenneth K. Y. Wong 
+\\In ENGG1203, Introduction to Electrical and Electronic Engineering, 2013-2014
+\\实验上机指导和答疑. 
+
+\end{rSection}
+
+\begin{rSection}{奖励}
+    \vspace{-1em}
+\item 博士奖学金, 香港大学, 2011-09 - 2015-08 
+    \vspace{-0.5em}
+\item 一等奖学金, 哈尔滨工业大学, 2007-09 - 2009-07
+    \vspace{-0.5em}
+\item 优秀研究生奖学金, 计算所系统结构重点实验室，2010-12
+    \vspace{-0.5em}
+\item 国家数学建模竞赛二等奖, 2008-05
+    \vspace{-0.5em}
+\item 黑龙江省电子竞赛二等奖, 2007-03
+    \vspace{-0.5em}
+\end{rSection}
+
+\begin{rSection}{技能}
+    \begin{rSubsection}{编程语言}{}{}{}
+    \item 熟悉: SystemC, C/C++, Matlab, Verilog, VHDL, HLS, OpenCL for FPGA
+    \item 了解: JAVA, Python
+    \end{rSubsection}
+\end{rSection}
+
+\end{document}

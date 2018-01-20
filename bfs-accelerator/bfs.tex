@@ -312,6 +312,10 @@
 \usepackage{algorithm}
 \usepackage[noend]{algpseudocode}
 \usepackage[pdftex]{graphicx}
+\usepackage[T1,hyphens]{url}
+%\usepackage[colorlinks,urlcolor=blue]{hyperref}
+\usepackage[]{hyperref}
+
 \graphicspath{{./figures/}}
 \algrenewcommand\textproc{}
 
@@ -392,32 +396,36 @@
 
     Breadth first search (BFS) is one of the most important building blocks of graph processing, 
     and it is notoriously difficult to accelerate on FPGAs due to the irregular memory access 
-    and low computation-to-memory ratio. Previous work typically accelerated the BFS algorithm 
+    and low computation-to-memory ratio. Previous work typically accelerate the BFS algorithm 
     through handcrafted circuit design with hardware description language (HDL). Despite
-    the relatively good performance, the HDL based design incurs extremely low design productivity, 
-    high portability and maintenance cost, which dramatically compensates the performance benefit. 
+    the relatively good performance, the HDL based design leads to extremely low design productivity, 
+    and incurs high portability and maintenance cost, which dramatically compensates 
+    the performance benefit. 
     
-    To that end, we opted to develop a BFS accelerator using 
-    high level design tool i.e. Xilinx SDAccel  
-    such that it has the nice software-like features including better portability, 
-    maintenance and ease of use on top of the design productivity. To enhance the 
-    performance of the resulting FPGA accelerator, we further 
-    proposed a set of general high level synthesis (HLS) based 
+    To address this problem, we opt to develop the BFS accelerator using 
+    high level design tools such that the resulting accelerator preserves 
+    the high level software features including portability, ease of maintenance and use. 
+    Despite the advancements of the high level design tools over the years, 
+    it remains challenging to develop high performance 
+    BFS accelerator with these tools because of the 
+    irregular memory accesses and data paths in BFS algorithm. 
+    To obtain higher performance, we analyze the BFS 
+    memory access patterns and further 
+    propose a set of general high level synthesis (HLS) based 
     optimization techniques such as pipeling, 
-    hash filtering, prefetching, and caching without loss of the software-like 
-    features. Meanwhile, we can also rapidly tune the design 
-    parameters such as hash size, prefetch buffer and cache size 
-    with specific high level metrics including 
-    hash hit rate, prefetch hit rate and cache hit rate through fast software 
-    emulation of the HLS design. 
-     
-    According to the experiments on a set of big graphs, the optimized HLS based 
+    hash filtering, prefetching, and caching without loss of the software-like features. 
+    At the same time, we can also rapidly tune the design 
+    parameters like hash size, prefetch buffer and cache size 
+    with corresponding high level metrics including 
+    hash hit rate, prefetch hit rate and cache hit rate taking advantage 
+    of the fast software emulation of the HLS design. According to the experiments on a set 
+    of big graphs, the optimized HLS based 
     BFS accelerator achieves up to 70X performance speedup compared to the 
-    baseline HLS design which has best-effort HLS pragma based optimization on 
+    baseline HLS design which has best-effort HLS optimization on 
     the native BFS code. When compared to the state-of-art handcrafted design on 
-    similar FPGA cards, the BFS accelerator proposed in this work achieves 
-    around 35\% of the performance and even higher per bandwidth MTEPS 
-    in some cases and possesses many software-like features. 
+    similar FPGA cards, the proposed BFS accelerator achieves 
+    around 35\% of the performance but higher per bandwidth MTEPS 
+    in some cases and possesses the software-like features. 
  
 \end{abstract}
 
