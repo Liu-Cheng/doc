@@ -22,9 +22,9 @@
 
 \documentclass{resume} % Use the custom resume.cls style
 \hfuzz=100pt
-\usepackage{xeCJK}
-\setCJKfamilyfont{zhsong}{FZShuSong-Z01}
-\setCJKfamilyfont{zhhei}{FZHei-B01}
+%\usepackage{xeCJK}
+%\setCJKfamilyfont{zhsong}{FZShuSong-Z01}
+%\setCJKfamilyfont{zhhei}{FZHei-B01}
 \usepackage{natbib, bibentry}
 \usepackage[left=0.75in,top=0.6in,right=0.75in,bottom=0.6in]{geometry} % Document margins
 
@@ -64,9 +64,10 @@ B.E. in Electronic Engineering \\
 \item In this project, we aim to develop a software programmable high-performance graph 
     accelerator library targeting large scale-free graph processing on both loosely coupled 
     and closely coupled CPU-FPGA computing system. Currently, we have implemented an FPGA 
-    resource aware (memory bandwidth and on-chip memory) BFS accelerator 
-    on Alpha-Data FPGA acceleration cards. And we are now exploring the BFS accelerator 
-    optimization on Intel Harp System (Xeon-FPGA) through careful co-design.
+    resource aware BFS accelerator 
+    on Alpha-Data FPGA acceleration cards. And we are also exploring the 
+	general pipelined co-design accelerator framework for graph processing 
+	on Intel Harp System (Xeon-FPGA). 
 \end{rSubsection}
 
 \begin{rSubsection}{SenseTime Group Limited}{Apr 2016 - Oct. 2016}{Project: Convolutional neural network
@@ -109,11 +110,8 @@ B.E. in Electronic Engineering \\
 
 \begin{rSubsection}{Harbin Institute of Technology}{Oct 2006 - Jul 2009}{Research Project: High performance network-on-chip design}{}
 \item In this project, we aimed to improve NoC performance as well as power efficiency. A number of design
-optimization methods were implemented for this purpose: 1) A delicate virtual channel assignment was
-used to improve NoC performance and remove the deadlock in adaptive routing. 2) A lightweight
-dynamic virtual channel sharing architecture was implemented to reduce the chip area as well as the
-power consumption. 3) With the observation that NoC components have quite low utilization, a dynamic
-power gating scheme was developed to enhance NoC power efficiency.
+optimization methods including specific virtual channel allocation, dynamic buffer regulator and 
+adaptive power gating were proposed and implemented for this purpose.
 \end{rSubsection}
 
 \end{rSection}
@@ -151,10 +149,10 @@ power gating scheme was developed to enhance NoC power efficiency.
         International Conference on (FPT), Dec. 2015 (cited 11) 
     \item \textbf{Cheng Liu}, Lei Zhang, Yinhe Han, and Xiaowei Li. "Vertical interconnects squeezing in
         symmetric 3D mesh Network-on-Chip." In Proceedings of the 16th Asia and South Pacific Design
-        Automation Conference, pp. 357-362. IEEE Press, 2011. (Cited 56)
+        Automation Conference, pp. 357-362. IEEE Press, 2011. (Cited 55)
     \item \textbf{Cheng Liu}, Lei Zhang, Yinhe Han, and Xiaowei Li. "A resilient on-chip router design
         through data path salvaging." In Proceedings of the 16th Asia and South Pacific Design
-        Automation Conference, pp. 437-442. IEEE Press, 2011. (Cited 22)
+        Automation Conference, pp. 437-442. IEEE Press, 2011. (Cited 23)
     \end{rSubsection}
 
     \begin{rSubsection} {Poster}{}{}{}
@@ -164,7 +162,7 @@ power gating scheme was developed to enhance NoC power efficiency.
     \item \textbf{Cheng Liu}, Colin Lin Yu, and Hayden Kwok-Hay So. "A soft coarse-grained reconfigurable
         array based high-level synthesis methodology: Promoting design productivity and exploring
         extreme FPGA frequency." In Field-Programmable Custom Computing Machines (FCCM), 2013 IEEE
-        21st Annual International Symposium on, pp. 228-228. IEEE, 2013. (cited 3)
+        21st Annual International Symposium on, pp. 228-228. IEEE, 2013. 
     \end{rSubsection}
 
 \end{rSection}
@@ -175,12 +173,15 @@ power gating scheme was developed to enhance NoC power efficiency.
 and Data Structures, 2012 \\Performed the lab demonstrations and Q\&A upon request
 
 \item Teaching Assistant – to Dr. Hayden So \\In ELEC3441 Computer Architecture, 2014-2015
-\\Developed part of the homework, prepared the lab environment, Q\&A upon request, and graded homework as well as the exam papers.
+\\Developed part of the homework, prepared the lab environment, Q\&A upon request
 
 \item Teaching Assistant – to Dr. Hayden So, Dr. Edmund Lam, and Dr. Kenneth K. Y. Wong 
 \\In ENGG1203, Introduction to Electrical and Electronic Engineering, 2013-2014
-\\Performed the lab demonstrations and Q\&A upon request. 
+\\Performed the lab demonstrations and Q\&A upon request 
 
+\item Teaching Assistant - to Dr. Bingsheng He
+\\ Gave lecture "System Optimizations and Performance Tuning for New Generation FPGAs" 
+\\ in NUS Winter School Course "Big Data Systems on Future Hardware", 2018
 \end{rSection}
 
 \begin{rSection}{Awards}
@@ -205,6 +206,7 @@ and Data Structures, 2012 \\Performed the lab demonstrations and Q\&A upon reque
 \end{rSection}
 
 \begin{rSection}{Reference}
+	\vspace{-1em}
 \item Dr. Bingsheng He                              (hebs@comp.nus.edu.sg)
 \item Dr. Hayden Kwok-Hay So                        (hso@eee.hku.hk)
 \item Dr. Jinxiang Wang                             (jxwang@hit.edu.cn)

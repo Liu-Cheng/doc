@@ -1,0 +1,3735 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.7 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \sortlist[entry]{none/global/}
+    \entry{Malewicz2010pregel}{inproceedings}{}
+      \name{author}{7}{}{%
+        {{hash=2687011f280019e96a0e8fbb7abc0671}{%
+           family={Malewicz},
+           family_i={M\bibinitperiod},
+           given={Grzegorz},
+           given_i={G\bibinitperiod}}}%
+        {{hash=c5861b6b2ea83c09ad787c5a4d4acb0d}{%
+           family={Austern},
+           family_i={A\bibinitperiod},
+           given={Matthew\bibnamedelima H.},
+           given_i={M\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=3893747eb7012f7c9dbd7ba37ff9febf}{%
+           family={Bik},
+           family_i={B\bibinitperiod},
+           given={Aart\bibnamedelima J.C},
+           given_i={A\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=10f3f7306ef496558670aa4dc51384dc}{%
+           family={Dehnert},
+           family_i={D\bibinitperiod},
+           given={James\bibnamedelima C.},
+           given_i={J\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=02e33a85cbbfcc5aa5ef3b5960d2ec4a}{%
+           family={Horn},
+           family_i={H\bibinitperiod},
+           given={Ilan},
+           given_i={I\bibinitperiod}}}%
+        {{hash=02b77080487a83f4bd4d04ddf3398728}{%
+           family={Leiser},
+           family_i={L\bibinitperiod},
+           given={Naty},
+           given_i={N\bibinitperiod}}}%
+        {{hash=92d103f6065742b31bf8f8355af7aa63}{%
+           family={Czajkowski},
+           family_i={C\bibinitperiod},
+           given={Grzegorz},
+           given_i={G\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Indianapolis, Indiana, USA}%
+      }
+      \list{publisher}{1}{%
+        {ACM}%
+      }
+      \strng{namehash}{9176f413ea14f5a09dad6b7d9c4c7e4d}
+      \strng{fullhash}{3ff619e75e6a8699ca99a80512b14f87}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 2010 ACM SIGMOD International Conference on Management of Data}
+      \field{isbn}{978-1-4503-0032-2}
+      \field{series}{SIGMOD '10}
+      \field{title}{Pregel: A System for Large-scale Graph Processing}
+      \field{year}{2010}
+      \field{pages}{135\bibrangedash 146}
+      \range{pages}{12}
+      \verb{doi}
+      \verb 10.1145/1807167.1807184
+      \endverb
+      \verb{url}
+      \verb http://doi.acm.org/10.1145/1807167.1807184
+      \endverb
+      \keyw{distributed computing,graph algorigthms}
+    \endentry
+    \entry{low2012graphlab}{article}{}
+      \name{author}{6}{}{%
+        {{hash=0ce09b054836d3bed7fcc8fffa7f748b}{%
+           family={Low},
+           family_i={L\bibinitperiod},
+           given={Yucheng},
+           given_i={Y\bibinitperiod}}}%
+        {{hash=e205c772129ea24c246a0ed207562cf5}{%
+           family={Bickson},
+           family_i={B\bibinitperiod},
+           given={Danny},
+           given_i={D\bibinitperiod}}}%
+        {{hash=fa1b97983892cfef89de6a1b63f97bcc}{%
+           family={Gonzalez},
+           family_i={G\bibinitperiod},
+           given={Joseph},
+           given_i={J\bibinitperiod}}}%
+        {{hash=c9ab8ac486d7f85ac914b1a8e51e512b}{%
+           family={Guestrin},
+           family_i={G\bibinitperiod},
+           given={Carlos},
+           given_i={C\bibinitperiod}}}%
+        {{hash=fb0c5ef5bd0623316e6c5b00f3202e24}{%
+           family={Kyrola},
+           family_i={K\bibinitperiod},
+           given={Aapo},
+           given_i={A\bibinitperiod}}}%
+        {{hash=aaf854b1baf392d9c75d9d57a264b80b}{%
+           family={Hellerstein},
+           family_i={H\bibinitperiod},
+           given={Joseph\bibnamedelima M},
+           given_i={J\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {VLDB Endowment}%
+      }
+      \strng{namehash}{507bf8adf6b994a1198d222e85a0c200}
+      \strng{fullhash}{9b433d1c119a4eb130d1fad932938f2c}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Proceedings of the VLDB Endowment}
+      \field{number}{8}
+      \field{title}{Distributed GraphLab: a framework for machine learning and data mining in the cloud}
+      \field{volume}{5}
+      \field{year}{2012}
+      \field{pages}{716\bibrangedash 727}
+      \range{pages}{12}
+    \endentry
+    \entry{Shun2013ligra}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=c8ace46c74c6e208ab806cbfab00ecad}{%
+           family={Shun},
+           family_i={S\bibinitperiod},
+           given={Julian},
+           given_i={J\bibinitperiod}}}%
+        {{hash=32a0460996f7163915e892129cadc85b}{%
+           family={Blelloch},
+           family_i={B\bibinitperiod},
+           given={Guy\bibnamedelima E.},
+           given_i={G\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Shenzhen, China}%
+      }
+      \list{publisher}{1}{%
+        {ACM}%
+      }
+      \strng{namehash}{6e1a81e49adaa6883c1cdc85b3711cf1}
+      \strng{fullhash}{6e1a81e49adaa6883c1cdc85b3711cf1}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 18th ACM SIGPLAN Symposium on Principles and Practice of Parallel Programming}
+      \field{isbn}{978-1-4503-1922-5}
+      \field{series}{PPoPP '13}
+      \field{title}{Ligra: A Lightweight Graph Processing Framework for Shared Memory}
+      \field{year}{2013}
+      \field{pages}{135\bibrangedash 146}
+      \range{pages}{12}
+      \verb{doi}
+      \verb 10.1145/2442516.2442530
+      \endverb
+      \verb{url}
+      \verb http://doi.acm.org/10.1145/2442516.2442530
+      \endverb
+      \keyw{graph algorithms,parallel programming,shared memory}
+    \endentry
+    \entry{Kyrola2012graphchi}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=fb0c5ef5bd0623316e6c5b00f3202e24}{%
+           family={Kyrola},
+           family_i={K\bibinitperiod},
+           given={Aapo},
+           given_i={A\bibinitperiod}}}%
+        {{hash=c9bbad83723a7a295940d891b47e83ce}{%
+           family={Blelloch},
+           family_i={B\bibinitperiod},
+           given={Guy},
+           given_i={G\bibinitperiod}}}%
+        {{hash=c9ab8ac486d7f85ac914b1a8e51e512b}{%
+           family={Guestrin},
+           family_i={G\bibinitperiod},
+           given={Carlos},
+           given_i={C\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Hollywood, CA, USA}%
+      }
+      \list{publisher}{1}{%
+        {USENIX Association}%
+      }
+      \strng{namehash}{1b360f7a671ef0c6ded053e86715a324}
+      \strng{fullhash}{1b360f7a671ef0c6ded053e86715a324}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 10th USENIX Conference on Operating Systems Design and Implementation}
+      \field{isbn}{978-1-931971-96-6}
+      \field{series}{OSDI'12}
+      \field{title}{GraphChi: Large-scale Graph Computation on Just a PC}
+      \field{year}{2012}
+      \field{pages}{31\bibrangedash 46}
+      \range{pages}{16}
+      \verb{url}
+      \verb http://dl.acm.org/citation.cfm?id=2387880.2387884
+      \endverb
+    \endentry
+    \entry{Roy2013x-stream}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=8772c073b0dff89f6d1ae416b603aa49}{%
+           family={Roy},
+           family_i={R\bibinitperiod},
+           given={Amitabha},
+           given_i={A\bibinitperiod}}}%
+        {{hash=eb25fdc324a610008c1b51feace8aa0e}{%
+           family={Mihailovic},
+           family_i={M\bibinitperiod},
+           given={Ivo},
+           given_i={I\bibinitperiod}}}%
+        {{hash=5915bd38485ffd37e32e01d1e3d46795}{%
+           family={Zwaenepoel},
+           family_i={Z\bibinitperiod},
+           given={Willy},
+           given_i={W\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Farminton, Pennsylvania}%
+      }
+      \list{publisher}{1}{%
+        {ACM}%
+      }
+      \strng{namehash}{e975031d72947fb8b0b62bddf672eef7}
+      \strng{fullhash}{e975031d72947fb8b0b62bddf672eef7}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the Twenty-Fourth ACM Symposium on Operating Systems Principles}
+      \field{isbn}{978-1-4503-2388-8}
+      \field{series}{SOSP '13}
+      \field{title}{X-Stream: Edge-centric Graph Processing Using Streaming Partitions}
+      \field{year}{2013}
+      \field{pages}{472\bibrangedash 488}
+      \range{pages}{17}
+      \verb{doi}
+      \verb 10.1145/2517349.2522740
+      \endverb
+      \verb{url}
+      \verb http://doi.acm.org/10.1145/2517349.2522740
+      \endverb
+    \endentry
+    \entry{liu2015enterprise}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=edd3ae417690fa909dfe4f5d25128fba}{%
+           family={Liu},
+           family_i={L\bibinitperiod},
+           given={Hang},
+           given_i={H\bibinitperiod}}}%
+        {{hash=13a4aa37d8297ab541c585bef735ce73}{%
+           family={Huang},
+           family_i={H\bibinitperiod},
+           given={H\bibnamedelima Howie},
+           given_i={H\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{053dd45b7e482c32260139ab66a05700}
+      \strng{fullhash}{053dd45b7e482c32260139ab66a05700}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2015 International Conference for High Performance Computing, Networking, Storage and Analysis}
+      \field{title}{Enterprise: breadth-first graph traversal on GPUs}
+      \field{year}{2015}
+      \field{pages}{1\bibrangedash 12}
+      \range{pages}{12}
+    \endentry
+    \entry{khorasani2014cusha}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=c10528e29494049629a5193795bc8b0a}{%
+           family={Khorasani},
+           family_i={K\bibinitperiod},
+           given={Farzad},
+           given_i={F\bibinitperiod}}}%
+        {{hash=b858238453813b9a3ce7633a0a3dfd98}{%
+           family={Vora},
+           family_i={V\bibinitperiod},
+           given={Keval},
+           given_i={K\bibinitperiod}}}%
+        {{hash=e16c962a29b66c8848af32c60477552f}{%
+           family={Gupta},
+           family_i={G\bibinitperiod},
+           given={Rajiv},
+           given_i={R\bibinitperiod}}}%
+        {{hash=82d1e62e19b4f51f52377b0320687b91}{%
+           family={Bhuyan},
+           family_i={B\bibinitperiod},
+           given={Laxmi\bibnamedelima N},
+           given_i={L\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {ACM}%
+      }
+      \strng{namehash}{e21880ca6749a2b70f56e75f1af3a511}
+      \strng{fullhash}{fae8ce923fd69560fc3f394f73275a8d}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 23rd international symposium on High-performance parallel and distributed computing}
+      \field{title}{CuSha: vertex-centric graph processing on GPUs}
+      \field{year}{2014}
+      \field{pages}{239\bibrangedash 252}
+      \range{pages}{14}
+    \endentry
+    \entry{Wang2016gunrock}{inproceedings}{}
+      \name{author}{6}{}{%
+        {{hash=17d35e0130738e5b43dbc9af0b3fbdde}{%
+           family={Wang},
+           family_i={W\bibinitperiod},
+           given={Yangzihao},
+           given_i={Y\bibinitperiod}}}%
+        {{hash=171adfbf08a197fecfa798f5d2b90281}{%
+           family={Davidson},
+           family_i={D\bibinitperiod},
+           given={Andrew},
+           given_i={A\bibinitperiod}}}%
+        {{hash=8f0a55bf3a4e038e5616cfabe3235233}{%
+           family={Pan},
+           family_i={P\bibinitperiod},
+           given={Yuechao},
+           given_i={Y\bibinitperiod}}}%
+        {{hash=0f1b3f21af1ee8ea8ca38f2a6ca1c690}{%
+           family={Wu},
+           family_i={W\bibinitperiod},
+           given={Yuduo},
+           given_i={Y\bibinitperiod}}}%
+        {{hash=87cf6b91723fbd755c4d6c35e2dd409a}{%
+           family={Riffel},
+           family_i={R\bibinitperiod},
+           given={Andy},
+           given_i={A\bibinitperiod}}}%
+        {{hash=d648bc4fddb5537bbe81c625fc24bdb4}{%
+           family={Owens},
+           family_i={O\bibinitperiod},
+           given={John\bibnamedelima D.},
+           given_i={J\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Barcelona, Spain}%
+      }
+      \list{publisher}{1}{%
+        {ACM}%
+      }
+      \strng{namehash}{5b1ac70341fec109e46de195670a45a9}
+      \strng{fullhash}{cb2026313573e2e91d0fc55fdb66ed0b}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 21st ACM SIGPLAN Symposium on Principles and Practice of Parallel Programming}
+      \field{isbn}{978-1-4503-4092-2}
+      \field{series}{PPoPP '16}
+      \field{title}{Gunrock: A High-performance Graph Processing Library on the GPU}
+      \field{year}{2016}
+      \field{pages}{11:1\bibrangedash 11:12}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1145/2851141.2851145
+      \endverb
+      \verb{url}
+      \verb http://doi.acm.org/10.1145/2851141.2851145
+      \endverb
+    \endentry
+    \entry{shi2018frog}{article}{}
+      \name{author}{7}{}{%
+        {{hash=8e0d0e45609fbecd4f1a57bc0359666e}{%
+           family={Shi},
+           family_i={S\bibinitperiod},
+           given={Xuanhua},
+           given_i={X\bibinitperiod}}}%
+        {{hash=51faa9272b1ba03886cca929241c7042}{%
+           family={Luo},
+           family_i={L\bibinitperiod},
+           given={Xuan},
+           given_i={X\bibinitperiod}}}%
+        {{hash=f4e554eedbd36715c14be32ef07cc7fa}{%
+           family={Liang},
+           family_i={L\bibinitperiod},
+           given={Junling},
+           given_i={J\bibinitperiod}}}%
+        {{hash=716dffbb9eca8a6dae446cc50937b54f}{%
+           family={Zhao},
+           family_i={Z\bibinitperiod},
+           given={Peng},
+           given_i={P\bibinitperiod}}}%
+        {{hash=0fe6a5c49102fb95d297dfb78290c5ab}{%
+           family={Di},
+           family_i={D\bibinitperiod},
+           given={Sheng},
+           given_i={S\bibinitperiod}}}%
+        {{hash=67a5834e9a591541aaad0d1326bef218}{%
+           family={He},
+           family_i={H\bibinitperiod},
+           given={Bingsheng},
+           given_i={B\bibinitperiod}}}%
+        {{hash=c358204b5c649d29bcb0ba18cea44777}{%
+           family={Jin},
+           family_i={J\bibinitperiod},
+           given={Hai},
+           given_i={H\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{9ce3724883826e11d1e24794a540b3df}
+      \strng{fullhash}{5b1a42105c4d74f13ebddee8c477581b}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Transactions on Knowledge and Data Engineering}
+      \field{number}{1}
+      \field{title}{Frog: Asynchronous graph processing on GPU with hybrid coloring model}
+      \field{volume}{30}
+      \field{year}{2018}
+      \field{pages}{29\bibrangedash 42}
+      \range{pages}{14}
+    \endentry
+    \entry{Fu2014mapgraph}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=58a7d157d3afc3b4cf186160c8fd42a1}{%
+           family={Fu},
+           family_i={F\bibinitperiod},
+           given={Zhisong},
+           given_i={Z\bibinitperiod}}}%
+        {{hash=37dee70b85477ba5bcda211c28754bef}{%
+           family={Personick},
+           family_i={P\bibinitperiod},
+           given={Michael},
+           given_i={M\bibinitperiod}}}%
+        {{hash=b004792b8c0c865291f0e5ea7dc5db5f}{%
+           family={Thompson},
+           family_i={T\bibinitperiod},
+           given={Bryan},
+           given_i={B\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Snowbird, UT, USA}%
+      }
+      \list{publisher}{1}{%
+        {ACM}%
+      }
+      \strng{namehash}{590500f0beb32be50a7eb880c7ccfa19}
+      \strng{fullhash}{590500f0beb32be50a7eb880c7ccfa19}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of Workshop on GRAph Data Management Experiences and Systems}
+      \field{isbn}{978-1-4503-2982-8}
+      \field{series}{GRADES'14}
+      \field{title}{MapGraph: A High Level API for Fast Development of High Performance Graph Analytics on GPUs}
+      \field{year}{2014}
+      \field{pages}{2:1\bibrangedash 2:6}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1145/2621934.2621936
+      \endverb
+      \verb{url}
+      \verb http://doi.acm.org/10.1145/2621934.2621936
+      \endverb
+      \keyw{GPU,Graph analytics,high-level API}
+    \endentry
+    \entry{ham2016graphicionado}{inproceedings}{}
+      \name{author}{5}{}{%
+        {{hash=f26633abe7b08bc1f65a8747f3ba84d4}{%
+           family={Ham},
+           family_i={H\bibinitperiod},
+           given={Tae\bibnamedelima Jun},
+           given_i={T\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=5c69c3324996772bf693d4ed5efb0bdf}{%
+           family={Wu},
+           family_i={W\bibinitperiod},
+           given={Lisa},
+           given_i={L\bibinitperiod}}}%
+        {{hash=995d38d971d010a683eda2f6ada66d16}{%
+           family={Sundaram},
+           family_i={S\bibinitperiod},
+           given={Narayanan},
+           given_i={N\bibinitperiod}}}%
+        {{hash=a930c576ecba694b17665f1e3ed5dfa8}{%
+           family={Satish},
+           family_i={S\bibinitperiod},
+           given={Nadathur},
+           given_i={N\bibinitperiod}}}%
+        {{hash=51a2ecd59392c7fa73fa8648cea933be}{%
+           family={Martonosi},
+           family_i={M\bibinitperiod},
+           given={Margaret},
+           given_i={M\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{71502bf59e6808856478aeaec2909dc6}
+      \strng{fullhash}{7db1c4b4f2bbe294bd5bc7c79b8300d0}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2016 49th Annual IEEE/ACM International Symposium on Microarchitecture (MICRO)}
+      \field{title}{Graphicionado: A high-performance and energy-efficient accelerator for graph analytics}
+      \field{year}{2016}
+      \field{pages}{1\bibrangedash 13}
+      \range{pages}{13}
+    \endentry
+    \entry{Dai2017foregraph}{inproceedings}{}
+      \name{author}{6}{}{%
+        {{hash=f6c667850f49033e3ebc9e9c8dca130d}{%
+           family={Dai},
+           family_i={D\bibinitperiod},
+           given={Guohao},
+           given_i={G\bibinitperiod}}}%
+        {{hash=4bb337ca65f60cc1d5cf38120b11fa53}{%
+           family={Huang},
+           family_i={H\bibinitperiod},
+           given={Tianhao},
+           given_i={T\bibinitperiod}}}%
+        {{hash=62b184c2c2a70f82111208a25595854e}{%
+           family={Chi},
+           family_i={C\bibinitperiod},
+           given={Yuze},
+           given_i={Y\bibinitperiod}}}%
+        {{hash=2adc9537ede08076269a2a9f28881c64}{%
+           family={Xu},
+           family_i={X\bibinitperiod},
+           given={Ningyi},
+           given_i={N\bibinitperiod}}}%
+        {{hash=b2eccb185095fccfeb40fdffd8b2105f}{%
+           family={Wang},
+           family_i={W\bibinitperiod},
+           given={Yu},
+           given_i={Y\bibinitperiod}}}%
+        {{hash=4756886387a4c576f3366e0abf146be0}{%
+           family={Yang},
+           family_i={Y\bibinitperiod},
+           given={Huazhong},
+           given_i={H\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Monterey, California, USA}%
+      }
+      \list{publisher}{1}{%
+        {ACM}%
+      }
+      \strng{namehash}{3c6e0b3da19edcd71579a6a9e00fe574}
+      \strng{fullhash}{290a3a8c530705307f4689c36d7665d7}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 2017 ACM/SIGDA International Symposium on Field-Programmable Gate Arrays}
+      \field{isbn}{978-1-4503-4354-1}
+      \field{series}{FPGA '17}
+      \field{title}{ForeGraph: Exploring Large-scale Graph Processing on Multi-FPGA Architecture}
+      \field{year}{2017}
+      \field{pages}{217\bibrangedash 226}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1145/3020078.3021739
+      \endverb
+      \verb{url}
+      \verb http://doi.acm.org/10.1145/3020078.3021739
+      \endverb
+      \keyw{large-scale graph processing,multi-FPGA architecture}
+    \endentry
+    \entry{ahn2015tesseract}{inproceedings}{}
+      \name{author}{5}{}{%
+        {{hash=0bda7579f5265eb69609d564e396685b}{%
+           family={Ahn},
+           family_i={A\bibinitperiod},
+           given={J.},
+           given_i={J\bibinitperiod}}}%
+        {{hash=d9d742f844e4a033bf3dfb4732af148c}{%
+           family={Hong},
+           family_i={H\bibinitperiod},
+           given={S.},
+           given_i={S\bibinitperiod}}}%
+        {{hash=e341d156cbf38c0d2d4739f9d70f0d2a}{%
+           family={Yoo},
+           family_i={Y\bibinitperiod},
+           given={S.},
+           given_i={S\bibinitperiod}}}%
+        {{hash=dd71246ab9b055fd345e000e18abe3c4}{%
+           family={Mutlu},
+           family_i={M\bibinitperiod},
+           given={O.},
+           given_i={O\bibinitperiod}}}%
+        {{hash=d86ddc4a438d15c27917daa2d03310f3}{%
+           family={Choi},
+           family_i={C\bibinitperiod},
+           given={K.},
+           given_i={K\bibinitperiod}}}%
+      }
+      \strng{namehash}{2023d00c3a17aa606e0fa001edb58f07}
+      \strng{fullhash}{51fc0dd6edbc28439e6571899e20aeb1}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2015 ACM/IEEE 42nd Annual International Symposium on Computer Architecture (ISCA)}
+      \field{issn}{1063-6897}
+      \field{month}{06}
+      \field{title}{A scalable processing-in-memory accelerator for parallel graph processing}
+      \field{year}{2015}
+      \field{pages}{105\bibrangedash 117}
+      \range{pages}{13}
+      \verb{doi}
+      \verb 10.1145/2749469.2750386
+      \endverb
+      \keyw{Big Data;data analysis;graph theory;parallel processing;3D integration technology;Tesseract;computer systems;data analysis;graph processing systems;hardware architecture;hardware prefetchers;in-memory big-data processing;memory access patterns;memory bandwidth limitations;memory-capacity-proportional performance;parallel graph processing;programmable PIM accelerator;programming interface;scalable processing-in-memory accelerator;stacking logic;Internet;Lead;Out of order;Parallel processing;Prefetching;System-on-chip}
+    \endentry
+    \entry{DSA}{article}{}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labeltitlesource}{title}
+      \field{title}{John L. Hennessy, and David A. Patterson. "Domain Specific Architectures," in Computer architecture: a quantitative approach, Sixth Edition, Elsevier, 2018.}
+    \endentry
+    \entry{DDFCP}{article}{}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labeltitlesource}{title}
+      \field{title}{Luis Ceze, Mark Hill, Karthikeyan Sankaralingam, and Thomas Wenisch. "Democratizing Design for Future Computing Platforms," June 26, 2017, www.cccblog.org/2017/06/26/democratizing-design-for-future-computing-platforms.}
+    \endentry
+    \entry{RISCV}{article}{}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labeltitlesource}{title}
+      \field{title}{www.riscv.org}
+    \endentry
+    \entry{ERI}{article}{}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labeltitlesource}{title}
+      \field{title}{DARPA, Broad Agency Announcement. "Electronics Resurgence Initiative," September 13, 2017.}
+    \endentry
+    \entry{AGILE}{article}{}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labeltitlesource}{title}
+      \field{title}{Yunsup Lee, Andrew Waterman, Henry Cook, Brian Zimmer, et al. "An agile approach to building RISC-V microprocessors," IEEE Micro 36, no. 2 (2016): 8-20.}
+    \endentry
+    \entry{ADH}{article}{}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labeltitlesource}{title}
+      \field{title}{David A. Patterson, and Borivoje Nikolić. "Agile Design for Hardware, Parts I, II, III," EE Times, July 27 to August 3, 2015.}
+    \endentry
+    \entry{microsoftazure}{article}{}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labeltitlesource}{title}
+      \field{title}{Adrian M Caulfield, Eric S Chung, Andrew Putnam, Hari Angepat, Jeremy Fowers, Michael Haselman, Stephen Heil, Matt Humphrey, Puneet Kaur, Joo-Young Kim, et al. 2016. A cloud-scale acceleration architecture. In MICRO 2016. IEEE, 1–13.}
+    \endentry
+    \entry{aws-ec2}{article}{}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labeltitlesource}{title}
+      \field{title}{2017. AWS EC2 FPGA Hardware and Software Development Kit. (2017). https://github.com/aws/aws-fpga}
+    \endentry
+    \entry{hmc}{article}{}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labeltitlesource}{title}
+      \field{title}{J. T. Pawlowski, “Hybrid memory cube (hmc),” in IEEE Hot Chips, 2011.}
+    \endentry
+    \entry{hbm}{article}{}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labeltitlesource}{title}
+      \field{title}{https://www.jedec.org/standards-documents/docs/jesd235a}
+    \endentry
+    \entry{reram}{article}{}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labeltitlesource}{title}
+      \field{title}{H.-S. P. Wong, H.-Y. Lee, S. Yu, Y.-S. Chen, Y. Wu, P.-S. Chen, B. Lee, F. T. Chen, and M.-J. Tsai, “Metal–oxide rram,” Proceedings of the IEEE, vol. 100, no. 6, pp. 1951–1970, 2012.}
+    \endentry
+    \entry{Gonzalez2012powergraph}{inproceedings}{}
+      \name{author}{5}{}{%
+        {{hash=39a7310c368e791ba8ab0e47c525b18f}{%
+           family={Gonzalez},
+           family_i={G\bibinitperiod},
+           given={Joseph\bibnamedelima E.},
+           given_i={J\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=0ce09b054836d3bed7fcc8fffa7f748b}{%
+           family={Low},
+           family_i={L\bibinitperiod},
+           given={Yucheng},
+           given_i={Y\bibinitperiod}}}%
+        {{hash=5e5ec19c6f64f5ab945697d7701eb60a}{%
+           family={Gu},
+           family_i={G\bibinitperiod},
+           given={Haijie},
+           given_i={H\bibinitperiod}}}%
+        {{hash=e205c772129ea24c246a0ed207562cf5}{%
+           family={Bickson},
+           family_i={B\bibinitperiod},
+           given={Danny},
+           given_i={D\bibinitperiod}}}%
+        {{hash=c9ab8ac486d7f85ac914b1a8e51e512b}{%
+           family={Guestrin},
+           family_i={G\bibinitperiod},
+           given={Carlos},
+           given_i={C\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Hollywood, CA, USA}%
+      }
+      \list{publisher}{1}{%
+        {USENIX Association}%
+      }
+      \strng{namehash}{2ac0ab42a68d1de67b941f958d1cd902}
+      \strng{fullhash}{adec4a21f8b8a8a4887187b00bbc6014}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 10th USENIX Conference on Operating Systems Design and Implementation}
+      \field{isbn}{978-1-931971-96-6}
+      \field{series}{OSDI'12}
+      \field{title}{PowerGraph: Distributed Graph-parallel Computation on Natural Graphs}
+      \field{year}{2012}
+      \field{pages}{17\bibrangedash 30}
+      \range{pages}{14}
+      \verb{url}
+      \verb http://dl.acm.org/citation.cfm?id=2387880.2387883
+      \endverb
+    \endentry
+    \entry{giraph}{misc}{}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{http://giraph.apache.org/}}
+      \field{title}{Apache Giraph}
+    \endentry
+    \entry{Gonzalez2014graphx}{inproceedings}{}
+      \name{author}{6}{}{%
+        {{hash=39a7310c368e791ba8ab0e47c525b18f}{%
+           family={Gonzalez},
+           family_i={G\bibinitperiod},
+           given={Joseph\bibnamedelima E.},
+           given_i={J\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=fa12ff7c63d246671ad0d5036cccb4cd}{%
+           family={Xin},
+           family_i={X\bibinitperiod},
+           given={Reynold\bibnamedelima S.},
+           given_i={R\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=aec50de877bd49b0c55f7067c573cd4f}{%
+           family={Dave},
+           family_i={D\bibinitperiod},
+           given={Ankur},
+           given_i={A\bibinitperiod}}}%
+        {{hash=7e11cd26a2fa32941fe54c93e5b48ca5}{%
+           family={Crankshaw},
+           family_i={C\bibinitperiod},
+           given={Daniel},
+           given_i={D\bibinitperiod}}}%
+        {{hash=9fc5630d12e8b22a1d2351a530caa51b}{%
+           family={Franklin},
+           family_i={F\bibinitperiod},
+           given={Michael\bibnamedelima J.},
+           given_i={M\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=51d9ef26181e2e8a9dc546b401e0bb26}{%
+           family={Stoica},
+           family_i={S\bibinitperiod},
+           given={Ion},
+           given_i={I\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Broomfield, CO}%
+      }
+      \list{publisher}{1}{%
+        {USENIX Association}%
+      }
+      \strng{namehash}{2ac0ab42a68d1de67b941f958d1cd902}
+      \strng{fullhash}{1b77ec292fef4bf2ec012d65b8713760}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 11th USENIX Conference on Operating Systems Design and Implementation}
+      \field{isbn}{978-1-931971-16-4}
+      \field{series}{OSDI'14}
+      \field{title}{GraphX: Graph Processing in a Distributed Dataflow Framework}
+      \field{year}{2014}
+      \field{pages}{599\bibrangedash 613}
+      \range{pages}{15}
+      \verb{url}
+      \verb http://dl.acm.org/citation.cfm?id=2685048.2685096
+      \endverb
+    \endentry
+    \entry{teixeira2015arabesque}{inproceedings}{}
+      \name{author}{6}{}{%
+        {{hash=5af1bf5436f6f72f11efb5dda82bdeff}{%
+           family={Teixeira},
+           family_i={T\bibinitperiod},
+           given={Carlos\bibnamedelima HC},
+           given_i={C\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=74ece7ddccd4fbc78d18d87ce8fe5f0b}{%
+           family={Fonseca},
+           family_i={F\bibinitperiod},
+           given={Alexandre\bibnamedelima J},
+           given_i={A\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=532cb1c6c0045d2437ee7afff42ff0b0}{%
+           family={Serafini},
+           family_i={S\bibinitperiod},
+           given={Marco},
+           given_i={M\bibinitperiod}}}%
+        {{hash=b309b29a2178c1e510d85030dd458a5d}{%
+           family={Siganos},
+           family_i={S\bibinitperiod},
+           given={Georgos},
+           given_i={G\bibinitperiod}}}%
+        {{hash=2c7eefd13d1728427c83f23638fe671e}{%
+           family={Zaki},
+           family_i={Z\bibinitperiod},
+           given={Mohammed\bibnamedelima J},
+           given_i={M\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=d329d2093a27d7c3b76d2df869370332}{%
+           family={Aboulnaga},
+           family_i={A\bibinitperiod},
+           given={Ashraf},
+           given_i={A\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {ACM}%
+      }
+      \strng{namehash}{8e55d87d47c01f1f792225a581f34392}
+      \strng{fullhash}{d8eb531c80c6d9f2c27129f815e9a349}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 25th Symposium on Operating Systems Principles}
+      \field{title}{Arabesque: a system for distributed graph mining}
+      \field{year}{2015}
+      \field{pages}{425\bibrangedash 440}
+      \range{pages}{16}
+    \endentry
+    \entry{chen2015powerlyra}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=5bb19d0f142e7bd52543c9c4cf45c4c7}{%
+           family={Chen},
+           family_i={C\bibinitperiod},
+           given={Rong},
+           given_i={R\bibinitperiod}}}%
+        {{hash=2b4fd9901f20457c1216777514978c3c}{%
+           family={Shi},
+           family_i={S\bibinitperiod},
+           given={Jiaxin},
+           given_i={J\bibinitperiod}}}%
+        {{hash=6c99ecc5a76ed0856e99d9ad50bf63ce}{%
+           family={Chen},
+           family_i={C\bibinitperiod},
+           given={Yanzhe},
+           given_i={Y\bibinitperiod}}}%
+        {{hash=d5c36f34b65110f35dbb94158f05a30d}{%
+           family={Chen},
+           family_i={C\bibinitperiod},
+           given={Haibo},
+           given_i={H\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {ACM}%
+      }
+      \strng{namehash}{6ac04f9fd59c6a851c062e7770f319e5}
+      \strng{fullhash}{81f79a81659f361a62052de1b36ab62f}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the Tenth European Conference on Computer Systems}
+      \field{title}{Powerlyra: Differentiated graph computation and partitioning on skewed graphs}
+      \field{year}{2015}
+      \field{pages}{1}
+      \range{pages}{1}
+    \endentry
+    \entry{Zhu2016gemini}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=268f8eab3c57fdef03777aa7562f65a0}{%
+           family={Zhu},
+           family_i={Z\bibinitperiod},
+           given={Xiaowei},
+           given_i={X\bibinitperiod}}}%
+        {{hash=4e0d7fe1bf77bab4f7d97d059f12d03f}{%
+           family={Chen},
+           family_i={C\bibinitperiod},
+           given={Wenguang},
+           given_i={W\bibinitperiod}}}%
+        {{hash=87e2f66d642825dc0e7802a8138a614b}{%
+           family={Zheng},
+           family_i={Z\bibinitperiod},
+           given={Weimin},
+           given_i={W\bibinitperiod}}}%
+        {{hash=bc5ce7108b6e4249f348a8b65a32861a}{%
+           family={Ma},
+           family_i={M\bibinitperiod},
+           given={Xiaosong},
+           given_i={X\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Savannah, GA, USA}%
+      }
+      \list{publisher}{1}{%
+        {USENIX Association}%
+      }
+      \strng{namehash}{c064f682a20aac88d96f614ed2ecc175}
+      \strng{fullhash}{04cde5e593c50aa0fa8ebb1e7f2e2082}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 12th USENIX Conference on Operating Systems Design and Implementation}
+      \field{isbn}{978-1-931971-33-1}
+      \field{series}{OSDI'16}
+      \field{title}{Gemini: A Computation-centric Distributed Graph Processing System}
+      \field{year}{2016}
+      \field{pages}{301\bibrangedash 316}
+      \range{pages}{16}
+      \verb{url}
+      \verb http://dl.acm.org/citation.cfm?id=3026877.3026901
+      \endverb
+    \endentry
+    \entry{khayyat2013mizan}{inproceedings}{}
+      \name{author}{6}{}{%
+        {{hash=dda05f9fade4cee81fe7f726795b4d26}{%
+           family={Khayyat},
+           family_i={K\bibinitperiod},
+           given={Zuhair},
+           given_i={Z\bibinitperiod}}}%
+        {{hash=1ee4d5e19b02ccb2aafb58e9b413ff02}{%
+           family={Awara},
+           family_i={A\bibinitperiod},
+           given={Karim},
+           given_i={K\bibinitperiod}}}%
+        {{hash=9b5630f32a3a4526e54f47697c445bb5}{%
+           family={Alonazi},
+           family_i={A\bibinitperiod},
+           given={Amani},
+           given_i={A\bibinitperiod}}}%
+        {{hash=66819410d6d96ad9d34b91f56fe06dce}{%
+           family={Jamjoom},
+           family_i={J\bibinitperiod},
+           given={Hani},
+           given_i={H\bibinitperiod}}}%
+        {{hash=2dcb939873a9c59be8d1352139e69361}{%
+           family={Williams},
+           family_i={W\bibinitperiod},
+           given={Dan},
+           given_i={D\bibinitperiod}}}%
+        {{hash=cfeddfb4f7ceacfc0fb41b0b7e7574b9}{%
+           family={Kalnis},
+           family_i={K\bibinitperiod},
+           given={Panos},
+           given_i={P\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {ACM}%
+      }
+      \strng{namehash}{a598251b0ff21a8e63f36d9515aaa8af}
+      \strng{fullhash}{a63f2f568f7ebebeae672aec5dbfbbca}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 8th ACM European Conference on Computer Systems}
+      \field{title}{Mizan: a system for dynamic load balancing in large-scale graph processing}
+      \field{year}{2013}
+      \field{pages}{169\bibrangedash 182}
+      \range{pages}{14}
+    \endentry
+    \entry{randles2010comparative}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=0fefa9fad9300cf318aa049730300108}{%
+           family={Randles},
+           family_i={R\bibinitperiod},
+           given={Martin},
+           given_i={M\bibinitperiod}}}%
+        {{hash=0124013fc004eee364c21731f2f89f2a}{%
+           family={Lamb},
+           family_i={L\bibinitperiod},
+           given={David},
+           given_i={D\bibinitperiod}}}%
+        {{hash=1288c5b4ba0f45c7ff84a81cf4acb616}{%
+           family={Taleb-Bendiab},
+           family_i={T\bibinithyphendelim B\bibinitperiod},
+           given={A},
+           given_i={A\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{63a85abea7328f98c5dfc6a08ae3e648}
+      \strng{fullhash}{63a85abea7328f98c5dfc6a08ae3e648}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2010 IEEE 24th International Conference on Advanced Information Networking and Applications Workshops (WAINA)}
+      \field{title}{A comparative study into distributed load balancing algorithms for cloud computing}
+      \field{year}{2010}
+      \field{pages}{551\bibrangedash 556}
+      \range{pages}{6}
+    \endentry
+    \entry{zhao2014lightgraph}{inproceedings}{}
+      \name{author}{6}{}{%
+        {{hash=ba51490fdfee4e053d199f28e82dad4f}{%
+           family={Zhao},
+           family_i={Z\bibinitperiod},
+           given={Yue},
+           given_i={Y\bibinitperiod}}}%
+        {{hash=841ba2ab590da76c934e4cb0b8b74975}{%
+           family={Yoshigoe},
+           family_i={Y\bibinitperiod},
+           given={Kenji},
+           given_i={K\bibinitperiod}}}%
+        {{hash=cc1e2cec88deb72f9f13f935bc4fae98}{%
+           family={Xie},
+           family_i={X\bibinitperiod},
+           given={Mengjun},
+           given_i={M\bibinitperiod}}}%
+        {{hash=a451f11ca6ce3f9a73998681f9e00b8b}{%
+           family={Zhou},
+           family_i={Z\bibinitperiod},
+           given={Suijian},
+           given_i={S\bibinitperiod}}}%
+        {{hash=93824bc8329d72188e50c5c9b8a30ca0}{%
+           family={Seker},
+           family_i={S\bibinitperiod},
+           given={Remzi},
+           given_i={R\bibinitperiod}}}%
+        {{hash=9856bacbe78d7b7b8450e13766f6bce7}{%
+           family={Bian},
+           family_i={B\bibinitperiod},
+           given={Jiang},
+           given_i={J\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{6e36d0f67a78a8327c01f0bb5d946324}
+      \strng{fullhash}{f4597504a156787ccf6ad778d5c7e036}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2014 IEEE International Congress on Big Data (BigData Congress)}
+      \field{title}{Lightgraph: Lighten communication in distributed graph-parallel processing}
+      \field{year}{2014}
+      \field{pages}{717\bibrangedash 724}
+      \range{pages}{8}
+    \endentry
+    \entry{wang2014replication}{inproceedings}{}
+      \name{author}{5}{}{%
+        {{hash=c26cc02bbb5db725a2c79cb200894d76}{%
+           family={Wang},
+           family_i={W\bibinitperiod},
+           given={Peng},
+           given_i={P\bibinitperiod}}}%
+        {{hash=7911677493e83c4d5fcaf94f8a53ac7e}{%
+           family={Zhang},
+           family_i={Z\bibinitperiod},
+           given={Kaiyuan},
+           given_i={K\bibinitperiod}}}%
+        {{hash=5bb19d0f142e7bd52543c9c4cf45c4c7}{%
+           family={Chen},
+           family_i={C\bibinitperiod},
+           given={Rong},
+           given_i={R\bibinitperiod}}}%
+        {{hash=d5c36f34b65110f35dbb94158f05a30d}{%
+           family={Chen},
+           family_i={C\bibinitperiod},
+           given={Haibo},
+           given_i={H\bibinitperiod}}}%
+        {{hash=193fe22ab9a3b44f8ae467e9c216bcec}{%
+           family={Guan},
+           family_i={G\bibinitperiod},
+           given={Haibing},
+           given_i={H\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{1945ae4f24598c69c95ba36c072b63da}
+      \strng{fullhash}{0852b114002fc2a0b5516d588849f472}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2014 44th Annual IEEE/IFIP International Conference on Dependable Systems and Networks (DSN)}
+      \field{title}{Replication-based fault-tolerance for large-scale graph processing}
+      \field{year}{2014}
+      \field{pages}{562\bibrangedash 573}
+      \range{pages}{12}
+    \endentry
+    \entry{nguyen2013galois}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=86ba7a2997e3cad9fc78ac850a7b0af1}{%
+           family={Nguyen},
+           family_i={N\bibinitperiod},
+           given={Donald},
+           given_i={D\bibinitperiod}}}%
+        {{hash=182a1baf42f30dbae1a8746e5d72fedb}{%
+           family={Lenharth},
+           family_i={L\bibinitperiod},
+           given={Andrew},
+           given_i={A\bibinitperiod}}}%
+        {{hash=e7f2014846734dae8a242e557fdafb65}{%
+           family={Pingali},
+           family_i={P\bibinitperiod},
+           given={Keshav},
+           given_i={K\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {ACM}%
+      }
+      \strng{namehash}{fb027227b2bfb50272d3d0e1a15f62de}
+      \strng{fullhash}{fb027227b2bfb50272d3d0e1a15f62de}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the Twenty-Fourth ACM Symposium on Operating Systems Principles}
+      \field{title}{A lightweight infrastructure for graph analytics}
+      \field{year}{2013}
+      \field{pages}{456\bibrangedash 471}
+      \range{pages}{16}
+    \endentry
+    \entry{sundaram2015graphmat}{article}{}
+      \name{author}{8}{}{%
+        {{hash=995d38d971d010a683eda2f6ada66d16}{%
+           family={Sundaram},
+           family_i={S\bibinitperiod},
+           given={Narayanan},
+           given_i={N\bibinitperiod}}}%
+        {{hash=a930c576ecba694b17665f1e3ed5dfa8}{%
+           family={Satish},
+           family_i={S\bibinitperiod},
+           given={Nadathur},
+           given_i={N\bibinitperiod}}}%
+        {{hash=eba4a95eec2ecdf46d61a6787f48651f}{%
+           family={Patwary},
+           family_i={P\bibinitperiod},
+           given={Md\bibnamedelima Mostofa\bibnamedelima Ali},
+           given_i={M\bibinitperiod\bibinitdelim M\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=4e706e389c9caf41768df41b59a7b9b1}{%
+           family={Dulloor},
+           family_i={D\bibinitperiod},
+           given={Subramanya\bibnamedelima R},
+           given_i={S\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=b09e7294e9f5e12edc080744fbb3c147}{%
+           family={Anderson},
+           family_i={A\bibinitperiod},
+           given={Michael\bibnamedelima J},
+           given_i={M\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=9b9abe97049965a9d173b2d0eadd5575}{%
+           family={Vadlamudi},
+           family_i={V\bibinitperiod},
+           given={Satya\bibnamedelima Gautam},
+           given_i={S\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=2be80fdc9a37b451dbaa34a0180f9fb2}{%
+           family={Das},
+           family_i={D\bibinitperiod},
+           given={Dipankar},
+           given_i={D\bibinitperiod}}}%
+        {{hash=03a0853de82447c9c2c5f85d01c7e5b5}{%
+           family={Dubey},
+           family_i={D\bibinitperiod},
+           given={Pradeep},
+           given_i={P\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {VLDB Endowment}%
+      }
+      \strng{namehash}{be5f06761ddb9b4ceca5744d2491cece}
+      \strng{fullhash}{1598d6318cfafafe97b5f66173e9d904}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Proceedings of the VLDB Endowment}
+      \field{number}{11}
+      \field{title}{Graphmat: High performance graph analytics made productive}
+      \field{volume}{8}
+      \field{year}{2015}
+      \field{pages}{1214\bibrangedash 1225}
+      \range{pages}{12}
+    \endentry
+    \entry{Zhang2015numa-aware}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=7911677493e83c4d5fcaf94f8a53ac7e}{%
+           family={Zhang},
+           family_i={Z\bibinitperiod},
+           given={Kaiyuan},
+           given_i={K\bibinitperiod}}}%
+        {{hash=5bb19d0f142e7bd52543c9c4cf45c4c7}{%
+           family={Chen},
+           family_i={C\bibinitperiod},
+           given={Rong},
+           given_i={R\bibinitperiod}}}%
+        {{hash=d5c36f34b65110f35dbb94158f05a30d}{%
+           family={Chen},
+           family_i={C\bibinitperiod},
+           given={Haibo},
+           given_i={H\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {San Francisco, CA, USA}%
+      }
+      \list{publisher}{1}{%
+        {ACM}%
+      }
+      \strng{namehash}{8a83588c782f9fef9095e055b1b8f231}
+      \strng{fullhash}{8a83588c782f9fef9095e055b1b8f231}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 20th ACM SIGPLAN Symposium on Principles and Practice of Parallel Programming}
+      \field{isbn}{978-1-4503-3205-7}
+      \field{series}{PPoPP 2015}
+      \field{title}{NUMA-aware Graph-structured Analytics}
+      \field{year}{2015}
+      \field{pages}{183\bibrangedash 193}
+      \range{pages}{11}
+      \verb{doi}
+      \verb 10.1145/2688500.2688507
+      \endverb
+      \verb{url}
+      \verb http://doi.acm.org/10.1145/2688500.2688507
+      \endverb
+      \keyw{Graph-structured Analytics,Non-uniform Memory Access (NUMA)}
+    \endentry
+    \entry{han2013turbograph}{inproceedings}{}
+      \name{author}{7}{}{%
+        {{hash=b6a6981ff85966403aa40ad5a60ce42c}{%
+           family={Han},
+           family_i={H\bibinitperiod},
+           given={Wook-Shin},
+           given_i={W\bibinithyphendelim S\bibinitperiod}}}%
+        {{hash=ab11673f86091953b964f8eb4ba4e529}{%
+           family={Lee},
+           family_i={L\bibinitperiod},
+           given={Sangyeon},
+           given_i={S\bibinitperiod}}}%
+        {{hash=34e00e0ffaa2b8b1b51a4dc8518fc942}{%
+           family={Park},
+           family_i={P\bibinitperiod},
+           given={Kyungyeol},
+           given_i={K\bibinitperiod}}}%
+        {{hash=113d1a692a5a394e7b355bbc4922f7bc}{%
+           family={Lee},
+           family_i={L\bibinitperiod},
+           given={Jeong-Hoon},
+           given_i={J\bibinithyphendelim H\bibinitperiod}}}%
+        {{hash=0327cd6f392e8862b536f30790cc7bc7}{%
+           family={Kim},
+           family_i={K\bibinitperiod},
+           given={Min-Soo},
+           given_i={M\bibinithyphendelim S\bibinitperiod}}}%
+        {{hash=3c68a47dc7b1b1f2bf7030f4a4a0d30c}{%
+           family={Kim},
+           family_i={K\bibinitperiod},
+           given={Jinha},
+           given_i={J\bibinitperiod}}}%
+        {{hash=b37db6da3bdae781164e763a40e11f22}{%
+           family={Yu},
+           family_i={Y\bibinitperiod},
+           given={Hwanjo},
+           given_i={H\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {ACM}%
+      }
+      \strng{namehash}{49b753e1bd028358e642c35e12b405a4}
+      \strng{fullhash}{786f4c13c480dbb8b4fde9382c93f4a4}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 19th ACM SIGKDD international conference on Knowledge discovery and data mining}
+      \field{title}{TurboGraph: a fast parallel graph engine handling billion-scale graphs in a single PC}
+      \field{year}{2013}
+      \field{pages}{77\bibrangedash 85}
+      \range{pages}{9}
+    \endentry
+    \entry{yuan2014pathgraph}{inproceedings}{}
+      \name{author}{6}{}{%
+        {{hash=6d6a9d98a4e0b3a385ccd4d10ee69de7}{%
+           family={Yuan},
+           family_i={Y\bibinitperiod},
+           given={Pingpeng},
+           given_i={P\bibinitperiod}}}%
+        {{hash=e444823368cc5f420124f5061f171b27}{%
+           family={Zhang},
+           family_i={Z\bibinitperiod},
+           given={Wenya},
+           given_i={W\bibinitperiod}}}%
+        {{hash=9407994e22a6107d503773134367069f}{%
+           family={Xie},
+           family_i={X\bibinitperiod},
+           given={Changfeng},
+           given_i={C\bibinitperiod}}}%
+        {{hash=c358204b5c649d29bcb0ba18cea44777}{%
+           family={Jin},
+           family_i={J\bibinitperiod},
+           given={Hai},
+           given_i={H\bibinitperiod}}}%
+        {{hash=1c17a20c4acfa6f32b73321fc505433b}{%
+           family={Liu},
+           family_i={L\bibinitperiod},
+           given={Ling},
+           given_i={L\bibinitperiod}}}%
+        {{hash=62829048d3f9e8d49a04b55163b552f9}{%
+           family={Lee},
+           family_i={L\bibinitperiod},
+           given={Kisung},
+           given_i={K\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {IEEE Press}%
+      }
+      \strng{namehash}{2b883b2c79379dffe13829b0c2703e18}
+      \strng{fullhash}{797df10242a70e6f3811394b2d6c46fd}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the International Conference for High Performance Computing, Networking, Storage and Analysis}
+      \field{title}{Fast iterative graph computation: A path centric approach}
+      \field{year}{2014}
+      \field{pages}{401\bibrangedash 412}
+      \range{pages}{12}
+    \endentry
+    \entry{zhu2015gridgraph}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=268f8eab3c57fdef03777aa7562f65a0}{%
+           family={Zhu},
+           family_i={Z\bibinitperiod},
+           given={Xiaowei},
+           given_i={X\bibinitperiod}}}%
+        {{hash=582101125590f250bc86051f853e8b79}{%
+           family={Han},
+           family_i={H\bibinitperiod},
+           given={Wentao},
+           given_i={W\bibinitperiod}}}%
+        {{hash=4e0d7fe1bf77bab4f7d97d059f12d03f}{%
+           family={Chen},
+           family_i={C\bibinitperiod},
+           given={Wenguang},
+           given_i={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{6069f9f17083ac95bbcde3c0f91a0dac}
+      \strng{fullhash}{6069f9f17083ac95bbcde3c0f91a0dac}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{USENIX Annual Technical Conference}
+      \field{title}{GridGraph: Large-Scale Graph Processing on a Single Machine Using 2-Level Hierarchical Partitioning.}
+      \field{year}{2015}
+      \field{pages}{375\bibrangedash 386}
+      \range{pages}{12}
+    \endentry
+    \entry{chi2016nxgraph}{inproceedings}{}
+      \name{author}{6}{}{%
+        {{hash=62b184c2c2a70f82111208a25595854e}{%
+           family={Chi},
+           family_i={C\bibinitperiod},
+           given={Yuze},
+           given_i={Y\bibinitperiod}}}%
+        {{hash=f6c667850f49033e3ebc9e9c8dca130d}{%
+           family={Dai},
+           family_i={D\bibinitperiod},
+           given={Guohao},
+           given_i={G\bibinitperiod}}}%
+        {{hash=b2eccb185095fccfeb40fdffd8b2105f}{%
+           family={Wang},
+           family_i={W\bibinitperiod},
+           given={Yu},
+           given_i={Y\bibinitperiod}}}%
+        {{hash=78a36b4b33af85f6c50a6c16cc16931c}{%
+           family={Sun},
+           family_i={S\bibinitperiod},
+           given={Guangyu},
+           given_i={G\bibinitperiod}}}%
+        {{hash=82ebafd2e144bf050f398481d670d071}{%
+           family={Li},
+           family_i={L\bibinitperiod},
+           given={Guoliang},
+           given_i={G\bibinitperiod}}}%
+        {{hash=4756886387a4c576f3366e0abf146be0}{%
+           family={Yang},
+           family_i={Y\bibinitperiod},
+           given={Huazhong},
+           given_i={H\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{6ae3b8e398d3a20fea496ba96d4a6dd5}
+      \strng{fullhash}{a866e4b25a080644f624dde742c13807}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2016 IEEE 32nd International Conference on Data Engineering (ICDE)}
+      \field{title}{Nxgraph: An efficient graph processing system on a single machine}
+      \field{year}{2016}
+      \field{pages}{409\bibrangedash 420}
+      \range{pages}{12}
+    \endentry
+    \entry{Maass2017mosaic}{inproceedings}{}
+      \name{author}{6}{}{%
+        {{hash=08e887ba4115f6183557ea6c35b1ac3f}{%
+           family={Maass},
+           family_i={M\bibinitperiod},
+           given={Steffen},
+           given_i={S\bibinitperiod}}}%
+        {{hash=e4b7b5cbc4874565910b380697c59902}{%
+           family={Min},
+           family_i={M\bibinitperiod},
+           given={Changwoo},
+           given_i={C\bibinitperiod}}}%
+        {{hash=e369b156b400c8600846a3f1f38126a0}{%
+           family={Kashyap},
+           family_i={K\bibinitperiod},
+           given={Sanidhya},
+           given_i={S\bibinitperiod}}}%
+        {{hash=b3c10d1d201e95598446a6a2354ff80c}{%
+           family={Kang},
+           family_i={K\bibinitperiod},
+           given={Woonhak},
+           given_i={W\bibinitperiod}}}%
+        {{hash=6cd809b9de4f076e4096d284f150cb67}{%
+           family={Kumar},
+           family_i={K\bibinitperiod},
+           given={Mohan},
+           given_i={M\bibinitperiod}}}%
+        {{hash=a7c7d519c5b2cbab4e54e9bb412f7d17}{%
+           family={Kim},
+           family_i={K\bibinitperiod},
+           given={Taesoo},
+           given_i={T\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Belgrade, Serbia}%
+      }
+      \list{publisher}{1}{%
+        {ACM}%
+      }
+      \strng{namehash}{5f734fd1172e0cd6ecc539a5d708b725}
+      \strng{fullhash}{36a250f3125b7da0201ab6fda533b3f6}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the Twelfth European Conference on Computer Systems}
+      \field{isbn}{978-1-4503-4938-3}
+      \field{series}{EuroSys '17}
+      \field{title}{Mosaic: Processing a Trillion-Edge Graph on a Single Machine}
+      \field{year}{2017}
+      \field{pages}{527\bibrangedash 543}
+      \range{pages}{17}
+      \verb{doi}
+      \verb 10.1145/3064176.3064191
+      \endverb
+      \verb{url}
+      \verb http://doi.acm.org/10.1145/3064176.3064191
+      \endverb
+    \endentry
+    \entry{zhong2014medusa}{article}{}
+      \name{author}{2}{}{%
+        {{hash=7b364166f5006f4e8b165b800c504ff3}{%
+           family={Zhong},
+           family_i={Z\bibinitperiod},
+           given={Jianlong},
+           given_i={J\bibinitperiod}}}%
+        {{hash=67a5834e9a591541aaad0d1326bef218}{%
+           family={He},
+           family_i={H\bibinitperiod},
+           given={Bingsheng},
+           given_i={B\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {ACM}%
+      }
+      \strng{namehash}{4086abcb56aa9e6d054e45b60d94244c}
+      \strng{fullhash}{4086abcb56aa9e6d054e45b60d94244c}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{ACM SIGMOD Record}
+      \field{number}{2}
+      \field{title}{Medusa: A parallel graph processing system on graphics processors}
+      \field{volume}{43}
+      \field{year}{2014}
+      \field{pages}{35\bibrangedash 40}
+      \range{pages}{6}
+    \endentry
+    \entry{seo2015gstream}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=a490db5cfacafe4c63fa0da7366d8393}{%
+           family={Seo},
+           family_i={S\bibinitperiod},
+           given={Hyunseok},
+           given_i={H\bibinitperiod}}}%
+        {{hash=25d33c56f355fcbfaede0dbd9780fe34}{%
+           family={Kim},
+           family_i={K\bibinitperiod},
+           given={Jinwook},
+           given_i={J\bibinitperiod}}}%
+        {{hash=0327cd6f392e8862b536f30790cc7bc7}{%
+           family={Kim},
+           family_i={K\bibinitperiod},
+           given={Min-Soo},
+           given_i={M\bibinithyphendelim S\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {ACM}%
+      }
+      \strng{namehash}{dd3aa91cc49ffa28ec61da1bfa8aaaa1}
+      \strng{fullhash}{dd3aa91cc49ffa28ec61da1bfa8aaaa1}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 20th ACM SIGPLAN Symposium on Principles and Practice of Parallel Programming}
+      \field{number}{8}
+      \field{title}{Gstream: A graph streaming processing method for large-scale graphs on gpus}
+      \field{volume}{50}
+      \field{year}{2015}
+      \field{pages}{253\bibrangedash 254}
+      \range{pages}{2}
+    \endentry
+    \entry{soman2010fast}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=dc02c6e16b20ce55163e3c338890f07f}{%
+           family={Soman},
+           family_i={S\bibinitperiod},
+           given={Jyothish},
+           given_i={J\bibinitperiod}}}%
+        {{hash=a6cb2e142b0d6bf64b10137228aa0993}{%
+           family={Kishore},
+           family_i={K\bibinitperiod},
+           given={Kothapalli},
+           given_i={K\bibinitperiod}}}%
+        {{hash=7ee941b042318d7454d7ce626f52c97e}{%
+           family={Narayanan},
+           family_i={N\bibinitperiod},
+           given={PJ},
+           given_i={P\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{c1d101785c19b698b757e1f46f7a6d01}
+      \strng{fullhash}{c1d101785c19b698b757e1f46f7a6d01}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2010 IEEE International Symposium on Parallel \& Distributed Processing, Workshops and Phd Forum (IPDPSW)}
+      \field{title}{A fast GPU algorithm for graph connectivity}
+      \field{year}{2010}
+      \field{pages}{1\bibrangedash 8}
+      \range{pages}{8}
+    \endentry
+    \entry{mclaughlin2014scalableBC}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=1e4b47895c0cd44291586dd32bdb581f}{%
+           family={McLaughlin},
+           family_i={M\bibinitperiod},
+           given={Adam},
+           given_i={A\bibinitperiod}}}%
+        {{hash=9d9879e37647daaea49d4cc9ed31d5a1}{%
+           family={Bader},
+           family_i={B\bibinitperiod},
+           given={David\bibnamedelima A},
+           given_i={D\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {IEEE Press}%
+      }
+      \strng{namehash}{4c82f38c90e7a6f7d6ef3c0b1d727416}
+      \strng{fullhash}{4c82f38c90e7a6f7d6ef3c0b1d727416}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the International Conference for High performance computing, networking, storage and analysis}
+      \field{title}{Scalable and high performance betweenness centrality on the GPU}
+      \field{year}{2014}
+      \field{pages}{572\bibrangedash 583}
+      \range{pages}{12}
+    \endentry
+    \entry{pande2011computingBC}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=41ae467ba76e6349541c7bd601d36eec}{%
+           family={Pande},
+           family_i={P\bibinitperiod},
+           given={P},
+           given_i={P\bibinitperiod}}}%
+        {{hash=9d9879e37647daaea49d4cc9ed31d5a1}{%
+           family={Bader},
+           family_i={B\bibinitperiod},
+           given={David\bibnamedelima A},
+           given_i={D\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \strng{namehash}{c16fa9bf18b603e400ff409946adfc32}
+      \strng{fullhash}{c16fa9bf18b603e400ff409946adfc32}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{15th Annual High Performance Embedded Computing Workshop (HPEC)}
+      \field{title}{Computing betweenness centrality for small world networks on a GPU}
+      \field{year}{2011}
+    \endentry
+    \entry{sariyuce2013betweenness}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=c56b8c3cc9354ecfd9a870210a09c302}{%
+           family={Sariyüce},
+           family_i={S\bibinitperiod},
+           given={Ahmet\bibnamedelima Erdem},
+           given_i={A\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=df849f7b29d194c3c028a1272b3b50c1}{%
+           family={Kaya},
+           family_i={K\bibinitperiod},
+           given={Kamer},
+           given_i={K\bibinitperiod}}}%
+        {{hash=97d7640db1038cb73d21235c1278d57a}{%
+           family={Saule},
+           family_i={S\bibinitperiod},
+           given={Erik},
+           given_i={E\bibinitperiod}}}%
+        {{hash=23b0fa9a00bde281c2ec7316410b10cb}{%
+           family={Çatalyürek},
+           family_i={Ç\bibinitperiod},
+           given={Ümit\bibnamedelima V},
+           given_i={Ü\bibinitperiod\bibinitdelim V\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {ACM}%
+      }
+      \strng{namehash}{aaea8835de7dab813ec7a69cece0d887}
+      \strng{fullhash}{fd35f97c090b17adb4100e808849a379}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 6th Workshop on General Purpose Processor Using Graphics Processing Units}
+      \field{title}{Betweenness centrality on GPUs and heterogeneous architectures}
+      \field{year}{2013}
+      \field{pages}{76\bibrangedash 85}
+      \range{pages}{10}
+    \endentry
+    \entry{davidson2014work}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=171adfbf08a197fecfa798f5d2b90281}{%
+           family={Davidson},
+           family_i={D\bibinitperiod},
+           given={Andrew},
+           given_i={A\bibinitperiod}}}%
+        {{hash=9eac1d4a7e3fe915f4deee8ff7e7ee7a}{%
+           family={Baxter},
+           family_i={B\bibinitperiod},
+           given={Sean},
+           given_i={S\bibinitperiod}}}%
+        {{hash=b65b1e0d8d79fe6e41bb998ea526b3cd}{%
+           family={Garland},
+           family_i={G\bibinitperiod},
+           given={Michael},
+           given_i={M\bibinitperiod}}}%
+        {{hash=0bb23e865655a864510b93f6ec06ced6}{%
+           family={Owens},
+           family_i={O\bibinitperiod},
+           given={John\bibnamedelima D},
+           given_i={J\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{2faf56e4ed82bc50983540dbd9eaca8d}
+      \strng{fullhash}{865593322546a2e8379822a46cf60fb5}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2014 IEEE 28th International Parallel and Distributed Processing Symposium}
+      \field{title}{Work-efficient parallel GPU methods for single-source shortest paths}
+      \field{year}{2014}
+      \field{pages}{349\bibrangedash 359}
+      \range{pages}{11}
+    \endentry
+    \entry{Hong2012green-marl}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=e7c9c6f7f81ca39d3b7be3b69f45658d}{%
+           family={Hong},
+           family_i={H\bibinitperiod},
+           given={Sungpack},
+           given_i={S\bibinitperiod}}}%
+        {{hash=3c2d47c3b73f80fbb0e261bb4c4a7dd9}{%
+           family={Chafi},
+           family_i={C\bibinitperiod},
+           given={Hassan},
+           given_i={H\bibinitperiod}}}%
+        {{hash=5478107e47328165928f3f300e00fd1d}{%
+           family={Sedlar},
+           family_i={S\bibinitperiod},
+           given={Edic},
+           given_i={E\bibinitperiod}}}%
+        {{hash=c61a7de5f04815ccf23f05ec7f00c36a}{%
+           family={Olukotun},
+           family_i={O\bibinitperiod},
+           given={Kunle},
+           given_i={K\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {London, England, UK}%
+      }
+      \list{publisher}{1}{%
+        {ACM}%
+      }
+      \strng{namehash}{b2795b2eb730c0efc98a164e7e02d0f3}
+      \strng{fullhash}{5c920f70fce8f7a577254def5f21a73d}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the Seventeenth International Conference on Architectural Support for Programming Languages and Operating Systems}
+      \field{isbn}{978-1-4503-0759-8}
+      \field{series}{ASPLOS XVII}
+      \field{title}{Green-Marl: A DSL for Easy and Efficient Graph Analysis}
+      \field{year}{2012}
+      \field{pages}{349\bibrangedash 362}
+      \range{pages}{14}
+      \verb{doi}
+      \verb 10.1145/2150976.2151013
+      \endverb
+      \verb{url}
+      \verb http://doi.acm.org/10.1145/2150976.2151013
+      \endverb
+      \keyw{domain-specific language,graph,parallel programming}
+    \endentry
+    \entry{gharaibeh2013totem}{article}{}
+      \name{author}{6}{}{%
+        {{hash=639ebde3086408aae9958a65b0f9ea84}{%
+           family={Gharaibeh},
+           family_i={G\bibinitperiod},
+           given={Abdullah},
+           given_i={A\bibinitperiod}}}%
+        {{hash=514fbb13116f9d4cd479f75c1fb8cb51}{%
+           family={Reza},
+           family_i={R\bibinitperiod},
+           given={Tahsin},
+           given_i={T\bibinitperiod}}}%
+        {{hash=ced207c9ab0878c8b0fe5c2f40707e07}{%
+           family={Santos-Neto},
+           family_i={S\bibinithyphendelim N\bibinitperiod},
+           given={Elizeu},
+           given_i={E\bibinitperiod}}}%
+        {{hash=0a723252d81e4bd68e49de463f23f7ee}{%
+           family={Costa},
+           family_i={C\bibinitperiod},
+           given={Lauro\bibnamedelima Beltrao},
+           given_i={L\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=7ac7ce72c04cdf056c9f0c3ac029e2df}{%
+           family={Sallinen},
+           family_i={S\bibinitperiod},
+           given={Scott},
+           given_i={S\bibinitperiod}}}%
+        {{hash=bb36fc4cf71bdfd953dbd1b249b7a26b}{%
+           family={Ripeanu},
+           family_i={R\bibinitperiod},
+           given={Matei},
+           given_i={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{47e75a2cb15cf75145f8284ce363902f}
+      \strng{fullhash}{39eb8735f0bc7c3bd5a27eb94518d4b8}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:1312.3018}
+      \field{title}{Efficient large-scale graph processing on hybrid CPU and GPU systems}
+      \field{year}{2013}
+    \endentry
+    \entry{zhang2015ggraph}{article}{}
+      \name{author}{5}{}{%
+        {{hash=228dd687961f3612985beeddec81f72a}{%
+           family={Zhang},
+           family_i={Z\bibinitperiod},
+           given={Tao},
+           given_i={T\bibinitperiod}}}%
+        {{hash=540350aae3ceea82f9e8156191ff98f8}{%
+           family={Zhang},
+           family_i={Z\bibinitperiod},
+           given={Jingjie},
+           given_i={J\bibinitperiod}}}%
+        {{hash=2fe18134fa7d426c50c6c4b928017555}{%
+           family={Shu},
+           family_i={S\bibinitperiod},
+           given={Wei},
+           given_i={W\bibinitperiod}}}%
+        {{hash=6aad39725cfc6277c4a5c135e880cb32}{%
+           family={Wu},
+           family_i={W\bibinitperiod},
+           given={Min-You},
+           given_i={M\bibinithyphendelim Y\bibinitperiod}}}%
+        {{hash=e97cca8b74ecbf0aae5319130df9d1f7}{%
+           family={Liang},
+           family_i={L\bibinitperiod},
+           given={Xiaoyao},
+           given_i={X\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{5b0450a9341aa059aac71e3f16f7af3f}
+      \strng{fullhash}{403c2f5501f79b0ab1231281643ba2fe}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{The Journal of Supercomputing}
+      \field{number}{4}
+      \field{title}{Efficient graph computation on hybrid CPU and GPU systems}
+      \field{volume}{71}
+      \field{year}{2015}
+      \field{pages}{1563\bibrangedash 1586}
+      \range{pages}{24}
+    \endentry
+    \entry{liu2016ibfs}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=edd3ae417690fa909dfe4f5d25128fba}{%
+           family={Liu},
+           family_i={L\bibinitperiod},
+           given={Hang},
+           given_i={H\bibinitperiod}}}%
+        {{hash=13a4aa37d8297ab541c585bef735ce73}{%
+           family={Huang},
+           family_i={H\bibinitperiod},
+           given={H\bibnamedelima Howie},
+           given_i={H\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=ce4fd9974b44266e4d9b7da0d672a8ea}{%
+           family={Hu},
+           family_i={H\bibinitperiod},
+           given={Yang},
+           given_i={Y\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {ACM}%
+      }
+      \strng{namehash}{7f6702849b7eac2a384771c01e3cfcbb}
+      \strng{fullhash}{7f6702849b7eac2a384771c01e3cfcbb}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 2016 International Conference on Management of Data}
+      \field{title}{ibfs: Concurrent breadth-first search on gpus}
+      \field{year}{2016}
+      \field{pages}{403\bibrangedash 416}
+      \range{pages}{14}
+    \endentry
+    \entry{ben2017groute}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=f197c39c9873860e113582f963ac1e68}{%
+           family={Ben-Nun},
+           family_i={B\bibinithyphendelim N\bibinitperiod},
+           given={Tal},
+           given_i={T\bibinitperiod}}}%
+        {{hash=01bc3f5ef9ad7d696767128872fdf871}{%
+           family={Sutton},
+           family_i={S\bibinitperiod},
+           given={Michael},
+           given_i={M\bibinitperiod}}}%
+        {{hash=7f1ebc4f99cfbbb39951bd949f878bdd}{%
+           family={Pai},
+           family_i={P\bibinitperiod},
+           given={Sreepathi},
+           given_i={S\bibinitperiod}}}%
+        {{hash=e7f2014846734dae8a242e557fdafb65}{%
+           family={Pingali},
+           family_i={P\bibinitperiod},
+           given={Keshav},
+           given_i={K\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {ACM}%
+      }
+      \strng{namehash}{9c39dd4b026adf09fbb5961e3a7660ce}
+      \strng{fullhash}{4608a22e9bd767027b650f70433ceb2d}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 22nd ACM SIGPLAN Symposium on Principles and Practice of Parallel Programming}
+      \field{title}{Groute: An asynchronous multi-GPU programming model for irregular computations}
+      \field{year}{2017}
+      \field{pages}{235\bibrangedash 248}
+      \range{pages}{14}
+    \endentry
+    \entry{sengupta2015graphreduce}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=f61a5eb62aa87a4adbd0bbd3b8c32507}{%
+           family={Sengupta},
+           family_i={S\bibinitperiod},
+           given={Dipanjan},
+           given_i={D\bibinitperiod}}}%
+        {{hash=c16a8cee7ce7b020c3fe4be60e437ce4}{%
+           family={Song},
+           family_i={S\bibinitperiod},
+           given={Shuaiwen\bibnamedelima Leon},
+           given_i={S\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=7daaf740d250d35fe80728b1ab6babae}{%
+           family={Agarwal},
+           family_i={A\bibinitperiod},
+           given={Kapil},
+           given_i={K\bibinitperiod}}}%
+        {{hash=0d5c574d5be441816608ece8feacb24e}{%
+           family={Schwan},
+           family_i={S\bibinitperiod},
+           given={Karsten},
+           given_i={K\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{2ebdb85d96d81adf0684af3ec2b7fb3b}
+      \strng{fullhash}{22b88967a33633caa3bd2396d3375a05}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2015 SC-International Conference for High Performance Computing, Networking, Storage and Analysis}
+      \field{title}{GraphReduce: processing large-scale graphs on accelerator-based systems}
+      \field{year}{2015}
+      \field{pages}{1\bibrangedash 12}
+      \range{pages}{12}
+    \endentry
+    \entry{kim2016gts}{inproceedings}{}
+      \name{author}{5}{}{%
+        {{hash=0327cd6f392e8862b536f30790cc7bc7}{%
+           family={Kim},
+           family_i={K\bibinitperiod},
+           given={Min-Soo},
+           given_i={M\bibinithyphendelim S\bibinitperiod}}}%
+        {{hash=593f3025deb2c7152be584b5ae9a0274}{%
+           family={An},
+           family_i={A\bibinitperiod},
+           given={Kyuhyeon},
+           given_i={K\bibinitperiod}}}%
+        {{hash=827047023cc21348f8de72b209c1f8bb}{%
+           family={Park},
+           family_i={P\bibinitperiod},
+           given={Himchan},
+           given_i={H\bibinitperiod}}}%
+        {{hash=a490db5cfacafe4c63fa0da7366d8393}{%
+           family={Seo},
+           family_i={S\bibinitperiod},
+           given={Hyunseok},
+           given_i={H\bibinitperiod}}}%
+        {{hash=25d33c56f355fcbfaede0dbd9780fe34}{%
+           family={Kim},
+           family_i={K\bibinitperiod},
+           given={Jinwook},
+           given_i={J\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {ACM}%
+      }
+      \strng{namehash}{03dc8b52609ab3ea1a0ac37abb86674d}
+      \strng{fullhash}{4195072d0f17c361afaea43d8689f5bf}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 2016 International Conference on Management of Data}
+      \field{title}{GTS: A fast and scalable graph processing method based on streaming topology to GPUs}
+      \field{year}{2016}
+      \field{pages}{447\bibrangedash 461}
+      \range{pages}{15}
+    \endentry
+    \entry{ozdal2016energy}{inproceedings}{}
+      \name{author}{7}{}{%
+        {{hash=28950eed7ce97c55eb2007555dd0ed2b}{%
+           family={Ozdal},
+           family_i={O\bibinitperiod},
+           given={Muhammet\bibnamedelima Mustafa},
+           given_i={M\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=1db7ef03bf7e866eb5960d62a8da6cab}{%
+           family={Yesil},
+           family_i={Y\bibinitperiod},
+           given={Serif},
+           given_i={S\bibinitperiod}}}%
+        {{hash=02d76b47d9101a7ff46321c812d51d0e}{%
+           family={Kim},
+           family_i={K\bibinitperiod},
+           given={Taemin},
+           given_i={T\bibinitperiod}}}%
+        {{hash=64a50ecc0526cbd33da3586f15fb08d1}{%
+           family={Ayupov},
+           family_i={A\bibinitperiod},
+           given={Andrey},
+           given_i={A\bibinitperiod}}}%
+        {{hash=df55670f6d0c0f0997a550201e474232}{%
+           family={Greth},
+           family_i={G\bibinitperiod},
+           given={John},
+           given_i={J\bibinitperiod}}}%
+        {{hash=12ebd68559c70940d268d16b2038a320}{%
+           family={Burns},
+           family_i={B\bibinitperiod},
+           given={Steven},
+           given_i={S\bibinitperiod}}}%
+        {{hash=d6394a6fdac457a865a28cc486a6d269}{%
+           family={Ozturk},
+           family_i={O\bibinitperiod},
+           given={Ozcan},
+           given_i={O\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{bd19271457c5799c8fe37632dfe83176}
+      \strng{fullhash}{c1c43c24e615fe07f438d8f4c12ee714}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2016 ACM/IEEE 43rd Annual International Symposium on Computer Architecture (ISCA)}
+      \field{title}{Energy efficient architecture for graph analytics accelerators}
+      \field{year}{2016}
+      \field{pages}{166\bibrangedash 177}
+      \range{pages}{12}
+    \endentry
+    \entry{Zhang2017fpgahmcbfs}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=f7da2cbf466dba455a9d501b5d681e0c}{%
+           family={Zhang},
+           family_i={Z\bibinitperiod},
+           given={Jialiang},
+           given_i={J\bibinitperiod}}}%
+        {{hash=23ed7599b842d74ac479552db7eb1a19}{%
+           family={Khoram},
+           family_i={K\bibinitperiod},
+           given={Soroosh},
+           given_i={S\bibinitperiod}}}%
+        {{hash=bcdd73174e26b44169c10e9083e72469}{%
+           family={Li},
+           family_i={L\bibinitperiod},
+           given={Jing},
+           given_i={J\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Monterey, California, USA}%
+      }
+      \list{publisher}{1}{%
+        {ACM}%
+      }
+      \strng{namehash}{499e5a819c89d6d41551da2448cec75d}
+      \strng{fullhash}{499e5a819c89d6d41551da2448cec75d}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 2017 ACM/SIGDA International Symposium on Field-Programmable Gate Arrays}
+      \field{isbn}{978-1-4503-4354-1}
+      \field{series}{FPGA '17}
+      \field{title}{Boosting the Performance of FPGA-based Graph Processor Using Hybrid Memory Cube: A Case for Breadth First Search}
+      \field{year}{2017}
+      \field{pages}{207\bibrangedash 216}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1145/3020078.3021737
+      \endverb
+      \verb{url}
+      \verb http://doi.acm.org/10.1145/3020078.3021737
+      \endverb
+      \keyw{graph processor,hybrid memory cube:bfs}
+    \endentry
+    \entry{song2018graphr}{inproceedings}{}
+      \name{author}{5}{}{%
+        {{hash=911471698901428892c143e0eb076451}{%
+           family={Song},
+           family_i={S\bibinitperiod},
+           given={L.},
+           given_i={L\bibinitperiod}}}%
+        {{hash=9f56be5bdd39d701eeb77186cbabd108}{%
+           family={Zhuo},
+           family_i={Z\bibinitperiod},
+           given={Y.},
+           given_i={Y\bibinitperiod}}}%
+        {{hash=69ca4f9c1176c162ece7e3d9484ca617}{%
+           family={Qian},
+           family_i={Q\bibinitperiod},
+           given={X.},
+           given_i={X\bibinitperiod}}}%
+        {{hash=d253f5a82a0e6d0787bfb293e3bc5fff}{%
+           family={Li},
+           family_i={L\bibinitperiod},
+           given={H.},
+           given_i={H\bibinitperiod}}}%
+        {{hash=f889019fc61464b084bbe69847cbc904}{%
+           family={Chen},
+           family_i={C\bibinitperiod},
+           given={Y.},
+           given_i={Y\bibinitperiod}}}%
+      }
+      \strng{namehash}{a4c35c2b2e53005be691709bf926b13d}
+      \strng{fullhash}{105bd46a8643c7f5a9eb6d990724f18b}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2018 IEEE International Symposium on High Performance Computer Architecture (HPCA)}
+      \field{month}{02}
+      \field{title}{GraphR: Accelerating Graph Processing Using ReRAM}
+      \field{year}{2018}
+      \field{pages}{531\bibrangedash 543}
+      \range{pages}{13}
+      \verb{doi}
+      \verb 10.1109/HPCA.2018.00052
+      \endverb
+      \keyw{graphics processing units;memory architecture;random-access storage;sparse matrices;GRAPHR;GraphR;ReRAM crossbar;core graph computations;graph engine;graph processing accelerator;hardware graph processing accelerators;high memory bandwidth requirement;memory ReRAM;memory access optimizations;Bandwidth;Hardware;Memory management;Parallel processing;Random access memory;Sparse matrices;Accelerator Architecture;Domain specific Architecture;Graph Processing;ReRAM;SpMV}
+    \endentry
+    \entry{zhou2016highthroughput}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=2af97a35890305113b40842037822491}{%
+           family={Zhou},
+           family_i={Z\bibinitperiod},
+           given={S.},
+           given_i={S\bibinitperiod}}}%
+        {{hash=862b671cb1890ea165a74300985cf5df}{%
+           family={Chelmis},
+           family_i={C\bibinitperiod},
+           given={C.},
+           given_i={C\bibinitperiod}}}%
+        {{hash=5e03e96a886256197b82ed07796c421b}{%
+           family={Prasanna},
+           family_i={P\bibinitperiod},
+           given={V.\bibnamedelimi K.},
+           given_i={V\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+      }
+      \strng{namehash}{4d53e619fce0596327556f4256d11a64}
+      \strng{fullhash}{4d53e619fce0596327556f4256d11a64}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2016 IEEE 24th Annual International Symposium on Field-Programmable Custom Computing Machines (FCCM)}
+      \field{month}{05}
+      \field{title}{High-Throughput and Energy-Efficient Graph Processing on FPGA}
+      \field{year}{2016}
+      \field{pages}{103\bibrangedash 110}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1109/FCCM.2016.35
+      \endverb
+      \keyw{DRAM chips;energy conservation;field programmable gate arrays;logic design;parallel architectures;performance evaluation;power aware computing;trees (mathematics);FPGA design;MTEPS;concurrent multiple input data processing;data layout;edge-centric computing;efficient memory activation schedule;energy-efficiency improvement;energy-efficient graph processing;external memory bandwidth saturation;external memory performance optimization;high-throughput graph processing;large-scale graph processing design;million traversed edges per second;minimum spanning tree algorithm;on-chip memory power consumption reduction;parallel architecture;single-source shortest path algorithm;throughput improvement;weakly connected component algorithm;Field programmable gate arrays;Layout;Memory management;Optimization;Random access memory;Throughput;Writing}
+    \endentry
+    \entry{dai2018graphh}{article}{}
+      \name{author}{9}{}{%
+        {{hash=f6c667850f49033e3ebc9e9c8dca130d}{%
+           family={Dai},
+           family_i={D\bibinitperiod},
+           given={Guohao},
+           given_i={G\bibinitperiod}}}%
+        {{hash=4bb337ca65f60cc1d5cf38120b11fa53}{%
+           family={Huang},
+           family_i={H\bibinitperiod},
+           given={Tianhao},
+           given_i={T\bibinitperiod}}}%
+        {{hash=62b184c2c2a70f82111208a25595854e}{%
+           family={Chi},
+           family_i={C\bibinitperiod},
+           given={Yuze},
+           given_i={Y\bibinitperiod}}}%
+        {{hash=7bc49f2d8d952a3d6daf7b5435ecc739}{%
+           family={Zhao},
+           family_i={Z\bibinitperiod},
+           given={Jishen},
+           given_i={J\bibinitperiod}}}%
+        {{hash=78a36b4b33af85f6c50a6c16cc16931c}{%
+           family={Sun},
+           family_i={S\bibinitperiod},
+           given={Guangyu},
+           given_i={G\bibinitperiod}}}%
+        {{hash=c7c4d89364f672f0edd3da9a4f7a3968}{%
+           family={Liu},
+           family_i={L\bibinitperiod},
+           given={Yongpan},
+           given_i={Y\bibinitperiod}}}%
+        {{hash=b2eccb185095fccfeb40fdffd8b2105f}{%
+           family={Wang},
+           family_i={W\bibinitperiod},
+           given={Yu},
+           given_i={Y\bibinitperiod}}}%
+        {{hash=a2c3ce3ecb42479ac37df62916abfb5d}{%
+           family={Xie},
+           family_i={X\bibinitperiod},
+           given={Yuan},
+           given_i={Y\bibinitperiod}}}%
+        {{hash=4756886387a4c576f3366e0abf146be0}{%
+           family={Yang},
+           family_i={Y\bibinitperiod},
+           given={Huazhong},
+           given_i={H\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{3c6e0b3da19edcd71579a6a9e00fe574}
+      \strng{fullhash}{706a2109f3a477cd1faf29ab67b6861e}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems}
+      \field{title}{GraphH: A Processing-in-Memory Architecture for Large-scale Graph Processing}
+      \field{year}{2018}
+    \endentry
+    \entry{Zhang2018degreebfsfpga}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=f7da2cbf466dba455a9d501b5d681e0c}{%
+           family={Zhang},
+           family_i={Z\bibinitperiod},
+           given={Jialiang},
+           given_i={J\bibinitperiod}}}%
+        {{hash=bcdd73174e26b44169c10e9083e72469}{%
+           family={Li},
+           family_i={L\bibinitperiod},
+           given={Jing},
+           given_i={J\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Monterey, CALIFORNIA, USA}%
+      }
+      \list{publisher}{1}{%
+        {ACM}%
+      }
+      \strng{namehash}{cbd7124a82a60a05a3803edea508f7b2}
+      \strng{fullhash}{cbd7124a82a60a05a3803edea508f7b2}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 2018 ACM/SIGDA International Symposium on Field-Programmable Gate Arrays}
+      \field{isbn}{978-1-4503-5614-5}
+      \field{series}{FPGA '18}
+      \field{title}{Degree-aware Hybrid Graph Traversal on FPGA-HMC Platform}
+      \field{year}{2018}
+      \field{pages}{229\bibrangedash 238}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1145/3174243.3174245
+      \endverb
+      \verb{url}
+      \verb http://doi.acm.org/10.1145/3174243.3174245
+      \endverb
+      \keyw{fpga,graph processing,hybrid memory cude}
+    \endentry
+    \entry{Oguntebi2016graphops}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=da86ee5a0132011df740788939311b9a}{%
+           family={Oguntebi},
+           family_i={O\bibinitperiod},
+           given={Tayo},
+           given_i={T\bibinitperiod}}}%
+        {{hash=c61a7de5f04815ccf23f05ec7f00c36a}{%
+           family={Olukotun},
+           family_i={O\bibinitperiod},
+           given={Kunle},
+           given_i={K\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Monterey, California, USA}%
+      }
+      \list{publisher}{1}{%
+        {ACM}%
+      }
+      \strng{namehash}{0ae20d6be2b1faa8b3fac2a035bc20b8}
+      \strng{fullhash}{0ae20d6be2b1faa8b3fac2a035bc20b8}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 2016 ACM/SIGDA International Symposium on Field-Programmable Gate Arrays}
+      \field{isbn}{978-1-4503-3856-1}
+      \field{series}{FPGA '16}
+      \field{title}{GraphOps: A Dataflow Library for Graph Analytics Acceleration}
+      \field{year}{2016}
+      \field{pages}{111\bibrangedash 117}
+      \range{pages}{7}
+      \verb{doi}
+      \verb 10.1145/2847263.2847337
+      \endverb
+      \verb{url}
+      \verb http://doi.acm.org/10.1145/2847263.2847337
+      \endverb
+      \keyw{accelerator,analytics,dataflow,fpga,graph analysis}
+    \endentry
+    \entry{attia2014cygraph}{inproceedings}{}
+      \name{author}{5}{}{%
+        {{hash=d0a8a33c7cf48adf7468d6edbfe82f5d}{%
+           family={Attia},
+           family_i={A\bibinitperiod},
+           given={O.\bibnamedelimi G.},
+           given_i={O\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=8d0b06dfc0cc31a1272e3d47e5de7ab9}{%
+           family={Johnson},
+           family_i={J\bibinitperiod},
+           given={T.},
+           given_i={T\bibinitperiod}}}%
+        {{hash=8357645e8b5f8adaabe8773d4b208706}{%
+           family={Townsend},
+           family_i={T\bibinitperiod},
+           given={K.},
+           given_i={K\bibinitperiod}}}%
+        {{hash=31c0562066393e7a524f7f716f60610b}{%
+           family={Jones},
+           family_i={J\bibinitperiod},
+           given={P.},
+           given_i={P\bibinitperiod}}}%
+        {{hash=595fbe845073524ca077112f5d613621}{%
+           family={Zambreno},
+           family_i={Z\bibinitperiod},
+           given={J.},
+           given_i={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{e666c6aa86fe778051950da1df9102d7}
+      \strng{fullhash}{717acb565376895ede80997cb572b515}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2014 IEEE International Parallel Distributed Processing Symposium Workshops}
+      \field{month}{05}
+      \field{title}{CyGraph: A Reconfigurable Architecture for Parallel Breadth-First Search}
+      \field{year}{2014}
+      \field{pages}{228\bibrangedash 235}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1109/IPDPSW.2014.30
+      \endverb
+      \keyw{field programmable gate arrays;parallel architectures;search problems;CSR format;Convey HC-2 system;CyGraph reconfigurable architecture;FPGA-based implementation;compressed-sparse raw format;field programmable gate array;graph structures;high-performance computing application;memory bandwidth;parallel BFS;parallel breadth-first search;Algorithm design and analysis;Arrays;Bandwidth;Indexes;Kernel;Optimization;Breadth-First Search;Convey HC-2;FPGA;Graphs;Reconfigurable Computing}
+    \endentry
+    \entry{han2017reram}{inproceedings}{}
+      \name{author}{5}{}{%
+        {{hash=ff00ddb35309e2d3b4788b8e5d32bfa8}{%
+           family={Han},
+           family_i={H\bibinitperiod},
+           given={L.},
+           given_i={L\bibinitperiod}}}%
+        {{hash=7e50a3efe4ef7034e34917305da788ab}{%
+           family={Shen},
+           family_i={S\bibinitperiod},
+           given={Z.},
+           given_i={Z\bibinitperiod}}}%
+        {{hash=4f5a9bb7fa64d0521341438e2a1a31cc}{%
+           family={Shao},
+           family_i={S\bibinitperiod},
+           given={Z.},
+           given_i={Z\bibinitperiod}}}%
+        {{hash=e72f675f10cacedcbc7ffeffd7fe52f6}{%
+           family={Huang},
+           family_i={H\bibinitperiod},
+           given={H.\bibnamedelimi H.},
+           given_i={H\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=fbd18ff7be6c728650b816e634a922ab}{%
+           family={Li},
+           family_i={L\bibinitperiod},
+           given={T.},
+           given_i={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{fe1762c1d9a80de7f5eead4b425548b5}
+      \strng{fullhash}{5061a93ba860e3cc7ee658070d94e7e1}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2017 IEEE 6th Non-Volatile Memory Systems and Applications Symposium (NVMSA)}
+      \field{month}{08}
+      \field{title}{A novel ReRAM-based processing-in-memory architecture for graph computing}
+      \field{year}{2017}
+      \field{pages}{1\bibrangedash 6}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1109/NVMSA.2017.8064464
+      \endverb
+      \keyw{graph theory;graphics processing units;mathematics computing;memory architecture;parallel processing;tree searching;BFS;Big Data;CPU;PIM;RPBFS;ReRAM-based processing-in-memory architecture;bank-level parallel computation;breadth-first search;computation logic;data accesses;graph algorithms;graph computing;graph processing;graph traversal scheme;low data movement overhead;memory bandwidth;nonvolatile metal-oxide resistive random access memory;processing-in-memory architecture;Acceleration;Arrays;Bandwidth;Indexes;Metadata;Random access memory}
+    \endentry
+    \entry{Dai2016fpgp}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=f6c667850f49033e3ebc9e9c8dca130d}{%
+           family={Dai},
+           family_i={D\bibinitperiod},
+           given={Guohao},
+           given_i={G\bibinitperiod}}}%
+        {{hash=62b184c2c2a70f82111208a25595854e}{%
+           family={Chi},
+           family_i={C\bibinitperiod},
+           given={Yuze},
+           given_i={Y\bibinitperiod}}}%
+        {{hash=b2eccb185095fccfeb40fdffd8b2105f}{%
+           family={Wang},
+           family_i={W\bibinitperiod},
+           given={Yu},
+           given_i={Y\bibinitperiod}}}%
+        {{hash=4756886387a4c576f3366e0abf146be0}{%
+           family={Yang},
+           family_i={Y\bibinitperiod},
+           given={Huazhong},
+           given_i={H\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Monterey, California, USA}%
+      }
+      \list{publisher}{1}{%
+        {ACM}%
+      }
+      \strng{namehash}{3c6e0b3da19edcd71579a6a9e00fe574}
+      \strng{fullhash}{d2e044d0dc7b8c4b21d808f9dc370de0}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 2016 ACM/SIGDA International Symposium on Field-Programmable Gate Arrays}
+      \field{isbn}{978-1-4503-3856-1}
+      \field{series}{FPGA '16}
+      \field{title}{FPGP: Graph Processing Framework on FPGA A Case Study of Breadth-First Search}
+      \field{year}{2016}
+      \field{pages}{105\bibrangedash 110}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1145/2847263.2847339
+      \endverb
+      \verb{url}
+      \verb http://doi.acm.org/10.1145/2847263.2847339
+      \endverb
+      \keyw{fpga framework,large scale graph processing}
+    \endentry
+    \entry{Khoram2018fpgaco-optimizinghmc}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=23ed7599b842d74ac479552db7eb1a19}{%
+           family={Khoram},
+           family_i={K\bibinitperiod},
+           given={Soroosh},
+           given_i={S\bibinitperiod}}}%
+        {{hash=f7da2cbf466dba455a9d501b5d681e0c}{%
+           family={Zhang},
+           family_i={Z\bibinitperiod},
+           given={Jialiang},
+           given_i={J\bibinitperiod}}}%
+        {{hash=35cc248133c08c2bc040024ffe09463f}{%
+           family={Strange},
+           family_i={S\bibinitperiod},
+           given={Maxwell},
+           given_i={M\bibinitperiod}}}%
+        {{hash=bcdd73174e26b44169c10e9083e72469}{%
+           family={Li},
+           family_i={L\bibinitperiod},
+           given={Jing},
+           given_i={J\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Monterey, CALIFORNIA, USA}%
+      }
+      \list{publisher}{1}{%
+        {ACM}%
+      }
+      \strng{namehash}{d327f976b70e85d1d916a971e6faed60}
+      \strng{fullhash}{627700eb5c12285aa1df6926a31b4093}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 2018 ACM/SIGDA International Symposium on Field-Programmable Gate Arrays}
+      \field{isbn}{978-1-4503-5614-5}
+      \field{series}{FPGA '18}
+      \field{title}{Accelerating Graph Analytics by Co-Optimizing Storage and Access on an FPGA-HMC Platform}
+      \field{year}{2018}
+      \field{pages}{239\bibrangedash 248}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1145/3174243.3174260
+      \endverb
+      \verb{url}
+      \verb http://doi.acm.org/10.1145/3174243.3174260
+      \endverb
+      \keyw{graph analytics,graph clustering,hardware accelerators,hybrid memory cube,reconfigurable logic}
+    \endentry
+    \entry{Zhou2018fastcf}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=9d0a7ed54e7a1b1868f00f7f32e36c75}{%
+           family={Zhou},
+           family_i={Z\bibinitperiod},
+           given={Shijie},
+           given_i={S\bibinitperiod}}}%
+        {{hash=8c75dbe2e68808251371edb193c33d2e}{%
+           family={Kannan},
+           family_i={K\bibinitperiod},
+           given={Rajgopal},
+           given_i={R\bibinitperiod}}}%
+        {{hash=a8ed1e924c82ea9f11abc1077a3e9642}{%
+           family={Min},
+           family_i={M\bibinitperiod},
+           given={Yu},
+           given_i={Y\bibinitperiod}}}%
+        {{hash=90f28857f23dc0aa8443c2d544e5db51}{%
+           family={Prasanna},
+           family_i={P\bibinitperiod},
+           given={Viktor\bibnamedelima K.},
+           given_i={V\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Monterey, CALIFORNIA, USA}%
+      }
+      \list{publisher}{1}{%
+        {ACM}%
+      }
+      \strng{namehash}{2cd89d10b9a13ffda396fef9a6987848}
+      \strng{fullhash}{4ebc221000810f16fc72869c90bb1c44}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 2018 ACM/SIGDA International Symposium on Field-Programmable Gate Arrays}
+      \field{isbn}{978-1-4503-5614-5}
+      \field{series}{FPGA '18}
+      \field{title}{FASTCF: FPGA-based Accelerator for STochastic-Gradient-Descent-based Collaborative Filtering}
+      \field{year}{2018}
+      \field{pages}{259\bibrangedash 268}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1145/3174243.3174252
+      \endverb
+      \verb{url}
+      \verb http://doi.acm.org/10.1145/3174243.3174252
+      \endverb
+      \keyw{bipartite graph representation,sparse matrix factorization,training process}
+    \endentry
+    \entry{song2016novelspmv}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=36ebab623c277366d8048004184624c2}{%
+           family={Song},
+           family_i={S\bibinitperiod},
+           given={William\bibnamedelima S},
+           given_i={W\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=a0edbbf2a809ac190ca007eba6b8f36b}{%
+           family={Gleyzer},
+           family_i={G\bibinitperiod},
+           given={Vitaliy},
+           given_i={V\bibinitperiod}}}%
+        {{hash=0b78aea7176504c69b1bc2115c17e6c4}{%
+           family={Lomakin},
+           family_i={L\bibinitperiod},
+           given={Alexei},
+           given_i={A\bibinitperiod}}}%
+        {{hash=6746f813a568f307c6419b32f0c28e42}{%
+           family={Kepner},
+           family_i={K\bibinitperiod},
+           given={Jeremy},
+           given_i={J\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{48e1325b046d1e9c57e81833f7d256c1}
+      \strng{fullhash}{b354aefcb78fa7acb303f33a92e64747}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2016 IEEE High Performance Extreme Computing Conference (HPEC)}
+      \field{title}{Novel graph processor architecture, prototype system, and results}
+      \field{year}{2016}
+      \field{pages}{1\bibrangedash 7}
+      \range{pages}{7}
+    \endentry
+    \entry{yao2018pact}{inproceedings}{}
+      \name{author}{1}{}{%
+        {{hash=9852f6575c282db621d991fd9ced3cc1}{%
+           family={yao},
+           family_i={y\bibinitperiod}}}%
+      }
+      \strng{namehash}{9852f6575c282db621d991fd9ced3cc1}
+      \strng{fullhash}{9852f6575c282db621d991fd9ced3cc1}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{PACT 2018}
+      \field{title}{An Efficient Graph Accelerator with Parallel Data Conflict Management}
+    \endentry
+    \entry{JUN2018GRAFBOOST}{inproceedings}{}
+      \name{author}{1}{}{%
+        {{hash=191857e58503b173224b2cb35e2cebea}{%
+           family={JUN},
+           family_i={J\bibinitperiod},
+           given={SANG\bibnamedelima WOO},
+           given_i={S\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+      }
+      \strng{namehash}{191857e58503b173224b2cb35e2cebea}
+      \strng{fullhash}{191857e58503b173224b2cb35e2cebea}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{ISCA 2018}
+      \field{title}{GraFBoost: Using accelerated flash storage for external graph analytics}
+    \endentry
+    \entry{zhou2017cpufpga}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=2af97a35890305113b40842037822491}{%
+           family={Zhou},
+           family_i={Z\bibinitperiod},
+           given={S.},
+           given_i={S\bibinitperiod}}}%
+        {{hash=5e03e96a886256197b82ed07796c421b}{%
+           family={Prasanna},
+           family_i={P\bibinitperiod},
+           given={V.\bibnamedelimi K.},
+           given_i={V\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+      }
+      \strng{namehash}{ea985aa71dbacea87e86e07e738504aa}
+      \strng{fullhash}{ea985aa71dbacea87e86e07e738504aa}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2017 29th International Symposium on Computer Architecture and High Performance Computing (SBAC-PAD)}
+      \field{month}{10}
+      \field{title}{Accelerating Graph Analytics on CPU-FPGA Heterogeneous Platform}
+      \field{year}{2017}
+      \field{pages}{137\bibrangedash 144}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1109/SBAC-PAD.2017.25
+      \endverb
+      \keyw{data structures;field programmable gate arrays;graph theory;logic design;microprocessor chips;multiprocessing systems;parallel processing;search problems;CPU-FPGA heterogeneous platform;active vertex ratio;breadth-first search graph algorithm;design graph analytics accelerators;efficient parallel computation;fundamental graph algorithms;graph analytics accelerator;graph partitioning;hardware accelerators;hybrid algorithm;hybrid data structure;redundant edge traversals;simple but efficient paradigm selection approach;single-source shortest path graph algorithm;vertex-centric edge-centric paradigms;vertex-centric paradigm;Acceleration;Algorithm design and analysis;Arrays;Central Processing Unit;Field programmable gate arrays;Partitioning algorithms}
+    \endentry
+    \entry{zhang2018graphp}{inproceedings}{}
+      \name{author}{8}{}{%
+        {{hash=1b2ebc309c208d21398b011042aeaa50}{%
+           family={Zhang},
+           family_i={Z\bibinitperiod},
+           given={Mingxing},
+           given_i={M\bibinitperiod}}}%
+        {{hash=85d7bc9b0c8c17326182b48242a7ff51}{%
+           family={Zhuo},
+           family_i={Z\bibinitperiod},
+           given={Youwei},
+           given_i={Y\bibinitperiod}}}%
+        {{hash=3ad93e4c675a68a22a9c2c52b38e2751}{%
+           family={Wang},
+           family_i={W\bibinitperiod},
+           given={Chao},
+           given_i={C\bibinitperiod}}}%
+        {{hash=83098235d2b62c352e9f96fa7b912403}{%
+           family={Gao},
+           family_i={G\bibinitperiod},
+           given={Mingyu},
+           given_i={M\bibinitperiod}}}%
+        {{hash=a11916adc36108f334d2bd997022f6c7}{%
+           family={Wu},
+           family_i={W\bibinitperiod},
+           given={Yongwei},
+           given_i={Y\bibinitperiod}}}%
+        {{hash=4131da5ff245e426fb9762f2b57780ef}{%
+           family={Chen},
+           family_i={C\bibinitperiod},
+           given={Kang},
+           given_i={K\bibinitperiod}}}%
+        {{hash=ea87e386461230ec18273b6b4f3d33bc}{%
+           family={Kozyrakis},
+           family_i={K\bibinitperiod},
+           given={Christos},
+           given_i={C\bibinitperiod}}}%
+        {{hash=a7b83d59f10f7eeef414b8a161b179b1}{%
+           family={Qian},
+           family_i={Q\bibinitperiod},
+           given={Xuehai},
+           given_i={X\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{1397d415221ada6d3c07cf03c6657f20}
+      \strng{fullhash}{68edfa9e3996358d6c399dd7bde31119}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2018 IEEE International Symposium on High Performance Computer Architecture (HPCA)}
+      \field{title}{GraphP: Reducing Communication for PIM-Based Graph Processing with Efficient Data Partition}
+      \field{year}{2018}
+      \field{pages}{544\bibrangedash 557}
+      \range{pages}{14}
+    \endentry
+    \entry{bu2014pregelix}{article}{}
+      \name{author}{5}{}{%
+        {{hash=f1d91dc517b52c3911cbaae3a5060bfb}{%
+           family={Bu},
+           family_i={B\bibinitperiod},
+           given={Yingyi},
+           given_i={Y\bibinitperiod}}}%
+        {{hash=3e1c83168be92bd4f057f2bfa7863841}{%
+           family={Borkar},
+           family_i={B\bibinitperiod},
+           given={Vinayak},
+           given_i={V\bibinitperiod}}}%
+        {{hash=0a3e59f4a8b00ef2f62c65c170215333}{%
+           family={Jia},
+           family_i={J\bibinitperiod},
+           given={Jianfeng},
+           given_i={J\bibinitperiod}}}%
+        {{hash=8e5c74af91ba428fbdff9cf0df970e4c}{%
+           family={Carey},
+           family_i={C\bibinitperiod},
+           given={Michael\bibnamedelima J},
+           given_i={M\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=b2d14825a884e355ca9d9c78f23f58a4}{%
+           family={Condie},
+           family_i={C\bibinitperiod},
+           given={Tyson},
+           given_i={T\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {VLDB Endowment}%
+      }
+      \strng{namehash}{3f9ec034029d586815132c7f4242b552}
+      \strng{fullhash}{9987d8017bf70213a3d3aa68ec955248}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Proceedings of the VLDB Endowment}
+      \field{number}{2}
+      \field{title}{Pregelix: Big (ger) graph analytics on a dataflow engine}
+      \field{volume}{8}
+      \field{year}{2014}
+      \field{pages}{161\bibrangedash 172}
+      \range{pages}{12}
+    \endentry
+    \entry{nurvitadhi2014graphgen}{inproceedings}{}
+      \name{author}{8}{}{%
+        {{hash=d37b5011a16a0c90091044d7682f6b74}{%
+           family={Nurvitadhi},
+           family_i={N\bibinitperiod},
+           given={E.},
+           given_i={E\bibinitperiod}}}%
+        {{hash=d7e28a17586250c1ff402b8cf4876e70}{%
+           family={Weisz},
+           family_i={W\bibinitperiod},
+           given={G.},
+           given_i={G\bibinitperiod}}}%
+        {{hash=a2af46eff4389524fe951572da657010}{%
+           family={Wang},
+           family_i={W\bibinitperiod},
+           given={Y.},
+           given_i={Y\bibinitperiod}}}%
+        {{hash=d2d66a1163c44cea1ca09cd6fe5fd2f2}{%
+           family={Hurkat},
+           family_i={H\bibinitperiod},
+           given={S.},
+           given_i={S\bibinitperiod}}}%
+        {{hash=fd6e2c32cf428577058e2724150322c0}{%
+           family={Nguyen},
+           family_i={N\bibinitperiod},
+           given={M.},
+           given_i={M\bibinitperiod}}}%
+        {{hash=7c8301520abfdfb89841f5acf0904696}{%
+           family={Hoe},
+           family_i={H\bibinitperiod},
+           given={J.\bibnamedelimi C.},
+           given_i={J\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=d1032e79c303f7179f80633c29f9576f}{%
+           family={Martínez},
+           family_i={M\bibinitperiod},
+           given={J.\bibnamedelimi F.},
+           given_i={J\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+        {{hash=b0c5c088d01a2ff800547a71162db8bd}{%
+           family={Guestrin},
+           family_i={G\bibinitperiod},
+           given={C.},
+           given_i={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{307152443fab5bd35aafc5a6f2f8ed6c}
+      \strng{fullhash}{924c787108cc759107af94ccfa91da27}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2014 IEEE 22nd Annual International Symposium on Field-Programmable Custom Computing Machines}
+      \field{month}{05}
+      \field{title}{GraphGen: An FPGA Framework for Vertex-Centric Graph Computation}
+      \field{year}{2014}
+      \field{pages}{25\bibrangedash 28}
+      \range{pages}{4}
+      \verb{doi}
+      \verb 10.1109/FCCM.2014.15
+      \endverb
+      \keyw{data mining;data structures;field programmable gate arrays;formal specification;graph theory;graphics processing units;integrated circuit design;learning (artificial intelligence);mathematics computing;memory architecture;FPGA platform;GraphGen;Intel Core i7 CPU;Terasic DE4;Xilinx ML605 FPGA boards;application-specific synthesized graph processor;data mining application;graph data structures;handwriting recognition graph applications;hardware acceleration;machine learning application;memory system;stereo matching graph applications;vertex-centric framework;vertex-centric graph computation;vertex-centric graph specification;Data structures;Field programmable gate arrays;Handwriting recognition;Hardware;Random access memory;Software;Graph computation;case studies;design framework}
+    \endentry
+    \entry{betkaoui2012fpgabfs}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=c232dd94b6d4520647037b2f6240de55}{%
+           family={Betkaoui},
+           family_i={B\bibinitperiod},
+           given={B.},
+           given_i={B\bibinitperiod}}}%
+        {{hash=a2af46eff4389524fe951572da657010}{%
+           family={Wang},
+           family_i={W\bibinitperiod},
+           given={Y.},
+           given_i={Y\bibinitperiod}}}%
+        {{hash=9a09bc8992be6f36c474d9f5e6909dd8}{%
+           family={Thomas},
+           family_i={T\bibinitperiod},
+           given={D.\bibnamedelimi B.},
+           given_i={D\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=63c83b8b53469fa9392cae3a82493307}{%
+           family={Luk},
+           family_i={L\bibinitperiod},
+           given={W.},
+           given_i={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{709dc291af8d6063390bc7b888d071d6}
+      \strng{fullhash}{e4205c78a5233b5ead5b815bfc329457}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2012 IEEE 23rd International Conference on Application-Specific Systems, Architectures and Processors}
+      \field{issn}{1063-6862}
+      \field{month}{07}
+      \field{title}{A Reconfigurable Computing Approach for Efficient and Scalable Parallel Graph Exploration}
+      \field{year}{2012}
+      \field{pages}{8\bibrangedash 15}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1109/ASAP.2012.30
+      \endverb
+      \keyw{field programmable gate arrays;graph theory;multiprocessing systems;parallel processing;tree searching;BFS;FPGA;breadth first search;memory latency;multi-core systems;parallel memory subsystem;power law graphs;reconfigurable computing approach;reconfigurable hardware architecture;scalable parallel graph exploration;Algorithm design and analysis;Arrays;Field programmable gate arrays;Hardware;Kernel;Random access memory;Breadth-First Search (BFS);FPGA;Parallel graph algorithms;hardware acceleration;high performance reconfigurable computing}
+    \endentry
+    \entry{Han2018reram}{article}{}
+      \name{author}{6}{}{%
+        {{hash=d889ff4c770b193392dbd24796a4d207}{%
+           family={Han},
+           family_i={H\bibinitperiod},
+           given={Lei},
+           given_i={L\bibinitperiod}}}%
+        {{hash=de0374a0721d6d4c19026690e3b8bad6}{%
+           family={Shen},
+           family_i={S\bibinitperiod},
+           given={Zhaoyan},
+           given_i={Z\bibinitperiod}}}%
+        {{hash=15c705db0a63fe4bb07f5ec62b4af370}{%
+           family={Liu},
+           family_i={L\bibinitperiod},
+           given={Duo},
+           given_i={D\bibinitperiod}}}%
+        {{hash=c471f5e23e257c4f6f62d9054a9e5fd9}{%
+           family={Shao},
+           family_i={S\bibinitperiod},
+           given={Zili},
+           given_i={Z\bibinitperiod}}}%
+        {{hash=0644088a96ef268279e11c0b338a3ff1}{%
+           family={Huang},
+           family_i={H\bibinitperiod},
+           given={H.\bibnamedelimi Howie},
+           given_i={H\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=38f3efe34cb29092007fe04331b383a3}{%
+           family={Li},
+           family_i={L\bibinitperiod},
+           given={Tao},
+           given_i={T\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {New York, NY, USA}%
+      }
+      \list{publisher}{1}{%
+        {ACM}%
+      }
+      \strng{namehash}{5701c0000241cc9c18d5024a7391062f}
+      \strng{fullhash}{c36c8f3f8f2909b8e03639cd87cd8331}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1553-3077}
+      \field{journaltitle}{ACM Trans. Storage}
+      \field{month}{02}
+      \field{number}{1}
+      \field{title}{A Novel ReRAM-Based Processing-in-Memory Architecture for Graph Traversal}
+      \field{volume}{14}
+      \field{year}{2018}
+      \field{pages}{9:1\bibrangedash 9:26}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1145/3177916
+      \endverb
+      \verb{url}
+      \verb http://doi.acm.org/10.1145/3177916
+      \endverb
+      \keyw{BFS,ReRAM,architecture,processing-in-memory}
+    \endentry
+    \entry{thomas2008verilog}{book}{}
+      \name{author}{2}{}{%
+        {{hash=ea62e67444652aad476bc780fbf122e6}{%
+           family={Thomas},
+           family_i={T\bibinitperiod},
+           given={Donald},
+           given_i={D\bibinitperiod}}}%
+        {{hash=ed4899f353d4f2aecc06341956668985}{%
+           family={Moorby},
+           family_i={M\bibinitperiod},
+           given={Philip},
+           given_i={P\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer Science \& Business Media}%
+      }
+      \strng{namehash}{52348c5763795941104d9d1d7755dafa}
+      \strng{fullhash}{52348c5763795941104d9d1d7755dafa}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{The Verilog{®} Hardware Description Language}
+      \field{year}{2008}
+    \endentry
+    \entry{ashenden2010designervhdl}{book}{}
+      \name{author}{1}{}{%
+        {{hash=cf83915be315bc55190d971eeeb2fd71}{%
+           family={Ashenden},
+           family_i={A\bibinitperiod},
+           given={Peter\bibnamedelima J},
+           given_i={P\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Morgan Kaufmann}%
+      }
+      \strng{namehash}{cf83915be315bc55190d971eeeb2fd71}
+      \strng{fullhash}{cf83915be315bc55190d971eeeb2fd71}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{The designer's guide to VHDL}
+      \field{volume}{3}
+      \field{year}{2010}
+    \endentry
+    \entry{betkaoui2012ssspbrain}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=c232dd94b6d4520647037b2f6240de55}{%
+           family={Betkaoui},
+           family_i={B\bibinitperiod},
+           given={B.},
+           given_i={B\bibinitperiod}}}%
+        {{hash=a2af46eff4389524fe951572da657010}{%
+           family={Wang},
+           family_i={W\bibinitperiod},
+           given={Y.},
+           given_i={Y\bibinitperiod}}}%
+        {{hash=9a09bc8992be6f36c474d9f5e6909dd8}{%
+           family={Thomas},
+           family_i={T\bibinitperiod},
+           given={D.\bibnamedelimi B.},
+           given_i={D\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=63c83b8b53469fa9392cae3a82493307}{%
+           family={Luk},
+           family_i={L\bibinitperiod},
+           given={W.},
+           given_i={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{709dc291af8d6063390bc7b888d071d6}
+      \strng{fullhash}{e4205c78a5233b5ead5b815bfc329457}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{22nd International Conference on Field Programmable Logic and Applications (FPL)}
+      \field{issn}{1946-147X}
+      \field{month}{08}
+      \field{title}{Parallel FPGA-based all pairs shortest paths for sparse networks: A human brain connectome case study}
+      \field{year}{2012}
+      \field{pages}{99\bibrangedash 104}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1109/FPL.2012.6339247
+      \endverb
+      \keyw{bioinformatics;biomedical electronics;brain;distributed memory systems;field programmable gate arrays;graphics processing units;medical computing;microprocessor chips;optimisation;AMD Cypress GPU implementation;APSP algorithm;all pairs shortest path algorithm;computationally intensive bioinformatics application;distributed on-chip memory resource;high-latency off-chip memory;human brain connectome case study;human brain network data;input graph data;memory-latency bound algorithm;multicore CPU;optimisation;parallel FPGA;sparse network;Algorithm design and analysis;Arrays;Field programmable gate arrays;Humans;Kernel;Random access memory;System-on-a-chip}
+    \endentry
+    \entry{kapre2015softcorefpga}{inproceedings}{}
+      \name{author}{1}{}{%
+        {{hash=6710ffabe390677de72dd8e047d46bfc}{%
+           family={Kapre},
+           family_i={K\bibinitperiod},
+           given={N.},
+           given_i={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{6710ffabe390677de72dd8e047d46bfc}
+      \strng{fullhash}{6710ffabe390677de72dd8e047d46bfc}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2015 IEEE 26th International Conference on Application-specific Systems, Architectures and Processors (ASAP)}
+      \field{issn}{1063-6862}
+      \field{month}{07}
+      \field{title}{Custom FPGA-based soft-processors for sparse graph acceleration}
+      \field{year}{2015}
+      \field{pages}{9\bibrangedash 16}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1109/ASAP.2015.7245698
+      \endverb
+      \keyw{field programmable gate arrays;graph theory;network-on-chip;FPGA-based soft processor;RTL;Vivado high-level synthesis;address generator;data memory;packet-switched network-on-chip;processor instruction;sparse graph acceleration;zero-overhead loop iterator;Algorithm design and analysis;Field programmable gate arrays;Hardware;Program processors;Random access memory;Registers;Sparse matrices}
+    \endentry
+    \entry{zhou2017tunao}{inproceedings}{}
+      \name{author}{10}{}{%
+        {{hash=3e47da773248d08f1f333828d9fc9ca9}{%
+           family={Zhou},
+           family_i={Z\bibinitperiod},
+           given={Jinhong},
+           given_i={J\bibinitperiod}}}%
+        {{hash=a6980e73d952cf4f9cc032260ad7c82d}{%
+           family={Liu},
+           family_i={L\bibinitperiod},
+           given={Shaoli},
+           given_i={S\bibinitperiod}}}%
+        {{hash=2ad5b3192112dec9c7ff1d812582e3ab}{%
+           family={Guo},
+           family_i={G\bibinitperiod},
+           given={Qi},
+           given_i={Q\bibinitperiod}}}%
+        {{hash=1cf6a49fbe2669476d9535901d39c534}{%
+           family={Zhou},
+           family_i={Z\bibinitperiod},
+           given={Xuda},
+           given_i={X\bibinitperiod}}}%
+        {{hash=ad271a317cd1de587881f12eca92ffd1}{%
+           family={Zhi},
+           family_i={Z\bibinitperiod},
+           given={Tian},
+           given_i={T\bibinitperiod}}}%
+        {{hash=5b64d21d7fea76a9283a1df3d2770db1}{%
+           family={Liu},
+           family_i={L\bibinitperiod},
+           given={Daofu},
+           given_i={D\bibinitperiod}}}%
+        {{hash=3ad93e4c675a68a22a9c2c52b38e2751}{%
+           family={Wang},
+           family_i={W\bibinitperiod},
+           given={Chao},
+           given_i={C\bibinitperiod}}}%
+        {{hash=654d93e4a2d4d9d3265afb0157487408}{%
+           family={Zhou},
+           family_i={Z\bibinitperiod},
+           given={Xuehai},
+           given_i={X\bibinitperiod}}}%
+        {{hash=4c292d30bee8609dcb1af7d2d37b8457}{%
+           family={Chen},
+           family_i={C\bibinitperiod},
+           given={Yunji},
+           given_i={Y\bibinitperiod}}}%
+        {{hash=07ebcf1dcee64752ca6dff43efc8dc67}{%
+           family={Chen},
+           family_i={C\bibinitperiod},
+           given={Tianshi},
+           given_i={T\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{1353b4ed77adaf8bb39b1e75664d9eb1}
+      \strng{fullhash}{4e725201238daec2ade11da9ce3eb7be}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2017 17th IEEE/ACM International Symposium on Cluster, Cloud and Grid Computing (CCGRID)}
+      \field{title}{TuNao: A High-Performance and Energy-Efficient Reconfigurable Accelerator for Graph Processing}
+      \field{year}{2017}
+      \field{pages}{731\bibrangedash 734}
+      \range{pages}{4}
+    \endentry
+    \entry{nai2017graphpim}{inproceedings}{}
+      \name{author}{6}{}{%
+        {{hash=6d9f86b0b8af0276594dbfd4261598ca}{%
+           family={Nai},
+           family_i={N\bibinitperiod},
+           given={Lifeng},
+           given_i={L\bibinitperiod}}}%
+        {{hash=f753666c54f47c32f7efe3c47c163b8b}{%
+           family={Hadidi},
+           family_i={H\bibinitperiod},
+           given={Ramyad},
+           given_i={R\bibinitperiod}}}%
+        {{hash=25ca13eddb94adfe0db263f885c8bc99}{%
+           family={Sim},
+           family_i={S\bibinitperiod},
+           given={Jaewoong},
+           given_i={J\bibinitperiod}}}%
+        {{hash=176aabfd724e427dc150178b70ebe840}{%
+           family={Kim},
+           family_i={K\bibinitperiod},
+           given={Hyojong},
+           given_i={H\bibinitperiod}}}%
+        {{hash=e7422e66b6b8f87ee84d1b45014de956}{%
+           family={Kumar},
+           family_i={K\bibinitperiod},
+           given={Pranith},
+           given_i={P\bibinitperiod}}}%
+        {{hash=60dbc360b4710afc9209a902883503d8}{%
+           family={Kim},
+           family_i={K\bibinitperiod},
+           given={Hyesoon},
+           given_i={H\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{b60b542fc1c15c12708b3c415e505e72}
+      \strng{fullhash}{d2fd0f350bca0212c09f119f14064b26}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2017 IEEE International Symposium on High Performance Computer Architecture (HPCA)}
+      \field{title}{GraphPIM: Enabling instruction-level PIM offloading in graph computing frameworks}
+      \field{year}{2017}
+      \field{pages}{457\bibrangedash 468}
+      \range{pages}{12}
+    \endentry
+    \entry{reram2}{article}{}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labeltitlesource}{title}
+      \field{title}{C. Xu and et al., “Overcoming the challenges of crossbar resistive memory architectures,” in HPCA, 2015.}
+    \endentry
+    \entry{betkaoui2011graphlet}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=c232dd94b6d4520647037b2f6240de55}{%
+           family={Betkaoui},
+           family_i={B\bibinitperiod},
+           given={B.},
+           given_i={B\bibinitperiod}}}%
+        {{hash=9a09bc8992be6f36c474d9f5e6909dd8}{%
+           family={Thomas},
+           family_i={T\bibinitperiod},
+           given={D.\bibnamedelimi B.},
+           given_i={D\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=63c83b8b53469fa9392cae3a82493307}{%
+           family={Luk},
+           family_i={L\bibinitperiod},
+           given={W.},
+           given_i={W\bibinitperiod}}}%
+        {{hash=07b03cdcc6f1281921733bffa3635ff1}{%
+           family={Przulj},
+           family_i={P\bibinitperiod},
+           given={N.},
+           given_i={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{709dc291af8d6063390bc7b888d071d6}
+      \strng{fullhash}{771716e499b83ebb86504cf6b35645ea}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2011 International Conference on Field-Programmable Technology}
+      \field{month}{12}
+      \field{title}{A framework for FPGA acceleration of large graph problems: Graphlet counting case study}
+      \field{year}{2011}
+      \field{pages}{1\bibrangedash 8}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1109/FPT.2011.6132667
+      \endverb
+      \keyw{bioinformatics;field programmable gate arrays;graph theory;microprocessor chips;parallel processing;random-access storage;reconfigurable architectures;FPGA acceleration;bioinformatics algorithm;cluster-based computing;graph allocation;graph analysis algorithms;graph data partitioning;graphlet counting case study;high-latency off-chip memory storage;isomorphic subgraphs;large-scale graph problems;memory crossbar;memory latency;off-chip memory latency;on-chip RAM;parallel graph processing;parallel identical processing elements;reconfigurable architecture;reconfigurable devices;short paths;social networks;Algorithm design and analysis;Field programmable gate arrays;Hardware;Memory management;Radiation detectors;Random access memory;Software}
+    \endentry
+    \entry{zhou2015fpgasssp}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=2af97a35890305113b40842037822491}{%
+           family={Zhou},
+           family_i={Z\bibinitperiod},
+           given={S.},
+           given_i={S\bibinitperiod}}}%
+        {{hash=862b671cb1890ea165a74300985cf5df}{%
+           family={Chelmis},
+           family_i={C\bibinitperiod},
+           given={C.},
+           given_i={C\bibinitperiod}}}%
+        {{hash=5e03e96a886256197b82ed07796c421b}{%
+           family={Prasanna},
+           family_i={P\bibinitperiod},
+           given={V.\bibnamedelimi K.},
+           given_i={V\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+      }
+      \strng{namehash}{4d53e619fce0596327556f4256d11a64}
+      \strng{fullhash}{4d53e619fce0596327556f4256d11a64}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2015 IEEE International Parallel and Distributed Processing Symposium Workshop}
+      \field{month}{05}
+      \field{title}{Accelerating Large-Scale Single-Source Shortest Path on FPGA}
+      \field{year}{2015}
+      \field{pages}{129\bibrangedash 136}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1109/IPDPSW.2015.130
+      \endverb
+      \keyw{clocks;field programmable gate arrays;graph theory;parallel processing;Bellman-Ford algorithm;FPGA;Graph 500 benchmark list;SSSP;clock cycle;clock rate;data dependencies;data intensive applications;external memory;external memory bandwidth;external memory bandwidth utilization;graph structure;graph vertices;large-scale graph algorithm;large-scale graph processing;large-scale single-source shortest path acceleration;maximum data parallelism;multiple edge processing;optimized data layout;parallel graph processing;supercomputing systems;Algorithm design and analysis;Bandwidth;Clocks;Field programmable gate arrays;Memory management;Sorting;FPGA;Large-Scale Graph;Single-Source Shortest Path}
+    \endentry
+    \entry{jin2017dataflow}{inproceedings}{}
+      \name{author}{5}{}{%
+        {{hash=c358204b5c649d29bcb0ba18cea44777}{%
+           family={Jin},
+           family_i={J\bibinitperiod},
+           given={Hai},
+           given_i={H\bibinitperiod}}}%
+        {{hash=204d0e41e368155c8961f526adeab93d}{%
+           family={Yao},
+           family_i={Y\bibinitperiod},
+           given={Pengcheng},
+           given_i={P\bibinitperiod}}}%
+        {{hash=2bd0d901f9d5e4ea6bf06771cfeb7a4d}{%
+           family={Liao},
+           family_i={L\bibinitperiod},
+           given={Xiaofei},
+           given_i={X\bibinitperiod}}}%
+        {{hash=3e01289e70e76699db8162daa0e9175e}{%
+           family={Zheng},
+           family_i={Z\bibinitperiod},
+           given={Long},
+           given_i={L\bibinitperiod}}}%
+        {{hash=41e2784e4bb612b8968704e53848fc7d}{%
+           family={Li},
+           family_i={L\bibinitperiod},
+           given={Xianliang},
+           given_i={X\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{0b78ff6363250a2a776fadd7dc678226}
+      \strng{fullhash}{3e8ca760da4edef17741af39743fd060}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2017 IEEE 37th International Conference on Distributed Computing Systems (ICDCS)}
+      \field{title}{Towards Dataflow-Based Graph Accelerator}
+      \field{year}{2017}
+      \field{pages}{1981\bibrangedash 1992}
+      \range{pages}{12}
+    \endentry
+    \entry{zhou2015fpgapagerank}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=2af97a35890305113b40842037822491}{%
+           family={Zhou},
+           family_i={Z\bibinitperiod},
+           given={S.},
+           given_i={S\bibinitperiod}}}%
+        {{hash=862b671cb1890ea165a74300985cf5df}{%
+           family={Chelmis},
+           family_i={C\bibinitperiod},
+           given={C.},
+           given_i={C\bibinitperiod}}}%
+        {{hash=5e03e96a886256197b82ed07796c421b}{%
+           family={Prasanna},
+           family_i={P\bibinitperiod},
+           given={V.\bibnamedelimi K.},
+           given_i={V\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+      }
+      \strng{namehash}{4d53e619fce0596327556f4256d11a64}
+      \strng{fullhash}{4d53e619fce0596327556f4256d11a64}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2015 International Conference on ReConFigurable Computing and FPGAs (ReConFig)}
+      \field{month}{12}
+      \field{title}{Optimizing memory performance for FPGA implementation of pagerank}
+      \field{year}{2015}
+      \field{pages}{1\bibrangedash 6}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1109/ReConFig.2015.7393332
+      \endverb
+      \keyw{DRAM chips;field programmable gate arrays;graph theory;optimisation;FPGA;PageRank;graph algorithm;irregular memory access pattern;off-chip DRAM;random memory access;Computational modeling;Computer architecture;Field programmable gate arrays;Layout;Pipelines;Random access memory;System-on-chip;FPGA;Memory performance;PageRank}
+    \endentry
+    \entry{Windh2015fpgacam}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=3d84b027c8dbebc40c232389280b5bb5}{%
+           family={Windh},
+           family_i={W\bibinitperiod},
+           given={Skyler},
+           given_i={S\bibinitperiod}}}%
+        {{hash=cc452aad7e95d45953806d800c189cfe}{%
+           family={Budhkar},
+           family_i={B\bibinitperiod},
+           given={Prerna},
+           given_i={P\bibinitperiod}}}%
+        {{hash=99e4767f9369d223c688c73ec4458d73}{%
+           family={Najjar},
+           family_i={N\bibinitperiod},
+           given={Walid\bibnamedelima A.},
+           given_i={W\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Austin, TX, USA}%
+      }
+      \list{publisher}{1}{%
+        {IEEE Press}%
+      }
+      \strng{namehash}{f01c12455d73565b42e4dc17867712c2}
+      \strng{fullhash}{f01c12455d73565b42e4dc17867712c2}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the IEEE/ACM International Conference on Computer-Aided Design}
+      \field{isbn}{978-1-4673-8389-9}
+      \field{series}{ICCAD '15}
+      \field{title}{CAMs As Synchronizing Caches for Multithreaded Irregular Applications on FPGAs}
+      \field{year}{2015}
+      \field{pages}{331\bibrangedash 336}
+      \range{pages}{6}
+      \verb{url}
+      \verb http://dl.acm.org/citation.cfm?id=2840819.2840866
+      \endverb
+      \keyw{CAM,FPGA,Multithreading,bandwidth,synchronizing caches}
+    \endentry
+    \entry{guo2015pimenergy}{article}{}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labeltitlesource}{title}
+      \field{title}{Mingyu Gao et al. Practical near-data processing for in-memory analytics frameworks. In PACT, pages 113–124. IEEE, 2015.}
+    \endentry
+    \entry{huang2018hyve}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=d0fc48e4156f565b8d3660f215b94794}{%
+           family={Huang},
+           family_i={H\bibinitperiod},
+           given={T.},
+           given_i={T\bibinitperiod}}}%
+        {{hash=0fa428a628bd15aadd3c6b34f1bfee35}{%
+           family={Dai},
+           family_i={D\bibinitperiod},
+           given={G.},
+           given_i={G\bibinitperiod}}}%
+        {{hash=a2af46eff4389524fe951572da657010}{%
+           family={Wang},
+           family_i={W\bibinitperiod},
+           given={Y.},
+           given_i={Y\bibinitperiod}}}%
+        {{hash=14869e815d047c6e7d4cbd12fb2ebcaf}{%
+           family={Yang},
+           family_i={Y\bibinitperiod},
+           given={H.},
+           given_i={H\bibinitperiod}}}%
+      }
+      \strng{namehash}{62d753cde6406d8efdb4adc3a8d8ba82}
+      \strng{fullhash}{fa50e0ecd7d0c899424abf0de1b5f0f2}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2018 Design, Automation Test in Europe Conference Exhibition (DATE)}
+      \field{month}{03}
+      \field{title}{HyVE: Hybrid vertex-edge memory hierarchy for energy-efficient graph processing}
+      \field{year}{2018}
+      \field{pages}{973\bibrangedash 978}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.23919/DATE.2018.8342150
+      \endverb
+      \keyw{DRAM chips;graph theory;memory architecture;random-access storage;HyVE;Hybrid Vertex-Edge memory hierarchy;ReRAM;conventional memory modules;data access patterns;data allocation;energy-efficient graph processing;energy-efficient memory module;high energy consumption;large-scale graph processing;memory energy consumption;scheduling;Bandwidth;Energy consumption;Memory management;Memory modules;Random access memory;Scheduling;System-on-chip}
+    \endentry
+    \entry{fpgapower}{article}{}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labeltitlesource}{title}
+      \field{title}{“Reducing Power Consumption in Xilinx FPGAs,” http://vhdlguru.blogspot.com/2011/07/}
+    \endentry
+    \entry{umuroglu2015hybridbfsfpga}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=0ac644c25591bd4134f21f8cc75251cb}{%
+           family={Umuroglu},
+           family_i={U\bibinitperiod},
+           given={Y.},
+           given_i={Y\bibinitperiod}}}%
+        {{hash=c10476d44a1a28bd88cf3a3d5427234d}{%
+           family={Morrison},
+           family_i={M\bibinitperiod},
+           given={D.},
+           given_i={D\bibinitperiod}}}%
+        {{hash=a284e0fc4e6b318ed594e154687d0a20}{%
+           family={Jahre},
+           family_i={J\bibinitperiod},
+           given={M.},
+           given_i={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{667d584d5b7de425e143e2a734af7d21}
+      \strng{fullhash}{667d584d5b7de425e143e2a734af7d21}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2015 25th International Conference on Field Programmable Logic and Applications (FPL)}
+      \field{issn}{1946-147X}
+      \field{month}{09}
+      \field{title}{Hybrid breadth-first search on a single-chip FPGA-CPU heterogeneous platform}
+      \field{year}{2015}
+      \field{pages}{1\bibrangedash 8}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1109/FPL.2015.7293939
+      \endverb
+      \keyw{DRAM chips;field programmable gate arrays;graph theory;mathematics computing;microprocessor chips;small-world networks;tree searching;BFS algorithm;ZedBoard platform;average traversal speed;bandwidth utilization;graph metrics;graph processing applications;hybrid CPU-GPU approaches;hybrid breadth-first search algorithm;irregular memory access patterns;memory access patterns;parallelism degree;redundant computation;single-chip FPGA-CPU heterogeneous platform;single-die FPGA-CPU heterogeneous device;synthetic small-world graphs;traversal algorithm;Arrays;Bandwidth;Field programmable gate arrays;Parallel processing;Random access memory;Sparse matrices;Switches;accelerator architecture;breadth-first search (BFS);matrices over semirings;memory access patterns;sparse matrix}
+    \endentry
+    \entry{engelhardt2016gravf}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=47f3ddd64e31e4385dc90cf2a6243a10}{%
+           family={Engelhardt},
+           family_i={E\bibinitperiod},
+           given={N.},
+           given_i={N\bibinitperiod}}}%
+        {{hash=5b0fdd7ace7e327ef5e153d20a40cff7}{%
+           family={So},
+           family_i={S\bibinitperiod},
+           given={H.\bibnamedelimi K.\bibnamedelimi H.},
+           given_i={H\bibinitperiod\bibinitdelim K\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+      }
+      \strng{namehash}{777e4f1e7d326f9a64366ea37859f62f}
+      \strng{fullhash}{777e4f1e7d326f9a64366ea37859f62f}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2016 26th International Conference on Field Programmable Logic and Applications (FPL)}
+      \field{month}{08}
+      \field{title}{GraVF: A vertex-centric distributed graph processing framework on FPGAs}
+      \field{year}{2016}
+      \field{pages}{1\bibrangedash 4}
+      \range{pages}{4}
+      \verb{doi}
+      \verb 10.1109/FPL.2016.7577360
+      \endverb
+      \keyw{field programmable gate arrays;graph theory;logic design;tree searching;FPGA;GraVF;PageRank;breadth-first search;connected component;distributed graph processing;graph algorithms;high-level design framework;message semantics;single source shortest path;vertex-centric distributed graph processing framework;Algorithm design and analysis;Computational modeling;Computer architecture;Field programmable gate arrays;Hardware;Kernel;Programming}
+    \endentry
+    \entry{Ma2017fpgahtm}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=bab56f3a724fc7ac2df882c6ca31c4aa}{%
+           family={Ma},
+           family_i={M\bibinitperiod},
+           given={Xiaoyu},
+           given_i={X\bibinitperiod}}}%
+        {{hash=8d3346030389bb4358dd53ef845ff0b1}{%
+           family={Zhang},
+           family_i={Z\bibinitperiod},
+           given={Dan},
+           given_i={D\bibinitperiod}}}%
+        {{hash=712d1965921d0fe1640e63aaf4be8466}{%
+           family={Chiou},
+           family_i={C\bibinitperiod},
+           given={Derek},
+           given_i={D\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Monterey, California, USA}%
+      }
+      \list{publisher}{1}{%
+        {ACM}%
+      }
+      \strng{namehash}{c1a6a8cce9b6c66c618937930fb77b1d}
+      \strng{fullhash}{c1a6a8cce9b6c66c618937930fb77b1d}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 2017 ACM/SIGDA International Symposium on Field-Programmable Gate Arrays}
+      \field{isbn}{978-1-4503-4354-1}
+      \field{series}{FPGA '17}
+      \field{title}{FPGA-Accelerated Transactional Execution of Graph Workloads}
+      \field{year}{2017}
+      \field{pages}{227\bibrangedash 236}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1145/3020078.3021743
+      \endverb
+      \verb{url}
+      \verb http://doi.acm.org/10.1145/3020078.3021743
+      \endverb
+      \keyw{FPGA accelerator,graph application,multi-threaded architecture,throughput compute,transactional memory}
+    \endentry
+    \entry{tian2013think}{article}{}
+      \name{author}{5}{}{%
+        {{hash=474e56597e0df375ac3d01b82fcabcac}{%
+           family={Tian},
+           family_i={T\bibinitperiod},
+           given={Yuanyuan},
+           given_i={Y\bibinitperiod}}}%
+        {{hash=1afe9fd1885c74fe789664cb75629792}{%
+           family={Balmin},
+           family_i={B\bibinitperiod},
+           given={Andrey},
+           given_i={A\bibinitperiod}}}%
+        {{hash=d15ffc371eac5babfa19f230bff99689}{%
+           family={Corsten},
+           family_i={C\bibinitperiod},
+           given={Severin\bibnamedelima Andreas},
+           given_i={S\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=840f7168f0c542ca814852878ee116ce}{%
+           family={Tatikonda},
+           family_i={T\bibinitperiod},
+           given={Shirish},
+           given_i={S\bibinitperiod}}}%
+        {{hash=dd18ca5f353d390c6f30b5a6c0f1fa0e}{%
+           family={McPherson},
+           family_i={M\bibinitperiod},
+           given={John},
+           given_i={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {VLDB Endowment}%
+      }
+      \strng{namehash}{d7c18f0bd778122d5ca3fc5021b64d77}
+      \strng{fullhash}{21750cdb2734f7204ad3b10fec7afa76}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Proceedings of the VLDB Endowment}
+      \field{number}{3}
+      \field{title}{From think like a vertex to think like a graph}
+      \field{volume}{7}
+      \field{year}{2013}
+      \field{pages}{193\bibrangedash 204}
+      \range{pages}{12}
+    \endentry
+    \entry{delorimier2006graphstep}{inproceedings}{}
+      \name{author}{9}{}{%
+        {{hash=b7fc165d083b10f9f493b3e33c4c8d56}{%
+           family={deLorimier},
+           family_i={d\bibinitperiod},
+           given={M.},
+           given_i={M\bibinitperiod}}}%
+        {{hash=6710ffabe390677de72dd8e047d46bfc}{%
+           family={Kapre},
+           family_i={K\bibinitperiod},
+           given={N.},
+           given_i={N\bibinitperiod}}}%
+        {{hash=0417dba7ad31da1c7e48ed65fa704a0c}{%
+           family={Mehta},
+           family_i={M\bibinitperiod},
+           given={N.},
+           given_i={N\bibinitperiod}}}%
+        {{hash=20516da173fc460bd0f2c08dcba76cbd}{%
+           family={Rizzo},
+           family_i={R\bibinitperiod},
+           given={D.},
+           given_i={D\bibinitperiod}}}%
+        {{hash=52a259f454ac6b3fcd7f7cfa0f5605fb}{%
+           family={Eslick},
+           family_i={E\bibinitperiod},
+           given={I.},
+           given_i={I\bibinitperiod}}}%
+        {{hash=21d253a6aa143c20770120bd3b8fd421}{%
+           family={Rubin},
+           family_i={R\bibinitperiod},
+           given={R.},
+           given_i={R\bibinitperiod}}}%
+        {{hash=325cb69fb9309968c07c5342ccf3f935}{%
+           family={Uribe},
+           family_i={U\bibinitperiod},
+           given={T.\bibnamedelimi E.},
+           given_i={T\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=c58b75a3cb3d212bdf27044685c6ca94}{%
+           family={Knight},
+           family_i={K\bibinitperiod},
+           given={T.\bibnamedelimi F.\bibnamedelimi Jr.},
+           given_i={T\bibinitperiod\bibinitdelim F\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=d01ec39a8ea0860e8956d7c5d45e3520}{%
+           family={DeHon},
+           family_i={D\bibinitperiod},
+           given={A.},
+           given_i={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{0674ed8f174b88317f56410d22acf66b}
+      \strng{fullhash}{bd28b02b24e78eecc8a307c202dc97a6}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2006 14th Annual IEEE Symposium on Field-Programmable Custom Computing Machines}
+      \field{month}{04}
+      \field{title}{GraphStep: A System Architecture for Sparse-Graph Algorithms}
+      \field{year}{2006}
+      \field{pages}{143\bibrangedash 151}
+      \range{pages}{9}
+      \verb{doi}
+      \verb 10.1109/FCCM.2006.45
+      \endverb
+      \keyw{field programmable gate arrays;graph theory;microcomputers;sparse matrices;system-on-chip;FPGA;GraphStep;distributed memories;embedded memories;graph nodes;graph structures;main-memory bandwidth;microprocessors;on-chip cache capacities;sparse graph algorithms;system architecture;Aggregates;Bandwidth;Computer architecture;Delay;Field programmable gate arrays;Hardware;Microprocessors;Numerical simulation;Random access memory;SDRAM}
+    \endentry
+    \entry{Zhang2016osdihiddendimension}{inproceedings}{}
+      \name{author}{6}{}{%
+        {{hash=1b2ebc309c208d21398b011042aeaa50}{%
+           family={Zhang},
+           family_i={Z\bibinitperiod},
+           given={Mingxing},
+           given_i={M\bibinitperiod}}}%
+        {{hash=a11916adc36108f334d2bd997022f6c7}{%
+           family={Wu},
+           family_i={W\bibinitperiod},
+           given={Yongwei},
+           given_i={Y\bibinitperiod}}}%
+        {{hash=4131da5ff245e426fb9762f2b57780ef}{%
+           family={Chen},
+           family_i={C\bibinitperiod},
+           given={Kang},
+           given_i={K\bibinitperiod}}}%
+        {{hash=a7b83d59f10f7eeef414b8a161b179b1}{%
+           family={Qian},
+           family_i={Q\bibinitperiod},
+           given={Xuehai},
+           given_i={X\bibinitperiod}}}%
+        {{hash=89c9155e05a699717ef1737c0fffa46e}{%
+           family={Li},
+           family_i={L\bibinitperiod},
+           given={Xue},
+           given_i={X\bibinitperiod}}}%
+        {{hash=87e2f66d642825dc0e7802a8138a614b}{%
+           family={Zheng},
+           family_i={Z\bibinitperiod},
+           given={Weimin},
+           given_i={W\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Savannah, GA, USA}%
+      }
+      \list{publisher}{1}{%
+        {USENIX Association}%
+      }
+      \strng{namehash}{1397d415221ada6d3c07cf03c6657f20}
+      \strng{fullhash}{a113655cb8d4aed79f1c8891c375a4ff}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 12th USENIX Conference on Operating Systems Design and Implementation}
+      \field{isbn}{978-1-931971-33-1}
+      \field{series}{OSDI'16}
+      \field{title}{Exploring the Hidden Dimension in Graph Processing}
+      \field{year}{2016}
+      \field{pages}{285\bibrangedash 300}
+      \range{pages}{16}
+      \verb{url}
+      \verb http://dl.acm.org/citation.cfm?id=3026877.3026900
+      \endverb
+    \endentry
+  \endsortlist
+  \missing{1}
+  \missing{19}
+  \missing{11}
+  \missing{12}
+  \missing{15}
+  \missing{2}
+  \missing{18}
+  \missing{39}
+  \missing{23}
+  \missing{20}
+  \missing{8}
+  \missing{13}
+  \missing{5}
+  \missing{10}
+  \missing{25}
+  \missing{27}
+  \missing{4}
+  \missing{6}
+  \missing{37}
+  \missing{7}
+  \missing{40}
+  \missing{17}
+  \missing{32}
+  \missing{28}
+  \missing{22}
+  \missing{34}
+  \missing{26}
+  \missing{16}
+  \missing{24}
+  \missing{41}
+  \missing{38}
+  \missing{21}
+  \missing{29}
+  \missing{30}
+  \missing{36}
+  \missing{9}
+  \missing{33}
+\endrefsection
+\endinput
+

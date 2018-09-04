@@ -1,0 +1,46 @@
+\section{Introduction}
+Offloading compute intensive nested loops to FPGA accelerators has 
+been demonstrated by many researchers to be an effective solution 
+for performance enhancement across many application domains \cite{Chung2010, BondhugulaRS07}. 
+However, the relatively low productivity in developing FPGA-based 
+compute applications remains one of the major obstacles that hinder 
+widespread employment of FPGAs \cite{cong2011high}. To address this challenge, a number of
+researchers have turned to the use of virtual FPGA overlay architectures built on top of the physical
+FPGA configurable fabric to help with improving design productivity through fast compilation, good design
+portability and debugging support \cite{Grant2011Malibu,
+Coole2010Intermediate, ZUMA2012, mesh-FUs, ferreira2011fpga, kissler2006dynamically, scgra,
+dspoverlay}.
+
+Despite the great advantages on design productivity, the additional layer on top of the physical
+FPGA inevitably introduces performance and resource consumption penalty. An overlay must 
+ensure that the overall FPGA acceleration performance remains competitive. Otherwise, mapping the
+loop kernels to the overlay based FPGA accelerators will not be as useful. Therefore, the capability
+to customize the overlay specifically to an application or a domain of application becomes
+essential to the overlay based FPGA accelerator design. However, navigating through a 
+labyrinth of architectural and compilation parameters to fine-tune 
+an accelerator's performance is a slow and non-trivial process. 
+To require a user to manually explore such vast design space is going 
+to counteract the productivity benefit of the utilizing overlay 
+in the first place.
+
+We have been developing in-house a soft coarse-grained reconfigurable array (SCGRA) overlay based 
+nested loop acceleration framework targeting a hybrid CPU-FPGA system called QuickDough, which allows rapid
+compilation from C loops to FPGA with a library of pre-built overlay bitstreams \cite{scgra}.
+In this work, we mainly focus on automatically customizing the overlay architectural parameters,
+exploiting loop unrolling and hardware-software communication in combination with buffer sizing
+specifically to an application with given high-level resource constraints. In particular, by taking
+advantage of the regularity of the SCGRA overlay, a multitude of design metrics such as performance
+and hardware consumption can be accurately estimated using analytical models once the overlay scheduling 
+result is available. While the overlay scheduling depends on much less design 
+parameters, the overall customization framework can be dramatically simplified.
+With both the efficient application-specific customization and rapid compilation,   
+the proposed design framework ensures both high design productivity and 
+high performance of FPGA loop acceleration.
+
+From our experiments, it took the framework \num{10} to \num{20} minutes to complete the loop accelerator customization using our proposed two-step approach, which was up to \num{100} times faster than an exhaustive search through the design space.
+With customization, the resulting accelerators performed up to \num{5} times faster than a corresponding baseline accelerator before customization.
+Overall, when compared to the performance of
+the benchmark executed on the host ARM processor, the resulting FPGA accelerators achieved up to \num{10}$\times$ speedup.  
+
+
+

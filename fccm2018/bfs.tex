@@ -116,22 +116,22 @@
 % *** GRAPHICS RELATED PACKAGES ***
 %
 \ifCLASSINFOpdf
-  % \usepackage[pdftex]{graphicx}
-  % declare the path(s) where your graphic files are
-  % \graphicspath{{../pdf/}{../jpeg/}}
-  % and their extensions so you won't have to specify these with
-  % every instance of \includegraphics
-  % \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+% \usepackage[pdftex]{graphicx}
+% declare the path(s) where your graphic files are
+% \graphicspath{{../pdf/}{../jpeg/}}
+% and their extensions so you won't have to specify these with
+% every instance of \includegraphics
+% \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
 \else
-  % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
-  % will default to the driver specified in the system graphics.cfg if no
-  % driver is specified.
-  % \usepackage[dvips]{graphicx}
-  % declare the path(s) where your graphic files are
-  % \graphicspath{{../eps/}}
-  % and their extensions so you won't have to specify these with
-  % every instance of \includegraphics
-  % \DeclareGraphicsExtensions{.eps}
+% or other class option (dvipsone, dvipdf, if not using dvips). graphicx
+% will default to the driver specified in the system graphics.cfg if no
+% driver is specified.
+% \usepackage[dvips]{graphicx}
+% declare the path(s) where your graphic files are
+% \graphicspath{{../eps/}}
+% and their extensions so you won't have to specify these with
+% every instance of \includegraphics
+% \DeclareGraphicsExtensions{.eps}
 \fi
 % graphicx was written by David Carlisle and Sebastian Rahtz. It is
 % required if you want graphics, photos, etc. graphicx.sty is already
@@ -315,6 +315,7 @@
 \usepackage[T1,hyphens]{url}
 %\usepackage[colorlinks,urlcolor=blue]{hyperref}
 \usepackage[]{hyperref}
+\usepackage[usenames, dvipsnames]{color}
 
 \graphicspath{{./figures/}}
 \algrenewcommand\textproc{}
@@ -334,7 +335,7 @@
 % Linebreaks \\ can be used within to get better formatting as desired.
 % Do not put math or special symbols in the title.
 %\title{Breadth First Search on FPGAs: A Pipelined Execution Approach}
-\title{Exploring BFS Optimization with Software Programmable FPGAs}
+\title{Exploring HLS Based Irregular Memory Access Optimization on FPGAs: A Case of BFS}
 
 % author names and affiliations
 % use a multiple column layout for up to three different
@@ -394,17 +395,17 @@
 % in the abstract
 \begin{abstract}
 
-    Breadth first search (BFS) is one of the most important building blocks of graph processing, 
-    and it is notoriously difficult to accelerate on FPGAs due to the irregular memory access 
-    and low computation-to-memory ratio. To address this problem, we opt to develop 
-	the BFS accelerator using high level design tools such that the resulting accelerator preserves 
-    the high level software features including portability, ease of maintenance and use. 
-    Based on the BFS memory access patterns, we proposed a set of BFS specific optimizations 
+	Breadth-first search (BFS) is one of the most important building blocks of graph processing, 
+	and it is notoriously difficult to accelerate on FPGAs due to the irregular memory access 
+	and low computation-to-memory ratio. To address this problem, we opt to develop 
+	the BFS accelerator using high-level design tools such that the resulting accelerator preserves 
+	the high level software features including portability, ease of maintenance and use. 
+	Based on the BFS memory access patterns, we proposed a set of BFS specific optimizations 
 	such as hash filtering, prefetching and caching accordingly. 
 	In addition, we also explored some general high level synthesis (HLS) optimizations 
 	such as memory bank aware data layout and data path duplication and applied them to 
 	the design for higher memory access efficiency. Finally, we developed a design 
-	parameter tuning strategy to customize the high level design options
+	parameter tuning strategy to customize the high-level design options
 	by taking advantage of the inherent software emulation of the HLS design. 
 
 	According to the experiments on a set of big graphs on different FPGAs, 
@@ -415,7 +416,7 @@
 	state-of-art handcrafted design on similar FPGA cards, the proposed BFS 
 	accelerator achieves over 70\% of the performance while it possesses the 
 	software-like features.  
- 
+
 \end{abstract}
 
 % no keywords
@@ -475,5 +476,6 @@
 
 % that's all folks
 \end{document}
+
 
 

@@ -1,0 +1,26 @@
+Abstract:
+Developing applications that run on FPGAs is without doubt a very different 
+experience from writing programs in software. Not only is the hardware design 
+process fundamentally different from that of software development, software 
+programmers also often find themselves constantly battling with the much lower 
+design productivity in developing hardware designs. FPGA overlay, which is a 
+virtual reconfigurable architecture overlaying on top of the physical FPGA 
+configurable fabrics is generating a lot of excitements because of their 
+potentials to address the design productivity problem and is gaining 
+traction among researchers recently.
+
+In this talk, I will present a soft coarse grained reconfigurable array (SCGRA) 
+overlay based loop accelerator generation framework named QuickDough.
+It targets typical CPU-FPGA architectures and is able to produce hardware 
+accelerators rapidly. Given a user-designated loop for acceleration, 
+QuickDough automatically generates and optimizes the corresponding hardware 
+accelerator and its associated data I/O facilities with the host software. 
+
+Biography:
+Cheng Liu is a research fellow in school of computing 
+at National University of Singapore. He got PhD degree 
+from the University of Hong Kong. Before that, he got 
+B.Eng and Msc from Harbin Institute of Technology. 
+His research interests include FPGA overlay, FPGA 
+acceleration and reconfigurable computing. 
+

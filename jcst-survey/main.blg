@@ -1,0 +1,101 @@
+[1] Config.pm:343> INFO - This is Biber 2.5
+[1] Config.pm:346> INFO - Logfile is 'main.blg'
+[54] biber:290> INFO - === Fri Jul  6, 2018, 18:43:36
+[75] Biber.pm:351> INFO - Reading 'main.bcf'
+[190] Biber.pm:776> INFO - Found 135 citekeys in bib section 0
+[206] Biber.pm:3493> INFO - Processing section 0
+[220] Biber.pm:3657> INFO - Looking for bibtex format file 'graph.bib' for section 0
+[235] bibtex.pm:1187> INFO - Decoding LaTeX character macros into UTF-8
+[252] bibtex.pm:1048> INFO - Found BibTeX data source 'graph.bib'
+[259] Utils.pm:149> WARN - Duplicate entry key: 'kang2009pegasus' in file 'graph.bib', skipping ...
+[410] Utils.pm:149> WARN - BibTeX subsystem: /tmp/oh0ZD5p7sZ/graph.bib_15451.utf8, line 1456, warning: possible runaway string started at line 1455
+[411] Utils.pm:149> WARN - I didn't find a database entry for '9' (section 0)
+[411] Utils.pm:149> WARN - I didn't find a database entry for '11' (section 0)
+[411] Utils.pm:149> WARN - I didn't find a database entry for '15' (section 0)
+[411] Utils.pm:149> WARN - I didn't find a database entry for '22' (section 0)
+[412] Utils.pm:149> WARN - I didn't find a database entry for '29' (section 0)
+[412] Utils.pm:149> WARN - I didn't find a database entry for '34' (section 0)
+[412] Utils.pm:149> WARN - I didn't find a database entry for '40' (section 0)
+[412] Utils.pm:149> WARN - I didn't find a database entry for '1' (section 0)
+[412] Utils.pm:149> WARN - I didn't find a database entry for '4' (section 0)
+[412] Utils.pm:149> WARN - I didn't find a database entry for '12' (section 0)
+[412] Utils.pm:149> WARN - I didn't find a database entry for '13' (section 0)
+[413] Utils.pm:149> WARN - I didn't find a database entry for '26' (section 0)
+[413] Utils.pm:149> WARN - I didn't find a database entry for '10' (section 0)
+[413] Utils.pm:149> WARN - I didn't find a database entry for '30' (section 0)
+[413] Utils.pm:149> WARN - I didn't find a database entry for '39' (section 0)
+[413] Utils.pm:149> WARN - I didn't find a database entry for '2' (section 0)
+[413] Utils.pm:149> WARN - I didn't find a database entry for '5' (section 0)
+[413] Utils.pm:149> WARN - I didn't find a database entry for '6' (section 0)
+[414] Utils.pm:149> WARN - I didn't find a database entry for '7' (section 0)
+[414] Utils.pm:149> WARN - I didn't find a database entry for '25' (section 0)
+[414] Utils.pm:149> WARN - I didn't find a database entry for '37' (section 0)
+[414] Utils.pm:149> WARN - I didn't find a database entry for '38' (section 0)
+[414] Utils.pm:149> WARN - I didn't find a database entry for '8' (section 0)
+[414] Utils.pm:149> WARN - I didn't find a database entry for '16' (section 0)
+[414] Utils.pm:149> WARN - I didn't find a database entry for '17' (section 0)
+[414] Utils.pm:149> WARN - I didn't find a database entry for '18' (section 0)
+[414] Utils.pm:149> WARN - I didn't find a database entry for '19' (section 0)
+[415] Utils.pm:149> WARN - I didn't find a database entry for '20' (section 0)
+[415] Utils.pm:149> WARN - I didn't find a database entry for '21' (section 0)
+[415] Utils.pm:149> WARN - I didn't find a database entry for '27' (section 0)
+[415] Utils.pm:149> WARN - I didn't find a database entry for '32' (section 0)
+[415] Utils.pm:149> WARN - I didn't find a database entry for '33' (section 0)
+[415] Utils.pm:149> WARN - I didn't find a database entry for '36' (section 0)
+[415] Utils.pm:149> WARN - I didn't find a database entry for '41' (section 0)
+[415] Utils.pm:149> WARN - I didn't find a database entry for '23' (section 0)
+[415] Utils.pm:149> WARN - I didn't find a database entry for '24' (section 0)
+[416] Utils.pm:149> WARN - I didn't find a database entry for '28' (section 0)
+[420] Utils.pm:149> WARN - The field 'number' in entry 'ahn2015tesseract' cannot be null, deleting it
+[420] Utils.pm:149> WARN - The field 'volume' in entry 'ahn2015tesseract' cannot be null, deleting it
+[421] Utils.pm:149> WARN - The field 'issn' in entry 'song2018graphr' cannot be null, deleting it
+[421] Utils.pm:149> WARN - The field 'number' in entry 'song2018graphr' cannot be null, deleting it
+[421] Utils.pm:149> WARN - The field 'volume' in entry 'song2018graphr' cannot be null, deleting it
+[421] Utils.pm:149> WARN - The field 'issn' in entry 'zhou2016highthroughput' cannot be null, deleting it
+[421] Utils.pm:149> WARN - The field 'number' in entry 'zhou2016highthroughput' cannot be null, deleting it
+[421] Utils.pm:149> WARN - The field 'volume' in entry 'zhou2016highthroughput' cannot be null, deleting it
+[422] Utils.pm:149> WARN - The field 'issn' in entry 'attia2014cygraph' cannot be null, deleting it
+[422] Utils.pm:149> WARN - The field 'number' in entry 'attia2014cygraph' cannot be null, deleting it
+[422] Utils.pm:149> WARN - The field 'volume' in entry 'attia2014cygraph' cannot be null, deleting it
+[422] Utils.pm:149> WARN - The field 'issn' in entry 'han2017reram' cannot be null, deleting it
+[422] Utils.pm:149> WARN - The field 'number' in entry 'han2017reram' cannot be null, deleting it
+[422] Utils.pm:149> WARN - The field 'volume' in entry 'han2017reram' cannot be null, deleting it
+[423] Utils.pm:149> WARN - The field 'issn' in entry 'zhou2017cpufpga' cannot be null, deleting it
+[423] Utils.pm:149> WARN - The field 'number' in entry 'zhou2017cpufpga' cannot be null, deleting it
+[423] Utils.pm:149> WARN - The field 'volume' in entry 'zhou2017cpufpga' cannot be null, deleting it
+[423] Utils.pm:149> WARN - The field 'issn' in entry 'nurvitadhi2014graphgen' cannot be null, deleting it
+[423] Utils.pm:149> WARN - The field 'number' in entry 'nurvitadhi2014graphgen' cannot be null, deleting it
+[423] Utils.pm:149> WARN - The field 'volume' in entry 'nurvitadhi2014graphgen' cannot be null, deleting it
+[424] Utils.pm:149> WARN - The field 'number' in entry 'betkaoui2012fpgabfs' cannot be null, deleting it
+[424] Utils.pm:149> WARN - The field 'volume' in entry 'betkaoui2012fpgabfs' cannot be null, deleting it
+[424] Utils.pm:149> WARN - The field 'number' in entry 'betkaoui2012ssspbrain' cannot be null, deleting it
+[424] Utils.pm:149> WARN - The field 'volume' in entry 'betkaoui2012ssspbrain' cannot be null, deleting it
+[424] Utils.pm:149> WARN - The field 'number' in entry 'kapre2015softcorefpga' cannot be null, deleting it
+[424] Utils.pm:149> WARN - The field 'volume' in entry 'kapre2015softcorefpga' cannot be null, deleting it
+[425] Utils.pm:149> WARN - The field 'issn' in entry 'betkaoui2011graphlet' cannot be null, deleting it
+[425] Utils.pm:149> WARN - The field 'number' in entry 'betkaoui2011graphlet' cannot be null, deleting it
+[425] Utils.pm:149> WARN - The field 'volume' in entry 'betkaoui2011graphlet' cannot be null, deleting it
+[425] Utils.pm:149> WARN - The field 'issn' in entry 'zhou2015fpgasssp' cannot be null, deleting it
+[425] Utils.pm:149> WARN - The field 'number' in entry 'zhou2015fpgasssp' cannot be null, deleting it
+[426] Utils.pm:149> WARN - The field 'volume' in entry 'zhou2015fpgasssp' cannot be null, deleting it
+[426] Utils.pm:149> WARN - The field 'issn' in entry 'zhou2015fpgapagerank' cannot be null, deleting it
+[426] Utils.pm:149> WARN - The field 'number' in entry 'zhou2015fpgapagerank' cannot be null, deleting it
+[426] Utils.pm:149> WARN - The field 'volume' in entry 'zhou2015fpgapagerank' cannot be null, deleting it
+[426] Utils.pm:149> WARN - The field 'issn' in entry 'huang2018hyve' cannot be null, deleting it
+[426] Utils.pm:149> WARN - The field 'number' in entry 'huang2018hyve' cannot be null, deleting it
+[426] Utils.pm:149> WARN - The field 'volume' in entry 'huang2018hyve' cannot be null, deleting it
+[426] Utils.pm:149> WARN - The field 'number' in entry 'umuroglu2015hybridbfsfpga' cannot be null, deleting it
+[427] Utils.pm:149> WARN - The field 'volume' in entry 'umuroglu2015hybridbfsfpga' cannot be null, deleting it
+[427] Utils.pm:149> WARN - The field 'issn' in entry 'engelhardt2016gravf' cannot be null, deleting it
+[427] Utils.pm:149> WARN - The field 'number' in entry 'engelhardt2016gravf' cannot be null, deleting it
+[427] Utils.pm:149> WARN - The field 'volume' in entry 'engelhardt2016gravf' cannot be null, deleting it
+[427] Utils.pm:149> WARN - The field 'issn' in entry 'delorimier2006graphstep' cannot be null, deleting it
+[427] Utils.pm:149> WARN - The field 'number' in entry 'delorimier2006graphstep' cannot be null, deleting it
+[427] Utils.pm:149> WARN - The field 'volume' in entry 'delorimier2006graphstep' cannot be null, deleting it
+[501] UCollate.pm:66> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[501] UCollate.pm:66> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[502] Biber.pm:3306> INFO - Sorting list 'none/global/' of type 'entry' with scheme 'none' and locale 'en-US'
+[502] Biber.pm:3310> INFO - No sort tailoring available for locale 'en-US'
+[608] bbl.pm:526> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[640] bbl.pm:619> INFO - Output to main.bbl
+[640] Biber.pm:108> INFO - WARNINGS: 85

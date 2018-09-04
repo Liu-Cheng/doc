@@ -1,0 +1,142 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyperFirstAtBeginDocument{\AtBeginDocument}
+\HyperFirstAtBeginDocument{\ifx\hyper@anchor\@undefined
+\global\let\oldcontentsline\contentsline
+\gdef\contentsline#1#2#3#4{\oldcontentsline{#1}{#2}{#3}}
+\global\let\oldnewlabel\newlabel
+\gdef\newlabel#1#2{\newlabelxx{#1}#2}
+\gdef\newlabelxx#1#2#3#4#5#6{\oldnewlabel{#1}{{#2}{#3}}}
+\AtEndDocument{\ifx\hyper@anchor\@undefined
+\let\contentsline\oldcontentsline
+\let\newlabel\oldnewlabel
+\fi}
+\fi}
+\global\let\hyper@last\relax 
+\gdef\HyperFirstAtBeginDocument#1{#1}
+\providecommand\HyField@AuxAddToFields[1]{}
+\providecommand\HyField@AuxAddToCoFields[2]{}
+\citation{attia2014cygraph}
+\citation{betkaoui2012reconfigurable}
+\citation{Dai2017foregraph}
+\citation{Ma2017fpga}
+\citation{umuroglu2015hybrid}
+\citation{oguntebi2016graphops}
+\citation{engelhardt2016gravf}
+\citation{zhou2016high}
+\citation{koch2016fpgas}
+\citation{xilinx-sdaccel}
+\citation{nimbix}
+\citation{xilinx-sdaccel}
+\citation{intel-opencl}
+\citation{Nane2016hls-survey}
+\@writefile{toc}{\contentsline {section}{\numberline {I}Introduction}{1}{section.1}}
+\newlabel{sec:intro}{{I}{1}{Introduction}{section.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {II}Background and related work}{1}{section.2}}
+\newlabel{sec:relatedwork}{{II}{1}{Background and related work}{section.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {II-A}}High level FPGA design tools}{1}{subsection.2.1}}
+\citation{xilinx-sdaccel}
+\citation{attia2014cygraph}
+\citation{betkaoui2012reconfigurable}
+\citation{zhang2017boosting}
+\citation{zhang2017boosting}
+\citation{attia2014cygraph}
+\citation{umuroglu2015hybrid}
+\citation{zhou2016high}
+\citation{attia2014cygraph}
+\citation{betkaoui2012reconfigurable}
+\citation{kapre2015custom}
+\citation{wang2010message}
+\citation{engelhardt2016gravf}
+\citation{oguntebi2016graphops}
+\citation{Dai2017foregraph}
+\citation{dai2016fpgp}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {II-B}}BFS Algorithm}{2}{subsection.2.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {II-C}}Related work}{2}{subsection.2.3}}
+\@writefile{toc}{\contentsline {section}{\numberline {III}Observations on BFS memory access}{2}{section.3}}
+\newlabel{sec:observation}{{III}{2}{Observations on BFS memory access}{section.3}{}}
+\citation{weinberg2008chameleon}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Burst length distribution in BFS on Youtube Social Network Graph. Random memory access and short sequential memory access take up the the majority of the memory access overhead of BFS. Multiple parallel lanes of data paths improve the memory bandwidth utilization when the burst lenght is relatively large, but they will not help much for short or random memory accesses.}}{3}{figure.1}}
+\newlabel{fig:burst-len-youtube}{{1}{3}{Burst length distribution in BFS on Youtube Social Network Graph. Random memory access and short sequential memory access take up the the majority of the memory access overhead of BFS. Multiple parallel lanes of data paths improve the memory bandwidth utilization when the burst lenght is relatively large, but they will not help much for short or random memory accesses}{figure.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Unnecessary random vertex status read decomposition. The frontier neighbors consists of three parts including visited vertices in previous BFS iterations (visited vertices), redundant vertices that are repeatedly traversed in one BFS iteration (redundant vertices), and the actual valid vertices that must be traversed (valid vertices). The first two parts of the vertices can be ignored without affecting the correctness of the BFS.}}{3}{figure.2}}
+\newlabel{fig:repeat-neighbor}{{2}{3}{Unnecessary random vertex status read decomposition. The frontier neighbors consists of three parts including visited vertices in previous BFS iterations (visited vertices), redundant vertices that are repeatedly traversed in one BFS iteration (redundant vertices), and the actual valid vertices that must be traversed (valid vertices). The first two parts of the vertices can be ignored without affecting the correctness of the BFS}{figure.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Cumulative Distribution Function (CDF) of reuse distance and stride distance. They stand for the temporal locality and spatial locality of the BFS vertex status reads respectively. Note that the accesses with reference distance larger than 4000 are combined as they are difficult to be optimized in hardware design.}}{3}{figure.3}}
+\newlabel{fig:youtube-locality}{{3}{3}{Cumulative Distribution Function (CDF) of reuse distance and stride distance. They stand for the temporal locality and spatial locality of the BFS vertex status reads respectively. Note that the accesses with reference distance larger than 4000 are combined as they are difficult to be optimized in hardware design}{figure.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {IV}BFS Accelerator Overview}{4}{section.4}}
+\newlabel{sec:overview}{{IV}{4}{BFS Accelerator Overview}{section.4}{}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces Modified BFS Algorithm}}{4}{algorithm.1}}
+\newlabel{alg:modified-bfs}{{1}{4}{BFS Accelerator Overview}{algorithm.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Streamed BFS Algorithm}}{4}{figure.4}}
+\newlabel{fig:bfs-stream}{{4}{4}{Streamed BFS Algorithm}{figure.4}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {V}HLS based BFS optimization}{4}{section.5}}
+\newlabel{sec:bfs-opt}{{V}{4}{HLS based BFS optimization}{section.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {V-A}}BFS pipelining}{4}{subsection.5.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {V-B}}Memory Access Optimization}{5}{subsection.5.2}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {V-B}1}Redundancy Removal}{5}{subsubsection.5.2.1}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {V-B}2}Caching}{5}{subsubsection.5.2.2}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {V-B}3}Prefetching}{5}{subsubsection.5.2.3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {V-C}}General HLS optimization}{5}{subsection.5.3}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {V-C}1}Memory bank-aware data layout}{5}{subsubsection.5.3.1}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces BFS data layout on multiple-bank DDR memory.}}{5}{figure.5}}
+\newlabel{fig:csr-layout}{{5}{5}{BFS data layout on multiple-bank DDR memory}{figure.5}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {V-C}2}Data path duplication}{5}{subsubsection.5.3.2}}
+\citation{kalms2017exploration}
+\citation{chakrabarti2004rmat}
+\citation{snapnets}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces pipeline duplication. (a) straightforward pipeline duplication (b) optimized pipeline duplication.}}{6}{figure.6}}
+\newlabel{fig:duplicate-pipeline}{{6}{6}{pipeline duplication. (a) straightforward pipeline duplication (b) optimized pipeline duplication}{figure.6}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {V-C}3}Data width optimization}{6}{subsubsection.5.3.3}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {V-C}4}Deadlock removal}{6}{subsubsection.5.3.4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {V-D}}Parameter Tuning}{6}{subsection.5.4}}
+\@writefile{toc}{\contentsline {section}{\numberline {VI}Experiments}{6}{section.6}}
+\newlabel{sec:experiment}{{VI}{6}{Experiments}{section.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {VI-A}}Experiment Setup}{6}{subsection.6.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {VI-B}}Performance comparison}{6}{subsection.6.2}}
+\citation{zhang2017boosting}
+\citation{betkaoui2012reconfigurable}
+\citation{attia2014cygraph}
+\citation{zhang2017boosting}
+\@writefile{lot}{\contentsline {table}{\numberline {I}{\ignorespaces Graph Benchmark}}{7}{table.1}}
+\newlabel{tab:graph}{{I}{7}{Graph Benchmark}{table.1}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {II}{\ignorespaces Performance summary}}{7}{table.2}}
+\newlabel{tab:performance-summary}{{II}{7}{Performance summary}{table.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {VI-C}}Design Configuration and Resource Overhead}{7}{subsection.6.3}}
+\@writefile{lot}{\contentsline {table}{\numberline {III}{\ignorespaces FPGA based BFS accelerator comparison on R-MAT}}{7}{table.3}}
+\newlabel{tab:compare}{{\unhbox \voidb@x \hbox {VI-B}}{7}{Performance comparison}{table.3}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {IV}{\ignorespaces Memory optimization parameter setup on ADM-7v3}}{7}{table.4}}
+\newlabel{tab:parameter-setup}{{IV}{7}{Memory optimization parameter setup on ADM-7v3}{table.4}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {V}{\ignorespaces FPGA resource consumption on ADM-7v3}}{7}{table.5}}
+\newlabel{tab:mem-resource}{{V}{7}{FPGA resource consumption on ADM-7v3}{table.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {VI-D}}Optimization evaluation}{7}{subsection.6.4}}
+\bibstyle{IEEEtran}
+\bibdata{refs}
+\bibcite{attia2014cygraph}{1}
+\bibcite{betkaoui2012reconfigurable}{2}
+\bibcite{Dai2017foregraph}{3}
+\bibcite{Ma2017fpga}{4}
+\bibcite{umuroglu2015hybrid}{5}
+\bibcite{oguntebi2016graphops}{6}
+\bibcite{engelhardt2016gravf}{7}
+\bibcite{zhou2016high}{8}
+\bibcite{koch2016fpgas}{9}
+\bibcite{xilinx-sdaccel}{10}
+\bibcite{nimbix}{11}
+\bibcite{intel-opencl}{12}
+\bibcite{Nane2016hls-survey}{13}
+\bibcite{zhang2017boosting}{14}
+\bibcite{kapre2015custom}{15}
+\bibcite{wang2010message}{16}
+\bibcite{dai2016fpgp}{17}
+\bibcite{weinberg2008chameleon}{18}
+\bibcite{kalms2017exploration}{19}
+\bibcite{chakrabarti2004rmat}{20}
+\bibcite{snapnets}{21}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces BFS accelerator optimization technique evaluation. The performance on all the graphs improves when more optimizations including pipelining, redundancy removal, prefetching, caching, and data path duplication are gradually applied to the design.}}{8}{figure.7}}
+\newlabel{fig:opt-performance}{{7}{8}{BFS accelerator optimization technique evaluation. The performance on all the graphs improves when more optimizations including pipelining, redundancy removal, prefetching, caching, and data path duplication are gradually applied to the design}{figure.7}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {VI}{\ignorespaces Memory-bank aware data layout optimization influence on the BFS accelerator performance (MTEPS)}}{8}{table.6}}
+\newlabel{tab:porting-summary}{{VI}{8}{Memory-bank aware data layout optimization influence on the BFS accelerator performance (MTEPS)}{table.6}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {VII}Insights and Conclusions}{8}{section.7}}
+\newlabel{sec:conclusion}{{VII}{8}{Insights and Conclusions}{section.7}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {VII-A}}Insights}{8}{subsection.7.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {VII-B}}Conclusions}{8}{subsection.7.2}}
+\@writefile{toc}{\contentsline {section}{References}{8}{section*.1}}

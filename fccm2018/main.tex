@@ -11,7 +11,7 @@
 %optimized performance remains challenging. To that end, we take 
 %BFS as an example exploring the high level data intensive application 
 %optimization on the FPGAs using state-of-art high level design tools. 
- 
+
 Breadth-first search (BFS) is the basic building component of many graph algorithms 
 and is thus of vital importance to high-performance graph processing. Nevertheless, 
 it is notoriously difficult for accelerating on FPGAs because of the 
@@ -23,12 +23,12 @@ BFS has attracted a number of researchers exploring its acceleration on FPGAs
 \cite{attia2014cygraph, betkaoui2012reconfigurable, Dai2017foregraph, Ma2017fpga,
 umuroglu2015hybrid, oguntebi2016graphops, engelhardt2016gravf, zhou2016high}. 
 
-Previous work have shown that BFS accelerators on FPGAs can provide competitive  
+Previous work has shown that BFS accelerators on FPGAs can provide competitive  
 performance and superior energy efficiency when given comparable memory bandwidth. 
 However, these work typically optimize BFS or relatively general graph processing 
 with dedicated circuit design using hardware description language (HDL). The HDL 
 based designs with customized circuits are beneficial to the resulting performance 
-and save resource consumption, but it usually takes long time for development, 
+and save resource consumption, but it usually takes a long time for development, 
 upgrade, maintenance and porting to a different FPGA device, which are all 
 important concerns from the perspective of the accelerator developers. 
 
@@ -37,7 +37,7 @@ To alleviate this problem, more and more people from both industry and
 academia opt to use integrated high level synthesis (HLS) design tools for 
 developing accelerators of their target applications namely 
 accelerating with software programmable FPGAs \cite{koch2016fpgas, xilinx-sdaccel}.
-Basically the users can focus on the application and program the FPGAs with high 
+Basically, the users can focus on the application and program the FPGAs with high 
 level languages such as C/C++ and OpenCL without handling the neither the low-level 
 circuit design nor system drivers. We argue that using software programmable FPGAs for hardware 
 design is not only improving 
@@ -55,9 +55,9 @@ the data-center application acceleration to endow the accelerator with software-
 Then we further optimize the high level BFS accelerator to achieve high performance.
 As BFS is known to be memory bandwidth bound, we thus centers the memory 
 access optimization. With intensive experiments on memory access patterns of BFS on large graphs, 
-we proposed a series of high level design optimizations such as prefetching and caching 
+we proposed a series of high-level design optimizations such as prefetching and caching 
 to the BFS accelerator. Some of the optimizations can be applied to many other similar applications. 
-Finally, we tune the optimization parameters with high level metrics 
+Finally, we tune the optimization parameters with high-level metrics 
 such as cache hit rate through the convenient HLS based 
 software emulation and obtain optimized BFS accelerator for each graph. 
 
@@ -74,11 +74,11 @@ the portability of the HLS based BFS accelerator is demonstrated.
 \section{Background and related work} \label{sec:relatedwork}
 \subsection{High level FPGA design tools}
 The major FPGA vendors have started 
-to offer high level programming options such as C/C++ and OpenCL, which makes 
+to offer high-level programming options such as C/C++ and OpenCL, which makes 
 it possible for the designers without much low-level circuit design 
 experiences \cite{nimbix, xilinx-sdaccel, intel-opencl} 
 to program the FPGAs efficiently. In addition, the accelerator 
-described with high level languages preserves many software-like features 
+described with high-level languages preserves many software-like features 
 such as portability, ease of maintenance and use. They are all 
 important concerns from the perspective of the designers. Considering the  
 continuously increasing FPGA resources and stringent time-to-market requirements, 
@@ -98,7 +98,7 @@ BFS is a widely used graph traversal algorithm and it is the basic
 building component of many other graph processing algorithms. 
 It traverses the graph by processing all vertices with the same distance from the 
 source vertex iteratively. The set of vertices which have the same distance from the 
-source is defined as frontier. The frontier that is under analysis in the BFS iteration 
+source is defined as the frontier. The frontier that is under analysis in the BFS iteration 
 is named as current frontier while the frontier that is inspected from current frontier 
 is called next frontier. By inspecting only the frontier, BFS can be implemented efficiently 
 and thus the frontier concept is utilized in many BFS implementations.
@@ -113,7 +113,7 @@ the frontier queue is empty.
 
 \subsection{Related work}
 The growing importance of efficient BFS traverse on large graphs 
-have attracted attentions of many researchers. In the past few years, 
+have attracted attention of many researchers. In the past few years, 
 many BFS optimization algorithms and accelerators have been proposed 
 on almost all the major computing platforms including multi-core processors, 
 distributed systems, GPUs and FPGAs. In this work, we will 
@@ -140,7 +140,7 @@ processing model, while the authors
 in \cite{zhou2016high} explored the edge-centric graph processing and demonstrated 
 significant throughput improvement. On top of the single FPGA board acceleration, 
 the authors in \cite{attia2014cygraph, betkaoui2012reconfigurable} also explored 
-BFS acceleration on a FPGA based high performance computing system with multiple 
+BFS acceleration on a FPGA based high-performance computing system with multiple 
 FPGAs and memory instances. There are also work exploring customized soft processors 
 for graph processing and building a distributed solution on 
 top of a group of embedded FPGA boards \cite{kapre2015custom, wang2010message}.
@@ -152,23 +152,28 @@ They can also be utilized for BFS acceleration despite the lack of
 specialized optimization for BFS. Meanwhile, this is also a way to improve 
 the ease of use FPGAs for graph processing acceleration.
 
-Prior BFS acceleration work have demonstrated the potential benefits of accelerating 
+Prior BFS acceleration work has demonstrated the potential benefits of accelerating 
 BFS on FPGAs. These accelerators were mainly developed for the sake 
 of performance and generality for more graph processing algorithms. 
 However, they were all handcrafted HDL designs. In this work, 
 we opt to develop HLS based BFS accelerators 
 using SDAccel such that the accelerator packed in an 
-OpenCL thread can be easily utilized in high level applications 
+OpenCL thread can be easily utilized in high-level applications 
 by a \textit{software designer}. Meanwhile, the same design can be easily 
 ported to other FPGAs with the SDAccel support with little 
 engineering efforts.
 
 \section{Observations on BFS memory access} \label{sec:observation}
+BFS on large graphs is known to be a memory bandwidth bound task.
+Thus we analyze the memory access of BFS for intensive optimization.
+With the analysis, three observations are gained and can be used to
+guide the BFS accelerator design.
+
 \textit{Observation 1: BFS memory access pattern  
-involves considerable short sequential memory accesses 
-and random memory accesses which are usually quite 
-expensive. At the same time, it also includes quite some long 
-sequential memory accesses and the overall access time can't be 
+	involves considerable short sequential memory accesses 
+	and random memory accesses which are usually quite 
+	expensive. At the same time, it also includes quite some long 
+	sequential memory accesses and the overall access time cannot be 
 ignored due to the relatively large memory access amount.} We analyze the 
 memory access pattern of the BFS on Youtube Graph. The burst length distribution 
 of the memory accesses is presented in Figure \ref{fig:burst-len-youtube}. 
@@ -183,17 +188,17 @@ from a standalone HLS based memory test on an Alpha Data ADM-7v3 FPGA card.
 We use the test result to estimate the memory access time of BFS. 
 In general, it can be concluded that the short sequential and random 
 memory access are the most critical part of the BFS memory accesses. 
- 
+
 \begin{figure}
-\center{\includegraphics[width=0.75\linewidth]{burst_len_youtube}}
-\caption{Burst length distribution in BFS on Youtube Social Network Graph. 
-    Random memory access and short sequential memory access take up the 
-    the majority of the memory access overhead of BFS. Multiple parallel 
-    lanes of data paths improve the memory bandwidth utilization when the 
-    burst lenght is relatively large, but they will not help much 
-    for short or random memory accesses.}
-\label{fig:burst-len-youtube}
-\vspace{-1.5em}
+	\center{\includegraphics[width=0.75\linewidth]{burst_len_youtube}}
+	\caption{Burst length distribution in BFS on Youtube Social Network Graph. 
+		Random memory access and short sequential memory access take up the 
+		the majority of the memory access overhead of BFS. Multiple parallel 
+		lanes of data paths improve the memory bandwidth utilization when the 
+		burst lenght is relatively large, but they will not help much 
+	for short or random memory accesses.}
+	\label{fig:burst-len-youtube}
+	\vspace{-1.5em}
 \end{figure}
 
 \textit{Observation 2: There are many redundant vertices in the 
@@ -203,7 +208,7 @@ access overhead, we further investigate the random memory access in BFS.
 According to the level synchronous BFS algorithm, the random memory access mainly comes 
 from the frontier neighbor vertex status read/write. 
 However, many frontier vertices may have common neighbor vertices and these common 
-vertices lead to many repeated vertex status read. To gain insight of the neighbor 
+vertices lead to many repeated vertex statuses read. To gain insight of the neighbor 
 vertex redundancy, we compare the total amount of frontier 
 neighbor vertices and the amount of unique frontier neighbor vertices in each BFS iteration.
 (Note that Youtube graph is used in the experiment.) 
@@ -214,7 +219,7 @@ With proper redundancy removal strategy, the vertex status reads in the followin
 part of the BFS can be reduced dramatically.
 
 On top of the redundant vertices, the visited vertices in previous 
-BFS iterations don't need to be checked by reading the vertex status 
+BFS iterations do not need to be checked by reading the vertex status 
 from memory. According to our experiment, the visited frontiers 
 take up quite some of the total frontier neighbor vertices. However, this is 
 observed in only one or two BFS iterations. Buffering 
@@ -222,21 +227,21 @@ frontier vertices may help to avoid unnecessary random vertex status read,
 but the benefit may be relatively trivial.  
 
 \begin{figure}
-\center{\includegraphics[width=0.75\linewidth]{neighbor_vertex}}
-\caption{Unnecessary random vertex status read decomposition. 
-    The frontier neighbors consists of three parts including visited vertices 
-    in previous BFS iterations (visited vertices), 
-    redundant vertices that are repeatedly traversed in one BFS iteration (redundant vertices), 
-    and the actual valid vertices that must be traversed (valid vertices). 
-    The first two parts of the vertices can be ignored without 
-    affecting the correctness of the BFS.}
-\label{fig:repeat-neighbor}
-\vspace{-1.2em}
+	\center{\includegraphics[width=0.75\linewidth]{neighbor_vertex}}
+	\caption{Unnecessary random vertex status read decomposition. 
+		The frontier neighbors consists of three parts including visited vertices 
+		in previous BFS iterations (visited vertices), 
+		redundant vertices that are repeatedly traversed in one BFS iteration (redundant vertices), 
+		and the actual valid vertices that must be traversed (valid vertices). 
+		The first two parts of the vertices can be ignored without 
+	affecting the correctness of the BFS.}
+	\label{fig:repeat-neighbor}
+	\vspace{-1.2em}
 \end{figure}
 
 \textit{Observation 3: The vertex status reads have good 
-spatial locality especially when the redundant access are removed in advance, 
-but the temporal locality is relative bad meaning that the status reuse 
+	spatial locality especially when the redundant access is removed in advance, 
+	but the temporal locality is relative bad meaning that the status reuse 
 distance is quite long.}
 Another potential optimization of random memory access is to use cache architecture, 
 which explores the data locality and improves memory bandwidth utilization 
@@ -246,7 +251,7 @@ the frontier neighbor vertex redundancy removal affects the locality,
 we also do the spatial locality analysis on a redundancy-free 
 vertex status read sequence. The data locality based cumulative 
 distribution function (CDF) curve is shown in 
-Figure \ref{fig:youtube-locality}. Clearly the memory accesses exhibit 
+Figure \ref{fig:youtube-locality}. Clearly, the memory accesses exhibit 
 very good spatial locality. In particular, the spatial 
 locality gets even better and over 70\% of the vertices have reference distance 
 less than 200 when the redundancy is squeezed. The temporal locality is not as 
@@ -263,14 +268,14 @@ address A is equal to the number of unique memory addresses that have been
 accessed since the last access to A.  
 
 \begin{figure}
-\center{\includegraphics[width=0.75\linewidth]{youtube-locality}}
-\caption{Cumulative Distribution Function (CDF) of reuse distance 
-    and stride distance. They stand for the temporal locality and spatial 
-    locality of the BFS vertex status reads respectively. Note that the 
-    accesses with reference distance larger than 4000 are combined as they are difficult 
-    to be optimized in hardware design.}
-\label{fig:youtube-locality}
-\vspace{-1.5em}
+	\center{\includegraphics[width=0.75\linewidth]{youtube-locality}}
+	\caption{Cumulative Distribution Function (CDF) of reuse distance 
+		and stride distance. They stand for the temporal locality and spatial 
+		locality of the BFS vertex status reads respectively. Note that the 
+		accesses with reference distance larger than 4000 are combined as they are difficult 
+	to be optimized in hardware design.}
+	\label{fig:youtube-locality}
+	\vspace{-1.5em}
 \end{figure}
 
 %\textit{Observation 4: In the skewed graphs, a small amount of high degree vertices 
@@ -302,50 +307,52 @@ accessed since the last access to A.
 In summary, we notice that random and short sequential memory accesses 
 are the most time-consuming part of the overall BFS memory accesses. 
 It is generally difficult to optimize these memory accesses, 
-With intensive experiments, we observe large amount of redundancy in BFS and 
+With intensive experiments, we observe a large amount of redundancy in BFS and 
 these memory accesses exhibit very good spatial locality. Taking advantage of the 
 memory access characteristics, we may improve the BFS memory access efficiency 
 and performance eventually.
 
 \section{BFS Accelerator Overview} \label{sec:overview}
-This work targets in-memory graph processing on a PCIe based 
-high performance FPGA card. In each BFS iteration, 
-the BFS kernel on FPGA returns the BFS frontier size to host such that the host can 
-decide if another BFS iteration should be invoked. Although short communication 
-between the host and FPGA in each BFS iteration is needed, the communication cost 
-is negligible compared to the execution time. Hereby, 
-the overall BFS runtime is barely affected.
+\textcolor{green}{This work targets at in-memory graph processing on a PCIe based 
+high-performance FPGA card. The whole graph is stored in FPGA device
+memory. Ideally, the accelerator does the BFS on FPGA without
+any interference from the host CPU. However, the data flow model 
+of Xilinx HLS does not allow feedback from the downstream stages 
+to previous stages. In this case, we actually implement one 
+BFS iteration on FPGA while leaving the host CPU to do the iteration 
+control. The BFS kernel on FPGA returns the BFS frontier size to host such 
+that the host can decide if BFS completes. Although communication 
+between the host and FPGA in each BFS iteration is required, the communication cost 
+is negligible compared to the execution time and the overall BFS runtime 
+is barely affected.}
 
 The BFS algorithm is critical to the BFS accelerator 
 and level synchronous BFS is widely used.  
 However, it may have redundant vertices pushed to the 
 frontier queue in a parallel architecture. The redundancy 
 vertices are difficult to get rid of \textit{completely},
-while they may lead to large 
-amount of repeated traverses recursively and degrade the BFS performance.
+\textcolor{red}{while they may lead to a large 
+number of repeated traverses recursively and degrade the BFS performance.
 To address this problem, we inspect the frontier from the 
 vertex status in each BFS iteration to cut down the 
-propagation of the redundancy as proposed in prior 
-GPU based BFS acceleration \cite{liu2015enterprise}. The modified algorithm is described 
+propagation of the redundancy. The modified algorithm is described 
 in Algorithm \ref{alg:modified-bfs}. Instead of traversing the frontier vertices directly, 
-it starts with vertex status traverse and inspect the frontier 
-in each BFS iteration. Although it seems the additional frontier inspection stage 
-brings more memory access, the inspection processing are complete sequential 
-memory access and can be done efficiently. It is thus worth for the overhead 
-when compared to the cost caused by the redundant frontier vertices. 
-The rest part of the algorithm is 
+it starts with vertex status traverse and inspects the frontier 
+in each BFS iteration. The inspection processing are complete sequential 
+memory access and can be done efficiently and it helps to remove 
+the redundant frontier vertices completely.} The rest part of the algorithm is 
 quite similar to the level synchronous BFS except that the frontier queues 
 are no longer needed.
 
 \begin{algorithm}
 	\caption{Modified BFS Algorithm} \label{alg:modified-bfs}
-    \footnotesize
+	\footnotesize
 	\begin{algorithmic}[1]
 		\Procedure{BFS}{}
 		\State $level[v_k] \gets -1$ where $v_k \in V$
 		\State $level[v_s] \gets 0$, $current\_level \gets 0$, $frontier \gets v_s$
 
-        \While {$!frontier.empty()$} 
+		\While {$!frontier.empty()$} 
 
 		\For{$v \in V$}
 		\If{$level[v] == current\_level$}
@@ -370,9 +377,9 @@ are no longer needed.
 \section{HLS based BFS optimization} \label{sec:bfs-opt}
 With the observations in Section \ref{sec:observation} 
 and the modified BFS algorithm in Section \ref{sec:overview}, 
-we start to optimize the BFS accelerator using high level design tools 
+we start to optimize the BFS accelerator using high-level design tools 
 from different angles. First, we convert the nested loop structure 
-of the BFS to be a stream manner such that it can be fit into the data flow model in
+of the BFS to be a streaming manner such that it can be fit into the data flow model in
 Xilinx HLS for efficient pipelined execution. Then we explore a series of memory optimization 
 techniques based on the BFS memory access patterns observed in \ref{sec:observation}. 
 Afterwards, we apply some general HLS optimizations to the resulting design. Finally, 
@@ -399,9 +406,9 @@ will be checked by reading the vertex status array stored in DDR as well.
 Only the vertices that are not visited yet will be further forwarded to the \textit{f6}. 
 In \textit{f6}, the vertex status will be updated.
 
-In the streamed BFS implementation, five sub functions involve external memory access 
+In the streamed BFS implementation, five sub-functions involve external memory access 
 and they have quite different memory access patterns. \textit{f3} reads all the vertex 
-status and it is esentially a long sequential memory read. \textit{f2} reads the CSR 
+status and it is essentially a long sequential memory read. \textit{f2} reads the CSR 
 row pointer of the frontier. Two sequential words will be read each time. 
 \textit{f1} reads the CSR column index and the 
 burst length depends on the vertex degree which varies in a large range. 
@@ -409,14 +416,14 @@ burst length depends on the vertex degree which varies in a large range.
 As these vertices are not sequential, the HLS tools just take them as random access. 
 
 \begin{figure}
-\center{\includegraphics[width=0.65\linewidth]{bfs-stream}}
-\caption{Streamed BFS Algorithm}
-\label{fig:bfs-stream}
-\vspace{-1.5em}
+	\center{\includegraphics[width=0.65\linewidth]{bfs-stream}}
+	\caption{Streamed BFS Algorithm}
+	\label{fig:bfs-stream}
+	\vspace{-1.5em}
 \end{figure}
 
 \subsection{Memory Access Optimization}
-In this section, we will mainly explore the memory 
+In this section, we mainly explore the memory 
 access optimization techniques based on the observations 
 in Section \ref{sec:observation}.
 
@@ -428,20 +435,20 @@ relatively random, a big hash table can be utilized to squeeze
 the redundancy. However, big hash table degrades the hardware implementation 
 frequency and eventually lowers the overall performance. Hereby, we 
 build a series of smaller hash tables and apply them in parallel. 
- 
+
 \subsubsection{Caching}
 According to the experiments in Section \ref{sec:observation}, 
 there are many random memory accesses and short 
 sequential memory accesses in \textit{f5} and \textit{f6}. 
 It is generally difficult to optimize these memory accesses. Fortunately, 
 the spatial locality analysis shown in previous section 
-implies the great potential of cache based memory access optimization. 
+implies the great potential of cache-based memory access optimization. 
 Inspired by the observation, we developed an HLS based cache specifically 
 for the vertex status \textit{depth} access. 
 
 Since the cache is only used for \textit{depth} array read and write, we  
 choose the \textit{depth} array index instead of its physical address for cache 
-indexing. As the cache can't be shared 
+indexing. As the cache cannot be shared 
 between different SDAccel data flow functions, a natural cache design is 
 to implement both cache in \textit{f5} and \textit{f6}. The cache can be relatively simple 
 for supporting only read operations in \textit{f5} and write operations in \textit{f6}.  
@@ -451,18 +458,18 @@ In this work, we choose the directly mapped cache considering the hardware imple
 According to the BFS algorithm, the frontier is sequentially inspected. 
 Therefore, the CSR information is also accessed in a single direction 
 in \textit{f3} and \textit{f4}, though they are not necessarily sequential. Basically 
-both the column array index and the row column index will increase 
+both the column array index and the row array index will increase 
 monotonically in each BFS iteration. The CSR data will not be repeatedly 
 referenced through the BFS. To optimize these memory 
 accesses, a small prefetch buffer is built to improve the memory access efficiency. 
-We notice that 64 byte prefetch buffer provides reasonable hit rate and 
+We notice that 64-byte prefetch buffer provides reasonable hit rate and 
 it is used in the experiments.
 
 \subsection{General HLS optimization}
 On top of the BFS specific optimizations, there are also 
 some other relatively general design optimizations that can improve the 
 resulting BFS accelerator performance. These optimizations will be briefly 
-introduced in this sub section.
+introduced in this subsection.
 
 \subsubsection{Memory bank-aware data layout}
 The data layout affects the memory access efficiency 
@@ -487,24 +494,24 @@ with the granularity of 64 elements. The fine-grained partition
 granularity ensures the load balance of the processing on 
 different memory banks. The \textit{RPA} of the CSR is partitioned 
 with the same manner. To ensure aligned RPA access, we change the 
-RPA structure with two arrays. One of the array stores the start \textit{CIA} 
+RPA structure with two arrays. One of the arrays stores the start \textit{CIA} 
 index of each vertex and the other array stores the vertex's neighbor size.
 The \textit{CIA} array is allocated to different memory banks 
-based on the \textit{RPA} partition. Basically we want to ensure that each vertex's 
+based on the \textit{RPA} partition. Basically, we want to ensure that each vertex's 
 neighbors stay in the same bank with its \textit{RPA}. However, when a frontier's neighbors 
 are read into FPGAs, the \textit{depth} update process i.e. \textit{f6} may still need to refer to multiple 
 \textit{depth} banks. We solve this problem by adding an additional crossbar stage on FPGA and 
 reshaping the \textit{depth} updating streams to independent memory banks. Similar methods 
-can be applied in \textit{f3}, so the partitions of different arrys can be different.
+can be applied in \textit{f3}, so the partitions of different arrays can be different.
 In this work, \textit{depth} is divided into two memory banks 
 while CSR data are divided into 4 memory banks considering the 
-amount of memory accesses and total amount of memory port constrain in SDAccel.
+amount of memory accesses and the total amount of memory port constrain in SDAccel.
 
 \begin{figure}
-\center{\includegraphics[width=0.85\linewidth]{csr-layout}}
-    \caption{BFS data layout on multiple-bank DDR memory.}
-\label{fig:csr-layout}
-\vspace{-1em}
+	\center{\includegraphics[width=0.85\linewidth]{csr-layout}}
+	\caption{BFS data layout on multiple-bank DDR memory.}
+	\label{fig:csr-layout}
+	\vspace{-1em}
 \end{figure}
 
 
@@ -517,15 +524,15 @@ way of data path duplication is to split the vertex status into different
 partitions and each partition is processed by an instance of the same BFS data path.
 However, this method may not work as good as expected, because 
 the vertices in the frontier may not distribute evenly across the graph. 
-and the different data paths may have unbalanced workload. Also it requires 
-more global memory ports when the data path are duplicated.
+and the different data paths may have unbalanced workloads. Also it requires 
+more global memory ports when the data paths are duplicated.
 
 To address the problems, we propose a delicate data path duplication strategy 
 as shown in Figure \ref{fig:duplicate-pipeline}. According to the BFS algorithm, 
 we know that each frontier vertex requires two CSR row pointer read and multiple 
 CSR column index read. Thus the bottleneck pipeline stages may probably start 
 from \textit{f3}. Therefore, we split the frontier stream generated in \textit{f3} into 
-multiple streams. Each sub stream will be handled independently by a 
+multiple streams. Each sub-stream will be handled independently by a 
 duplicated data path. This also solves the data path load balancing problem 
 naturally. Finally, to ensure both parallel memory access and cache coherence,  
 we reshape the output streams of \textit{f5} into multiple independent streams 
@@ -533,11 +540,11 @@ with a crossbar logic such that data in each stream will not overlap
 and there is no memory write conflicts. 
 
 \begin{figure}
-\center{\includegraphics[width=0.75\linewidth]{pipeline-duplication}}
-    \caption{pipeline duplication. (a) straightforward pipeline duplication 
-    (b) optimized pipeline duplication.}
-\label{fig:duplicate-pipeline}
-\vspace{-1.5em}
+	\center{\includegraphics[width=0.75\linewidth]{pipeline-duplication}}
+	\caption{pipeline duplication. (a) straightforward pipeline duplication 
+	(b) optimized pipeline duplication.}
+	\label{fig:duplicate-pipeline}
+	\vspace{-1.5em}
 \end{figure}
 
 With this data path duplication strategy, each pipeline stage of a data path typically 
@@ -560,7 +567,7 @@ memory access, they are aligned and accessed with 512-bit memory port.
 %In the pipelined design, initialization interval (II) indicates the 
 %processing throughput. Larger II in a single pipeline stage 
 %may slow down the rest of the system. Thus we try to reduce II of all 
-%the pipelined sub functions. In particular, hash table, cache and prefetch 
+%the pipelined sub-functions. In particular, hash table, cache and prefetch 
 %buffer may affect the II. Inappropriate implementation may lead to 
 %large II and even compensate the benefits brought by these optimizations. 
 
@@ -573,30 +580,27 @@ wait for the downstream pipeline stages to consume the data in the buffer.
 However, the downstream pipeline stages may also be stalled due to 
 the failure of acquiring the bus that is taken by the upstream pipeline stage.
 It is difficult to debug and resolve this deadlock. To address this problem, we
-add additional local buffer in the pipeline stages with long sequential 
+add an additional local buffer in the pipeline stages with long sequential 
 memory access and split the long sequential memory access into smaller 
 segments such that each segment can be accommodated by the buffer. 
 Although this may cause slightly lower bandwidth utilization, it breaks the deadlock and 
 ensures the correctness of the pipelined design.
 
 \subsection{Parameter Tuning}
-As presented in previous sub sections, there are some design 
+As presented in previous sub-sections, there are some design 
 parameters such as hash table size and cache configurations
-that need to be explored. However, exploring the design parameters 
-based on the hardware implementation directly requires many lengthy 
-hardware implementations (A typical BFS implementation may 
-take 1 hour to 4 hours to complete.) which is extremely time-consuming.
+that need to be explored. \textcolor{red}{However, exploring all the design parameters 
+based on the hardware implementation directly is extremely time-consuming, 
+because a typical hardware implementation may take hours to complete the compilation.}
 
 In this work, we tune the design parameters through the software 
-emulation based analysis. Basically we extract a series of 
+emulation based analysis. We extract a series of 
 implementation independent metrics such as cache hit rate and hash table hit rate 
 through convenient software emulation of the HLS design. 
-With these metrics, we can roughly decide the prefetch buffer size, 
-cache size and hash table size etc. 
-Afterwards, we go through the lengthy 
-hardware implementation and choose the best parameters based on the final 
-run time. With this tuning method, graph-specific BFS accelerators 
-can be obtained. 
+\textcolor{red}{With these metrics, we can decide the design parameters such as prefetch buffer size, 
+cache size, and hash table size etc. Since software emulation allows very fast 
+parameter exploration, we consider all possible combinations of 
+those parameters and choose the optimal configuration that leads to the best performance. }
 
 %\subsection{Parameter tuning}
 %In this work, we manually tune the design parameters. To obtain the 
@@ -635,5 +639,6 @@ can be obtained.
 %\begin{acks}
 %  The authors would like to thank Sam Ho for providing the suggestions on
 %  HLS design debugging and optimization as well as the SDAccel usage. 
- 
+
 %\end{acks}
+

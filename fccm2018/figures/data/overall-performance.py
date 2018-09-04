@@ -21,8 +21,9 @@ raw_data = {'graph': ['Youtube', 'LiveJournal', 'Pokec', 'RMAT-19-32', 'RMAT-21-
 adm7v3_mteps_opt = [2.99/0.21, 68.99/2.45, 30.62/1.05, 16.78/0.204, 67.11/2.418]
 ku115_mteps_opt = [2.99/0.16, 68.99/1.122, 30.62/0.45, 16.78/0.137, 67.11/0.563]
 ku115_mteps_no_opt = [2.99/0.22, 68.99/1.653, 30.62/0.75, 16.78/0.197, 67.11/1.06]
+gap_mteps = [2.99/0.0081, 68.99/0.05163, 30.62/0.0209, 16.78/0.00539, 67.11/0.01478]
 #speedup = [29.303/0.2082, 135.489/2.4599, /1.054, /0.2042, /2.4181]
-#de5net = [0.19, 0.42, 1.07, 0.24, 0.85]
+de5net_mteps = [2.99/0.19, 68.99/0.42, 30.62/1.07, 16.78/0.24, 67.11/0.85]
 df = pd.DataFrame(raw_data, columns = ['graph', 'baseline', 'this work', '[GAP]'])
 label=('baseline', 'this work', '[GAP]')
 # Setting the positions and width for the bars
@@ -34,7 +35,8 @@ print pos
 print adm7v3_mteps_opt
 print ku115_mteps_opt
 print ku115_mteps_no_opt
-#print mteps_no_opt
+print de5net_mteps
+print gap_mteps
 
 #cmap = plt.get_cmap('jet')
 #colors = cmap(np.linspace(0, 1.0, len(fuck_label)))

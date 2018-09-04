@@ -1,0 +1,7 @@
+\section{conclusion} \label{sec:conclusion}
+%In this work, we have presented an automatic nested loop acceleration  framework based on a homogeneous SCGRA overlay built on top of  off-the-shelf FPGA devices. Given high-level user constraints,  the framework performs an intensive system customization specifically to a nested loop and provides a complete loop acceleration on a hybrid CPU-FPGA system. Particularly, by taking advantage of the regularity of the SCGRA overlay, the complex customization problem is simplified and typically completes in 10 minutes to 20 minutes. According to the experiments, the resulting accelerators achieve up to 10X speedup over a hard ARM processor on Zedboard. 
+
+
+In this work, we have presented an automatic nested loop acceleration framework that is based on a soft coarse-grained reconfigurable array overlay.
+We have demonstrated that by taking advantage of the regularity of the overlay, intensive system customization specific to the given user application can be performed efficiently, resulting in up to \num{5} times performance improvement over solutions without customization at the cost of \num{10} to \num{20} minutes additional tools run time.  Overall, the framework is able to generate accelerators that achieve up to \num{10} times speed up over software running on the host processor, resulting in a high design productivity experience for software programmers.
+

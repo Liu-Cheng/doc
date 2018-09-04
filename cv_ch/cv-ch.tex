@@ -28,9 +28,9 @@
 \usepackage[left=0.75in,top=0.6in,right=0.75in,bottom=0.6in]{geometry} % Document margins
 
 \name{刘成} % Your name
-\address{+65-8421-1303}
-\address{新加坡国立大学计算机系} % Your secondary addess (optional)
-\address{liucheng@comp.nus.edu.sg} % Your phone number and email
+\address{+86-13713529934}
+\address{北京市海淀区中关村南路6号，中科院计算技术研究所} % Your secondary addess (optional)
+\address{liucheng@ict.ac.cn} % Your phone number and email
 
 %----------------------------------------------------------------------------------------
 %	EDUCATION SECTION
@@ -41,7 +41,7 @@
 \begin{rSection}{教育}
 
 {\bf 香港大学} \hfill {\em 2011-09 - 2016-04} \\ 
-计算机工程专业，电气与电子工程系\\
+计算机工程专业，电机与电子工程系\\
 {\bf 哈尔滨工业大学} \hfill {\em 2007-09 - 2009-07} \\
 微电子学与固体电子学专业， 航天学院\\
 {\bf 哈尔滨工业大学} \hfill {\em 2003-09 - 2007-07} \\
@@ -51,21 +51,30 @@
 
 \begin{rSection}{研究方向}
     \vspace{-1em}
-\item FPGA 加速, FPGA 虚拟化, 软硬件协同设计, 片上网络
+\item FPGA 计算加速, FPGA 虚拟化, 深度学习计算加速，软硬件协同设计, 片上网络
     \vspace{-0.5em}
 \end{rSection}
 %----------------------------------------------------------------------------------------
 %	WORK EXPERIENCE SECTION
 %----------------------------------------------------------------------------------------
 \begin{rSection}{研究经历}
-\begin{rSubsection}{计算机学院, 新加坡国立大学}{2016-12 - 现在}{
+\begin{rSubsection}{中科院计算所}{2018-06 - 现在}{
+        项目： 低功耗深度学习硬件加速器}{}
+\item 主要进行低功耗的深度学习加速器体系结构、电路设计优化以及自动化定制等研究，
+	开发适用于物端智能处理的超低功耗AI加速芯片，满足物端识别、分析等智能应用需求。
+\end{rSubsection}
+
+
+\begin{rSubsection}{计算机学院, 新加坡国立大学}{2016-12 - 2018-06}{
         项目： 异构CPU-FPGA系统上的图计算加速}{}
 \item 本项目目标是开发一个面向大型图的软件可编程高性能图计算库，
     可以用于在弱耦合与紧耦合的CPU-FPGA计算系统上的图计算加速。
     目前已经在Alpha-Data加速卡上实现了一个BFS加速器的设计，并且
-    可以根据FPGA片上资源（访存带宽和片上RAM），调整设计参数，实现性能的优化。
-    正在进行针对紧耦合的CPU-FPGA系统的BFS优化。我们采用Intel的Harp系统也即Xeon-FPGA
-    作为开发平台，从软硬件协同提高内存带宽利用率的角度探索BFS的优化。
+    可以根据FPGA片上资源，调整设计参数，实现性能的优化。
+    同时也正在进行针对紧耦合的CPU-FPGA系统的一般性图计算优化研究。
+	针对Intel的Harp系统也即Xeon-FPGA，提出一种以数据
+	流处理为基础的软硬件协同设计方案，用于自动化的生成软硬件
+	协同的图计算设计。
 \end{rSubsection}
 
 \begin{rSubsection}{商汤科技}{2016-04 - 2016-10}{
@@ -111,6 +120,8 @@
 %----------------------------------------------------------------------------------------
 \begin{rSection}{论文}
     \begin{rSubsection} {Book Chapter}{}{}{}
+	\item Xuntao Cheng, \textbf{Cheng Liu}, Bingsheng He, "Emerging Hardware Technologies", In Book 
+		Encyclopedia of Big Data Technologies, pp.1-5, Jan 2018
     \item Hayden Kwok-Hay So and \textbf{Cheng Liu}, "FPGA overlays", in press FPGAs for Software
         Engineers, Dirk Koch, Frank Hannig and Daniel Ziener, Ed., 2016.  
     \end{rSubsection}
@@ -128,6 +139,9 @@
     \end{rSubsection}
 
     \begin{rSubsection} {会议}{}{}{}
+	\item Dawen Xu, Kaijie Tu, Ying Wang, \textbf{Cheng Liu}, Bingsheng He, Huawei Li, FCN-Engine: 
+		Accelerating Deconvolutional Layers in Classic CNN Processors, International Conference On 
+		Computer Aided Design (ICCAD), 2018 (to appear)
     \item Ho-Cheung Ng, \textbf{Cheng Liu} and Hayden Kwok-Hay So. "A Soft Processor Overlay with
         Tightly-coupled FPGA Accelerator," Overlay Architectures for FPGAs (OLAF), Second
         International Workshop on, pp. 1-6, Feb, 2016. 
@@ -139,10 +153,10 @@
         International Conference on (FPT), Dec. 2015 (cited 11) 
     \item \textbf{Cheng Liu}, Lei Zhang, Yinhe Han, and Xiaowei Li. "Vertical interconnects squeezing in
         symmetric 3D mesh Network-on-Chip." In Proceedings of the 16th Asia and South Pacific Design
-        Automation Conference, pp. 357-362. IEEE Press, 2011. (Cited 56)
+        Automation Conference, pp. 357-362. IEEE Press, 2011. (Cited 55)
     \item \textbf{Cheng Liu}, Lei Zhang, Yinhe Han, and Xiaowei Li. "A resilient on-chip router design
         through data path salvaging." In Proceedings of the 16th Asia and South Pacific Design
-        Automation Conference, pp. 437-442. IEEE Press, 2011. (Cited 22)
+        Automation Conference, pp. 437-442. IEEE Press, 2011. (Cited 23)
     \end{rSubsection}
 
     \begin{rSubsection} {Poster}{}{}{}
@@ -152,44 +166,47 @@
     \item \textbf{Cheng Liu}, Colin Lin Yu, and Hayden Kwok-Hay So. "A soft coarse-grained reconfigurable
         array based high-level synthesis methodology: Promoting design productivity and exploring
         extreme FPGA frequency." In Field-Programmable Custom Computing Machines (FCCM), 2013 IEEE
-        21st Annual International Symposium on, pp. 228-228. IEEE, 2013. (cited 3)
+        21st Annual International Symposium on, pp. 228-228. IEEE, 2013.
     \end{rSubsection}
 
 \end{rSection}
 
-\begin{rSection}{教学}
-    \vspace{-1em}
-\item 助教 – to Dr. V. Tam \\In ELEC1503, Object Oriented Programming 
-and Data Structures, 2012 \\实验上机指导和答疑
-
-\item 助教 – to Dr. Hayden So \\In ELEC3441 Computer Architecture, 2014-2015
-\\协助设计基于RISC-V的课程作业和实验以及答疑.
-
-\item Teaching Assistant – to Dr. Hayden So, Dr. Edmund Lam, and Dr. Kenneth K. Y. Wong 
-\\In ENGG1203, Introduction to Electrical and Electronic Engineering, 2013-2014
-\\实验上机指导和答疑. 
-
-\end{rSection}
-
-\begin{rSection}{奖励}
-    \vspace{-1em}
-\item 博士奖学金, 香港大学, 2011-09 - 2015-08 
-    \vspace{-0.5em}
-\item 一等奖学金, 哈尔滨工业大学, 2007-09 - 2009-07
-    \vspace{-0.5em}
-\item 优秀研究生奖学金, 计算所系统结构重点实验室，2010-12
-    \vspace{-0.5em}
-\item 国家数学建模竞赛二等奖, 2008-05
-    \vspace{-0.5em}
-\item 黑龙江省电子竞赛二等奖, 2007-03
-    \vspace{-0.5em}
-\end{rSection}
-
-\begin{rSection}{技能}
-    \begin{rSubsection}{编程语言}{}{}{}
-    \item 熟悉: SystemC, C/C++, Matlab, Verilog, VHDL, HLS, OpenCL for FPGA
-    \item 了解: JAVA, Python
-    \end{rSubsection}
-\end{rSection}
-
+%\begin{rSection}{教学}
+%    \vspace{-1em}
+%\item 助教 – to Dr. V. Tam \\In ELEC1503, Object Oriented Programming 
+%and Data Structures, 2012 \\实验上机指导和答疑
+%
+%\item 助教 – to Dr. Hayden So \\In ELEC3441 Computer Architecture, 2014-2015
+%\\协助设计基于RISC-V的课程作业和实验以及答疑.
+%
+%\item 助教 – to Dr. Hayden So, Dr. Edmund Lam, and Dr. Kenneth K. Y. Wong 
+%\\In ENGG1203, Introduction to Electrical and Electronic Engineering, 2013-2014
+%\\实验上机指导和答疑. 
+%
+%\item 助教 – to Dr. Bingsheng He 
+%\\新加坡国立大学冬季课程 "Big Data Systems on Future Hardware" 负责 "System Optimizations and Performance Tuning for New Generation FPGAs"  部分, 2018 
+%
+%\end{rSection}
+%
+%\begin{rSection}{奖励}
+%    \vspace{-1em}
+%\item 博士奖学金, 香港大学, 2011-09 - 2015-08 
+%    \vspace{-0.5em}
+%\item 一等奖学金, 哈尔滨工业大学, 2007-09 - 2009-07
+%    \vspace{-0.5em}
+%\item 优秀研究生奖学金, 计算所系统结构重点实验室，2010-12
+%    \vspace{-0.5em}
+%\item 国家数学建模竞赛二等奖, 2008-05
+%    \vspace{-0.5em}
+%\item 黑龙江省电子竞赛二等奖, 2007-03
+%    \vspace{-0.5em}
+%\end{rSection}
+%
+%\begin{rSection}{技能}
+%    \begin{rSubsection}{编程语言}{}{}{}
+%    \item 熟悉: SystemC, C/C++, Matlab, Verilog, VHDL, HLS, OpenCL for FPGA
+%    \item 了解: JAVA, Python
+%    \end{rSubsection}
+%\end{rSection}
+%
 \end{document}
