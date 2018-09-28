@@ -5,26 +5,28 @@
 \BOOKMARK [2][-]{subsection.2.3}{Related work}{section.2}% 5
 \BOOKMARK [1][-]{section.3}{Motivation}{}% 6
 \BOOKMARK [1][-]{section.4}{HLS based BFS optimization}{}% 7
-\BOOKMARK [2][-]{subsection.4.1}{BFS pipelining}{section.4}% 8
-\BOOKMARK [2][-]{subsection.4.2}{Memory Access Optimization}{section.4}% 9
-\BOOKMARK [3][-]{subsubsection.4.2.1}{Redundancy Removal}{subsection.4.2}% 10
-\BOOKMARK [3][-]{subsubsection.4.2.2}{Caching}{subsection.4.2}% 11
-\BOOKMARK [3][-]{subsubsection.4.2.3}{Prefetching}{subsection.4.2}% 12
-\BOOKMARK [2][-]{subsection.4.3}{General HLS optimization}{section.4}% 13
-\BOOKMARK [3][-]{subsubsection.4.3.1}{Data path duplication}{subsection.4.3}% 14
-\BOOKMARK [3][-]{subsubsection.4.3.2}{Data width optimization}{subsection.4.3}% 15
-\BOOKMARK [3][-]{subsubsection.4.3.3}{Deadlock removal}{subsection.4.3}% 16
-\BOOKMARK [2][-]{subsection.4.4}{Parameter Tuning}{section.4}% 17
-\BOOKMARK [1][-]{section.5}{Experiments}{}% 18
-\BOOKMARK [2][-]{subsection.5.1}{Experiment Setup}{section.5}% 19
-\BOOKMARK [2][-]{subsection.5.2}{Performance comparison}{section.5}% 20
-\BOOKMARK [2][-]{subsection.5.3}{Pipelining Optimization}{section.5}% 21
-\BOOKMARK [2][-]{subsection.5.4}{Memory access optimization}{section.5}% 22
-\BOOKMARK [3][-]{subsubsection.5.4.1}{Redundancy removal analysis}{subsection.5.4}% 23
-\BOOKMARK [3][-]{subsubsection.5.4.2}{Cache analysis}{subsection.5.4}% 24
-\BOOKMARK [3][-]{subsubsection.5.4.3}{Prefetch buffer analysis}{subsection.5.4}% 25
-\BOOKMARK [3][-]{subsubsection.5.4.4}{Parameters of the memory optimizations}{subsection.5.4}% 26
-\BOOKMARK [2][-]{subsection.5.5}{General HLS optimizations}{section.5}% 27
-\BOOKMARK [2][-]{subsection.5.6}{Optimization evaluation}{section.5}% 28
-\BOOKMARK [1][-]{section.6}{Conclusions}{}% 29
-\BOOKMARK [1][-]{section*.1}{References}{}% 30
+\BOOKMARK [2][-]{subsection.4.1}{Irregularity in BFS Structure}{section.4}% 8
+\BOOKMARK [2][-]{subsection.4.2}{Graph reordering and padding}{section.4}% 9
+\BOOKMARK [2][-]{subsection.4.3}{BFS pipelining}{section.4}% 10
+\BOOKMARK [2][-]{subsection.4.4}{Memory Access Optimization}{section.4}% 11
+\BOOKMARK [3][-]{subsubsection.4.4.1}{Redundancy Removal}{subsection.4.4}% 12
+\BOOKMARK [3][-]{subsubsection.4.4.2}{Caching}{subsection.4.4}% 13
+\BOOKMARK [3][-]{subsubsection.4.4.3}{Prefetching}{subsection.4.4}% 14
+\BOOKMARK [2][-]{subsection.4.5}{General HLS optimization}{section.4}% 15
+\BOOKMARK [3][-]{subsubsection.4.5.1}{Data path duplication}{subsection.4.5}% 16
+\BOOKMARK [3][-]{subsubsection.4.5.2}{Data width optimization}{subsection.4.5}% 17
+\BOOKMARK [3][-]{subsubsection.4.5.3}{Deadlock removal}{subsection.4.5}% 18
+\BOOKMARK [2][-]{subsection.4.6}{Parameter Tuning}{section.4}% 19
+\BOOKMARK [1][-]{section.5}{Experiments}{}% 20
+\BOOKMARK [2][-]{subsection.5.1}{Experiment Setup}{section.5}% 21
+\BOOKMARK [2][-]{subsection.5.2}{Performance comparison}{section.5}% 22
+\BOOKMARK [2][-]{subsection.5.3}{Pipelining Optimization}{section.5}% 23
+\BOOKMARK [2][-]{subsection.5.4}{Memory access optimization}{section.5}% 24
+\BOOKMARK [3][-]{subsubsection.5.4.1}{Redundancy removal analysis}{subsection.5.4}% 25
+\BOOKMARK [3][-]{subsubsection.5.4.2}{Cache analysis}{subsection.5.4}% 26
+\BOOKMARK [3][-]{subsubsection.5.4.3}{Prefetch buffer analysis}{subsection.5.4}% 27
+\BOOKMARK [3][-]{subsubsection.5.4.4}{Parameters of the memory optimizations}{subsection.5.4}% 28
+\BOOKMARK [2][-]{subsection.5.5}{General HLS optimizations}{section.5}% 29
+\BOOKMARK [2][-]{subsection.5.6}{Optimization evaluation}{section.5}% 30
+\BOOKMARK [1][-]{section.6}{Conclusions}{}% 31
+\BOOKMARK [1][-]{section*.1}{References}{}% 32

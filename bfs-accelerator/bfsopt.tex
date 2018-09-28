@@ -1,37 +1,78 @@
 \section{HLS based BFS optimization} \label{sec:bfs-opt}
-BFS is a system.
-We need optimize the whole system from pre-processing to hardware pipelining.
-This work centers the FPGA acceleration but it also needs assitance of a coupled CPU 
-which can either be connected via PCIE or a shared memory structure.
-We works on CSR data. irregular memory access? random memory accesses -->low bandwidth.
- memory access conflict, it is difficult to resolve the conflict using HLS. 
-Try to explore on-chip memory bandwidth. We use bitmap to store the vivsiting status.
-A single FPGA nowadays can already accommodate Graphs with millions of nodes.
-pipelined BFS structure.
+In this work, we center the HLS based BFS optimization on FPGAs. 
+In order to guide the HLS tools to generate efficient hardware, 
+we propose a series of methods to regularize the irregular memory 
+accesses and dynamic data paths in BFS algorithm. 
 
-\begin{itemize}
-\item pre-processing, graph reordering and padding
-\item on-chip buffering and parallel data path II = 2
-\item batch write
-\item CPU assisted data reorganization
-\end{itemize}
+\subsection{Irregularity in BFS Structure}
+The basic pipelined BFS structure with classical top-down traverse 
+is presented in Figure \cite{fig:base-bfs}. It can be roughly 
+divided into four pipeline stages. In the first stage, it reads 
+frontier from memory. Then it passes the frontier to the second stage
+via the OpenCL channel for further inspection. In the second stage, 
+frontier neighbors will be inspected from the graph data. While the 
+graph is stored as compressed sparse row (CSR) format which has a row 
+pointer array (RPA) containing the edge index starting position of each 
+vertex and a column index array (CIA) which is essentially the incoming/outgoing 
+neighboring vertex indices, the second stage must go through the RPA read and 
+CIA read sequentially. When the frontier neighbors are 
+drained from memory, the second stage then forwards them to the third stage.
+In the third stage, the each neighboring vertex will be checked if it is 
+already visited in previous BFS iterations. If the vertex is unvisited, 
+it will be considered as frontier in next BFS iteration. The corresponding 
+vertex status will be set and the vertex index will be sent to the last stage.
+In the last stage, the vertex indices will be written to memory one 
+after another.
 
-presents the overview of 
-the BFS accelerator. It targets in-memory graphs on a PCIe based 
-high performance FPGA card. The whole graph is stored in FPGA device 
-memory with a standard CSR format. 
-Ideally, the accelerator does the BFS on FPGA without 
-any interference from the host CPU. However, we organize the accelerator 
-following the data flow model of Xilinx HLS and the data flow model 
-doesn't allow feedback from the downstream stages to previous stages.
-(Detailed BFS data flow will be illustrated in the next section.)
-As a result, we can only put one BFS iteration on FPGA while 
-leaving the iterative execution control to the host CPU. In each BFS iteration, 
-the BFS kernel on FPGA returns the BFS frontier size to host such that the host will 
-decide if another BFS iteration should be invoked. Although short communication 
-between the host and FPGA in each BFS iteration is needed, the communication cost 
-is negligible compared to the execution time. Hereby, 
-the overall BFS runtime is barely affected.
+\begin{figure}
+\center{\includegraphics[width=0.75\linewidth]{base-bfs}}
+    \caption{Baseline pipelined BFS}
+\label{fig:base-bfs}
+\end{figure}
+
+The basic BFS structure is well pipelined, but we notice that it involves many 
+random memory accesses. In the second stage, as the vertex indices in the frontier 
+are usually not continuous, thus the RPA read becomes random. For vertices with 
+larger degree, the CIA read can be considered as sequential memory access. Nevertheless, 
+the vertex degree can be a random integer, so the CIA read is aligned to 
+the vertex index data width (4 bytes in this work) and the bandwidth utilization of 
+the sequential memory access remains limited. In the third stage, when the status array 
+is located in the memory, the status read is also random. When the vertex is unvisited, 
+random write is also required. In the last stage, frontier vertices write is performed one 
+after another, it is also random memory access by default. These random memory access 
+essentially leads to low meory bandwidth utilization. 
+
+While the data paths in the first, second and fourth pipeline stages are parallel,
+the third pipeline stage can not be easily parallelized. Basically, the neihgbors of 
+the different frontier vertices may be overlapped. When the frontier vertices are 
+processed in parallel, they may update the same vertex status and result in write 
+conflict. Worse still, more parallel random accesses will not improve the memory 
+bandwidth utilization and increase the average memory access latency instead. 
+This stage soon becomes the performance bottleneck. Keeping the vertex status on-chip 
+may alleviate the memory access bottleneck, but it is difficult to synchronize the 
+vertex status in parallel using HLS. This also prevents the parallelization in the 
+other pipeline stages. The authors xx proposed to build a crossbar based shuffling 
+between the second stage and the thrid stage. However, the complex logic increases the 
+initiation interval (II) dramatically and the overall accelerator performance degrades.
+
+In order to address this problem, we proposed the following optimization methods 
+to regularize the memory accesses as well as the data paths and ensure the high level 
+design is preferrable to the HLS tools. 1) We reorder the edges of the graphs and insert 
+some padding data in pre-processing. It essentially batches the edges and ensures 
+no write conflict in each batch. 2) We use bitmap to store the vertex visiting status and 
+keep the bitmap in on-chip memory. Meanwhile the bitmap is divided into parallel banks 
+based on the pre-processing and parallel data paths can operte on the different 
+banks independently. 3) We have the coupled CPU to gather the frontier vertices' RPA into 
+a sequential array. Then the accelerator can start with sequential RPA read and ensures 
+efficient data processing the following pipeline stages. 4) The fouth pipeline stages 
+are parallelized and each parallel path is optimized with batch write. Each optimization method
+will be detailed in the rest part of this section.
+
+\subsection{Graph reordering and padding}
+As analyzed in Section xx, parallel data path in the third pipeline stage will cause 
+write conflict. To avoid the write conflict, we reorder the edges of the grapgh and 
+add padding to the edge data as shown in Figure \ref{fig:xxxx}. Basically, we divide the 
+edges into small batches. Take the outgoing edge as an example, we split 
 
 The BFS algorithm is critical to the BFS accelerator and we explore the 
 existing level synchronous BFS algorithm in detail. We notice that 
@@ -60,17 +101,6 @@ The rest part of the algorithm from line 10 to 15 is
 quite similar to the level synchronous BFS except that the frontier queues 
 are no longer needed.
 
-
-With the observations in Section \ref{sec:observation} 
-and the modified BFS algorithm in Section \ref{sec:overview}, 
-we start to optimize the BFS accelerator using high level design tools 
-from a series of different angles. First of all, we convert the nested loop structure 
-of the BFS to be a stream manner such that it can be fit into the data flow model in
-Xilinx HLS for efficient pipelined execution. Then we explore a series of memory optimization 
-techniques based on the BFS memory access characteristics observed in \ref{sec:observation}. 
-Afterwards, we further apply some general HLS optimizations to the resulting design. Finally, 
-we manually tune the design parameters such as the prefetch buffer size and cache size through 
-the fast software emulation and provide optimized configurations for each graph data set.
 
 \subsection{BFS pipelining}
 The baseline BFS algorithm is a multi-level nested loop with 
@@ -109,7 +139,7 @@ guarantee for always better performance and more hardware resources
 are usually required.
 
 Following the two pipelining rules, we create a six-stage 
-pipelined BFS algorithm as detailed in Algorithm \ref{alg:bfs-stream}. 
+pipelined BFS algorithm as detailed in Algorithm. 
 The six sub functions are labeled as f1 to f6 respectively. In f1, 
 vertex status is read from FPGA DDR memory sequentially through a streaming port. 
 When the vertex status is fetched, f2 inspects the status 
@@ -126,77 +156,6 @@ next frontier vertices are received in f5, their vertex status
 will be checked by reading the vertex status array stored in DDR as well.
 Only the vertices that are not visited yet will be further forwarded to the f6. 
 In f6, the vertex status will be updated.
-
-\begin{algorithm}
-	\caption{Pipelined BFS Algorithm} \label{alg:bfs-stream}
-    \small
-	\begin{algorithmic}[1]
-        \Procedure {BFS}{}
-        \State $frontier\_size \gets 1$
-        \State $level \gets 0$
-        \While {$(frontier\_size > 0)$}
-        \State $f1(depth, depth\_stream)$
-        \State $f2(depth\_stream, frontier\_stream, level, frontier\_size)$ 
-        \State $f3(frontier\_stream, CSR.RPA, RPA\_stream)$
-        \State $f4(RPA\_stream, CSR.CIA, CIA\_stream)$ 
-        \State $f5(CIA\_stream, depth, next\_frontier\_stream)$
-        \State $f6(depth, next\_frontier\_stream, level)$
-        \State $level \gets level + 1$
-        \EndWhile
-        \EndProcedure
-        \State
-
-        \Procedure{f1}{$depth$, $depth\_stream$}
-        \For {$v \in V$}
-        \State $depth\_stream << depth[v]$
-        \EndFor
-        \EndProcedure
-
-        \Procedure{f2}{$depth\_stream, frontier\_stream, level, frontier\_size$}
-        \State $frontier\_size = 0$
-        \For {$v \in V$}
-        \State $d[v] \gets depth\_stream.read()$
-        \If {$(d[v] == level)$}
-        \State $frontier\_stream << v$
-        \State $frontier\_size++$
-        \EndIf
-        \EndFor
-        \EndProcedure
-
-        \Procedure{f3}{$frontier\_stream, CSR.RPA, RPA\_stream$}
-        \While {$(!frontier\_stream.empty())$}
-        \State $v \gets frontier\_stream.read()$
-        \State $RPA\_stream << [CSR.RPA[v], CSR.RPA[v+1]]$
-        \EndWhile
-        \EndProcedure
-
-        \Procedure{f4}{$RPA\_stream, CSR.CIA, CIA\_stream$}
-        \While {$(!RPA\_stream.empty())$}
-        \State $[begin, end] \gets RPA\_stream.read()$
-        \For {${v \in CSR.CIA(begin, end)}$}
-        \State $CIA\_stream << v$
-        \EndFor
-        \EndWhile
-        \EndProcedure
-
-        \Procedure{f5}{$CIA\_stream, depth, next\_frontier\_stream$}
-        \While {$(!CIA\_stream.empty())$}
-        \State $v \gets CIA\_stream.read()$
-        \If {$(depth[v] == -1)$}
-        \State $next\_frontier\_stream << v$
-        \EndIf
-        \EndWhile
-        \EndProcedure
-
-        \Procedure{f6}{$depth, next\_frontier\_stream, level$}
-        \While {$(!next\_frontier\_stream.empty())$}
-        \State $v \gets next\_frontier\_stream.read()$
-        \State $depth[v] \gets level + 1$
-        \EndWhile
-        \EndProcedure
-
-    \end{algorithmic}
-\end{algorithm}
 
 According to the description of the streamed BFS algorithm, we notice that 
 five sub functions involve external memory access and they have quite different 
