@@ -7,26 +7,17 @@
 \BOOKMARK [1][-]{section.4}{HLS based BFS optimization}{}% 7
 \BOOKMARK [2][-]{subsection.4.1}{Irregularity in BFS Structure}{section.4}% 8
 \BOOKMARK [2][-]{subsection.4.2}{Graph reordering and padding}{section.4}% 9
-\BOOKMARK [2][-]{subsection.4.3}{BFS pipelining}{section.4}% 10
-\BOOKMARK [2][-]{subsection.4.4}{Memory Access Optimization}{section.4}% 11
-\BOOKMARK [3][-]{subsubsection.4.4.1}{Redundancy Removal}{subsection.4.4}% 12
-\BOOKMARK [3][-]{subsubsection.4.4.2}{Caching}{subsection.4.4}% 13
-\BOOKMARK [3][-]{subsubsection.4.4.3}{Prefetching}{subsection.4.4}% 14
-\BOOKMARK [2][-]{subsection.4.5}{General HLS optimization}{section.4}% 15
-\BOOKMARK [3][-]{subsubsection.4.5.1}{Data path duplication}{subsection.4.5}% 16
-\BOOKMARK [3][-]{subsubsection.4.5.2}{Data width optimization}{subsection.4.5}% 17
-\BOOKMARK [3][-]{subsubsection.4.5.3}{Deadlock removal}{subsection.4.5}% 18
-\BOOKMARK [2][-]{subsection.4.6}{Parameter Tuning}{section.4}% 19
-\BOOKMARK [1][-]{section.5}{Experiments}{}% 20
-\BOOKMARK [2][-]{subsection.5.1}{Experiment Setup}{section.5}% 21
-\BOOKMARK [2][-]{subsection.5.2}{Performance comparison}{section.5}% 22
-\BOOKMARK [2][-]{subsection.5.3}{Pipelining Optimization}{section.5}% 23
-\BOOKMARK [2][-]{subsection.5.4}{Memory access optimization}{section.5}% 24
-\BOOKMARK [3][-]{subsubsection.5.4.1}{Redundancy removal analysis}{subsection.5.4}% 25
-\BOOKMARK [3][-]{subsubsection.5.4.2}{Cache analysis}{subsection.5.4}% 26
-\BOOKMARK [3][-]{subsubsection.5.4.3}{Prefetch buffer analysis}{subsection.5.4}% 27
-\BOOKMARK [3][-]{subsubsection.5.4.4}{Parameters of the memory optimizations}{subsection.5.4}% 28
-\BOOKMARK [2][-]{subsection.5.5}{General HLS optimizations}{section.5}% 29
-\BOOKMARK [2][-]{subsection.5.6}{Optimization evaluation}{section.5}% 30
-\BOOKMARK [1][-]{section.6}{Conclusions}{}% 31
-\BOOKMARK [1][-]{section*.1}{References}{}% 32
+\BOOKMARK [2][-]{subsection.4.3}{Bitmap partition and parallel access}{section.4}% 10
+\BOOKMARK [2][-]{subsection.4.4}{CPU assisted data reorganization}{section.4}% 11
+\BOOKMARK [2][-]{subsection.4.5}{Batch write}{section.4}% 12
+\BOOKMARK [2][-]{subsection.4.6}{Optimized BFS structure}{section.4}% 13
+\BOOKMARK [2][-]{subsection.4.7}{Theoretical performance analysis}{section.4}% 14
+\BOOKMARK [1][-]{section.5}{Experiments}{}% 15
+\BOOKMARK [2][-]{subsection.5.1}{Experiment Setup}{section.5}% 16
+\BOOKMARK [2][-]{subsection.5.2}{Performance comparison}{section.5}% 17
+\BOOKMARK [2][-]{subsection.5.3}{Runtime distribution}{section.5}% 18
+\BOOKMARK [3][-]{subsubsection.5.3.1}{Replication factor}{subsection.5.3}% 19
+\BOOKMARK [3][-]{subsubsection.5.3.2}{Data reorganization}{subsection.5.3}% 20
+\BOOKMARK [2][-]{subsection.5.4}{Optimization evaluation}{section.5}% 21
+\BOOKMARK [1][-]{section.6}{Conclusions}{}% 22
+\BOOKMARK [1][-]{section*.1}{References}{}% 23
