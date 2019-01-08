@@ -1,15 +1,15 @@
-!/ft-train/*.aux
-!/ft-train/*.bbl
-!/ft-train/*.blg
-!/ft-train/*.log
-!/ft-train/*.out
-!/ft-train/*.pdf
+!doc/ft-train/*.aux
+!doc/ft-train/*.bbl
+!doc/ft-train/*.blg
+!doc/ft-train/*.log
+!doc/ft-train/*.out
+!doc/ft-train/*.pdf
 
-!/bfs-accelerator/*.aux
-!/bfs-accelerator/*.bbl
-!/bfs-accelerator/*.blg
-!/bfs-accelerator/*.log
-!/bfs-accelerator/*.out
-!/bfs-accelerator/*.pdf
+!doc/bfs-accelerator/*.aux
+!doc/bfs-accelerator/*.bbl
+!doc/bfs-accelerator/*.blg
+!doc/bfs-accelerator/*.log
+!doc/bfs-accelerator/*.out
+!doc/bfs-accelerator/*.pdf
 
 
