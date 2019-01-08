@@ -1,23 +1,31 @@
 \BOOKMARK [1][-]{section.1}{Introduction}{}% 1
-\BOOKMARK [1][-]{section.2}{Background and related work}{}% 2
+\BOOKMARK [1][-]{section.2}{Background}{}% 2
 \BOOKMARK [2][-]{subsection.2.1}{High level FPGA design tools}{section.2}% 3
 \BOOKMARK [2][-]{subsection.2.2}{BFS Algorithm}{section.2}% 4
-\BOOKMARK [2][-]{subsection.2.3}{Related work}{section.2}% 5
+\BOOKMARK [2][-]{subsection.2.3}{Baseline pipelined BFS}{section.2}% 5
 \BOOKMARK [1][-]{section.3}{Motivation}{}% 6
 \BOOKMARK [1][-]{section.4}{HLS based BFS optimization}{}% 7
-\BOOKMARK [2][-]{subsection.4.1}{Irregularity in BFS Structure}{section.4}% 8
-\BOOKMARK [2][-]{subsection.4.2}{Graph reordering and padding}{section.4}% 9
-\BOOKMARK [2][-]{subsection.4.3}{Bitmap partition and parallel access}{section.4}% 10
-\BOOKMARK [2][-]{subsection.4.4}{CPU assisted data reorganization}{section.4}% 11
-\BOOKMARK [2][-]{subsection.4.5}{Batch write}{section.4}% 12
-\BOOKMARK [2][-]{subsection.4.6}{Optimized BFS structure}{section.4}% 13
-\BOOKMARK [2][-]{subsection.4.7}{Theoretical performance analysis}{section.4}% 14
-\BOOKMARK [1][-]{section.5}{Experiments}{}% 15
-\BOOKMARK [2][-]{subsection.5.1}{Experiment Setup}{section.5}% 16
-\BOOKMARK [2][-]{subsection.5.2}{Performance comparison}{section.5}% 17
-\BOOKMARK [2][-]{subsection.5.3}{Runtime distribution}{section.5}% 18
-\BOOKMARK [3][-]{subsubsection.5.3.1}{Replication factor}{subsection.5.3}% 19
-\BOOKMARK [3][-]{subsubsection.5.3.2}{Data reorganization}{subsection.5.3}% 20
-\BOOKMARK [2][-]{subsection.5.4}{Optimization evaluation}{section.5}% 21
-\BOOKMARK [1][-]{section.6}{Conclusions}{}% 22
-\BOOKMARK [1][-]{section*.1}{References}{}% 23
+\BOOKMARK [2][-]{subsection.4.1}{Irregularity in BFS}{section.4}% 8
+\BOOKMARK [3][-]{subsubsection.4.1.1}{Irregular memory access}{subsection.4.1}% 9
+\BOOKMARK [3][-]{subsubsection.4.1.2}{Dependent data paths}{subsection.4.1}% 10
+\BOOKMARK [2][-]{subsection.4.2}{High-level optimizations}{section.4}% 11
+\BOOKMARK [3][-]{subsubsection.4.2.1}{Graph reordering}{subsection.4.2}% 12
+\BOOKMARK [3][-]{subsubsection.4.2.2}{On-chip buffer partition}{subsection.4.2}% 13
+\BOOKMARK [3][-]{subsubsection.4.2.3}{CPU assisted data reorganization}{subsection.4.2}% 14
+\BOOKMARK [3][-]{subsubsection.4.2.4}{Hyper pipelining}{subsection.4.2}% 15
+\BOOKMARK [2][-]{subsection.4.3}{Optimized BFS structure}{section.4}% 16
+\BOOKMARK [1][-]{section.5}{Experiments}{}% 17
+\BOOKMARK [2][-]{subsection.5.1}{Experiment Setup}{section.5}% 18
+\BOOKMARK [2][-]{subsection.5.2}{Performance evaluation}{section.5}% 19
+\BOOKMARK [3][-]{subsubsection.5.2.1}{Overall performance}{subsection.5.2}% 20
+\BOOKMARK [3][-]{subsubsection.5.2.2}{Performance comparison}{subsection.5.2}% 21
+\BOOKMARK [3][-]{subsubsection.5.2.3}{Optimization approach analysis}{subsection.5.2}% 22
+\BOOKMARK [2][-]{subsection.5.3}{Batch trade-offs}{section.5}% 23
+\BOOKMARK [2][-]{subsection.5.4}{Hardware implementation}{section.5}% 24
+\BOOKMARK [3][-]{subsubsection.5.4.1}{Resource overhead}{subsection.5.4}% 25
+\BOOKMARK [3][-]{subsubsection.5.4.2}{Implementation frequency}{subsection.5.4}% 26
+\BOOKMARK [1][-]{section.6}{Related work}{}% 27
+\BOOKMARK [1][-]{section.7}{Limitations and Conclusion}{}% 28
+\BOOKMARK [2][-]{subsection.7.1}{Limitations}{section.7}% 29
+\BOOKMARK [2][-]{subsection.7.2}{Conclusion}{section.7}% 30
+\BOOKMARK [1][-]{section*.1}{References}{}% 31

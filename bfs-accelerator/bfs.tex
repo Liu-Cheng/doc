@@ -43,7 +43,8 @@
 % not capitalized unless they are the first or last word of the title.
 % Linebreaks \\ can be used within to get better formatting as desired.
 % Do not put math or special symbols in the title.
-\title{Breadth First Search on Software Programmable FPGAs}
+\title{OBFS: OpenCL Based BFS Optimization on Software Programmable FPGAs}
+% Ironing out the irregularity in BFS for efficient OpenCL implementation on Xeon-FPGA
 
 % make the title area
 \maketitle
@@ -51,30 +52,28 @@
 % As a general rule, do not put math, special symbols or citations
 % in the abstract
 \begin{abstract}
-    Breadth first search (BFS) is notoriously difficult to accelerate on FPGAs 
-	due to the irregular memory access and low computation-to-memory ratio. 
-	Prior work typically accelerate the BFS algorithm through handcrafted 
-	circuit design with hardware description language (HDL). Despite
-    the relatively good performance, the HDL based design leads to extremely 
-	low design productivity, and incurs high portability and maintenance cost. 
-	While the increasingly popular HLS tools make it convenient to create a functional 
-	correct BFS accelerator on FPGAs, the performance of a basic pipelined design remains 
-	much lower than that of the HDL based design reported in prior work. 
+    Breadth First Search (BFS) is a key building block of graph processing 
+	and there have been considerable efforts devoted to accelerating BFS on FPGAs
+	for the sake of both performance and energy efficiency. While prior work 
+	typically built the BFS accelerator through handcrafted circuit using 
+	hardware description language (HDL). Despite the relatively good performance, 
+	the HDL based design leads to extremely low design productivity, and incurs 
+	high portability and maintenance cost. While the evolving high level synthesis (HLS) 
+	tools make it convenient to create a functional correct BFS accelerator, 
+	the performance of the baseline design remains much lower. 
 
 	To obtain both the near hand-crafted design performance and the software-like features, 
-	we explored the BFS design using Intel OpenCL and proposed a series of methods to regularize the 
-	BFS processing such that BFS can be efficiently implemented on the FPGAs using HLS tools. 
-	We start with graph pre-processing and reorder the edges into batches to ensure that the 
-	edges in each batch can be processed in parallel. With the reordering, we further have 
-	BFS visiting status divided into multiple on-chip memory blocks and each block can be 
-	accessed in parallel without conflict. Meanwhile, we also have the coupled CPU 
-	to gather the scattered frontier vertices as well as the relevant information 
-	and provides sequential data to FPGAs. These methods enable regular BFS processing 
-	and efficient hardware design with HLS. According to the experiments 
-	on a set of representative graphs, the proposed HLS based BFS accelerator achieves up to 70X
-	performance speedup compared to the implementation in Spector benchmark on both DE-5 and 
-	Xeon-FPGA. When compared to the state-of-art handcrafted design on similar FPGA cards, 
-	the proposed BFS accelerator achieves over 80\% of the performance on average. 
+	we proposed OBFS, an OpenCL based BFS accelerator on software programmable FPGAs, 
+	and explored a series of high-level optimizations to the OpenCL design. 
+	Basically, we converted the random memory accesses into batched 
+	memory accesses with graph reordering and run-time data reorganization. 
+	On top of the graph reordering, we further built conflict-free parallel data paths 
+	to make best use of the on-chip memory bandwidth. In addition, we shifted part of 
+	the random memory accesses from the BFS processing and had it overlapped with the 
+	next BFS processing. According to the experiments on a set of representative graphs, 
+	OBFS achieves up to 10X performance speedup compared to the reference design 
+	in Spector benchmark on Intel Harp-v2. When compared to prior handcrafted design on 
+	similar FPGA cards, it achieves comparable performance or even better on some R-MAT graphs. 
 \end{abstract}
 
 % For peer review papers, you can put extra information on the cover
@@ -88,10 +87,12 @@
 \IEEEpeerreviewmaketitle
 
 \input{intro}
-\input{relatedwork} 
+\input{background} 
 \input{motivation}
 \input{bfsopt}
 \input{result}
+\input{relatedwork} 
+\input{conclusion}
 
 \bibliographystyle{IEEEtran}
 \bibliography{refs} 

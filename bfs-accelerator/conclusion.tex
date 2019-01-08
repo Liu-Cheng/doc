@@ -1,0 +1,23 @@
+\section{Limitations and Conclusion} \label{sec:conclusion}
+\subsection{Limitations}
+In this work, we make use of the host CPU for BFS, but it is not an optimized co-design. The processing power is not fully utilized.
+In fact, we mainly take advantage of the host processor cache. Most of the time, it is not used at all. We may further 
+explore the heterogeneous architecture.
+
+We assume the bitmap should be able to fully buffered on the FPGA on-chip RAM blocks. Basically, we limit the number of vertices in the graph that 
+can be processed using this work. While the latest FPGAs has over 500Mb on-chip memory, we are supposed to handle graphs with hundreds 
+of millions of vertices in theory. And we do not constrain the size of the edges in the graph. To handle larger graphs, we need to further explore 
+the graph partitions. While this work already promises the efficiency of a big partition.
+
+\subsection{Conclusion}
+Handcrafted BFS accelerators with HDL usually suffer high portability and maintenance cost 
+as well as ease of use problem despite the relatively 
+good performance. HLS based BFS accelerator can greatly alleviate these problems, but it is 
+difficult to achieve satisfactory performance due to the inherent irregular memory access and 
+complex nested loop structure. In this work, we regularize the basic BFS algorithm with  
+a series of optimizations. The regularized BFS can be implemented using OpenCL efficiently.
+Compared to a reference design in Spector benchmark, it is up to 9X performance speedup.
+When compared to the prior HDL based BFS accelerators on similar FPGA cards, 
+the proposed OpenCL based BFS accelerator achieves comparable performance.
+
+

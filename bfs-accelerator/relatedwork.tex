@@ -1,45 +1,4 @@
-\section{Background and related work} \label{sec:relatedwork}
-In this section, we briefly introduce the high level FPGA design tools.
-Then we review the existing BFS acceleration work and introduce the widely 
-used BFS algorithm for the BFS accelerator design.
-
-\subsection{High level FPGA design tools}
-HDL based FPGA design is mostly limited to highly skilled 
-hardware designers and hinders the adoption of FPGAs in more 
-domains of applications. In addition, the HDL based design 
-typically results in low design productivity, large reuse, 
-portability and maintenance cost as well as ease of use 
-challenge.
- 
-To address this problem, the FPGA vendors have started 
-to offer high level programming options such as C/C++ and OpenCL, which makes 
-it possible for the designers without much low-level circuit design 
-experiences \cite{nimbix, xilinx-sdaccel, intel-opencl} 
-to program the FPGAs efficiently. In addition, the accelerator 
-described with high level languages preserves many software-like features 
-such as portability, ease of maintenance and use. Considering the  
-continuously growing FPGA resources and stringent time-to-market requirements, 
-the high level FPGA design tools \cite{Nane2016hls-survey} get increasing popularity.
-
-\subsection{BFS Algorithm}
-BFS is a widely used graph traversal algorithm and it is the basic 
-building component of many other graph processing algorithms. 
-It traverses the graph by processing all vertices with the same distance from the 
-source vertex iteratively. The set of vertices which have the same distance from the 
-source is defined as frontier. The frontier that is under analysis in the BFS iteration 
-is named as current frontier while the frontier that is inspected from current frontier 
-is called next frontier. By inspecting only the frontier, BFS can be implemented efficiently 
-and thus the frontier concept is utilized in many BFS implementations.
-
-A widely used frontier based BFS algorithm implementation is named as 
-level synchronous BFS \cite{attia2014cygraph, betkaoui2012reconfigurable, 
-zhang2017boosting}. The basic idea is to traverse the frontier vertices 
-and inspect the neighbors of the current frontier vertices to obtain the 
-frontiers in next BFS iteration. Then the algorithm can start a new 
-iteration with a simple switch of current frontier queue and next frontier queue. 
-The algorithm ends when the frontier queue is empty.
-
-\subsection{Related work}
+\section{Related work} \label{sec:relatedwork}
 The growing importance of efficient BFS traverse on large graphs 
 have attracted attentions of many researchers. In the past few years, 
 many BFS optimization algorithms and accelerators have been proposed 
@@ -50,8 +9,8 @@ particularly focus on the FPGA based BFS acceleration.
 The researchers tried to explore BFS acceleration 
 on FPGAs from many various angles.
 To alleviate the memory bandwidth bottleneck of the 
-BFS accelerators, the authors in \cite{zhang2017boosting} 
-explored the emerging Hybrid Memory Cube (HMC) which provides 
+BFS accelerators, the authors in \cite{zhang2017boosting, khoram2018accelerating} 
+explored the new Hybrid Memory Cube (HMC) which provides 
 much higher memory bandwidth as well flexibility for BFS 
 acceleration, while the authors in \cite{attia2014cygraph} 
 proposed to change the compressed sparse row (CSR) format slightly. 
@@ -63,9 +22,9 @@ hybrid CPU-FPGA architecture offloading only highly parallel
 BFS iterations for FPGA acceleration while leaving the rest 
 on host CPU.  
 
-Most of the BFS accelerators are built on a vertex-centric 
+Most of the BFS accelerators are built on a vertex-centeric 
 processing model, while the authors 
-in \cite{zhou2016high} explored the edge-centric graph processing and demonstrated 
+in \cite{zhou2016high} explored the edge-centeric graph processing and demonstrated 
 significant throughput improvement. On top of the single FPGA board acceleration, 
 the authors in \cite{attia2014cygraph, betkaoui2012reconfigurable} also explored 
 BFS acceleration on a FPGA based high performance computing system with multiple 
@@ -73,12 +32,13 @@ FPGAs and memory instances. There are also work exploring customized soft proces
 for graph processing and building a distributed solution on 
 top of a group of embedded FPGA boards \cite{kapre2015custom, wang2010message}.
 
-Instead of building specialized BFS accelerator, many researchers opted to develop 
+The researchers opted to develop 
 more general graph processing accelerator framework or library 
-recently \cite{engelhardt2016gravf, oguntebi2016graphops, Dai2017foregraph, dai2016fpgp}. 
+recently \cite{engelhardt2016gravf, jun2018grafboost, yao2018efficient, oguntebi2016graphops, Dai2017foregraph, dai2016fpgp}. 
 They can also be utilized for BFS acceleration despite the lack of 
 specialized optimization for BFS. Meanwhile, this is also a way to improve 
 the ease of use FPGAs for graph processing acceleration.
+
 
 Prior BFS acceleration work have demonstrated the potential benefits of accelerating 
 BFS on FPGAs. These accelerators were mainly developed for the sake 

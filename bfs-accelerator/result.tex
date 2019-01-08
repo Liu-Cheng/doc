@@ -1,11 +1,8 @@
 \section{Experiments} \label{sec:experiment}
 In this section, we measure the overall performance of the optimized 
-HLS based BFS accelerator on Alpha Data ADM-PCIE-7v3 using a set of 
-representative graphs. Then we compare the resulting accelerator to 
-both a baseline design which has best-effort HLS optimization applied to 
-native BFS code and existing FPGA based BFS acceleration work. Then we evaluate 
-the major design optimization methods including pipelining, redundancy removal,  
-caching and data path duplication proposed in this work. 
+OpenCL based BFS accelerator on Intel Xeon-FPGA, a closely coupled CPU-FPGA
+architecture, over a set of representative graphs. Then we compare the 
+resulting accelerator to the reference design in an HLS benchmark Spector.
 
 \subsection{Experiment Setup}
 The graph benchmark used in this work includes three real-world graphs and 
@@ -13,12 +10,12 @@ two synthetic graphs generated using R-MAT model \cite{chakrabarti2004rmat}
 as listed in Table \ref{tab:graph}. The real-world graphs are from social network \cite{yang2012defining, 
 leskovec2009community, takac2012data} while the R-MAT graphs are generated 
 using the Graph 500 benchmark parameters ($A=0.59, B=0.19, C=0.19$). To make the 
-presentation easier, the five benchmark graphs are shorted as Youtube, 
+presentation easier, the five benchmark graphs are shorted as YT, 
 LJ, Pokec, R-MAT\uppercase\expandafter{\romannumeral1}, 
 R-MAT\uppercase\expandafter{\romannumeral2} respectively. We refer 
 to an R-MAT graph with scale $S$ ($2^{S}$ nodes) and edge factor $E$ ($E\times 2^{S}$). 
-In order to avoid trivial search, we only choose vertices from the largest 
-connected component as the BFS starting point.
+In the experiments, we averaged 64 BFS with random starting points. 
+In order to avoid trivial search, we remove the BFS with less than 3 levels.
 
 \begin{table}
     \centering
@@ -28,204 +25,250 @@ connected component as the BFS starting point.
     \toprule
       Name & \# of vertex & \# of edge & Type \\
     \midrule
-      Youtube \cite{yang2012defining} & 1157828 & 2987624 & Undirectional \\
+      YT \cite{yang2012defining} & 1157828 & 2987624 & Undirectional \\
       LJ \cite{leskovec2009community} & 4847571 & 68993773 & Directional \\
-      Pokec \cite{takac2012data} & 1632804 & 30622564 & Directional \\
+      PK \cite{takac2012data} & 1632804 & 30622564 & Directional \\
       R-MAT\uppercase\expandafter{\romannumeral1} & 524288 & 16777216 & Directional \\
       R-MAT\uppercase\expandafter{\romannumeral2} & 2097152 & 67108864 & Directional \\
   \bottomrule
 \end{tabular}
+\vspace{-1em}
 \end{table}
 
-\subsection{Performance comparison}
+\subsection{Performance evaluation}
+\subsubsection{Overall performance}
 We use the million traverse per second (MTEPS) as 
 the performance metric. The performance of the proposed BFS 
 accelerator on the graph benchmark is 
 presented in Table \ref{tab:performance-summary}. 
-It gets up to 82.16 MTEPS on the R-MAT\uppercase\expandafter{\romannumeral1} graph and achieves 
-38.83 MTEPS on average. When compared to a baseline HLS based 
-BFS accelerator, the proposed design shows 24.7X to 77.5X performance 
-speedup on the five benchmark graphs. Note that the baseline HLS design 
-refers to a native C/C++ based BFS implementation 
-with best effort HLS pragma optimization but no modification of the source code.
-With the comparison, it is clear that straightforward HLS optimizations 
-are far from sufficient and dedicated high level optimizations are critical to 
-the performance of the resulting BFS accelerator.
+It gets up to 817.5 MTEPS on the R-MAT\uppercase\expandafter{\romannumeral2}
+and achieves 508.1 MTEPS on average. When compared to the reference BFS 
+implementation in Spector, the proposed design shows 5.5X and 10.3X 
+speedup on YT graph and R-MAT\uppercase\expandafter{\romannumeral1} 
+graph respectively while Spector fails on the other three graphs with larger data sets 
+because of bugs in the code. In general, the proposed design performs better on 
+R-MAT graphs with higher average degree. On the contrast, YT with 
+low average degree suffers higher reordering and batching cost. In addition, 
+YT is an undirectional graph while the accelerator takes each edge as bidirectional ones. 
+Therefore, this also leads to relatively lower MTEPS in the experiments. 
 \begin{table}
     \centering
   \caption{Performance summary}
   \label{tab:performance-summary}
   \begin{tabular}{cccccc}
     \toprule
-      Benchmark & Youtube & LJ & Pokec & RMAT\uppercase\expandafter{\romannumeral1} & RMAT\uppercase\expandafter{\romannumeral2} \\
+      Benchmark & YT & LJ & Pokec & R-MAT\uppercase\expandafter{\romannumeral1} & R-MAT\uppercase\expandafter{\romannumeral2} \\
     \midrule
-      MTEPS & 14.35 & 28.05 & 36.94 & 82.16 & 32.67 \\
-      Speedup & 77.50 & 36.82 & 38.83 & 62.18 & 24.70 \\
+      MTEPS & 65.7 & 517.4 & 478.0 & 661.9 & 817.5 \\
+      Speedup & 5.5X & - & - & 10.3X & - \\
   \bottomrule
 \end{tabular}
+\vspace{-1em}
 \end{table}
 
-On top of the comparison to the baseline HLS design, we also compare 
+The proposed design needs a coupled CPU to reorganize the RPA based on the frontier vertices.
+The process has a lot of random access and it is appropriate for CPU because 
+of the optimized cache sub system. To evaluate the approach, we further analyze the 
+execution time distribution of the BFS. According to Figure \ref{fig:runtime}, the CPU execution time 
+takes a small proportion of the whole execution time in general, while the proportion is relatively 
+higher for the social network graphs which have deeper levels and more processing on CPU 
+compared to the R-MAT graphs. 
+\begin{figure}
+	\center{\includegraphics[width=0.85\linewidth]{runtime}}
+    \caption{Runtime distribution of the BFS accelerator on different graphs}
+\label{fig:runtime}
+\vspace{-1em}
+\end{figure}
+
+\subsubsection{Performance comparison}
+On top of the comparison to the reference OpenCL design, we also compare 
 this work to a set of existing BFS accelerators on FPGAs. As the platforms 
 and graph benchmark used in these work are mostly different, it is 
-difficult to make a fair end-to-end comparison. Hereby, we add
-MTEPS per unit bandwidth (MTEPSPB) as an additional performance metric showing the 
-potential of the BFS accelerators on different hardware platforms. 
-A rough comparison result is listed in Table \ref{tab:compare}. It can be found that the HLS 
-based BFS accelerator proposed in this work achieves around 35\% of the 
-performance in \cite{zhang2017boosting}. Nevertheless, the memory bandwidth 
-is much lower compared to that in \cite{zhang2017boosting} and the per bandwidth 
-MTEPS in this work outperforms especially on the R-MAT graphs. Compared to the 
-general graph processing framework based BFS accelerator in \cite{dai2016fpgp} and 
-\cite{nurvitadhi2014graphgen}, this work shows competitive per bandwidth MTEPS on either 
-the R-MAT graph or the graph benchmark. When compared to design on high-end 
-FPGA computing system, the performance is still much lower while the per bandwidth 
-performance is around 25\% of the highly optimized handcraft design and 
-the HLS based design gains the software-like features.
+difficult to make a completely fair end-to-end comparison. 
+A rough comparison result is listed in Table \ref{tab:compare}. It can be found that the OpenCL
+based BFS accelerator proposed in this work achieves comparable performance to many 
+prior hand crafted design and even outperfroms some of them. When compared to design on high-end 
+FPGA computing system with mutiple FPGAs like Convey HC2\cite{attia2014cygraph}, 
+the overall performance in this work is still lower, 
+but the performance per FPGA is better. In addition, the OpenCL based design 
+gains the software-like features and can be easily ported to similar FPGA boards.
 
 \begin{table}
-  \caption{FPGA based BFS accelerator comparison}
+  \caption{FPGA based BFS accelerator performance comparison}
   \label{tab:compare}
     \setlength{\tabcolsep}{4pt} % Default value: 6pt
     %\renewcommand{\arraystretch}{1.5} % Default value: 1
-  \begin{tabular}{cccccc}
+  \begin{tabular}{ccc}
     \toprule
-      Work & Platform & Graph & MTEPS & BW(GB/s) & MTEPSPB \\
+	System & Platform & MTEPS/FPGA\\
     \midrule
-      \cite{betkaoui2012reconfigurable} & Convey HC-2 & R-MAT & 1600 & 80  & 20 \\
-      \cite{attia2014cygraph} & Convey HC-2 & R-MAT    & 1900 & 80  & 24.4 \\
-      \cite{zhang2017boosting} & Micro-AC510       & R-MAT  & 166.2  & 60  & 2.8 \\
-      \cite{nurvitadhi2014graphgen} & VC707 Kit & Twitter & 148.6 & 6.4 & 9.9 \\
-      \cite{dai2016fpgp}  & VC707 Kit & Twitter & 12  & 6.4 & 1.9 \\
-      this work & ADM-PCIe-7v3 & R-MAT & 57.41 & 10.8 & 5.3 \\
-      this work & ADM-PCIE-7v3 & Graph in Table \ref{tab:graph} & 38.8 & 10.8 & 3.6 \\
+	Betkaouis'work\cite{betkaoui2012reconfigurable} & Convey HC-2 & 400\\
+	CyGraph\cite{attia2014cygraph} & Convey HC-2    & 478 \\
+	Shijie's work \cite{zhou2017accelerating} & Harpv1 & 330 - 670 \\
+	Jialiang's work\cite{zhang2017boosting} & AC-510 & 166 \\
+	FPGP\cite{dai2016fpgp} & VC707 & 122 \\
+	ForeGraph\cite{Dai2017foregraph} & VCU110 & 364 - 1069 \\
+	this work (R-MAT Graph) & Harpv2 &  739.7\\
+	this work (Social Network) & Harpv2 & 353.7 \\
   \bottomrule
 \end{tabular}
+\vspace{-1em}
 \end{table}
 
-\subsection{Runtime distribution}
-According to the experiments, we find that more pipeline stages are typically beneficial to 
-the final performance. Particularly, we observe that the resulting BFS accelerator 
-performance has significant improvement when the number of pipeline stages 
-jumps from 1 to 2 and from 5 to 6. Thus we try to keep the critical pipeline stages 
-and further construct new pipeline configurations i.e. c8 and c9. 
-The performance, however, is not improved as expected. The comparison also indicates 
-that the internal pipeline stages are also important to the 
-overall BFS accelerator performance. It is just that they are dependent 
-and any one of the sub function that fails to be pipelined will 
-stall the overall pipeline and affect the final performance. 
-According to the performance and resource consumption experiments, we find that 
-c6 achieves near optimal performance with reasonable hardware resource overhead.
-Therefore, it is taken as the optimized pipelining setup in the following experiments.
+\subsubsection{Optimization approach analysis}
+As mentioned, we mainly apply four different approaches including graph reordering, on-chip buffer partition,  
+, data reorganization and hype pipelining to optimize the OpenCL based BFS accelerator.
+While the graph reordering and on-chip buffer partition are naturally combined, 
+we have the two optimizations evaluated together. The performance improvement 
+by gradually applying the optimizations as presented in Figure \ref{fig:opt-analysis}.
+Note that the accelerators with different optimizations have 8Mb bitmap implemented.
+Batch size is set to be 16.
+It can be found that the graph reordering and on-chip buffer partition contributes most to the overall 
+performance improvement. 8X speedup over the base design is achieved on R-MAT graphs. 
+The performance improvement of data reorganization varies on different graphs. 
+On LJ graph, over 50\% improvement is obtained. Hyper pipelining is also demonstrated to be 
+beneficial particularly on social network graphs with deeper BFS levels. 5\% to 10\% performance 
+improvement is gained while the benefit is trivial to R-MAT graphs.
+ 
+When different optimizations are applied to the OpenCL based BFS accelerator, 
+the resulting FPGA implementation frequency is also different. As labeled in 
+Figure \ref{fig:opt-analysis}, the proposed optimizations that simplify the 
+processing on FPGAs also produce higher hardware implementation frequency.
+This is also part of the reasons of performance improvement. Note that the 
+hyper pipelining are implemented on host processor, so the accelerator frequency 
+remains unchanged.
+
+\begin{figure}
+	\center{\includegraphics[width=0.85\linewidth]{opt-analysis}}
+	\caption{Performance improvement with different high-level optimizations}
+\label{fig:opt-analysis}
+\vspace{-1em}
+\end{figure}
+
+\subsection{Batch trade-offs}
+Graph reordering and batching contributes most to the BFS performance 
+improvement and will be analyzed in this subsection. 
+Figure \ref{fig:batch-perf} shows the BFS performance of different batch size.
+In general, larger batch size induces higher performance and batch 16 
+achieves the best performance on all the benchmark graphs. BFS performance 
+starts to drop when the batch size is larger.  
+\begin{figure}
+	\center{\includegraphics[width=0.8\linewidth]{batch-perf}}
+    \caption{BFS performance of different batch size}
+\label{fig:batch-perf}
+\vspace{-1em}
+\end{figure}
+
+
+The proposed graph reordering and batching approach expands the 
+graph layout and it will induce more memory overhead. The batch overhead 
+on the benchmark graphs is illustrated in Figure \ref{fig:batch-overhead}. 
+When the batch size increases, the CSR data increases accordingly. 
+In general, to trade-off the batch overhead and the performance benefit, 
+larger batch size is recommended for graphs with higher average degree 
+and smaller batch size is better for graphs with lower degree 
+such as YT. Given appropriate batch size setup, the data width 
+of the edge access and the number of conflict-free parallel data paths 
+in the BFS accelerator improves more significantly. 
+
+\begin{figure}
+	\center{\includegraphics[width=0.95\linewidth]{batch-overhead}}
+    \caption{Relative memory overhead of different batch size}
+\label{fig:batch-overhead}
+\vspace{-1em}
+\end{figure}
+
+
+The advantage of the batch is multi-folded and it is hard to 
+quantify precisely as the benefits depend on the actual 
+memory access sequence. Basically, batch mainly has the memory 
+access coalesced and improves the memory bandwidth utilization, 
+For sequential memory access and random access, 
+we performed independent experiments on Harp-v2 
+to evaluate the benefits. We measured the transfer time 
+of 64MB data in different batch size and calculated the 
+corresponding bandwidth. The bandwidth is normalized to 
+the transfer with 32-bit data width. The relative bandwidth result is presented in 
+Figure \ref{fig:mem-bandwidth}. Note that dependent random access pattern 
+refers to the random accesses that can only proceed one after another.
+This happens in the OpenCL based BFS. As low-degree frontier 
+vertices in each data path traverse sequentially because the compiler 
+has no clue if there is data dependency between different frontier 
+neighbors. 
+
+\begin{figure}
+	\center{\includegraphics[width=0.85\linewidth]{mem-bandwidth}}
+    \caption{Batch size influence on memory bandwidth}
+\label{fig:mem-bandwidth}
+\vspace{-1em}
+\end{figure}
+
+
+It is clear that the bandwidth utilization of batched random memory access
+improvement is significantly higher than that of the sequential memory access. 
+Particularly, dependent random memory access keeps continuous memory 
+bandwidth utilization improvement when the batch size goes up to 64,
+While the independent random memory access gets saturated when 
+the batch size reaches to 32. It indicates that the OpenCL tools 
+can actually explore memory level parallelism of random memory access.
+For sequential memory access, the bandwidth utilization saturates 
+when the batch size is 16 and the data width equals to the 
+internal 512 bit. In general, the experiment exhibits the potential 
+memory bandwidth utilization improvement of BFS using the proposed 
+reordering and batching.
+
+\subsection{Hardware implementation}
+\subsubsection{Resource overhead}
+The FPGA resource consumption and the implementation frequency of 
+the proposed accelerator with different configurations 
+is listed in Table \ref{tab:resource}. 
+
+According to the table, Harp-v2 platform already consumes 
+a large portion of the FPGA resources while the BFS accelerator resource 
+consumption is moderate. Particularly, the memory blocks consumption of 
+16Mb BFS accelerator actually takes around 47\% of the total FPGA 
+RAM blocks. It is the resource bottleneck of the BFS 
+accelerator for larger bitmap or graphs with more vertices.
+Larger batch size ensures more parallel BFS data paths and 
+thus more logic resources will be required. In addition, more 
+parallel memory access ports in the BFS accelerator also lead to 
+more RAM block overhead which is implicitly generated by the Intel 
+OpenCL compiler.
 
 \begin{table}
-  \caption{FPGA resource consumption with different pipelining configurations}
-  \label{tab:hash-resource}
+  \caption{FPGA resource consumption with different configurations}
+  \label{tab:resource}
   %\setlength{\tabcolsep}{4pt} % Default value: 6pt
   %\renewcommand{\arraystretch}{1.5} % Default value: 1
     \centering
-  \begin{tabular}{ccccccc}
+  \begin{tabular}{cccc}
     \toprule
-      Config. & FF & \% & LUT & \% & RAMB18K & \% \\
+	\shortstack{Config. \\ (batch, bitmap)} & \shortstack{Logic \\ Resource} & \shortstack{RAM \\ blcoks} & \shortstack{Frequency \\ (MHz)} \\
     \midrule
-      c1 & 3581 & $\sim$0 & 4289 & $\sim$0 & 8  & $\sim$0 \\
-      c2 & 4121 & $\sim$0 & 5416 & $\sim$1 & 10 & $\sim$0 \\
-      c3 & 4208 & $\sim$0 & 5746 & $\sim$1 & 10 & $\sim$0 \\
-      c4 & 4494 & $\sim$0 & 6675 & $\sim$1 & 10 & $\sim$0 \\
-      c5 & 4551 & $\sim$0 & 7022 & $\sim$1 & 10 & $\sim$0 \\
-      c6 & 5546 & $\sim$0 & 8126 & $\sim$1 & 12 & $\sim$0 \\
-      c7 & 5853 & $\sim$0 & 8154 & $\sim$1 & 12 & $\sim$0 \\
-      c8 & 5113 & $\sim$0 & 7152 & $\sim$1 & 12 & $\sim$0 \\
-      c9 & 5408 & $\sim$0 & 7843 & $\sim$1 & 12 & $\sim$0 \\
+	  platform   & 24\% & 8\%  & -   \\
+	  (4, 4Mb)   & 28\% & 27\% & 164 \\
+	  (8, 4Mb)   & 31\% & 27\% & 167 \\
+	  (16, 4Mb)  & 37\% & 28\% & 183 \\
+	  (32, 4Mb)  & 48\% & 31\% & 172 \\
+	  (4, 8Mb)  & 28\% & 36\% & 140 \\
+	  (8, 8Mb)  & 31\% & 36\% & 156 \\
+	  (16, 8Mb) & 37\% & 38\% & 167 \\
+	  (32, 8Mb) & 48\% & 40\% & 183 \\
+	  (4, 16Mb)  & 28\% & 55\% & 130 \\
+	  (8, 16Mb)  & 31\% & 55\% & 117 \\
+	  (16, 16Mb) & 37\% & 57\% & 138 \\
+	  (32, 16Mb) & 48\% & 59\% & 145 \\
+	  \midrule
+      Spector    & 39\% & 36\% & 195 \\
   \bottomrule
 \end{tabular}
+\vspace{-1em}
 \end{table}
 
-\subsubsection{Replication factor}
-\subsubsection{Data reorganization}
-We explore the correlation between prefetch buffer size and  
-buffer hit rate through the software emulation as well. The result is 
-shown in Figure \ref{fig:prefetch-hit}. Unlike the cache in BFS accelerator,  
-the influence of the prefetch buffer varies slightly on different 
-graph benchmark and 64B prefetch size achieves satisfactory 
-hit rate. 64B is also the optimized global memory access data width 
-and a single read operation completes the prefetch at buffer miss simplifying the 
-HLS initialization interval optimization. With these reasons, 
-we choose 64B as the prefetch buffer size for all the different graphs.
-The prefetch buffer consumes negligible hardware resources, so the resource overhead 
-is skipped to save the space.
-
-\begin{figure}
-\center{\includegraphics[width=0.95\linewidth]{prefetch-hit}}
-    \caption{A small prefetch buffer can already achieve high hit rate.
-    Particularly the prefetch buffer size influence on different graph 
-    data set is similar.}
-\label{fig:prefetch-hit}
-\end{figure}
-
-The FPGA resource consumption of the accelerator with optimized data path duplication 
-strategies are presented in Table \ref{tab:duplicate-resource}. The accelerator 
-with data path duplication incurs more logic resources including FF and LUT. 
-Although the block RAM consumption doesn't increase too much, it remains the 
-resource bottleneck mostly because of the large cache requirement.
-
-\begin{table}
-  \caption{FPGA resource consumption with data path duplication}
-  \label{tab:duplicate-resource}
-  %\setlength{\tabcolsep}{4pt} % Default value: 6pt
-  %\renewcommand{\arraystretch}{1.5} % Default value: 1
-    \centering
-  \begin{tabular}{ccccccc}
-    \toprule
-      Config. & FF & \% & LUT & \% & RAMB18K & \% \\
-    \midrule
-      opt-DPD2  & 110150 & 12 & 185478 & 42 & 1893  & 64 \\
-      opt-DPD4  & 194707 & 22 & 331870 & 70 & 809  & 84 \\
-  \bottomrule
-\end{tabular}
-\end{table}
-
-\subsection{Optimization evaluation}
-As discussed in previous sub sections, we need hardware implementation 
-to tune the pipelining depth while we can roughly decide the rest 
-design parameters through software emulation. This ensures the HLS based 
-BFS accelerator can be rapidly customized for each graph data set.
-
-After tuning the design parameters, we evaluate the 
-performance of the BFS accelerators with the optimization. 
-Basically we start from the baseline design and 
-add the optimizations including pipelining, hash redundancy removal, 
-prefetching, caching and data path duplication in order. The performance improvement 
-with these optimizations can be found in Figure \ref{fig:opt-performance}. 
-In general, the performance of the BFS accelerator improves 
-significantly when more optimization techniques are applied. Particularly,
-pipelining and data path duplication enhance the performance most 
-significantly. The performance improvement brought by the hash table based filtering 
-seems to be trivial, but it actually boosts the performance by over 20\% on average. 
-In addition, it also affects the cache efficiency as observed in Section \ref{sec:observation}
-and is thus critical to the overall accelerator performance as well.
-
-\begin{figure}
-\center{\includegraphics[width=0.95\linewidth]{opt-performance}}
-    \caption{BFS accelerator optimization techqniue evaluation. The performance on 
-    all the graphs improves when more optimizations including pipelining, 
-    redundancy removal, prefetching, caching, and data path duplication are 
-    gradually applied to the design.}
-\label{fig:opt-performance}
-\end{figure}
-
-\section{Conclusions} \label{sec:conclusion}
-Handcrafted HDL based BFS accelerators usually suffer high portability and maintenance cost 
-as well as ease of use problem despite the relatively 
-good performance. HLS based BFS accelerator can greatly alleviate these problems, but it is 
-difficult to achieve satisfactory performance due to the inherent irregular memory access and 
-complex nested loop structure. In this work, we stream the basic BFS algorithm and develop 
-a series of HLS based optimizations such as redundancy removal, prefetching, caching and 
-data path duplication. According to the experiments on 
-a representative graph benchmark, the resulting HLS based BFS accelerator achieves up to 70X speedup 
-compared to a baseline HLS design with best-effort HLS pragma optimization. When compared to the 
-existing HDL based BFS accelerators on similar FPGA cards, the proposed HLS based BFS accelerator 
-gets around 35\% of the MTEPS, but it preserves the nice software-like features including 
-portability and ease of use and maintenance, and achieves higher per bandwidth MTEPS in some cases 
-mostly because of the graph specific optimization techniques. 
+\subsubsection{Implementation frequency}
+In Table \ref{tab:resource}, we also show the BFS accelerator implementation frequency.
+Typically, larger batch size which essentially indicates smaller bitmap partitions
+is more friendly to the placing and routing and beneficial to the hardware implementation 
+eventually. Higher frequency promises higher performance, so we usually choose the BFS 
+accelerator with highest implementation frequency when the graph can be fit into the bitmap.
 

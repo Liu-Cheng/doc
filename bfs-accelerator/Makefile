@@ -1,5 +1,5 @@
 TITLE=bfs
-FILES=bfs.tex bfsopt.tex result.tex relatedwork.tex intro.tex motivation.tex 
+FILES=bfs.tex bfsopt.tex background.tex result.tex relatedwork.tex intro.tex motivation.tex conclusion.tex 
 
 BIBFILES=refs.bib 
 IMGFILES=
