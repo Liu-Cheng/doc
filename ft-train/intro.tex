@@ -1,0 +1,100 @@
+\section{Introduction} \label{sec:intro}
+In recent years, deep neural networks especially the convolutional neural networks (CNN) 
+have shown great performance in massive fields such as image classification, 
+video surveillance, speech recognition, and robot vision. To ensure both 
+higher energy-efficiency and lower processing latency, various CNN accelerators 
+\cite{pipecnn_2,Zhang2015_9,Qiu2016_10,deepburing_12,Farabet2010_13,Zeng2018_18} 
+have been developed and are increasingly deployed in the diverse applications. 
+With the CNN accelerators, a neural network is usually trained 
+using frameworks like Caffe, Pytorch and Tensorflow on general purposed 
+processors (GPPs) first. After the training, the resulting neural network 
+model is further quantized and compiled to the target CNN accelerator. 
+
+The implicit assumption of the offline training is that the neural 
+network model executed on GPPs can produce equivalent result to 
+that on the CNN accelerators. Nevertheless, there are 
+many scenarios where the computing on CNN accelerators 
+is different from that is calculated with GPPs. For instance, the 
+CNN accelerator may be implemented with approximate arithmetic logic 
+such as \textbf{xxx} for the purpose of higher performance or energy efficiency. 
+Overclocking  \cite{overclock_3,Razor_15} which allows certain 
+timing errors to enable higher clock frequency
+is another occasion, and is already supported in commercial chips 
+or FPGA designs \textbf{xxx}. Some of the CNN accelerators may be 
+exposed in error-prone environment where soft errors 
+may affect the circuit behavior randomly. 
+In these scenarios, it is almost impossible to have the offline training 
+framework to aware the exact accelerator behavior. 
+If the training framework ignores the accelerators’ dynamic 
+behavior, the prediction accuracy of the resulting neural 
+network model may degrade dramatically, which is expected according to 
+the neural network training theory.
+
+To address the above problems, an intuitive approach is to 
+constrain the accelerator design to ensure the neural 
+network computing result to be close to that obtained from GPPs. 
+In this case, the approximate strategy, overclocking scheme and 
+fault tolerant design method must be conservative. 
+While deep neural networks typically have the potential to 
+learn and tolerate errors or variation in computing as demonstrated in 
+numerous CNN quantization work \textbf{xxx}, we opt to 
+integrate the CNN accelerator to the training framework 
+and retrain the neural network models specifically for the 
+targeting CNN accelerator or scenario such that the undeterministic 
+accelerator behavior can be learned and tolerated without 
+modifying the accelerator design or allowing more aggressive 
+hardware design at least. 
+
+Along this idea, we develop an on-accelerator training framework 
+on top of Caffe to retrain the neural network models 
+running on CNN accelerators with undeterministic behavior. 
+In particular, we adopt the knowledge 
+distilling approach, which essentially has a general and bigger
+neural network to teach a smaller or similar neural network 
+targeting at a specific scenario, for the fine tuning. 
+Basically, we have the golden neural network model 
+to guide the fine tuning on the CNN accelerator with undeterministic 
+computing. This ensures more reliable fine tuning convergence.  
+In addition, we explore the fine tuning strategy and find 
+that the batch size of the training can be a critical hyper parameter 
+especially for neural networks on CNN accelerators with dynamic variation. 
+
+The framework is implemented on a heterogeneous CPU-FPGA platform where 
+CNN accelerator stays on FPGA. Runtime computing result of the 
+CNN accelerator with undeterministic variation is sent back to 
+host CPU for the fine-tuning. Meanwhile, we define a set of standard 
+interfaces to make it convenient to integrate general CNN accelerators 
+into the fine tuning framework. Finally, we take an approximate CNN accelerator,
+an overclocked CNN accelerator and faulty CNN accelerator as examples 
+and demonstrate the usefulness of the on-accelerator training framework on 
+these representative scenarios. The contributions of this work are 
+summarized as follows.
+
+\begin{itemize}
+	\item We propose an on-accelerator neural network training framework to 
+		have the dynamic computing variation of the CNN accelerators to be 
+		learned with the application data. With this method, neural 
+		network models can be executed on these CNN accelerators with 
+		undeterministic behavior without hardware modification.
+
+	\item We build an end-to-end on-accelerator training framework on top of Caffe
+		and apply the knowledge distilling method for fine tuning neural networks 
+		executed on CNN accelerators with undeterministic behavior. Meanwhile, we 
+		define a set of interfaces to allow general CNN accelerators 
+		to make use of the training framework.
+
+	\item We explore the use of the on-accelerator training on CNN accelerators 
+		with approximate arithmetic logic, overclocking and soft errors and 
+		demonstrate the usefulness of the proposed system on a set of 
+		representative neural networks.
+\end{itemize}
+The paper is organized as follows. Section II analyzes the influence of 
+the CNN accelerator's undeterministic behavior when using the offline 
+training and motivates this work. Section III presents the 
+proposed on-accelerator training framework and 
+details the interface of integrating general CNN accelerators within the 
+training framework. Section IV performs three typical case studies using the 
+proposed training framework and demonstrates the use of the on-accelerator 
+training. Section V briefs the related work and Section VI draws the conclusion. 
+
+

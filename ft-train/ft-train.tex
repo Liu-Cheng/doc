@@ -421,15 +421,13 @@ trained model and then perform accelerator-specific or scenario-specific
 fine tuning to make the CNN models less sensitive to the accelerator's
 undetermined behavior. In addition, we further explore the on-accelerator 
 fine-tuning approaches and implement a Caffe based on-accelerator 
-training framework. We apply the on-accelerator training approach 
-to a set of neural networks targeting at both an overclocked CNN 
-accelerator and a faulty CNN accelerator on a CPU-FPGA computing platform. 
+training framework. We apply the on-accelerator training paradigm 
+for training a set of neural networks targeting at a CNN accelerator with 
+approximate multiplier, an overclocked CNN accelerator and 
+a faulty CNN accelerator on a CPU-FPGA computing platform. 
 According to our experiments on ImageNet, 
 the on-accelerator training can improve the top 5 accuracy and 
-top 1 accuracy up to 11.65\% and xx\% when the CNN accelerator 
-works at extreme clock. When the accelerator is exposed to a faulty 
-environment, the top 5 and top 1 accuracy improves up to xxx\% and 
-3.38\% under the most sever fault injection. 
+top 1 accuracy significantly compared to the offline training. 
 \end{abstract}
 
 % no keywords
@@ -445,6 +443,7 @@ environment, the top 5 and top 1 accuracy improves up to xxx\% and
 % creates the second title. It will be ignored for other modes.
 \IEEEpeerreviewmaketitle
 
+\input{intro}
 \input{main}
 \input{result}
 
