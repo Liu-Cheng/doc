@@ -1,9 +1,14 @@
 \section{Motivation} \label{sec:motivation}
-  As the major training systems typically adopt the off-line training method 
-on CPUs and GPUs, ‘un-deterministic’ behaviors of the accelerators will not 
-be considered by default. To evaluate the influence, we take an overclocked 
-CNN accelerator and a soft-error affected CNN accelerators as examples and 
-investigate the influence of the ‘unstable’ circuit on the prediction accuracy in this section.
+Nowadays, the main stream training frameworks typically adopt the offline training
+on GPPs to obtain the neural network models and then apply the quantized models to the 
+target CNN accelerators. When the computing on the underlying CNN accelerators differs
+from that calculated with GPPs due to the approximate arithmetic logic, overclocking or 
+soft errors, the offline trained neural network models executed on the accelerator 
+may deviate from the expected computing result. To evaluate the influence, 
+we take Alexnet as an example and evaluate the offline trained model prediction 
+accuracy on the CNN accelerators with approximate multiplier, 
+overclocking, and soft errors respectively. 
+
 
   As shown in Figure 1, we adopt PipeCNN\cite{pipecnn_2} , an open sourced CNN accelerator, 
 as the baseline accelerator and implement it on Xilinx KCU1500 boards. The accelerator 
