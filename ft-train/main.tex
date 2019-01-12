@@ -163,30 +163,30 @@ This explains the higher prediction accuracy with the retrained model. According
 above experiments, we can conclude that the proposed accelerator aware training can produce 
 more resilient CNN model tolerating errors caused by intensive overclocking. 
 
-\begin{figure*}
+\begin{figure}
         \center
 	\subfloat[]{
 		\label{fig:lenet}
-		\includegraphics[width=0.45\linewidth]{lenet-overclock}
+		\includegraphics[width=0.4\linewidth]{lenet-overclock}
 	}
 	\qquad
 	\subfloat[]{
                 \label{fig:alexnet}
-                \includegraphics[width=0.45\linewidth]{alexnet-overclock}
+                \includegraphics[width=0.4\linewidth]{alexnet-overclock}
         }
 	\qquad
 	\subfloat[]{
                 \label{fig:vgg16}
-                \includegraphics[width=0.45\linewidth]{vgg16-overclock}
+                \includegraphics[width=0.4\linewidth]{vgg16-overclock}
         }
         \qquad
 	\subfloat[]{
                 \label{fig:vgg19}
-                \includegraphics[width=0.45\linewidth]{vgg19-overclock}
+                \includegraphics[width=0.4\linewidth]{vgg19-overclock}
         }
 	\caption{The Accuracy of Four CNN models on accelerators with different overclocking frequency}
         \label{fig:overclock accuracy}
-\end{figure*}
+\end{figure}
 
   Finally, we also present the training time on the hybrid CPUFPGA architecture. 
 It can be seen that the training is much slower than the fixed-point training on CPU. 
@@ -218,30 +218,30 @@ more errors than the other three networks. The accuracy remains unchanged until 
 When the error injection rate is low, the CNN model is able to cover almost all the negative influence 
 on the prediction accuracy.
 
-\begin{figure*}
+\begin{figure}
         \center
         \subfloat[]{
                 \label{fig:lenet}
-                \includegraphics[width=0.45\linewidth]{lenet-softerror}
+                \includegraphics[width=0.4\linewidth]{lenet-softerror}
         }
         \qquad
         \subfloat[]{
                 \label{fig:alexnet}
-                \includegraphics[width=0.45\linewidth]{alexnet-softerror}
+                \includegraphics[width=0.4\linewidth]{alexnet-softerror}
         }
         \qquad
         \subfloat[]{
                 \label{fig:vgg16}
-                \includegraphics[width=0.45\linewidth]{vgg16-softerror}
+                \includegraphics[width=0.4\linewidth]{vgg16-softerror}
         }
         \qquad
         \subfloat[]{
                 \label{fig:vgg19}
-                \includegraphics[width=0.45\linewidth]{vgg19-softerror}
+                \includegraphics[width=0.4\linewidth]{vgg19-softerror}
         }
         \caption{The Precision of Four CNN models on accelerators with different error rate}
         \label{fig:softerror accuracy}
-\end{figure*}
+\end{figure}
 
 
   When the error injection rate goes higher, the proposed retraining becomes critical. 
