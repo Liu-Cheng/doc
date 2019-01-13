@@ -18,6 +18,13 @@ frequency is boosted to 250Mhz and 260MHz respectively, we apply the original mo
 the overclocked accelerator. The performance gets improved proportionally, but the 
 accuracy drops 0.5\% and 4.3\% respectively.
 
+\begin{figure}
+        \center{\includegraphics[width=0.85\linewidth]{accuracy_loss}}
+        \caption{Influence of The CNN Accelerator’s Overclocking, Approximate multiplier and Soft error on AlexNet Model Accuracy}
+        \label{fig:retrain}
+%        \vspace{-0.5em}
+\end{figure}
+
   Soft error has become an un-ignorable problem with the shrinking semiconductor 
 feature size and we further analyze its influence on the CNN accelerator. 
 Currently, we use a uniform distribution model to inject the SEU errors to the 
