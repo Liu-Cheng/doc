@@ -188,12 +188,39 @@ more resilient CNN model tolerating errors caused by intensive overclocking.
         \label{fig:overclock accuracy}
 \end{figure}
 
+To ensure the stability of the overclocking experiment, we 
+also keep measuring the accuracy of the accelerators with extreme 
+overclocking. With repeatedly running the test for up to 40 hours, 
+the measured accuracy varies slightly as present in Figure 7. 
+Despite the fact that the errors caused by the overclocking can be 
+hardly modeled precisely at runtime, the inherent error patterns may 
+still partly be captured by the CNN model with the proposed training. 
+This explains the higher prediction accuracy with the retrained model. 
+According to the above experiments, we can conclude that the proposed 
+accelerator aware training can produce more resilient CNN model tolerating 
+errors caused by intensive overclocking. 
+
+\begin{figure}
+        \center{\includegraphics[width=0.85\linewidth]{stability}}
+        \caption{The Stability of Retrained Model}
+        \label{fig:stability}
+%        \vspace{-0.5em}
+\end{figure}
+
   Finally, we also present the training time on the hybrid CPUFPGA architecture. 
 It can be seen that the training is much slower than the fixed-point training on CPU. 
 This is mainly caused by the frequently data transferring between device memory and host 
 memory in the proposed training, while this will not affect the inference time. In addition, 
 we can also find that the training on larger network takes longer time and higher clock frequency 
 is also beneficial to the training time as expected. 
+
+\begin{figure}
+        \center{\includegraphics[width=0.85\linewidth]{time}}
+        \caption{Training time}
+        \label{fig:time}
+%        \vspace{-0.5em}
+\end{figure}
+
 
 \subsection{CNN accelerator with soft errors}
   With the shrinking semiconductor feature size and increasing FPGA capacity, 
