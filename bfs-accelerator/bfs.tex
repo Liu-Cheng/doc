@@ -55,7 +55,7 @@
     Breadth First Search (BFS) is a key building block of graph processing 
 	and there have been considerable efforts devoted to accelerating BFS on FPGAs
 	for the sake of both performance and energy efficiency. While prior work 
-	typically built the BFS accelerator through handcrafted circuit using 
+	typically built the BFS accelerator through handcrafted circuit design using 
 	hardware description language (HDL). Despite the relatively good performance, 
 	the HDL based design leads to extremely low design productivity, and incurs 
 	high portability and maintenance cost. While the evolving high level synthesis (HLS) 
@@ -66,7 +66,8 @@
 	we propose OBFS, an OpenCL based BFS accelerator on software programmable FPGAs, 
 	and explore a series of high-level optimizations to the OpenCL design. 
 	With the observation that OpenCL based FPGA design is rather inefficient on 
-	random memory access, we focus on the optimization of random memory access in BFS. 
+	irregular memory access (random and short burst), we focus on the optimization 
+	of irregular memory access in BFS. 
 	First of all, we convert the low-efficient irregular edge reading into batched 
 	memory access with graph reordering. Then we use an on-chip bitmap to avoid random 
 	visiting status access over DDR. On top of the graph reordering and 

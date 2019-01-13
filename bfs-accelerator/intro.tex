@@ -31,23 +31,20 @@ important concerns from the perspective of the accelerator developers.
 %the FPGA accelerators despite the great performance-energy 
 %efficiency advantages.
 
-The limitation of the conventional HDL design method in combination with the 
-rapid advancements of the high level synthesis (HLS) techniques makes the HLS tools attractive. 
-HLS tools are increasingly adopted in both industry and academia for rapid FPGA 
+Because of the limitation of the conventional HDL design method, 
+high level synthesis (HLS) tools that advance rapidly in recent years
+become attractive. HLS tools are increasingly adopted in both 
+industry and academia for rapid FPGA 
 prototyping and application acceleration \cite{koch2016fpgas, xilinx-sdaccel}. 
 Nevertheless, the current HLS based design tools are mostly used for 
 applications with relatively regular memory access patterns and data paths. 
 It remains challenging for the HLS tools to accelerate BFS with irregular 
 memory access patterns and complex data paths. 
 
-To gain both the performance and high-level convenience, we explore the use of 
-Intel OpenCL for efficient BFS implementation on software programmable FPGAs.
-We notice that there are large amount of irregular memory access including 
+First of all, there are considerable irregular memory access including 
 random and short burst memory access in BFS and the irregular memory access 
-bandwidth is orders of magnitude lower than that of the sequential 
-memory access on FPGAs. For example, there are a lot of low-degree vertices in many 
-graphs such as social networks of which the vertex degree follows the power-law 
-distribution. Thus, BFS has many random or short burst read operations involved. In addition, the number of a 
+bandwidth utilization is orders of magnitude lower than that of the sequential 
+memory access. In addition, the number of a 
 frontier vertex's neighbor is only determined at run-time, so reading the unaligned 
 neighboring vertices with OpenCL typically has narrow data width. The read is not efficient 
 as pointed out in \cite{wang2017multikernel}. Worse still, the neighboring vertices 
