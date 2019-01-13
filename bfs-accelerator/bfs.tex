@@ -63,15 +63,19 @@
 	the performance of the baseline design remains much lower. 
 
 	To obtain both the near hand-crafted design performance and the software-like features, 
-	we proposed OBFS, an OpenCL based BFS accelerator on software programmable FPGAs, 
-	and explored a series of high-level optimizations to the OpenCL design. 
-	Basically, we converted the random memory accesses into batched 
-	memory accesses with graph reordering and run-time data reorganization. 
-	On top of the graph reordering, we further built conflict-free parallel data paths 
-	to make best use of the on-chip memory bandwidth. In addition, we shifted part of 
-	the random memory accesses from the BFS processing and had it overlapped with the 
-	next BFS processing. According to the experiments on a set of representative graphs, 
-	OBFS achieves up to 10X performance speedup compared to the reference design 
+	we propose OBFS, an OpenCL based BFS accelerator on software programmable FPGAs, 
+	and explore a series of high-level optimizations to the OpenCL design. 
+	With the observation that OpenCL based FPGA design is rather inefficient on 
+	random memory access, we focus on the optimization of random memory access in BFS. 
+	First of all, we convert the low-efficient irregular edge reading into batched 
+	memory access with graph reordering. Then we use an on-chip bitmap to avoid random 
+	visiting status access over DDR. On top of the graph reordering and 
+	on-chip bitmap, we further build conflict-free parallel data paths 
+	to make best use of the on-chip memory bandwidth. In addition, we 
+	shift the random BFS level update from the main BFS processing and 
+	hide it with overlapped execution of different BFS processing. 
+	According to the experiments on a set of representative graphs, 
+	OBFS achieves up to 12X performance speedup compared to the reference design 
 	in Spector benchmark on Intel Harp-v2. When compared to prior handcrafted design on 
 	similar FPGA cards, it achieves comparable performance or even better on some R-MAT graphs. 
 \end{abstract}

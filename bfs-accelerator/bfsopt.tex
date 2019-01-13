@@ -1,73 +1,67 @@
 \section{HLS based BFS optimization} \label{sec:bfs-opt}
-We notice that the irregularity in BFS including both the complex memory access patterns and dependent data 
-paths is the key factor that affects the BFS performance. In this section, we will illustrate 
-the irregularity first and then present the proposed optimizations for efficient implementation with OpenCL.
+We notice that the irregular memory access in BFS is the key 
+factor that affects the BFS performance. Targeting at this problem, 
+we propose a set of combined high-level optimizations including graph 
+reordering, on-chip buffer partition 
+and hyper BFS pipelining for efficient implementation 
+with OpenCL on Intel Harp-v2. The optimizations are 
+detailed in the rest of this section. 
 
-\subsection{Irregularity in BFS}
-\subsubsection{Irregular memory access}
-The basic BFS structure as mentioned in Figure \ref{fig:base-bfs} is well pipelined, 
-but it involves a large number of random memory accesses as analyzed 
-in \cite{Merrill2012scalable}. In the second stage, the vertex indices in the frontier 
-are usually not continuous, so the RPA read becomes random. For vertices with 
-larger degree, the CIA read can be considered as sequential memory access. Nevertheless, 
-the vertex degree of the graphs especially the social network follows the power-law 
-distribution and it indicates that there are a great number of low-degree vertices 
-and short sequential memory accesses. Particularly, since the vertex degree in 
-the BFS accelerator is known at run-time, the CIA read is usually aligned to the vertex 
-index data width (32 bits in this work). 
+%\subsection{Irregularity in BFS}
+%\subsubsection{Irregular memory access}
+%The basic BFS structure as mentioned in Figure \ref{fig:base-bfs} is well pipelined, 
+%but it involves a large number of random memory accesses as analyzed 
+%in \cite{Merrill2012scalable}. In the second stage, the vertex indices in the frontier 
+%are usually not continuous, so the RPA read becomes random. For vertices with 
+%larger degree, the CIA read can be considered as sequential memory access. Nevertheless, 
+%the vertex degree of the graphs especially the social network follows the power-law 
+%distribution and it indicates that there are a great number of low-degree vertices 
+%and short sequential memory accesses. Particularly, since the vertex degree in 
+%the BFS accelerator is known at run-time, the CIA read is usually aligned to the vertex 
+%index data width (32 bits in this work). 
+%
+%In the third stage, when the status array 
+%is located in the main memory, the status read is also random. When the vertex is un-visited, 
+%random write is also required. In the last stage, frontier vertices typically write 
+%sequentially because only part of the frontier neighbors become new frontiers 
+%in the next BFS iteration, it is also random memory access by default. 
+%While the frontier vertices are usually not sequential, the vertex level update 
+%is also random. The massive random or short sequential
+%memory accesses in combination result in the extremely low memory bandwidth utilization and 
+%performance accordingly. 
 
-In the third stage, when the status array 
-is located in the main memory, the status read is also random. When the vertex is un-visited, 
-random write is also required. In the last stage, frontier vertices typically write 
-sequentially because only part of the frontier neighbors become new frontiers 
-in the next BFS iteration, it is also random memory access by default. 
-While the frontier vertices are usually not sequential, the vertex level update 
-is also random. The massive random or short sequential
-memory accesses in combination result in the extremely low memory bandwidth utilization and 
-performance accordingly. 
+%\subsubsection{Dependent data paths}
 
-\subsubsection{Dependent data paths}
-On top of the irregular memory accesses, another critical aspect of the BFS irregularity 
-is the dependent data paths in the third pipeline stage. Figure \ref{fig:write-conflict} shows
-the data path conflicts when inspecting the frontier neighbors in parallel in two scenarios. 
-Basically, the neighbors of the different frontier vertices may be overlapped. 
-As shown in the example in Figure \ref{fig:write-conflict},  frontier Vertex 0 and Vertex 10 
-have the same neighbor i.e. Vertex 3. When Vertex 3 is not visited in prior BFS iterations 
-and both the frontier vertices are processed in parallel, they may update the same vertex 
-status and result in write conflict. When the status is stored in DDR as given 
-in Figure \ref{fig:write-conflict}(b), more parallel 
-random accesses have little improvement of the memory bandwidth utilization and they will
-increase the average memory access latency instead. This stage soon becomes the performance 
-bottleneck. With sufficient on-chip buffer, we can also have the vertex status fully stored 
-on-chip and alleviate the memory access bottleneck because of the much shorter delay 
-and larger internal bandwidth as presented in Figure \ref{fig:write-conflict}(c), 
-but the write conflict problem remains the same. 
+\subsection{Graph reordering}
+As each frontier vertex usually has multiple neighboring 
+vertices or associated edges to be processed, sequential edge processing 
+will soon become the bottleneck of the BFS. Parallel processing alleviates the bottleneck, 
+but it is usually constrained by the memory access conflicts. Figure \ref{fig:write-conflict} 
+shows the conflicts when inspecting the frontier neighbors in parallel.  
+Both vertex 8 and Vertex 12 are neighbors of vertex 2 and they are supposed to be 
+processed in parallel. However, the status or property of 
+the two vertices may stay in the same DDR bank or on-chip buffer bank. As a result, 
+they can only be written sequentially. The conflict is essentially caused by the 
+limited memory level parallelism, so we call it memory conflict. 
+There is also data dependency conflict. When the frontiers are processed in parallel, 
+vertex 0 and 10 that have the same neighbor i.e. Vertex 3 and we can not perform status 
+write of vertex 3 in parallel. We take it as data conflict. 
+The data dependency remains despite the different data layouts, 
+so we focus on resolving the memory conflict in this subsection.   
+
 \begin{figure}
 \center{\includegraphics[width=0.75\linewidth]{write-conflict}}
     \caption{Conflicts among the parallel BFS data paths}
 \label{fig:write-conflict}
-\vspace{-1em}
+\vspace{-0.5em}
 \end{figure}
 
-
-\subsection{High-level optimizations}
-Targeting at the irregularity in BFS, we proposed a set of 
-combined high-level optimizations including graph reordering, on-chip buffer partition, 
-data reorganization and hyper BFS pipelining for efficient implementation 
-with OpenCL on Intel Harp-v2. The optimizations will be detailed in the rest of 
-this sub section. 
-
-\subsubsection{Graph reordering}
-As each frontier vertex usually has multiple neighboring 
-vertices or associated edges to be processed, the edge processing 
-is the bottleneck of the BFS supposing there is no memory access stall.
-However, the parallel edge processing is usually constrained by the 
-processing conflicts. To address this problem, we split the outgoing edges i.e. CIA array 
+To address the memory conflict in BFS, we split the outgoing edges i.e. CIA array 
 into batches and edges in each batch can be processed independently.
 With the reordering and batching, the parallelization of the edge processing 
 becomes straightforward and friendly to the high-level compilation tools.
 Meanwhile, the batching enforces a coalesced CIA read and it is also beneficial to 
-the efficiency of the memory accesses. 
+the efficiency of the memory accesses according to the experiments in Section \ref{sec:motivation}. 
 
 This reordering can be performed offline.
 A typical example of the reordering is shown in Figure \ref{fig:graph-reorder}. 
@@ -95,7 +89,7 @@ using Intel OpenCL.
 \vspace{-1em}
 \end{figure}
 
-\subsubsection{On-chip buffer partition}
+\subsection{On-chip buffer partition}
 To avoid frequent main memory access, we utilize bitmap to store 
 the visiting status during BFS. Each vertex needs only one bit 
 storage and the latest FPGAs with dozens of mega bits can accommodate 
@@ -131,48 +125,49 @@ batching approach despite the additional data padding.
 \label{fig:bitmap}
 \end{figure}
 
-\subsubsection{CPU assisted data reorganization}
-As discussed in Section \ref{sec:motivation}, irregular memory access with 
-small data width results in low memory bandwidth utilization. While the 
-attached host processor performs much better on random accesses because 
-of its memory hierarchy, we opt to offload these irregular memory accesses 
-to the host processor and reorganize the data for efficient FPGA processing. 
-Figure \ref{fig:reorg} shows the reorganization details. Instead 
-of going through the frontier reading and RPA reading sequentially for 
-frontier neighbors, we have the host processor to combine both processing steps 
-and gather the scattered RPA into a new slightly different RPA array.
-With the new RPA array, the accelerator can continue with sequential memory 
-accesses in the BFS iteration. This also ensures the whole pipeline stages of BFS to be 
-efficient. While the CPU based data reorganization needs to 
-transfer the data between CPU memory and FPGA host memory 
-when the CPU and FPGA have independent memory, the data transfer 
-may compensate the benefits. 
+%\subsubsection{CPU assisted data reorganization}
+%As discussed in Section \ref{sec:motivation}, irregular memory access with 
+%small data width results in low memory bandwidth utilization. While the 
+%attached host processor performs much better on random accesses because 
+%of its memory hierarchy, we opt to offload these irregular memory accesses 
+%to the host processor and reorganize the data for efficient FPGA processing. 
+%Figure \ref{fig:reorg} shows the reorganization details. Instead 
+%of going through the frontier reading and RPA reading sequentially for 
+%frontier neighbors, we have the host processor to combine both processing steps 
+%and gather the scattered RPA into a new slightly different RPA array.
+%With the new RPA array, the accelerator can continue with sequential memory 
+%accesses in the BFS iteration. This also ensures the whole pipeline stages of BFS to be 
+%efficient. While the CPU based data reorganization needs to 
+%transfer the data between CPU memory and FPGA host memory 
+%when the CPU and FPGA have independent memory, the data transfer 
+%may compensate the benefits. 
+%
+%We can also merge RPA of neighboring vertices such that 
+%the amount of data in the new RPA array can be reduced. This 
+%also helps to reduce the amount of memory read of CIA and thus 
+%is beneficial to the resulting performance.
+%The problem is whether we should sort the frontier vertices.
+%Sorting takes quite some time but it brings more chances of 
+%CIA access optimization.
+%
+%\begin{figure}
+%	\center{\includegraphics[width=0.85\linewidth]{reorg}}
+%    \caption{RPA reorganization}
+%\label{fig:reorg}
+%\vspace{-1em}
+%\end{figure}
 
-We can also merge RPA of neighboring vertices such that 
-the amount of data in the new RPA array can be reduced. This 
-also helps to reduce the amount of memory read of CIA and thus 
-is beneficial to the resulting performance.
-The problem is whether we should sort the frontier vertices.
-Sorting takes quite some time but it brings more chances of 
-CIA access optimization.
-
-\begin{figure}
-	\center{\includegraphics[width=0.85\linewidth]{reorg}}
-    \caption{RPA reorganization}
-\label{fig:reorg}
-\vspace{-1em}
-\end{figure}
-
-\subsubsection{Hyper pipelining}
+\subsection{Hyper pipelining}
 As mentioned in the above sub section, updating the level information of the active 
 BFS frontier vertices are mostly random and time-consuming. While the classical BFS 
 algorithm follows the bulk synchronous processing (BSP) model and the level update
 affects each BFS iteration, BFS performance is influenced. We notice that the level update 
 can actually be postponed as long as the frontier vertices are kept. With this observation, 
-we propose a hype pipelining approach as shown in Figure \ref{fig:hyper}. Basically, 
+we propose a hyper pipelining approach as shown in Figure \ref{fig:hyper}. Basically, 
 we separate the level update from the baseline BFS and overlap it within continuous BFS processing.  
-As the level update is fast compared to the overall BFS, we just put the level update on the 
-host processor in this work.
+As the level update is fast compared to the overall BFS, it can either be processed on CPU or FPGA 
+with negligible influence on the main BFS processing. Currently, we just put it on host processor 
+to ensure that the main BFS accelerator implementation frequency is not affected.
 \begin{figure}
 	\center{\includegraphics[width=0.85\linewidth]{hyper-pipeline}}
 	\caption{Hyper pipelining}
@@ -181,17 +176,18 @@ host processor in this work.
 
 \subsection{Optimized BFS structure}
 With the above optimizations, the baseline BFS structure is revisited  
-as presented in Figure \ref{fig:opt-bfs}. It starts from host CPU and relies on the host 
-to reorganize a sequential RPA array based on the frontier. Meanwhile, 
-the level update of previous BFS can be handled in parallel. When the new RPA array is obtained, 
-FPGA takes over and continues with the pipelined execution. The memory accesses through the 
-pipeline stages on FPGA are all sequential now. In combination with the parallel 
-processing data paths, the regular structures on FPGA are preferable to the high-level design 
-tools for efficient implementation.
+as presented in Figure \ref{fig:opt-bfs}. The frontier inspection can be 
+processed in parallel with the level update of previous BFS processing. 
+The first two pipeline stages remain unchanged as they are not the 
+performance bottleneck. In the third pipeline stage, 
+random vertex status read and update over DDR is replaced with parallel 
+on-chip buffer operations. In the last pipeline stage, level update is offloaded 
+and hidden. Also we adopt the batch write to avoid random frontier vertices 
+write to DDR. The irregular memory access in BFS is reduced dramatically.
+
 \begin{figure}
-	\center{\includegraphics[width=0.85\linewidth]{opt-bfs}}
-    \caption{Optimized BFS pipeline, it has the irregular part placed on the host CPU and 
-	leaves the regular parts on the FPGAs.}
+	\center{\includegraphics[width=0.8\linewidth]{opt-bfs}}
+    \caption{Optimized BFS pipeline}
 \label{fig:opt-bfs}
 \vspace{-1em}
 \end{figure}
