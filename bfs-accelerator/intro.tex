@@ -31,27 +31,26 @@ important concerns from the perspective of the accelerator developers.
 %the FPGA accelerators despite the great performance-energy 
 %efficiency advantages.
 
-The limitation of the conventional HDL design method in combination with the 
-rapid advancements of the high level synthesis (HLS) techniques makes the HLS tools attractive. 
-HLS tools are increasingly adopted in both industry and academia for rapid FPGA 
+Because of the limitation of the conventional HDL design method, 
+high level synthesis (HLS) tools that advance rapidly in recent years
+become attractive. HLS tools are increasingly adopted in both 
+industry and academia for rapid FPGA 
 prototyping and application acceleration \cite{koch2016fpgas, xilinx-sdaccel}. 
 Nevertheless, the current HLS based design tools are mostly used for 
 applications with relatively regular memory access patterns and data paths. 
 It remains challenging for the HLS tools to accelerate BFS with irregular 
 memory access patterns and complex data paths. 
 
-To gain both the performance and high-level convenience, we explore the use of 
-Intel OpenCL for efficient BFS implementation on software programmable FPGAs.
-With the observation that the irregular memory access bandwidth is orders of magnitude 
-lower than that of the sequential memory access on FPGAs, we focus on irregular 
-memory access optimization first. By default, each neighbor vertex of a frontier 
-vertex can be traversed in parallel in BFS.
-However, the number of a frontier vertex's neighbor is only determined at run-time 
-and reading the unaligned neighboring vertices with narrow data width is not efficient 
+First of all, there are considerable irregular memory access including 
+random and short burst memory access in BFS and the irregular memory access 
+bandwidth utilization is orders of magnitude lower than that of the sequential 
+memory access. In addition, the number of a 
+frontier vertex's neighbor is only determined at run-time, so reading the unaligned 
+neighboring vertices with OpenCL typically has narrow data width. The read is not efficient 
 as pointed out in \cite{wang2017multikernel}. Worse still, the neighboring vertices 
-may have their status stored sequentially either in main memory or on-chip buffer.
-The limited parallel memory access capability leads to read/write conflicts 
-frequently and affects the BFS data path parallelization dramatically. 
+may have their visiting status stored randomly either in main memory or on-chip buffer.
+Although they can be processed in parallel, read/write conflicts happen frequently 
+and affects the BFS data path parallelization dramatically. 
 The authors in \cite{ham2016graphicionado} 
 proposed to resolve the parallelization and conflict problem with a 
 crossbar and a set of input/output buffers. However, the method implemented 
@@ -61,21 +60,19 @@ To solve this problem, we reorder each vertex's neighboring vertices i.e.
 edges in compressed sparse row (CSR) graph and split them into 
 batches such that the neighboring vertices 
 in each batch have their status stored in independent memory blocks. 
-With the batching, the data path can be greatly simplified and implemented 
-in parallel efficiently. As the CSR has two-level data indexing and involves 
-random row pointer read, we offload these random memory accesses to the attached 
-host processor with run-time data reorganization and simplify the resulting BFS pipelining.
-In addition, we notice that updating the BFS level information of the 
+With the batching, the random memory access gets coalesced. Meanwhile, 
+the data path can be simplified and implemented in parallel efficiently. 
+We also observe that updating the BFS level information of the 
 active vertices is essentially random memory access and time-consuming 
 in BFS while the updating can be done anytime when the active vertices of BFS 
 are determined. Thus, we can separate the random memory operations from
-the conventional BFS and have them overlapped with the next BFS processing. 
+the conventional BFS and have the update overlapped with the next BFS processing. 
 With the hyper pipelining, the random memory operations can be completely 
 hidden, which is beneficial to the BFS processing.
 
 According to the experiments on a set of big graphs, the proposed OpenCL based BFS 
-accelerator achieves up to 9X performance speedup when compared to the design 
-in Spector benchmark and it is on par with the handcrafted design on similar FPGA boards. 
+accelerator achieves up to 12X performance speedup when compared to the design 
+in Spector benchmark and it is on par with many handcrafted design on similar FPGA boards. 
 The major contributions of this work are summarized as follows.
 \begin{itemize}
     \item As far as we know, this is the first highly optimized and open-sourced 
@@ -93,12 +90,10 @@ The major contributions of this work are summarized as follows.
 The rest part of the paper is organized as follows. In Section \ref{sec:background}, 
 we brief the background of software programmable FPGAs and baseline BFS accelerator. 
 In Section \ref{sec:motivation},  
-we demonstrate the challenge of BFS acceleration using HLS tools with our own experience. 
-In Section \ref{sec:bfs-opt}, we present the overview of the BFS accelerator 
-design using OpenCL and detail the major optimization methods.
+we demonstrate the challenge of BFS acceleration using HLS tools with our own experience.
+In Section \ref{sec:bfs-opt}, we detail the major OpenCL based BFS optimization methods.
 In Section \ref{sec:experiment}, we present comprehensive experiments of the 
 BFS accelerator. In Section \ref{sec:relatedwork}, we present a brief survey of 
 the graph processing accelerators particularly on FPGAs. Finally, we conclude 
 this work in Section \ref{sec:conclusion}.
-
 

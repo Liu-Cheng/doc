@@ -5,14 +5,15 @@ target CNN accelerators. When the computing on the underlying CNN accelerators d
 from that calculated with GPPs due to the approximate arithmetic logic, overclocking or 
 soft errors, the offline trained neural network models executed on the accelerator 
 may deviate from the expected computing result. To evaluate the influence, 
-we take Alexnet as an example and evaluate the offline trained model prediction 
-accuracy on the CNN accelerators with approximate multiplier, 
-overclocking, and soft errors respectively. 
+we take Alexnet as an example to evaluate the prediction 
+accuracy loss when the offline trained model is deployed on the CNN 
+accelerators with approximate multiplier, overclocking, and soft errors respectively. 
 
+In the experiment, we use PipeCNN\cite{pipecnn_2}, an open sourced high-level CNN accelerator, 
+as the baseline design. We have it implemented 
+on KCU1500 FPGA board and run at 210 MHz for AlexNet. 
 
-  As shown in Figure 1, we adopt PipeCNN\cite{pipecnn_2} , an open sourced CNN accelerator, 
-as the baseline accelerator and implement it on Xilinx KCU1500 boards. The accelerator 
-runs at most 210 MHz safely for AlexNet. On a subset of ImageNet, we train AlexNet offline 
+On a subset of ImageNet, we train AlexNet offline 
 and then apply it to the accelerator. The resulting top-5 accuracy is 78.95\%. Then the clock 
 frequency is boosted to 250Mhz and 260MHz respectively, we apply the original model on 
 the overclocked accelerator. The performance gets improved proportionally, but the 
@@ -40,5 +41,12 @@ due to the ‘unstable’ accelerator. But the accuracy loss of the model deploy
 the ‘unstable’ CNN accelerator cannot be ignored according to the experiments. 
 And it is highly demanded to explore the training 
 system and take the accelerators’ behavior into consideration during training for higher prediction accuracy.
+
+\begin{figure}
+	\center{\includegraphics[width=0.75\linewidth]{Loss}}
+    \caption{Prediction accuracy loss of offline trained Alexnet on CNN accelerators with approximate multiplier, overclocking and soft errors respectively.}
+\label{fig:loss}
+\vspace{-1em}
+\end{figure}
 
 
