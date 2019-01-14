@@ -1,29 +1,14 @@
 \section{On-accelerator training framework} \label{sec:framework}
 In contrast to the typical offline training framework on GPPs, we propose an 
 on-accelerator training framework to allow the CNN accelerator's runtime variation 
-to be learned with the application data. It targets a CPU + CNN accelerator platform 
-while we
-to take these accelerators’ dynamic behaviors into consideration during training 
-to tolerate the ‘un-deterministic’ behavior of the ‘unstable’ accelerators. The basic 
-idea is to embed the CNN accelerator into the conventional training framework so that 
-the accelerator is referenced during training. In this work, we choose Caffe as the baseline 
-training framework because it is more natural to integrate the C/C++ based high 
-level synthesis CNN accelerator. Based on Caffe, we further detail the required general 
-interface to make use of the hardware accelerator in training, and introduce 
-the necessary modifications to the CNN accelerator structure. 
+caused by approximate arithmetic logic, overclocking or soft errors 
+to be learned with the application data. Eventually, the on-accelerator 
+trained model can be directly deployed on the target CNN accelerator despite of 
+the undeterministic behavior. Details of the framework will be presented in 
+the rest of this section.
 
-  
-  In contrast to the conventional off-line training on CPUs and GPUs, we propose 
-to take these accelerators’ dynamic behaviors into consideration during training 
-to tolerate the ‘un-deterministic’ behavior of the ‘unstable’ accelerators. The basic 
-idea is to embed the CNN accelerator into the conventional training framework so that 
-the accelerator is referenced during training. In this work, we choose Caffe as the baseline 
-training framework because it is more natural to integrate the C/C++ based high 
-level synthesis CNN accelerator. Based on Caffe, we further detail the required general 
-interface to make use of the hardware accelerator in training, and introduce 
-the necessary modifications to the CNN accelerator structure. 
-\subsection{Proposed Training Framework }
-  Figure 3 illustrates the proposed training framework. It begins with the 
+\subsection{Overall training framework}
+Figure 3 illustrates the proposed training framework. It begins with the 
 off-line training result which can greatly shorten the overall training time. 
 While most of the CNN accelerator adopts fixed point operations, the pre-trained model 
 is therefore expected to be fixed point model. With the pre-trained model, 
@@ -69,7 +54,7 @@ exposed to Caffe for referring to the forward propagation result.
 %\end{figure}
 
 
-\subsection{High Level Accelerator Interface to Caffe }
+\subsection{CNN accelerator abstraction}
   With the growing popularity of deep learning, massive different 
 CNN accelerators have been developed over the years. In order to fit various CNN accelerators 
 within the same training framework, we define a set of high-level interface functions as listed 
@@ -113,7 +98,7 @@ With the OpenCL API, Caffe can refer to the accelerators during training conveni
         \vspace{-1em}
 \end{table*}
 
-\subsection{Modification to the general CNN accelerators}
+\subsection{CNN accelerator modification}
   On top of the interface, the CNN accelerator also needs minor adjustment for the training. 
 The training process requires the feature maps of each CNN layer for backward propagation, 
 while the accelerators are typically optimized for inference and some of the layers’ output 
