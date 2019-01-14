@@ -10,41 +10,34 @@ accuracy loss when the offline trained model is deployed on the CNN
 accelerators with approximate multiplier, overclocking, and soft errors respectively. 
 
 In the experiment, we use PipeCNN\cite{pipecnn_2}, an open sourced high-level CNN accelerator, 
-as the baseline design. We have it implemented 
-on KCU1500 FPGA board and run at 210 MHz for AlexNet. 
+as the baseline design. We have it implemented on KCU1500 FPGA board and run at 210 MHz. 
+On ImageNet, we train AlexNet offline and then apply it to the 8-bit accelerator. 
+The resulting top-1 accuracy and top-5 accuracy of Alexnet on the accelerator 
+is 54.2\% and 78.06\% respectively. On top of the baseline accelerator, we apply 
+approximate multiplier, overclocking and soft error injection respectively. 
 
-On a subset of ImageNet, we train AlexNet offline 
-and then apply it to the accelerator. The resulting top-5 accuracy is 78.95\%. Then the clock 
-frequency is boosted to 250Mhz and 260MHz respectively, we apply the original model on 
-the overclocked accelerator. The performance gets improved proportionally, but the 
-accuracy drops 0.5\% and 4.3\% respectively.
+In the approximate computing case, we implement the dynamic-range approximate 
+multiplier proposed in \cite{Approximate_Multiplier_31}. Basically, the multiplier 
+will keep the non-zero most significant bit as well as the following $k$ bits in the 
+multiplication to simplify the hardware design and improve the energy efficiency.
+In this experiment, we set $k$ to be 2. In the overclocking case, we boost the clock frequency 
+to the extreme clock and the design achieves 260 MHz in the experiment. 
+In the soft error scenario, we inject SEU errors with a uniform distribution model to 
+both the on-chip buffers and the arithmetic units. The injection rate is set to be 
+1E-7 which means one random bit flops every 1E7 operations. Note that the soft error is modeled 
+on top of the PipeCNN C model instead of the real hardware.
 
-\begin{figure}
-        \center{\includegraphics[width=0.85\linewidth]{accuracy_loss}}
-        \caption{Influence of The CNN Accelerator’s Overclocking, Approximate multiplier and Soft error on AlexNet Model Accuracy}
-        \label{fig:retrain}
-%        \vspace{-0.5em}
-\end{figure}
-
-  Soft error has become an un-ignorable problem with the shrinking semiconductor 
-feature size and we further analyze its influence on the CNN accelerator. 
-Currently, we use a uniform distribution model to inject the SEU errors to the 
-multiplication-accumulation operators (MAC) of the accelerator. It causes one-bit 
-flip on random bits of the MAC results. When the error injection rate is set to 
-be 0.0001\% per MAC, applying the off-line trained model to the CNN accelerator 
-leads to around 0.7\% accuracy loss of the top 5 prediction. When error injection 
-rate is set to be 0.001\% per MAC, the prediction accuracy drops around 3\%.
-
-  To gain insight on the precision drop, we also check the output of the AlexNet’s last 
-layer. We compare the data and find that the data deviates from expected result slightly 
-due to the ‘unstable’ accelerator. But the accuracy loss of the model deployed on 
-the ‘unstable’ CNN accelerator cannot be ignored according to the experiments. 
-And it is highly demanded to explore the training 
-system and take the accelerators’ behavior into consideration during training for higher prediction accuracy.
+With the conventional offline training approach, the offline trained Alexnet model 
+will be deployed directly. The model accuracy loss on ImageNet in the three scenarios is 
+measured and presented in Figure \ref{fig:loss}. Top-1 prediction accuracy loss 
+typically is more than 10\% in all the three cases while top-5 accuracy loss is slightly 
+lower. Particularly, we want to emphasize that the prediction accuracy loss is extremely large 
+from the perspective of neural network models, because the prediction accuracy gap of 
+large models and small models is only a few percent according to the statistic in \cite{model-accuracy}.
 
 \begin{figure}
 	\center{\includegraphics[width=0.75\linewidth]{Loss}}
-    \caption{Prediction accuracy loss of offline trained Alexnet on CNN accelerators with approximate multiplier, overclocking and soft errors respectively.}
+    \caption{Prediction accuracy loss of the offline trained Alexnet on CNN accelerators with approximate multiplier, overclocking and soft errors.}
 \label{fig:loss}
 \vspace{-1em}
 \end{figure}
