@@ -1,14 +1,41 @@
 \section{Case Study and Experiments} \label{sec:casestudy}
-  In this section, we mainly explore deploying the CNN models on the ‘unstable’ accelerators 
-using the proposed training framework. In particular, we take an overclocked CNN accelerator 
-and a soft error attacked CNN accelerator as typical ‘unstable’ accelerator examples.
+In this section, we will study the use of the proposed on-accelerator training framework 
+on three typical scenarios including CNN accelerator with approximate multiplier, 
+CNN accelerator with extreme overclocking and CNN accelerator with soft errors, 
+in which the CNN accelerator produces undetermined computing result of neural networks.
+Each application scenario is used as a case study and presented with comprehensive 
+experiments. 
 
-  Four convolution neural networks including LeNet, AlexNet, VGG-16 and VGG-19 are used.
-They are implemented on Xilinx KCU1500 based on 8bit fixed-point PipeCNN using SDAccel 2017.1. 
-The FPGA cards is attached to a desktop computer configured with Intel(R) Core(TM) i7-2600 
-CPU (4core, 3.40GHz) via PCI-e 2.0. The communication bandwidth is 8GB/s.
+The scenarios of approximate computing and overclocking rely on the 8-bit 
+fixed-point PipeCNN \cite{pipecnn_2} implemented on Xilinx KCU1500 board, 
+while soft error scenario is analyzed based on an equivalent C model of PipeCNN.  
+In addition, we use four representative convolution neural networks including LeNet, 
+AlexNet, VGG-16 and VGG-19 as the benchmark for all the experiments. The neural networks 
+are summarized in Table \ref{tab:nn-benchmark}. The benchmark has diverse network sizes and 
+covers the typical neural network layers. Thus, the analysis can be applied to more 
+neural networks.
 
-\subsection{Overclocked CNN accelerator}
+\subsection{CNN accelerator with approximate arithmetic logic}
+Approximate arithmetic logic that promises high-performance 
+and energy-efficient computing has been demonstrated to be 
+beneficial to CNN accelerators and studied intensively 
+in prior work. When the approximate arithmetic logic 
+is used in a CNN accelerator, the computing result of a 
+neural network will be different from the exact computing result.
+This may further lead to prediction accuracy loss when deploying 
+the neural network model directly as demonstrated in 
+Section \ref{sec:motivation}. This scenario fits well with the on-accelerator 
+training framework and is analyzed in this section.
+
+ 
+We choose the dynamic-range approximate multiplier proposed in \cite{} as 
+an approximate computing example and employ the multiplier on the PipeCNN
+accelerator. The approximate multiplier basically reserve the most 
+significant non-zero bits as well as the following $k$ lower bits. 
+
+
+
+\subsection{CNN accelerator with overclocking}
   Clock frequency is almost proportional to the computation capability of the CNN accelerator 
 when its architecture is determined. While timing analysis tools typically recommend a 
 conservative clock frequency in order to avoid the possibility of timing violations, 
