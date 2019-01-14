@@ -1,0 +1,20 @@
+\section{Conclusion} \label{sec:Conclusion}
+In this paper, we propose to take the CNN accelerator’s ‘undeterministic’ behaviors into consideration 
+at training and have the CNN model to learn the accelerator’s behaviors. To that end, we further build 
+an open-sourced training system based on Caffe on a hybrid CPU-FPGA architecture. Then use the training 
+system to deal with an overclocked CNN accelerator and an accelerator with soft errors. According to our 
+experiments, the proposed training can improve the prediction accuracy of four CNN models up to 3.4\% when 
+the CNN accelerator is overclocked on the extreme situation. This method is also beneficial to the CNN 
+accelerators with soft errors. In the case with most soft errors, it improves the prediction accuracy up 
+to 6.8\% and by 3.58\% on average. The disadvantage is the much longer training time due to the frequent 
+data transfer between host memory and device memory. This problem can be resolved when porting the system 
+to closely coupled CPU-FPGA architectures with shared memory.
+
+%\appendix
+%\section{Acknowledgement}
+
+%\begin{acks}
+%  The authors would like to thank Sam Ho for providing the suggestions on
+%  HLS design debugging and optimization as well as the SDAccel usage. 
+
+%\end{acks}
