@@ -162,7 +162,7 @@ This explains the higher prediction accuracy with the retrained model. According
 above experiments, we can conclude that the proposed accelerator aware training can produce 
 more resilient CNN model tolerating errors caused by intensive overclocking. 
 
-\begin{figure}
+\begin{figure*}
         \center
 	\subfloat[]{
 		\label{fig:lenet}
@@ -185,7 +185,7 @@ more resilient CNN model tolerating errors caused by intensive overclocking.
         }
 	\caption{The Accuracy of Four CNN models on accelerators with different overclocking frequency}
         \label{fig:overclock accuracy}
-\end{figure}
+\end{figure*}
 
 To ensure the stability of the overclocking experiment, we 
 also keep measuring the accuracy of the accelerators with extreme 
@@ -244,7 +244,7 @@ more errors than the other three networks. The accuracy remains unchanged until 
 When the error injection rate is low, the CNN model is able to cover almost all the negative influence 
 on the prediction accuracy.
 
-\begin{figure}
+\begin{figure*}
         \center
         \subfloat[]{
                 \label{fig:lenet}
@@ -267,7 +267,7 @@ on the prediction accuracy.
         }
         \caption{The Precision of Four CNN models on accelerators with different error rate}
         \label{fig:softerror accuracy}
-\end{figure}
+\end{figure*}
 
 
   When the error injection rate goes higher, the proposed retraining becomes critical. 
