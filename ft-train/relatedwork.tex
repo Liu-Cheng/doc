@@ -1,4 +1,19 @@
 \section{Related Work} \label{sec:relatedwork}
+\textbf{Approximate computing:}Approximate computing is a promising technique for efficiency optimization[9,10].
+Diverse techniques have been explored in prior work that apply approximate computing approaches to improve NN energy efficiiency.
+Minerva [11]is an example that uses circuitlevel techniques to handle memory error in NN accelerators,
+employing Razor sampling circuits for fault detection and equipping the weight fetch stage with bit masking and word
+masking for flipped weights to mitigate bit-flip errors caused by NTV-based weightstorage.
+Zidong et al. exploit NN’s tolerance for arbitrary approximate multiplier configurations through exhaustive design space exploration[13].
+Recent research proposes more explicit techniques to exploit NN’s intrinsic error tolerance and flexibility
+during training to improve efficiency. For example, both AxNN and ApproxAnn take neuron criticality into
+consideration and perform periodical retraining for self-healing [14, 15]. AxNN proposes the characterization
+of neuron criticality first, then the replacement of non-critical neurons with their approximate versions.
+To ensure targeted accuracy, iterative retraining is used for error recovery. Inspired by AxNN,
+ApproxAnn proposes a more reliable way to quantify neuron criticality and adopts iterative heuristics to gain maximum efficiency.
+However,the approximation is performed on a pre-trained network with hardware-agnostic training, which does not optimize
+for error tolerance, so the target accuracies in their designs are met with relatively conservative approximations.
+
 \textbf{CNN accelerator:} There have been notable efforts made to create hardware accelerators of 
 machine learning algorithms for the sake of higher performance and energy-efficiency \cite{Cnvlutin_25} 
 in the past few years. Among the accelerators, the regular 2D array architecture has become 
