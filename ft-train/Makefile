@@ -1,5 +1,5 @@
 TITLE=ft-train
-FILES=ft-train.tex intro.tex motivation.tex main.tex result.tex 
+FILES=ft-train.tex intro.tex motivation.tex framework.tex casestudy.tex conclusion.tex 
 
 BIBFILES=refs.bib 
 IMGFILES=
