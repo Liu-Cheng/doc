@@ -45,14 +45,13 @@ for forward propagation through PCI-E. Similarly, the output data will be transf
 from FPGA off-chip memory back to host memory after forward propagation. Because of the 
 OpenCL based API wrapper in SDAccel, the CNN accelerator’s interface can be easily 
 exposed to Caffe for referring to the forward propagation result. 
+\begin{equation}
+p_j=\frac{e^{z_j}}{\sum_{i=1}^{K}e^{z_i}}
+\end{equation}
 
-%\begin{figure}
-%        \center{\includegraphics[width=0.85\linewidth]{retrain}}
-%        \caption{Training on Hybrid CPU-FPGA Architecture}
-%        \label{fig:framework}
-%        \vspace{-1em}
-%\end{figure}
-
+\begin{equation}
+loss(y,p)=-\sum_{i=1}^{K}y_i*log(p_i)
+\end{equation}
 
 \subsection{CNN accelerator abstraction}
   With the growing popularity of deep learning, massive different 
