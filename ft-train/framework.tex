@@ -46,12 +46,20 @@ from FPGA off-chip memory back to host memory after forward propagation. Because
 OpenCL based API wrapper in SDAccel, the CNN accelerator’s interface can be easily 
 exposed to Caffe for referring to the forward propagation result. 
 \begin{equation}
-p_j=\frac{e^{z_j}}{\sum_{i=1}^{K}e^{z_i}}
+p_j=\frac{e^{{z_j}/t}}{\sum_{i=1}^{K}e^{{z_i}/t}}
+\end{equation}
+
+In \cite{distillation_39}, the logits of the teacher network are divided by a temperature factor t. 
+Using a higher value for t produces a softer probability distribution when taking the Softmax of the logits
+
+\begin{equation}
+L(y,p)=-\sum_{i=1}^{K}y_i*log(p_i)
 \end{equation}
 
 \begin{equation}
-loss(y,p)=-\sum_{i=1}^{K}y_i*log(p_i)
+L=\alpha*L(y,p^S)+\beta*L(p^T,p^S)
 \end{equation}
+
 
 \subsection{CNN accelerator abstraction}
   With the growing popularity of deep learning, massive different 
