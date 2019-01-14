@@ -2,8 +2,9 @@
 In this section, we measure the overall performance of the optimized 
 OpenCL based BFS accelerator on Intel Xeon-FPGA, a closely coupled CPU-FPGA
 architecture, over a set of representative graphs. Then we compare the 
-resulting accelerator to the reference design in an HLS benchmark Spector 
-as well as prior hand crafted design. Finally, we also analyze the 
+resulting accelerator to the reference design in Spector \cite{gautier2016spector} 
+which is an OpenCL benchmark suite for FPGAs with sophisticated HLS 
+based design space exploration. Finally, we also analyze the 
 graph reordering and batching comprehensively.
 
 \subsection{Experiment Setup}
@@ -61,7 +62,8 @@ Therefore, this also leads to relatively lower MTEPS in the experiments.
     \toprule
       Benchmark & YT & LJ & Pokec & R-MAT\uppercase\expandafter{\romannumeral1} & R-MAT\uppercase\expandafter{\romannumeral2} \\
     \midrule
-      MTEPS & 79.4 & 475.7 & 557.8 & 787.7 & 934.2 \\
+	OBFS(MTEPS) & 79.4 & 475.7 & 557.8 & 787.7 & 934.2 \\
+	Spector(MTEPS) & 12.01 & - & - & 64 & -\\
       Speedup & 6.6X & - & - & 12.3X & - \\
   \bottomrule
 \end{tabular}
@@ -88,15 +90,21 @@ this work to prior published BFS accelerators on FPGAs. As the platforms
 and graph benchmark used in these work are mostly different, it is 
 difficult to make a completely fair end-to-end comparison. 
 A summary of prior FPGA based BFS acceleration work is presented in Table \ref{tab:compare}. 
-It can be found that the OpenCL based BFS accelerator proposed in this work achieves 
-comparable performance to many prior hand crafted design and even outperforms some of them 
-particularly on R-MAT graphs. When compared to design on high-end 
+The last column of the table shows the performance measurement and hardware design method. 
+'S' indicates that the performance is obtained by simulation. 
+'M' means that the performance is obtained by measuring execution on hardware. 
+'RTL' means the accelerator is implemented with RTL while 'OCL' means the 
+accelerator is designed with OpenCL.
+
+Most of the prior work used RTL for the graph processing accelerator design
+despite the increasing popularity of the HLS design tools.
+In this work, we demonstrate that the OpenCL based BFS accelerator can achieve
+comparable performance to many prior hand crafted design and even 
+outperforms some of them particularly on R-MAT graphs. When compared to design on high-end 
 FPGA computing system with multiple FPGAs like Convey HC2\cite{attia2014cygraph}, 
 the overall performance in this work is still lower, 
 but the performance per FPGA is better. In addition, the OpenCL based design 
 gains the software-like features and can be easily ported to similar FPGA boards.
-Note that 'S' in the last column of the table indicates that the performance is obtained by simulation. 
-Accordingly, 'M' means that the performance is measured based on hardware implementation. 
 
 \begin{table}
   \caption{FPGA based BFS accelerator performance comparison}
@@ -107,22 +115,24 @@ Accordingly, 'M' means that the performance is measured based on hardware implem
     \toprule
 	Year & System & Platform & MTEPS/FPGA & Method\\
     \midrule
-	2010 & Qingbo's work \cite{wang2010message} & Virtex-5 & 160-790 & S \\
-	2012 & Betkaouis'work\cite{betkaoui2012reconfigurable} & Convey HC-2 & 62.5-650 & M \\
-	2014 & CyGraph\cite{attia2014cygraph} & Convey HC-2    & 420-550 & M \\
-	2015 & Umuroglu's work\cite{umuroglu2015hybrid} & Zedboard & 90-255 & M \\
-	2016 & FPGP\cite{dai2016fpgp} & VC707 & 122 & M\\
-	2016 & GraVF\cite{engelhardt2016gravf} & Virtex-7 & 3500 & M \\
-	2017 & ForeGraph\cite{Dai2017foregraph} & VCU110 & 364-1069 & S\\
-	2017 & Jialiang's work\cite{zhang2017boosting} & AC-510 & 130-166 & M/S\\
-	2017 & Shijie's work \cite{zhou2017accelerating} & Harp-v1 & 330 - 670 & M\\
-	2018 & Jialiang's work \cite{zhang2018degree} & AC-510 & 400-1526 & M/S \\
-	2018 & Soroosh's work \cite{khoram2018accelerating} & AC-510 & 100-650 & M \\
-	2018 & Pengcheng's work\cite{yao2018efficient} & Ultrascale+ & 1500-3500 & S \\
-	2018 & GraFBoot\cite{jun2018grafboost} & VC707+Flash & 57-75 & M \\
+	2010 & Qingbo's work \cite{wang2010message} & Virtex-5 & 160-790 & S\&RTL \\
+	2012 & Betkaouis'work\cite{betkaoui2012reconfigurable} & Convey HC-2 & 62.5-650 & M\&RTL \\
+	2014 & CyGraph\cite{attia2014cygraph} & Convey HC-2    & 420-550 & M\&RTL \\
+	2015 & Umuroglu's work\cite{umuroglu2015hybrid} & Zedboard & 90-255 & M\&RTL\\
+	2016 & FPGP\cite{dai2016fpgp} & VC707 & 122 & M\&RTL\\
+	2016 & Spector \cite{gautier2016spector} & Harp-v2 & 12-64 & M\&OCL \\
+	2017 & ForeGraph\cite{Dai2017foregraph} & VCU110 & 364-1069 & S\&RTL\\
+	2017 & Jialiang's work\cite{zhang2017boosting} & AC-510 & 130-166 & M/S\&RTL \\
+	2017 & Shijie's work \cite{zhou2017accelerating} & Harp-v1 & 330 - 670 & M\&RTL\\
+	2018 & Jialiang's work \cite{zhang2018degree} & AC-510 & 400-1526 & M/S\&RTL \\
+	2018 & Soroosh's work \cite{khoram2018accelerating} & AC-510 & 100-650 & M\&RTL\\
+	2018 & Pengcheng's work\cite{yao2018efficient} & Ultrascale+ & 1500-3500 & S\&RTL \\
+	2018 & GraFBoot\cite{jun2018grafboost} & VC707+Flash & 57-75 & M\&RTL\\
 	\midrule
-	2019 & OBFS (R-MAT Graph) & Harpv2 &  861 & M\\
-	2019 & OBFS (Social Network) & Harpv2 & 371 & M\\
+	%2019 & baseline (R-MAT Graph) & Harp-v2 & 58.3 & M\&OCL \\
+	%2019 & baseline (Social Network) & Harp-v2 & 44.2 & M\&OCL \\
+	2019 & OBFS (R-MAT Graph) & Harp-v2 &  861 & M\&OCL \\
+	2019 & OBFS (Social Network) & Harp-v2 & 371 & M\&OCL\\
   \bottomrule
 \end{tabular}
 \vspace{-1em}
@@ -180,13 +190,13 @@ performance improvement.
 \subsection{Batch trade-offs}
 Graph reordering and batching contributes most to the BFS performance 
 improvement and will be analyzed in this subsection. 
-Figure \ref{fig:batch-perf} shows the BFS performance of different batch size.
+Figure \ref{fig:batch-perf} shows the BFS performance of different batch sizes.
 In general, larger batch size induces higher performance and batch 16 
 achieves the best performance on all the benchmark graphs. BFS performance 
 starts to drop when the batch size is larger.  
 \begin{figure}
 	\center{\includegraphics[width=0.8\linewidth]{batch-perf}}
-    \caption{BFS performance of different batch size}
+    \caption{BFS performance of different batch sizes}
 \label{fig:batch-perf}
 \vspace{-1em}
 \end{figure}
@@ -205,7 +215,7 @@ speedup with larger batch size and drops dramatically at batch 32.
 
 \begin{figure}
 	\center{\includegraphics[width=0.85\linewidth]{batch-overhead}}
-    \caption{Relative memory overhead of different batch size}
+    \caption{Relative memory overhead of different batch sizes}
 \label{fig:batch-overhead}
 \vspace{-1em}
 \end{figure}
@@ -259,7 +269,7 @@ such as YT.
 %reordering and batching.
 
 \subsection{Hardware implementation}
-\subsubsection{Resource overhead}
+\subsubsection{Resource consumption}
 The FPGA resource consumption and the implementation frequency of 
 the proposed accelerator with different configurations 
 is listed in Table \ref{tab:resource}. 

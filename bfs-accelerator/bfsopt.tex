@@ -67,7 +67,7 @@ This reordering can be performed offline.
 A typical example of the reordering is shown in Figure \ref{fig:graph-reorder}. 
 The original CSR graph is placed in the top part of the figure. 
 To divide the edges into batches for parallel processing, we reorder the edges i.e. CIA 
-of each vertex. In the example, batch is set to be 2. For Vertex 0, 
+of each vertex. In this example, batch is set to be 2. For Vertex 0, 
 it has as 2 neighbors i.e. Vertex 3 and 7 according to the RPA. 
 We expect the vertices in each batch to be divided into distinct memory 
 banks either in DDR banks or on-chip buffer banks so that there is no 
@@ -102,7 +102,7 @@ be evenly distributed across the bitmap buffer banks. The visiting status of
 vertex $id$ will be put into the $i$th memory bank where $i = mod(id, W)$.
 As the vertex status read/write is mostly random and parallel in BFS, 
 accessing the status via the on-chip buffer banks guarantees determined 
-and low latency, which are much  more efficient compared to the DDR 
+and low latency. It is much more efficient compared to the DDR 
 accessing. 
 
 Moreover, the parallel bitmap buffer banks further facilitate 

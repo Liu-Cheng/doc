@@ -4,7 +4,7 @@ the widely used BFS algorithm and the baseline pipelined BFS structure
 as the background.
 
 \subsection{High level FPGA design tools}
-Despite the relatively good performance and lower resource overhead, 
+Despite the relatively good performance, 
 the HDL based design typically results in low design productivity, large reuse, 
 portability and maintenance cost as well as ease of use challenge. 
 To address this problem, the FPGA vendors have started 
@@ -48,7 +48,7 @@ vertex and a column index array (CIA) which is essentially the incoming/outgoing
 neighboring vertex indices, the second stage must go through the RPA read and 
 CIA read sequentially. When the frontier neighbors are 
 drained from memory, the second stage then forwards them to the third stage.
-In the third stage, the each neighboring vertex will be checked if it is 
+In the third stage, each neighboring vertex will be checked if it is 
 already visited in previous BFS iterations. If the vertex is not visited, 
 it will be considered as frontier in next BFS iteration. The corresponding 
 vertex status will be set and the vertex index will be sent to the last stage.

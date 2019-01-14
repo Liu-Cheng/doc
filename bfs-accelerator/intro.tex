@@ -64,7 +64,7 @@ With the batching, the random memory access gets coalesced. Meanwhile,
 the data path can be simplified and implemented in parallel efficiently. 
 We also observe that updating the BFS level information of the 
 active vertices is essentially random memory access and time-consuming 
-in BFS while the updating can be done anytime when the active vertices of BFS 
+in BFS, while the updating can be done anytime when the active vertices of BFS 
 are determined. Thus, we can separate the random memory operations from
 the conventional BFS and have the update overlapped with the next BFS processing. 
 With the hyper pipelining, the random memory operations can be completely 
@@ -75,9 +75,10 @@ accelerator achieves up to 12X performance speedup when compared to the design
 in Spector benchmark and it is on par with many handcrafted design on similar FPGA boards. 
 The major contributions of this work are summarized as follows.
 \begin{itemize}
-    \item As far as we know, this is the first highly optimized and open-sourced 
+    \item As far as we know, this is the first highly optimized  
 		OpenCL based BFS accelerator on FPGAs targeting portability and ease of 
-		use on top of performance. 
+		use on top of performance. We will make it open-sourced. The URL is 
+		omitted due to the double-blinded review. 
     \item We proposed a set of methods to optimize the irregular
 		memory accesses and data path parallelization of BFS using OpenCL. 
 		This may shed light on similar irregular application acceleration on 
