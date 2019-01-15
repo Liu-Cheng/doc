@@ -7,6 +7,14 @@ the obtained model can be deployed despite the accelerator's
 undeterministic behavior. Details of the framework will be presented in 
 the rest of this section.
 
+\begin{figure*}
+        \center{\includegraphics[width=0.85\linewidth]{retrain}}
+        \caption{On-accelerator training framework with knowledge distilling}
+        \label{fig:retrain}
+%        \vspace{-0.5em}
+\end{figure*}
+
+
 \subsection{Overall training framework}
 The on-accelerator training is essentially to have the neural 
 network models to tolerate the accelerators' dynamic variation. 
@@ -22,16 +30,9 @@ model can be taken as a teacher model and used to guide the training of the
 student model with lower precision. After the training, the student model 
 can perform much better despite the accelerators' computing variation.
 
-\begin{figure*}
-        \center{\includegraphics[width=0.85\linewidth]{retrain}}
-        \caption{On-accelerator training framework with knowledge distilling}
-        \label{fig:retrain}
-%        \vspace{-0.5em}
-\end{figure*}
-
 
 With the knowledge distilling strategy, we develop an on-accelerator training 
-framework as illustrated in Figure 3. The framework roughly consists of three parts
+framework as illustrated in Figure \ref{fig:retrain}. The framework roughly consists of three parts
 including forward propagation, knowledge distilling and backward propagation. 
 Both the teacher network and the student network will go through the 
 forward propagation. The computing results i.e. $z^T$ and $z^S$ in 
@@ -81,41 +82,19 @@ the small change in the gradient can be accumulated \cite{Matthieu2014_8}.
 
 \subsection{CNN accelerator abstraction}
 As illustrated in the above section, the forward propagation of the 
-student network will be executed on the CNN accelerator FPGAs while 
+student network will be executed on the CNN accelerator while 
 the rest part runs on GPPs. Essentially, the framework targets at a 
-heterogeneous computing architecture and there are frequent 
-communication between the accelerator and the GPPs. 
-With the growing popularity of deep learning, massive different 
-CNN accelerators have been developed. 
+heterogeneous computing architecture and frequent 
+communication between the accelerator and the GPPs is expected. 
 In order to fit various CNN accelerators within the same training framework,
-we abstract the CNN accelerators.
-
-To that end, we define a set of high-level interface functions
-centering the data communication between the forward propagation part 
-and the rest of the training framework. The interface functions are listed 
-in Table 1 and 7 functions are included. Function 1 is used to launch the CNN accelerator from host. 
-Function 2 and 3 are used to transfer data between the host memory and the device memory during 
-the training. As the forward propagation on the CNN accelerators is usually fixed point 
-and the back propagation on GPPs is floating point, data type converting between fixed point 
-and floating point is required. Function 4 and 5 can be used for this purpose. 
-Function 1 to 5 are required for all the accelerators. 
-Function 6 and 7 are only used for accelerators that compute on reorganized data\cite{pipecnn_2,deepburing_12}. 
-With the interface functions, general CNN accelerators can be conveniently 
-referenced and used in the proposed on-accelerator training framework. 
-
-
-In this work, we have the CNN accelerator implemented on Xilinx FPGAs as a case study. 
-The accelerator can either be realized with high-level synthesis tools (HLS) or 
-hardware description languages (HDL). With Xilinx SDAccel, we can wrap both 
-styles of accelerators with OpenCL API. Given the OpenCL API,  
-the proposed interface functions can be implemented and referenced conveniently. 
-We choose Caffe, a C++ based deep learning framework, to construct the on-accelerator training framework.  
+we abstract the CNN accelerators with a high-level interface
+which makes the accelerators transparent to the training framework.
 
 \begin{table*}
         \centering
         \vspace{-0.3em}
         \caption{High-level interface to integrate general CNN accelerators with Caffe}
-        \label{tab:graph}
+        \label{tab:api}
         \vspace{-0.3em}
         \begin{tabular}{c|l|l}
                 \toprule
@@ -138,35 +117,61 @@ We choose Caffe, a C++ based deep learning framework, to construct the on-accele
         \end{tabular}
         \vspace{-1em}
 \end{table*}
-In this work, we have the CNN accelerator implemented on FPGAs.
-Figure 4 depicts the implementation of the training framework on a hybrid 
-CPU-FPGA architecture. In this work, we use Xilinx KCU1500 as the FPGA board 
-and put it on a standard desktop computer. CPU is the controller and it reconfigures 
-the accelerator for a specific CNN structure. In each training iteration, CPU launches 
-the CNN accelerator to perform the forward propagation from bottom layer to top layer. 
-CPU does the backward propagation from top layer to bottom layer. Weights and the image 
-data are initially stored in host memory. It will be transferred to FPGA offchip memory 
-for forward propagation through PCI-E. Similarly, the output data will be transferred 
-from FPGA off-chip memory back to host memory after forward propagation. Because of the 
-OpenCL based API wrapper in SDAccel, the CNN accelerator’s interface can be easily 
-exposed to Caffe for referring to the forward propagation result. 
+
+Centering the data communication between the forward propagation 
+and the rest of the training framework, the proposed interface 
+consists of 7 functions as listed in Table \ref{tab:api}. 
+Function 1 is used to launch the CNN accelerator from host. 
+Function 2 and 3 are used to transfer data between the host memory and the device memory during 
+the training. As the forward propagation on the CNN accelerators is usually fixed point 
+and the back propagation on GPPs is floating point, data type converting between fixed point 
+and floating point is required. Function 4 and 5 can be used for this purpose. 
+Function 1 to 5 are required for all the accelerators. 
+Function 6 and 7 are only used for accelerators that compute on reorganized data\cite{pipecnn_2,deepburing_12}. 
+With the interface functions, general CNN accelerators can be conveniently 
+referenced and used in the proposed on-accelerator training framework. 
+
+In this work, we have the CNN accelerator implemented on Xilinx FPGAs as a case study. 
+With Xilinx SDAccel, we can wrap the accelerators with OpenCL API while the accelerators 
+can either be developed with OpenCL, HLS or RTL. Meanwhile, we use Caffe, a C++ based 
+deep learning framework, to construct the on-accelerator training framework. Therefore, 
+the OpenCL based high-level interface can be referenced conveniently in Caffe. 
+
+%In this work, we have the CNN accelerator implemented on FPGAs.
+%Figure 4 depicts the implementation of the training framework on a hybrid 
+%CPU-FPGA architecture. In this work, we use Xilinx KCU1500 as the FPGA board 
+%and put it on a standard desktop computer. CPU is the controller and it reconfigures 
+%the accelerator for a specific CNN structure. In each training iteration, CPU launches 
+%the CNN accelerator to perform the forward propagation from bottom layer to top layer. 
+%CPU does the backward propagation from top layer to bottom layer. Weights and the image 
+%data are initially stored in host memory. It will be transferred to FPGA offchip memory 
+%for forward propagation through PCI-E. Similarly, the output data will be transferred 
+%from FPGA off-chip memory back to host memory after forward propagation. Because of the 
+%OpenCL based API wrapper in SDAccel, the CNN accelerator’s interface can be easily 
+%exposed to Caffe for referring to the forward propagation result. 
 
 
 \subsection{CNN accelerator modification}
-  On top of the interface, the CNN accelerator also needs minor adjustment for the training. 
-The training process requires the feature maps of each CNN layer for backward propagation, 
-while the accelerators are typically optimized for inference and some of the layers’ output 
-are fully buffered in on-chip memory for less memory access overhead. In this case, 
-the accelerator should make intermediate output write back optional as shown in Figure 5. 
-When the accelerator is used in training, the output will be transferred to memory. 
-When it is used for inference, it can also turn off the write back data path for better performance. 
-It is trivial to modify the CNN accelerators and the hardware overhead is negligible.
+On top of the high-level interface, the CNN accelerator also needs 
+minor adjustments to enable the on-accelerator training. 
+Typically, the training requires the feature map of each neural 
+network layer for backward propagation. However, many of the accelerators 
+are intensively optimized for inference only and some of the layers’ output 
+are fully buffered in on-chip memory to reduce the external memory access. 
+In this case, the accelerator should provide an optional data path such that 
+intermediate output data can be written to external memory at request.
+As shown in Figure \ref{fig:change_of_accelerator}, the output of each layer 
+will be transferred to memory using the added optional data path 
+when the accelerator is used for training. The write back data path 
+can be switched off when the accelerator is used for inference. 
+It is trivial to modify the CNN accelerators and the hardware
+resource consumption is negligible.
 
 \begin{figure}
         \center{\includegraphics[width=0.85\linewidth]{change_of_accelerator}}
         \caption{Modification of the CNN accelerator data path. It essentially
-ensures each CNN layer to have an optional data path to off-chip memory so that it
-can be used for training as necessary.}
+ensures the feature map of each neural network layer to have an optional data path 
+to external memory for back propagation in training.}
         \label{fig:change_of_accelerator}
         \vspace{-1em}
 \end{figure}

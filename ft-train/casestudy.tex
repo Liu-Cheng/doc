@@ -1,24 +1,23 @@
 \section{Case Study and Experiments} \label{sec:casestudy}
 In this section, we will study the use of the proposed on-accelerator training framework 
 on three typical scenarios including CNN accelerator with approximate multiplier, 
-CNN accelerator with extreme overclocking and CNN accelerator with soft errors, 
+CNN accelerator with overclocking and CNN accelerator with soft errors, 
 in which the CNN accelerator produces undetermined computing result of neural networks.
-Each application scenario is used as a case study and presented with comprehensive 
-experiments. 
+Each application scenario is analyzed with comprehensive experiments. 
 
-The scenarios of approximate computing and overclocking rely on the 8-bit 
-fixed-point PipeCNN \cite{pipecnn_2} implemented on Xilinx KCU1500 board, 
-while soft error scenario is analyzed based on an equivalent C model of PipeCNN.  
-In addition, we use four representative convolution neural networks including LeNet, 
-AlexNet, VGG-16 and VGG-19 as the benchmark for all the experiments. The neural networks 
-are summarized in Table \ref{tab:CNN-table}. The benchmark has diverse network sizes and 
-covers the typical neural network layers. Thus, the analysis can be applied to more 
-neural networks.
+For scenarios of approximate computing and overclocking, we experimented on the 8-bit 
+fixed-point PipeCNN \cite{pipecnn_2} on Xilinx KCU1500 board. For the case of soft error, 
+we analyzed with an equivalent C model of PipeCNN due to the lack of 
+HLS based soft error injection tools. To evaluate the training, 
+we take four representative convolution neural networks including LeNet, 
+AlexNet, VGG-16 and VGG-19 as the benchmark in the experiments. The neural network 
+benchmark is summarized in Table \ref{tab:CNN-table}. It covers networks with 
+diverse sizes and the analysis can be applied to more neural networks.
 
 \begin{table}
         \centering
         \vspace{-0.3em}
-        \caption{Four popular CNN information}
+        \caption{Neural network benchmark}
         \label{tab:CNN-table}
         \vspace{-0.3em}
         \begin{tabular}{c|c|c|c}
