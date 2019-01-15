@@ -4,6 +4,8 @@ on three typical scenarios including CNN accelerator with approximate multiplier
 CNN accelerator with overclocking and CNN accelerator with soft errors, 
 in which the CNN accelerator produces undetermined computing result of neural networks.
 Each application scenario is analyzed with comprehensive experiments. 
+Finally, we further present some general on-accelerator training experiment to 
+exhibit the training time and optimization.
 
 For scenarios of approximate computing and overclocking, we experimented on the 8-bit 
 fixed-point PipeCNN \cite{pipecnn_2} on Xilinx KCU1500 board. For the case of soft error, 
@@ -38,35 +40,46 @@ diverse sizes and the analysis can be applied to more neural networks.
 
 
 \subsection{CNN accelerator with approximate arithmetic logic}
-Approximate arithmetic logic that promises high-performance 
-and energy-efficient computing has been demonstrated to be 
-beneficial to CNN accelerators and studied intensively 
-in prior work. When the approximate arithmetic logic 
-is used in a CNN accelerator, the computing result of a 
-neural network will be different from the exact computing result.
-This may further lead to prediction accuracy loss when deploying 
-the neural network model directly as demonstrated in 
-Section \ref{sec:motivation}. This scenario fits well with the on-accelerator 
-training framework and is analyzed in this section.
+Approximate arithmetic logic that promises high-performance and energy-efficient computing has 
+been studied intensively in prior work. When the approximate arithmetic logic 
+is used in a CNN accelerator, the computing result of a neural network will be different 
+from the exact computing result and lead to prediction accuracy loss when deploying 
+the neural network model directly as shown in Section \ref{sec:motivation}. 
+An intuitive approach is to train with software simulation, but some of the approximate arithmetic 
+operators are rather complex when simulated with software. Particularly, some of the 
+approximate arithmetic unit relies on underlying semiconductor devices which 
+can hardly be simulated with software. In this cases, the proposed on-accelerator 
+training framework fits well with this situation. 
 
-We choose the dynamic-range approximate multiplier proposed in \cite{Approximate_Multiplier_31} as 
-an approximate computing example and employ the multiplier on the PipeCNN
-accelerator. The approximate multiplier basically reserve the most 
-significant non-zero bits as well as the following $k$ lower bits. 
+In this experiment, we mainly focus on the prediction accuracy loss and 
+take the dynamic-range approximate multiplier proposed in \cite{Approximate_Multiplier_31} as 
+an approximate computing example. The multiplier is implemented on top of the PipeCNN
+accelerator. Basically, it reserves the most significant non-zero bits as well as the 
+following $k$ lower bits. Larger $k$ will keep more valid digits and the multiplier 
+is more accurate. On the contrast, smaller $k$ leads to lower precision but 
+more efficient computing. 
 
+Figure \ref{fig:k2-approximate-multiplier} shows the 
+neural network prediction accuracy when running on the approximate CNN 
+accelerator with $k=2$. According to the accuracy comparison of the models with 
+offline training and on-accelerator training, it can be find that the 
+top1 and top5 prediction accuracy improvement is up to xx and xx respectively. 
+When $k=3$, the offline trained model accuracy is much higher due to the improved 
+computing precision leaving little optimization space. The average prediction 
+accuracy is still improved, though the improvement is less significant.
 \begin{figure}
         \center
         \subfloat[top1]{
                 \label{fig:appro-k2-top1}
-                \includegraphics[width=0.6\linewidth]{appro-k2-top1}
+                \includegraphics[width=0.65\linewidth]{appro-k2-top1}
         }
         \qquad
         \subfloat[top5]{
                 \label{fig:appro-k2-top5}
-                \includegraphics[width=0.6\linewidth]{appro-k2-top5}
+                \includegraphics[width=0.65\linewidth]{appro-k2-top5}
         }
-        \caption{The Accuracy of Four CNN models on accelerators with approximate multiplier(k=2)}
-        \label{fig:approximate mltiplier}
+        \caption{The prediction accuracy of the neural network on accelerator with approximate multiplier(k=2)}
+        \label{fig:k2-approximate-multiplier}
 \end{figure}
 
 \begin{figure}
@@ -81,19 +94,20 @@ significant non-zero bits as well as the following $k$ lower bits.
                 \includegraphics[width=0.6\linewidth]{appro-k3-top5}
         }
         \caption{The Accuracy of Four CNN models on accelerators with approximate multiplier(k=3)}
-        \label{fig:approximate mltiplier}
+        \label{fig:k3-approximate-mltiplier}
 \end{figure}
 
 \subsection{CNN accelerator with overclocking}
-  Clock frequency is almost proportional to the computation capability of the CNN accelerator 
-when its architecture is determined. While timing analysis tools typically recommend a 
-conservative clock frequency in order to avoid the possibility of timing violations, 
-FPGA designs can be safely overclocked by a significant ratio with respect to the maximum 
-operating frequency estimated by the FPGA’s tool flow. This gives the advantage of increasing 
-the implementation throughput without any design-level modifications. Beyond this safe overclocking 
-margin, some critical paths in the design starts to fail and the output error rate increases 
-exponentially with respect to the increase in the clock frequency. To tolerate the computing 
-error and gain the performance benefit, we thus opt to use the proposed training framework.  
+Clock frequency is almost proportional to the performance of the CNN accelerator 
+especially for large convolution operation which is typically computing bound. 
+However, the circuit design tools typically adopt conservative design options 
+in order to avoid the timing violations in the worst case. Aggressive design options
+such as overclocking enable higher clock frequency and performance, but 
+timing errors may happen and affect the application. When we apply the overclocking 
+to the CNN accelerators, the computing error can be tolerated with the proposed 
+on-acceleration training. Therefore, the design trade-off gets shifted. We may 
+obtain the performance improvement without much precision penalty.
+
 
   With PipeCNN, we implemented four CNN including LeNet, AlexNet, VGG-16 and VGG-19 on KCU1500. 
 As PipeCNN provides customized implementation for different CNN, the baseline frequency of the implementations 
