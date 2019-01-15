@@ -101,20 +101,27 @@ accuracy is still improved, though the improvement is less significant.
 Clock frequency is almost proportional to the performance of the CNN accelerator 
 especially for large convolution operation which is typically computing bound. 
 However, the circuit design tools typically adopt conservative design options 
-in order to avoid the timing violations in the worst case. Aggressive design options
-such as overclocking enable higher clock frequency and performance, but 
-timing errors may happen and affect the application. When we apply the overclocking 
-to the CNN accelerators, the computing error can be tolerated with the proposed 
-on-acceleration training. Therefore, the design trade-off gets shifted. We may 
-obtain the performance improvement without much precision penalty.
+in order to avoid the timing violations in the worst case. Overclocking enables 
+higher clock frequency and performance, but timing errors may happen and affect 
+the inference accuracy. In this case, we can also apply the on-accelerator 
+training to have the computing errors tolerated by the models without 
+redesigning the CNN accelerator.
 
+With PipeCNN, we implemented the benchmark neural networks on Xilinx KCU1500. 
+LeNet and AlexNet use the same hardware implementation 
+while VGG-16 and VGG-19 share the same hardware implementation. 
+The two implementations work at 210 MHz and 190 MHz respectively.
+With overclocking, they can be boosted to 210 MHz - 260 MHz and 
+190 MHz - 240 MHz respectively. Given different overclocking frequency, 
+the accelerator produces different computing results due to the variable
+timing errors. It is expected that more aggressive overclocking incur 
+more computing errors and precision loss. To gain both the higher clock 
+frequency and less prediction loss, we can also adopt the proposed on-accelerator 
+training framework for overclocked CNN accelerator. 
 
-  With PipeCNN, we implemented four CNN including LeNet, AlexNet, VGG-16 and VGG-19 on KCU1500. 
-As PipeCNN provides customized implementation for different CNN, the baseline frequency of the implementations 
-is different. The frequency of the four implementations is 210Mhz, 210MHz, 190MHz and 190MHz respectively. 
-Then we boost the clock frequency gradually and train for the ‘unstable’ CNN accelerator implementations on 
-ImageNet data set.  The prediction accuracy of the resulting implementations is presented in Figure 6. In general, 
-overclocking can enhance the clock frequency by 19\% to 26\%. While applying the off-line trained model 
+The prediction accuracy comparison on different overclocking is presented in Figure \ref{fig:overclock-accuracy}. 
+It shows that the overclocking can enhance the clock frequency by 19\% to 26\%. 
+While applying the off-line trained model 
 to the accelerator with overclocking, the top-5 accuracy degrades by up to 4.3\%. When the proposed training 
 framework is used, the resulting retrained model can be much better especially near the overclocking limit.
 
@@ -153,8 +160,8 @@ more resilient CNN model tolerating errors caused by intensive overclocking.
                 \label{fig:vgg19}
                 \includegraphics[width=0.6\linewidth]{vgg19-overclock}
         }
-	\caption{The Accuracy of Four CNN models on accelerators with different overclocking frequency}
-        \label{fig:overclock accuracy}
+	\caption{The prediction accuracy of the benchmark neural networks on accelerators with different overclocking}
+        \label{fig:overclock-accuracy}
 \end{figure}
 
 To ensure the stability of the overclocking experiment, we 
