@@ -31,9 +31,11 @@ With the conventional offline training approach, the offline trained Alexnet mod
 will be deployed directly. The model accuracy loss on ImageNet in the three scenarios is 
 measured and presented in Figure \ref{fig:loss}. Top-1 prediction accuracy loss 
 typically is more than 10\% in all the three cases while top-5 accuracy loss is slightly 
-lower. Particularly, we want to emphasize that the prediction accuracy loss is extremely large 
-from the perspective of neural network models, because the prediction accuracy gap of 
-large models and small models is only a few percent according to the statistic in \cite{model-accuracy}.
+lower. In addition, we want to emphasize that the prediction accuracy loss is extremely large 
+from the perspective of neural network models. 
+As shown in Figure \ref{fig:model-accuracy}, the prediction accuracy gap between 
+large models and small models is only a few percent according to the 
+statistic in \cite{model-accuracy}.  
 
 \begin{figure}
 	\center{\includegraphics[width=0.75\linewidth]{accuracy_loss}}
@@ -43,8 +45,8 @@ large models and small models is only a few percent according to the statistic i
 \end{figure}
 
 \begin{figure}
-        \center{\includegraphics[width=0.75\linewidth]{model-accuracy}}
-    \caption{Prediction accuracy with some popular CNN}
-\label{fig:loss}
+        \center{\includegraphics[width=0.95\linewidth]{model-accuracy}}
+    \caption{Prediction accuracy gap between different neural network models}
+\label{fig:model-accuracy}
 \vspace{-1em}
 \end{figure}

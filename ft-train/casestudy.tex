@@ -103,7 +103,8 @@ especially for large convolution operation which is typically computing bound.
 However, the circuit design tools typically adopt conservative design options 
 in order to avoid the timing violations in the worst case. Overclocking enables 
 higher clock frequency and performance, but timing errors may happen and affect 
-the inference accuracy. In this case, we can also apply the on-accelerator 
+the inference accuracy. The dynamic timing error caused by overclocking 
+can not be captured by the offline training. In this case, we can also apply the on-accelerator 
 training to have the computing errors tolerated by the models without 
 redesigning the CNN accelerator.
 
@@ -115,29 +116,32 @@ With overclocking, they can be boosted to 210 MHz - 260 MHz and
 190 MHz - 240 MHz respectively. Given different overclocking frequency, 
 the accelerator produces different computing results due to the variable
 timing errors. It is expected that more aggressive overclocking incur 
-more computing errors and precision loss. To gain both the higher clock 
-frequency and less prediction loss, we can also adopt the proposed on-accelerator 
-training framework for overclocked CNN accelerator. 
+more computing errors and precision loss. 
 
-The prediction accuracy comparison on different overclocking is presented in Figure \ref{fig:overclock-accuracy}. 
-It shows that the overclocking can enhance the clock frequency by 19\% to 26\%. 
-While applying the off-line trained model 
-to the accelerator with overclocking, the top-5 accuracy degrades by up to 4.3\%. When the proposed training 
-framework is used, the resulting retrained model can be much better especially near the overclocking limit.
+On top of the overclocked CNN accelerators, we compare both the offline training and the on-accelerator training.
+The prediction accuracy comparison is presented in Figure \ref{fig:overclock-accuracy}. 
+Basically, the prediction accuracy will not drop until the tipping point. After the tipping point, the 
+prediction accuracy degrades dramatically and can no longer be salavaged through training.
+While at the extreme overclocking frequency, the on-accelerator training exhibits clear 
+improvemenmt on the benchmark. Compared to the offline training, 
+the on-accelerator training improves the top1 and top5 prediction accuracy 
+on the extreme overclocking case by xx\% and xx\% respectively.
+Compared to the original design, the clock frequency 
+increases by 19\% to 26\% with small prediction accuracy loss. 
 
-  For AlexNet, VGG-16 and VGG-19, the top-5 accuracy of the retained models is improved by 3.4\%, 1.8\%, and 2\% 
-respectively at the extreme overclocking frequency. For LeNet which is a rather small yet reliable network 
-compared to the other three, the implementation remains unaffected even when the clock is boosted to 260 MHz 
-from 210 MHz. When the clock goes up to 270MHz, the timing error can no longer be tolerated by the hardware system, 
-the prediction accuracy drops to 10\% which is essentially meaningless. In this case, the base model 
-and the retrained model is pretty much the same. To ensure the stability of the overclocking experiment, 
-we also keep measuring the accuracy of the accelerators with extreme overclocking. With repeatedly 
-running the test for up to 40 hours, the measured accuracy varies slightly as present in Figure 7. 
-Despite the fact that the errors caused by the overclocking can be hardly modeled precisely at runtime, 
-the inherent error patterns may still partly be captured by the CNN model with the proposed training. 
-This explains the higher prediction accuracy with the retrained model. According to the 
-above experiments, we can conclude that the proposed accelerator aware training can produce 
-more resilient CNN model tolerating errors caused by intensive overclocking. 
+%  For AlexNet, VGG-16 and VGG-19, the top-5 accuracy of the retained models is improved by 3.4\%, 1.8\%, and 2\% 
+%respectively at the extreme overclocking frequency. For LeNet which is a rather small yet reliable network 
+%compared to the other three, the implementation remains unaffected even when the clock is boosted to 260 MHz 
+%from 210 MHz. When the clock goes up to 270MHz, the timing error can no longer be tolerated by the hardware system, 
+%the prediction accuracy drops to 10\% which is essentially meaningless. In this case, the base model 
+%and the retrained model is pretty much the same. To ensure the stability of the overclocking experiment, 
+%we also keep measuring the accuracy of the accelerators with extreme overclocking. With repeatedly 
+%running the test for up to 40 hours, the measured accuracy varies slightly as present in Figure 7. 
+%Despite the fact that the errors caused by the overclocking can be hardly modeled precisely at runtime, 
+%the inherent error patterns may still partly be captured by the CNN model with the proposed training. 
+%This explains the higher prediction accuracy with the retrained model. According to the 
+%above experiments, we can conclude that the proposed accelerator aware training can produce 
+%more resilient CNN model tolerating errors caused by intensive overclocking. 
 
 \begin{figure}
         \center
@@ -164,60 +168,50 @@ more resilient CNN model tolerating errors caused by intensive overclocking.
         \label{fig:overclock-accuracy}
 \end{figure}
 
-To ensure the stability of the overclocking experiment, we 
-also keep measuring the accuracy of the accelerators with extreme 
-overclocking. With repeatedly running the test for up to 40 hours, 
-the measured accuracy varies slightly as present in Figure 7. 
-Despite the fact that the errors caused by the overclocking can be 
-hardly modeled precisely at runtime, the inherent error patterns may 
-still partly be captured by the CNN model with the proposed training. 
-This explains the higher prediction accuracy with the retrained model. 
-According to the above experiments, we can conclude that the proposed 
-accelerator aware training can produce more resilient CNN model tolerating 
-errors caused by intensive overclocking. 
-
-\begin{figure}
-        \center{\includegraphics[width=0.6\linewidth]{stability}}
-        \caption{The Stability of Retrained Model}
-        \label{fig:stability}
-%        \vspace{-0.5em}
-\end{figure}
-
-  Finally, we also present the training time on the hybrid CPUFPGA architecture. 
-It can be seen that the training is much slower than the fixed-point training on CPU. 
-This is mainly caused by the frequently data transferring between device memory and host 
-memory in the proposed training, while this will not affect the inference time. In addition, 
-we can also find that the training on larger network takes longer time and higher clock frequency 
-is also beneficial to the training time as expected. 
-
-\begin{figure}
-        \center{\includegraphics[width=0.6\linewidth]{time}}
-        \caption{Training time}
-        \label{fig:time}
-%        \vspace{-0.5em}
-\end{figure}
+%To ensure the stability of the overclocking experiment, we 
+%also keep measuring the accuracy of the accelerators with extreme 
+%overclocking. With repeatedly running the test for up to 40 hours, 
+%the measured accuracy varies slightly as present in Figure 7. 
+%Despite the fact that the errors caused by the overclocking can be 
+%hardly modeled precisely at runtime, the inherent error patterns may 
+%still partly be captured by the CNN model with the proposed training. 
+%This explains the higher prediction accuracy with the retrained model. 
+%According to the above experiments, we can conclude that the proposed 
+%accelerator aware training can produce more resilient CNN model tolerating 
+%errors caused by intensive overclocking. 
+%
+%\begin{figure}
+%        \center{\includegraphics[width=0.6\linewidth]{stability}}
+%        \caption{The Stability of Retrained Model}
+%        \label{fig:stability}
+%%        \vspace{-0.5em}
+%\end{figure}
 
 \subsection{CNN accelerator with soft errors}
-  With the shrinking semiconductor feature size and increasing FPGA capacity, 
-FPGA design gets error-prone to the transient faults (often known as soft errors). 
-They can affect the behaviors of the FPGA design dramatically. Many researchers \cite{Mansour_20,Karim_21,Nidhin_22,Subasi_23,ROSCH_24} 
-have proposed diverse approaches to address this problem. While CNN accelerators on FPGA can be different 
-from general hardware design because the CNN model deployed can be further trained and tolerate the 
-soft errors as proposed in prior section\cite{Tu2018RANA_1}.
+With the shrinking semiconductor feature size and increasing FPGA capacity, 
+FPGA design gets error-prone to the soft errors. 
+They can affect the behavior of the FPGA design dramatically. 
+Many researchers \cite{Mansour_20,Karim_21,Nidhin_22,Subasi_23,ROSCH_24} 
+have proposed various approaches to address this problem. CNN accelerators 
+on FPGA can be different from the general hardware design, because 
+the CNN model deployed can be further trained to tolerate the 
+soft errors. As the real soft errors can hardly be modeled on GPPs, we thus
+opt to adopt the on-accelerator training.
 
-  To explore the influence of soft errors on CNN accelerator, we need to inject soft errors to the system first. 
-A number of fault injection techniques have been proposed in prior literature. In this work, we adopt 
-a simple software simulation- based method to inject random errors. Although the error may be caused by 
-on-chip memory or other SRAM cells, we have a random bit of the computing result flipped at a specific rate. 
-The simple yet representative model will not increase the training time too much.
-
-  We also take LeNet, AlexNet, VGG-16, and VGG-19 to evaluate the influence of soft errors on prediction accuracy,
-the top-5 accuracy of the resulting implementations is presented in Figure 9. When we gradually 
-increase the error rate from 1E-7 to 1E-5, the prediction accuracy degrades accordingly when applying the off-line 
-trained model directly on the faulty accelerator. When the error rate goes up to 1E-4.5, 
-the accuracy in the worst case drops by around 13.5\%. Similar to overclocking, LeNet can tolerate 
-more errors than the other three networks. The accuracy remains unchanged until the error rate reaches 1E-3. 
-When the error injection rate is low, the CNN model is able to cover almost all the negative influence 
+To explore the influence of soft errors on CNN accelerators, we need to inject soft errors to the CNN accelerators. 
+In this work, we adopt a simple software simulation- based method to inject random errors. 
+For the CNN accelerator, we built a C model equivalent to PipeCNN and then inject single event 
+upsets (SEU) to the major components of the CNN accelerator including the on-chip buffers 
+and the computing array. With the soft error injection, we evaluate the influence of 
+soft errors on the neural network prediction accuracy, The top-5 prediction accuracy 
+is presented in Figure 9. When we gradually increase the error rate from 1E-7 to 1E-5, 
+the prediction accuracy degrades accordingly when applying the off-line 
+trained model directly on the faulty accelerator. 
+When the error rate goes up to 1E-4.5, the accuracy in the worst case drops 
+by around 13.5\%. Similar to overclocking, LeNet can tolerate 
+more errors than the other three networks. The accuracy remains unchanged 
+until the error rate reaches 1E-3. When the error injection rate is low, 
+the CNN model is able to cover almost all the negative influence 
 on the prediction accuracy.
 
 \begin{figure}
@@ -241,16 +235,31 @@ on the prediction accuracy.
                 \label{fig:vgg19}
                 \includegraphics[width=0.6\linewidth]{vgg19-softerror}
         }
-        \caption{The Precision of Four CNN models on accelerators with different error rate}
+        \caption{The precision accuracy of the benchmark neural network models on accelerators with soft errors}
         \label{fig:softerror accuracy}
 \end{figure}
 
-  When the error injection rate goes higher, the proposed retraining becomes critical. 
-According to the experiments, the accuracy of the four retrained models improve by 6.8\%, 1.5\%, 3\%, and 3\% 
+When the error injection rate goes up, the proposed on-accelerator training becomes critical. 
+According to the experiments, the accuracy of the four benchmark models improve by 6.8\%, 1.5\%, 3\%, and 3\% 
 respectively compared to that of the base model when the accelerators are exposed to the highest 
 error injection. In summary, the experiments demonstrate that we can have the CNN model to learn 
-both the characteristics of the data and the underlying ‘undeterministic’ behaviors of the accelerator 
-together using the proposed training framework. The resulting CNN model can improve the accuracy 
-without any modification on the accelerator when there is high error injection rate.  
+both the characteristics of the data and the underlying computing errors of the accelerator 
+together using the on-accelerator training framework. The resulting CNN model can be fault tolerant 
+without any modification to the CNN accelerator.  
 
+\subsection{General on-accelerator training analysis}
+  Finally, we also present the training time on the hybrid CPUFPGA architecture. 
+It can be seen that the training is much slower than the fixed-point training on CPU. 
+This is mainly caused by the frequently data transferring between device memory and host 
+memory in the proposed training, while this will not affect the inference time. In addition, 
+we can also find that the training on larger network takes longer time and higher clock frequency 
+is also beneficial to the training time as expected. 
 
+\begin{figure}
+        \center{\includegraphics[width=0.6\linewidth]{time}}
+        \caption{Training time}
+        \label{fig:time}
+%        \vspace{-0.5em}
+\end{figure}
+
+Batch analysis
