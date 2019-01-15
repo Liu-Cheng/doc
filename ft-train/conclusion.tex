@@ -1,12 +1,16 @@
 \section{Conclusion} \label{sec:Conclusion}
-In this paper, we propose to take the CNN accelerator’s ‘undeterministic’ behaviors into consideration 
+In this paper, we propose to take the CNN accelerator’s dynamic behaviors into consideration 
 at training and have the CNN model to learn the accelerator’s behaviors. To that end, we further build 
-an open-sourced training system based on Caffe on a hybrid CPU-FPGA architecture. Then use the training 
-system to deal with an overclocked CNN accelerator and an accelerator with soft errors. According to our 
-experiments, the proposed training can improve the prediction accuracy of four CNN models up to 3.4\% when 
-the CNN accelerator is overclocked on the extreme situation. This method is also beneficial to the CNN 
+an training system based on Caffe on a hybrid CPU-FPGA architecture. Then use the training 
+system to deal with an approximate CNN accelerator and an overclocked CNN accelerator 
+and an accelerator with soft errors. According to our 
+experiments, the top1 and top5 prediction accuracy can be inproved to 14.4\% and 16.1\% respectively 
+on the worst case when use in approximate CNN accelerator.
+The proposed training can alse improve the top1 and top 5 prediction accuracy 
+of four CNN models up to 13.7\% and and 11.6\% respectively when 
+the CNN accelerator is overclocked on the extreme situation. What's more, this method is beneficial to the CNN 
 accelerators with soft errors. In the case with most soft errors, it improves the prediction accuracy up 
-to 6.8\% and by 3.58\% on average. The disadvantage is the much longer training time due to the frequent 
+to 11.1\% and by 3.4\% . The disadvantage is the much longer training time due to the frequent 
 data transfer between host memory and device memory. This problem can be resolved when porting the system 
 to closely coupled CPU-FPGA architectures with shared memory.
 
