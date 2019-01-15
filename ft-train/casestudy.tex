@@ -50,13 +50,40 @@ the neural network model directly as demonstrated in
 Section \ref{sec:motivation}. This scenario fits well with the on-accelerator 
 training framework and is analyzed in this section.
 
- 
-We choose the dynamic-range approximate multiplier proposed in \cite{} as 
+We choose the dynamic-range approximate multiplier proposed in \cite{Approximate_Multiplier_31} as 
 an approximate computing example and employ the multiplier on the PipeCNN
 accelerator. The approximate multiplier basically reserve the most 
 significant non-zero bits as well as the following $k$ lower bits. 
 
+\begin{figure}
+        \center
+        \subfloat[top1]{
+                \label{fig:appro-k2-top1}
+                \includegraphics[width=0.6\linewidth]{appro-k2-top1}
+        }
+        \qquad
+        \subfloat[top5]{
+                \label{fig:appro-k2-top5}
+                \includegraphics[width=0.6\linewidth]{appro-k2-top5}
+        }
+        \caption{The Accuracy of Four CNN models on accelerators with approximate multiplier(k=2)}
+        \label{fig:approximate mltiplier}
+\end{figure}
 
+\begin{figure}
+        \center
+        \subfloat[top1]{
+                \label{fig:appro-k3-top1}
+                \includegraphics[width=0.6\linewidth]{appro-k3-top1}
+        }
+        \qquad
+        \subfloat[top5]{
+                \label{fig:appro-k3-top5}
+                \includegraphics[width=0.6\linewidth]{appro-k3-top5}
+        }
+        \caption{The Accuracy of Four CNN models on accelerators with approximate multiplier(k=3)}
+        \label{fig:approximate mltiplier}
+\end{figure}
 
 \subsection{CNN accelerator with overclocking}
   Clock frequency is almost proportional to the computation capability of the CNN accelerator 
@@ -94,22 +121,22 @@ more resilient CNN model tolerating errors caused by intensive overclocking.
 
 \begin{figure}
         \center
-	\subfloat[]{
+	\subfloat[LeNet]{
 		\label{fig:lenet}
 		\includegraphics[width=0.6\linewidth]{lenet-overclock}
 	}
 	\qquad
-	\subfloat[]{
+	\subfloat[AlexNet]{
                 \label{fig:alexnet}
                 \includegraphics[width=0.6\linewidth]{alexnet-overclock}
         }
 	\qquad
-	\subfloat[]{
+	\subfloat[VGG-16]{
                 \label{fig:vgg16}
                 \includegraphics[width=0.6\linewidth]{vgg16-overclock}
         }
         \qquad
-	\subfloat[]{
+	\subfloat[VGG-19]{
                 \label{fig:vgg19}
                 \includegraphics[width=0.6\linewidth]{vgg19-overclock}
         }
@@ -150,7 +177,6 @@ is also beneficial to the training time as expected.
 %        \vspace{-0.5em}
 \end{figure}
 
-
 \subsection{CNN accelerator with soft errors}
   With the shrinking semiconductor feature size and increasing FPGA capacity, 
 FPGA design gets error-prone to the transient faults (often known as soft errors). 
@@ -176,29 +202,28 @@ on the prediction accuracy.
 
 \begin{figure}
         \center
-        \subfloat[]{
+        \subfloat[LeNet]{
                 \label{fig:lenet}
                 \includegraphics[width=0.6\linewidth]{lenet-softerror}
         }
         \qquad
-        \subfloat[]{
+        \subfloat[AlexNet]{
                 \label{fig:alexnet}
                 \includegraphics[width=0.6\linewidth]{alexnet-softerror}
         }
         \qquad
-        \subfloat[]{
+        \subfloat[VGG-16]{
                 \label{fig:vgg16}
                 \includegraphics[width=0.6\linewidth]{vgg16-softerror}
         }
         \qquad
-        \subfloat[]{
+        \subfloat[VGG-19]{
                 \label{fig:vgg19}
                 \includegraphics[width=0.6\linewidth]{vgg19-softerror}
         }
         \caption{The Precision of Four CNN models on accelerators with different error rate}
         \label{fig:softerror accuracy}
 \end{figure}
-
 
   When the error injection rate goes higher, the proposed retraining becomes critical. 
 According to the experiments, the accuracy of the four retrained models improve by 6.8\%, 1.5\%, 3\%, and 3\% 
