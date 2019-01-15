@@ -1,57 +1,46 @@
 \section{Related Work} \label{sec:relatedwork}
-\textbf{Approximate computing:}Approximate computing is a promising technique for efficiency optimization\cite{Miao_40,han_41}.
-Diverse techniques have been explored in prior work that apply approximate computing approaches to improve NN energy efficiiency.
-Minerva \cite{Reagen_42}is an example that uses circuitlevel techniques to handle memory error in NN accelerators,
-employing Razor sampling circuits for fault detection and equipping the weight fetch stage with bit masking and word
-masking for flipped weights to mitigate bit-flip errors caused by NTV-based weightstorage.
-Recent research proposes more explicit techniques to exploit NN’s intrinsic error tolerance and flexibility
-during training to improve efficiency. For example, both AxNN and ApproxAnn take neuron criticality into
-consideration and perform periodical retraining for self-healing \cite{AxNN_43,approxANN_44}. AxNN proposes the characterization
-of neuron criticality first, then the replacement of non-critical neurons with their approximate versions.
-To ensure targeted accuracy, iterative retraining is used for error recovery. Inspired by AxNN,
-ApproxAnn proposes a more reliable way to quantify neuron criticality and adopts iterative heuristics to gain maximum efficiency.
-However,the approximation is performed on a pre-trained network with hardware-agnostic training, which does not optimize
-for error tolerance, so the target accuracies in their designs are met with relatively conservative approximations.
+In this section, we will review the neural network training for CNN accelerators first.
+Then we will discuss the various scenarios that CNN accelerator 
+may produce computing with variation, which may lead to 
+considerable network prediction accuracy loss and can not be handled 
+with the offline training.
 
-\textbf{CNN accelerator:} There have been notable efforts made to create hardware accelerators of 
-machine learning algorithms for the sake of higher performance and energy-efficiency \cite{Cnvlutin_25} 
-in the past few years. Among the accelerators, the regular 2D array architecture has become 
-a mainstream solution because of the relatively higher PE and bandwidth utility. Runtime reconfigurable 
-PE arrays are applied to provide customized solutions for efficient CNN inference on FPGAs \cite{Caffeine_6,deepburing_12}. 
-In \cite{Aydonat_27}, an array of processing elements (PEs) with novel architecture was developed. With intensive 
-data reuse, it reduces the external memory bandwidth requirements dramatically and outperforms 
-the systolic-like structure proposed in \cite{Caffeine_6}. Compared to the compact hardware design in \cite{Caffeine_6,Aydonat_27}, 
-Wei X et al. in \cite{Wei_29} implemented a high-throughput CNN design and did comprehensive design space exploration 
-on top of accurate models to determine the optimal design configuration.
+\subsection{Training for CNN accelerators} 
+Numerous hardware accelerators especially the CNN accelerators have
+been developed in the past few years. \cite{Cnvlutin_25} 
+\cite{Caffeine_6,deepburing_12}, \cite{Aydonat_27}, 
+\cite{Caffeine_6}, \cite{Caffeine_6,Aydonat_27}, \cite{Wei_29}. To 
+deploy the neural network models on the accelerators efficiently, 
+the models need to be trained specifically for the target accelerator. 
+The neural network training is mostly performed on GPPs and
+floating point models are widely used. While the CNN accelerators are usually fixed point, 
+a widely used training approach is to add fixed point constraint to the training. 
+The training is widely used for neural network model quantization and it is 
+done on GPPs\cite{Hwang2014_17, Matthieu2014_8, Hwang2014_17}. 
 
-\textbf{Training of accelerators:} Training approaches for CNN accelerator can be classified into three 
-categories: (1) convert a pretrained floating point CNN model into a fixed point model without 
-training, (2) train a CNN model with fixed point constraint, and (3) FPGA-implemented forward \& backward propagation 
-training tools. For first category, \cite{Yunchao_19} applied codebook based on scalar and vector quantization methods 
-in order to reduce the model size. \cite{Cnvlutin_25} analyzed the quantization sensitivity of the network for each layer 
-and then manually decide the quantization bit-widths. \cite{Hwang2014_17} find direct quantization for fixed-point 
-network design does not yield good results and optimized the fixed-point design by employing back propagation 
-based retraining. \cite{Matthieu2014_8} adapted a higher precision for the parameters during the updates than during 
-the forward and backward propagations for accumulating small changes in the parameters. \cite{Hwang2014_17} used only binary 
-weights to train deep neural networks. 
+There are also efforts spent to use FPGAs for training. 
+Caffeine\cite{Caffeine_6} provides a general CNN accelerator design and integrates it with 
+the training framework Caffe. Caffeinated FPGA\cite{DiCecco_4} implemented FPGA kernels 
+for both forward and backward. It can also be used in Caffe and allows for 
+both training and inference. These work focus on the performance optimization 
+and they do not take the computing variation of the CNN accelerators into consideration.
 
-  However, these approaches of the former two categories are not suitable for ‘unstable’ circuit. 
-For the third category, FCNN\cite{fcnn_5}  reconfigured a streaming data path at runtime to cover the training cycle 
-for the various layers in a CNN. Caffeine\cite{Caffeine_6}  provides tunable parameters, including the number and 
-size of input/output feature maps, shape and strides of weight kernels, pooling size and stride, 
-ReLU kernels, and the total number of CNN/DNN layers. Caffeinated FPGA\cite{DiCecco_4} implemented FPGA kernels 
-for forward and backward for Caffe and these kernels target the Xilinx SDAccel OpenCL environment 
-for training and inference with CNNs. However, these approaches did not consider the unstable 
-hardware behavior into their framework or either gave a way to train CNN under the un-deterministic situation.
-
-\textbf{Unstable Hardware Behavior:} Overclocking, soft Error, circuit defect induced by process 
-variation etc. result in the un-determined behavior of the circuits.  Overclocking, a technique to gain 
-the additional performance from a given component by increasing its operating speed, may cause timing error. \cite{overclock_3} gave 
-the strands of research of arithmetic precision determination and overclocking. Razor\cite{Razor_15}  projected scaled 
-the supply voltage and clock frequency beyond the most conservative value. Soft errors are unintended 
-transitions of logic state in a circuit typically caused external source of ionizing radiations. 
-The shrinking transistor sizes increased the soft-errors. \cite{Mansour_20} proposed An Automated SEU 
-Fault-Injection Method and Tool for HDL-Based Design. \cite{Subasi_30} inject single-bit flips into the register-transfer 
-level descriptions of floating-point ALUs.
-
+\subsection{Computing variation of CNN accelerators} 
+The computing on CNN accelerators may vary due to various reasons 
+such as approximate arithmetic operations, overclocking, soft error.
+Overclocking is a technique to increase the operating speed, though 
+it may cause timing errors. It has been explored in many hardware 
+designs \cite{overclock_3}, \cite{Razor}. 
+Soft errors are transitions of logic state in a circuit 
+which is usually caused by external source of ionizing radiations. 
+It increases with the shrinking transistor sizes. 
+Approximate computing is a promising technique for 
+energy-efficiency optimization\cite{Miao_40,han_41}.
+Among the approximate computing techniques, approximate 
+arithmetic operations \cite{appro_45,approxANN_44} can be a good fit to the CNN accelerator 
+which involves large amount of arithmetic operations. 
+In summary, the computing in all the above scenario may vary dynamically, 
+the offline trained model can not be deployed on the 
+accelerators in these scenarios. They should be considered in the 
+neural network training. 
 
