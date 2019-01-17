@@ -399,13 +399,13 @@
 % As a general rule, do not put math, special symbols or citations
 % in the abstract
 \begin{abstract}
-For the sake of efficient inference on CNN accelerators,  
-neural network models are typically trained via the offline 
-training frameworks such as Caffe and Tensorflow on general purposed 
+For efficient inference on CNN accelerators,  
+neural network models are typically trained offline
+with frameworks such as Caffe and Tensorflow on general purposed 
 processors (GPPs) first and then compiled to 
 the target accelerators. However, the neural network computing 
 on CNN accelerators and that on GPPs may differ due to the different 
-hardware architecture or runtime environment in many scenarios. 
+hardware architecture or runtime environment in many cases. 
 For instance, the CNN accelerator is implemented with approximate 
 arithmetic circuits, or exposed to fault-prone environment 
 or overclocked, In this cases, the dynamic behavior 
@@ -419,15 +419,15 @@ on the CNN accelerator and have the undetermined accelerator behavior learned to
 with the data in the same framework. Basically, we start from the offline 
 trained model and then perform accelerator-specific or scenario-specific 
 fine tuning to make the CNN models less sensitive to the accelerator's
-undetermined behavior. In addition, we further explore the on-accelerator 
-fine-tuning approaches and implement a Caffe based on-accelerator 
-training framework. We apply the on-accelerator training paradigm 
-for training a set of neural networks targeting at a CNN accelerator with 
-approximate multiplier, an overclocked CNN accelerator and 
-a faulty CNN accelerator on a CPU-FPGA computing platform. 
+undetermined behavior. In addition, we further explore and 
+implement a Caffe based on-accelerator training framework. 
+Finally, we apply the framework to train a set of neural 
+networks targeting at CNN accelerators with 
+approximate multiplier, CNN accelerators with overclocking and 
+CNN accelerators with soft errors on a CPU-FPGA computing platform. 
 According to our experiments on ImageNet, 
-the on-accelerator training can improve the top 5 accuracy and 
-top 1 accuracy significantly compared to the offline training. 
+the on-accelerator training approach can improve the top5 accuracy and 
+top1 accuracy of neural networks significantly compared to the offline training. 
 \end{abstract}
 
 % no keywords

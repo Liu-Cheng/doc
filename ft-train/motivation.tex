@@ -5,14 +5,14 @@ target CNN accelerators. When the computing on the underlying CNN accelerators d
 from that calculated with GPPs due to the approximate arithmetic logic, overclocking or 
 soft errors, the offline trained neural network models executed on the accelerator 
 may deviate from the expected computing result. To evaluate the influence, 
-we take Alexnet as an example to evaluate the prediction 
+we take AlexNet as an example to evaluate the prediction 
 accuracy loss when the offline trained model is deployed on the CNN 
 accelerators with approximate multiplier, overclocking, and soft errors respectively. 
 
 In the experiment, we use PipeCNN\cite{pipecnn_2}, an open sourced high-level CNN accelerator, 
 as the baseline design. We have it implemented on KCU1500 FPGA board and run at 210 MHz. 
 On ImageNet, we train AlexNet offline and then apply it to the 8-bit accelerator. 
-The resulting top-1 accuracy and top-5 accuracy of Alexnet on the accelerator 
+The resulting top1 accuracy and top5 accuracy of AlexNet on the accelerator 
 is 54.2\% and 78.06\% respectively. On top of the baseline accelerator, we apply 
 approximate multiplier, overclocking and soft error injection respectively. 
 
@@ -27,19 +27,19 @@ both the on-chip buffers and the arithmetic units. The injection rate is set to 
 1E-7 which means one random bit flops every 1E7 operations. Note that the soft error is modeled 
 on top of the PipeCNN C model instead of the real hardware.
 
-With the conventional offline training approach, the offline trained Alexnet model 
+Following the conventional offline training approach, the resulting AlexNet model 
 will be deployed directly. The model accuracy loss on ImageNet in the three scenarios is 
-measured and presented in Figure \ref{fig:loss}. Top-1 prediction accuracy loss 
-typically is more than 10\% in all the three cases while top-5 accuracy loss is slightly 
+measured and presented in Figure \ref{fig:loss}. Top1 prediction accuracy loss 
+typically is more than 10\% in all the three cases while top5 accuracy loss is slightly 
 lower. In addition, we want to emphasize that the prediction accuracy loss is extremely large 
 from the perspective of neural network models. 
 As shown in Figure \ref{fig:model-accuracy}, the prediction accuracy gap between 
-large models and small models is only a few percent according to the 
+large models and small models is only a few percent and non-trivial according to the 
 statistic in \cite{model-accuracy}.  
 
 \begin{figure}
 	\center{\includegraphics[width=0.75\linewidth]{accuracy_loss}}
-    \caption{Prediction accuracy loss of the offline trained Alexnet on CNN accelerators with approximate multiplier, overclocking and soft errors.}
+    \caption{Prediction accuracy loss of the offline trained AlexNet on CNN accelerators with approximate multiplier, overclocking and soft errors.}
 \label{fig:loss}
 \vspace{-1em}
 \end{figure}

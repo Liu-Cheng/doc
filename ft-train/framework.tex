@@ -26,7 +26,7 @@ distilling\cite{distillation_38, distillation_39},
 which can be used to have a high-precision neural network to teach a 
 low-precision neural network with similar network structure efficiently, 
 for the on-accelerator training. Basically, the offline pretrained 
-model can be taken as a teacher model and used to guide the training of the 
+model can be regarded as a teacher model and used to guide the training of the 
 student model with lower precision. After the training, the student model 
 can perform much better despite the accelerators' computing variation.
 
@@ -74,21 +74,12 @@ L(y,p)=-\sum_{i=1}^{K}y_i*log(p_i)
 To make the training aware the accelerators' dynamic variation, 
 we have the forward propagation of the student network 
 performed on the accelerator directly while the rest of the 
-framework remains on GPPs. While the forward propagation on 
-the accelerator is fixed point, the backward propagation on 
+framework remains on GPPs. The forward propagation on 
+the accelerator is fixed point. The backward propagation on 
 GPPs adopts the floating point to ensure 
 the small change in the gradient can be accumulated \cite{Matthieu2014_8}. 
-
-
-\subsection{CNN accelerator abstraction}
-As illustrated in the above section, the forward propagation of the 
-student network will be executed on the CNN accelerator while 
-the rest part runs on GPPs. Essentially, the framework targets at a 
-heterogeneous computing architecture and frequent 
-communication between the accelerator and the GPPs is expected. 
-In order to fit various CNN accelerators within the same training framework,
-we abstract the CNN accelerators with a high-level interface
-which makes the accelerators transparent to the training framework.
+Otherwise, the gradient may disappear due to the 
+quantization and new infomration can no longer be learned.
 
 \begin{table*}
         \centering
@@ -118,9 +109,21 @@ which makes the accelerators transparent to the training framework.
         \vspace{-1em}
 \end{table*}
 
+
+
+\subsection{CNN accelerator abstraction}
+As illustrated in the above section, the forward propagation of the 
+student network will be executed on the CNN accelerator while 
+the rest part runs on GPPs. Essentially, the framework targets at a 
+heterogeneous computing architecture and frequent 
+communication between the accelerator and the GPPs is expected. 
+In order to fit various CNN accelerators within the same training framework,
+we abstract the CNN accelerators with a high-level interface
+which makes the accelerators near transparent to the training framework.
+
 Centering the data communication between the forward propagation 
-and the rest of the training framework, the proposed interface 
-consists of 7 functions as listed in Table \ref{tab:api}. 
+and the rest of the training framework, we define a high-level 
+interface which consists of 7 functions as listed in Table \ref{tab:api}. 
 Function 1 is used to launch the CNN accelerator from host. 
 Function 2 and 3 are used to transfer data between the host memory and the device memory during 
 the training. As the forward propagation on the CNN accelerators is usually fixed point 
@@ -133,9 +136,10 @@ referenced and used in the proposed on-accelerator training framework.
 
 In this work, we have the CNN accelerator implemented on Xilinx FPGAs as a case study. 
 With Xilinx SDAccel, we can wrap the accelerators with OpenCL API while the accelerators 
-can either be developed with OpenCL, HLS or RTL. Meanwhile, we use Caffe, a C++ based 
-deep learning framework, to construct the on-accelerator training framework. Therefore, 
-the OpenCL based high-level interface can be referenced conveniently in Caffe. 
+can either be developed with OpenCL, HLS or RTL. On top of the OpenCL API, the proposed 
+high-level interface can be implemented. Meanwhile, we use Caffe, a C++ based 
+deep learning framework, to construct the on-accelerator training framework. With 
+both parts developed with C family languages, they can be integrated conveniently. 
 
 %In this work, we have the CNN accelerator implemented on FPGAs.
 %Figure 4 depicts the implementation of the training framework on a hybrid 

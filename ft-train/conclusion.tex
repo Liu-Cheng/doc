@@ -1,18 +1,21 @@
 \section{Conclusion} \label{sec:Conclusion}
-In this paper, we propose to take the CNN accelerator’s dynamic behaviors into consideration 
-at training and have the CNN model to learn the accelerator’s behaviors. To that end, we further build 
-an training system based on Caffe on a hybrid CPU-FPGA architecture. Then use the training 
-system to deal with an approximate CNN accelerator and an overclocked CNN accelerator 
-and an accelerator with soft errors. According to our 
-experiments, the top1 and top5 prediction accuracy can be inproved to 14.4\% and 16.1\% respectively 
-on the worst case when use in approximate CNN accelerator.
-The proposed training can alse improve the top1 and top 5 prediction accuracy 
-of four CNN models up to 13.7\% and and 11.6\% respectively when 
-the CNN accelerator is overclocked on the extreme situation. What's more, this method is beneficial to the CNN 
-accelerators with soft errors. In the case with most soft errors, it improves the prediction accuracy up 
-to 11.1\% and by 3.4\% . The disadvantage is the much longer training time due to the frequent 
-data transfer between host memory and device memory. This problem can be resolved when porting the system 
-to closely coupled CPU-FPGA architectures with shared memory.
+The neural network computing on the CNN accelerators 
+can be different from that computed on GPPs when the 
+CNN accelerators have approximate arithmetic operations, 
+get overclocked or suffer soft errors. When deploying the offline
+trained models to these accelerators, the neural network model 
+prediction accuracy can drop a lot. In this work, we propose an 
+on-accelerator training framework to address this problem.
+and then build the training framework based on Caffe on a 
+hybrid CPU-FPGA architecture. With the on-accelerator training 
+framework, we perform three 
+case studyies on CNN accelerators with approximate arithmetic unit, 
+overclocking and soft errors. According to our 
+experiments on the case studies, both the top1 and top5 prediction 
+accuracy improves significantly in general and the improvement goes 
+up to 14.4\% and 16.1\% respectively when compared to the 
+offline trained model. The disadvantage is the 
+much longer training time.
 
 %\appendix
 %\section{Acknowledgement}
