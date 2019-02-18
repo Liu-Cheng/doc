@@ -1,0 +1,109 @@
+\section{Introduction} \label{sec:intro}
+%Recent years have seen great success of machine learning especially 
+%convolutional neural networks (CNNs) on massive fields such as 
+%image classification, video surveillance, speech recognition, 
+%and robot vision. 
+The widespread adoption of CNNs motivates the 
+continuous optimization of CNN accelerators for higher 
+performance and energy efficiency [xxx]. Numerous approaches from various 
+angles have been proposed and explored [xxx]. Particularly, many of them such as 
+low-precision quantization [xxx] and approximate computing [xxx] have been demonstrated to 
+be able to improve the performance or lower the power consumption of the CNN 
+accelerators significantly. In spite of the computing errors caused by these approaches, 
+the prediction accuracy loss is negligible according to the prior works [xxx].
+One of the key reasons can be attributed to the inherent fault-tolerance of 
+the neural networks, which means that minor variations on the 
+computing of neural networks typically will not lead to considerable 
+difference in terms of prediction accuracy. This 
+feature essentially prevents the propagation of 
+the minor computing errors to the neural network prediction errors. 
+Therefore, the corresponding approaches that allow design trade-off 
+between computing accuracy and performance can be applied to CNN 
+accelerator optimization.
+
+Inspired by this observation, we notice that overclocking, which 
+allows the circuit running at higher clock frequency with minor 
+timing violations, can also compromise between performance 
+and computing accuracy. When applied to CNN accelerators, 
+it can also potentially improve the performance and energy 
+efficiency with minor prediction accuracy loss.
+Compared to prior optimization approaches, overclocking brings 
+multi-folded unique advantages especially to the FPGA based CNN 
+accelerators. 
+
+As demonstrated in [xxx], convolution is usually 
+computing-bound and the most time-consuming part of the CNNs. 
+This trend continues with the newer neural networks 
+such as [xxx] which involve more convolution layers 
+and less full connection layers. The frequency of the CNN 
+accelerators determines the operation speed directly. However, 
+it usually ranges from 150 MHz to 300 MHz on FPGAs and 
+remains much lower compared to the ASIC designs, while the 
+bandwidth of DRAM on FPGAs and ASICs does not have any 
+clear gap [xxx]. In this case, computing of the FPGA based CNN 
+accelerators is more stringent and becomes the major 
+performance bottleneck. Overclocking can greatly alleviate this 
+problem without redesigning the CNN accelerators and is 
+also mostly orthogonal to the other optimizations. 
+
+Another advantage brought by overclocking is the higher 
+energy efficiency. The overall power of the CNN accelerators 
+consists of static power and dynamic power. The dynamic power 
+can roughly scale with the clock frequency and overclocking will not 
+incur much energy consumption, while the static power depends on the 
+leakage current of the device and remains unchanged with the higher
+clock frequency. Thus, overclocking reduces the neural network runtime 
+and the static energy consumption. Eventually, it improves 
+the overall energy efficiency.
+
+To deploy overclocking on FPGA based CNN accelerators, there are also several
+challenges that need to be addressed. Timing errors caused by overclocking 
+may probably located on the critical paths which may spread across the 
+design and change with the data. The influence of overclocking timing 
+errors on the computing of CNNs is rather complex. It may lead to
+computing errors when the computing data paths are affected or system stall 
+when some critical control signals get affected. To ensure robust computing 
+on the overclocked CNN accelerators, all the errors must be detected and 
+handled appropriately. As the timing error of overclocking is 
+also affected by the work environment such as the temperature 
+and input data, it may deteriorate or vary at runtime [xxx]. In this case, 
+different fault detection strategies and fault recovery strategies 
+should be adapted accordingly. 
+
+In this work, we explored the use of overclocking on FPGA based 
+CNN accelerators, where the accelerator can run at higher 
+clock frequency and the negative influence of the timing errors 
+is addressed with negligible cost. The contributions of this work is 
+concluded as follows:
+
+\begin{itemize}
+	\item We proposed to apply overclocking on FPGA based CNN accelerators 
+		to alleviate the stringent computing bottleneck and improve the 
+		overall energy efficiency. The possible negative influence of 
+		overclocking including prediction accuracy loss and accelerator 
+		crash were addressed accordingly. 
+
+	\item For minor and moderate prediction accuracy loss, we fine tune the 
+		neural network models to have the computing error patterns 
+		learned and tolerated without hardware fault-tolerance.
+
+	\item For considerable prediction accuracy loss or even hardware crash, we 
+		proposed a series of detection mechanisms to identify the status of 
+		the CNN accelerators. Then we reconfigure the FPGA based CNN 
+		accelerator and recover the system with a checkpoint scheme.
+
+	\item With comprehensive experiments, we demonstrated that the use 
+		of overclocking improves the accelerator performance with negligible 
+		prediction accuracy loss.
+\end{itemize}
+
+The paper is organized as follows. Section II analyzes the influence of 
+clock frequency on the performance and energy efficiency of CNN accelerators.
+The advantages of high-frequency CNN accelerator design motivates this work. 
+Section III presents the overclocking design method especially the mechanisms 
+that are required to address the timing errors caused by overclocking. 
+Section IV performs comprehensive experiments and demonstrates the benefits 
+of using overclocking for CNN accelerators. Section V briefs the related work 
+and Section VI draws the conclusion. 
+
+
