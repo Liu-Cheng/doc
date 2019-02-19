@@ -48,13 +48,14 @@ also mostly orthogonal to the other optimizations.
 
 Another advantage brought by overclocking is the higher 
 energy efficiency. The overall power of the CNN accelerators 
-consists of static power and dynamic power. The dynamic power 
+consists of static power and dynamic power. The kernel dynamic power 
 can roughly scale with the clock frequency and overclocking will not 
 incur much energy consumption, while the static power depends on the 
 leakage current of the device and remains unchanged with the higher
-clock frequency. Thus, overclocking reduces the neural network runtime 
-and the static energy consumption. Eventually, it improves 
-the overall energy efficiency.
+clock frequency. Also part of the system power may also be 
+independent with the kernel clock frequency. Thus, overclocking 
+reduces the neural network runtime and the overall energy consumption. 
+Eventually, it improves the energy efficiency.
 
 To deploy overclocking on FPGA based CNN accelerators, there are also several
 challenges that need to be addressed. Timing errors caused by overclocking 

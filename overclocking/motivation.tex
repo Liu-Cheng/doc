@@ -1,52 +1,55 @@
 \section{Motivation} \label{sec:motivation}
-Nowadays, the main stream training frameworks typically adopt the offline training
-on GPPs to obtain the neural network models and then apply the quantized models to the 
-target CNN accelerators. When the computing on the underlying CNN accelerators differs
-from that calculated with GPPs due to the approximate arithmetic logic, overclocking or 
-soft errors, the offline trained neural network models executed on the accelerator 
-may deviate from the expected computing result. To evaluate the influence, 
-we take AlexNet as an example to evaluate the prediction 
-accuracy loss when the offline trained model is deployed on the CNN 
-accelerators with approximate multiplier, overclocking, and soft errors respectively. 
+Clock frequency determines the accelerator operation speed 
+and directly affects the performance. Accordingly, it also has influence on the 
+neural network runtime and energy efficiency. In this section, we take 
+an open-sourced CNN accelerator named PipeCNN \cite{pipecnn_2} as an example and analyze its 
+influence on the neural network performance and energy efficiency.
 
-In the experiment, we use PipeCNN\cite{pipecnn_2}, an open sourced high-level CNN accelerator, 
-as the baseline design. We have it implemented on KCU1500 FPGA board and run at 210 MHz. 
-On ImageNet, we train AlexNet offline and then apply it to the 8-bit accelerator. 
-The resulting top1 accuracy and top5 accuracy of AlexNet on the accelerator 
-is 54.2\% and 78.06\% respectively. On top of the baseline accelerator, we apply 
-approximate multiplier, overclocking and soft error injection respectively. 
-
-In the approximate computing case, we implement the dynamic-range approximate 
-multiplier proposed in \cite{Approximate_Multiplier_31}. Basically, the multiplier 
-will keep the non-zero most significant bit as well as the following $k$ bits in the 
-multiplication to simplify the hardware design and improve the energy efficiency.
-In this experiment, we set $k$ to be 2. In the overclocking case, we boost the clock frequency 
-to the extreme clock and the design achieves 260 MHz in the experiment. 
-In the soft error scenario, we inject SEU errors with a uniform distribution model to 
-both the on-chip buffers and the arithmetic units. The injection rate is set to be 
-1E-7 which means one random bit flops every 1E7 operations. Note that the soft error is modeled 
-on top of the PipeCNN C model instead of the real hardware.
-
-Following the conventional offline training approach, the resulting AlexNet model 
-will be deployed directly. The model accuracy loss on ImageNet in the three scenarios is 
-measured and presented in Figure \ref{fig:loss}. Top1 prediction accuracy loss 
-typically is more than 10\% in all the three cases while top5 accuracy loss is slightly 
-lower. In addition, we want to emphasize that the prediction accuracy loss is extremely large 
-from the perspective of neural network models. 
-As shown in Figure \ref{fig:model-accuracy}, the prediction accuracy gap between 
-large models and small models is only a few percent and non-trivial according to the 
-statistic in \cite{model-accuracy}.  
+The accelerator is implemented on KCU1500 and attached to a desktop computer with 
+Intel xxx. The basic convolution structure is shown in Fig \ref{fig:cnn-arch}. The largest computing 
+array that can be accommodated by the FPGA device consists of 16 dot production units. 
+Each dot production unit allows parallel processing of two 8-data vectors.
+The accelerator consumes over xxx\% LUT of the FPGA device. The optimized clock frequency 
+according to the SDAccel compilation is 200 MHz. 
 
 \begin{figure}
-	\center{\includegraphics[width=0.75\linewidth]{accuracy_loss}}
-    \caption{Prediction accuracy loss of the offline trained AlexNet on CNN accelerators with approximate multiplier, overclocking and soft errors.}
-\label{fig:loss}
+	\center{\includegraphics[width=0.75\linewidth]{blank}}
+    \caption{Baseline CNN accelerator architecture.}
+\label{fig:cnn-arch}
 \vspace{-1em}
 \end{figure}
 
+
+In order to evaluate the influence of clock 
+frequency, we further set the clock to 50 MHz, 100 MHz, and 150 MHz respectively.
+A set of neural networks including LeNet, AlexNet, VGG-16 and VGG-19 are used as the benchmark.
+Normalized performance the neural network benchmark executed on the accelerators are 
+shown in Fig \ref{fig:computing-bound}. It can be found that the 
+overall performance of the neural network benchmark
+almost increases proportional to the clock frequency. For the larger neural networks, 
+the processing remains the computing bound and high frequency design is highly demanded.
+
 \begin{figure}
-        \center{\includegraphics[width=0.95\linewidth]{model-accuracy}}
-    \caption{Prediction accuracy gap between different neural network models}
-\label{fig:model-accuracy}
+	\center{\includegraphics[width=0.75\linewidth]{blank}}
+    \caption{Normalized performance of neural networks executed on CNN accelerators with different clock frequency.}
+\label{fig:computing-bound}
 \vspace{-1em}
 \end{figure}
+
+In addition, we also obtain the power consumption from SDAccel report. 
+The power estimation setup assumes xxxx. Given the power consumption and the performance, 
+we calcualted the energy delay product which can be used as an energy efficiency metric.
+The energy efficiency is presented in Fig \ref{fig:edp}.
+\begin{figure}
+	\center{\includegraphics[width=0.75\linewidth]{blank}}
+    \caption{Normalized energy-delay product of neural networks executed on CNN accelerators with different clock frequency.}
+\label{fig:edp}
+\vspace{-1em}
+\end{figure}
+
+According to the above experiments, it can be conclcuded that higher clock frequency 
+can be beneficial to both the neural network performance and energy efficiency. The 
+potential performance and energy efficiency improvement indicates that it is 
+worthwhile to boosting the clock of FPGA based CNN accelerators with some minor 
+overhead. Detailed overclocking on CNN accelerators will be investigated in 
+detail in the rest part of this paper. 
