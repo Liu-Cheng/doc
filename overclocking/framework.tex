@@ -1,16 +1,76 @@
 \section{CNN accelerator overclocking} \label{sec:framework}
-In contrast to the typical offline training framework on GPPs, we propose an 
-on-accelerator training framework to allow the CNN accelerator's runtime variation 
-caused by approximate arithmetic logic, overclocking or soft errors 
-to be learned with the application data. With the on-accelerator training,
-the obtained model can be deployed despite the accelerator's 
-undeterministic behavior. Details of the framework will be presented in 
-the rest of this section.
+Overclocking can boot the clock frequency of CNN accelerators and is potentially beneficial to both 
+the performance and energy efficiency. However, the timing violation may lead to distinct errors which 
+may degrade the neural network prediction accuracy or even affect the functionality of the accelerators. 
+To apply overclocking on CNN accelerators, we must handle all the possible 
+problems incurred by the timing violation. 
 
 \subsection{Overclocking overview}
-\subsection{Overclocking with moderate errors}
-\subsubsection{On-accelerator training}
-\subsection{Overclocking with severe errors}
-\subsubsection{Error detection}
-\subsubsection{Error recovery}
-\subsubsection{Overhead analysis}
+Based on the intensity of overclocking and timing 
+violation, we divide the overclocking incurred errors into different 
+categories so that corresponding design methods can be used to 
+alleviate the resulting problems efficiently. While it is difficult 
+to precisely quantize the timing violation directly at runtime, we use 
+the neural network prediction accuracy loss as the main 
+classification metric. When there is only minor prediction accuracy 
+loss which is less than 1\%, the penalty is usually acceptable 
+and nothing needs to be done. When the prediction accuracy loss 
+ranges from 1\% to 10\%, the moderate accuracy loss must be 
+alleviated. When there is sever timing violation and 
+accuracy loss, there is usually little chance to recover 
+without improving the timing and the status of the accelerator 
+may not be steady. It may result in considerable computing errors 
+or even system stall due to critical control signal faults.  
+
+For the minor accuracy loss case, overclocking can be used directly. 
+We will not dwell on it. For the moderate accuracy loss, the neural network 
+can still be salvaged. As the neural network models are usually obtained 
+from offline training on general purposed processors (GPPs) which assumes the 
+neural networks to be executed on an equivalent computing device, 
+the computing on overclocked CNN accelerator varies and does not match 
+with the assumption. To address this problem, we have the neural network models 
+retrained on the overclocked accelerator so that the computing variation can be 
+tolerated by the retrained models. By getting rid of the computing difference between 
+inference and training, the prediction accuracy can be improved.
+
+For the severe accuracy loss situation, the design can be hardly salvaged 
+without hardware modification due to the relatively large amount of 
+timing violations. In fact, this will not be a default design option while 
+it may happen at runtime due to the external environment change such as temperature 
+or data. In this case, we take advantage of the reconfiguration 
+capability to reload an implementation with lower clock frequency. 
+In some extreme case, the accelerator may even hang up. This can also be 
+resolved with FPGA reconfiguration. However, the challenge is to 
+detect the situation timely and recover the system automatically.
+
+As illustrated in this section, typically a user may choose either the overclocking 
+strategy with minor accuracy loss or moderate accuracy loss by setting up 
+different clock frequency. Nevertheless, the critical paths 
+may change at runtime with certain probability and the actual status of the CNN accelerator 
+can be dynamic. Thus, it is of vital importance to detect the status of the CNN 
+accelerator at runtime and activate the corresponding design strategy.
+
+In order to determine the status of the overclocked CNN accelerators, 
+we propose a runtime prediction accuracy loss estimation mechanism 
+as shown in Fig \ref{fig:loss-estimation}. The basic idea is to insert a set 
+of reference data to the input data stream. The actual prediction 
+accuracy of the reference data can be computed in advance. When the 
+reference data are processed on the overclocked CNN accelerator, the 
+prediction accuracy of the refernce data can be obtained. By comparing the 
+golden accuracy and the measured accuracy, we can calculate the accuracy loss and 
+determine the status of the CNN accelerators accordingly. When the status of 
+the accelerator is obtained, the corresponding optimization approach 
+can be invoked. In addition, the amount of reference data inserted to 
+the input data can be adjusted to ensure that the overhead is acceptable.
+
+\begin{figure}
+	\center{\includegraphics[width=0.75\linewidth]{blank}}
+    \caption{Runtime neural network accuracy loss estimation.}
+\label{fig:loss-estimation}
+\vspace{-1em}
+\end{figure}
+
+
+\subsection{On-accelerator retraining}
+\subsection{Error detection and system recovery}
+
