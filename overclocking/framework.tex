@@ -60,7 +60,7 @@ the related optimization approach, we propose an runtime overclocking
 management mechanism that ensures both efficient and resilient 
 neural network computing. The mechanism is shown in Fig \ref{fig:runtime-management}.
 \begin{figure}
-	\center{\includegraphics[width=0.75\linewidth]{blank}}
+	\center{\includegraphics[width=0.45\linewidth]{manegment}}
     \caption{Runtime overclocking management.}
 \label{fig:runtime-management}
 \vspace{-1em}
@@ -93,7 +93,7 @@ can be invoked. In addition, the amount of reference data inserted to
 the input data can be adjusted to ensure that the overhead is acceptable.
 
 \begin{figure}
-	\center{\includegraphics[width=0.75\linewidth]{blank}}
+	\center{\includegraphics[width=0.85\linewidth]{loss_checkpoint}}
     \caption{Runtime neural network accuracy loss estimation.}
 \label{fig:loss-estimation}
 \vspace{-1em}
@@ -120,7 +120,7 @@ needs to be converted to float point when it is sent to the host for backward
 propagation.
 
 \begin{figure}
-	\center{\includegraphics[width=0.75\linewidth]{blank}}
+	\center{\includegraphics[width=0.85\linewidth]{retrain_framework}}
     \caption{On-accelerator neural network retraining framework.}
 \label{fig:retrain}
 \vspace{-1em}
@@ -148,11 +148,11 @@ the reference data is abnormal, the processing will roll back to the last checkp
 which keeps the record of last input block index. Then we degrade the clock and 
 new accelerator bitstream will be reloaded for the following inference.
 
-\begin{figure}
-	\center{\includegraphics[width=0.75\linewidth]{blank}}
-    \caption{Checkpoint strategy for neural network computing fault recovery.}
-\label{fig:checkpoint}
-\vspace{-1em}
-\end{figure}
+%\begin{figure}
+%	\center{\includegraphics[width=0.75\linewidth]{blank}}
+%    \caption{Checkpoint strategy for neural network computing fault recovery.}
+%\label{fig:checkpoint}
+%\vspace{-1em}
+%\end{figure}
 
 

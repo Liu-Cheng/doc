@@ -66,18 +66,18 @@ And we use the perceantage of changed output data and the Euclidean distance to
 characterize the difference of the output vector. The comparison is shown in Fig xxx.
 
 \begin{figure}
-	\center{\includegraphics[width=0.75\linewidth]{cuowulv}}
-    \caption{Fault rate on the last output layer of the neural network.}
+	\center{\includegraphics[width=0.75\linewidth]{error_distance}}
+    \caption{Fault rate on the last output layer of the neural network and Euclidean distance between the acutal output layer and reference output layer.}
 \label{fig:fault_rate}
 \vspace{-1em}
 \end{figure}
 
-\begin{figure}
-	\center{\includegraphics[width=0.75\linewidth]{oushijuli}}
-    \caption{Euclidean distance between the acutal output layer and reference output layer.}
-\label{fig:euclidean_distance}
-\vspace{-1em}
-\end{figure}
+%\begin{figure}
+%	\center{\includegraphics[width=0.75\linewidth]{oushijuli}}
+%    \caption{Euclidean distance between the acutal output layer and reference output layer.}
+%\label{fig:euclidean_distance}
+%\vspace{-1em}
+%\end{figure}
 
 As discussed in this paper, the timing error can be affected by many factors and it may change 
 at runtime. There is no guarantee that the behavior of the CNN accelerator can keep stable even 
