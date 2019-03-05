@@ -5,12 +5,17 @@
 %and robot vision. 
 The widespread adoption of CNNs motivates the 
 continuous optimization of CNN accelerators for higher 
-performance and energy efficiency [xxx]. Numerous approaches from various 
-angles have been proposed and explored [xxx]. Particularly, many of them such as 
-low-precision quantization [xxx] and approximate computing [xxx] have been demonstrated to 
+performance and energy efficiency
+\cite{pipecnn_2,Zhang2015_9,Qiu2016_10,Farabet2010_13,Zeng2018_18}. 
+Numerous approaches from various 
+angles have been proposed and explored \cite{EIE_han_2016,deepburing_12}. 
+Particularly, many of them such as 
+low-precision quantization \cite{Hwang2014_17,Matthieu2014_8} 
+and approximate computing \cite{Approximate_Multiplier_31,Approximate_32,approximate_33}
+have been demonstrated to 
 be able to improve the performance or lower the power consumption of the CNN 
 accelerators significantly. In spite of the computing errors caused by these approaches, 
-the prediction accuracy loss is negligible according to the prior works [xxx].
+the prediction accuracy loss is negligible according to the prior works \cite{deep_compress_han_2015}.
 One of the key reasons can be attributed to the inherent fault-tolerance of 
 the neural networks, which means that minor variations on the 
 computing of neural networks typically will not lead to considerable 
@@ -31,16 +36,16 @@ Compared to prior optimization approaches, overclocking brings
 multi-folded unique advantages especially to the FPGA based CNN 
 accelerators. 
 
-As demonstrated in [xxx], convolution is usually 
+As demonstrated in \cite{Caffeine_6,EIE_han_2016}, convolution is usually 
 computing-bound and the most time-consuming part of the CNNs. 
 This trend continues with the newer neural networks 
-such as [xxx] which involve more convolution layers 
+such as DarkNet and ResNet which involve more convolution layers 
 and less full connection layers. The frequency of the CNN 
 accelerators determines the operation speed directly. However, 
 it usually ranges from 150 MHz to 300 MHz on FPGAs and 
 remains much lower compared to the ASIC designs, while the 
 bandwidth of DRAM on FPGAs and ASICs does not have any 
-clear gap [xxx]. In this case, computing of the FPGA based CNN 
+clear gap \cite{asic_fpga}. In this case, computing of the FPGA based CNN 
 accelerators is more stringent and becomes the major 
 performance bottleneck. Overclocking can greatly alleviate this 
 problem without redesigning the CNN accelerators and is 
@@ -67,7 +72,7 @@ when some critical control signals get affected. To ensure robust computing
 on the overclocked CNN accelerators, all the errors must be detected and 
 handled appropriately. As the timing error of overclocking is 
 also affected by the work environment such as the temperature 
-and input data, it may deteriorate or vary at runtime [xxx]. In this case, 
+and input data, it may deteriorate or vary at runtime \cite{Paceline_15}. In this case, 
 different fault detection strategies and fault recovery strategies 
 should be adapted accordingly. 
 

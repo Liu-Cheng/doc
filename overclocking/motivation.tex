@@ -6,10 +6,10 @@ an open-sourced CNN accelerator named PipeCNN \cite{pipecnn_2} as an example and
 influence on the neural network performance and energy efficiency.
 
 The accelerator is implemented on KCU1500 and attached to a desktop computer with 
-Intel xxx. The basic convolution structure is shown in Fig \ref{fig:cnn-arch}. The largest computing 
+Intel i7-6700@3.40GHz. The basic convolution structure is shown in Fig \ref{fig:cnn-arch}. The largest computing 
 array that can be accommodated by the FPGA device consists of 16 dot production units. 
 Each dot production unit allows parallel processing of two 8-data vectors.
-The accelerator consumes over xxx\% LUT of the FPGA device. The optimized clock frequency 
+The accelerator consumes over 11\% LUT of the FPGA device. The optimized clock frequency 
 according to the SDAccel compilation is 200 MHz. 
 
 \begin{figure}

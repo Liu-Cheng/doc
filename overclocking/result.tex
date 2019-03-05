@@ -49,41 +49,63 @@ the prediction accuracy is still not acceptable in practice.
 \end{figure}
 
 We further evaluate the normalized performance over the original CNN accelerators.
-As given in Fig xxx, it can be found that the performance with the extreme accelerator 
+As given in \ref{fig:relative_time_overclock}, it can be found that the performance with the extreme accelerator 
 overclocking is 1.X on average. With Xilinx power estimator, we also compare the 
-power consumption of the CNN accelerators with different overclocking as shown in Fig xxx.
+power consumption of the CNN accelerators with different overclocking as shown in \ref{fig:relative_power_overclock}.
 Finally, we use energy-delay product as the energy efficiency metric and compare the 
-different overclocking configurations. The comparison is exhibited in Fig xxx.
+different overclocking configurations. The comparison is exhibited in \ref{fig:relative_energy_overclock}.
 According to the comparison, we can conclude that overclocking on FPGA based CNN 
 accelerators improves both performance and energy efficiency with negligible or small 
 predication accuracy loss. In addition, the experiments exhibit that prediction 
 accuracy has a cliff-like drop with the increasing overclocking frequency. 
 
+\begin{figure}
+        \center{\includegraphics[width=0.75\linewidth]{relative_time_overclock}}
+    \caption{Normalized performance of neural networks executed on CNN accelerators with different overclock.}
+\label{fig:relative_time_overclock}
+\vspace{-1em}
+\end{figure}
+
+\begin{figure}
+        \center{\includegraphics[width=0.75\linewidth]{relative_power_overclock}}
+    \caption{Normalized power of neural networks executed on CNN accelerators with different overclock.}
+\label{fig:relative_power_overclock}
+\vspace{-1em}
+\end{figure}
+
+\begin{figure}
+        \center{\includegraphics[width=0.75\linewidth]{relative_energy_overclock}}
+    \caption{Normalized energy-delay product of neural networks executed on CNN accelerators with different overclock.}
+\label{fig:relative_energy_overclock}
+\vspace{-1em}
+\end{figure}
+
 In order to quantize the exact computing errors caused by overclocking, we 
 particularly analyze the last layer output of the nerual networks which 
 is typically a vector. We compare it with the output without overclocking.
 And we use the perceantage of changed output data and the Euclidean distance to 
-characterize the difference of the output vector. The comparison is shown in Fig xxx.
+characterize the difference of the output vector. 
+The comparison is shown in \ref{fig:cuowulv} and \ref{fig:oushijuli}.
 
 \begin{figure}
-	\center{\includegraphics[width=0.75\linewidth]{error_distance}}
-    \caption{Fault rate on the last output layer of the neural network and Euclidean distance between the acutal output layer and reference output layer.}
-\label{fig:fault_rate}
+	\center{\includegraphics[width=0.75\linewidth]{cuowulv}}
+    \caption{Fault rate on the last output layer of the neural network.}
+\label{fig:cuowulv}
 \vspace{-1em}
 \end{figure}
 
-%\begin{figure}
-%	\center{\includegraphics[width=0.75\linewidth]{oushijuli}}
-%    \caption{Euclidean distance between the acutal output layer and reference output layer.}
-%\label{fig:euclidean_distance}
-%\vspace{-1em}
-%\end{figure}
+\begin{figure}
+	\center{\includegraphics[width=0.75\linewidth]{oushijuli}}
+    \caption{Euclidean distance between the acutal output layer and reference output layer.}
+\label{fig:oushijuli}
+\vspace{-1em}
+\end{figure}
 
 As discussed in this paper, the timing error can be affected by many factors and it may change 
 at runtime. There is no guarantee that the behavior of the CNN accelerator can keep stable even 
 overclocking is just slighly higher than the original clock. We use the accelertor overclcoked at the 
 tipping point to perform the neural network computing. Then we keep measuring its 
-prediction accuracy. As shown in Fig xxx, we find that the accuracy is rather stable.
+prediction accuracy. As shown in \ref{fig:stability}, we find that the accuracy is rather stable.
 Although we still can not ensure the stability of the overclocked CNN accelerator, we can 
 be sure that the probability of the sever errors such as accelerator hangup or considerable 
 accuracy loss is rather low. As we did not observe the cases after processing 1000000 pictuers, 

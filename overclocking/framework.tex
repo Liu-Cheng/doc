@@ -26,7 +26,7 @@ As the critical paths may change at runtime due to the external
 environment variations such as temperature, the accuracy loss status may 
 change as well. Typically, we expect that the lower overclocking setup 
 may also lead to severe computing errors with relatively lower probability.
-Fig \ref{fig:dynamic-loss} shows the possible accuracy loss status 
+Fig \ref{fig:loss-estimation} shows the possible accuracy loss status 
 transition graph. It indicates that we should take the worst case 
 into consideration even when the overclocking setup is relatively conservative.
 \begin{figure}
@@ -81,7 +81,7 @@ accelerator at runtime and activate the corresponding design strategy.
 
 In order to determine the status of the overclocked CNN accelerators, 
 we propose a runtime prediction accuracy loss estimation mechanism 
-as shown in Fig \ref{fig:loss-estimation}. The basic idea is to insert a set 
+as shown in Fig \ref{fig:loss_checkpoint}. The basic idea is to insert a set 
 of reference data to the input data stream. The actual prediction 
 accuracy of the reference data can be computed in advance. When the 
 reference data are processed on the overclocked CNN accelerator, the 
@@ -95,7 +95,7 @@ the input data can be adjusted to ensure that the overhead is acceptable.
 \begin{figure}
 	\center{\includegraphics[width=0.85\linewidth]{loss_checkpoint}}
     \caption{Runtime neural network accuracy loss estimation.}
-\label{fig:loss-estimation}
+\label{fig:loss_checkpoint}
 \vspace{-1em}
 \end{figure}
 
@@ -141,7 +141,7 @@ opt to reconfigure the FPGA accelerator with a more conservative implementation.
 However, when the errors are detected, previous computing may already suffer 
 similar errors and many prediction can be wrong. To address this problem, we opt to 
 utilize the checkpoint strategy to recover from previous checkpoint. 
-Fig \ref{fig:checkpoint} shows the basic control flow of the checkpoint strategy.
+Fig \ref{fig:loss_checkpoint} shows the basic control flow of the checkpoint strategy.
 Basically we divide the input data into blocks and some reference data 
 will be added to the end of each block. When neural network accuracy measured with 
 the reference data is abnormal, the processing will roll back to the last checkpoint 
