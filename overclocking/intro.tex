@@ -8,14 +8,14 @@ continuous optimization of CNN accelerators for higher
 performance and energy efficiency
 \cite{pipecnn_2,Zhang2015_9,Qiu2016_10,Farabet2010_13,Zeng2018_18}. 
 Numerous approaches from various 
-angles have been proposed and explored \cite{EIE_han_2016,deepburing_12}. 
+angles have been proposed and explored \cite{EIE_han_2016} \cite{deepburing_12}. 
 Particularly, many of them such as 
-low-precision quantization \cite{Hwang2014_17,Matthieu2014_8} 
-and approximate computing \cite{Approximate_Multiplier_31,Approximate_32,approximate_33}
+low-precision quantization \cite{Hwang2014_17} \cite{Matthieu2014_8} 
+and approximate computing \cite{Approximate_Multiplier_31} \cite{Approximate_32} \cite{approximate_33}
 have been demonstrated to 
 be able to improve the performance or lower the power consumption of the CNN 
 accelerators significantly. In spite of the computing errors caused by these approaches, 
-the prediction accuracy loss is negligible according to the prior works \cite{deep_compress_han_2015}.
+the prediction accuracy loss of the neural networks is negligible according to the prior works \cite{deep_compress_han_2015}.
 One of the key reasons can be attributed to the inherent fault-tolerance of 
 the neural networks, which means that minor variations on the 
 computing of neural networks typically will not lead to considerable 
@@ -29,52 +29,57 @@ accelerator optimization.
 Inspired by this observation, we notice that overclocking, which 
 allows the circuit running at higher clock frequency with minor 
 timing violations, can also compromise between performance 
-and computing accuracy. When applied to CNN accelerators, 
-it can also potentially improve the performance and energy 
+and computing accuracy. When applying overclocking to CNN accelerators, 
+it can potentially improve the performance and energy 
 efficiency with minor prediction accuracy loss.
 Compared to prior optimization approaches, overclocking brings 
 multi-folded unique advantages especially to the FPGA based CNN 
 accelerators. 
 
-As demonstrated in \cite{Caffeine_6,EIE_han_2016}, convolution is usually 
-computing-bound and the most time-consuming part of the CNNs. 
-This trend continues with the newer neural networks 
-such as DarkNet and ResNet which involve more convolution layers 
-and less full connection layers. The frequency of the CNN 
+As demonstrated in \cite{Caffeine_6} \cite{EIE_han_2016}, convolution is usually 
+computing-bound and it is the most time-consuming part of the CNNs, while 
+full connection layers are mostly memory-bound. Particularly, it can be found that 
+newer neural networks such as DarkNet and ResNet involve more 
+convolution layers and less full connection layers. Thus, convolution neural 
+networks are mostly constrained by the computing capability of the accelerators. 
+Also it is known that the frequency of the CNN 
 accelerators determines the operation speed directly. However, 
 it usually ranges from 150 MHz to 300 MHz on FPGAs and 
-remains much lower compared to the ASIC designs, while the 
+remains much lower compared to the ASIC designs. At the same time, the 
 bandwidth of DRAM on FPGAs and ASICs does not have any 
 clear gap \cite{asic_fpga}. In this case, computing of the FPGA based CNN 
 accelerators is more stringent and becomes the major 
 performance bottleneck. Overclocking can greatly alleviate this 
 problem without redesigning the CNN accelerators and is 
-also mostly orthogonal to the other optimizations. 
+mostly orthogonal to the other optimizations. 
 
 Another advantage brought by overclocking is the higher 
-energy efficiency. The overall power of the CNN accelerators 
-consists of static power and dynamic power. The kernel dynamic power 
-can roughly scale with the clock frequency and overclocking will not 
-incur much energy consumption, while the static power depends on the 
-leakage current of the device and remains unchanged with the higher
-clock frequency. Also part of the system power may also be 
-independent with the kernel clock frequency. Thus, overclocking 
-reduces the neural network runtime and the overall energy consumption. 
+energy efficiency. Typically the overall power of the 
+FPGA based CNN acceleration system consists of kernel accelerator power 
+and background power. The kernel accelerator power 
+roughly scales with the clock frequency and performance, 
+so overclocking will not incur more energy consumption. 
+The background power consists of the 
+FPGA static power and dynamic power of some necessary non-kernel 
+components, both of which remain unchanged with the higher
+clock frequency. Taking both parts into consideration, it can be 
+concluded that overclocking reduces the neural 
+network runtime and the overall energy consumption. 
 Eventually, it improves the energy efficiency.
 
 To deploy overclocking on FPGA based CNN accelerators, there are also several
 challenges that need to be addressed. Timing errors caused by overclocking 
 may probably located on the critical paths which may spread across the 
-design and change with the data. The influence of overclocking timing 
+design and change with the data, while the critical path can be
+affected by the work environment such as the temperature 
+and input data, it may deteriorate or vary at runtime \cite{Paceline_15}. 
+As a result, the influence of overclocking timing 
 errors on the computing of CNNs is rather complex. It may lead to
 computing errors when the computing data paths are affected or system stall 
 when some critical control signals get affected. To ensure robust computing 
 on the overclocked CNN accelerators, all the errors must be detected and 
-handled appropriately. As the timing error of overclocking is 
-also affected by the work environment such as the temperature 
-and input data, it may deteriorate or vary at runtime \cite{Paceline_15}. In this case, 
-different fault detection strategies and fault recovery strategies 
-should be adapted accordingly. 
+handled appropriately. In this case, different fault detection strategies 
+and fault recovery strategies should be adapted accordingly. 
 
 In this work, we explored the use of overclocking on FPGA based 
 CNN accelerators, where the accelerator can run at higher 

@@ -2,15 +2,15 @@
 Clock frequency determines the accelerator operation speed 
 and directly affects the performance. Accordingly, it also has influence on the 
 neural network runtime and energy efficiency. In this section, we take 
-an open-sourced CNN accelerator named PipeCNN \cite{pipecnn_2} as an example and analyze its 
-influence on the neural network performance and energy efficiency.
+an open-sourced CNN accelerator named PipeCNN \cite{pipecnn_2} as an example and analyze the 
+influence of clock frequency on the neural network performance and energy efficiency.
 
 The accelerator is implemented on KCU1500 and attached to a desktop computer with 
-Intel i7-6700@3.40GHz. The basic convolution structure is shown in Fig \ref{fig:cnn-arch}. The largest computing 
-array that can be accommodated by the FPGA device consists of 16 dot production units. 
-Each dot production unit allows parallel processing of two 8-data vectors.
-The accelerator consumes over 11\% LUT of the FPGA device. The optimized clock frequency 
-according to the SDAccel compilation is 200 MHz. 
+Intel i7-6700@3.40GHz. The basic convolution structure is shown in Fig \ref{fig:cnn-arch}. 
+The computing array consists of 16 dot production units which is also named as 
+processing elements (PE). Each PE allows a parallel dot production of two 4-data vectors.
+The optimized clock frequency according to the SDAccel compilation 
+is 200 MHz. 
 
 \begin{figure}
 	\center{\includegraphics[width=0.75\linewidth]{accelerator}}
@@ -21,26 +21,30 @@ according to the SDAccel compilation is 200 MHz.
 
 
 In order to evaluate the influence of clock 
-frequency, we further set the clock to 50 MHz, 100 MHz, and 150 MHz respectively.
+frequency, we set the clock to 50 MHz, 100 MHz, and 150 MHz respectively.
 A set of neural networks including LeNet, AlexNet, VGG-16 and VGG-19 are used as the benchmark.
-Normalized performance the neural network benchmark executed on the accelerators are 
-shown in Fig \ref{fig:computing-bound}. It can be found that the 
+Both the runtime and enenrgy efficiency are normalized to the 50 MHz implementation.
+Normalized runtime of the the neural network benchmark executed on the accelerators are 
+shown in Fig \ref{fig:computing-bound}. It shows that the 
 overall performance of the neural network benchmark
-almost increases proportional to the clock frequency. For the larger neural networks, 
-the processing remains the computing bound and high frequency design is highly demanded.
+almost increases proportional to the clock frequency. 
+It can be predicted that the processing remains 
+computing-bound and high-frequency CNN accelerator 
+design will be beneficial.
 
 \begin{figure}
 	\center{\includegraphics[width=0.75\linewidth]{relative_time}}
-    \caption{Normalized performance of neural networks executed on CNN accelerators with different clock frequency.}
+    \caption{Normalized runtime of neural networks executed on CNN accelerators with different clock frequency.}
 \label{fig:computing-bound}
 \vspace{-1em}
 \end{figure}
 
-In addition, we also obtain the power consumption from SDAccel report. 
-The power estimation setup assumes xxxx. Given the power consumption and the performance, 
-we calcualted the energy delay product which can be used as an energy efficiency metric.
-The energy efficiency is presented in Fig \ref{fig:edp}.
+To analyze the enenrgy consumption, we obtain the power consumption from SDAccel report. 
+The power estimation setup assumes 50\% activity. Given the power consumption and the runtime, 
+we calcualted the energy delay product (EDP) which can be used as an energy efficiency metric.
+The experiment result is presented in Fig \ref{fig:edp}.
 \begin{figure}
+	\vspace{-1em}
 	\center{\includegraphics[width=0.75\linewidth]{relative_energy}}
     \caption{Normalized energy-delay product of neural networks executed on CNN accelerators with different clock frequency.}
 \label{fig:edp}
