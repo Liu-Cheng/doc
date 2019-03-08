@@ -1,45 +1,16 @@
 \section{Related Work} \label{sec:relatedwork}
-In this section, we will review the neural network training for CNN accelerators first.
-Then we will discuss the various scenarios that CNN accelerator 
-may have dynamic computing variation, which will lead to 
-considerable network prediction accuracy loss. 
-
-\subsection{Training for CNN accelerators} 
-Numerous hardware accelerators especially the CNN accelerators have
-been developed in the past few years. \cite{Cnvlutin_25} 
-\cite{deepburing_12}, \cite{Aydonat_27}, 
-\cite{Caffeine_6}, \cite{Wei_29}. To 
-deploy the neural network models on the accelerators efficiently, 
-the models need to be trained for the target accelerator. 
-The neural network training is mostly performed on GPPs with floating point.
-While the CNN accelerators are usually fixed point, most of the training opt 
-to add fixed point constraint to the training and performs network model 
-quantization essentially\cite{Matthieu2014_8, Hwang2014_17}. 
-
-There are also efforts spent to use FPGAs for training. 
-Caffeine\cite{Caffeine_6} provided a general CNN accelerator design and integrated it with 
-the training framework Caffe. Caffeinated FPGA\cite{DiCecco_4} implemented FPGA kernels 
-for both forward propagation and backward propagation. It can also be used in Caffe and allows for 
-both training and inference. These work focus on the performance optimization. 
-They also support on-accelerator training, but they do not take the computing 
-variation of the CNN accelerators into consideration.
-
-\subsection{Computing variation of CNN accelerators} 
 The computing on CNN accelerators may vary due to various reasons 
-such as approximate arithmetic operations, overclocking, soft error.
+such as overclocking.
 Overclocking is a technique to increase the circuit operating speed 
-without redesigning, but it will cause timing errors. It has been 
-explored in many hardware designs \cite{overclock_3}, \cite{Razor}. 
-Soft errors are transitions of logic state in a circuit 
-which is usually caused by external source of ionizing radiations. 
-It increases with the shrinking transistor sizes. 
-Approximate computing is a promising technique for 
-energy-efficiency optimization\cite{Miao_40,han_41}.
-Among the approximate computing techniques, approximate 
-arithmetic operations \cite{appro_45,approxANN_44} can be a good fit to the CNN accelerator 
-which involves large amount of arithmetic operations. 
-In summary, the computing in all the above scenarios may vary dynamically, 
-the offline trained model will suffer considerable prediction 
+without redesigning, but it will cause timing errors \cite{overclock_3}, \cite{Razor}.  
+So the offline trained model will suffer considerable prediction 
 accuracy loss when it is deployed directly. Therefore, they should be considered in the 
-neural network training. 
+neural network training.
+There are also efforts spent to use FPGAs for training. 
+Caffeine\cite{Caffeine_6} provided a general CNN accelerator design and integrated it with
+the training framework Caffe. Caffeinated FPGA\cite{DiCecco_4} implemented FPGA kernels
+for both forward propagation and backward propagation. It can also be used in Caffe and allows for
+both training and inference. However, these work focus on the performance optimization.
+They also support on-accelerator training, but they do not take the computing
+variation of the CNN accelerators into consideration. 
 

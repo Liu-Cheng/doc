@@ -1,21 +1,17 @@
 \section{Conclusion} \label{sec:Conclusion}
 The neural network computing on the CNN accelerators 
 can be different from that computed on GPPs when the 
-CNN accelerators have approximate arithmetic operations, 
-get overclocked or suffer soft errors. When deploying the offline
+CNN accelerators get overclocked. When deploying the offline
 trained models to these accelerators, the neural network model 
-prediction accuracy can drop a lot. In this work, we propose an 
+prediction accuracy will drop a lot. In this work, we propose an 
 on-accelerator training framework to address this problem.
-and then build the training framework based on Caffe on a 
-hybrid CPU-FPGA architecture. With the on-accelerator training 
-framework, we perform three 
-case studyies on CNN accelerators with approximate arithmetic unit, 
-overclocking and soft errors. According to our 
-experiments on the case studies, both the top1 and top5 prediction 
+Then build the training framework based on Caffe on a 
+hybrid CPU-FPGA architecture. According to our 
+experiments, both the top1 and top5 prediction 
 accuracy improves significantly in general and the improvement goes 
-up to 14.4\% and 16.1\% respectively when compared to the 
-offline trained model. The disadvantage is the 
-much longer training time.
+up to 13.7\% and 11.6\% respectively when compared to the 
+offline trained model. The performance and EDP can also improves 
+significantly due to overclocking.
 
 %\appendix
 %\section{Acknowledgement}

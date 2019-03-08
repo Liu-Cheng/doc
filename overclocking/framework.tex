@@ -42,12 +42,11 @@ into consideration even when the overclocking setup is relatively
 conservative.
 
 \begin{figure}
-	\center{\includegraphics[width=0.75\linewidth]{overview}}
+        \center{\includegraphics[width=0.75\linewidth]{status_transition}}
     \caption{Overclocked CNN accelerator status transition graph.}
 \label{fig:loss-estimation}
 \vspace{-1em}
 \end{figure}
-
 
 \subsection{Techniques for mitigating overclocking errors}
 As discussed in the above section, there are different overclocking options and 
@@ -83,19 +82,18 @@ for forward propagation. Accordingly, the result of the forward propagation
 needs to be converted to float point when it is sent to the host for backward 
 propagation.
 
+\begin{figure}
+        \center{\includegraphics[width=0.95\linewidth]{retrain_framework}}
+    \caption{On-accelerator neural network retraining framework.}
+\label{fig:retrain}
+\vspace{-1em}
+\end{figure}
+
 In this work, we utilized an OpenCL based CNN accelerator. The communication between 
 host and the accelerator can be conveniently achieved with the OpenCL API. 
 Many RTL based CNN accelerators can also be wrapped up with 
 OpenCL API and reuse the retraining framework with minor modification.
 Similar platform can also be found in \cite{Caffeine_6} and \cite{DiCecco_4}.
-
-
-\begin{figure}
-	\center{\includegraphics[width=0.9\linewidth]{retrain_framework}}
-    \caption{On-accelerator neural network retraining framework.}
-\label{fig:retrain}
-\vspace{-1em}
-\end{figure}
 
 \subsubsection{Overclocked CNN accelerator with severe accuracy loss}
 When the accuracy loss gets too large, it indicates low-probability severe timing 
@@ -113,12 +111,11 @@ will roll back to the checkpoint. The runtime manger will be detailed
 in the next subsection. 
 
 \begin{figure}
-	\center{\includegraphics[width=0.9\linewidth]{loss_checkpoint}}
+	\center{\includegraphics[width=0.95\linewidth]{loss_checkpoint}}
     \caption{Runtime checkpoint strategy.}
 \label{fig:loss_checkpoint}
 \vspace{-1em}
 \end{figure}
-
 
 \subsubsection{Runtime overclocking management}
 As discussed in the above section, the accelerator status may transit at runtime, 
@@ -126,13 +123,13 @@ while corresponding remedies will be applied in different situations. To bridge 
 gap, we propose a runtime overclocking management strategy as shown in 
 Fig \ref{fig:runtime-management} to handle all the possible overclocking problems 
 at runtime automatically.
+
 \begin{figure}
-	\center{\includegraphics[width=0.8\linewidth]{manegment}}
+	\center{\includegraphics[width=0.75\linewidth]{manegment}}
     \caption{Runtime overclocking management.}
 \label{fig:runtime-management}
 \vspace{-1em}
 \end{figure}
-
 
 When the overclocked CNN accelerator is applied for inference, 
 a watch-dog must be enabled to detect if the accelerator is stalled 

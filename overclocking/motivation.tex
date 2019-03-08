@@ -19,12 +19,11 @@ is 200 MHz.
 \vspace{-1em}
 \end{figure}
 
-
 In order to evaluate the influence of clock 
 frequency, we set the clock to 50 MHz, 100 MHz, and 150 MHz respectively.
 A set of neural networks including LeNet, AlexNet, VGG-16 and VGG-19 are used as the benchmark.
-Both the runtime and enenrgy efficiency are normalized to the 50 MHz implementation.
-Normalized runtime of the the neural network benchmark executed on the accelerators are 
+Both the runtime and energy efficiency are normalized to the 50 MHz implementation.
+Normalized runtime of the neural network benchmark executed on the accelerators are 
 shown in Fig \ref{fig:computing-bound}. It shows that the 
 overall performance of the neural network benchmark
 almost increases proportional to the clock frequency. 
@@ -39,21 +38,22 @@ design will be beneficial.
 \vspace{-1em}
 \end{figure}
 
-To analyze the enenrgy consumption, we obtain the power consumption from SDAccel report. 
+To analyze the energy consumption, we obtain the power consumption from SDAccel report. 
 The power estimation setup assumes 50\% activity. Given the power consumption and the runtime, 
-we calcualted the energy delay product (EDP) which can be used as an energy efficiency metric.
+we calculated the energy delay product (EDP) which can be used as an energy efficiency metric.
 The experiment result is presented in Fig \ref{fig:edp}.
+
 \begin{figure}
 	\vspace{-1em}
 	\center{\includegraphics[width=0.75\linewidth]{relative_energy}}
-    \caption{Normalized energy-delay product of neural networks executed on CNN accelerators with different clock frequency.}
+    \caption{Normalized EDP of neural networks executed on CNN accelerators with different clock frequency.}
 \label{fig:edp}
 \vspace{-1em}
 \end{figure}
 
-According to the above experiments, it can be conclcuded that higher clock frequency 
+According to the above experiments, it can be concluded that higher clock frequency 
 can be beneficial to both the neural network performance and energy efficiency. The 
 potential performance and energy efficiency improvement indicates that it is 
 worthwhile to boosting the clock of FPGA based CNN accelerators with some minor 
 overhead. Detailed overclocking on CNN accelerators will be investigated in 
-detail in the rest part of this paper. 
+the rest part of this paper. 

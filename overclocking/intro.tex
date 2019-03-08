@@ -6,12 +6,12 @@
 The widespread adoption of CNNs motivates the 
 continuous optimization of CNN accelerators for higher 
 performance and energy efficiency
-\cite{pipecnn_2,Zhang2015_9,Qiu2016_10,Farabet2010_13,Zeng2018_18}. 
+\cite{pipecnn_2,Qiu2016_10,Zeng2018_18}. 
 Numerous approaches from various 
 angles have been proposed and explored \cite{EIE_han_2016} \cite{deepburing_12}. 
 Particularly, many of them such as 
 low-precision quantization \cite{Hwang2014_17} \cite{Matthieu2014_8} 
-and approximate computing \cite{Approximate_Multiplier_31} \cite{Approximate_32} \cite{approximate_33}
+and approximate computing \cite{Approximate_Multiplier_31} \cite{Approximate_32}
 have been demonstrated to 
 be able to improve the performance or lower the power consumption of the CNN 
 accelerators significantly. In spite of the computing errors caused by these approaches, 
@@ -39,13 +39,13 @@ accelerators.
 As demonstrated in \cite{Caffeine_6} \cite{EIE_han_2016}, convolution is usually 
 computing-bound and it is the most time-consuming part of the CNNs, while 
 full connection layers are mostly memory-bound. Particularly, it can be found that 
-newer neural networks such as DarkNet and ResNet involve more 
+newer neural networks such as ResNet and DarkNet involve more 
 convolution layers and less full connection layers. Thus, convolution neural 
 networks are mostly constrained by the computing capability of the accelerators. 
 Also it is known that the frequency of the CNN 
 accelerators determines the operation speed directly. However, 
 it usually ranges from 150 MHz to 300 MHz on FPGAs and 
-remains much lower compared to the ASIC designs. At the same time, the 
+remains much lower compared to the ASICs designs. At the same time, the 
 bandwidth of DRAM on FPGAs and ASICs does not have any 
 clear gap \cite{asic_fpga}. In this case, computing of the FPGA based CNN 
 accelerators is more stringent and becomes the major 
