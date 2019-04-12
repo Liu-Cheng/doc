@@ -1,17 +1,16 @@
 \section{Conclusion} \label{sec:Conclusion}
-The neural network computing on the CNN accelerators 
-can be different from that computed on GPPs when the 
-CNN accelerators get overclocked. When deploying the offline
-trained models to these accelerators, the neural network model 
-prediction accuracy will drop a lot. In this work, we propose an 
-on-accelerator training framework to address this problem.
-Then build the training framework based on Caffe on a 
-hybrid CPU-FPGA architecture. According to our 
-experiments, both the top1 and top5 prediction 
-accuracy improves significantly in general and the improvement goes 
-up to 13.7\% and 11.6\% respectively when compared to the 
-offline trained model. The performance and EDP can also improves 
-significantly due to overclocking.
+Neural networks executed on FPGA based CNN accelerators 
+are typically bounded by the computing. While overclocking 
+that boosts the clock frequency 
+directly affects the accelerator operation speed and performance, 
+it also leads to some unpredictable timing violations. By taking 
+advantage of the inherent neural network fault-tolerance 
+and FPGA reconfiguration capability, we propose a series of 
+error detection and recovery scheme to alleviate the accuracy 
+loss. According to the experiments on 
+a set of neural network benchmark, we can obtain both the 
+performance and energy efficiency significantly with negligible 
+accuracy loss.  
 
 %\appendix
 %\section{Acknowledgement}

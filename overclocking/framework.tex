@@ -17,13 +17,12 @@ loss which is less than 1\%, the penalty is usually acceptable
 and nothing needs to be done. 
 
 When the prediction accuracy loss ranges from 1\% to 10\%, the accelerator 
-still functions and the moderate accuracy loss can still be salvaged. 
+still functions and the moderate accuracy loss can be salvaged. 
 As the neural network models are usually obtained 
-from offline training on general purposed processors (GPPs) which assumes the 
+from training on general purposed processors (GPPs) which assumes the 
 neural networks to be executed on an equivalent computing device, 
 the computing on overclocked CNN accelerator varies and does not match 
-with the assumption. By getting rid of the computing difference between 
-inference and training, the prediction accuracy can be improved.
+with the assumption. This can be alleviated with neural network retraining.
 
 When there are sever timing violations and 
 the accuracy loss is over 10\%, there is usually little chance to recover 
@@ -42,16 +41,17 @@ into consideration even when the overclocking setup is relatively
 conservative.
 
 \begin{figure}
-        \center{\includegraphics[width=0.75\linewidth]{status_transition}}
+        \center{\includegraphics[width=0.65\linewidth]{status_transition}}
     \caption{Overclocked CNN accelerator status transition graph.}
 \label{fig:loss-estimation}
 \vspace{-1em}
 \end{figure}
 
 \subsection{Techniques for mitigating overclocking errors}
-As discussed in the above section, there are different overclocking options and 
-they have distinct influence on the neural network execution. Corresponding approaches 
-will be detailed in this section to mitigate all the negative influence.
+As discussed in the above section, there are different overclocking 
+options which have distinct negative influence on the neural network execution. 
+Corresponding approaches need to be applied to mitigate all the possible 
+negative influence. 
 
 \subsubsection{Accuracy loss estimation}
 Before we start to address the different overclocking problems, we need to 
@@ -83,7 +83,7 @@ needs to be converted to float point when it is sent to the host for backward
 propagation.
 
 \begin{figure}
-        \center{\includegraphics[width=0.95\linewidth]{retrain_framework}}
+        \center{\includegraphics[width=0.9\linewidth]{retrain_framework}}
     \caption{On-accelerator neural network retraining framework.}
 \label{fig:retrain}
 \vspace{-1em}
@@ -111,7 +111,7 @@ will roll back to the checkpoint. The runtime manger will be detailed
 in the next subsection. 
 
 \begin{figure}
-	\center{\includegraphics[width=0.95\linewidth]{loss_checkpoint}}
+	\center{\includegraphics[width=0.9\linewidth]{loss_checkpoint}}
     \caption{Runtime checkpoint strategy.}
 \label{fig:loss_checkpoint}
 \vspace{-1em}
@@ -125,14 +125,14 @@ Fig \ref{fig:runtime-management} to handle all the possible overclocking problem
 at runtime automatically.
 
 \begin{figure}
-	\center{\includegraphics[width=0.75\linewidth]{manegment}}
+	\center{\includegraphics[width=0.65\linewidth]{manegment}}
     \caption{Runtime overclocking management.}
 \label{fig:runtime-management}
 \vspace{-1em}
 \end{figure}
 
 When the overclocked CNN accelerator is applied for inference, 
-a watch-dog must be enabled to detect if the accelerator is stalled 
+a watchdog must be enabled to detect if the accelerator is stalled 
 at runtime. When the accelerator is stalled, it indicates that critical 
 signals are corrupted. The manger will invoke the reconfiguration 
 and reload an implementation with lower overclocking. Meanwhile, 
@@ -147,8 +147,7 @@ Then we reconfigure the FPGA with a more conservative implementation
 and roll back for another execution on current checkpoint.
 Note that we set a rollback counter and compare it with a threshold $T$ 
 to determine if we should choose the reconfiguration route or the simple rollback route.
-This scheme is used to avoid lowering clock when the accuracy loss is 
-caused by a transient error.
+This scheme is used to avoid frequent reconfiguration.
 
 
 

@@ -18,24 +18,27 @@ continuously growing FPGA resources and stringent time-to-market requirements,
 the high level FPGA design tools \cite{Nane2016hls-survey} get increasing popularity.
 
 \subsection{BFS Algorithm}
-BFS is a widely used graph traversal algorithm and it is the basic 
+\textcolor{red}{BFS is a widely used graph traversal algorithm and it is the basic 
 building component of many other graph processing algorithms. 
 It traverses the graph by processing all vertices with the same distance from the 
 source vertex iteratively. The set of vertices which have the same distance from the 
 source is defined as frontier. The frontier that is under analysis in the BFS iteration 
 is named as current frontier while the frontier that is inspected from current frontier 
 is called next frontier. By inspecting only the frontier, BFS can be implemented efficiently 
-and thus the frontier concept is utilized in many BFS implementations.
+and thus the frontier concept is utilized in many BFS implementations.}
 
+
+\textcolor{red}{
 A widely used frontier based BFS algorithm implementation is named as 
 level synchronous BFS \cite{attia2014cygraph, betkaoui2012reconfigurable, 
 zhang2017boosting}. The basic idea is to traverse the frontier vertices 
 and inspect the neighbors of the current frontier vertices to obtain the 
 frontiers in next BFS iteration. Then the algorithm can start a new 
 iteration with a simple switch of current frontier queue and next frontier queue. 
-The algorithm ends when the frontier queue is empty.
+The algorithm ends when the frontier queue is empty.}
 
 \subsection{Baseline pipelined BFS}
+\textcolor{red}{
 The basic pipelined BFS structure with classical top-down traverse 
 is presented in Figure \ref{fig:base-bfs}. It can be roughly 
 divided into four pipeline stages. In the first stage, it reads 
@@ -54,6 +57,7 @@ it will be considered as frontier in next BFS iteration. The corresponding
 vertex status will be set and the vertex index will be sent to the last stage.
 In the last stage, the vertex indices of the next BFS frontier will be 
 written to main memory and level of the frontier vertices will be updated.
+}
 
 \begin{figure}
 \center{\includegraphics[width=0.7\linewidth]{base-bfs}}

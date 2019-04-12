@@ -13,7 +13,7 @@ The optimized clock frequency according to the SDAccel compilation
 is 200 MHz. 
 
 \begin{figure}
-	\center{\includegraphics[width=0.75\linewidth]{accelerator}}
+	\center{\includegraphics[width=0.65\linewidth]{accelerator}}
     \caption{Baseline CNN accelerator architecture.}
 \label{fig:cnn-arch}
 \vspace{-1em}
@@ -32,28 +32,27 @@ computing-bound and high-frequency CNN accelerator
 design will be beneficial.
 
 \begin{figure}
-	\center{\includegraphics[width=0.75\linewidth]{relative_time}}
+	\center{\includegraphics[width=0.65\linewidth]{relative_time}}
     \caption{Normalized runtime of neural networks executed on CNN accelerators with different clock frequency.}
 \label{fig:computing-bound}
 \vspace{-1em}
 \end{figure}
 
-To analyze the energy consumption, we obtain the power consumption from SDAccel report. 
-The power estimation setup assumes 50\% activity. Given the power consumption and the runtime, 
+To analyze the energy consumption, we obtain the power consumption from SDAccel 2017.1. 
+Given the power consumption and the runtime, 
 we calculated the energy delay product (EDP) which can be used as an energy efficiency metric.
 The experiment result is presented in Fig \ref{fig:edp}.
+It shows that higher clock frequency 
+enhances both the neural network performance and energy efficiency. 
+This motivates the use of overclocking that enables even higher clock frequency.
+
 
 \begin{figure}
 	\vspace{-1em}
-	\center{\includegraphics[width=0.75\linewidth]{relative_energy}}
+	\center{\includegraphics[width=0.65\linewidth]{relative_energy}}
     \caption{Normalized EDP of neural networks executed on CNN accelerators with different clock frequency.}
 \label{fig:edp}
 \vspace{-1em}
 \end{figure}
 
-According to the above experiments, it can be concluded that higher clock frequency 
-can be beneficial to both the neural network performance and energy efficiency. The 
-potential performance and energy efficiency improvement indicates that it is 
-worthwhile to boosting the clock of FPGA based CNN accelerators with some minor 
-overhead. Detailed overclocking on CNN accelerators will be investigated in 
-the rest part of this paper. 
+

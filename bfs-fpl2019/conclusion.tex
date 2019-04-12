@@ -1,0 +1,28 @@
+\section{Limitations and Conclusion} \label{sec:conclusion}
+\subsection{Limitations}
+%In this work, we mainly explore the OpenCL based BFS accelerator 
+%design on FPGAs, though Harp-v2 is a heterogeneous CPU-FPGA computing platform. 
+%We may further explore co-design on the heterogeneous architecture.
+
+In this work, we assume that the bitmap can be fully buffered on the FPGA on-chip RAM blocks. 
+Basically, we limit the number of vertices in the graph that 
+can be processed using this work. While the latest FPGAs has over 
+500Mb on-chip memory, we are supposed to handle graphs with hundreds 
+of millions of vertices in theory on a single FPGA card. 
+And we do not constrain the size of the edges in the graph. 
+To handle larger graphs, we need to further explore 
+the graph partitioning, while this work exhibits 
+the efficiency of the BFS processing of a single graph partition.
+
+\subsection{Conclusion}
+Handcrafted BFS accelerators with HDL usually suffer high portability and maintenance cost 
+as well as ease of use problem despite the relatively 
+good performance. OpenCL based BFS accelerator can greatly alleviate these problems, but it is 
+difficult to achieve satisfactory performance due to the inherent irregular memory access. 
+In this work, we center the irregular memory access in BFS with  
+a series of high-level optimizations. The resulting BFS can be implemented using OpenCL efficiently.
+Compared to a reference design in Spector benchmark, it achieves up to 12X performance speedup.
+When compared to the prior HDL based BFS accelerators on similar FPGA cards, 
+the proposed OpenCL based BFS accelerator achieves competitive performance.
+
+
