@@ -12,7 +12,7 @@ the neural network model prediction accuracy and evaluate the resilience of
 more general neural network models.
 
 In the experiment, we use PipeCNN\cite{pipecnn_2}, an open sourced high-level CNN accelerator, 
-as the baseline design. We have it implemented on KCU1500 FPGA board and run at 210 MHz. 
+as the baseline design. We have it implemented on KCU1500 FPGA board. 
 On ImageNet, we train AlexNet, VGG16 and VGG19 offline and then apply them to the 8bit accelerator. 
 When the accelerator is overclocked and the clock is boosted to the extreme case where 
 further overclocking will lead to frequent hardware crash, we measure the prediction accuracy of 
@@ -21,10 +21,7 @@ clock. In addition, we also evaluate the models trained with noisy data and drop
 compare with the original model.
 
 Figure \ref{fig:top1-loss} and Figure \ref{fig:top5-loss} show the top1 and top5 prediction accuracy comparison 
-respectively. 'Overclocking' refers to the neural networks models running on overclocked accelerator. 
-'train with dropout' and 'train with noise' represent the models trained with dropout strategy 
-and noisy data respectively. 'Original' means the models running on normal accelerator.
-It can be seen that all the three neural network models suffer considerable accuracy loss 
+respectively. It can be found that all the three neural network models suffer considerable accuracy loss 
 when the models are deployed on the overclocked accelerator directly. The average top1 accuracy and top5 accuracy 
 drops by xxx and xxx respectively, which undermines the usefulness of overclocking dramatically.
 Particularly, top1 accuracy drops more than top5 accuracy on all the 
@@ -43,36 +40,50 @@ It indicates that computing errors caused by the noisy data are
 different from that incurred by overclocking. The difference varies 
 in different neural network models and there is no guarantee 
 for the accuracy improvement using noisy data training.
-
 \begin{figure}
-	\center{\includegraphics[width=0.75\linewidth]{top1_dropout_noisy}}
-    \caption{Top1 prediction accuracy loss of models running on overclocked CNN accelerators.}
-\label{fig:top1-loss}
-\vspace{-1em}
-\end{figure}
-
-\begin{figure}
-        \center{\includegraphics[width=0.75\linewidth]{top5_dropout_noisy}}
-    \caption{Top5 prediction accuracy loss of models running on overclocked CNN accelerators.}
-\label{fig:top5-loss}
-\vspace{-1em}
+        \center
+        \subfloat[top1 prediction accuracy]{
+                \label{fig:top1-loss}
+                \includegraphics[width=0.65\linewidth]{top1_dropout_noisy}
+        }
+        \qquad
+        \subfloat[top5 prediction accuracy]{
+                \label{fig:top5-loss}
+                \includegraphics[width=0.65\linewidth]{top5_dropout_noisy}
+        }
+        \caption{Prediction accuracy loss of models running on overclocked CNN accelerators.
+			'Overclocking' refers to the neural networks models running on overclocked accelerator. 
+'train with dropout' and 'train with noise' represent the models trained with dropout strategy 
+and noisy data respectively. 'Original' means the models running on normal accelerator.
+ }
+        \label{fig:accuracy-dropout-noisy}
 \end{figure}
 
 To gain further insight of the computing errors, we analyze the error distribution 
-of different layers. Based on the error range, we divide the errors into 11 categories 
-including R0 ($0 \leq error < 1$), R1 ($1 \leq error < 2$), ..., R9 ($9 \leq error < 10$) 
-and R10 ($error \geq 10$). The error distribution of the three neural networks is shown in 
-Figure xxx. Errors on the different layers also vary. The last layer which is close to the result 
-exhibits the more large errors. 
+of different layers when compared to the correct execution. Based on the error range, 
+we divide the errors into 3 categories including R0 ($error == 0$), 
+R1 ($0 \leq error \leq 5$) and R2 ($error > 5$). As shown in 
+Figure \ref{fig:error_distribute}, most of the computing results remain 
+correct even in the extreme overclocking scenario. Full connection (FC) in the last layer 
+has only a small portion of correct computing results and most of the computing errors are 
+larger than xxx. As the last layer is close to the result and affects the final output 
+directly, it becomes critical to improve the overall resilience of the neural 
+networks. 
 
-According to the above experiments, we observe that the computing errors induced by the relaxed 
-design constraints such as overclocking can lead to dramatic prediction accuracy loss, though 
-the neural networks are usually resilient. The errors can be rather difficult to be characterized 
-via offline training with either noisy data or dropout. 
+\begin{figure*}
+        \center{\includegraphics[width=0.85\linewidth]{error_distribute}}
+        \caption{Computing error distribution across the different layers}
+        \label{fig:error_distribute}
+\end{figure*}
+
+According to the above experiments, we observe that the computing errors induced by 
+overclocking can lead to dramatic prediction accuracy loss, though 
+the neural networks are usually resilient. The errors are rather difficult to be
+covered via offline training with noisy data and dropout. 
 Instead of training on GPPs, we try to integrate the accelerator in the training framework 
 such that computing errors can be considered during training directly. In addition, we notice 
 that the last layer typically suffer more large errors, so we opt to protect the last layer 
-that takes up only a small portion of the neural network computing by scheduling it to GPPs 
-or other infrastructures without errors to improve the resilience of the overall neural 
-networks and obtain more advantageous design trade-offs.
+that takes up only a small portion of the neural network computing. By scheduling it to GPPs 
+or other infrastructures without errors may improve the resilience of the overall neural 
+networks, which allows more advantageous design trade-offs.
 
