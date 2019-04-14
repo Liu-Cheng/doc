@@ -44,24 +44,26 @@ for the accuracy improvement using noisy data training.
         \center
         \subfloat[top1 prediction accuracy]{
                 \label{fig:top1-loss}
-                \includegraphics[width=0.65\linewidth]{top1_dropout_noisy}
+                \includegraphics[width=0.7\linewidth]{top1_dropout_noisy}
         }
         \qquad
         \subfloat[top5 prediction accuracy]{
                 \label{fig:top5-loss}
-                \includegraphics[width=0.65\linewidth]{top5_dropout_noisy}
+                \includegraphics[width=0.7\linewidth]{top5_dropout_noisy}
         }
         \caption{Prediction accuracy loss of models running on overclocked CNN accelerators.
-			'Overclocking' refers to the neural networks models running on overclocked accelerator. 
+			'Overclocking' refers to the neural networks models running on overclocked accelerators. 
 'train with dropout' and 'train with noise' represent the models trained with dropout strategy 
-and noisy data respectively. 'Original' means the models running on normal accelerator.
+and noisy data respectively. They are also applied on overclocked accelerators. 
+'Original' means the models running on normal accelerator.
  }
+ \vspace{-1em}
         \label{fig:accuracy-dropout-noisy}
 \end{figure}
 
 To gain further insight of the computing errors, we analyze the error distribution 
 of different layers when compared to the correct execution. Based on the error range, 
-we divide the errors into 3 categories including R0 ($error == 0$), 
+we divide the errors into 3 categories including R0 ($error = 0$), 
 R1 ($0 \leq error \leq 5$) and R2 ($error > 5$). As shown in 
 Figure \ref{fig:error_distribute}, most of the computing results remain 
 correct even in the extreme overclocking scenario. Full connection (FC) in the last layer 
