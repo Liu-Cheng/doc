@@ -53,16 +53,16 @@ improves by xxx and xxx on average. The contributions of this work are
 summarized as follows.
 
 \begin{itemize}
-	\item We propose to make use of the fault tolerance of neural networks to relax 
+	\item We propose to improve the fault-tolerance of neural networks and make use of it to relax 
 		the accelerator design constraints for higher performance or energy efficiency.
 
-	\item Unlike the conventional offline training on GPPs, we propose 
-		an on-accelerator training approach to have the computing errors 
-		learned with the application data. By protecting the most sensitive 
-		neural network layer, we can further improve the resilience of the 
-		neural networks and pose more opportunities to hardware optimizations.
+	\item We propose a neural network training framework to obtain resilient neural network models. 
+		By integrating accelerator into conventional training, we have the computing errors 
+		learned with the application data. By protecting the layer with most large errors, 
+		we can further improve the resilience of the neural networks and pose more 
+		opportunities to hardware optimizations.
 
-	\item With comprehensive experiments, we show that the proposed training approaches 
+	\item With comprehensive experiments, we show that the proposed training framework 
 		could enhance the prediction accuracy of neural networks significantly 
 		when the accelerators run with computing errors incurred by either 
 		overclocking or lower voltage.
