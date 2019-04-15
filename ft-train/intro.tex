@@ -4,9 +4,9 @@ video surveillance, speech recognition, and robot vision, neural network acceler
 \cite{pipecnn_2,Zhang2015_9,Qiu2016_10,deepburing_12,Farabet2010_13,Zeng2018_18} 
 are increasingly explored and deployed to improve the computing performance and energy efficiency.
 Unlike generic applications, neural networks usually involve redundancy and are known to be 
-fault tolerant. By taking advantage of this feature, many neural network accelerator optimizations 
+fault tolerant\cite{Reagen2016}. By taking advantage of this feature, many neural network accelerator optimizations 
 such as neural network pruning and low-precision quantization can be utilized to improve 
-performance and energy efficiency notably with minor inference accuracy penalty. 
+performance and energy efficiency notably with minor inference accuracy penalty\cite{Han2016DeepCC}. 
 
 In line with these optimizations, we opt to relax the design constraints of 
 the neural network accelerators, which provides a unique way to achieve notable 
@@ -16,10 +16,11 @@ guarantee correct computing under even the most severe environments. On the cont
 neural network accelerators are more resilient and less sensitive to computing 
 errors incurred by timing violations. Given relaxed design constraints, many 
 aggressive hardware optimization techniques can be applied with computing errors. 
-For instance, emerging techniques such as xxx and xxx promise high energy efficiency 
+For instance, emerging techniques such as  near-threshold voltage regime\cite{RG2010NT} 
+and subthreshold digital logic design\cite{BH2005,B2006} promise high energy efficiency 
 but suffer instability and poor yield. Conventional neural network accelerator 
 can be pushed to operate at higher clock frequency with timing violations
-\cite{overclock_3,Paceline_15,overclock_35, overclock_retain_34,overclock_Algorithm_36}.
+\cite{overclock_3,Paceline_15}.
 Lowering vdd to have the accelerator operated at near-threshold voltage 
 also improves the energy efficiency. At the fab level, design rules may 
 be aggressively pushed to reduce the expense. 
