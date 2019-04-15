@@ -1,21 +1,16 @@
 \section{Conclusion} \label{sec:Conclusion}
-The neural network computing on the CNN accelerators 
-can be different from that computed on GPPs when the 
-CNN accelerators have approximate arithmetic operations, 
-get overclocked or suffer soft errors. When deploying the offline
-trained models to these accelerators, the neural network model 
-prediction accuracy can drop a lot. In this work, we propose an 
-on-accelerator training framework to address this problem.
-and then build the training framework based on Caffe on a 
-hybrid CPU-FPGA architecture. With the on-accelerator training 
-framework, we perform three 
-case studyies on CNN accelerators with approximate arithmetic unit, 
-overclocking and soft errors. According to our 
-experiments on the case studies, both the top1 and top5 prediction 
-accuracy improves significantly in general and the improvement goes 
-up to 14.4\% and 16.1\% respectively when compared to the 
-offline trained model. The disadvantage is the 
-much longer training time.
+The inherent fault-tolerance of neural networks allows design trade-offs between 
+minor prediction accuracy loss and great performance or energy efficiency improvements. 
+In this work, we aim to further improve the resilience of the neural networks to enable 
+more advantageous design trade-offs through retraining. Unlike conventional offline training on GPPs, 
+we propose to replace the forward computing on GPPs with accelerator computing during training and have both the computing 
+errors incurred by the relaxed design constraints and the application data learned in the neural network models. 
+In addition, we opt to protect critical neural layers to reduce the negative 
+influence of computing errors. This strategy elevates the 'shortest wooden bar' of 
+the neural networks and improves the overall resilience. With the proposed resilient neural network training, 
+the prediction accuracy of the retrained neural network models improves significantly 
+when computing errors appear. We further verify the proposed training 
+with overclocking on FPGA based CNN accelerators using a set of realistic neural network models.
 
 %\appendix
 %\section{Acknowledgement}

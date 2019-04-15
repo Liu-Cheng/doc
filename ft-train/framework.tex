@@ -1,86 +1,54 @@
-\section{On-accelerator training framework} \label{sec:framework}
-In contrast to the typical offline training framework on GPPs, we propose an 
-on-accelerator training framework to allow the CNN accelerator's runtime variation 
-caused by approximate arithmetic logic, overclocking or soft errors 
-to be learned with the application data. With the on-accelerator training,
-the obtained model can be deployed despite the accelerator's 
-undeterministic behavior. Details of the framework will be presented in 
-the rest of this section.
-
-\begin{figure*}
-        \center{\includegraphics[width=0.85\linewidth]{retrain}}
-        \caption{On-accelerator training framework with knowledge distilling}
-        \label{fig:retrain}
-%        \vspace{-0.5em}
-\end{figure*}
-
+\section{Resilient training framework} \label{sec:framework}
+Resilient neural networks allow significant performance or 
+energy efficiency improvement with little prediction accuracy penalty 
+by relaxing the neural network accelerator design constraints. 
+This motivates us to obtain more resilient neural networks 
+for advantageous accelerator design trade-offs. 
+A resilient neural network training framework will be 
+detailed in this section. 
 
 \subsection{Overall training framework}
-The on-accelerator training is essentially to have the neural 
-network models to tolerate the accelerators' dynamic variation. 
-While the variation is similar to the quantization 
-errors in certain extent, the ideal network model can be 
-close to the pretrained neural network model in terms of 
-network structure. In this case, we borrow the idea of knowledge 
-distilling\cite{distillation_38, distillation_39}, 
-which can be used to have a high-precision neural network to teach a 
-low-precision neural network with similar network structure efficiently, 
-for the on-accelerator training. Basically, the offline pretrained 
-model can be regarded as a teacher model and used to guide the training of the 
-student model with lower precision. After the training, the student model 
-can perform much better despite the accelerators' computing variation.
+As observed in Section II, we can improve the resilience of 
+the neural networks from two aspects. For the problem that the 
+computing error patterns are difficult to be captured in training with GPPs, 
+we have the accelerators with computing errors integrated into 
+the training process. Forward processing influenced by 
+the accelerator computing errors is used in training directly 
+such that computing error patterns and application data are 
+reflected in the neural network models. For the problem that 
+some of the layers are affected more than the others, 
+we take these layers as critical layers and opt to 
+protect the layers from being affected by computing errors. 
+With reasonable performance penalty, we can improve the 
+overall neural network resilience. 
+
+Following this idea, the overall training framework is depicted in Figure \ref{fig:retrain}. 
+Instead of training on GPPs, it has majority of the forward computing performed on the 
+accelerators with computing errors while the rest of the training remains on GPPs.
+Note that the critical layers should be executed on reliable hardware 
+while GPP is one of the options. There are many different approaches 
+such as overclocking and lowering voltage that can be used to relax the design constraints.
+Although they may cause distinct computing errors, they can be fitted to the 
+same training framework.
 
 
-With the knowledge distilling strategy, we develop an on-accelerator training 
-framework as illustrated in Figure \ref{fig:retrain}. The framework roughly consists of three parts
-including forward propagation, knowledge distilling and backward propagation. 
-Both the teacher network and the student network will go through the 
-forward propagation. The computing results i.e. $z^T$ and $z^S$ in 
-combination with the label of the input image data will be fed to the 
-knowledge distilling part. In the knowledge distilling part,  
-the logit of softmax i.e. $z^T$ and $z^S$ are further used to calculate the 
-softmax i.e. $p^T$ and $p^S$ with Equation \ref{eq:pt-calu}. 
-Note that the logit of the teacher network is divided by a 
-temperature factor t. It can be used to adjust the softmax 
-probability distribution. Using a higher value for t 
-produces a softer probability distribution and stresses 
-the training process. 
-
-On top of the softmax, we can further calculate the student 
-network loss with Equation \ref{eq:student-loss}. It includes 
-two different parts i.e.$L(y, p^S)$ and $L(p^T, p^S)$ which can be 
-obtained with Equation \ref{eq:loss}. The student loss is used in the 
-back propagation part as conventional neural network training. 
-After the back propagation, weights will be updated and used for the 
-next training iteration. The training will stop when the prediction 
-accuracy gets converged.
-
-\begin{equation}
-	\label{eq:pt-calu}
-p_j=\frac{e^{{z_j}/t}}{\sum_{i=1}^{K}e^{{z_i}/t}}
-\end{equation}
-
-\begin{equation}
-	\label{eq:student-loss}
-L=\alpha*L(y,p^S)+\beta*L(p^T,p^S)
-\end{equation}
-
-\begin{equation}
-	\label{eq:loss}
-L(y,p)=-\sum_{i=1}^{K}y_i*log(p_i)
-\end{equation}
+\begin{figure}
+        \center{\includegraphics[width=0.85\linewidth]{on_accelerator_retrain_pocess}}
+        \caption{Resilient neural network training framework}
+        \label{fig:retrain}
+%        \vspace{-0.5em}
+\end{figure}
 
 
-To make the training aware the accelerators' dynamic variation, 
-we have the forward propagation of the student network 
-performed on the accelerator directly while the rest of the 
-framework remains on GPPs. The forward propagation on 
-the accelerator is fixed point. The backward propagation on 
-GPPs adopts the floating point to ensure 
-the small change in the gradient can be accumulated \cite{Matthieu2014_8}. 
-Otherwise, the gradient may disappear due to the 
-quantization and new infomration can no longer be learned.
-
+\subsection{CNN accelerator abstraction and modification}
+As illustrated in the above section, the forward propagation will 
+mostly be executed on the CNN accelerator while 
+the rest part runs on GPPs. Essentially, the framework targets at a 
+heterogeneous computing architecture and frequent 
+communication between the accelerator and the GPPs are expected. 
+In order to fit various CNN accelerators within the same training framework,
+we abstract the CNN accelerators with a high-level interface
+which makes the accelerators near transparent to the training framework.
 \begin{table*}
         \centering
         \vspace{-0.3em}
@@ -110,16 +78,6 @@ quantization and new infomration can no longer be learned.
 \end{table*}
 
 
-
-\subsection{CNN accelerator abstraction}
-As illustrated in the above section, the forward propagation of the 
-student network will be executed on the CNN accelerator while 
-the rest part runs on GPPs. Essentially, the framework targets at a 
-heterogeneous computing architecture and frequent 
-communication between the accelerator and the GPPs is expected. 
-In order to fit various CNN accelerators within the same training framework,
-we abstract the CNN accelerators with a high-level interface
-which makes the accelerators near transparent to the training framework.
 
 Centering the data communication between the forward propagation 
 and the rest of the training framework, we define a high-level 
@@ -155,9 +113,8 @@ both parts developed with C family languages, they can be integrated convenientl
 %exposed to Caffe for referring to the forward propagation result. 
 
 
-\subsection{CNN accelerator modification}
 On top of the high-level interface, the CNN accelerator also needs 
-minor adjustments to enable the on-accelerator training. 
+minor modification to enable the on-accelerator training. 
 Typically, the training requires the feature map of each neural 
 network layer for backward propagation. However, many of the accelerators 
 are intensively optimized for inference only and some of the layers’ output 
@@ -168,8 +125,6 @@ As shown in Figure \ref{fig:change_of_accelerator}, the output of each layer
 will be transferred to memory using the added optional data path 
 when the accelerator is used for training. The write back data path 
 can be switched off when the accelerator is used for inference. 
-It is trivial to modify the CNN accelerators and the hardware
-resource consumption is negligible.
 
 \begin{figure}
         \center{\includegraphics[width=0.85\linewidth]{change_of_accelerator}}
@@ -179,5 +134,44 @@ to external memory for back propagation in training.}
         \label{fig:change_of_accelerator}
         \vspace{-1em}
 \end{figure}
+
+\subsection{Critical neural network layer protection}
+In order to improve the overall neural network resilience, we opt to 
+protect the critical network layers and the rest layers can tolerate 
+more severe computing errors. The protection is essentially 
+to have the critical layers executed on reliable computing infrastructures 
+and the exact protection method depends on the target hardware platform.
+We may either schedule the critical layers to the GPPs or switch the accelerator 
+to reliable mode during the execution of the critical layers.
+In this work, we assume GPPs are used for reliable computing 
+of critical layers. 
+
+To decide the critical layers of the neural networks, we formulate the 
+critical layer section scheme. Suppose the neural network layers include 
+$N$ layers and each layer is represented as $L_i$ where $i \in {0, 1, 2, ..., N-1}$.
+Then we evaluate the prediction accuracy loss of the neural network 
+that have one layer protected on accelerators with computing errors.
+When the $i$th layer is protected, the loss is $loss_i$.
+Then the most critical layers are the layer that lead to the most 
+accuracy loss i.e. $c \in \{k|loss_k = max(loss_i), i \in \{0, 1, ..., N-1\}\}$.
+
+This above formulated approach require large amount of evaluation of 
+different layers of the neural network. Instead, we use the actual 
+computing errors as the critical layer selection metric. We set an 
+error threshold $T$ and assume 8bit integers are used. 
+When the error equals to 0, the computing results are correct. 
+When the error is larger than $T$, the results are assumed to be large errors.
+When the error is wrong but smaller than $T$, the results are considered 
+as moderate errors. The layers that include the largest portion of large errors 
+are taken as the critical layers.
+
+In addition, scheduling the neural network layers executed 
+on the accelerator to GPPs has performance penalty due to the 
+computing efficiency gap. As the accelerators are usually 
+orders of magnitudes faster than the GPPs for neural network 
+processing especially large convolution layers, we can focus on 
+the last few small layers to ensure negligible performance 
+loss. This constrain greatly reduces the search space
+of the critical layers. 
 
 

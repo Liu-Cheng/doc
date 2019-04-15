@@ -1,15 +1,20 @@
-\section{Case Study and Experiments} \label{sec:casestudy}
-In this section, we will study the use of the proposed on-accelerator training 
-framework. With three case studies including approximate multiplier, 
-overclocking and soft error that may benefit from the on-accelerator training, 
-we evaluate the framework through comprehensive experiments. Finally, we present 
-some general on-accelerator training experiments.
+\section{Experiments} \label{sec:casestudy}
+In this section, we evaluate the proposed resilinet neural network training 
+framework for accelerators with computing errors. The errors can be caused by 
+various relaxed design constraints and we use random computing errors in 
+the experiments for general analysis. Then we use overclocking on FPGA based 
+CNN accelerators as the case study and demonstrate the usefulness of the 
+proposed resilient training on realistic system.
 
-In the approximate multiplier and overclocking case studies, we experiment on the 8-bit 
-fixed-point PipeCNN \cite{pipecnn_2} on Xilinx KCU1500 board. In the soft error case study, 
-we experiment with an equivalent C model of PipeCNN due to the lack of 
-HLS based soft error injection tools. To evaluate the training, 
-we take four representative convolution neural networks including LeNet, 
+\subsection{Experiment setup}
+We experiment on 8bit fixed-point PipeCNN \cite{pipecnn_2} accelerators. 
+To simulate the computing errors caused by related design constraints, we 
+inject random errors to on-chip buffers and hidden layer status registers of 
+the CNN accelerators which is similar to the error simulation used in xxx. 
+The main difference is that we also have random errors injected to the 
+internal computing results as suggested in xxx. The error injection metric 
+is called bit error rate which represents xxx. To evaluate the training, 
+we take four representative convolution neural networks including 
 AlexNet, VGG-16 and VGG-19 as the benchmark. The neural network 
 benchmark is summarized in Table \ref{tab:CNN-table}. It covers networks with 
 diverse sizes and the analysis can be applied to more neural networks.
@@ -23,8 +28,6 @@ diverse sizes and the analysis can be applied to more neural networks.
 		\toprule
 		  & Dataset & Layers & Total weights \\
 		\midrule
-		LeNet & Mnist & 4 & 60K \\
-		\midrule
 		AlexNet & ImageNet & 8 & 61M \\
 		\midrule
 		VGG-16 & ImageNet & 16 & 138M \\
@@ -35,68 +38,76 @@ diverse sizes and the analysis can be applied to more neural networks.
         \vspace{-1em}
 \end{table}
 
+\subsection{Neural network resilience analysis}
+To explore the resilience of the proposed neural network training, we
+compare the prediction accuracy of neural networks in three scenarios.
+In the first case, we have offline trained neural network models deployed on 
+CNN accelerators with computing errors directly as denoted as 'original'.
+In the second case, we have the neural network models retrained on the 
+accelerator with computing errors. It is represented as training with 
+accelerator (TWA). In the third case, we have the critical layers 
+protected on top of the second case and it is denoted as critical layer protected(CLP). 
+Basically, we schedule the critical layers to 
+GPPs to ensure precise computing during both retraining and inference.
 
-\subsection{CNN accelerator with approximate arithmetic logic}
-Approximate arithmetic logic that promises high-performance and energy-efficient computing has 
-been studied intensively in prior work\cite{Miao_40,han_41}. When the approximate arithmetic logic 
-is used in a CNN accelerator, the computing result of a neural network will be different 
-from the exact computing result and lead to prediction accuracy loss when deploying 
-the neural network model directly as shown in Section \ref{sec:motivation}. 
-An intuitive approach is to train with software simulation, but some of the approximate arithmetic 
-operators are rather complex when simulated with software i.e.\cite{appro_45}. Particularly, some of the 
-approximate arithmetic unit relies on underlying semiconductor devices which 
-can hardly be simulated with software i.e.\cite{appro_46}. The proposed on-accelerator 
-training framework fits well with these situations. 
+The comparison of the three cases is presented in Figure \ref{fig:softerror-accuracy}.
+When the BER goes up, the prediction accuracy of the original neural network drops 
+considerably despite the resilience of the neural networks. 
+According to the experiments, the top1 and top5 precision accuracy of the retrained models 
+improves by 11.1\% and 3.4\% on average respectively compared to the offline trained 
+model under the highest error injection rate. By using the proposed training, 
+the prediction accuracy recovers significantly, which indicates that the resilience 
+of the neural network models is improved. Therefore, more aggressive design trade-offs 
+between prediction accuracy and performance or energy efficiency can be performed. 
 
-In this experiment, we mainly focus on the prediction accuracy loss and 
-take the dynamic-range approximate multiplier proposed in \cite{Approximate_Multiplier_31} as 
-an approximate computing example. The multiplier is implemented on top of the PipeCNN
-accelerator. Basically, it reserves the most significant non-zero bits as well as the 
-following $k$ lower bits. Larger $k$ will keep more valid digits and the multiplier 
-is more accurate. On the contrast, smaller $k$ leads to lower precision but 
-more efficient computing. 
-
-Figure \ref{fig:k2-approximate-multiplier} shows the 
-neural network prediction accuracy when running on the approximate CNN 
-accelerator with $k=2$. According to the accuracy comparison of the models with 
-offline training and on-accelerator training, it can be found that the 
-top1 and top5 prediction accuracy improvement is up to 14.4\% and 16.1\% respectively. 
-When $k=3$, the offline trained model accuracy is much higher due to the improved 
-computing precision leaving little optimization space. The average prediction 
-accuracy is still improved, though the improvement is less significant.
-LeNet which is a small yet resilient network does not show much 
-difference on the different training approaches and $k$ setup.
-\begin{figure}
-        \center
-        \subfloat[top1]{
-                \label{fig:appro-k2-top1}
-                \includegraphics[width=0.65\linewidth]{appro-k2-top1}
-        }
-        \qquad
-        \subfloat[top5]{
-                \label{fig:appro-k2-top5}
-                \includegraphics[width=0.65\linewidth]{appro-k2-top5}
-        }
-        \caption{The prediction accuracy of the neural network on accelerator with approximate multiplier(k=2)}
-        \label{fig:k2-approximate-multiplier}
-\end{figure}
+Comparing the second case and the third case, we find that the critical layer 
+is sensitive to the computing errors and it can be considered as the 'shortest 
+wooden bar' of the overall nerual network resilience. When it is protected, 
+the overall neural network resilience gets improved accordingly.
+While scheduling the critical layers to GPPs may lead to additional computing overhead 
+due to the comptuing gap between GPP and the accelerators, we need to evaluate the 
+performance overhead. According to our experiemnts, the last layers are prone to 
+be the critical layers which usually take only a small portition of the overall 
+computing overhead. For instance, the computing overhead is only xxx of the overall computing.
+Assume the accelerator is 100X faster, then the performance penalty is around xxx.
+When the improved prediction accuracy allows xx, it is benefitical to schedule the 
+last computing layer to GPPs. When there is additional precise CNN accelerators shared by 
+accelerator with computing errors, it is always benefical to protect the critical computing layers.
 
 \begin{figure}
         \center
-        \subfloat[top1]{
-                \label{fig:appro-k3-top1}
-                \includegraphics[width=0.6\linewidth]{appro-k3-top1}
+		\subfloat[AlexNet]{
+                \label{fig:alexnet}
+                \includegraphics[width=0.6\linewidth]{alexnet-softerror}
         }
         \qquad
-        \subfloat[top5]{
-                \label{fig:appro-k3-top5}
-                \includegraphics[width=0.6\linewidth]{appro-k3-top5}
+        \subfloat[VGG-16]{
+                \label{fig:vgg16}
+                \includegraphics[width=0.6\linewidth]{vgg16-softerror}
         }
-        \caption{The prediction accuracy of the neural network on accelerators with approximate multiplier(k=3)}
-        \label{fig:k3-approximate-mltiplier}
+        \qquad
+        \subfloat[VGG-19]{
+                \label{fig:vgg19}
+                \includegraphics[width=0.6\linewidth]{vgg19-softerror}
+        }
+        \caption{The precision accuracy of the benchmark neural network models on accelerators with differnt computing errors}
+        \label{fig:softerror-accuracy}
 \end{figure}
 
-\subsection{CNN accelerator with overclocking}
+The computing errors in the worst case of the three neural networks are also evaluated as shown in 
+Figure xxx. We set the error threshold as 5, it can be seen that the last FC layer is the most 
+critical layer according to this metric. 
+
+\subsection{Overclocking case study}
+To verify the proposed resilient training, we take overclocking on KCU1500 as a case 
+study in this work. By relaxing the timing constraints, the CNN accelerator can 
+run at higher clock frequency with timing violations and computing errors. In pipeCNN, the 
+hardware implemention is related to the neural network. For AlexNet, VGG16 and VGG19, the 
+default implemention frequency is 210 MHz, 190 MHz and 190 MHz respectively. We then apply overcloking 
+on the implementions with a step of 10 MHz. The implementions can be boosted to 
+260 MHz MHz, 240 MHz MHz and 240 MHz at most. By retraining the original neural network with 
+the proposed approach, the prediction accuracy improvement is evaluated in detail.
+
 Clock frequency is almost proportional to the performance of the CNN accelerator 
 especially for large convolution operation which is typically computing bound. 
 However, the circuit design tools typically adopt conservative design options 
@@ -108,11 +119,6 @@ apply the on-accelerator training to have the computing errors tolerated
 by the models without redesigning the CNN accelerator.
 \begin{figure}
         \center
-	\subfloat[LeNet]{
-		\label{fig:lenet}
-		\includegraphics[width=0.6\linewidth]{lenet-overclock}
-	}
-	\qquad
 	\subfloat[AlexNet]{
                 \label{fig:alexnet}
                 \includegraphics[width=0.6\linewidth]{alexnet-overclock}
@@ -132,17 +138,8 @@ by the models without redesigning the CNN accelerator.
 \end{figure}
 
 
-With PipeCNN, we implemented the benchmark neural networks on Xilinx KCU1500. 
-LeNet and AlexNet use the same hardware implementation 
-while VGG-16 and VGG-19 share the same hardware implementation. 
-The two implementations work at 210 MHz and 190 MHz respectively.
-With overclocking, they can be boosted to 210 MHz - 260 MHz and 
-190 MHz - 240 MHz respectively. Given different overclocking frequency, 
-the accelerator produces different computing results due to the variable
-timing errors. It is expected that more aggressive overclocking will incur 
-more computing errors and precision loss. 
-
-On top of the overclocked CNN accelerators, we compare both the offline training and the on-accelerator training.
+On top of the overclocked CNN accelerators, we compare both the offline 
+training and the on-accelerator training.
 The prediction accuracy comparison is presented in Figure \ref{fig:overclock-accuracy}. 
 Basically, the prediction accuracy will not drop until the tipping point. After the tipping point, the 
 prediction accuracy degrades dramatically and can no longer be salavaged through training.
@@ -155,122 +152,9 @@ increases by 19\% to 26\% with small prediction accuracy loss.
 LeNet again has distinct behavior. It can tolerate all the
 overclocking errors before the tipping point, but it 
 also crashed given higher clock.
-%  For AlexNet, VGG-16 and VGG-19, the top-5 accuracy of the retained models is improved by 3.4\%, 1.8\%, and 2\% 
-%respectively at the extreme overclocking frequency. For LeNet which is a rather small yet reliable network 
-%compared to the other three, the implementation remains unaffected even when the clock is boosted to 260 MHz 
-%from 210 MHz. When the clock goes up to 270MHz, the timing error can no longer be tolerated by the hardware system, 
-%the prediction accuracy drops to 10\% which is essentially meaningless. In this case, the base model 
-%and the retrained model is pretty much the same. To ensure the stability of the overclocking experiment, 
-%we also keep measuring the accuracy of the accelerators with extreme overclocking. With repeatedly 
-%running the test for up to 40 hours, the measured accuracy varies slightly as present in Figure 7. 
-%Despite the fact that the errors caused by the overclocking can be hardly modeled precisely at runtime, 
-%the inherent error patterns may still partly be captured by the CNN model with the proposed training. 
-%This explains the higher prediction accuracy with the retrained model. According to the 
-%above experiments, we can conclude that the proposed accelerator aware training can produce 
-%more resilient CNN model tolerating errors caused by intensive overclocking. 
 
-%To ensure the stability of the overclocking experiment, we 
-%also keep measuring the accuracy of the accelerators with extreme 
-%overclocking. With repeatedly running the test for up to 40 hours, 
-%the measured accuracy varies slightly as present in Figure 7. 
-%Despite the fact that the errors caused by the overclocking can be 
-%hardly modeled precisely at runtime, the inherent error patterns may 
-%still partly be captured by the CNN model with the proposed training. 
-%This explains the higher prediction accuracy with the retrained model. 
-%According to the above experiments, we can conclude that the proposed 
-%accelerator aware training can produce more resilient CNN model tolerating 
-%errors caused by intensive overclocking. 
-%
-%\begin{figure}
-%        \center{\includegraphics[width=0.6\linewidth]{stability}}
-%        \caption{The Stability of Retrained Model}
-%        \label{fig:stability}
-%%        \vspace{-0.5em}
-%\end{figure}
-
-\subsection{CNN accelerator with soft errors}
-With the shrinking semiconductor feature size and increasing FPGA capacity, 
-FPGA design becomes error-prone to the soft errors. 
-They can affect the behavior of the FPGA design dramatically. 
-Many researchers \cite{Mansour_20,Karim_21,Nidhin_22,Subasi_23,ROSCH_24} 
-have proposed various approaches to address this problem. CNN accelerators 
-on FPGA can be different from the general hardware design, because 
-the CNN model deployed can be further trained to tolerate the 
-soft errors. As the real soft errors can hardly be modeled on GPPs, we thus
-opt to adopt the on-accelerator training.
-
-To explore the influence of soft errors on CNN accelerators, 
-we need to inject soft errors to the CNN accelerators. 
-In this work, we adopt a simulation-based method for the experiments. 
-For the CNN accelerator, we built a C model equivalent to PipeCNN and then injected single event 
-upsets (SEU) to the major components of the CNN accelerator model including the on-chip buffers 
-and the computing array. With the soft error injection, we evaluate the influence of 
-soft errors on the neural network prediction accuracy, The prediction accuracy 
-is presented in Figure \ref{fig:softerror accuracy}. When we gradually increase the error rate, 
-the prediction accuracy degrades accordingly when applying the off-line 
-trained model directly on the faulty accelerators. 
-%Compared to the offline training,
-%the on-accelerator training improves the top1 and top5 prediction accuracy
-%on the worst case by 11.1\% and 3.4\% respectively.
-%When the error rate goes up to 1E-4.5, the accuracy in the worst case drops 
-%by around 13.5\%. Similar to overclocking, LeNet can tolerate 
-%more errors than the other three networks. The accuracy remains unchanged 
-%until the error rate reaches 1E-3. When the error injection rate is low, 
-%the CNN model is able to cover almost all the negative influence 
-%on the prediction accuracy.
-
-\begin{figure}
-        \center
-        \subfloat[LeNet]{
-                \label{fig:lenet}
-                \includegraphics[width=0.6\linewidth]{lenet-softerror}
-        }
-        \qquad
-        \subfloat[AlexNet]{
-                \label{fig:alexnet}
-                \includegraphics[width=0.6\linewidth]{alexnet-softerror}
-        }
-        \qquad
-        \subfloat[VGG-16]{
-                \label{fig:vgg16}
-                \includegraphics[width=0.6\linewidth]{vgg16-softerror}
-        }
-        \qquad
-        \subfloat[VGG-19]{
-                \label{fig:vgg19}
-                \includegraphics[width=0.6\linewidth]{vgg19-softerror}
-        }
-        \caption{The precision accuracy of the benchmark neural network models on accelerators with soft errors}
-        \label{fig:softerror accuracy}
-\end{figure}
-
-When the error injection rate goes up, the proposed on-accelerator training becomes critical. 
-According to the experiments, the top1 and top5 precision accuracy improves by 11.1\% and 3.4\%
-respectively compared to the offline trained model under the highest error injection rate. 
-LeNet can also tolerate higher error injection rate and exhibits the unique fault-tolerant capability.
-In summary, the experiments demonstrate that we can have the CNN model to learn 
-both the characteristics of the data and the underlying computing errors of the accelerator 
-together using the on-accelerator training framework. The resulting CNN model becomes more resilient 
-without any modification to the CNN accelerators.  
-
-\subsection{General on-accelerator training analysis}
-We also present the training time on the hybrid CPU-FPGA architecture. 
-It can be seen that the training is much slower than the fixed-point training on CPU. 
-This is mainly caused by the frequently data transferring between device memory and host 
-memory as well as the large amount of data type converting, This will be optimized 
-in our future work. In addition, it can be found that the 
-training on larger network takes longer time and higher clock frequency 
-is beneficial to the training time as expected.  
-
-\begin{figure}
-        \center{\includegraphics[width=0.6\linewidth]{time}}
-        \caption{Training time}
-        \label{fig:time}
-%        \vspace{-0.5em}
-\end{figure}
-
-
-For the on-accelerator training approach, we notice that batch size is 
+\subsection{Proposed training analysis}
+For the proposed training approach, we notice that batch size is 
 a critical hyper parameter. We use AlexNet as an example and show the influence of batch on the resulting model 
 prediction accuracy. The result is presented in Figure \ref{fig:batch}.
 According to the figure, the batch size affects the training precision clearly.
@@ -284,3 +168,10 @@ recommended for the on-accelerator training.
         \caption{The influence of batch size on the on-accelerator training}
         \label{fig:batch}
 \end{figure}
+
+Comparing the experiments with random error simulation and overclocking on realistic FPGAs, we
+find that the computing errors may not be uniform distributed. In the overclocking, it can be found 
+that the prediction accuracy drops with clif-like style. It indicates the computing errors may 
+be quite small with light overclocking, but the amount of errors explodes at certain point.
+Fortunately, the proposed training framework still functions as expected.
+
