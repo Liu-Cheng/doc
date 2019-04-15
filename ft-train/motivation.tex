@@ -23,7 +23,7 @@ compare with the original model.
 Figure \ref{fig:top1-loss} and Figure \ref{fig:top5-loss} show the top1 and top5 prediction accuracy comparison 
 respectively. It can be found that all the three neural network models suffer considerable accuracy loss 
 when the models are deployed on the overclocked accelerator directly. The average top1 accuracy and top5 accuracy 
-drops by xxx and xxx respectively, which undermines the usefulness of overclocking dramatically.
+drops by 17.1\% and 29.8\% respectively, which undermines the usefulness of overclocking dramatically.
 Particularly, top1 accuracy drops more than top5 accuracy on all the 
 models, which means that the top1 of the final softmax output changes but it probably 
 stays in the top5 range. 
@@ -68,7 +68,7 @@ R1 ($0 \leq error \leq 5$) and R2 ($error > 5$). As shown in
 Figure \ref{fig:error_distribute}, most of the computing results remain 
 correct even in the extreme overclocking scenario. Full connection (FC) in the last layer 
 has only a small portion of correct computing results and most of the computing errors are 
-larger than xxx. As the last layer is close to the result and affects the final output 
+larger than 5. As the last layer is close to the result and affects the final output 
 directly, it becomes critical to improve the overall resilience of the neural 
 networks. 
 
