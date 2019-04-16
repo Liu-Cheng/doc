@@ -12,14 +12,14 @@ the models need to be trained for the target accelerator.
 The neural network training is mostly performed on GPPs with floating point.
 When the floating point models are quantized and deployed directly 
 on the CNN accelerators with low computing precision, the prediction 
-accuracy of the models may drop. Many offline converting or online 
-tuning approaches are proposed to ensure the neural network models 
-executed on the CNN accelerator with little accuracy loss.
-\cite{Matthieu2014_8, Hwang2014_17}. 
+accuracy of the models may drop\cite{Matthieu2014_8, Hwang2014_17}. 
+Many offline converting or online tuning approaches are proposed to 
+ensure the neural network models executed on the CNN accelerator 
+with little accuracy loss\cite{BinaryConnect_14,courbariaux2014}. 
 
 There are also efforts spent to use FPGAs for training. 
 Caffeine\cite{Caffeine_6} provided a general CNN accelerator design and integrated it with 
-the training framework Caffe. Caffeinated FPGA\cite{DiCecco_4} implemented FPGA kernels 
+the training framework Caffe. FCNN\cite{fcnn_5} implemented FPGA kernels 
 for both forward propagation and backward propagation. It can also be used in Caffe 
 and allows both training and inference. These work focus on the performance optimization 
 and fine-tuning for quantized neural network models. 
@@ -31,7 +31,7 @@ Hardware design typically requires strict design constraints to ensure
 reliable behavior. However, many applications such as image processing 
 can tolerate computing errors. In this case, design constraints can be 
 relaxed and great performance or energy efficiency benefits can be achieved 
-with little negative influence. Near-threshold circuit and SRAM, 
+with little negative influence. Near-threshold circuit\cite{M2017NT,BH2005} and SRAM\cite{G2010SRAM,SA2008SRAM}, 
 and overclocking \cite{overclock_3} have been explored and demonstrated 
 to be promising approaches. Neural networks are also resilient and 
 offers tremendous design optimizations by relaxing the design constraints. 
