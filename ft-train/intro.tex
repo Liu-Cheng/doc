@@ -1,7 +1,7 @@
 \section{Introduction} \label{sec:intro}
 Inspired by the widespread adoption of neural networks in massive fields such as image classification, 
 video surveillance, speech recognition, and robot vision, neural network accelerators 
-\cite{pipecnn_2,Zhang2015_9,Qiu2016_10,deepburing_12,Farabet2010_13,Zeng2018_18} 
+\cite{Zhang2015_9,Qiu2016_10,deepburing_12,DiCecco_4,Zeng2018_18} 
 are increasingly explored and deployed to improve the computing performance and energy efficiency.
 Unlike generic applications, neural networks usually involve redundancy and are known to be 
 fault tolerant\cite{Reagen2016}. By taking advantage of this feature, many neural network accelerator optimizations 
@@ -18,7 +18,7 @@ errors incurred by timing violations. Given relaxed design constraints, many
 aggressive hardware optimization techniques can be applied with computing errors. 
 For instance, emerging techniques such as  near-threshold voltage regime\cite{RG2010NT} 
 and subthreshold digital logic design\cite{BH2005,B2006} promise high energy efficiency 
-but suffer instability. Conventional neural network accelerator 
+but suffer instability\cite{Pu2010NT}. Conventional neural network accelerator 
 can be pushed to operate at higher clock frequency with timing violations
 \cite{overclock_3,Paceline_15}. At the fab level, design rules may also 
 be aggressively pushed to reduce the expense. 
@@ -48,7 +48,7 @@ of the computing errors. With both the retraining and sensitive layer protection
 the neural networks become more resilient to the computing errors caused by 
 the aggressive design options such as near-threshold logic or overclocking.
 Compared to the original neural networks, the prediction accuracy of top-1 and top-5 
-improves by xxx and xxx on average. The contributions of this work are 
+improves by 22.8\% and 9.89\% on average. The contributions of this work are 
 summarized as follows.
 
 \begin{itemize}
