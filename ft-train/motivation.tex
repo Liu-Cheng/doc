@@ -1,23 +1,23 @@
 \section{Motivation} \label{sec:motivation}
-Neural networks are usually resilient to computing errors. With this feature, 
-significant improvements on performance or energy efficiency may be 
-achieved with moderate computing errors but small prediction accuracy loss.
-Therefore, more resilient neural networks models promise more advantageous 
-design trade-offs. To improve neural network model resilience, an  approach is to adopt 
-the approaches such as training with noisy data and dropout, which are mainly 
-used to reduce the influence of sampling variations and prevent overfitting. 
-In the rest of this section, we take overclocking as an example of accelerators 
+By relaxing the design constraints, we can take advantage of the neural network 
+fault-tolerance and obtain significant improvements on 
+performance or energy efficiency with moderate computing errors but small prediction 
+accuracy loss. While the neural network model resilience is key to the  
+design trade-offs, we take overclocking as an example of accelerators 
 with computing errors, analyze the influence of computing errors on 
-the neural network model prediction accuracy and evaluate the resilience of 
-more general neural network models.
+the neural network model prediction accuracy. The widely used neural 
+training techniques such as training with noisy data and dropout may be 
+utilized to improve neural network model resilience and they are also 
+evaluated.
 
-In the experiment, we use PipeCNN\cite{pipecnn_2}, an open sourced high-level CNN accelerator, 
-as the baseline design. We have it implemented on KCU1500 FPGA board. 
-On ImageNet, we train AlexNet, VGG16 and VGG19 offline and then apply them to the 8bit accelerator. 
-When the accelerator is overclocked and the clock is boosted to the extreme case where 
+We used PipeCNN\cite{pipecnn_2}, an open sourced high-level CNN accelerator, 
+as the baseline design. We had it implemented on KCU1500 FPGA board. 
+On ImageNet, we trained AlexNet, VGG16 and VGG19 offline and then applied 
+them to the 8bit CNN accelerator. When the accelerator is overclocked and 
+the clock is boosted to the extreme case where 
 further overclocking will lead to frequent hardware crash, we measure the prediction accuracy of 
 the three typical neural networks and compare with that obtained from accelerators with normal 
-clock. In addition, we also evaluate the models trained with noisy data and dropout and 
+clocking. In addition, we also evaluate the models trained with noisy data and dropout and 
 compare with the original model.
 
 Figure \ref{fig:top1-loss} and Figure \ref{fig:top5-loss} show the top1 and top5 prediction accuracy comparison 
@@ -69,16 +69,16 @@ Figure \ref{fig:error_distribute}, most of the computing results remain
 correct even in the extreme overclocking scenario. Full connection (FC) in the last layer 
 has only a small portion of correct computing results and most of the computing errors are 
 larger than 5. As the last layer is close to the result and affects the final output 
-directly, it becomes critical to improve the overall resilience of the neural 
+directly, it becomes a critical layer that limits the overall resilience of the neural 
 networks. 
 
 \begin{figure*}
-        \center{\includegraphics[width=0.85\linewidth]{error_distribute}}
-        \caption{Computing error distribution across the different layers}
+        \center{\includegraphics[width=0.8\linewidth]{error_distribute}}
+        \caption{Computing error distribution across the different layers when executed on overclocked CNN accelerator}
         \label{fig:error_distribute}
 \end{figure*}
 
-According to the above experiments, we observe that the computing errors induced by 
+According to the experiments, we observe that the computing errors induced by 
 overclocking can lead to dramatic prediction accuracy loss, though 
 the neural networks are usually resilient. The errors are rather difficult to be
 covered via offline training with noisy data and dropout. 

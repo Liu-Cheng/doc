@@ -152,16 +152,16 @@ $N$ layers and each layer is represented as $L_i$ where $i \in {0, 1, 2, ..., N-
 Then we evaluate the prediction accuracy loss of the neural network 
 that have one layer protected on accelerators with computing errors.
 When the $i$th layer is protected, the loss is $loss_i$.
-Then the most critical layers are the layer that lead to the most 
+Then the most critical layer is the layer that leads to the most 
 accuracy loss i.e. $c \in \{k|loss_k = max(loss_i), i \in \{0, 1, ..., N-1\}\}$.
 
-This above formulated approach require large amount of evaluation of 
+The above formulated approach requires large amount of evaluation of 
 different layers of the neural network. Instead, we use the actual 
 computing errors as the critical layer selection metric. We set an 
 error threshold $T$ and assume 8bit integers are used. 
 When the error equals to 0, the computing results are correct. 
 When the error is larger than $T$, the results are assumed to be large errors.
-When the error is wrong but smaller than $T$, the results are considered 
+When the computing results are wrong but smaller than $T$, the results are considered 
 as moderate errors. The layers that include the largest portion of large errors 
 are taken as the critical layers.
 
