@@ -13,7 +13,7 @@ To simulate general hardware errors caused by relaxed design constraints, we
 inject random bit errors to input/output data including 
 input/intermediate/output features and weights as well as 
 hidden layer status of neural networks. The error injection is measured with 
-bit error rate (BER) which is also utilized in xxx. Compared to xxx,
+bit error rate (BER) which is also utilized in \cite{B2018ARES}. Compared to \cite{B2018ARES},
 we also have random errors injected to the internal computing results. 
 To evaluate the training, we take three representative convolution 
 neural networks including AlexNet, VGG-16 and VGG-19 as the benchmark. 
@@ -56,7 +56,7 @@ The comparison of the three cases is presented in Figure \ref{fig:softerror-accu
 When the BER goes up, the prediction accuracy of the original neural network drops 
 considerably despite the resilience of the neural networks. 
 With the proposed training i.e. TWA+CLP, the top1 and top5 precision accuracy 
-of the retrained models improves by xxx and xxx on average respectively 
+of the retrained models improves by 5.9\% and 20.7\% on average respectively 
 compared to the offline trained model under the highest error injection rate. 
 The great prediction accuracy improvement indicates that the resilience 
 of the retrained neural network models is improved targeting at the 
@@ -128,7 +128,7 @@ training and the proposed resilient training as presented in Figure \ref{fig:ove
 The prediction accuracy remains unchanged at the beginning and exhibits cliff-like drop 
 at a tipping point. Beyond the tipping point, the prediction is no longer interesting 
 due to the extremely low accuracy. At the tipping point, the top1 and top5 prediction accuracy of the 
-retrained neural networks improves by xxx and xxx respectively.
+retrained neural networks improves by 13.8\% and 24.9\% respectively.
 
 \begin{figure}
         \center
@@ -154,8 +154,8 @@ Clock frequency is almost proportional to the performance of the CNN accelerator
 especially for large convolution operation which is typically computing bound. 
 Figure \ref{fig:overclocking-time} shows the relative inference runtime of the three neural networks at different 
 overclocking. On the tipping point which is also the extreme overclocking case, 
-the runtime improves by xxx compared to the models running on normal accelerator with 
-xxx top1 accuracy loss and xxx top5 accuracy loss on average. 
+the runtime improves by 21\% compared to the models running on normal accelerator with 
+4.9\% top1 accuracy loss and 3.2\% top5 accuracy loss on average. 
 \begin{figure}
         \center{\includegraphics[width=0.6\linewidth]{relative-runtime}}
         \caption{Relative runtime of the neural networks on CNN accelerators with different overclocking. Note that AlexNet runs from 210 MHz to 250 MHz while 
