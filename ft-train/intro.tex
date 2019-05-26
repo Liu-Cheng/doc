@@ -1,7 +1,7 @@
 \section{Introduction} \label{sec:intro}
 Inspired by the widespread adoption of neural networks in massive fields such as image classification, 
 video surveillance, speech recognition, and robot vision, neural network accelerators 
-\cite{Zhang2015_9,Qiu2016_10,deepburing_12,DiCecco_4,Zeng2018_18} 
+\cite{Zhang2015_9,deepburing_12,DiCecco_4} 
 are increasingly explored and deployed to improve the computing performance and energy efficiency.
 Unlike generic applications, neural networks usually involve redundancy and are known to be 
 fault tolerant\cite{Reagen2016}. By taking advantage of this feature, many neural network accelerator optimizations 
@@ -14,31 +14,14 @@ improvements with minor prediction accuracy loss.
 For generic hardware design, strict design constraints are typically required to 
 guarantee correct computing under even the most severe environments. On the contrast, 
 neural network accelerators are more resilient and less sensitive to computing 
-errors incurred by relaxed design constraints. In this case, many 
-aggressive hardware optimization techniques can be applied when computing errors can be tolerated. 
-For instance, emerging techniques such as  near-threshold voltage regime\cite{RG2010NT} 
-and sub-threshold digital logic design\cite{BH2005,B2006} promise high energy efficiency 
-but suffer instability\cite{Pu2010NT}. Conventional neural network accelerator 
-can be pushed to operate at higher clock frequency with timing violations
-\cite{overclock_3,Paceline_15}. At the fab level, design rules may also 
-be aggressively pushed to reduce the expense. 
-
-Motivated by the great advantages of relaxed design constraints,
-we further explore the use of neural network resilience for more 
-effective design trade-offs. When there are timing violations
-and computing errors in the accelerator, the unmodified neural networks 
-executed on the accelerators during inference is different 
-from that computed on GPPs during the training, which may cause clear 
-prediction accuracy loss. Instead of deploying the unmodified neural 
-network models on the accelerators directly, we borrow the retraining 
+errors incurred by relaxed design constraints. When there are computing errors in the accelerator, 
+which may cause clear prediction accuracy loss. We borrow the retraining 
 idea from prior neural network quantization work \cite{Hwang2014_17,Matthieu2014_8} 
 and have the deep neural network models to learn and tolerate the computing errors.  
 Basically, we have the forward computing performed on the accelerator and 
 then transfer the computing results to the host processor for 
 backward propagation. With this approach, both application data and computing 
 errors are learned and incorporated in the neural network models.  
-Meanwhile, we define a set of standard interfaces to make it convenient 
-to integrate general CNN accelerators into the retraining framework. 
 
 In addition, we notice that some of the neural network layers are more sensitive to the 
 computing errors and the sensitive layers dramatically limit the usefulness of the retraining. 
@@ -47,27 +30,26 @@ of the computing errors. With both the retraining and sensitive layer protection
 the neural networks become more resilient to the computing errors caused by 
 the aggressive design options such as near-threshold logic or overclocking.
 Compared to the original neural networks, the top1 and top5 prediction accuracy
-improves by 22.8\% and 9.89\% on average according to the experiments. 
-The contributions of this work are summarized as follows.
+improves by 20.7\% and 5.9\% on average according to the experiments. 
 
-\begin{itemize}
-	\item We propose to improve the fault-tolerance of neural networks and make use of it to relax 
-		the accelerator design constraints for higher performance or energy efficiency.
-
-	\item We propose a neural network training framework to obtain resilient neural network models. 
-		By integrating the accelerators into conventional training, we have the computing errors 
-		learned with the application data. By protecting the most fragile network layer, 
-		we can further improve the resilience of the neural networks and pose more 
-		opportunities to hardware optimizations.
-
-	\item With comprehensive experiments, we show that the proposed training framework 
-		could enhance the prediction accuracy of neural networks significantly 
-		when the accelerators run with computing errors incurred by relaxed design constraints.
-\end{itemize}
-The paper is organized as follows. Section II analyzes the influence of 
-the CNN accelerator computing errors on the neural network prediction accuracy. 
-Section III presents the proposed resilient neural network training on accelerators with computing errors.
-Section IV demonstrates the use of the training on accelerators with overclocking and generic computing errors. 
-Section V briefs the related work and Section VI draws the conclusion. 
-
+%\begin{itemize}
+%	\item We propose to improve the fault-tolerance of neural networks and make use of it to relax 
+%		the accelerator design constraints for higher performance or energy efficiency.
+%
+%	\item We propose a neural network training framework to obtain resilient neural network models. 
+%		By integrating the accelerators into conventional training, we have the computing errors 
+%		learned with the application data. By protecting the most fragile network layer, 
+%		we can further improve the resilience of the neural networks and pose more 
+%		opportunities to hardware optimizations.
+%
+%	\item With comprehensive experiments, we show that the proposed training framework 
+%		could enhance the prediction accuracy of neural networks significantly 
+%		when the accelerators run with computing errors.
+%\end{itemize}
+%The paper is organized as follows. Section II analyzes the influence of 
+%the CNN accelerator computing errors on the neural network prediction accuracy. 
+%Section III presents the proposed resilient neural network training on accelerators with computing errors.
+%Section IV demonstrates the use of the training on accelerators with computing errors. 
+%Section V briefs the related work and Section VI draws the conclusion. 
+%
 
