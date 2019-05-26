@@ -2,9 +2,7 @@
 In this section, we evaluate the proposed resilient neural network training 
 framework for accelerators with computing errors. The errors can be caused by 
 various relaxed design constraints and we use random computing errors in 
-the experiments for general analysis. Then we use overclocking on FPGA based 
-CNN accelerators as the case study and demonstrate the usefulness of the 
-proposed resilient training on realistic system.
+the experiments for general analysis. 
 
 \subsection{Experiment setup}
 We experiment on 8bit fixed-point PipeCNN \cite{pipecnn_2} accelerators on Xilinx KCU1500.
@@ -16,28 +14,7 @@ bit error rate (BER) which is also utilized in \cite{B2018ARES}. Compared to \ci
 we also have random errors injected to the internal computing results i.e. the hiden status. 
 To evaluate the training, we take three representative convolution 
 neural networks including AlexNet, VGG-16 and VGG-19 as the benchmark. 
-The neural network benchmark is summarized in Table \ref{tab:CNN-table}. 
 The analysis can be applied to more neural networks.
-
-\begin{table}[h]
-        \centering
-        \vspace{-0.3em}
-        \caption{Neural network benchmark}
-        \label{tab:CNN-table}
-        \vspace{-0.3em}
-        \begin{tabular}{c|c|c|c}
-		\toprule
-		  & Dataset & Layers & Total weights \\
-		\midrule
-		AlexNet & ImageNet & 8 & 61M \\
-		\midrule
-		VGG-16 & ImageNet & 16 & 138M \\
-		\midrule
-		VGG-19 & ImageNet & 19 & 143M \\
-		\bottomrule
-        \end{tabular}
-        \vspace{-1em}
-\end{table}
 
 \subsection{Neural network resilience analysis}
 To explore the resilience of the proposed neural network training, we
@@ -91,7 +68,7 @@ due to the computing gap between GPP and the accelerators, we need to evaluate t
 performance overhead. The relative performance of the second case and the third case 
 is shown in Figure \ref{fig:clp_perf}. The performance penalty is less than two percent 
 in the three neural networks. Considering the gains of relaxed design constraints, 
-it is usually beneficial to schedule the small neural network layers to GPPs. 
+it is usually beneficial to schedule the small neural network computing layers to GPPs. 
 
 \begin{figure}
         \center{\includegraphics[width=0.7\linewidth]{clp_time}}
@@ -111,73 +88,4 @@ the performance penalty is relatively higher compared to VGG16 and VGG19.
         \caption{Error distribution across the neural network layers when highest BER is used in AlexNet, VGG16 and VGG19.}
         \label{fig:ber-error-distribute}
 \end{figure*}
-
-\subsection{Overclocking case study}
-To verify the proposed resilient training, we take overclocked CNN accelerator on KCU1500 as a case 
-study in this work. By relaxing the timing constraints, the CNN accelerator can 
-run at higher clock frequency with timing violations and computing errors. In PipeCNN, the 
-hardware implementation is related to the neural network. For AlexNet, VGG16 and VGG19, the 
-default implementation frequency is 210 MHz, 190 MHz and 190 MHz respectively. We then apply overclocking 
-on the implementations with 10MHz step. The frequency can be boosted to 
-260 MHz, 240 MHz and 240 MHz at most. By retraining the original neural network with 
-the proposed approach, the prediction accuracy improvement is evaluated in detail.
-
-With the overclocked CNN accelerators, we compare both the offline 
-training and the proposed resilient training as presented in Figure \ref{fig:overclock-accuracy}. 
-The prediction accuracy remains unchanged at the beginning and exhibits cliff-like drop 
-at a tipping point. Beyond the tipping point, the prediction is no longer interesting 
-due to the extremely low accuracy. At the tipping point, the top1 and top5 prediction accuracy of the 
-retrained neural networks improves by 24.9\% and 13.8\% respectively. Similar to the 
-CNN accelerators with random errors, top1 accuracy has much larger improvements, because 
-the computing errors may probably change only the order of the outputs in which top5 
-accuracy will not change while top1 accuracy degrades. 
-
-\begin{figure}
-        \center
-	\subfloat[AlexNet]{
-                \label{fig:alexnet}
-                \includegraphics[width=0.6\linewidth]{alexnet-overclock}
-        }
-	\qquad
-	\subfloat[VGG-16]{
-                \label{fig:vgg16}
-                \includegraphics[width=0.6\linewidth]{vgg16-overclock}
-        }
-        \qquad
-	\subfloat[VGG-19]{
-                \label{fig:vgg19}
-                \includegraphics[width=0.6\linewidth]{vgg19-overclock}
-        }
-	\caption{The prediction accuracy of the benchmark neural networks on accelerators with different overclocking}
-        \label{fig:overclock-accuracy}
-		\vspace{-1em}
-\end{figure}
-
-Clock frequency is almost proportional to the performance of the CNN accelerator 
-especially for large convolution operation which is typically computing bound. 
-Figure \ref{fig:overclocking-time} shows the relative inference runtime of the three neural networks at different 
-overclocking. On the tipping point which is also the extreme overclocking case, 
-the runtime improves by 21\% compared to the models running on normal accelerator with 
-4.9\% top1 accuracy loss and 3.2\% top5 accuracy loss on average. 
-The major accuracy loss comes from VGG19 in which the intermediate layers 
-including CONV8 and CONV9 have a lot of large computing errors. 
-Having these two layers protected may reduce the accuracy penalty, but it will also induce 
-non-trivial computing overhead. Unlike VGG19, AlexNet and VGG16 do not have intermediate layers affected 
-severely by overclocking and they have much smaller accuracy loss compared to that obtained from 
-normal accelerators.
-
-\begin{figure}
-        \center{\includegraphics[width=0.6\linewidth]{relative-runtime}}
-        \caption{Relative runtime of the neural networks on CNN accelerators with different overclocking. Note that AlexNet runs from 210 MHz to 250 MHz while 
-		VGG16 and VGG19 ranges from 190 MHz to 240MHz, so some of the data is left blank.}
-        \label{fig:overclocking-time}
-\end{figure}
-
-Comparing the experiments with random error simulation and overclocking on realistic FPGAs, we
-find that the computing errors may not be uniformly distributed. In the overclocking,  
-the prediction accuracy drops with cliff-like style. It indicates the computing errors may 
-be quite small with light overclocking, but the amount of errors explodes at certain point.
-Fortunately, the general trend is similar and the proposed training produces more resilient 
-neural networks. 
-
 

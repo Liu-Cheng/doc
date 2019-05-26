@@ -8,9 +8,8 @@ A resilient neural network training framework will be
 detailed in this section. 
 
 \subsection{Overall training framework}
-As observed in Section II, we can improve the resilience of 
-the neural networks from two aspects. For the problem that the 
-computing error patterns are difficult to be captured in training with GPPs, 
+For the problem that the computing error patterns are 
+difficult to be captured in training with GPPs, 
 we have the accelerators with computing errors integrated into 
 the training process. Forward processing influenced by 
 the accelerator computing errors is used in training directly 
@@ -31,14 +30,12 @@ such as overclocking and lowering voltage that can be used to relax the design c
 Although they may cause distinct computing errors, they can be fitted to the 
 same training framework.
 
-
 \begin{figure}
         \center{\includegraphics[width=0.85\linewidth]{on_accelerator_retrain_pocess}}
         \caption{Resilient neural network training framework}
         \label{fig:retrain}
 %        \vspace{-0.5em}
 \end{figure}
-
 
 \subsection{CNN accelerator abstraction and modification}
 As illustrated in the above section, the forward propagation will 
@@ -76,8 +73,6 @@ which makes the accelerators near transparent to the training framework.
         \end{tabular}
         \vspace{-1em}
 \end{table*}
-
-
 
 Centering the data communication between the forward propagation 
 and the rest of the training framework, we define a high-level 

@@ -1,16 +1,14 @@
 \section{Conclusion} \label{sec:Conclusion}
-The inherent fault-tolerance of neural networks allows design trade-offs between 
-minor prediction accuracy loss and great performance or energy efficiency improvements. 
-In this work, we aim to further improve the resilience of the neural networks to enable 
-more advantageous design trade-offs through retraining. Unlike conventional offline training on GPPs, 
+In this work, we aim to improve the resilience of the neural networks to enable 
+more advantageous design trade-offs through retraining. 
 we propose to replace the forward computing on GPPs with accelerator computing during training and have both the computing 
-errors incurred by the relaxed design constraints and the application data learned in the neural network models. 
+errors and the application data learned in the neural network models. 
 In addition, we opt to protect critical neural layers to reduce the negative 
-influence of computing errors. This strategy elevates the 'shortest wooden bar' of 
-the neural networks and improves the overall resilience. With the proposed resilient neural network training, 
+influence of computing errors.  
+With the proposed resilient neural network training, 
 the prediction accuracy of the retrained neural network models improves significantly 
-when computing errors appear. We further demonstrate the superiority of the proposed training 
-with overclocking on FPGA based CNN accelerators using a set of realistic neural network models.
+when computing errors appear. 
+
 
 %\appendix
 %\section{Acknowledgement}
