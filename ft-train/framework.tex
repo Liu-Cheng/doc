@@ -107,6 +107,14 @@ both parts developed with C family languages, they can be integrated convenientl
 %OpenCL based API wrapper in SDAccel, the CNN accelerator’s interface can be easily 
 %exposed to Caffe for referring to the forward propagation result. 
 
+\begin{figure}
+        \center{\includegraphics[width=0.85\linewidth]{change_of_accelerator}}
+        \caption{Modification of the CNN accelerator data path. It essentially
+ensures the feature map of each neural network layer to have an optional data path
+to external memory for back propagation in training.}
+        \label{fig:change_of_accelerator}
+        \vspace{-1em}
+\end{figure}
 
 On top of the high-level interface, the CNN accelerator also needs 
 minor modification to enable the on-accelerator training. 
@@ -120,15 +128,6 @@ As shown in Figure \ref{fig:change_of_accelerator}, the output of each layer
 will be transferred to memory using the added optional data path 
 when the accelerator is used for training. The write back data path 
 can be switched off when the accelerator is used for inference. 
-
-\begin{figure}
-        \center{\includegraphics[width=0.85\linewidth]{change_of_accelerator}}
-        \caption{Modification of the CNN accelerator data path. It essentially
-ensures the feature map of each neural network layer to have an optional data path 
-to external memory for back propagation in training.}
-        \label{fig:change_of_accelerator}
-        \vspace{-1em}
-\end{figure}
 
 \subsection{Critical neural network layer protection}
 In order to improve the overall neural network resilience, we opt to 
