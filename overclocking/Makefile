@@ -1,5 +1,5 @@
 TITLE=overclocking
-FILES=overclocking.tex intro.tex motivation.tex framework.tex result.tex conclusion.tex 
+FILES=overclocking.tex intro.tex motivation.tex framework.tex result.tex conclusion.tex acknowledgement.tex
 
 BIBFILES=refs.bib 
 IMGFILES=
