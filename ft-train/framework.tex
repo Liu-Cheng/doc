@@ -77,13 +77,13 @@ which makes the accelerators near transparent to the training framework.
 Centering the data communication between the forward propagation 
 and the rest of the training framework, we define a high-level 
 interface which consists of 7 functions as listed in Table \ref{tab:api}. 
-Function 1 is used to launch the CNN accelerator from host. 
-Function 2 and 3 are used to transfer data between the host memory and the device memory during 
-the training. As the forward propagation on the CNN accelerators is usually fixed point 
-and the back propagation on GPPs is floating point, data type converting between fixed point 
-and floating point is required. Function 4 and 5 can be used for this purpose. 
-Function 1 to 5 are required for all the accelerators. 
-Function 6 and 7 are only used for accelerators that compute on reorganized data\cite{pipecnn_2,deepburing_12}. 
+%Function 1 is used to launch the CNN accelerator from host. 
+%Function 2 and 3 are used to transfer data between the host memory and the device memory during 
+%the training. As the forward propagation on the CNN accelerators is usually fixed point 
+%and the back propagation on GPPs is floating point, data type converting between fixed point 
+%and floating point is required. Function 4 and 5 can be used for this purpose. 
+%Function 1 to 5 are required for all the accelerators. 
+%Function 6 and 7 are only used for accelerators that compute on reorganized data\cite{pipecnn_2,deepburing_12}. 
 With the interface functions, general CNN accelerators can be conveniently 
 referenced and used in the proposed on-accelerator training framework. 
 
@@ -107,6 +107,14 @@ both parts developed with C family languages, they can be integrated convenientl
 %OpenCL based API wrapper in SDAccel, the CNN accelerator’s interface can be easily 
 %exposed to Caffe for referring to the forward propagation result. 
 
+\begin{figure}
+        \center{\includegraphics[width=0.85\linewidth]{change_of_accelerator}}
+        \caption{Modification of the CNN accelerator data path. It essentially
+ensures the feature map of each neural network layer to have an optional data path
+to external memory for back propagation in training.}
+        \label{fig:change_of_accelerator}
+        \vspace{-1em}
+\end{figure}
 
 On top of the high-level interface, the CNN accelerator also needs 
 minor modification to enable the on-accelerator training. 
@@ -120,15 +128,6 @@ As shown in Figure \ref{fig:change_of_accelerator}, the output of each layer
 will be transferred to memory using the added optional data path 
 when the accelerator is used for training. The write back data path 
 can be switched off when the accelerator is used for inference. 
-
-\begin{figure}
-        \center{\includegraphics[width=0.85\linewidth]{change_of_accelerator}}
-        \caption{Modification of the CNN accelerator data path. It essentially
-ensures the feature map of each neural network layer to have an optional data path 
-to external memory for back propagation in training.}
-        \label{fig:change_of_accelerator}
-        \vspace{-1em}
-\end{figure}
 
 \subsection{Critical neural network layer protection}
 In order to improve the overall neural network resilience, we opt to 

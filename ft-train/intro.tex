@@ -1,7 +1,7 @@
 \section{Introduction} \label{sec:intro}
 Inspired by the widespread adoption of neural networks in massive fields such as image classification, 
 video surveillance, speech recognition, and robot vision, neural network accelerators 
-\cite{Zhang2015_9,deepburing_12,DiCecco_4} 
+\cite{deepburing_12,DiCecco_4} 
 are increasingly explored and deployed to improve the computing performance and energy efficiency.
 Unlike generic applications, neural networks usually involve redundancy and are known to be 
 fault tolerant\cite{Reagen2016}. By taking advantage of this feature, many neural network accelerator optimizations 
@@ -16,7 +16,7 @@ guarantee correct computing under even the most severe environments. On the cont
 neural network accelerators are more resilient and less sensitive to computing 
 errors incurred by relaxed design constraints. When there are computing errors in the accelerator, 
 which may cause clear prediction accuracy loss. We borrow the retraining 
-idea from prior neural network quantization work \cite{Hwang2014_17,Matthieu2014_8} 
+idea from prior neural network quantization work \cite{Hwang2014_17} 
 and have the deep neural network models to learn and tolerate the computing errors.  
 Basically, we have the forward computing performed on the accelerator and 
 then transfer the computing results to the host processor for 

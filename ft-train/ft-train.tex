@@ -260,7 +260,7 @@
 % http://www.ctan.org/pkg/fixltx2e
 
 
-%\usepackage{stfloats}
+\usepackage{stfloats}
 % stfloats.sty was written by Sigitas Tolusis. This package gives LaTeX2e
 % the ability to do double column floats at the bottom of the page as well
 % as the top. (e.g., "\begin{figure*}[!b]" is not normally possible in
@@ -345,9 +345,9 @@
 % author names and affiliations
 % use a multiple column layout for up to three different
 % affiliations
-\author{\IEEEauthorblockN{Dawen Xu\textsuperscript{1}, Kouzi Xing\textsuperscript{1}, Cheng Liu\textsuperscript{2}, Ying Wang\textsuperscript{2}, Yulin Dai\textsuperscript{1}, Long Cheng\textsuperscript{3}, Huawei Li\textsuperscript{2}, Lei Zhang\textsuperscript{2}}
+\author{\IEEEauthorblockN{Dawen Xu\textsuperscript{1,2}, Kouzi Xing\textsuperscript{1}, Cheng Liu\textsuperscript{2}, Ying Wang\textsuperscript{2}, Yulin Dai\textsuperscript{1}, Long Cheng\textsuperscript{3}, Huawei Li\textsuperscript{2}, Lei Zhang\textsuperscript{2}}
 \IEEEauthorblockA{\textsuperscript{1}HeFei University of Technology, HeFei, China\\
-\textsuperscript{2}Institute of Computing Technology, Chinese Academy of Sciences\\
+\textsuperscript{2}Institute of Computing Technology, Chinese Academy of Sciences, BeiJing, China\\
 \textsuperscript{3}University College Dublin\\
 Email: liucheng@ict.ac.cn}
 %\and
@@ -367,7 +367,6 @@ Email: liucheng@ict.ac.cn}
 % is locked out in conference mode. If really needed, such as for
 % the acknowledgment of grants, issue a \IEEEoverridecommandlockouts
 % after \documentclass
-
 % for over three affiliations, or if they all won't fit within the width
 % of the page, use this alternative format:
 % 
@@ -401,12 +400,10 @@ Email: liucheng@ict.ac.cn}
 % in the abstract
 \begin{abstract}
 With the advancements of neural networks, customized accelerators 
-are increasingly adopted in massive AI applications and have become 
-one of the key computing infrastructures. To gain higher energy 
+are increasingly adopted in massive AI applications. To gain higher energy 
 efficiency or performance, many hardware design optimizations 
 such as near-threshold logic or overclocking can be utilized. 
-In these cases, timing violations may happen and cause computing 
-errors. The computing errors are difficult to be captured 
+In these cases, computing errors may happen and the computing errors are difficult to be captured 
 by conventional training on general purposed processors (GPPs). 
 Applying the offline trained neural network models to the accelerators 
 with errors directly may lead to considerable prediction
