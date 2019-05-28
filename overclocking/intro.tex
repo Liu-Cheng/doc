@@ -7,10 +7,10 @@ The widespread adoption of CNNs motivates the
 continuous optimization of CNN accelerators for higher 
 performance and energy efficiency. 
 Numerous approaches from various 
-angles have been proposed and explored \cite{EIE_han_2016} \cite{deepburing_12}. 
+angles have been proposed and explored \cite{EIE_han_2016}\cite{deepburing_12}. 
 Particularly, many of them such as 
-low-precision quantization \cite{Hwang2014_17} \cite{Matthieu2014_8} 
-and approximate computing \cite{Approximate_Multiplier_31} \cite{Approximate_32}
+low-precision quantization \cite{Hwang2014_17} 
+and approximate computing \cite{Approximate_Multiplier_31}
 have been demonstrated to 
 be able to improve the performance or lower the power consumption of the CNN 
 accelerators significantly. In spite of the computing errors caused by these approaches, 
@@ -35,8 +35,7 @@ Compared to prior optimization approaches, overclocking brings
 multi-folded unique advantages especially to the FPGA based CNN 
 accelerators. 
 
-
-As demonstrated in \cite{Caffeine_6} \cite{EIE_han_2016}, convolution is usually 
+As demonstrated in \cite{Caffeine_6}, convolution is usually 
 computing-bound and it is the most time-consuming part of the CNNs, while 
 full connection layers are mostly memory-bound. Particularly, it can be found that 
 newer neural networks such as ResNet and DarkNet involve more 
@@ -52,7 +51,6 @@ accelerators is more stringent and becomes the major
 performance bottleneck. Overclocking can greatly alleviate this 
 problem without redesigning the CNN accelerators and is 
 mostly orthogonal to the other optimizations. 
-
 Another advantage brought by overclocking is the higher 
 energy efficiency. Typically the overall power of the 
 FPGA based CNN acceleration system consists of kernel accelerator power 
@@ -87,9 +85,8 @@ of monitoring and recovering from errors.
 The authors in \cite{overclock_3} explored the design trade-off 
 between performance and accuracy on FPGAs through overclocking. 
 This work demonstrated the potential of applying the trade-off on 
-some image processing applications. In \cite{brant2013safe}, the authors 
-proposed a safely overclocked CGRA design. Recently, Wang etc. in 
-\cite{deng2015retraining} and \cite{wang2017resilience} investigated 
+some image processing applications. Recently, Wang etc. in 
+\cite{wang2017resilience} investigated 
 the use of overclocking on CNN accelerators, but they mainly targeted at 
 the clock frequency tuning with complex timing models and explored 
 only small neural networks due to the timing-consuming simulation.

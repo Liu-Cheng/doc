@@ -1,11 +1,10 @@
 \section{Introduction} \label{sec:intro}
-Inspired by the widespread adoption of neural networks in massive fields such as image classification, 
-video surveillance, speech recognition, and robot vision, neural network accelerators 
+Inspired by the widespread adoption of neural networks in massive fields, neural network accelerators 
 \cite{deepburing_12,DiCecco_4} 
 are increasingly explored and deployed to improve the computing performance and energy efficiency.
 Unlike generic applications, neural networks usually involve redundancy and are known to be 
 fault tolerant\cite{Reagen2016}. By taking advantage of this feature, many neural network accelerator optimizations 
-such as neural network pruning and low-precision quantization can be utilized to improve 
+such as neural network pruning and quantization can be utilized to improve 
 performance and energy efficiency notably with minor inference accuracy penalty\cite{Han2016DeepCC}. 
 
 In line with these optimizations, we can relax the design constraints of 
@@ -28,7 +27,7 @@ computing errors and the sensitive layers dramatically limit the usefulness of t
 Thus, we schedule the most sensitive layer of the neural networks to host processors to reduce the negative influence 
 of the computing errors. With both the retraining and sensitive layer protection, 
 the neural networks become more resilient to the computing errors caused by 
-the aggressive design options such as near-threshold logic or overclocking.
+the aggressive design options.
 Compared to the original neural networks, the top1 and top5 prediction accuracy
 improves by 20.7\% and 5.9\% on average according to the experiments. 
 

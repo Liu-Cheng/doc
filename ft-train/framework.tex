@@ -26,7 +26,7 @@ Instead of training on GPPs, it has majority of the forward computing performed 
 accelerators with computing errors while the rest of the training remains on GPPs.
 Note that the critical layers should be executed on reliable hardware 
 while GPP is one of the options. There are many different approaches 
-such as overclocking and lowering voltage that can be used to relax the design constraints.
+that can be used to relax the design constraints.
 Although they may cause distinct computing errors, they can be fitted to the 
 same training framework.
 
@@ -46,6 +46,18 @@ communication between the accelerator and the GPPs are expected.
 In order to fit various CNN accelerators within the same training framework,
 we abstract the CNN accelerators with a high-level interface
 which makes the accelerators near transparent to the training framework.
+Centering the data communication between the forward propagation
+and the rest of the training framework, we define a high-level
+interface which consists of 7 functions as listed in Table \ref{tab:api}.
+%Function 1 is used to launch the CNN accelerator from host. 
+%Function 2 and 3 are used to transfer data between the host memory and the device memory during 
+%the training. As the forward propagation on the CNN accelerators is usually fixed point 
+%and the back propagation on GPPs is floating point, data type converting between fixed point 
+%and floating point is required. Function 4 and 5 can be used for this purpose. 
+%Function 1 to 5 are required for all the accelerators. 
+%Function 6 and 7 are only used for accelerators that compute on reorganized data\cite{pipecnn_2,deepburing_12}. 
+With the interface functions, general CNN accelerators can be conveniently
+referenced and used in the proposed on-accelerator training framework.
 \begin{table*}
         \centering
         \vspace{-0.3em}
@@ -73,19 +85,6 @@ which makes the accelerators near transparent to the training framework.
         \end{tabular}
         \vspace{-1em}
 \end{table*}
-
-Centering the data communication between the forward propagation 
-and the rest of the training framework, we define a high-level 
-interface which consists of 7 functions as listed in Table \ref{tab:api}. 
-%Function 1 is used to launch the CNN accelerator from host. 
-%Function 2 and 3 are used to transfer data between the host memory and the device memory during 
-%the training. As the forward propagation on the CNN accelerators is usually fixed point 
-%and the back propagation on GPPs is floating point, data type converting between fixed point 
-%and floating point is required. Function 4 and 5 can be used for this purpose. 
-%Function 1 to 5 are required for all the accelerators. 
-%Function 6 and 7 are only used for accelerators that compute on reorganized data\cite{pipecnn_2,deepburing_12}. 
-With the interface functions, general CNN accelerators can be conveniently 
-referenced and used in the proposed on-accelerator training framework. 
 
 In this work, we have the CNN accelerator implemented on Xilinx FPGAs as a case study. 
 With Xilinx SDAccel, we can wrap the accelerators with OpenCL API while the accelerators 
@@ -120,7 +119,7 @@ On top of the high-level interface, the CNN accelerator also needs
 minor modification to enable the on-accelerator training. 
 Typically, the training requires the feature map of each neural 
 network layer for backward propagation. However, many of the accelerators 
-are intensively optimized for inference only and some of the layers’ output 
+are intensively optimized for inference only and some of the layers' output 
 are fully buffered in on-chip memory to reduce the external memory access. 
 In this case, the accelerator should provide an optional data path such that 
 intermediate output data can be written to external memory at request.
@@ -137,8 +136,6 @@ to have the critical layers executed on reliable computing infrastructures
 and the exact protection method depends on the target hardware platform.
 We may either schedule the critical layers to the GPPs or switch the accelerator 
 to reliable mode during the execution of the critical layers.
-In this work, we assume GPPs are used for reliable computing 
-of critical layers. 
 
 To decide the critical layers of the neural networks, we formulate the 
 critical layer section scheme. Suppose the neural network layers include 
