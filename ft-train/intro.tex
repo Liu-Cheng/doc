@@ -13,11 +13,11 @@ for significant performance or energy efficiency improvements with
 minor prediction accuracy loss. In this case, many aggressive hardware 
 optimization techniques can be applied when computing errors can 
 be tolerated. For instance, emerging techniques such as
-near-threshold voltage regime and sub-threshold digital
-logic design promise high energy efficiency but suffer
-instability. Conventional neural network accelerator can
+near-threshold voltage regime\cite{RG2010NT} and sub-threshold digital
+logic design\cite{BH2005} promise high energy efficiency but suffer
+instability\cite{Pu2010NT}. Conventional neural network accelerator can
 be pushed to operate at higher clock frequency with timing
-violations. They will bring benefits to the accelerator design 
+violations\cite{overclock_3}. They will bring benefits to the accelerator design 
 on various aspects including performance and energy efficiency.
 
 Motivated by the great advantages of relaxed design constraints,
@@ -25,7 +25,7 @@ we further explore the use of neural network resilience
 for more effective design trade-offs. Instead of deploying the 
 unmodified neural network models on the accelerators directly, 
 we borrow the retraining idea from prior neural network 
-quantization work and have the deep neural network models to 
+quantization work\cite{Hwang2014_17} and have the deep neural network models to 
 learn and tolerate the computing errors.
 Basically, we have the forward computing
 performed on the accelerator and then transfer the computing
@@ -46,7 +46,7 @@ protection, the neural networks become more resilient to the
 computing errors caused by the aggressive design options
 such as near-threshold logic or overclocking. Compared to the
 original neural networks, the top1 and top5 prediction accuracy
-improves by 22.8\% and 9.89\% on average according to the
+improves by 20.7\% and 5.9\% on average according to the
 experiments.
 
 %\begin{itemize}
