@@ -7,29 +7,47 @@ fault tolerant\cite{Reagen2016}. By taking advantage of this feature, many neura
 such as neural network pruning and quantization can be utilized to improve 
 performance and energy efficiency notably with minor inference accuracy penalty\cite{Han2016DeepCC}. 
 
-In line with these optimizations, we can relax the design constraints of 
-the neural network accelerators to obtain significant performance or energy efficiency 
-improvements with minor prediction accuracy loss. 
-For generic hardware design, strict design constraints are typically required to 
-guarantee correct computing under even the most severe environments. On the contrast, 
-neural network accelerators are more resilient and less sensitive to computing 
-errors incurred by relaxed design constraints. When there are computing errors in the accelerator, 
-which may cause clear prediction accuracy loss. We borrow the retraining 
-idea from prior neural network quantization work \cite{Hwang2014_17} 
-and have the deep neural network models to learn and tolerate the computing errors.  
-Basically, we have the forward computing performed on the accelerator and 
-then transfer the computing results to the host processor for 
-backward propagation. With this approach, both application data and computing 
-errors are learned and incorporated in the neural network models.  
+Following similar ideas to compromise between neural network accuracy and performance, 
+we opt to relax the design constraints of the neural network accelerators 
+for significant performance or energy efficiency improvements with 
+minor prediction accuracy loss. In this case, many aggressive hardware 
+optimization techniques can be applied when computing errors can 
+be tolerated. For instance, emerging techniques such as
+near-threshold voltage regime and sub-threshold digital
+logic design promise high energy efficiency but suffer
+instability. Conventional neural network accelerator can
+be pushed to operate at higher clock frequency with timing
+violations. They will bring benefits to the accelerator design 
+on various aspects including performance and energy efficiency.
 
-In addition, we notice that some of the neural network layers are more sensitive to the 
-computing errors and the sensitive layers dramatically limit the usefulness of the retraining. 
-Thus, we schedule the most sensitive layer of the neural networks to host processors to reduce the negative influence 
-of the computing errors. With both the retraining and sensitive layer protection, 
-the neural networks become more resilient to the computing errors caused by 
-the aggressive design options.
-Compared to the original neural networks, the top1 and top5 prediction accuracy
-improves by 20.7\% and 5.9\% on average according to the experiments. 
+Motivated by the great advantages of relaxed design constraints,
+we further explore the use of neural network resilience
+for more effective design trade-offs. Instead of deploying the 
+unmodified neural network models on the accelerators directly, 
+we borrow the retraining idea from prior neural network 
+quantization work and have the deep neural network models to 
+learn and tolerate the computing errors.
+Basically, we have the forward computing
+performed on the accelerator and then transfer the computing
+results to the host processor for backward propagation. With
+this approach, both the application data and computing errors
+are learned and incorporated in the neural network models.
+Meanwhile, we define a set of standard interfaces to make
+it convenient to integrate general CNN accelerators into the
+retraining framework.
+
+In addition, we notice that some of the neural network layers
+are more sensitive to the computing errors and the sensitive
+layers dramatically limit the usefulness of the retraining. Thus,
+we schedule the most sensitive layer of the neural networks
+to host processors to reduce the negative influence of the
+computing errors. With both the retraining and sensitive layer
+protection, the neural networks become more resilient to the
+computing errors caused by the aggressive design options
+such as near-threshold logic or overclocking. Compared to the
+original neural networks, the top1 and top5 prediction accuracy
+improves by 22.8\% and 9.89\% on average according to the
+experiments.
 
 %\begin{itemize}
 %	\item We propose to improve the fault-tolerance of neural networks and make use of it to relax 

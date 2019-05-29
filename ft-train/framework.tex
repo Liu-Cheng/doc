@@ -22,7 +22,7 @@ With reasonable performance penalty, we can improve the
 overall neural network resilience. 
 
 Following this idea, the overall training framework is depicted in Figure \ref{fig:retrain}. 
-Instead of training on GPPs, it has majority of the forward computing performed on the 
+Instead of training on GPPs, it has the majority of forward computing performed on the 
 accelerators with computing errors while the rest of the training remains on GPPs.
 Note that the critical layers should be executed on reliable hardware 
 while GPP is one of the options. There are many different approaches 
@@ -34,7 +34,7 @@ same training framework.
         \center{\includegraphics[width=0.85\linewidth]{on_accelerator_retrain_pocess}}
         \caption{Resilient neural network training framework}
         \label{fig:retrain}
-%        \vspace{-0.5em}
+        \vspace{-0.5em}
 \end{figure}
 
 \subsection{CNN accelerator abstraction and modification}
@@ -46,7 +46,7 @@ communication between the accelerator and the GPPs are expected.
 In order to fit various CNN accelerators within the same training framework,
 we abstract the CNN accelerators with a high-level interface
 which makes the accelerators near transparent to the training framework.
-Centering the data communication between the forward propagation
+To facilitate the data communication between the forward propagation
 and the rest of the training framework, we define a high-level
 interface which consists of 7 functions as listed in Table \ref{tab:api}.
 %Function 1 is used to launch the CNN accelerator from host. 
@@ -117,28 +117,30 @@ to external memory for back propagation in training.}
 
 On top of the high-level interface, the CNN accelerator also needs 
 minor modification to enable the on-accelerator training. 
-Typically, the training requires the feature map of each neural 
+The training requires the feature map of each neural 
 network layer for backward propagation. However, many of the accelerators 
 are intensively optimized for inference only and some of the layers' output 
 are fully buffered in on-chip memory to reduce the external memory access. 
-In this case, the accelerator should provide an optional data path such that 
+Thereby, the accelerator should provide an optional data path such that 
 intermediate output data can be written to external memory at request.
 As shown in Figure \ref{fig:change_of_accelerator}, the output of each layer 
-will be transferred to memory using the added optional data path 
+will be transferred to memory using the added data path 
 when the accelerator is used for training. The write back data path 
-can be switched off when the accelerator is used for inference. 
+can be switched off during inference. 
 
 \subsection{Critical neural network layer protection}
 In order to improve the overall neural network resilience, we opt to 
-protect the critical network layers and the rest layers can tolerate 
-more severe computing errors. The protection is essentially 
+protect the critical network layers to alleviate the resilience 
+bottleneck. The protection is essentially 
 to have the critical layers executed on reliable computing infrastructures 
 and the exact protection method depends on the target hardware platform.
 We may either schedule the critical layers to the GPPs or switch the accelerator 
 to reliable mode during the execution of the critical layers.
+With this approach, the overall network can tolerate 
+more computing errors. 
 
 To decide the critical layers of the neural networks, we formulate the 
-critical layer section scheme. Suppose the neural network layers include 
+critical layer selection scheme. Suppose the neural network layers include 
 $N$ layers and each layer is represented as $L_i$ where $i \in {0, 1, 2, ..., N-1}$.
 Then we evaluate the prediction accuracy loss of the neural network 
 that have one layer protected on accelerators with computing errors.
