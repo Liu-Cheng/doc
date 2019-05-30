@@ -34,7 +34,7 @@ same training framework.
         \center{\includegraphics[width=0.85\linewidth]{on_accelerator_retrain_pocess}}
         \caption{Resilient neural network training framework}
         \label{fig:retrain}
-        \vspace{-0.5em}
+        \vspace{-1em}
 \end{figure}
 
 \subsection{CNN accelerator abstraction and modification}
@@ -59,6 +59,7 @@ interface which consists of 7 functions as listed in Table \ref{tab:api}.
 With the interface functions, general CNN accelerators can be conveniently
 referenced and used in the proposed on-accelerator training framework.
 \begin{table*}
+	\
         \centering
         \vspace{-0.3em}
         \caption{High-level interface to integrate general CNN accelerators with Caffe}
@@ -72,13 +73,13 @@ referenced and used in the proposed on-accelerator training framework.
 		\midrule
                 2 & dataToFPGA(weight, input, wgtDevAddr, inDevAddr) & It transfers both the input data and weight to the FPGA device memory. \\
 		\midrule
-		3 & dataFromFPGA(outputDevAddr, output) & \shortstack[l]{It transfers all the intermediate output of the CNN layers from FPGA \\device memory to host memory.} \\
+		3 & dataFromFPGA(outputDevAddr, output) & \shortstack[l]{It transfers intermediate data from FPGA device memory to host memory.} \\
 		\midrule
-		4 & convertIntToFloat(int iData, float fData) & It converts the fixed-point output to float for back propagation processing. \\
+		4 & convertIntToFloat(int iData, float fData) & It converts the fixed-point point to float for back propagation processing. \\
 		\midrule
-		5 & convertFloatToInt(float fData,  int iData) & \shortstack[l]{It converts the floating-point input and weight data to fixed point or \\integer for forward processing on the accelerator.} \\
+		5 & convertFloatToInt(float fData,  int iData) & \shortstack[l]{It converts the floating-point input and weight to fixed point for forward processing.} \\
 		\midrule
-		6 & dataLayoutReorder(data, reorderedData) & \shortstack[l]{It reorders the data layout for more efficient accelerator execution before \\sending to FPGA device memory.} \\
+		6 & dataLayoutReorder(data, reorderedData) & \shortstack[l]{It reorders the data layout for more efficient accelerator execution.} \\
 		\midrule
 		7 & dataLayoutRecover(reorderedData, data) & It reorders the output data back to the default format for Caffe back propagation. \\
                 \bottomrule

@@ -1,7 +1,7 @@
 \section{Experiments} \label{sec:casestudy}
 In this section, we evaluate the proposed resilient neural network training 
 framework for accelerators with computing errors. 
-We experimented using Caffe framework on a desktop computer 
+We experimented using Caffe on a desktop computer 
 with Intel(R) Core(TM) i7-6700 CPU @3.40GHz and 32GB memory.
 The computing errors can be caused by various relaxed design 
 constraints and we used random computing 
@@ -9,7 +9,7 @@ errors in the experiments for general analysis.
 We injected random bit errors to input/intermediate/output features and weights as well as 
 hidden layer status of neural networks. 8bit fixed point representation was used
 through the experiments. The error injection is measured with 
-bit error rate (BER) according to \cite{B2018ARES}. Compared to \cite{B2018ARES},
+bit error rate (BER) according to \cite{B2018ARES}. In addition,
 we also had random errors injected to the internal computing results. 
 To evaluate the training, we take AlexNet, VGG-16 and VGG-19 as the benchmark. 
 The analysis can be applied to more neural networks.
@@ -28,17 +28,17 @@ perform the retraining. It is denoted as critical layer protected(TWA+CLP).
         \center
                 \subfloat[AlexNet]{
                 \label{fig:alexnet}
-                \includegraphics[width=0.7\linewidth]{alexnet-softerror}
+                \includegraphics[width=0.6\linewidth]{alexnet-softerror}
         }
         \qquad
         \subfloat[VGG-16]{
                 \label{fig:vgg16}
-                \includegraphics[width=0.7\linewidth]{vgg16-softerror}
+                \includegraphics[width=0.6\linewidth]{vgg16-softerror}
         }
         \qquad
         \subfloat[VGG-19]{
                 \label{fig:vgg19}
-                \includegraphics[width=0.7\linewidth]{vgg19-softerror}
+                \includegraphics[width=0.6\linewidth]{vgg19-softerror}
         }
         \caption{The precision accuracy of the benchmark neural network models on accelerators with different computing errors. 
 		The neural network model is meaningful when the prediction accuracy is still acceptable. For the three models, 
@@ -59,7 +59,7 @@ specific computing error pattern. Therefore, more aggressive design trade-offs
 between prediction accuracy and performance or energy efficiency can be performed. 
 
 \begin{figure*}
-        \center{\includegraphics[width=0.7\linewidth]{error_distribute_softerror}}
+        \center{\includegraphics[width=0.65\linewidth]{error_distribute_softerror}}
         \caption{Error distribution across the neural network layers when highest BER is used in AlexNet, VGG16 and VGG19.}
         \label{fig:ber-error-distribute}
 	\vspace{-1em}
@@ -83,4 +83,5 @@ it is usually beneficial to schedule the small neural network computing layers t
         \center{\includegraphics[width=0.7\linewidth]{clp_time}}
         \caption{Relative runtime of neural networks when the critical layer is scheduled to CPU.}
         \label{fig:clp_perf}
+		\vspace{-1em}
 \end{figure}
