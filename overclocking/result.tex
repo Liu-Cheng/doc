@@ -51,10 +51,10 @@ number of timing violations increases rapidly with higher clock frequency.
 \end{figure}
 
 We further evaluate the normalized performance over the original CNN accelerators.
-As given in \ref{fig:relative_time_overclock}, the performance with the extreme accelerator 
+As given in Fig \ref{fig:relative_time_overclock}, the performance with the extreme accelerator 
 overclocking achieves 1.25X speedup on average compared to the baseline design. 
 We use EDP as the energy efficiency metric and compare the 
-different overclocking configurations as exhibited in \ref{fig:relative_energy_overclock}.
+different overclocking configurations as exhibited in Fig \ref{fig:relative_energy_overclock}.
 According to the figure, overclocking on FPGA based CNN 
 accelerators achieves more significant energy efficiency improvement when 
 compared to the performance improvement. A key reason is that 
@@ -111,10 +111,10 @@ As discussed in this paper, the timing error can be affected by many factors and
 at runtime. There is no guarantee that the behavior of the CNN accelerator can keep stable even 
 overclocking is just slightly higher than the original clock. We use the accelerator overclocked at the 
 tipping point to perform the neural network computing. Then we keep measuring its 
-prediction accuracy. As shown in \ref{fig:stability}, we find that the accuracy is rather stable.
+prediction accuracy. As shown in Fig \ref{fig:stability}, we find that the accuracy is rather stable.
 Although we still can not ensure the stability of the overclocked CNN accelerator, we can 
 be sure that the probability of the severe errors such as accelerator hangup or considerable 
-accuracy loss is rather low. As we did not observe the cases after processing 1000000 pictures, 
+accuracy loss is rather low. As we did not observe the cases after processing 100000 pictures, 
 we assume the probability of an severe error when processing an input picture is lower than 1/100000.
 
 \begin{figure}
@@ -155,7 +155,7 @@ too large and incurs additional runtime. When the block size is too small, the i
 reference data becomes non-trivial and the overall runtime also gets deteoriated. There is 
 an optimal block size given specified fault rate and reference data size.
 We also analyze the trend of the relative runtime under different fault rate.
-As shown in \ref{fig:cost_probability}, the relative runtime increases slightly at 
+As shown in Fig \ref{fig:cost_probability}, the relative runtime increases slightly at 
 lower relative fault rate range but grows rapidly when the fault rate is larger than 1E-5.
 
 

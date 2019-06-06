@@ -1,7 +1,7 @@
 \section{Introduction} \label{sec:intro}
-%Recent years have seen great success of machine learning especially 
-%convolutional neural networks (CNNs) on massive fields such as 
-%image classification, video surveillance, speech recognition, 
+Recent years have seen great success of  
+convolutional neural networks (CNNs) on massive fields.
+%such as image classification, video surveillance, speech recognition, 
 %and robot vision. 
 The widespread adoption of CNNs motivates the 
 continuous optimization of CNN accelerators for higher 
@@ -20,7 +20,7 @@ the neural networks, which means that minor variations on the
 computing of neural networks typically will not lead to considerable 
 difference in terms of prediction accuracy. This 
 feature essentially prevents the propagation of 
-the minor computing errors to the neural network prediction errors. 
+the minor computing errors to the neural networks prediction errors. 
 Therefore, the corresponding approaches that allow design trade-off 
 between computing accuracy and performance can be applied to CNN 
 accelerator optimization.
@@ -52,7 +52,7 @@ performance bottleneck. Overclocking can greatly alleviate this
 problem without redesigning the CNN accelerators and is 
 mostly orthogonal to the other optimizations. 
 Another advantage brought by overclocking is the higher 
-energy efficiency. Typically the overall power of the 
+energy efficiency\cite{Paceline_15}. Typically the overall power of the 
 FPGA based CNN acceleration system consists of kernel accelerator power 
 and background power. The kernel accelerator power 
 roughly scales with the clock frequency and performance, 
@@ -78,7 +78,7 @@ Overclocking essentially focuses on relaxing the
 design constraints and the safety margins. A number of works \cite{Razor} 
 \cite{uht2004going} adopted “better than worst case design” to allow the system 
 to work aggressively and recover from timing 
-errors \cite{austin2005opportunities} with additional error checkers. 
+errors with additional error checkers. 
 They demonstrated that the benefits
 brought by removing the safe margin outweigh the cost
 of monitoring and recovering from errors. 
@@ -89,7 +89,7 @@ some image processing applications. Recently, Wang etc. in
 \cite{wang2017resilience} investigated 
 the use of overclocking on CNN accelerators, but they mainly targeted at 
 the clock frequency tuning with complex timing models and explored 
-only small neural networks due to the timing-consuming simulation.
+only small neural networks due to the time-consuming simulation.
 
 In this work, we explored the use of overclocking on FPGA based 
 CNN accelerators. By taking advantage of the inherent fault-tolerance 
