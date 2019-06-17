@@ -124,15 +124,6 @@ we assume the probability of an severe error when processing an input picture is
 \vspace{-1em}
 \end{figure}
 
-
-With the severe errors, we need to invoke the checkpoint-based error recovery strategy. 
-However, this strategy incurs cost including error detection and error recovery. 
-We evaluate the overhead of the checkpoint-based strategy. 
-A few parameters are critical to the overhead. One of them is the block size, which 
-decides the granularity of checkpoint. One of them is the critical 
-fault rate. It refers to the probability that CNN accelerator got severe errors 
-when processing a single input figure. Another one is the reference data size.
-
 \begin{figure}
         \center{\includegraphics[width=0.65\linewidth]{cost_batch}}
     \caption{The relative overclocking runtime with different block size.}
@@ -146,6 +137,15 @@ when processing a single input figure. Another one is the reference data size.
 \label{fig:cost_probability}
 \vspace{-1em}
 \end{figure}
+
+
+With the severe errors, we need to invoke the checkpoint-based error recovery strategy. 
+However, this strategy incurs cost including error detection and error recovery. 
+We evaluate the overhead of the checkpoint-based strategy. 
+A few parameters are critical to the overhead. One of them is the block size, which 
+decides the granularity of checkpoint. One of them is the critical 
+fault rate. It refers to the probability that CNN accelerator got severe errors 
+when processing a single input figure. Another one is the reference data size.
 
 
 Suppose reference data size is 100 and fault rate under 250 MHz is 1E-5. The relative runtime 
