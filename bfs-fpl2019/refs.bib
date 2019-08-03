@@ -252,6 +252,31 @@
   note = "[Online; accessed 1-Sep-2017]"
 }
 
+@misc{intelOpenCL,
+  author = "Intel",
+  year = "2019",
+  title = "{Intel FPGA SDK for OpenCL Pro Edition: Best Practices Guide }",
+  howpublished = "\url{https://www.intel.com/content/www/us/en/programmable/documentation/mwh1391807516407.html#ewa1397066666833}",
+  note = "[Online; accessed 18-Jul-2019]"
+}
+
+@misc{cudnn,
+  author = "Nvdia",
+  year = "2019",
+  title = "{Dense Linear Algebra on GPUs}",
+  howpublished = "\url{https://developer.nvidia.com/cublas}",
+  note = "[Online; accessed 18-Jul-2019]"
+}
+
+@misc{cublas,
+  author = "Nvdia",
+  year = "2019",
+  title = "{{NVIDIA} {cuDNN}}",
+  howpublished = "\url{https://developer.nvidia.com/cudnn}",
+  note = "[Online; accessed 18-Jul-2019]"
+}
+
+
 @misc{supervessel,
   author = "IBM",
   year = "2017",
@@ -293,12 +318,31 @@
   note = "[Online; accessed 1-Sep-2017]"
 }
 
+@misc{xilinxFPGA,
+  author = "Xilinx",
+  year = "2019",
+  title = "{VIRTEX UltraSCALE+}",
+  howpublished = "\url{https://www.xilinx.com/products/silicon-devices/fpga/virtex-ultrascale-plus.html}",
+  note = "[Online; accessed 1-Aug-2019]"
+}
+
 @misc{aliyun,
   author = "Alibaba",
   year = "2017",
   title = "{Aliyun FPGA Cloud Server}",
   howpublished = "\url{https://cn.aliyun.com/product/ecs/fpga}",
   note = "[Online; accessed 1-Sep-2017]"
+}
+
+@article{bakos2010high,
+  title={High-performance heterogeneous computing with the Convey HC-1},
+  author={Bakos, Jason D},
+  journal={Computing in Science \& Engineering},
+  volume={12},
+  number={6},
+  pages={80},
+  year={2010},
+  publisher={IEEE Computer Society}
 }
 
 @inproceedings{Ma2017fpga,
@@ -641,4 +685,77 @@
 	pages={81},
 	year={2018},
 	publisher={ACM}
+}
+
+@inproceedings{wu2019fpga,
+	title={FPGA Accelerated INDEL Realignment in the Cloud},
+	author={Wu, Lisa and Bruns-Smith, David and Nothaft, Frank A and Huang, Qijing and Karandikar, Sagar and Le, Johnny and Lin, Andrew and Mao, Howard and Sweeney, Brendan and Asanovi{\'c}, Krste and others},
+	booktitle={2019 IEEE International Symposium on High Performance Computer Architecture (HPCA)},
+	pages={277--290},
+	year={2019},
+	organization={IEEE}
+}
+
+@inproceedings{chen_fpl2019,
+	title={On-The-Fly Parallel Data Shuffling for Graph Processing on OpenCL based FPGA},
+	author={Chen, Xinyu and Bajaj, Ronak and Chen, Yao and He, Jiong and He,  Bingsheng and Wong, {Weng-Fai} and Chen, Deming},
+	booktitle = {FPL},
+	year = {2019},
+}
+
+@inproceedings{gupta2016accelerating,
+  title={Accelerating datacenter workloads},
+  author={Gupta, PK},
+  booktitle={26th International Conference on Field Programmable Logic and Applications (FPL)},
+  year={2016}
+}
+
+@ARTICLE{hls2016survey, 
+author={R. {Nane} and V. {Sima} and C. {Pilato} and J. {Choi} and B. {Fort} and A. {Canis} and Y. T. {Chen} and H. {Hsiao} and S. {Brown} and F. {Ferrandi} and J. {Anderson} and K. {Bertels}}, 
+journal={IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems}, 
+title={A Survey and Evaluation of FPGA High-Level Synthesis Tools}, 
+year={2016}, 
+volume={35}, 
+number={10}, 
+pages={1591-1604}, 
+keywords={field programmable gate arrays;high level synthesis;integrated circuit design;FPGA;high-level synthesis tool;HLS;energy-efficient heterogeneous systems;abstraction;software program;hardware functionality;field-programmable gate array circuit design;comprehensive analysis;Hardware;Field programmable gate arrays;Hardware design languages;Yttrium;Optimization;Program processors;Bambu;comparison;Dwarv;evaluation;field-programmable gate array (FPGA);high-level synthesis (HLS);LegUp;survey}, 
+doi={10.1109/TCAD.2015.2513673}, 
+ISSN={0278-0070}, 
+month={Oct},}
+
+@inproceedings{sultana2017emu,
+  title={Emu: Rapid prototyping of networking services},
+  author={Sultana, Nik and Galea, Salvator and Greaves, David and W{\'o}jcik, Marcin and Shipton, Jonny and Clegg, Richard and Mai, Luo and Bressana, Pietro and Soul{\'e}, Robert and Mortier, Richard and others},
+  booktitle={2017 $\{$USENIX$\}$ Annual Technical Conference ($\{$USENIX$\}$$\{$ATC$\}$ 17)},
+  pages={459-471},
+  year={2017},
+}
+
+@article{bosshart2014p4,
+  author={Bosshart, Pat and Daly, Dan and Gibb, Glen and Izzard, Martin and McKeown, Nick and Rexford, Jennifer and Schlesinger, Cole and Talayco, Dan and Vahdat, Amin and Varghese, George and others},
+  title={P4: Programming protocol-independent packet processors},
+  journal={ACM SIGCOMM Computer Communication Review},
+  volume={44},
+  number={3},
+  pages={87--95},
+  year={2014},
+  publisher={ACM},
+}
+
+@inproceedings{nina2018performance,
+  title={Performance-driven System Generation for Distributed Vertex-Centric Graph Processing on Multi-FPGA Systems},
+  author={Nina, Engelhardt and Dominic, Hung C-H and others},
+  booktitle={2018 28th International Conference on Field Programmable Logic and Applications (FPL)},
+  pages={215--2153},
+  year={2018},
+  organization={IEEE},
+}
+
+@inproceedings{engelhardt2017towards,
+  title={Towards flexible automatic generation of graph processing gateware},
+  author={Engelhardt, Nina and So, Hayden Kwok-Hay},
+  booktitle={Proceedings of the 8th International Symposium on Highly Efficient Accelerators and Reconfigurable Technologies},
+  pages={5},
+  year={2017},
+  organization={ACM},
 }

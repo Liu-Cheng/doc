@@ -1,5 +1,5 @@
 TITLE=bfs
-FILES=bfs.tex bfsopt.tex result.tex relatedwork.tex intro.tex motivation.tex conclusion.tex 
+FILES=bfs.tex bfsopt.tex overview.tex result.tex relatedwork.tex intro.tex motivation.tex conclusion.tex 
 
 BIBFILES=refs.bib 
 IMGFILES=
@@ -16,4 +16,4 @@ $(TITLE).pdf : $(FILES) $(BIBFILES) $(IMGFILES)
 
 .PHONY : clean
 clean :
-	\rm -f *~ *.log $(TITLE).pdf *.aux *.bbl *.blg *.lot *.lof
+	\rm -f *~ *.log $(TITLE).pdf *.aux *.bbl *.blg *.lot *.lof *.out

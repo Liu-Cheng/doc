@@ -1,95 +1,124 @@
 \section{Introduction} \label{sec:intro}
 Breadth-first search (BFS) is the basic building component of many graph algorithms 
-and is thus of vital importance to high-performance graph processing. Nevertheless, 
-it is notoriously difficult for accelerating on FPGAs because of the 
-irregular memory access and the low computation-to-memory ratio. 
-At the same time, BFS on large graphs also involves tremendous 
-parallelisms which indicate great potential for acceleration. 
-With both the challenge and the parallelization potential, 
+and is thus of vital importance to high-performance graph processing 
+\cite{attia2014cygraph, umuroglu2015hybrid}. Nevertheless, 
+it is notoriously difficult to accelerate on FPGAs because of the 
+irregular memory accesses and the low computation-to-memory ratio. 
+Still, BFS on large graphs also involves tremendous 
+parallelism which indicates great potential for FPGA acceleration. 
+With both the optimization challenges and the parallelization potential, 
 BFS has attracted a number of researchers exploring its acceleration on FPGAs 
 \cite{attia2014cygraph, betkaoui2012reconfigurable, Dai2017foregraph, Ma2017fpga,
 umuroglu2015hybrid, oguntebi2016graphops, engelhardt2016gravf, zhou2016high}. 
 
-Previous work have shown that BFS accelerators on FPGAs can provide competitive  
-performance and superior energy efficiency when given comparable memory bandwidth. 
-However, these work typically optimize BFS or relatively general graph processing 
-with dedicated circuit design using hardware description language (HDL). The HDL 
-based customized designs are beneficial to the resulting performance 
-and save resource consumption, but it usually takes long time for development, 
-upgrade, maintenance and porting to a different FPGA device, which are all 
-important concerns from the perspective of the accelerator developers. 
+Previous works have shown that BFS accelerators on FPGAs can provide competitive  
+performance and superior energy efficiency when given comparable memory bandwidth (e.g., \cite{Dai2017foregraph, Ma2017fpga,
+umuroglu2015hybrid, oguntebi2016graphops}). 
+However, they typically optimize BFS with dedicated circuits using hardware 
+description language (HDL). The HDL based designs are beneficial to the 
+resulting performance and allow fine-grained control on resource consumption, 
+but it usually takes long time for development, upgrade, maintenance and 
+porting to a different FPGA device, which are all important concerns 
+from the perspective of system developers and designers. 
 
 %Another engineering yet non-trivial problem is the high barrier to use 
 %the FPGA powered graph processing accelerators in high-level 
-%applications such as big data analytics, which is mostly caused by the lack of 
-%well-defined high level interface and user-friendly SDK supporting 
+%applications such as big data analytic, which is mostly caused by the lack of 
+%general hardware interfaces and user-friendly SDK supporting 
 %various hardware systems. Improving the ease of using the 
 %HDL based accelerators requires a lot of design efforts 
-%such as driver and runtime environment to support newer 
+%such as drivers and runtime environments to support newer 
 %devices and diverse computing systems. This is also one of 
-%the key obstacles hindering the widespread adoption of 
-%the FPGA accelerators despite the great performance-energy 
-%efficiency advantages.
+%the known obstacles hindering the adoption of FPGA accelerators 
+%despite the great performance-energy efficiency.
 
-Because of the limitation of the conventional HDL design method, 
-high level synthesis (HLS) tools that advance rapidly in recent years
-become attractive. HLS tools are increasingly adopted in both 
-industry and academia for rapid FPGA 
-prototyping and application acceleration \cite{koch2016fpgas, xilinx-sdaccel}. 
-Nevertheless, the current HLS based design tools are mostly used for 
-applications with relatively regular memory access patterns and data paths. 
-It remains challenging for the HLS tools to accelerate BFS with irregular 
-memory access patterns and complex data paths. 
+Because of these design productivity problems, high level synthesis (HLS) 
+tools advance rapidly and become attractive recently. They are increasingly adopted 
+in both industry and academia for fast prototyping and application acceleration 
+\cite{koch2016fpgas, xilinx-sdaccel, hls2016survey}. Although HLS tools improve the design productivity, 
+the performance of HLS based designs may still be far from that of the corresponding 
+handcrafted designs particularly for irregular applications \cite{wu2019fpga, gautier2016spector}. 
+For instance, the authors in \cite{wu2019fpga} showed that HLS based design of DNA sequencing can be 27X-80X 
+slower than their handcrafted design. BFS is a typical application with inherent irregular 
+memory accesses, and the performance of BFS reference implementation in \cite{gautier2016spector} 
+is much lower than that of the RTL implementations \cite{dai2016fpgp, Dai2017foregraph}. 
+We will demonstrate the optimization challenge with experiments in Section \ref{sec:motivation}. 
 
-First, there are considerable irregular memory access including 
-random and short burst in BFS and the irregular memory access 
-bandwidth utilization is orders of magnitude lower than that of the sequential 
-memory access. In addition, the number of a 
-frontier vertex's neighbor is only determined at run-time, so reading the unaligned 
-neighboring vertices with OpenCL typically has narrow data width. The read is not efficient 
-as pointed out in \cite{wang2017multikernel}. Worse still, the neighboring vertices 
-may have their visiting status stored randomly either in main memory or on-chip buffer.
-Although they can be processed in parallel, read/write conflicts happen frequently 
-and affects the BFS data path parallelization dramatically. 
+To achieve both high design productivity and performance, we argue that 
+providing high-quality HLS primitive to high-level application designers 
+can be a promising solution. High-quality HLS primitive developed by 
+experienced designers enables application designers to make use of FPGA 
+computing without going through the cumbersome HLS optimizations. 
+The GPU community have demonstrated the success of GPU libraries such as 
+cuDNN\cite{cudnn} and cuBLAS\cite{cublas}. There are also high-level libraries 
+targeting FPGAs developed for domain-specific applications such as software 
+defined network \cite{bosshart2014p4, li2016clicknp, sultana2017emu}. 
+These works motivate us to develop HLS based BFS 
+primitive which can be used to construct a general graph processing 
+library and utilized in more high-level applications. 
 
-To solve this problem, we reorder each vertex's neighboring vertices i.e. 
-edges in compressed sparse row (CSR) graph and split them into 
-batches such that the neighboring vertices 
-in each batch have their status stored in independent memory blocks. 
-With the batching, the random memory access gets coalesced. Meanwhile, 
-the data path can be simplified and implemented in parallel efficiently. 
-We also observe that updating the BFS level information of the 
-active vertices is essentially random memory access and time-consuming 
-in BFS, while the updating can be done anytime when the active vertices of BFS 
-are determined. Thus, we can separate the random memory operations from
-the conventional BFS and have the update overlapped with the next BFS processing. 
-With the hyper pipelining, the random memory operations can be completely 
-hidden, which is beneficial to the BFS processing.
+Unlike HDL allowing the fine-grained control on hardware design, 
+HLS tools typically offer higher-level abstraction. This poses a series 
+of technical challenges in optimizing BFS with HLS tools.
+There are considerable irregular memory accesses such as 
+random and short burst in BFS and the bandwidth utilization 
+of the irregular memory accesses can be orders of magnitude lower than 
+that of sequential memory accesses. In addition, compact graph layout such as 
+compressed sparse row (CSR) results in unaligned memory accesses with short data 
+width, which dramatically limits the memory bandwidth utilization as pointed out 
+in \cite{wang2017multikernel}. Worse still, many parallel memory accesses in BFS 
+may conflict with the conventional CSR layout, which exerts negative impact on 
+the performance. For instance, the neighbors of a vertex under inspection may 
+be randomly distributed. The neighbors are independent and their visiting status 
+can be checked in parallel. Nevertheless, the status of the randomly distributed 
+neighbors can be located in the same memory bank of either DRAM or on-chip 
+memory. The conflicts are only known at run-time given the CSR 
+layout and cannot be detected at compilation time of an OpenCL program,
+which can cause additional conflict latency and become a 
+major barrier to higher BFS performance. 
 
-According to the experiments on a set of big graphs, the proposed OpenCL based BFS 
-accelerator achieves up to 12X performance speedup when compared to the design 
-in Spector benchmark and it is on par with many handcrafted design on similar FPGA boards. 
-The major contributions of this work are summarized as follows.
+Due to the severe memory access bottleneck, it is reasonable to develop 
+aggressive memory access optimizations for OpenCL-based BFS on FPGAs. 
+Thus, we propose to reorder the graph layout and make the data aligned and batched. 
+With the graph reordering, batching, and data alignment, a great number of memory accesses 
+can be coalesced. Meanwhile, we assign the continuous data to different 
+memory banks such that they can be accessed and processed in parallel 
+without conflict. The processing becomes much more regular and friendly to 
+OpenCL. In addition, we explore the use of increasing FPGA on-chip buffer 
+to accommodate the vertex visiting status. It replaces a large amount of 
+external memory accesses with on-chip memory accesses. Finally, we shift the random 
+level update in BFS out and overlap it with the streamed BFS 
+processing. This approach shortens the main BFS pipeline 
+and improves the BFS performance.
+
+According to the experiments, the proposed OpenCL based BFS 
+accelerator OBFS achieves 9.5X and 5.5X performance speedup when compared to 
+a vertex-centric implementation \cite{gautier2016spector} and an edge-centric 
+implementation \cite{chen_fpl2019} in OpenCL respectively, and comparable performance to many handcrafted 
+designs \cite{dai2016fpgp, Dai2017foregraph, zhou2017accelerating}. The major 
+contributions of this work are summarized as follows.
 \begin{itemize}
-    \item As far as we know, this is the first highly optimized  
-		OpenCL based BFS accelerator on FPGAs targeting portability and ease of 
-		use on top of performance. We will make it open-sourced. The URL is 
-		omitted due to the double-blinded review. 
-    \item We proposed a set of methods to optimize the irregular
+    \item %As far as we know, this is the first highly optimized  
+		%OpenCL based BFS accelerator on FPGAs targeting portability and ease of 
+		%use on top of performance. 
+		Instead of utilizing RTL, we develop the BFS primitive based on OpenCL 
+		targeting portability and ease of use on top of performance optimizations.
+		The code is open-sourced on github. 
+		\footnote{Omitted due to the double-blind review.}
+    \item We proposed a number of methods to optimize the irregular
 		memory accesses and data path parallelization of BFS using OpenCL. 
-		This may shed light on similar irregular application acceleration on 
+		This may shed light on similar graph processing acceleration on 
 		FPGAs using OpenCL.
     \item The resulting accelerator shows significant performance speedup 
-        over a baseline OpenCL design and gets close to state-of-art handcrafted 
-		design on a set of representative graphs.
+        over existing OpenCL based BFS and gets close to many prior handcrafted 
+		designs.
 \end{itemize}
 
-The rest part of the paper is organized as follows. In Section \ref{sec:motivation},  
-we show the challenges of BFS accelerator design with HLS and motivate this work. 
+The rest of the paper is organized as follows. In Section \ref{sec:motivation},  
+we show the challenges of BFS accelerator design with OpenCL. In Section \ref{sec:overview}, 
+the basic idea of converting BFS to pipelined hardware with OpenCL is introduced.
 In Section \ref{sec:bfs-opt}, we detail the major OpenCL 
-based BFS optimization methods.
-In Section \ref{sec:experiment}, we present comprehensive experiments of the 
-BFS accelerator. In Section \ref{sec:relatedwork}, we present a brief survey of 
-the graph processing accelerators particularly on FPGAs. Finally, we conclude 
+based BFS optimizations. In Section \ref{sec:experiment}, we present comprehensive experiments of the 
+BFS accelerator. In Section \ref{sec:relatedwork}, we review the related work. Finally, we conclude 
 this work in Section \ref{sec:conclusion}.
 

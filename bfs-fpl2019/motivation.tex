@@ -1,8 +1,7 @@
 \section{Motivation} \label{sec:motivation}
-%In this section, we will briefly introduce the widely used 
-%BFS algorithm and then show the challenge of 
-%using high level design tools to 
-%motivate this work.
+In this section, we will briefly introduce the widely used 
+BFS algorithm and then show the challenge of 
+using OpenCL to implement BFS on FPGAs. 
 
 %\subsection{High level FPGA design tools}
 %Despite the relatively good performance, 
@@ -17,122 +16,70 @@
 %such as portability, ease of maintenance and use. Considering the  
 %continuously growing FPGA resources and stringent time-to-market requirements, 
 %the high level FPGA design tools \cite{Nane2016hls-survey} get increasing popularity.
-
-BFS is a widely used graph traversal algorithm and it is the basic 
-building component of many other graph processing algorithms. 
+\subsection{OpenCL based BFS on FPGAs}
 A typical frontier based BFS algorithm implementation is named as 
 level synchronous BFS \cite{attia2014cygraph, betkaoui2012reconfigurable, 
 zhang2017boosting}. It has a frontier queue to store the vertices to 
-be inspected. Initially, the source vertex is only vertex in the frontier.
+be inspected. Initially, the source vertex is the only vertex in the frontier queue.
 By inspecting the frontier vertices, new vertices are traversed and become 
-the frontier. Iteratively process the graph until the frontier is empty.
-Graphs are usually sparse and stored as compressed sparse row (CSR) format. 
+the frontier vertices in next iteration. The graph is iteratively 
+processed until the frontier is empty.
+Graphs are usually sparse and stored as CSR format. 
 CSR includes a row pointer array (RPA) and a column index array (CIA).
-RPA contains the edge index starting position of each vertex 
-while CIA consists of the incoming/outgoing neighboring vertex indices.
+RPA contains the starting index of each vertex in CIA array
+while CIA consists of the incoming/outgoing neighbors.
 
-%A pipelined implementation of the BFS can be roughly 
-%divided into four pipeline stages. In the first stage, it reads 
-%frontier from memory. In the second stage, 
-%frontier neighbors will be inspected by going 
-%through the RPA read and CIA read sequentially. 
-%Then they will be forwarded to the third stage. 
-%In the third stage, each neighboring vertex will be inspected 
-%and un-visited vertex will be considered as frontier 
-%in next BFS iteration. In the last stage, the new frontier 
-%vertices will be streamed to external memory and level of 
-%the frontier vertices will be updated.
+%HLS tools greatly alleviate the efforts of building accelerators on FPGAs
+%and make FPGAs accessible to designers without much hardware design experiences. 
+%This has been well discussed in prior work. Nevertheless, the performance of 
+%the resulting accelerators can be far from satisfying especially for 
+%irregular applications like BFS. 
 
-%\begin{figure}
-%\center{\includegraphics[width=0.7\linewidth]{base-bfs}}
-%    \caption{Baseline pipelined BFS}
-%\label{fig:base-bfs}
-%\vspace{-1em}
-%\end{figure}
-
-High level synthesis tools greatly alleviate the efforts of building BFS accelerators on FPGAs. 
-Nevertheless, the performance of the resulting accelerators can be far from satisfying 
-especially for irregular applications like BFS. In this section, we take our own early experience 
-on optimizing BFS on Alpha-Data as an example and show the challenge of 
-optimizing BFS with HLS tools. 
-
-
-We started from basic sequential BFS algorithm for 
-the HLS design. First of all, we separated the nested loop into different pipeline 
-stages connected via FIFO using data flow model supported by Xilinx HLS. 
-We explored all the possible pipeline combinations ranging from single-stage 
-pipeline to seven-stage pipeline. With the optimized pipeline, we further 
-introduced prefetch buffer to improve memory access efficiency, 
-added customized cache structure for the vertex property to reduce the external 
-memory accesses, hash table based redundancy removal logic to reduce the repeated 
-outgoing neighboring vertices of the frontier vertices. Finally, we also tried to 
-duplicate the pipeline stages for parallel processing and tuned the design parameters 
-of the accelerators such as cache and prefetch buffer size. We believed 
-we had tried the major design optimization methods that could be applied to the 
-baseline HLS design. 
-
-%\begin{algorithm}
-%	\caption{BFS Algorithm} \label{alg:bfs}
-%    \small
-%	\begin{algorithmic}[1]
-%		\Procedure{BFS}{}
-%		\State $level[v_k] \gets -1$ where $v_k \in V$
-%		\State $level[v_s] \gets 0$
-%		\State $current\_level \gets 0$
-%		\State $frontier \gets v_s$
-%
-%        \While {$!frontier.empty()$} 
-%
-%		\For{$v \in V$}
-%		\If{$level[v] == current\_level$}
-%		\State $frontier \gets v$
-%		\EndIf
-%		\EndFor
-%
-%		\For{$v \in frontier$}
-%		\State $S \gets {n \in V | (v, n) \in E}$
-%		\For {$n \in S$}
-%		\If {$level[n] == -1$}
-%		\State $level[n] \gets current\_level + 1$
-%		\EndIf
-%		\EndFor
-%		\EndFor
-%		\State $current\_level \gets current\_level + 1$
-%		\EndWhile
-%		\EndProcedure
-%	\end{algorithmic}
-%\end{algorithm}
-
-We measured the performance of the accelerator with a set of representative graphs 
-including Youtube (YT), Live Journal(LJ), Pokec(PK) and two R-MAT graphs. Details about the 
-graph benchmark can be found in Table \ref{tab:graph} in the experiment section. 
-Figure \ref{fig:opt-performance} presents the normalized performance
-when different optimization techniques are gradually applied to the naive baseline design.
-It can be found that the resulting accelerator achieves up to 70X speedup
-compared to the baseline design. In spite of the significant performance improvement, 
-the HLS implementation is still far from ideal compared to the state-of-art 
-handcrafted design on FPGAs \cite{betkaoui2012reconfigurable}, 
+To explore the use of OpenCL for BFS acceleration on FPGAs, we deployed 
+the reference BFS in Spector \cite{gautier2016spector}, which is an OpenCL 
+benchmark targeting FPGAs, on Intel Xeon-FPGA (Harp-v2). In the experiments, 
+Intel OpenCL 16.1 is used on Ubuntu 16.04. We measured the BFS performance with 
+a set of representative graphs including Youtube (YT), Live Journal(LJ), 
+Pokec(PK), and two R-MAT graphs(R19 and R21). Details about the graph 
+benchmark can be found in Table \ref{tab:graph} in the experiment section. 
+The achieved performance on YT and R19 is 12 and 64 Million Traverse 
+Per Second (MTEPS) respectively. It is far from ideal 
+compared to the state-of-art handcrafted designs on FPGAs \cite{betkaoui2012reconfigurable}, 
 \cite{attia2014cygraph}, \cite{zhang2017boosting}, \cite{nurvitadhi2014graphgen},
-\cite{dai2016fpgp}. Therefore, the current BFS needs a careful redesign to achieve 
-competitive performance with HLS. 
+\cite{dai2016fpgp}, the performance of which is usually higher 
+than 100 MTEPS. The execution gets stuck on the rest of the graphs. 
+We failed to fix the bug without changing the kernel 
+implementation approach i.e. NDRange kernel \cite{intelOpenCL} 
+after quite some efforts. 
 
-\begin{figure}
-	\center{\includegraphics[width=0.8\linewidth]{opt-performance}}
-    \caption{The normalized performance of an HLS based BFS accelerator with various optimizations on Alpha-Data}
-\label{fig:opt-performance}
-\vspace{-1em}
-\end{figure}
+%\begin{table}
+%    \centering
+%	\caption{Open sourced OpenCL BFS on FPGAs}
+%  \label{tab:spector-bfs}
+%  \begin{tabular}{cccccc}
+%    \toprule
+%      Benchmark & YT & LJ & PK & R19 & R21 \\
+%    \midrule
+%	BFS in Spector(MTEPS) & 12 & - & - & 64 & -\\
+%	Modified BFS(MTEPS) & 18 & 58 & 57 & 57 & 60 \\
+%  \bottomrule
+%\end{tabular}
+%\vspace{-1em}
+%\end{table}
 
-%While the baseline design could be created using HLS in around an hour, optimizing the 
-%HLS design took much longer time. 
-Another challenge of the BFS design with HLS is the optimization productivity. 
-The optimization took an experienced hardware designer 
-with basic high level synthesis knowledge up to months, though most of time was 
-spent on implementing the large amount of combined optimization methods and cumbersome
-debugging when software simulation passed but the accelerator got stalled 
-during hardware execution. This motivates us to focus on the high-level BFS 
-accelerator optimization and offer open-sourced BFS design with both 
-the near handcrafted performance and the software-like flexibility.
+%The BFS implementation in Spector is supposed to be independent with the 
+%input graph size, as there are no graph specific parameters in the OpenCL 
+%code. Nevertheless, 
+
+The experience indicates that OpenCL based design optimization is highly 
+demanded before the BFS implementation can achieve competitive performance. 
+In addition, we notice that it is rather challenging 
+to optimize OpenCL code especially for OpenCL developers even with OpenCL programming experiences in CPU/GPU as many hardware details 
+are hidden behind the compiler and it is difficult
+to understand the relation between the OpenCL code and the resulting hardware behaviors. 
+Therefore, we argue that having the experienced designers to build the high performance 
+OpenCL BFS and offer it as an easy-to-use primitive or library can be a promising 
+solution to the above problem.
  
 %accelerator using HLS tools remains a challenging task and will be even more difficult for 
 %designers without much hardware knowledge. Meanwhile, we also notice that the benefits of 
@@ -145,54 +92,89 @@ the near handcrafted performance and the software-like flexibility.
 %and offer open-sourced BFS design with both the near handcrafted performance and 
 %the software-like flexibility.
 
-%\subsection{Inefficient irregular memory access}
-%As discussed in Section \ref{sec:intro}, there are large amount of irregular memory access in BFS, 
-%but it is non-trivial to evaluate its influence on BFS performance directly. To gain in-depth 
-%analysis of the irregular memory access in BFS with OpenCL, we present two different experiments.
-%
-%In this first experiment, we measured the irregular memory access latency on Intel Harp-v2.
-%Three typical memory access patterns including sequential memory access, dependent random memory access 
-%and independent random memory access are presented. Note that dependent random memory access 
-%means that the random access is dependent and they must be handled sequentially while the independent random 
-%access allows the requests to be processed in parallel. Both random access patterns appear in OpenCL based BFS.
-%Particularly, many independent memory access may be taken as dependent memory access in BFS because the 
-%OpenCL compiler has no algorithm-specific information. Data width is also critical to the memory access 
-%when implemented in OpenCL, different data width are 
-%analyzed as well. 
-%
-%The experiment result is shown in Figure \ref{fig:avg-mem-lat}. It can be found that independent memory 
-%access leads to orders of magnitude of higher latency. Data width is critical to all the memory access patterns.
-%While dependent memory access efficiency increasingly improves with the data width, dependent memory access and sequential memory 
-%access efficiency gets saturated when the data width reaches 1024 bit and 512 bit respectively. According to the experiment, 
-%we should avoid potential memory conflict in OpenCL where the compiler will take them as dependent and generate 
-%dependent memory access requests. Also the designers should try to access memory with larger aligned data width. 
-%\begin{figure}
-%	\center{\includegraphics[width=0.85\linewidth]{avg-mem-lat}}
-%    \caption{Normalized average memory access latency per byte. Note that the latency is normalized to the 
-%	lowest latency of sequential memory access}
-%\label{fig:avg-mem-lat}
-%\vspace{-0.5em}
-%\end{figure}
-%
-%
-%In the second experiment, we analyzed the distribution of the irregular memory access in BFS. 
-%When the burst size of a memory request is less than 4, we will classify 
-%it as irregular memory access. Note that the short burst memory access can also be considered as 
-%a random memory access with larger data width. As the starting vertex also affects the distribution, 
-%we calculated  the average percentage of 64 non-trivial BFS with random starting vertex. 
-%According to the experiment result on the five graphs 
-%in Figure \ref{fig:bfs-mem-dist}, we find that the majority of the memory access in BFS is irregular, 
-%though the amount of the irregular memory access takes up only a small portion of the total memory access. 
-%Since the irregular memory access latency may even be orders of magnitude higher 
-%especially for the dependent random memory access, the irregular memory access that is over 15\% of 
-%the total amount of memory access affects the BFS performance dramatically if it is not 
-%optimized appropriately. 
-%\begin{figure}
-%	\center{\includegraphics[width=0.85\linewidth]{bfs-mem-dist}}
-%    \caption{BFS iregular memory access distribution analysis. The amount of memory access refers to the amount of 
-%	bytes of the memory access while the number of memory access focuses on the number of memory requests.}
-%\label{fig:bfs-mem-dist}
-%\vspace{-0.5em}
-%\end{figure}
-%
-%
+\subsection{Inefficient memory access in BFS}
+There are a large amount of memory accesses but little computation in BFS. 
+Thus, memory access efficiency is critical to the BFS performance. To gain in-depth 
+analysis of the memory access efficiency in BFS with OpenCL, we present two different 
+experiments.
+
+In the first experiment, we measured the memory access bandwidth 
+of three typical BFS memory access patterns including sequential memory access (SMA), 
+dependent random memory access (DRMA) and independent random memory access (IRMA).
+Note that DRMA means that the random accesses 
+are dependent and they must be handled sequentially while the IRMA 
+allows the requests to be processed in parallel. The 
+comparison is presented in Figure \ref{fig:avg-mem-lat}. 
+It can be found that DRMA has orders of magnitude 
+lower bandwidth compared to the other patterns and severely 
+underutilizes the hardware memory bandwidth. Thus, we should try 
+to avoid memory access in this manner. 
+
+On the other hand, there are many IRMA in BFS.  
+However, the compiler can not determine the data dependency during 
+compilation and they are taken as dependent. Algorithm \ref{alg:code-seg} 
+shows the code segment of BFS that involves the inefficient 
+memory accesses. $frontier$ refers to the set of active vertices. 
+$v.outgoingNgb$ stands for the set of outgoing neighbors of 
+vertex $v$. $l$ is the current level of BFS. $level$ is an 
+array of level information of the graph. Typically, the neighbors 
+of a vertex are different, so $level$ update in different iterations 
+of the inner most loop are independent. But the compiler without 
+application specific information does not know that the neighbors 
+are different. At compilation, the memory accesses are considered 
+as dependent to ensure the correctness in all scenarios, 
+which leads to much lower memory bandwidth according to the 
+experiment in Figure \ref{fig:avg-mem-lat}.
+
+\vspace{-0.5em}
+\begin{algorithm}
+\footnotesize
+	\caption{Code segment of BFS} \label{alg:code-seg}
+	\begin{algorithmic}[2]
+		\State ...
+		\For{$v \in frontier$}
+		\For{$v\_out \in v.outgoingNgb$}
+		\If {($level[v\_out] == -1$)}
+		\State $level[v\_out] \gets l + 1$
+		\EndIf
+		\EndFor
+		\EndFor
+		\State ...
+	\end{algorithmic}
+\end{algorithm}
+\vspace{-0.5em}
+
+To gain insight of the memory accesses in BFS, we analyzed their distribution in the second 
+experiment. We extracted the memory access patterns from the trace of 64 non-trivial BFS 
+with random starting vertices. When a memory request is less than 16 bytes, we take it as an irregular 
+random memory access (IRRMA). According to the experiment result on the five graphs 
+in Figure \ref{fig:bfs-mem-dist}, we find that the majority of memory accesses in BFS are irregular, 
+though the amount of the memory accesses take up only 15\%-20\% of the total memory accesses. 
+Suppose the vertex index is 32-bit, most of the memory accesses such as outgoing neighbor traverse 
+in BFS adopt 32-bit data width. As a result, the relatively small data width in combination with the 
+irregular memory access patterns incurs rather low memory bandwidth utilization. 
+\begin{figure}
+	\center{\includegraphics[width=0.75\linewidth]{avg-mem-lat}}
+    \caption{Average memory access bandwidth}
+\label{fig:avg-mem-lat}
+\vspace{-0.5em}
+\end{figure}
+
+\begin{figure}
+	\center{\includegraphics[width=0.75\linewidth]{bfs-mem-dist}}
+    \caption{BFS irregular memory access distribution analysis. 'amount' refers to the amount of 
+	bytes of memory accesses while 'number' focuses on the number of memory requests.}
+\label{fig:bfs-mem-dist}
+\vspace{-1em}
+\end{figure}
+
+In summary, many random memory accesses in BFS cannot be optimized by the OpenCL compilation. 
+Particularly, there are a large number of short and irregular memory
+accesses with small data width that underutilize the hardware memory bandwidth. 
+In addition, many independent memory accesses in BFS are taken as dependent and the 
+false dependency results in rather low memory bandwidth utilization.
+These inefficient memory accesses accounts for a large proportion of the total 
+memory accesses and BFS is memory intensive. 
+%Therefore, memory access optimizations becomes key to improve BFS performance. 
+Therefore, memory access optimizations are critical yet challenging to improve BFS 
+performance.

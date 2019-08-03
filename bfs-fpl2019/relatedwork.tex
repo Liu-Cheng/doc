@@ -1,45 +1,37 @@
 \section{Related work} \label{sec:relatedwork}
 The growing importance of efficient BFS traverse on large graphs 
-have attracted attentions of many researchers. 
-Different BFS optimization algorithms and accelerators 
-have been proposed in literatures. We will 
-particularly focus on the FPGA based BFS acceleration 
-in this work. 
+have attracted attentions of many researchers. Different BFS 
+optimization algorithms and accelerators have been proposed in 
+literature. In this section, we will particularly focus on the 
+FPGA based BFS acceleration. 
 
-To alleviate the memory bandwidth bottleneck of the 
-BFS accelerators, the authors in \cite{zhang2017boosting, khoram2018accelerating} 
-explored the new Hybrid Memory Cube (HMC) which provides 
-much higher memory bandwidth as well as flexibility for BFS 
-acceleration, while the authors in \cite{attia2014cygraph} 
-proposed to change the compressed sparse row (CSR) format slightly. 
-Different from the first two work, the authors in \cite{umuroglu2015hybrid} 
-choosed to perform some redundant but sequential memory access for higher memory bandwidth 
-utilization based on a spare matrix-vector multiplication model.
+BFS is memory bound, so many BFS accelerator optimizations 
+target on alleviating the memory bandwidth constrain. The authors in 
+\cite{zhang2017boosting, khoram2018accelerating} 
+took advantage of Hybrid Memory Cube (HMC) with much higher memory 
+bandwidth for BFS acceleration. The authors in \cite{attia2014cygraph} 
+proposed to change the compressed sparse row (CSR) format slightly to 
+improve the memory access efficiency. The authors in \cite{umuroglu2015hybrid} 
+chose to sacrifice some redundant memory accesses for sequential memory 
+access such that the overall memory bandwidth utilization improves.
+The authors in \cite{attia2014cygraph, betkaoui2012reconfigurable} explored 
+Convey HC-2 \cite{bakos2010high} with multiple memory instances for BFS acceleration. 
 
-Most of the BFS accelerators are built on a vertex-centeric 
-processing model, while the authors 
-in \cite{zhou2016high} explored the edge-centeric graph processing and demonstrated 
-significant throughput improvement. On top of the single FPGA board acceleration, 
-the authors in \cite{attia2014cygraph, betkaoui2012reconfigurable} also explored 
-BFS acceleration on a FPGA based high performance computing system with multiple 
-FPGAs and memory instances. There are also work exploring customized soft processors 
-for graph processing and building a distributed solution on 
-top of a group of embedded FPGA boards \cite{kapre2015custom, wang2010message}.
-
-The researchers opted to develop 
-more general graph processing accelerator framework or library 
-recently \cite{engelhardt2016gravf, jun2018grafboost, yao2018efficient, oguntebi2016graphops, Dai2017foregraph, dai2016fpgp}. 
-They can also be utilized for BFS acceleration despite the lack of 
-specialized optimization for BFS. Meanwhile, this is also a way to improve 
-the ease of use FPGAs for graph processing acceleration.
-
-
-Prior BFS acceleration work have demonstrated the potential benefits of accelerating 
-BFS on FPGAs, but the accelerators were all handcrafted designs. 
-Developing the accelerators with RTL
-takes long time and applying these accelerators 
-on high level applications for software designers still requires a lot of 
-efforts especially when the target computing platforms are different. 
-On the contrast, OpenCL based BFS accelerators can be easily ported to 
-diverse FPGA devices and easily utilized in high level applications 
-by a \textit{software designer}.
+On top of the BFS accelerators, many general graph processing acceleration frameworks 
+have been proposed \cite{engelhardt2016gravf, jun2018grafboost, yao2018efficient, 
+oguntebi2016graphops, Dai2017foregraph, dai2016fpgp, nina2018performance, engelhardt2017towards}. The authors \cite{kapre2015custom, 
+wang2010message} developed customized soft processors on FPGAs for graph processing and further 
+presented a distributed software solution on a number of connected FPGAs.
+One of the main goals of these works is to achieve high graph processing performance and make the 
+FPGA based accelerator design easier. Along with this goal, we argue that using OpenCL to build highly 
+optimized graph processing accelerator also provides high performance and improves the 
+accelerator design productivity. The authors in \cite{gautier2016spector, chen_fpl2019} 
+presented OpenCL based vertex-centric and edge-centric BFS accelerators 
+respectively. They have demonstrated the portability of OpenCL based BFS 
+accelerators on FPGAs, which is confirmed by our study,
+%and the portability also enables us to reproduce their 
+%designs on Intel Harp-v2 in a short time. 
+though their performance remains much lower than the RTL designs. 
+Still, with a number of optimizations, our study 
+shows that OpenCL based BFS accelerator with comprehensive optimizations will be a promising approach to 
+gain both high performance and high-level software features.

@@ -1,13 +1,8 @@
-\section{HLS based BFS optimization} \label{sec:bfs-opt}
-As there are large amount of irregular memory accesses in BFS 
-and they lead to rather low memory bandwidth 
-utilization \cite{wang2017multikernel}, irregular memory access is a key 
-factor that affects the BFS performance. Centering this problem, 
-we propose a set of combined high-level optimizations including graph 
-reordering, on-chip buffer partition 
-and hyper BFS pipelining for efficient implementation 
-with OpenCL on Intel Harp-v2. The optimizations are 
-detailed in the rest of this section. 
+\section{OpenCL based BFS optimization} \label{sec:bfs-opt}
+In this section, we elaborate the OpenCL based BFS optimizations
+on top of the pipelined structure. Particularly, we will focus on the 
+memory access optimizations based on our pipeline design.
+%which are critical to improve the BFS performance as discussed in Section \ref{sec:motivation}. 
 
 %\subsection{Irregularity in BFS}
 %\subsubsection{Irregular memory access}
@@ -34,108 +29,177 @@ detailed in the rest of this section.
 
 %\subsubsection{Dependent data paths}
 
-\subsection{Graph reordering}
+\subsection{Memory coalescing}
+As analyzed in Section \ref{sec:motivation}, inefficient memory accesses 
+are mainly caused by small data width, short burst accesses, and false 
+dependent memory accesses. To be more specific, the data width of the 
+sequential memory accesses ($CIA[idx]$) in $inspectFrontierCIA()$ are equal to that of 
+the vertex index which is usually 32-bit in OpenCL, because the start address of the 
+sequential memory access is not aligned in CSR. In addition, there are 
+a large amount of low-degree vertices in realistic graphs. It indicates 
+that many sequential memory accesses have very short burst size 
+in $inspectFrontierCIA()$. Memory accesses with small data width and 
+short burst also exist in $inspectFrontierRPA()$. They underutilize 
+the memory bandwidth. False dependent memory accesses i.e. $level[v\_out]$ 
+mainly appear in different iterations of $checkNgbVisitStatus()$. They 
+also affect the memory access utilization dramatically. 
 
-To alleviate the irregular memory access in BFS, 
-we propose a graph reordering scheme for the target accelerator. 
-The basic idea is to optimize the edge layout for more efficient 
-memory access or processing without changing the graph structure.
-It needs to be done once for each graph and can be considered 
-as graph pre-processing. Note that graph pre-processing covers 
-many distinct methods such as graph partition and graph reordering. 
-It is a common practice in many graph processing systems \cite{Dai2017foregraph}
-\cite{ham2016graphicionado} \cite{gui2019survey} \cite{shi2018graph}.
+To improve the memory access efficiency with OpenCL, we try to coalesce the 
+memory accesses with the following approaches.
+First, we have both RPA and CIA arrays aligned.
+For RPA array, the original RPA array is changed to the new sequence 
+($RPA[0]$, $RPA[1]$ - $RPA[0]$), ($RPA[1]$, $RPA[2]$ - $RPA[1]$), ..., ($RPA[i]$, $RPA[i+1]$ - $RPA[i]$), ...
+where $i$ is a vertex index. Given random request $RPA[i]$, the two 32-bit RPA read 
+operations are combined to a single memory read aligned to 64-bit. For CIA array, it is typically read 
+from $CIA[RPA[i]]$ to $CIA[RPA[i+1]$ sequentially when traversing the neighbors of vertex $i$. 
+To ensure aligned neighbor traverse, we have both ends aligned to $B \times 32$-bit where $B$ refers to 
+the number of batched data. Basically, $B$ vertices batched together can be read each time in $inspectFrontierCIA()$.
+Note that additional padding i.e. '-1' may be added to ensure that CIA range of each vertex 
+to be fully divided by $B$. With the data alignment and batching, the overall memory access efficiency 
+improves despite the additional padding.
 
-
-As each frontier vertex may have multiple neighboring 
-vertices or associated edges to be processed, sequential edge processing 
-will soon become the bottleneck of the BFS. Parallel processing alleviates the bottleneck, 
-but it is usually constrained by the memory access conflicts. Figure \ref{fig:write-conflict} 
-shows the conflicts when inspecting the frontier neighbors in parallel.  
+Secondly, $B$ neighbors must be processed in parallel in $checkNgbVisitStatus()$ to guarantee 
+smooth pipelining, so $B$ also determines the number of parallel processing units i.e. 
+$checkNgbVisitStatus()$. As $B$ neighbors are independent, it is natural to 
+distribute them to the $B$ processing units. When the $B$ neighbors get processed 
+in parallel, the false dependency is resolved accordingly. Nevertheless, 
+$B$ parallel processing units of $checkNgbVisitStatus()$ may still 
+be stalled due to the memory conflicts. Figure \ref{fig:write-conflict} 
+shows the potential conflicts when checking the neighbors of a vertex in parallel.  
 Both vertex 8 and Vertex 12 are neighbors of vertex 2 and they are supposed to be 
-processed in parallel. However, the status or property of 
-the two vertices may stay in the same DDR bank or on-chip buffer bank. As a result, 
-they can only be written sequentially. The conflict is essentially caused by the 
-limited memory level parallelism, so we call it memory conflict. 
-There is also data dependency conflict. When the frontiers are processed in parallel, 
-vertex 0 and 10 that have the same neighbor i.e. Vertex 3 and we can not perform status 
-write of vertex 3 in parallel. We take it as data conflict. 
-The data dependency remains despite the different data layouts, 
-so we focus on resolving the memory conflict in this subsection.   
+processed in parallel. However, $level[8]$ and $level[12]$ may stay in the same 
+DRAM bank or on-chip buffer bank. As a result, they can only be processed sequentially.   
 
 \begin{figure}
 \center{\includegraphics[width=0.7\linewidth]{write-conflict}}
     \caption{Conflicts among the parallel BFS data paths}
 \label{fig:write-conflict}
+\vspace{-1.2em}
+\end{figure}
+
+To resolve the above conflict, we propose the third approach. 
+We reorder the outgoing neighbors of each 
+vertex to ensure no conflict in the $B$ parallel update 
+units. Algorithm \ref{alg:mem-coalescing} details the reordering 
+together with the data alignment. The original CSR graph consists of
+$RPA$ array and $CIA$ array and the reordered new CSR graph is stored 
+in $newRPA$ array and $newCIA$ array respectively. The reordering roughly 
+involves two steps. 1) Neighbors of each vertex are assigned to 
+$B$ queues based on the modulo result of neighbor vertex index and $B$.
+2) We get one data from each queue to construct a batch of $B$ data.
+Repeat the process until all queues are empty. All the batched data 
+are put into $newCIA$ array. '-1' will be used as padding to construct 
+the batched data when the corresponding queue is empty earlier. 
+$newRPA$ is updated accordingly to ensure the CSR storage format.
+
+A typical example of the reordering and alignment is shown in Figure \ref{fig:graph-reorder}. 
+In this example, batch size is 4. Vertex 0 has as 2 neighbors i.e. 
+Vertex 3 and 7. They belong to the same bank i.e. Bank 3, because both mod(3,batch) 
+and (7, batch) are equal to 3. Thus, six '-1' will be padded. While Vertex 11 
+has five neighbors, they can be put into two batches and three '-1' need to 
+be padded. Padding can vary and may bring in additional memory consumption. 
+Larger batch size will incur more padding overhead but more parallel processing 
+and higher memory bandwidth utilization can be expected.
+
+With the data alignment, graph batching and reordering, memory accesses in 
+$inspectFrontierRPA()$, $inspectFrontierCIA()$ and $checkNgbVisitStatus()$ 
+are coalesced for parallel processing. Finally, note that graph reordering 
+and data alignment need to be done only once and can be considered 
+as graph pre-processing. The pre-processing can 
+be done on general purposed processors. In fact, graph pre-processing is a 
+common practice in many static graph processing systems \cite{Dai2017foregraph}
+\cite{ham2016graphicionado} \cite{gui2019survey} \cite{shi2018graph} and 
+the processing time is usually not the first-order concern.
+
 \vspace{-0.5em}
-\end{figure}
+\begin{algorithm}
+	\caption{Data alignment and reordering of a CSR graph} \label{alg:mem-coalescing}
+    \footnotesize
+	\begin{algorithmic}[1]
+		\State $queue[B]$
+		\State $eid \gets 0$
+		\For {$v \in V$}
+		\State $newRPA[2v] \gets eid$
+		\For {$(i \gets RPA[v]$ to $ RPA[v+1]$)}
+		\State $j \gets mod(CIA[i],B)$
+		\State $queue[j]$.write($CIA[i]$)
+		\EndFor
 
-To address the memory conflict in BFS, we split the outgoing edges i.e. CIA array 
-into batches and edges in each batch can be processed independently.
-With the reordering and batching, the parallelization of the edge processing 
-becomes straightforward and friendly to the high-level compilation tools.
-Meanwhile, the batching enforces a coalesced CIA read and it is also beneficial to 
-the efficiency of the memory accesses according to the experiments in Section \ref{sec:motivation}. 
+		\State $D \gets 0$
+		\While {(there are still non-empty queues in $queue[B]$)}
+		\State $D \gets D + 1$
+		\For{$(i \gets 0$ to $B)$}
+		\State $eid \gets eid + 1$
+		\If{($!queue[i].empty()$)} 
+		\State {$newCIA[eid] \gets queue[i].read()$}
+		\Else 
+		\State {$newCIA[eid] \gets -1$}
+		\EndIf
+		\EndFor
+		\EndWhile	
+		\State $newRPA[2v + 1] \gets D \times B$
+		\EndFor
 
-This reordering can be performed offline. A typical example of the reordering is shown in Figure \ref{fig:graph-reorder}. 
-The original CSR graph is placed in the top part of the figure. 
-To divide the edges into batches for parallel processing, we reorder the edges i.e. CIA 
-of each vertex. In this example, batch is set to be 2. For Vertex 0, 
-it has as 2 neighbors i.e. Vertex 3 and 7 according to the RPA. 
-We expect the vertices in each batch to be divided into distinct memory 
-banks either in DDR banks or on-chip buffer banks so that there is no 
-access conflict during processing. Here we just use the simple modular 
-operation to divide the data, so Vertex 3 and 7 must be put into two batches.
-The empty slot in each batch will be filled with -1 to notify the accelerator to 
-ignore it during processing. Since the CIA is expanded after 
-the reordering and batching, the RPA gets updated accordingly.
-With the reordering and batching, more memory space is required to store the 
-CSR graph. The advantage is the aligned memory access 
-with higher data width and conflict-free edge processing, 
-both of which are beneficial to the hardware implementation 
-using Intel OpenCL.
+	\end{algorithmic}
+\end{algorithm}
+\vspace{-0.5em}
+
 
 \begin{figure}
-\center{\includegraphics[width=0.72\linewidth]{graph-reorder}}
-    \caption{CSR layout after the graph reordering and batching}
+\center{\includegraphics[width=0.82\linewidth]{graph-reorder}}
+    \caption{CSR layout after the data alignment, graph reordering and batching}
 \label{fig:graph-reorder}
-\vspace{-1em}
+\vspace{-1.5em}
 \end{figure}
 
-\subsection{On-chip buffer partition}
-To avoid frequent main memory access, we utilize bitmap to store 
-the visiting status during BFS. Each vertex needs only one bit 
-storage and the latest FPGAs with dozens of mega bits can accommodate 
-graphs with dozens of millions of vertices such as twitter2010 graph which has 
-around 42M vertices \cite{boldi2011layered}. In line with the graph reordering 
-and batching, we split the visiting status bitmap into multiple banks that 
-can be accessed in parallel. Suppose the batch size is $W$, we set the 
-bitmap buffer partitions to be $W$ as well. The vertex visiting status will 
-be evenly distributed across the bitmap buffer banks. The visiting status of 
-vertex $id$ will be put into the $i$th memory bank where $i = mod(id, W)$.
-As the vertex status read/write is mostly random and parallel in BFS, 
-accessing the status via the on-chip buffer banks guarantees determined 
-and low latency. It is much more efficient compared to the DDR 
-accessing. 
+\subsection{On-chip bitmap buffering}
+After the graph reordering and data alignment, there are still many random accesses
+in $checkNgbVisitStatus()$ i.e. $level[v\_out]$. Although $B$ independent memory
+access requests to DRAM can be issued in parallel, the random memory accesses
+remain inefficient. Instead of using $level$ to determine the visiting status,
+we utilize bitmap to represent the visiting status directly, which is also used in
+some of the previous BFS accelerator designs \cite{gautier2016spector}.
+Each vertex needs only one bit to determine whether it is visited.
+The latest FPGAs with up to 500Mb on-chip buffer \cite{xilinxFPGA} can accommodate
+graphs with 500 million vertices in theory, which fulfills the
+requirements of many realistic graphs such as twitter2010
+(42 million vertices) \cite{boldi2011layered}. It can be expected that
+FPGAs with larger on-chip memory will be available in future,
+This encourages us to have the whole bitmap stored in FPGA on-chip buffer.
+Then the DRAM memory accesses in $checkNgbVisitStatus()$ can be replaced
+with on-chip memory accesses, which guarantee determined
+and low latency.
 
-Moreover, the parallel bitmap buffer banks further facilitate 
-conflict-free processing as presented in Figure \ref{fig:bitmap}. 
-In this example, $W = 8$ and it indicates that 8 edges can be 
-processed in parallel. When a processing path gets -1 
-from CIA stream, it will skip the rest of the processing as shown 
-in the pseudo code in Figure \ref{fig:bitmap}.
-Meanwhile, with the simplified and regular processing kernel, 
-the initiation interval (II) of the kernel is 2 when implemented 
-with Intel OpenCL. In contrast, the II of the crossbar based 
-parallel processing kernels \cite{ham2016graphicionado} goes up to 6 
-and it further requires the expensive crossbars and buffers. 
-This is also a key factor that motivates us to adopt the reordering and 
-batching approach despite the additional data padding.
+Meanwhile, we need to split the visiting status bitmap into $B$ banks
+to fit the parallel processing of $checkNgbVisitStatus()$.
+The visiting status of a vertex $v$ will be put into the $i$th memory
+bank where $i = mod(id, B)$. The bitmap layout is consistent with the
+graph reordering and batching. In addition, the processing unit
+$checkNgbVisitStatus()$ needs to be changed and the new processing
+is shown in Figure \ref{fig:bitmap}. Compared to the baseline BFS in
+Algorithm \ref{alg:bfs}, the $level[v\_out]$ update is removed.
+This will be explained in next subsection. While reading from or writing to the
+on-chip buffer can be done in a single cycle and there is
+write after read dependency in the new $checkNgbVisitStatus()$, the
+initiation interval (II) of the kernel is 2.
+
+In contrast, the authors \cite{ham2016graphicionado} proposed to use FIFOs
+and crossbars to shuffle the data directly. When we implemented this scheme
+with OpenCL, the II of the kernel goes up to 6, which is much larger than
+the RTL designs. Basically, the number of outgoing neighbors vary for 
+different frontier vertices, so OpenCL kernels are processing a stream 
+with dynamic lengths. To pipeline the kernels, we need both a non-blocking control channel
+and a data channel. When we implement the crossbar as well as FIFOs
+with these channels, we must go through the control channels
+for arbitration and then access the authorized data channels for data.
+The arbitration and processing can hardly be parallelized in OpenCL directly
+and incur long data dependency and large II.
 
 \begin{figure}
-\center{\includegraphics[width=0.67\linewidth]{bitmap}}
-    \caption{Parallel visiting status bitmap buffer banks and conflict-free processing data paths}
+\center{\includegraphics[width=0.72\linewidth]{bitmap}}
+    \caption{Parallel processing with on-chip bitmap buffer}
 \label{fig:bitmap}
+\vspace{-1.2em}
 \end{figure}
 
 %\subsubsection{CPU assisted data reorganization}
@@ -170,39 +234,41 @@ batching approach despite the additional data padding.
 %\vspace{-1em}
 %\end{figure}
 
-\subsection{Hyper pipelining}
-As mentioned in the above sub section, updating the level information of the active 
-BFS frontier vertices are mostly random and time-consuming. While the classical BFS 
-algorithm follows the bulk synchronous processing (BSP) model and the level update
-affects each BFS iteration, BFS performance is influenced. We notice that the level update 
-can actually be postponed as long as the frontier vertices are kept. With this observation, 
-we propose a hyper pipelining approach as shown in Figure \ref{fig:hyper}. Basically, 
-we separate the level update from the baseline BFS and overlap it within continuous BFS processing.  
-As the level update is fast compared to the overall BFS, it can either be processed on CPU or FPGA 
-with negligible influence on the main BFS processing. Currently, we just put it on host processor 
-to ensure that the main BFS accelerator implementation frequency is not affected.
+\subsection{Level update shifting}
+Since the level update i.e. $level[c\_out] \gets l + 1$ is essentially random 
+write to DRAM, it is relatively slow and can affect the main BFS pipelining 
+when it is put in the $inspectNgbVisitStatus()$. Nevertheless, we notice that
+it does not affect the next BFS iteration thanks to the on-chip bitmap.
+Particularly, the frontier vertices are already stored in memory in $updateFrontier()$, 
+so we can always perform the level update based on just the stored frontier.
+Therefore, we can safely shift level update processing out from 
+the $checkNgbVisitStatus()$ and simplify the main BFS pipelining.
+Meanwhile, we can postpone the level update without blocking the BFS processing.
+With this observation, we propose a pipelining approach as shown in 
+Figure \ref{fig:hyper}. Basically, we separate the level update from the 
+main BFS pipeline and overlap it with the following BFS processing task, 
+supposing there are continuous BFS tasks. While the level update is fast 
+compared to the main BFS pipelining, it can either be processed on the 
+attached host CPU or FPGA with lowest priority. 
 \begin{figure}
 	\center{\includegraphics[width=0.7\linewidth]{hyper-pipeline}}
-	\caption{Hyper pipelining}
+	\caption{Level update shifting with high-level pipelining}
 \label{fig:hyper}
-\vspace{-1em}
+\vspace{-1.2em}
 \end{figure}
 
-\subsection{Optimized BFS structure}
-With the above optimizations, the BFS structure is 
-presented in Figure \ref{fig:opt-bfs}. The frontier inspection can be 
-processed in parallel with the level update of previous BFS processing. 
-The first two pipeline stages remain unchanged as they are not the 
-performance bottleneck. In the third pipeline stage, 
-random vertex status read and update over DDR is replaced with parallel 
-on-chip buffer operations. In the last pipeline stage, level update is offloaded 
-and hidden. Also we adopt the batch write to avoid random frontier vertices 
-write to DDR. The irregular memory access in BFS is reduced dramatically.
+%\subsection{Optimized BFS structure}
+In summary, memory access is the performance bottleneck of BFS while the baseline 
+BFS with OpenCL suffers rather low memory access efficiency. Targeting at 
+the irregular BFS memory access patterns, we propose a series of optimizations to 
+coalesce the memory accesses, reduce external memory accesses and shift the 
+inefficient memory accesses from the main pipelining to improve the memory 
+access efficiency, which ensures high-performance BFS on FPGAs with OpenCL.
 
-\begin{figure}
-	\center{\includegraphics[width=0.75\linewidth]{opt-bfs}}
-    \caption{Optimized BFS pipeline}
-\label{fig:opt-bfs}
-\vspace{-1em}
-\end{figure}
+%\begin{figure}
+%	\center{\includegraphics[width=0.75\linewidth]{opt-bfs}}
+%    \caption{Optimized BFS pipeline}
+%\label{fig:opt-bfs}
+%\vspace{-1em}
+%\end{figure}
 
