@@ -1,0 +1,51 @@
+\section{Related Work} \label{sec:relatedwork}
+CNFET with high energy efficiency becomes an attractive 
+alternative to power-hungry CMOS based cache. It attracts 
+a lot of attentions of researchers and a large number of 
+CNFET-based SRAM cell designs and cache designs have been 
+proposed.
+
+The authors in \cite{wang2011design,wang2011high} developed 
+a CNFET-based 6T SRAM cell and demonstrated the great 
+performance and energy efficiency advantages over a conventional 
+CMOS-based SRAM cell. However, the CNFET-based 6T SRAM cell suffers 
+high leakage current and standby power consumption. To address the problem,
+\cite{zhang2012sram,kim2008low} proposed CNFET-based 8T SRAM cell designs, 
+Along with this route, \cite{sun2014novel, sun2017high} proposed 
+CNFET-based 9T SRAM cell designs to further reduce the leakage power.
+In addition, the CNFET-based 9T SRAM cells also enhance the electrical 
+quality and promise better read/write stability, which are also of 
+vital importance to SRAM cell design. 
+
+On top of the CNFET-based SRAM cell design, there are still many 
+fabrication challenges that need to be remedied with appropriate 
+architectural design. For instance, metallic-CNT variation may cause 
+invalid SRAM cells and CNT density variation may lead to asymmetric 
+electrical features. To detect the invalid cells efficiently, 
+the authors in \cite{xie2015jump, Li2016A} proposed to jump over 
+multiple consecutive cells rather than marching through every cell 
+during testing. The authors in \cite{jiang2017cnfet} proposed a flexible 
+row/column SRAM cell disabling strategy to minimize the negative impact of 
+invalid cells. Unlike the disabling scheme, the authors in \cite{li2016defect} 
+proposed to add redundant SRAM array blocks that can be shared to fix 
+various faulty blocks. To address the asymmetric electrical problems, 
+\cite{jiang2017cnfet} proposed a CNFET-based register file to take advantage of the 
+feature and proposed a dynamic register assignment scheme such that registers with 
+shorter access delay can be used for frequent data. Similarly, the authors in 
+\cite{xu2019exploring} explored the feature and proposed a new last level cache design 
+supporting variable cache access delay.
+
+Unlike prior work that mainly focus on the performance improvement, we aim to further 
+improve the energy efficiency of CNFET-based Cache. We observed that the operation 
+power of a CNFET-based SRAM cell \cite{sun2014novel, sun2017high} varies 
+dramatically depending on the value (0 or 1) stored in the cell. According to 
+Table \ref{tab:rw-analysis}, read operation prefers '0' while write prefers '1'. 
+For a cache line data with both '0' and '1', we may encode the data to adapt to 
+the cache line operation pattern for higher energy efficiency.
+
+There are also works proposed to balance memory read and write with 
+data encoding from different angles \cite{cho2009flip} 
+\cite{jacobvitz2013coset} \cite{seyedzadeh2015pres}. They typically  
+target at STT-RAM or PCM for various purposes such as improving 
+memory lifetime. Although their solutions cannot be employed to address the problem of CNT-cache due to their distinct memory architecture and memory operation characteristics, 
+these encoding algorithms inspire this work.

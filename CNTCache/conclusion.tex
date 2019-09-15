@@ -1,0 +1,13 @@
+\section{Conclusion} \label{sec:conclusion}
+CNTFET has become a promising technology for cache design due to the 
+potential high operation speed and energy efficiency. Nevertheless, we 
+observe that typical CNFET-based SRAM cells have distinct energy consumption 
+for accessing 0 and 1. By taking advantage of the CNTFET feature, we propose 
+CNT-Cache design that allows runtime encoding of each cache line data based on 
+its latest access history. Basically, it predicts the cache line access 
+preferences which can either be read intensive or write intensive. Then it 
+decides the optimal cache line data encoding and updates the encoding at 
+runtime to adapt to the variation of the applications. According to our 
+experiments on a set of benchmark program on gem5, the proposed CNT-Cache 
+reduces the dynamic energy consumption of Dcache by 22.2\% on average with 
+2.21\% chip area overhead.
