@@ -1,0 +1,120 @@
+\section{Introduction} \label{sec:introduction}
+Deep neural networks (DNNs) have been demonstrated to be successful in 
+massive territories like image processing, video processing, and 
+natural language processing over the years \cite{Gatys_2016_CVPR, Collobert:2008:UAN:1390156.1390177, Chen_2015_ICCV}. The success further provokes the 
+flourish of customized neural network accelerators 
+with massive parallel processing engines which typically offer
+much higher performance and energy efficiency compared to 
+general purposed processors (GPPs) 
+\cite{chen2014diannao, chen2014dadiannao,  chen2016eyeriss, Zhang:2015:OFA:2684746.2689060, 7551397}.
+While the performance of neural network accelerators has been intensively 
+optimized from various angles like pruning and quantization, 
+the reliability of the accelerators especially 
+the ones that are deployed on FPGAs remains not well-explored.
+
+The shrinking semiconductor technology greatly improves the 
+transistor density of chips, but the circuits with smaller 
+feature size are more susceptible to manufacturing defects and abnormal 
+physical processes like thermal stress, electromigration, 
+hot carrier injection, and gate oxide wear-out. Thereby, the 
+persistent (hard) faults become one of the major sources 
+of system unreliability. Despite the fault-tolerance of 
+neural network models, permanent faults in neural network 
+accelerators can cause computing errors and considerable 
+wrong predictions \cite{238315}. They may even lead to disastrous 
+consequences to some of the mission-critical applications such as 
+self-driving, nuclear power plants, and medical diagnosis, 
+which are sensitive to neural network prediction mistakes. 
+
+Understanding the influence of faults on neural network accelerators 
+is an indispensable step to improve the resilience of the neural 
+network models executed on the accelerators. There are already some 
+prior works that present analysis of hardware faults on neural network 
+accelerators for this purpose \cite{Reagen2018, Kausar2016Artificial, Li2018TensorFI, Li2017, Salami2018}. However, they usually experimented with 
+simulators and focused on the influence of hardware faults on the 
+prediction accuracy of the neural network models. 
+For instance, the authors in \cite{Reagen2018} 
+mainly investigated the data faults of weights, activities, 
+and hidden states, which are stored in on-chip buffers.
+Then they explored the neural network model resilience with 
+model-wise analysis and layer-wise analysis. The work 
+in \cite{Li2017} targeted at the analysis of software errors 
+in DNN accelerators and explored the error propagation 
+behaviors based on the structure of the neural networks, 
+data types and so on. 
+
+The simulation based approaches are fast and flexible for analyzing 
+neural network computing and prediction accuracy, but they typically 
+ignore critical controlling details and interfaces of 
+the DNN accelerators to ensure the simulation speed. Nevertheless,
+hardware faults on these components may have considerable influence 
+to the overall acceleration system other than the prediction 
+accuracy loss. For instance, faults in DMA 
+module may result in illegal memory accesses and corrupt the system.
+This must be addressed to guarantee reliable DNN 
+acceleration especially in mission-critical applications.
+In addition, many DNN accelerators are implemented on FPGAs for 
+more intensive customization and convenient reconfiguration. 
+While the functionality of the DNN accelerators is mapped to the 
+FPGA infrastructures instead of the primitive logic gates, 
+the simulation based approaches that usually inject errors to the 
+operations used in DNN processing do not apply to the 
+FPGA based DNN acceleration system. Because hardware faults 
+in FPGAs affect the configuration of the devices instead of the 
+accelerator components directly while the actual parts of the 
+accelerators that are influenced depends on the FPGA placing 
+and routing. 
+
+To gain further insight of faults in DNN accelerators, 
+we conduct the fault analysis on running ARM-FPGA system 
+where FPGA has a representative DNN accelerator with 2D systolic array 
+implemented along with hardware fault injection modules and shares 
+the DRAM with the ARM processors. The fault injection modules can inject
+random bit errors to both the configuration memory and on-chip memory 
+blocks in either an offline manner or an online manner with the equipped 
+AXI slave ports. Since the fault distribution models are implemented 
+with software on the ARM processors, they are convenient to change for fault 
+analysis using different models. On top of the FPGA-based fault 
+analysis platform, we take four typical neural network models 
+including Yolo, Resnet, LSTM and DCGAN that represent a broad range of 
+neural network applications as a benchmark for fault analysis.
+Unlike prior works that focused on prediction accuracy loss analysis, 
+we try to analyze the behaviours of the DNN accelerators under hardware faults
+from a system point of view and investigate the system functionality, 
+fault coverage, input variation besides the prediction accuracy loss. 
+Particularly, we study the system stall that dramatically destroys the system 
+functionality in detail and present a simple yet efficient approach 
+to alleviate the problem.
+
+The contributions of this work are summarized as follows: 
+\begin{itemize}
+	\item We develop a configurable fault injection and analysis system 
+	targeting fault analysis of neural network accelerators on ARM-FPGAs. 
+	It offers high-level interfaces for both fault injection and 
+	output data comparison of neural network models to facilitate 
+	the analysis.
+	
+	\item On top of the fault analysis system, we mainly classify 
+	and analyze the resulting behaviors of the DNN accelerators 
+	from system point of view. On top of the prediction accuracy, we 
+	also study the fault coverage, system functionality, input 
+	variation when the accelerators are exposed to persistent faults.
+	
+	\item With comprehensive experiments on a set of representative 
+	neural network models, we observe that system stalls that can 
+	destroy the system functionality of DNN accelerators cannot be 
+	ignored. And we further show that errors in data movement instructions 
+	is a key reason for the system stalls, which can be addressed with 
+	negligible hardware overhead.
+\end{itemize}
+
+The rest of the paper is organized as follows. In Section \ref{sec:background}, 
+we briefly introduce deep learning neural networks and a typical DNN 
+accelerators with 2D computing array. In Section \ref{sec:fault-analysis}, 
+we detail the proposed fault analysis framework on ARM-FPGAs and show the 
+major aspects that we will investigate from system point of view. 
+In Section \ref{sec:experiment}, we present the experiment results and 
+analyze the underlying reasons. In Section \ref{sec:relatedwork}, we give a brief 
+review of prior fault tolerant analysis and design of neural network accelerators.
+Finally, we conclude this work in Section \ref{sec:conclusion}.
+

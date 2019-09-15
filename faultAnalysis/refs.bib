@@ -1,0 +1,486 @@
+@article{Lopez2007A,
+  title={A Unified Environment for Fault Injection at Any Design Level Based on Emulation},
+  author={Lopez-Ongil, C. and Entrena, L. and Garcia-Valderas, M. and Portela, M. and Munoz, F.},
+  journal={IEEE Transactions on Nuclear Science},
+  volume={54},
+  number={4},
+  pages={946-950},
+  year={2007},
+}
+
+@inproceedings{chen2016eyeriss,
+  title={Eyeriss: A spatial architecture for energy-efficient dataflow for convolutional neural networks},
+  author={Chen, Yu-Hsin and Emer, Joel and Sze, Vivienne},
+  booktitle={ACM SIGARCH Computer Architecture News},
+  volume={44},
+  number={3},
+  pages={367--379},
+  year={2016},
+  organization={IEEE Press}
+}
+
+@article{Ebrahimi2014A,
+  title={A fast, flexible, and easy-to-develop FPGA-based fault injection technique},
+  author={Ebrahimi, Mojtaba and Mohammadi, Abbas and Ejlali, Alireza and Miremadi, Seyed Ghassem},
+  journal={Microelectronics Reliability},
+  volume={54},
+  number={5},
+  pages={1000-1008},
+  year={2014},
+}
+
+@inproceedings{Tarrillo2015Multiple,
+  title={Multiple fault injection platform for SRAM-based FPGA based on ground-level radiation experiments},
+  author={Tarrillo, J and Tonfat, J and Tambara, L and Kastensmidt, F. L. and Reis, R},
+  booktitle={Test Symposium},
+  year={2015},
+}
+
+@inproceedings{Harward2015Estimating,
+  title={Estimating soft processor soft error sensitivity through fault injection},
+  author={Harward, N. A. and Gardiner, M. R. and Hsiao, L. W. and Wirthlin, M. J.},
+  booktitle={IEEE International Symposium on Field-programmable Custom Computing Machines},
+  year={2015},
+}
+
+@article{Lopez-Ongil2007,
+abstract = {Abstract—Sensitivity of electronic circuits to radiation effects is an increasing concern in modern designs. As technology scales down, Single Event Upsets (SEUs) are made more frequent and probable, affecting not only space applications, but also applica- tions at earth's surface, like automotive applications. Fault injec- tion is a method widely used to evaluate the SEU sensitivity of dig- ital circuits. Among the existing fault injection techniques, those based onFPGAemulation have proven tobe the fastest ones. In this paper a unified emulation environment which combines two fault injection techniques based on FPGA emulation is proposed. The new emulation environment provides both, a high speed tool for quick fault detection, and a medium speed tool for in-depth anal- ysis of SEUs propagation. The experiments presented here show that the two techniques can be successfully applied in a comple- mentary manner.},
+author = {L{\'{o}}pez-Ongil, C. and Entrena, L. and Garc{\'{i}}a-Valrlerns, M. and Portela, M. and Aguirre, M. A. and Tombs, J. and Baena, V. and Mu{\~{n}}oz, F.},
+doi = {10.1109/TNS.2007.904078},
+issn = {00189499},
+journal = {IEEE Transactions on Nuclear Science},
+keywords = {FPGA-based emulation,Fault injection,Reconfiguration,SEU},
+number = {4},
+pages = {946--950},
+title = {{A unified environment for fault injection at any design level based on emulation}},
+volume = {54},
+year = {2007}
+}
+@article{Guan2014,
+abstract = {As the high performance computing (HPC) community continues to push towards exascale computing, resilience remains a serious challenge. With the expected decrease of both feature size and operating voltage, we expect a significant increase in hardware soft errors. HPC applications of today are only affected by soft errors to a small degree but we expect that this will become a more serious issue as HPC systems grow. We propose F-SEFI, a Fine-grained Soft Error Fault Injector, as a tool for profiling software robustness against soft errors. In this paper we utilize soft error injection to mimic the impact of errors on logic circuit behavior. Leveraging the open source virtual machine hypervisor QEMU, F-SEFI enables users to modify emulated machine instructions to introduce soft errors. F-SEFI can control what application, which sub-function, when and how to inject soft errors with different granularities, without interference to other applications that share the same environment. F-SEFI does this without requiring revisions to the application source code, compilers or operating systems. We discuss the design constraints for F-SEFI and the specifics of our implementation. We demonstrate use cases of F-SEFI on several benchmark applications to show how data corruption can propagate to incorrect results.},
+author = {Guan, Qiang and Debardeleben, Nathan and Blanchard, Sean and Fu, Song},
+doi = {10.1109/IPDPS.2014.128},
+isbn = {9780769552071},
+issn = {23321237},
+journal = {Proceedings of the International Parallel and Distributed Processing Symposium, IPDPS},
+keywords = {High Performance Computing,fault injection,resilience,soft error,vulnerability},
+pages = {1245--1254},
+title = {{F-SEFI: A fine-grained soft error fault injection tool for profiling application vulnerability}},
+year = {2014}
+}
+@article{Clemente2016,
+abstract = {This letter presents an FPGA implementation of a fault-tolerant Hopfield Neural Network (HNN). The robustness of this circuit against Single Event Upsets (SEUs) and Single Event Transients (SETs) has been evaluated. Results show the fault tolerance of the proposed design, compared to a previous non-fault-tolerant implementation and a solution based on triple modular redundancy (TMR) of a standard HNN design.},
+author = {Clemente, Juan Antonio and Mansour, Wassim and Ayoubi, Rafic and Serrano, Felipe and Mecha, Hortensia and Ziade, Haissam and {El Falou}, Wassim and Velazco, Raoul},
+doi = {10.1016/j.neucom.2015.06.038},
+issn = {18728286},
+journal = {Neurocomputing},
+keywords = {Artificial Neural Network (ANN),FPGA,Fault tolerance,Hopfield Neural Network (HNN),Single Event Transient (SET),Single Event Upset (SEU)},
+pages = {1606--1609},
+title = {{Hardware implementation of a fault-tolerant Hopfield Neural Network on FPGAs}},
+volume = {171},
+year = {2016}
+}
+@article{Moellic2018,
+abstract = {The revival of neural networks has significantly accentuated the development and proliferation of Machine Learning (ML) systems. This trend is intensifying with major focus on embedded systems with sometimes strong architectural constraints. As often happens with such technological disruptions, the main efforts are massively focused on performance relegating security in the background. Yet, since neu-ral networks-based systems will be ubiquitous, it is essential to wonder whether such systems are not intrinsically sensitive to threats targeting their integrity, confidentiality or accessibility. Thanks to previous works, we know that an attacker can fool a supervised classifier or even extract confidential data or IP leaking from a model. In this paper, we propose an overview of attacks that threaten ML algorithms and particularly neural networks with a focus on adversarial examples which have strong properties like transferability. Physical attacks (side-channel analysis, fault injection) will also be presented as upcoming attack vectors against embedded ML. Then, we discuss some state-of-the-art protection schemes as well as the importance of methods and tools to evaluate the robust-ness of models that could help the dissemination of good practice for the design and development of durable and secure ML systems.},
+author = {Mo{\"{e}}llic, Pierre-Alain},
+keywords = {Adversarial,At-tacks {\textperiodcentered},Deep,Evaluation {\textperiodcentered},Examples {\textperiodcentered},Learning {\textperiodcentered},Machine,Networks {\textperiodcentered},Neural,Protections {\textperiodcentered},Review,Security {\textperiodcentered}},
+title = {{The Dark Side of Neural Networks: an Advocacy for Security in Machine Learning}},
+year = {2018}
+}
+@article{Jha2018,
+author = {Jha, Saurabh and Banerjee, Subho S. and Cyriac, James and Kalbarczyk, Zbigniew T. and Iyer, Ravishankar K.},
+doi = {10.1109/DSN-W.2018.00027},
+isbn = {9781538655955},
+journal = {Proceedings - 48th Annual IEEE/IFIP International Conference on Dependable Systems and Networks Workshops, DSN-W 2018},
+keywords = {Autonomous Vehicles,Fault Injection,Reliability},
+pages = {55--56},
+title = {{AVFI: Fault Injection for Autonomous Vehicles}},
+year = {2018}
+}
+@article{Harward2015a,
+abstract = {Soft processors are increasingly used on SRAM- based FPGAs for reliable computing systems. In a radiation environment like space, the configuration memory used to con- figure a soft processor is sensitive to single event upsets (SEUs). Tools are needed to evaluate and estimate the reliability of soft processors in these environments. Fault injection is used to evaluate the configuration memory sensitivity of soft processor designs. This paper describes our fault injection experiments and the sensitivity results on each soft processor experiment. A suite of five benchmarks were executed on the MicroBlaze soft processor to measure the sensitivity of the processor to the software being executed. In addition, several soft processors were evaluated on a Virtex-5 FPGA: MicroBlaze, LEON3, Arm Cortex-M0, OpenRISC, and PicoBlaze. For the software benchmarks, we find that the sensitivity varies as much as 54{\%}. For simple processor configurations running the Towers of Hanoi benchmark, we measure as low as 7,116 sensitive bits for the PicoBlaze, and as high as 112,223 sensitive bits for the Cortex M0.},
+author = {Harward, Nathan A. and Gardiner, Michael R. and Hsiao, Luke W. and Wirthlin, Michael J.},
+doi = {10.1109/FCCM.2015.61},
+isbn = {9781479999699},
+journal = {Proceedings - 2015 IEEE 23rd Annual International Symposium on Field-Programmable Custom Computing Machines, FCCM 2015},
+keywords = {Cortex M0,FPGA,Fault Injection,LEON3,MicroBlaze,OpenRISC,PicoBlaze,Reliability,Soft Error,Soft Processor,Virtex 5},
+pages = {143--150},
+title = {{Estimating soft processor soft error sensitivity through fault injection}},
+year = {2015}
+}
+@article{Subasi2018,
+author = {Subasi, Omer and Chang, Chun-Kai and Erez, Mattan and Krishnamoorthy, Sriram},
+doi = {10.1145/3225058.3225089},
+pages = {1--10},
+title = {{Characterizing the Impact of Soft Errors Affecting Floating-point ALUs using RTL-Ievel Fault Injection}},
+year = {2018}
+}
+@article{Libano2019,
+author = {Libano, F. and Wilson, B. and Anderson, J. and Wirthlin, M. J. and Cazzaniga, C. and Frost, C. and Rech, P.},
+doi = {10.1109/TNS.2018.2884460},
+issn = {00189499},
+journal = {IEEE Transactions on Nuclear Science},
+keywords = {Field-programmable gate array (FPGA),hardening,neural networks,reliability},
+number = {1},
+pages = {216--222},
+title = {{Selective hardening for neural networks in FPGAs}},
+volume = {66},
+year = {2019}
+}
+@article{Mansour2013,
+abstract = {Evaluating the sensitivity to soft-errors of integrated circuits and systems became a main issue especially if they are intended to operate in space or at high altitudes. In this paper, a new fully automated SEU fault-injection method is presented and illustrated by its application to an 8051 microcontroller. Predicted SEU error-rates are in a good agreement with results issued from radiation ground testing, thus putting in evidence the accuracy of the studied method.},
+author = {Mansour, Wassim and Velazco, Raoul},
+doi = {10.1109/TNS.2013.2267097},
+issn = {00189499},
+journal = {IEEE Transactions on Nuclear Science},
+keywords = {Fault injection,SRAM-based FPGA,hardware description language,single event upsets},
+number = {4},
+pages = {2728--2733},
+title = {{An automated SEU fault-injection method and tool for HDL-based designs}},
+volume = {60},
+year = {2013}
+}
+@article{Reagen2018,
+abstract = {As the use of deep neural networks continues to grow, so does the fraction of compute cycles devoted to their execution. This has led the CAD and architecture communities to devote considerable attention to building DNN hardware. Despite these efforts, the fault tolerance of DNNs has generally been overlooked. This paper is the first to conduct a large-scale, empirical study of DNN resilience. Motivated by the inherent algorithmic resilience of DNNs, we are interested in understanding the relationship between fault rate and model accuracy. To do so, we present Ares: a lightweight , DNN-specific fault injection framework validated within 12{\%} of real hardware. We find that DNN fault tolerance varies by orders of magnitude with respect to model, layer type, and structure.},
+author = {Reagen, Brandon and Gupta, Udit and Pentecost, Lillian and Whatmough, Paul and Lee, Sae Kyu and Mulholland, Niamh and Brooks, David and Wei, Gu-Yeon},
+doi = {10.1109/dac.2018.8465834},
+pages = {1--6},
+title = {{Ares: A framework for quantifying the resilience of deep neural networks}},
+year = {2018}
+}
+@article{Wirthlin2016,
+author = {Wirthlin, Michael J. and Keller, Andrew M. and McCloskey, Chase and Ridd, Parker and Lee, David and Draper, Jeffrey},
+doi = {10.1145/2847263.2847278},
+pages = {205--214},
+title = {{SEU Mitigation and Validation of the LEON3 Soft Processor Using Triple Modular Redundancy for Space Processing}},
+year = {2016}
+}
+@article{Tonfat2015,
+abstract = {SRAM-based FPGAs are attractive to many high reliable applications at ground level due to its high density and configurability. However, due to its high sensitivity to neutron-induced soft errors, the FPGA configuration memory bits may suffer unexpected bit-flips and consequently critical errors may occur. To cope with this problem, authors have proposed several mitigation techniques, which must be verified under the presence of faults. Since ground-level radiation experiments are very costly, fault injection is a suitable method to verify mitigation techniques in early stages of development. In this work, we present a fault injector platform implemented in a FPGA commercial board able to inject multiple bit-flips in the configuration memory bits of SRAM-based FPGAs based on a fault database collected on radiation experiments. We show the accuracy of our proposed fault injection campaign compared to radiation test results. We compare the soft error rate of three designs under the accumulation of multiple faults.},
+author = {Tonfat, Jorge and Tarrillo, Jimmy and Tambara, Lucas and Kastensmidt, Fernanda Lima and Reis, Ricardo},
+doi = {10.1007/978-3-319-14352-1_10},
+isbn = {9783319143521},
+journal = {FPGAs and Parallel Architectures for Aerospace Applications: Soft Errors and Fault-Tolerant Design},
+pages = {135--151},
+title = {{Multiple fault injection platform for SRAM-based FPGA based on ground-level radiation experiments}},
+year = {2015}
+}
+@article{Harward2016,
+author = {Harward, Nathan Arthur},
+journal = {All Theses and Dissertations},
+number = {5699},
+title = {{Measuring Soft Error Sensitivity of FPGA Soft Processor Designs Using Fault Injection}},
+url = {http://scholarsarchive.byu.edu/etd/5699},
+year = {2016}
+}
+@article{Ebrahimi2014,
+abstract = {By technology down scaling in nowadays digital circuits, their sensitivity to radiation effects increases, making the occurrence of soft errors more probable. As a consequence, soft error rate estimation of complex circuits such as processors is becoming an important issue in safety- and mission-critical applications. Fault injection is a well-known and widely used approach for soft error rate estimation. Development of previous FPGA-based fault injection techniques is very time consuming mainly because they do not adequately exploit supplementary FPGA tools. This paper proposes an easy-to-develop and flexible FPGA-based fault injection technique. This technique utilizes debugging facilities of Altera FPGAs in order to inject single event upset (SEU) and multiple bit upset (MBU) fault models in both flip-flops and memory units. As this technique uses FPGA built-in facilities, it imposes negligible performance and area overheads on the system. The experimental results show that the proposed technique is on average four orders of magnitude faster than a pure simulation-based fault injection. These features make the proposed technique applicable to industrial-scale circuits. {\textcopyright} 2014 Elsevier Ltd. All rights reserved.},
+author = {Ebrahimi, Mojtaba and Mohammadi, Abbas and Ejlali, Alireza and Miremadi, Seyed Ghassem},
+doi = {10.1016/j.microrel.2014.01.002},
+issn = {00262714},
+journal = {Microelectronics Reliability},
+number = {5},
+pages = {1000--1008},
+title = {{A fast, flexible, and easy-to-develop FPGA-based fault injection technique}},
+volume = {54},
+year = {2014}
+}
+@article{Harward2015,
+abstract = {Soft processors are increasingly used on SRAM- based FPGAs for reliable computing systems. In a radiation environment like space, the configuration memory used to con- figure a soft processor is sensitive to single event upsets (SEUs). Tools are needed to evaluate and estimate the reliability of soft processors in these environments. Fault injection is used to evaluate the configuration memory sensitivity of soft processor designs. This paper describes our fault injection experiments and the sensitivity results on each soft processor experiment. A suite of five benchmarks were executed on the MicroBlaze soft processor to measure the sensitivity of the processor to the software being executed. In addition, several soft processors were evaluated on a Virtex-5 FPGA: MicroBlaze, LEON3, Arm Cortex-M0, OpenRISC, and PicoBlaze. For the software benchmarks, we find that the sensitivity varies as much as 54{\%}. For simple processor configurations running the Towers of Hanoi benchmark, we measure as low as 7,116 sensitive bits for the PicoBlaze, and as high as 112,223 sensitive bits for the Cortex M0.},
+author = {Harward, Nathan A. and Gardiner, Michael R. and Hsiao, Luke W. and Wirthlin, Michael J.},
+doi = {10.1109/FCCM.2015.61},
+isbn = {9781479999699},
+journal = {Proceedings - 2015 IEEE 23rd Annual International Symposium on Field-Programmable Custom Computing Machines, FCCM 2015},
+keywords = {Cortex M0,FPGA,Fault Injection,LEON3,MicroBlaze,OpenRISC,PicoBlaze,Reliability,Soft Error,Soft Processor,Virtex 5},
+pages = {143--150},
+title = {{Estimating soft processor soft error sensitivity through fault injection}},
+year = {2015}
+}
+@article{Jha,
+abstract = {Fully autonomous vehicles (AVs), i.e., AVs with autonomy level 5, are expected to dominate road transportation in the near-future and contribute trillions of dollars to the global economy. The general public, government organizations, and manufacturers all have significant concern regarding resiliency and safety standards of the autonomous driving system (ADS) of AVs. In this work, we proposed and developed (a) 'Kayotee'-a fault injection-based tool to systematically inject faults into software and hardware components of the ADS to assess the safety and reliability of AVs to faults and errors, and (b) an ontology model to characterize errors and safety violations impacting reliability and safety of AVs. Kayotee is capable of characterizing fault propagation and resiliency at different levels-(a) hardware, (b) software, (c) vehicle dynamics, and (d) traffic resilience. We used Kayotee to study a proprietary ADS technology built by Nvidia corporation and are currently applying Kayotee to other open-source ADS systems. I. INTRODUCTION The safety and reliability of autonomous vehicles (AVs) are significant concerns among all the stakeholders. Our previous work [1] characterized a California Department of Motor Vehicles (DMV) dataset on reported AV road testing and showed that as many as 36{\%} of disengagements were caused by computer system problems and 64{\%} were due to machine learning problems. AV research has traditionally focused on improving machine learning and artificial intelligence models. However, as these models are deployed at large scale on computing platforms, the focus is to assess the resilience and safety features of the compute stack driving the AVs. The effects of faults and errors in the hardware (GPUs, CPUs and other processing units) running the AV software stack is not well understood. Recent work [2]-[5] exclusively focus on the resiliency of deep neural networks (DNNs) to hardware faults and errors without accounting for the inherent resiliency in the software stack. [6], [7] study the safety of AVs by injecting sensor-related permanent faults such as Gaussian noise, occlusion, etc. into publicly available autonomous driving system (such as CARLA [8] and Open Pilot [9]). However, these autonomous driving system (ADS) are overly simplistic with few sensors and are not representative of a production ADS. Moreover, such studies have limited scope as they cannot characterize error masking and propagation of transient, and permanent faults in the ADS. We believe our work is the first to study the impact of transient errors, intermittent errors and permanent errors (with some limitations) on AV safety and reliability.},
+author = {Jha, Saurabh and Tsai, Timothy and Hari, Siva and Sullivan, Michael and Kalbarczyk, Zbigniew and Keckler, Stephen W and Iyer, Ravishankar K},
+title = {{Kayotee: A Fault Injection-based System to Assess the Safety and Reliability of Autonomous Vehicles to Faults and Errors}},
+url = {http://sjha8.web.engr.illinois.edu/resources/kayotee{\_}art{\_}2018.pdf}
+}
+@article{Salami2018,
+abstract = {Machine Learning (ML) is making a strong resurgence in tune with the massive generation of unstructured data which in turn requires massive computational resources. Due to the inherently compute- and power-intensive structure of Neural Networks (NNs), hardware accelerators emerge as a promising solution. However, with technology node scaling below 10nm, hardware accelerators become more susceptible to faults, which in turn can impact the NN accuracy. In this paper, we study the resilience aspects of Register-Transfer Level (RTL) model of NN accelerators, in particular, fault characterization and mitigation. By following a High-Level Synthesis (HLS) approach, first, we characterize the vulnerability of various components of RTL NN. We observed that the severity of faults depends on both i) application-level specifications, i.e., NN data (inputs, weights, or intermediate), NN layers, and NN activation functions, and ii) architectural-level specifications, i.e., data representation model and the parallelism degree of the underlying accelerator. Second, motivated by characterization results, we present a low-overhead fault mitigation technique that can efficiently correct bit flips, by 47.3{\%} better than state-of-the-art methods.},
+archivePrefix = {arXiv},
+arxivId = {1806.09679},
+author = {Salami, Behzad and Unsal, Osman and Cristal, Adrian},
+eprint = {1806.09679},
+title = {{On the Resilience of RTL NN Accelerators: Fault Characterization and Mitigation}},
+url = {http://arxiv.org/abs/1806.09679},
+year = {2018}
+}
+@article{Li2017,
+abstract = {Deep learning neural networks (DNNs) have been successful in solving a wide range of machine learning problems. Specialized hardware accelerators have been proposed to accelerate the execu- tion ofDNNalgorithms for high-performance and energy efficiency. Recently, they have been deployed in datacenters (potentially for business-critical or industrial applications) and safety-critical sys- tems such as self-driving cars. Soft errors caused by high-energy particles have been increasing in hardware systems, and these can lead to catastrophic failures in DNN systems. Traditional methods for building resilient systems, e.g., Triple Modular Redundancy (TMR), are agnostic of the DNN algorithm and the DNN acceler- ator's architecture. Hence, these traditional resilience approaches incur high overheads, which makes them challenging to deploy. In this paper, we experimentally evaluate the resilience characteris- tics of DNN systems (i.e., DNN software running on specialized accelerators). We find that the error resilience of a DNN system depends on the data types, values, data reuses, and types of layers in the design. Based on our observations, we propose two efficient protection techniques for DNN systems.},
+author = {Li, Guanpeng and Hari, Siva Kumar Sastry and Sullivan, Michael and Tsai, Timothy and Pattabiraman, Karthik and Emer, Joel and Keckler, Stephen W.},
+doi = {10.1145/3126908.3126964},
+pages = {1--12},
+title = {{Understanding error propagation in deep learning neural network (DNN) accelerators and applications}},
+year = {2017}
+}
+@article{Shokrolah-Shirazi2008,
+abstract = {This paper presents an FPGA-based fault injection tool, called FITO that supports several synthesizable fault models for dependability analysis of digital systems modeled by Verilog HDL. Using the FITO, experiments can be performed in real-time with good controllability and observability. As a case study, an OpenRISC 1200 microprocessor was evaluated using an FPGA circuit. About 4000 permanent, transient, and SEU faults were injected into this microprocessor. The results show that the FITO tool is more than 79 times faster than a pure simulation-based fault injection with only 2.5{\%} FPGA area overhead.},
+author = {Shokrolah-Shirazi, Mohammad and Miremadi, Seyed Ghassem},
+doi = {10.1109/SSIRI.2008.47},
+isbn = {9780769532660},
+journal = {Proceedings - The 2nd IEEE International Conference on Secure System Integration and Reliability Improvement, SSIRI 2008},
+pages = {143--149},
+title = {{FPGA-based fault injection into synthesizable verilog HDL models}},
+year = {2008}
+}
+@article{Whatmough2018,
+abstract = {This paper presents a 28-nm system-on-chip (SoC) for Internet of things (IoT) applications with a programmable accelerator design that implements a powerful fully connected deep neural network (DNN) classifier. To reach the required low energy consumption, we exploit the key properties of neural network algorithms: parallelism, data reuse, small/sparse data, and noise tolerance. We map the algorithm to a very large scale integration (VLSI) architecture based around an single-instruction, multiple-data data path with hardware support to exploit data sparsity by completely eliding unnecessary computation and data movement. This approach exploits sparsity, without compromising the parallel computation. We also exploit the inherent algorithmic noise-tolerance of neural networks, by introducing circuit-level timing violation detection to allow worst case voltage guard-bands to be minimized. The resulting intermittent timing violations may result in logic errors, which conventionally need to be corrected. However, in lieu of explicit error correction, we cope with this by accentuating the noise tolerance of neural networks. The measured test chip achieves high classification accuracy (98.36{\%} for the MNIST test set), while tolerating aggregate timing violation rates {\textgreater} 10{\textless}sup{\textgreater}−1{\textless}/sup{\textgreater}. The accelerator achieves a minimum energy of 0.36{\textless}inline-formula{\textgreater}{\textless}tex-math notation="LaTeX"{\textgreater}{\$}\backslashmu \backslashtext{\{}J{\}}{\$}{\textless}/tex-math{\textgreater}{\textless}/inline-formula{\textgreater}/inference at 667 MHz; maximum throughput at 1.2 GHz and 0.57{\textless}inline-formula{\textgreater}{\textless}tex-math notation="LaTeX"{\textgreater}{\$}\backslashmu \backslashtext{\{}J{\}}{\$}{\textless}/tex-math{\textgreater}{\textless}/inline-formula{\textgreater}/inference; or a 10{\%} margined operating point at 1 GHz and 0.58{\textless}inline-formula{\textgreater}{\textless}tex-math notation="LaTeX"{\textgreater}{\$}\backslashmu \backslashtext{\{}J{\}}{\$}{\textless}/tex-math{\textgreater}{\textless}/inline-formula{\textgreater}/inference.},
+author = {Whatmough, Paul N. and Lee, Sae Kyu and Brooks, David and Wei, Gu Yeon},
+doi = {10.1109/JSSC.2018.2841824},
+issn = {00189200},
+journal = {IEEE Journal of Solid-State Circuits},
+keywords = {Deep neural networks (DNNs),Internet of things (IoT),hardware accelerators,machine learning (ML),razor,system-on-chip (SoC),timing error detection and correction,timing error tolerance},
+number = {9},
+pages = {2722--2731},
+title = {{DNN Engine: A 28-nm Timing-Error Tolerant Sparse Deep Neural Network Processor for IoT Applications}},
+volume = {53},
+year = {2018}
+}
+
+@INPROCEEDINGS{Reagen2016Minerva,
+author={B. {Reagen} and P. {Whatmough} and R. {Adolf} and S. {Rama} and H. {Lee} and S. K. {Lee} and J. M. {Hernández-Lobato} and G. {Wei} and D. {Brooks}},
+booktitle={2016 ACM/IEEE 43rd Annual International Symposium on Computer Architecture (ISCA)},
+title={Minerva: Enabling Low-Power, Highly-Accurate Deep Neural Network Accelerators},
+year={2016},
+volume={},
+number={},
+pages={267-278},
+keywords={neural nets;Minerva;deep neural network accelerators;deep neural networks;classification tasks;specialized hardware;magnitude improvement;general-purpose hardware;automated codesign;DNN hardware accelerators;fixed-point accelerator baseline;heterogeneous datatype optimization;inline predication;small activity values;active hardware fault detection;domain-aware error mitigation;SRAM voltages;DNN model accuracy;ultra-low power DNN accelerators;power-constrained IoT;mobile devices;Optimization;Random access memory;Hardware;Integrated circuit modeling;Circuit faults;Space exploration;Libraries},
+doi={10.1109/ISCA.2016.32},
+ISSN={1063-6897},
+month={June}
+}
+
+@INPROCEEDINGS{Kausar2016Artificial,
+author={F. {Kausar} and P. {Aishwarya}},
+booktitle={2016 International Conference on Electrical, Electronics, and Optimization Techniques (ICEEOT)},
+title={Artificial neural network: Framework for fault tolerance and future},
+year={2016},
+volume={},
+number={},
+pages={648-651},
+keywords={fault tolerant computing;neural nets;artificial neural network;fault tolerance;pattern recognition;pattern classes definition aspect;sensing environment aspect;pattern representation aspect;feature extraction aspect;feature selection aspect;Biological neural networks;Fault tolerance;Fault tolerant systems;Artificial neural networks;Computational modeling;Training;Artificial Neural Network;Fault Tolerance;Fault Model;Back Propagation Model},
+doi={10.1109/ICEEOT.2016.7754760},
+ISSN={},
+month={March}
+}
+
+@inproceedings{Li2018TensorFI,
+  title={TensorFI: A Configurable Fault Injector for TensorFlow Applications},
+  author={Li, Guanpeng and Pattabiraman, Karthik and Debardeleben, Nathan},
+  booktitle={2018 IEEE International Symposium on Software Reliability Engineering Workshops (ISSREW)},
+  year={2018},
+}
+
+@misc{UG953,
+	howpublished = "\url{http://www.xilinx.com/support/documentation/sw_manuals/xilinx2017_4/ug953-vivado-7series-libraries.pdf}",
+	author = "{Xilinx Inc.}",
+	title = "Vivado Design Suite 7 Series FPGA and Zynq-7000 SoC Libraries Guide",
+	month = "Dec",
+	year = "2018",
+	note = "\ UG953(v2017.4)"
+}
+
+@misc{UG470,
+	howpublished = "\url{http://www.xilinx.com/support/documentation/user_guides/ug470_7Series_Config.pdf}",
+	author = "{Xilinx Inc.}",
+	title = "7 Series FPGAs Configuration User Guide",
+	month = "Aug",
+	year = "2018",
+	note = "\ UG470 (v1.13.1)"
+}
+
+@misc{WP414,
+	howpublished = "\url{http://www.xilinx.com/support/documentation/white_papers/wp414-SEU-Emulation.pdf}",
+	author = "{Xilinx Inc.}",
+	title = "SEU Emulation Environment",
+	month = "Apr",
+	year = "2012",
+	note = "\ WP414 (v1.0)"
+}
+
+@misc{PG134,
+	howpublished = "\url{http://www.xilinx.com/support/documentation/ip_documentation/axi_hwicap/v3_0/pg134-axi-hwicap.pdf}",
+	author = "{Xilinx Inc.}",
+	title = "AXI HWICAP v3.0 LogiCORE IP Product Guide",
+	month = "Oct",
+	year = "2016",
+	note = "\ PG134"
+}
+
+@misc{PG036,
+	howpublished = "\url{http://www.xilinx.com/support/documentation/ip_documentation/sem/v4_1/pg036_sem.pdf}",
+	author = "{Xilinx Inc.}",
+	title = "Soft Error Mitigation Controller v4.1 LogiCORE IP Product Guide",
+	month = "Apr",
+	year = "2018",
+	note = "\ PG036"
+}
+
+@misc{UG961,
+	howpublished = "\url{http://www.xilinx.com/support/documentation/boards_and_kits/zc706/2015_4/ug961-zc706-GSG.pdf}",
+	author = "{Xilinx Inc.}",
+	title = "Zynq-7000 SoC ZC706 Evaluation Kit Getting Started Guide",
+	month = "Jul",
+	year = "2018",
+	note = "\ UG961 (v6.0.2)"
+}
+
+@misc{UG954,
+	howpublished = "\url{http://www.xilinx.com/support/documentation/boards_and_kits/zc706/ug954-zc706-eval-board-xc7z045-ap-soc.pdf}",
+	author = "{Xilinx Inc.}",
+	title = "ZC706 Evaluation Board for the Zynq-7000 XC7Z045 SoC User Guide",
+	month = "Jul",
+	year = "2018",
+	note = "\ UG954 (v1.7)"
+}
+
+@misc{UG585,
+	howpublished = "\url{http://www.xilinx.com/support/documentation/user_guides/ug585-Zynq-7000-TRM.pdf}",
+	author = "{Xilinx Inc.}",
+	title = "Zynq-7000 SoC Technical Reference Manual",
+	month = "Jul",
+	year = "2018",
+	note = "\ UG585 (v1.12.2)"
+}
+
+@misc{DS190,
+	howpublished = "\url{http://www.xilinx.com/support/documentation/data_sheets/ds190-Zynq-7000-Overview.pdf}",
+	author = "{Xilinx Inc.}",
+	title = "Zynq-7000 SoC Data Sheet: Overview",
+	month = "Jul",
+	year = "2018",
+	note = "\ DS190 (v1.11.1)"
+}
+
+@inproceedings{chen2014diannao,
+  title={Diannao: A small-footprint high-throughput accelerator for ubiquitous machine-learning},
+  author={Chen, Tianshi and Du, Zidong and Sun, Ninghui and Wang, Jia and Wu, Chengyong and Chen, Yunji and Temam, Olivier},
+  booktitle={ACM Sigplan Notices},
+  volume={49},
+  number={4},
+  pages={269--284},
+  year={2014},
+  organization={ACM}
+}
+
+@inproceedings{chen2014dadiannao,
+  title={Dadiannao: A machine-learning supercomputer},
+  author={Chen, Yunji and Luo, Tao and Liu, Shaoli and Zhang, Shijin and He, Liqiang and Wang, Jia and Li, Ling and Chen, Tianshi and Xu, Zhiwei and Sun, Ninghui and others},
+  booktitle={Proceedings of the 47th Annual IEEE/ACM International Symposium on Microarchitecture},
+  pages={609--622},
+  year={2014},
+  organization={IEEE Computer Society}
+}
+
+@InProceedings{Gatys_2016_CVPR,
+author = {Gatys, Leon A. and Ecker, Alexander S. and Bethge, Matthias},
+title = {Image Style Transfer Using Convolutional Neural Networks},
+booktitle = {The IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
+month = {June},
+year = {2016}
+} 
+@inproceedings{Collobert:2008:UAN:1390156.1390177,
+ author = {Collobert, Ronan and Weston, Jason},
+ title = {A Unified Architecture for Natural Language Processing: Deep Neural Networks with Multitask Learning},
+ booktitle = {Proceedings of the 25th International Conference on Machine Learning},
+ series = {ICML '08},
+ year = {2008},
+ isbn = {978-1-60558-205-4},
+ location = {Helsinki, Finland},
+ pages = {160--167},
+ numpages = {8},
+ url = {http://doi.acm.org/10.1145/1390156.1390177},
+ doi = {10.1145/1390156.1390177},
+ acmid = {1390177},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+} 
+@InProceedings{Chen_2015_ICCV,
+author = {Chen, Chenyi and Seff, Ari and Kornhauser, Alain and Xiao, Jianxiong},
+title = {DeepDriving: Learning Affordance for Direct Perception in Autonomous Driving},
+booktitle = {The IEEE International Conference on Computer Vision (ICCV)},
+month = {December},
+year = {2015}
+} 
+
+
+@inproceedings{Zhang:2015:OFA:2684746.2689060,
+ author = {Zhang, Chen and Li, Peng and Sun, Guangyu and Guan, Yijin and Xiao, Bingjun and Cong, Jason},
+ title = {Optimizing FPGA-based Accelerator Design for Deep Convolutional Neural Networks},
+ booktitle = {Proceedings of the 2015 ACM/SIGDA International Symposium on Field-Programmable Gate Arrays},
+ series = {FPGA '15},
+ year = {2015},
+ isbn = {978-1-4503-3315-3},
+ location = {Monterey, California, USA},
+ pages = {161--170},
+ numpages = {10},
+ url = {http://doi.acm.org/10.1145/2684746.2689060},
+ doi = {10.1145/2684746.2689060},
+ acmid = {2689060},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {acceleration, convolutional neural network, fpga, roofline model},
+} 
+@INPROCEEDINGS{7551397,
+author={S. {Han} and X. {Liu} and H. {Mao} and J. {Pu} and A. {Pedram} and M. A. {Horowitz} and W. J. {Dally}},
+booktitle={2016 ACM/IEEE 43rd Annual International Symposium on Computer Architecture (ISCA)},
+title={EIE: Efficient Inference Engine on Compressed Deep Neural Network},
+year={2016},
+volume={},
+number={},
+pages={243-254},
+keywords={DRAM chips;matrix multiplication;neural nets;sparse matrices;SRAM chips;EIE;energy efficient inference engine;compressed deep neural network;embedded system;DRAM;DNN;AlexNet;VGGNet;onchip SRAM;sparse matrix-vector multiplication;weight sharing;power dissipation;Random access memory;Neural networks;Acceleration;Hardware;System-on-chip;Computational modeling;Sparse matrices;Deep Learning;Model Compression;Hardware Acceleration;Algorithm-Hardware co-Design;ASIC},
+doi={10.1109/ISCA.2016.30},
+ISSN={1063-6897},
+month={June}
+}
+
+
+@ARTICLE{238315,
+author={P. W. {Protzel} and D. L. {Palumbo} and M. K. {Arras}},
+journal={IEEE Transactions on Neural Networks},
+title={Performance and fault-tolerance of neural networks for optimization},
+year={1993},
+volume={4},
+number={4},
+pages={600-614},
+keywords={fault tolerant computing;mathematics computing;optimisation;recurrent neural nets;recurrent neural nets;stuck-at-1 fault;optimization;fault-tolerance;stuck-at-0 faults;real-time distributed processing system;task allocations;Fault tolerance;Neural networks;Artificial neural networks;Degradation;Real time systems;NASA;Neural network hardware;Fault tolerant systems;Control systems;Biological neural networks},
+doi={10.1109/72.238315},
+ISSN={1045-9227},
+month={July}
+}
+
+
+@article{redmon2016yolo9000,
+  title={YOLO9000: Better, Faster, Stronger},
+  author={Redmon, Joseph and Farhadi, Ali},
+  journal={arXiv preprint arXiv:1612.08242},
+  year={2016}
+}
+@InProceedings{He_2016_CVPR,
+author = {He, Kaiming and Zhang, Xiangyu and Ren, Shaoqing and Sun, Jian},
+title = {Deep Residual Learning for Image Recognition},
+booktitle = {The IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
+month = {June},
+year = {2016}
+}
+@inproceedings{sak2014long,
+  title={Long short-term memory recurrent neural network architectures for large scale acoustic modeling},
+  author={Sak, Ha{\c{s}}im and Senior, Andrew and Beaufays, Fran{\c{c}}oise},
+  booktitle={Fifteenth annual conference of the international speech communication association},
+  year={2014}
+}
+@article{radford2015unsupervised,
+  title={Unsupervised representation learning with deep convolutional generative adversarial networks},
+  author={Radford, Alec and Metz, Luke and Chintala, Soumith},
+  journal={arXiv preprint arXiv:1511.06434},
+  year={2015}
+}

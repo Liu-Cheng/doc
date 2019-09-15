@@ -1,0 +1,183 @@
+\documentclass[conference]{IEEEtran}
+
+%\IEEEoverridecommandlockouts
+% The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
+
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage[]{hyperref}
+\usepackage{subfigure}
+\usepackage{booktabs}
+
+\graphicspath{{./figures/}}
+
+%\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+%    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+\newcommand{\cheng}[1]{{\textcolor{red}{ #1}}}
+% correct bad hyphenation here
+\hyphenation{}
+
+
+
+\begin{document}
+
+% paper title
+% Titles are generally capitalized except for words such as a, an, and, as,
+% at, but, by, for, in, nor, of, on, or, the, to and up, which are usually
+% not capitalized unless they are the first or last word of the title.
+% Linebreaks \\ can be used within to get better formatting as desired.
+% Do not put math or special symbols in the title.
+\title{Persistent Fault Analysis of Convolutional Neural Networks on FPGA-based Acceleration System}
+
+% author info
+%\author{\IEEEauthorblockN{1\textsuperscript{st} Given Name Surname}
+%\IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
+%\textit{name of organization (of Aff.)}\\
+%City, Country \\
+%email address}
+%\and
+%\IEEEauthorblockN{2\textsuperscript{nd} Given Name Surname}
+%\IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
+%\textit{name of organization (of Aff.)}\\
+%City, Country \\
+%email address}
+%\and
+%\IEEEauthorblockN{3\textsuperscript{rd} Given Name Surname}
+%\IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
+%\textit{name of organization (of Aff.)}\\
+%City, Country \\
+%email address}
+%\and
+%\IEEEauthorblockN{4\textsuperscript{th} Given Name Surname}
+%\IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
+%\textit{name of organization (of Aff.)}\\
+%City, Country \\
+%email address}
+%\and
+%\IEEEauthorblockN{5\textsuperscript{th} Given Name Surname}
+%\IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
+%\textit{name of organization (of Aff.)}\\
+%City, Country \\
+%email address}
+%\and
+%\IEEEauthorblockN{6\textsuperscript{th} Given Name Surname}
+%\IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
+%\textit{name of organization (of Aff.)}\\
+%City, Country \\
+%email address}
+%}
+
+% make the title area
+\maketitle
+
+
+% As a general rule, do not put math, special symbols or citations
+% in the abstract
+\begin{abstract}
+    Deep neural network (DNN) is making continuous breakthroughs 
+    in massive domains of applications and is increasingly 
+    deployed on customized DNN accelerators for both the 
+    higher performance and energy efficiency. While the 
+    increasing hardware failures caused by the shrinking semiconductor 
+    technology may have substantial influence on the accelerators and 
+    improving the resilience of the neural network execution becomes a great 
+    challenge especially to mission-critical applications such as self-driving 
+    and medical diagnose. The reliability analysis of the neural 
+    network execution is a key step to understand and alleviate the influence 
+    of the hardware failures, and thus is highly demanded. 
+    
+    Prior works typically focus on the computing errors of neural networks caused by 
+    hardware faults with simulation, but there is still a lack of fault 
+    analysis from a system point of view. For instance, the consequences of 
+    the system such as system stall are also critical to resilient 
+    neural network execution. In this work, we implemented a 
+    representative neural network accelerator as well as fault injection modules 
+    on a Xilinx ARM-FPGA platform (ZC706). Then we conducted comprehensive fault 
+    analysis of the system using four typical neural network models
+    from different system angles including system functionality, 
+    fault coverage, and input variation as well as prediction 
+    accuracy loss. Based on the analysis, we find that system stall 
+    caused by hardware faults is non-trivial to the system reliability 
+    and further propose an efficient approach to alleviate it with negligible 
+    hardware overhead. 
+    
+\end{abstract}
+
+
+%\begin{IEEEkeywords}
+    % keyword1, keyword2, keyword3, keyword4, keyword5
+%\end{IEEEkeywords}
+
+
+% For peer review papers, you can put extra information on the cover
+% page as needed:
+% \ifCLASSOPTIONpeerreview
+% \begin{center} \bfseries EDICS Category: 3-BBND \end{center}
+% \fi
+%
+% For peerreview papers, this IEEEtran command inserts a page break and
+% creates the second title. It will be ignored for other modes.
+\IEEEpeerreviewmaketitle
+
+\input{introduction}
+\input{background}
+\input{analysis_framework}
+\input{experiment}
+\input{relatedwork}
+\input{conclusion}
+
+
+
+%\section*{Acknowledgment}
+    % acknowledgment content
+
+
+
+% trigger a \newpage just before the given reference
+% number - used to balance the columns on the last page
+% adjust value as needed - may need to be readjusted if
+% the document is modified later
+%\IEEEtriggeratref{8}
+% The "triggered" command can be changed if desired:
+%\IEEEtriggercmd{\enlargethispage{-5in}}
+
+
+% references section
+
+% can use a bibliography generated by BibTeX as a .bbl file
+% BibTeX documentation can be easily obtained at:
+% http://mirror.ctan.org/biblio/bibtex/contrib/doc/
+% The IEEEtran BibTeX style support page is at:
+% http://www.michaelshell.org/tex/ieeetran/bibtex/
+%\bibliographystyle{IEEEtran}
+% argument is your BibTeX string definitions and bibliography database(s)
+%\bibliography{IEEEabrv,../bib/paper}
+%
+% <OR> manually copy in the resultant .bbl file
+% set second argument of \begin to the number of references
+% (used to reserve space for the reference number labels box)
+
+%\begin{thebibliography}{99}
+%\bibitem{b1}
+%G. Eason, B. Noble, and I. N. Sneddon, 
+%``On certain integrals of Lipschitz-Hankel type involving products of Bessel functions,'' 
+%Phil. Trans. Roy. Soc. London, vol. A247, pp. 529--551, April 1955.
+%\bibitem{b2} 
+%J. Clerk Maxwell, 
+%A Treatise on Electricity and Magnetism, 3rd ed., vol. 2. 
+%Oxford: Clarendon, 1892, pp.68--73.
+%\bibitem{IEEEhowto:kopka}
+%H.~Kopka and P.~W. Daly, \emph{A Guide to \LaTeX}, 3rd~ed.\hskip 1em plus
+%  0.5em minus 0.4em\relax Harlow, England: Addison-Wesley, 1999.
+%\end{thebibliography}
+
+
+\bibliographystyle{IEEEtran}
+\bibliography{refs}
+
+
+\end{document}

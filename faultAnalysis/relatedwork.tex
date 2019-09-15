@@ -1,0 +1,71 @@
+\section{Related work} \label{sec:relatedwork}
+Deep learning accelerators that ensure both high
+performance and energy efficiency of neural network are 
+increasingly adopted in various computing devices including 
+IoT devices, mobile phones and cloud. While the accelerators 
+fabricated with the latest semiconductor technology is 
+susceptible to the manufacturing defects and abnormal 
+processes due to the small transistor feature size, the 
+number of hardware faults grows accordingly. The faults may 
+further lead to computing errors, dramatic prediction accuracy 
+loss and even system stall when the faults are not handled 
+appropriately. For some of the mission-critical applications, 
+the prediction mistakes may even cause catastrophic failures.
+
+To gain insight of fault tolerance of neural network accelerators, 
+the authors in \cite{Li2017} investigated the influence of data types, 
+values, data reuses, and types of layers on the resilience of DNN 
+accelerators through experiments on a DNN simulator. error resilience of xxx with simulation. Different from xxx,
+the works in xxx mainly focus on the difference of fault tolerance using 
+different data types. Some of the researchers try 
+The reliability of the neural network accelerators 
+While neural networks with large amount of redundant computing 
+is considered to resilient, Reliability of neural network accelerators become critical 
+to resilient neural network execution. 
+1) Reliability espeically FPGA based reliability problem
+2) The prevalence of deep learning neural networks provokes 
+the development of convolutional neural network (CNN) accelerators 
+for both higher performance and energy efficiency. 
+existing fault-tolerant CNN accelerator works,
+
+Data type analysis with simulation, error propagation analysis
+Retraining to improve fault tolerance and tolerate the computing errors
+(Change the neural network model) Computing array based fault model
+Relax the design constraints and have the accelerator 
+obtain advantageous design trade-off between precision and performance.DAC'18 work
+Basically, the analysis focuses on the computing of the neural network.
+Hardware structure is not discussed in detail. 
+Simulation is the major approach.
+lack of system analysis on a CPU-CNN accelerator. 
+FPGA based analysis is not covered.
+Prior FPGA based reliability such as soft processors etc. It is 
+not quite relevant.
+Neural network inherent fault tolerance.
+Error analysis on a running system remains not explored. 
+
+FPGA is a widely used hardware platform, and there are many 
+designs and methods for error injection on FPGAs 
+\cite{Ebrahimi2014A}\cite{Lopez2007A}
+\cite{Harward2015Estimating}\cite{Tarrillo2015Multiple}. 
+FPGA-based (also known as emulation-based) error analysis 
+is widely used in soft processor sensitivity analysis and 
+other scenarios. The FPGA-based fault injection techniques 
+have good controllability, observability and ideal speed.
+
+FPGA-based fault injection techniques can be divided into 
+two categories: reconfiguration-based techniques and 
+instrument-based techniques. The reconfiguration-based 
+techniques rely on the internal mechanism of FPGAs. These 
+techniques use complete or partial reconfiguration to 
+change the configuration bit of the FPGA device to apply 
+the target fault model to the desired fault location. The 
+reconfiguration process is a speed bottleneck for 
+reconfiguration-based techniques. In instrument-based 
+technology, fault injection modules called saboteur are 
+added to each fault point, and fault is injected by 
+activating the saboteurs. Instrument-based techniques have 
+higher speed than reconfiguration-based techniques, while 
+implementing the saboteurs increase the area of the circuit. 
+We shall design the saboteurs ourselves for 
+instrument-based techniques, and insert them into the 
+design under test.
