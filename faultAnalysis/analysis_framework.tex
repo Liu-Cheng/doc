@@ -1,17 +1,17 @@
-\section{Faulty DNN Accelerator Analysis Platform and System Problems}
+\section{DNN Acceleration Fault Analysis Platform and Fault Classification}
 \label{sec:fault-analysis}
 \subsection{Fault Analysis Platform}
-To conduct system fault analysis on a realistic system, we build a fault 
-analysis platform on Xilinx Zynq (ARM-FPGA) as shown in 
-Figure \ref{fig:fault-analysis-overview}. It includes a full FPGA-based 
-neural network acceleration system that has both a general purposed 
-processor (ARM) and a DNN accelerator implemented on the FPGA. 
-Typically, the processor sets up the neural network parameters through 
-an AXI configuration port and allocates specific memory 
-space for instruction/input/output/weight data. Then it can 
-start the DNN accelerator. When the computing is done, DNN accelerator 
-will notify the processor with interruption to collect the result from the 
-shared DRAM. 
+To conduct systematic analysis of faults on a DNN acceleration 
+system, we build a fault analysis platform on Xilinx Zynq (ARM-FPGA) 
+as shown in Figure \ref{fig:fault-analysis-overview}. It has a 
+typical neural network accelerator implemented on FPGA. The accelerator 
+is attached to the ARM processor in Zynq with AXI bus. Typically, the ARM processor 
+can set up the neural network parameters, allocate specific memory 
+space for bias/instruction/input/output/weight data 
+and communicate with the DNN accelerator through shared memory. 
+The ARM processor runs embedding Linux and can invoke the 
+DNN accelerator through driver, providing a typical neural 
+network acceleration system.
 
 \begin{figure}
     \center{\includegraphics[width=0.99\linewidth]{system-overview}}
@@ -20,16 +20,19 @@ shared DRAM.
 \label{fig:fault-analysis-overview}
 \end{figure}
 
-On top of the baseline FPGA-based neural network acceleration, 
-we develop a configurable fault injection scheme. The injection data path 
-is marked with the orange arrows and located on both the ARM processor and 
-FPGA. On the arm processor part, we implement the fault models such as bit-flip, 
-stuck-at-0, stuck-at-1, multiple-bit upset etc. and generate a set of bit errors 
-based on a random fault distribution model. Then the errors are sent to 
-the FPGA-based DNN accelerator from an AXI port. The errors are distributed to 
-both FPGA configuration memory and the block RAM evenly based on the memory size.
-Nevertheless, the error injection data paths to FPGA configuration memory 
-and on-chip block RAM are quite different.
+On top of the baseline FPGA-based neural network acceleration system, 
+we also need a fault injection module as shown in 
+Figure \ref{fig:fault-analyis-overview}. The fault injection data path 
+is marked with orange arrows. It is implemented on both the ARM processor 
+and FPGA. On the ARM processor part, it defines both the fault models 
+such as bit-flip, stuck-at-0, and stuck-at-1, and the fault distribution 
+models which determine the locations of the faults to be injected. Then it
+generates the errors to be injected. On the FPGA part, the generated errors 
+are sent to the FPGA from an AXI port accordingly. While errors in FPGAs are mainly 
+located on the four different memory types including configuration memory, 
+block memory, distributed memory and Flip-Flops. Currently, we randomly 
+inject persistent errors to the first three memory types. Flip-Flops that 
+get updated frequently are not handled in this work. 
 
 For FPGA configuration memory, we take advantage of Xilinx ICAP 
 port \cite{UG953}, which allows user logic to access configuration 
@@ -41,86 +44,74 @@ FPGA configuration memory including the regions that are not utilized.
 When the position of an error is determined, we read the whole frame 
 out of the configuration memory via AXI port of AXI-HWICAP \cite{PG134}, 
 change the victim bit in the frame, and write it back to the configuration 
-memory \cite{UG470}. This can be done on the ARM processor either before the fault 
-analysis or during the fault analysis. Thereby, the fault injection 
-to FPGA configuration memory can either be performed with online 
-manner or offline manner.
+memory \cite{UG470}. This is done before the fault analysis, but it is also 
+possible to do it at run-time.
 
-For the block RAM, we develop an error mask (Err. Mask) which can be 
-added to a block RAM. The mask will not change the interface nor the 
-pipelining of the original block RAM, but it has an AXI slace port
-allowing ARM processor to flip a bit of any data in the block RAM 
-during reading. Figure \ref{fig:error-mask} shows the design of the error mask.
-Basically, it has a set of address and mask registers that can be configured 
-using the attached AXI slave port. The addresses in the registers represent 
-the position of errors to be injected while the corresponding masks 
-keep the exact error bits. When there is a read request coming 
-to the block RAM, the read address will be compared with all 
-the addresses in the registers. when there is an address match, 
+For the block RAM and distributed memory, we develop an error injection 
+mask (Err. Mask) which can be added to an on-chip memory block without 
+changing the memory interface nor the pipelining. Meanwhile, it has an 
+AXI slace port allowing ARM processor to flip a bit of any data in the 
+memory block during reading. Figure \ref{fig:error-mask} shows the design 
+of the error mask. Basically, it has a set of address and mask registers 
+that can be configured using the attached AXI port. The addresses in 
+the registers represent the position of errors to be injected while 
+the corresponding masks keep the exact error bits. Whenever there is 
+a read request coming to the block RAM, the read address will be compared 
+with all the addresses in the registers. when there is an address match, 
 the data read from the block RAM will be XORed with the mask.
 Then the result will be used as the output of the block RAM 
-affected with injected errors. Since the registers in the error mask 
-can either be configured runtime, the error injection to 
-the block RAM can also be done in both an offline manner 
-and an online manner.
+affected by injected errors. The registers in the error mask 
+can be configured in advance or at run-time. 
 
 \begin{figure}
-    \center{\includegraphics[width=0.8\linewidth]{error-mask}}
-    \caption{Error mask for fault injection to buffers}
+    \center{\includegraphics[width=0.7\linewidth]{error-mask}}
+    \caption{Error mask for fault injection to on-chip memory}
 \vspace{-0.5em}
 \label{fig:error-mask}
 \end{figure}
 
 Another important part of the fault analysis platform is the result 
-collection and comparison. While the results of the neural networks 
-running on the DNN accelerator are stored in the DRAM, it is 
-Finally, we want to emphasize that the fault injection hardware is 
-attached to the ARM processor with AXI slave port. With a 
-driver, the AXI fault injection can be triggered in software running 
-on the ARM processor.
+collection and comparison. We have the output of neural networks 
+stored in the shared DRAM, which can be easily accessed on the ARM processor 
+and compared to the pre-calculated golden reference. In addition, the computing 
+results produced in the intermediate layers can also be compared.
+The result comparison is mainly performed on the ARM processor and can be 
+easily utilized for further analysis by high-level application designers.
 
-\subsection{Consequences of faults in DNN accelerators}
-\subsection{Fault model}
-In our error injection design, the error injection to the 
-configuration memory is global, regardless of whether the 
-configuration block corresponding to the configuration bit 
-is used. The injection of BRAM is designed to only inject 
-errors into the BRAM used by user logic. In order to make 
-the error injection as consistent as possible with the 
-error generation under the radiation condition, we 
-calculate the proportional relationship between the 
-configuration memory and the block memory used.
+\subsection{System fault classification}
+Prior fault analysis works usually focus on computing errors of the neural networks 
+and the incurred prediction accuracy loss. We argue that the consequences 
+of hardware faults on a DNN acceleration system vary and should be classified 
+into more categories. Table \ref{tab:classification} shows the proposed classification.
+From the perspective of a system, the consequences caused by hardware faults 
+roughly include system exception and accuracy degradation. System exception 
+indicates that the neural network execution behaves abnormally, 
+which may be stalled without returning or returns too fast or too slow.
+Basically, we define them as system stall and abnormal runtime.
+For the accuracy degradation, we
+further classified into two cases including system stall 
+and abnormal runtime.i
 
-Refer to Xilinx official documentations, the configuration 
-Bitstream length of the XC7Z045 SoC used by the Zynq-7000 
-SoC ZC706 Evaluation Board is 106,571,232 bits \cite{UG585}, which can 
-be approximately regarded as the number of configured 
-memory bits, and the available block memory is 20,090,880 
-bits \cite{DS190}. After conversion, the accessible configuration memory 
-accounted for about 84.14\%, while the block memory 
-accounted for 15.86\%. In the NPU under test, the actual 
-use of BRAM accounts for 30.43\% of the total bits, that is, 
-4.83\% of the total bits of SRAM.
+\begin{table}
+    \centering
+    \caption{Caption}
+    \label{tab:classification}
+    \begin{tabular}{c|cccc}
+    \hline
+      \multirow{2}{*}{system exception} & system stall\\
+      \cline{2-2}
+      & abnormal runtime\\
+      \cline{1-2}
+      \multirow{3}{*}{Accuracy degradation} &$$L0$\\
+      \cline{2-2}
+      & ... \\
+      \cline{2-2}
+      &$L_{k}$\\
+      \cline{1-2}
+      \hline
+    \end{tabular}
+\end{table}
 
-Based on the above calculations, we determined that the 
-location where a single random error occurred would have an 
-84.14\% chance of appearing in configuration memory and a 
-4.83\% chance of appearing in actual used BRAM. When errors 
-occur in these two areas, they can have an impact on the 
-behavior and results of the system. In addition, the error 
-will have an 11.03\% chance of appearing in unused BRAM, 
-which will not have any impact on the system.
-
-Before each Neural Network prediction, we randomly inject 
-certain number of fixed upset errors into the system, which 
-will persist in the process of Neural Network prediction 
-until the end of prediction or timeout failure. After one 
-prediction is performed, the errors in the system are 
-recovered and the next random error injection and 
-prediction is performed.
-
-
-\subsection{Error Assessment}
 We chose Neural Networks in four different application 
 scenarios and try to analyze the differences of error 
 tolerance in different application scenarios and networks. 
