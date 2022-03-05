@@ -12,6 +12,7 @@
 \usepackage[]{hyperref}
 \usepackage{subfigure}
 \usepackage{booktabs}
+\usepackage{multirow}
 
 \graphicspath{{./figures/}}
 
@@ -91,19 +92,22 @@
     of the hardware failures, and thus is highly demanded. 
     
     Prior works typically focus on the computing errors of neural networks caused by 
-    hardware faults with simulation, but there is still a lack of fault 
-    analysis from a system point of view. For instance, the consequences of 
-    the system such as system stall are also critical to resilient 
-    neural network execution. In this work, we implemented a 
+    hardware faults with simulation and mainly analyze the influence on the 
+    prediction accuracy of the neural networks. While the DNN accelerator is 
+    usually seated along with a general purposed processor (GPP) presenting as a 
+    unified system, there is still a lack of fault analysis from a system 
+    point of view. The consequences of hardware faults are more than prediction 
+    accuracy loss and there may also be various system run-time exceptions such 
+    as system stall. Understanding the consequences of the system is critical to 
+    handling the hardware faults. To that end, we implemented a 
     representative neural network accelerator as well as fault injection modules 
     on a Xilinx ARM-FPGA platform (ZC706). Then we conducted comprehensive fault 
     analysis of the system using four typical neural network models
-    from different system angles including system functionality, 
-    fault coverage, and input variation as well as prediction 
-    accuracy loss. Based on the analysis, we find that system stall 
-    caused by hardware faults is non-trivial to the system reliability 
-    and further propose an efficient approach to alleviate it with negligible 
-    hardware overhead. 
+    from a system point of view. Based on the analysis, we find that the probability of 
+    the system exceptions caused by hardware faults is non-trivial. 
+    Then we further explore the reasons for the exceptions and propose an efficient 
+    approach to alleviate it with negligible hardware overhead targeting at an 
+    FPGA-based DNN accelerator + GPP architecture. 
     
 \end{abstract}
 
