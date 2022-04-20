@@ -1,0 +1,247 @@
+\gdef \the@ipfilectr {@-1}
+\gdef \the@ipfilectr {}
+\gdef \the@ipfilectr {@-2}
+\gdef \the@ipfilectr {}
+\gdef \the@ipfilectr {@-3}
+\gdef \the@ipfilectr {}
+\gdef \the@ipfilectr {@-4}
+\gdef \the@ipfilectr {}
+\gdef \the@ipfilectr {@-5}
+\gdef \the@ipfilectr {}
+\gdef \the@ipfilectr {@-6}
+\contentsline {chapter}{\numberline {1}Introduction}{1}% 
+\contentsline {section}{\numberline {1.1}Typical On-Chip Faults}{1}% 
+\contentsline {subsection}{\numberline {1.1.1}Process Variation}{1}% 
+\contentsline {subsection}{\numberline {1.1.2}Manufacturing Defects}{1}% 
+\contentsline {subsection}{\numberline {1.1.3}Chip Aging}{1}% 
+\contentsline {subsection}{\numberline {1.1.4}Soft Errors}{3}% 
+\contentsline {subsection}{\numberline {1.1.5}Intermittent Faults}{3}% 
+\contentsline {subsection}{\numberline {1.1.6}Emerging Technologies Induced Defects}{5}% 
+\contentsline {section}{\numberline {1.2}Conventional Wisdom for Fault-Tolerant Chip Design}{6}% 
+\contentsline {subsection}{\numberline {1.2.1}Design for Test}{6}% 
+\contentsline {subsection}{\numberline {1.2.2}Design for Reliability}{6}% 
+\contentsline {section}{\numberline {1.3}On-Chip Fault-Tolerant Computing Paradigm}{6}% 
+\contentsline {subsection}{\numberline {1.3.1}Self-Test}{7}% 
+\contentsline {subsection}{\numberline {1.3.2}Self-Diagnosis}{8}% 
+\contentsline {subsection}{\numberline {1.3.3}Self-Repair}{11}% 
+\contentsline {subsubsection}{\numberline {1.3.3.1}Rejuvenation at the circuit level}{11}% 
+\contentsline {subsubsection}{\numberline {1.3.3.2}Rejuvenation at the microarchitectural level}{11}% 
+\contentsline {subsubsection}{\numberline {1.3.3.3}Rejuvenation at Architectural Level}{13}% 
+\contentsline {subsection}{\numberline {1.3.4}General Benefits}{14}% 
+\contentsline {subsubsection}{\numberline {1.3.4.1}Maintaining graceful degradation}{15}% 
+\contentsline {subsubsection}{\numberline {1.3.4.2}Helping fix some verification blind spots}{16}% 
+\contentsline {subsubsection}{\numberline {1.3.4.3}Improving gross yield}{17}% 
+\contentsline {section}{\numberline {1.4}Summary}{17}% 
+\contentsline {section}{References}{18}% 
+\gdef \the@ipfilectr {}
+\gdef \the@ipfilectr {@-7}
+\contentsline {chapter}{\numberline {2}Fault-Tolerant Circuits}{21}% 
+\contentsline {section}{\numberline {2.1}On-line Fault Detection}{21}% 
+\contentsline {subsection}{\numberline {2.1.1}Challenges for On-line Fault Detection}{22}% 
+\contentsline {subsection}{\numberline {2.1.2}Stability Violation Based Fault Detection}{23}% 
+\contentsline {subsubsection}{\numberline {2.1.2.1}Target Fault Types}{23}% 
+\contentsline {subsubsection}{\numberline {2.1.2.2}Modeling Faulty Signals}{23}% 
+\contentsline {subsection}{\numberline {2.1.3}Timing Constrains Exploration}{26}% 
+\contentsline {subsubsection}{\numberline {2.1.3.1}Propagation of Stability Violation}{26}% 
+\contentsline {subsubsection}{\numberline {2.1.3.2}XOR Protection}{27}% 
+\contentsline {subsubsection}{\numberline {2.1.3.3}SEU Detection "Blind Zone"}{27}% 
+\contentsline {subsubsection}{\numberline {2.1.3.4}Available Precharge Period}{29}% 
+\contentsline {subsection}{\numberline {2.1.4}On-line Fault Detection Architecture}{30}% 
+\contentsline {subsubsection}{\numberline {2.1.4.1}Circuit Design}{31}% 
+\contentsline {subsubsection}{\numberline {2.1.4.2}Low-Overhead Deployment}{32}% 
+\contentsline {subsubsection}{\numberline {2.1.4.3}Clock Variation Consideration}{34}% 
+\contentsline {subsection}{\numberline {2.1.5}Experiment Result Analysis}{35}% 
+\contentsline {subsubsection}{\numberline {2.1.5.1}Evaluating SVFD Unit}{36}% 
+\contentsline {subsubsection}{\numberline {2.1.5.2}Case Study---An application of SVFD}{38}% 
+\contentsline {subsubsection}{\numberline {2.1.5.3}Comparison with other schemes}{41}% 
+\contentsline {subsection}{\numberline {2.1.6}Discussion}{42}% 
+\contentsline {subsubsection}{\numberline {2.1.6.1}On SVFD Application}{42}% 
+\contentsline {subsubsection}{\numberline {2.1.6.2}Variation and Aging Considerations}{43}% 
+\contentsline {subsubsection}{\numberline {2.1.6.3}Distinguish Detection Results}{44}% 
+\contentsline {section}{\numberline {2.2}On-Chip Path Delay Measurement}{45}% 
+\contentsline {subsection}{\numberline {2.2.1}Path Delay Measurement and Fault Tolerance}{45}% 
+\contentsline {subsubsection}{\numberline {2.2.1.1}Challenges for Path Delay Measurement}{45}% 
+\contentsline {subsubsection}{\numberline {2.2.1.2}Prior Path Delay Measurements}{46}% 
+\contentsline {subsection}{\numberline {2.2.2}Path Delay Measurement Circuits}{47}% 
+\contentsline {subsubsection}{\numberline {2.2.2.1}Basic Structure and Operation}{47}% 
+\contentsline {subsection}{\numberline {2.2.3}Delay Range Calibration}{50}% 
+\contentsline {subsection}{\numberline {2.2.4}Path Delay Measurement Architecture}{53}% 
+\contentsline {subsubsection}{\numberline {2.2.4.1}Signal Transition Conversion (STC)}{54}% 
+\contentsline {subsubsection}{\numberline {2.2.4.2}Delay Measurement}{55}% 
+\contentsline {subsubsection}{\numberline {2.2.4.3}Delay Calibration for Import Lines}{56}% 
+\contentsline {subsection}{\numberline {2.2.5}Experiment Result Analysis}{57}% 
+\contentsline {subsubsection}{\numberline {2.2.5.1}Experiment I}{58}% 
+\contentsline {subsubsection}{\numberline {2.2.5.2}Experiment II}{58}% 
+\contentsline {subsubsection}{\numberline {2.2.5.3}Experiment III}{59}% 
+\contentsline {subsubsection}{\numberline {2.2.5.4}Area and Timing Overhead}{61}% 
+\contentsline {subsubsection}{\numberline {2.2.5.5}Comparison A}{64}% 
+\contentsline {subsubsection}{\numberline {2.2.5.6}Comparison B}{65}% 
+\contentsline {subsection}{\numberline {2.2.6}Discussion}{66}% 
+\contentsline {section}{\numberline {2.3}Lifetime Fault-Tolerant Circuit Design}{67}% 
+\contentsline {subsection}{\numberline {2.3.1}Aging Symptoms and Aging Sensors}{68}% 
+\contentsline {subsection}{\numberline {2.3.2}Lifetime Fault-tolerant Architecture}{69}% 
+\contentsline {subsection}{\numberline {2.3.3}Self-Adaptive Fault-Tolerant Pipeline}{72}% 
+\contentsline {subsubsection}{\numberline {2.3.3.1}Timing Imbalance}{72}% 
+\contentsline {subsubsection}{\numberline {2.3.3.2}Self-Adaptive Design Example}{73}% 
+\contentsline {subsection}{\numberline {2.3.4}Self-adaptive Agent}{74}% 
+\contentsline {subsubsection}{\numberline {2.3.4.1}Round-Robin Trial Adaptation (RRTA)}{75}% 
+\contentsline {subsubsection}{\numberline {2.3.4.2}Agent Implementation}{77}% 
+\contentsline {subsubsection}{\numberline {2.3.4.3}False Alarm Filter}{77}% 
+\contentsline {subsubsection}{\numberline {2.3.4.4}Complexity Analysis and Two Critical Optimizations}{78}% 
+\contentsline {subsubsection}{\numberline {2.3.4.5}Deploy Agents and Sensors}{80}% 
+\contentsline {subsection}{\numberline {2.3.5}Architecture Implementation}{81}% 
+\contentsline {subsubsection}{\numberline {2.3.5.1}Clock Generation and Overhead Analysis}{81}% 
+\contentsline {subsubsection}{\numberline {2.3.5.2}ReviveNet-supported Clock Gating}{82}% 
+\contentsline {subsubsection}{\numberline {2.3.5.3}Implication of Multi-cycle Paths}{83}% 
+\contentsline {subsubsection}{\numberline {2.3.5.4}Impact of ReviveNet Wearout}{83}% 
+\contentsline {subsection}{\numberline {2.3.6}Modele Based Reliability Analysis}{83}% 
+\contentsline {subsubsection}{\numberline {2.3.6.1}Reliability Model}{83}% 
+\contentsline {subsubsection}{\numberline {2.3.6.2}Implication of $TH$}{86}% 
+\contentsline {subsection}{\numberline {2.3.7}Case Study and Discussion}{87}% 
+\contentsline {subsubsection}{\numberline {2.3.7.1}Experiment Setups}{87}% 
+\contentsline {subsubsection}{\numberline {2.3.7.2}Results and Discussions}{87}% 
+\contentsline {section}{\numberline {2.4}Summary}{91}% 
+\contentsline {section}{References}{91}% 
+\gdef \the@ipfilectr {}
+\gdef \the@ipfilectr {@-8}
+\contentsline {chapter}{\numberline {3}Fault-Tolerant General Purposed Processors}{97}% 
+\contentsline {section}{\numberline {3.1}Challenges of Fault-Tolerant Processor Design}{97}% 
+\contentsline {subsection}{\numberline {3.1.1}Processor Vulnerability Characterizing}{97}% 
+\contentsline {subsection}{\numberline {3.1.2}Sick Processor Management}{99}% 
+\contentsline {section}{\numberline {3.2}Processor Vulnerability Evaluation}{101}% 
+\contentsline {subsection}{\numberline {3.2.1}Vulnerability Analysis Methods}{101}% 
+\contentsline {subsection}{\numberline {3.2.2}Intermittent Fault Oriented Analysis}{103}% 
+\contentsline {subsubsection}{\numberline {3.2.2.1}Intermittent Stuck-at Faults}{105}% 
+\contentsline {subsubsection}{\numberline {3.2.2.2}Intermittent Open and Short Faults}{108}% 
+\contentsline {subsubsection}{\numberline {3.2.2.3}Intermittent Timing Faults}{109}% 
+\contentsline {subsubsection}{\numberline {3.2.2.4}Statistical Significance}{111}% 
+\contentsline {subsection}{\numberline {3.2.3}Experiment Result Analysis}{111}% 
+\contentsline {subsubsection}{\numberline {3.2.3.1}Experiment Setups}{111}% 
+\contentsline {subsubsection}{\numberline {3.2.3.2}IVF Computation for Different Intermittent Fault Models}{112}% 
+\contentsline {subsubsection}{\numberline {3.2.3.3}IVF Computation for Different Microprocessor Configurations and Program Phases}{115}% 
+\contentsline {subsubsection}{\numberline {3.2.3.4}IVF Guided Reliable Design}{118}% 
+\contentsline {subsection}{\numberline {3.2.4}Discussion}{119}% 
+\contentsline {section}{\numberline {3.3}Multi-Core Processor Salvaging}{120}% 
+\contentsline {subsection}{\numberline {3.3.1}Dynamic Sick Core Ranking}{122}% 
+\contentsline {subsubsection}{\numberline {3.3.1.1}Healthy Condition Definition}{122}% 
+\contentsline {subsubsection}{\numberline {3.3.1.2}Snippet definition}{123}% 
+\contentsline {subsubsection}{\numberline {3.3.1.3}Snippet characterization}{124}% 
+\contentsline {subsubsection}{\numberline {3.3.1.4}Different snippets susceptible to different defects }{126}% 
+\contentsline {subsubsection}{\numberline {3.3.1.5}Dynamic healthy condition quantification}{126}% 
+\contentsline {subsubsection}{\numberline {3.3.1.6}Validation of healthy condition ($H$)}{128}% 
+\contentsline {subsubsection}{\numberline {3.3.1.7}Impact of dynamic management}{128}% 
+\contentsline {subsubsection}{\numberline {3.3.1.8}Handling failed cores}{129}% 
+\contentsline {subsection}{\numberline {3.3.2}Core Ranking Implementation}{129}% 
+\contentsline {subsubsection}{\numberline {3.3.2.1}Classification}{130}% 
+\contentsline {subsubsection}{\numberline {3.3.2.2}Deciding design parameters}{131}% 
+\contentsline {subsubsection}{\numberline {3.3.2.3}Choosing appropriate hash functions}{132}% 
+\contentsline {subsubsection}{\numberline {3.3.2.4}Handling sparsity of $\mathcal {H}$}{133}% 
+\contentsline {subsubsection}{\numberline {3.3.2.5}Hardware overhead}{134}% 
+\contentsline {subsection}{\numberline {3.3.3}Experiment Result Analysis}{134}% 
+\contentsline {subsubsection}{\numberline {3.3.3.1}Experimental Setup}{134}% 
+\contentsline {subsubsection}{\numberline {3.3.3.2}Workloads}{135}% 
+\contentsline {subsubsection}{\numberline {3.3.3.3}Result Analysis}{136}% 
+\contentsline {subsubsection}{\numberline {3.3.3.4}Comparing with defect-aware scheme}{138}% 
+\contentsline {subsubsection}{\numberline {3.3.3.5}Comparing with heterogeneity-aware scheme}{139}% 
+\contentsline {subsection}{\numberline {3.3.4}Discussion}{140}% 
+\contentsline {section}{\numberline {3.4}Summary}{140}% 
+\contentsline {section}{References}{141}% 
+\gdef \the@ipfilectr {}
+\gdef \the@ipfilectr {@-9}
+\contentsline {chapter}{\numberline {4}Fault-Tolerant Network-On-Chip}{147}% 
+\contentsline {section}{\numberline {4.1}Introduction to NoC Fault Tolerance}{147}% 
+\contentsline {subsection}{\numberline {4.1.1}Fault Tolerance in Many-Core Architecture}{148}% 
+\contentsline {subsection}{\numberline {4.1.2}Network Embedding Problems}{149}% 
+\contentsline {subsection}{\numberline {4.1.3}Fault-Tolerant NoC Routing}{151}% 
+\contentsline {subsubsection}{\numberline {4.1.3.1}2-D Meshes}{152}% 
+\contentsline {subsubsection}{\numberline {4.1.3.2}Turn Model}{152}% 
+\contentsline {subsubsection}{\numberline {4.1.3.3}Odd-Even Turn Model}{153}% 
+\contentsline {subsubsection}{\numberline {4.1.3.4}Fault Model}{154}% 
+\contentsline {subsection}{\numberline {4.1.4}Fault-Tolerant NoC Architectures}{155}% 
+\contentsline {section}{\numberline {4.2}NoC Fault Tolerance with Topology Reconfiguration}{156}% 
+\contentsline {subsection}{\numberline {4.2.1}NoC Topology Reconfiguration}{157}% 
+\contentsline {subsubsection}{\numberline {4.2.1.1}Core-Level Redundancy in Homogeneous Manycore Processors}{157}% 
+\contentsline {subsubsection}{\numberline {4.2.1.2}Topology Impacts on NoC-Based Manycore Systems}{160}% 
+\contentsline {subsubsection}{\numberline {4.2.1.3}Physical Topology and Virtual Topology}{161}% 
+\contentsline {subsection}{\numberline {4.2.2}NoC Topology Virtualization Formulation}{162}% 
+\contentsline {subsection}{\numberline {4.2.3}NoC Topology Virtualization Optimization}{166}% 
+\contentsline {subsubsection}{\numberline {4.2.3.1}TRP-I: An Instance of Quadratic Assignment Problem}{167}% 
+\contentsline {subsubsection}{\numberline {4.2.3.2}TRP-II: An Instance of Vectorial Quadratic Assignment Problem}{168}% 
+\contentsline {subsubsection}{\numberline {4.2.3.3}An Adopted Simulated Annealing Algorithm (SA)}{170}% 
+\contentsline {subsubsection}{\numberline {4.2.3.4}Row Rippling Column Stealing Algorithm (RRCS)}{170}% 
+\contentsline {subsubsection}{\numberline {4.2.3.5}RRCS-Guided Simulated Annealing Algorithm ($g$SA)}{173}% 
+\contentsline {subsection}{\numberline {4.2.4}Experiment Result Analysis}{174}% 
+\contentsline {subsubsection}{\numberline {4.2.4.1}Experimental Setup}{174}% 
+\contentsline {subsubsection}{\numberline {4.2.4.2}Experiment I}{175}% 
+\contentsline {subsubsection}{\numberline {4.2.4.3}Experiment II}{176}% 
+\contentsline {subsubsection}{\numberline {4.2.4.4}Experiment III}{177}% 
+\contentsline {subsection}{\numberline {4.2.5}Discussion}{178}% 
+\contentsline {section}{\numberline {4.3}NoC Fault Tolerance with Routing}{178}% 
+\contentsline {subsection}{\numberline {4.3.1}Challenges of Fault-Tolerant NoC Routing}{179}% 
+\contentsline {subsection}{\numberline {4.3.2}Defense Zones}{180}% 
+\contentsline {subsection}{\numberline {4.3.3}ZoneDefense Routing Algorithms}{183}% 
+\contentsline {subsection}{\numberline {4.3.4}Proof of Fault-Tolerant Routing}{188}% 
+\contentsline {subsection}{\numberline {4.3.5}Experiment Result Analysis}{191}% 
+\contentsline {subsubsection}{\numberline {4.3.5.1}Fault Model Comparison}{191}% 
+\contentsline {subsubsection}{\numberline {4.3.5.2}Performance Analysis}{194}% 
+\contentsline {subsubsection}{\numberline {4.3.5.3}Overhead Analysis}{196}% 
+\contentsline {subsection}{\numberline {4.3.6}Discussion}{197}% 
+\contentsline {section}{\numberline {4.4}NoC Fault Tolerance with Data Path Salvaging}{198}% 
+\contentsline {subsection}{\numberline {4.4.1}Fault-tolerant Router Architecture Overview}{198}% 
+\contentsline {subsection}{\numberline {4.4.2}Fault-tolerant Router Implementation}{199}% 
+\contentsline {subsection}{\numberline {4.4.3}Experiment Result Analysis}{202}% 
+\contentsline {subsubsection}{\numberline {4.4.3.1}Area Overhead}{202}% 
+\contentsline {subsubsection}{\numberline {4.4.3.2}Reliability}{203}% 
+\contentsline {subsection}{\numberline {4.4.4}Discussion}{206}% 
+\contentsline {section}{\numberline {4.5}Summary}{206}% 
+\contentsline {section}{References}{206}% 
+\gdef \the@ipfilectr {}
+\gdef \the@ipfilectr {@-10}
+\contentsline {chapter}{\numberline {5}Fault-Tolerant Deep Learning Processors}{211}% 
+\contentsline {section}{\numberline {5.1}Introduction to Fault-Tolerant Deep Learning}{211}% 
+\contentsline {subsection}{\numberline {5.1.1}Deep Learning Processor Basis}{212}% 
+\contentsline {subsubsection}{\numberline {5.1.1.1}Typical 2D-Array Based Deep Learning Accelerator}{212}% 
+\contentsline {subsubsection}{\numberline {5.1.1.2} ReRAM-based DNN Computing}{213}% 
+\contentsline {subsubsection}{\numberline {5.1.1.3}Neural Network Training Basis}{215}% 
+\contentsline {subsection}{\numberline {5.1.2}Challenges of Fault-Tolerant Deep Learning}{218}% 
+\contentsline {section}{\numberline {5.2}Fault-Tolerant Deep Learning Architecture}{219}% 
+\contentsline {subsection}{\numberline {5.2.1}Deep Learning Sensitivity to Hardware Faults}{219}% 
+\contentsline {subsection}{\numberline {5.2.2}Recomputing Based Hybrid Computing Architecture}{221}% 
+\contentsline {subsection}{\numberline {5.2.3}HyCA Micro-architecture}{225}% 
+\contentsline {subsubsection}{\numberline {5.2.3.1}Fault Detection with HyCA}{228}% 
+\contentsline {subsection}{\numberline {5.2.4}Experiment Result Analysis}{230}% 
+\contentsline {subsubsection}{\numberline {5.2.4.1}Experiment Setup}{230}% 
+\contentsline {subsubsection}{\numberline {5.2.4.2}Chip Area Overhead Comparison}{231}% 
+\contentsline {subsubsection}{\numberline {5.2.4.3}Reliability Comparison}{232}% 
+\contentsline {subsubsection}{\numberline {5.2.4.4}Performance Comparison}{235}% 
+\contentsline {subsubsection}{\numberline {5.2.4.5}Redundancy Design Scalability Analysis}{235}% 
+\contentsline {subsubsection}{\numberline {5.2.4.6}Fault Detection Analysis}{236}% 
+\contentsline {subsection}{\numberline {5.2.5}Discussion}{238}% 
+\contentsline {section}{\numberline {5.3}Online Fault Protection for ReRAM-based Deep Learning}{238}% 
+\contentsline {subsection}{\numberline {5.3.1}RRamedy Framework Overview}{238}% 
+\contentsline {subsubsection}{\numberline {5.3.1.1}Design Goals}{238}% 
+\contentsline {subsubsection}{\numberline {5.3.1.2}Target Fault Models}{238}% 
+\contentsline {subsubsection}{\numberline {5.3.1.3}Design Requirements}{239}% 
+\contentsline {subsection}{\numberline {5.3.2}Adversarial Example Testing on the Edge}{241}% 
+\contentsline {subsection}{\numberline {5.3.3}Fault-masking Retraining on the Cloud}{244}% 
+\contentsline {subsection}{\numberline {5.3.4}In-Situ Model Remedy on the Edge}{245}% 
+\contentsline {subsection}{\numberline {5.3.5}Experiment Result Analysis}{249}% 
+\contentsline {subsubsection}{\numberline {5.3.5.1}Experiment Setup}{249}% 
+\contentsline {subsubsection}{\numberline {5.3.5.2}Effectiveness of Adversarial Example Testing}{251}% 
+\contentsline {subsubsection}{\numberline {5.3.5.3}Effectiveness of Offline Retraining}{253}% 
+\contentsline {subsubsection}{\numberline {5.3.5.4}Effectiveness of Online Retraining}{255}% 
+\contentsline {subsection}{\numberline {5.3.6}Discussion}{259}% 
+\contentsline {section}{\numberline {5.4}Summary}{259}% 
+\contentsline {section}{References}{259}% 
+\gdef \the@ipfilectr {}
+\gdef \the@ipfilectr {@-11}
+\contentsline {chapter}{\numberline {6}Conclusion}{265}% 
+\gdef \the@ipfilectr {}
+\gdef \the@ipfilectr {@-12}
+\contentsline {chapter}{Glossary}{267}% 
+\contentsline {paragraph}{glossary term}{267}% 
+\contentsline {paragraph}{glossary term}{267}% 
+\contentsline {paragraph}{glossary term}{267}% 
+\contentsline {paragraph}{glossary term}{267}% 
+\contentsline {paragraph}{glossary term}{267}% 
+\gdef \the@ipfilectr {}

@@ -1,0 +1,1654 @@
+pdflatex book
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./book.tex
+LaTeX2e <2018-12-01>
+(./svmono.cls
+Document Class: svmono 2018/06/25 v5.6 
+Springer Verlag global LaTeX document class for monographs
+(/usr/local/texlive/2019/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2018/09/03 v1.4i Standard LaTeX document class
+(/usr/local/texlive/2019/texmf-dist/tex/latex/base/size10.clo))
+(/usr/local/texlive/2019/texmf-dist/tex/latex/xcolor/xcolor.sty
+(/usr/local/texlive/2019/texmf-dist/tex/latex/graphics-cfg/color.cfg)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/graphics-def/pdftex.def)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/xcolor/x11nam.def))
+(/usr/local/texlive/2019/texmf-dist/tex/latex/ntheorem/ntheorem.sty
+Style `ntheorem', Version 1.33 <2011/08/15>
+(/usr/local/texlive/2019/texmf-dist/tex/latex/base/ifthen.sty)))
+(/usr/local/texlive/2019/texmf-dist/tex/latex/framed/framed.sty)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/type1cm/type1cm.sty)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/cite/chapterbib.sty)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/cite/cite.sty)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/subfigure/subfigure.sty
+****************************************
+* Local config file subfigure.cfg used *
+****************************************
+(/usr/local/texlive/2019/texmf-dist/tex/latex/subfigure/subfigure.cfg))
+(/usr/local/texlive/2019/texmf-dist/tex/latex/base/makeidx.sty)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/local/texlive/2019/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/local/texlive/2019/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)))
+(/usr/local/texlive/2019/texmf-dist/tex/latex/tools/multicol.sty)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/footmisc/footmisc.sty)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/newtx/newtxtext.sty
+`newtxtext' v1.531, 2018/03/27 Text macros taking advantage of TeX-Gyre Termes 
+fonts (msharpe)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/fontaxes/fontaxes.sty)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+(/usr/local/texlive/2019/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+(/usr/local/texlive/2019/texmf-dist/tex/generic/xkeyval/xkvutils.tex)))
+(/usr/local/texlive/2019/texmf-dist/tex/latex/etoolbox/etoolbox.sty)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/base/fontenc.sty
+(/usr/local/texlive/2019/texmf-dist/tex/latex/base/t1enc.def))
+(/usr/local/texlive/2019/texmf-dist/tex/latex/base/textcomp.sty
+(/usr/local/texlive/2019/texmf-dist/tex/latex/base/ts1enc.def
+(/usr/local/texlive/2019/texmf-dist/tex/latex/base/ts1enc.dfu))))
+(/usr/local/texlive/2019/texmf-dist/tex/latex/newtx/newtxmath.sty
+`newtxmath' v1.553, 2018/05/15 Math macros based originally on txfonts (msharpe
+) (/usr/local/texlive/2019/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2019/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/local/texlive/2019/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/local/texlive/2019/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/local/texlive/2019/texmf-dist/tex/generic/ifxetex/ifxetex.sty)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/ifluatex.sty)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/centernot.sty)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/kastrup/binhex.tex))
+Writing index file book.idx
+(/usr/local/texlive/2019/texmf-dist/tex/latex/newtx/t1ntxtlf.fd)
+No file book.aux.
+(/usr/local/texlive/2019/texmf-dist/tex/latex/newtx/omlntxmi.fd)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/newtx/untxexa.fd)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/base/ts1cmr.fd)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/newtx/lmsntxsy.fd)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/newtx/lmxntxexx.fd)
+(/usr/local/texlive/2019/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (/usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+(/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/infwarerr.sty)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/grfext.sty
+(/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+(/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/ltxcmds.sty)))
+(/usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+(/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+(/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/etexcmds.sty)))
+(/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+(/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/ifpdf.sty))
+(/usr/local/texlive/2019/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg))
+[1{/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+[2] (./author/dedication.tex [5]) (./author/foreword.tex [6]
+(/usr/local/texlive/2019/texmf-dist/tex/latex/newtx/ot1ntxtlf.fd)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/newtx/untxmia.fd)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/newtx/untxsym.fd)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/newtx/untxsyc.fd)
+Overfull \hbox (3.95714pt too wide) in paragraph at lines 11--12
+\T1/ntxtlf/m/n/10 Use the tem-plate \T1/ntxtlf/m/it/10 fore-word.tex \T1/ntxtlf
+/m/n/10 to-gether with the doc-u-ment class SV-Mono (monograph-
+) [7] (./author/preface.tex [8] [9]) [10] (./author/acknowledgement.tex)
+[11] [12] (./book.toc [13] [14]) [15] (./author/acronym.tex [16]
+Overfull \hbox (3.22716pt too wide) in paragraph at lines 10--11
+\T1/ntxtlf/m/n/10 Use the tem-plate \T1/ntxtlf/m/it/10 acronym.tex \T1/ntxtlf/m
+/n/10 to-gether with the doc-u-ment class SV-Mono (monograph-
+(/usr/local/texlive/2019/texmf-dist/tex/latex/newtx/t1ntxtt.fd)) [17] [18]
+(./author/chapter1.tex
+Chapter 1.
+
+LaTeX Warning: Citation `yan2015corerank' on page 1 undefined on input line 27.
+
+
+
+LaTeX Warning: Citation `wang2007impact' on page 1 undefined on input line 27.
+
+
+LaTeX Warning: Citation `wang2007impact' on page 1 undefined on input line 27.
+
+[1]
+
+LaTeX Warning: Citation `borkar2003parameter' on page 2 undefined on input line
+ 33.
+
+
+LaTeX Warning: Citation `borkar2005designing' on page 2 undefined on input line
+ 48.
+
+[2]
+
+LaTeX Warning: Citation `yan2011revivenet' on page 3 undefined on input line 50
+.
+
+
+LaTeX Warning: Citation `fu2011abacus' on page 3 undefined on input line 50.
+
+
+LaTeX Warning: Citation `yan2015corerank' on page 3 undefined on input line 50.
+
+
+
+LaTeX Warning: Citation `yan2010svfd' on page 3 undefined on input line 50.
+
+
+LaTeX Warning: Citation `zhang2009topology' on page 3 undefined on input line 5
+0.
+
+
+LaTeX Warning: Citation `han2013revivepath' on page 3 undefined on input line 5
+0.
+
+
+LaTeX Warning: Citation `liu2021hyca' on page 3 undefined on input line 50.
+
+[3]
+
+LaTeX Warning: Citation `yan2010svfd' on page 4 undefined on input line 58.
+
+
+LaTeX Warning: Citation `wang2006restore' on page 4 undefined on input line 58.
+
+
+
+LaTeX Warning: Reference `fig:timing-sensor' on page 4 undefined on input line 
+71.
+
+[4 <./images/fig1-2.pdf>]
+
+LaTeX Warning: Reference `fig:timing-sensor' on page 5 undefined on input line 
+73.
+
+
+LaTeX Warning: Reference `fig:timing-sensor' on page 5 undefined on input line 
+73.
+
+
+LaTeX Warning: Reference `fig:timing-sensor' on page 5 undefined on input line 
+73.
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/newtx/ts1ntxtlf.fd)
+
+LaTeX Warning: Citation `aitken2012yield' on page 5 undefined on input line 79.
+
+
+[5]
+
+LaTeX Warning: Reference `fig:self-diagnosis-example' on page 6 undefined on in
+put line 88.
+
+
+LaTeX Warning: Reference `fig:performance-degradation' on page 6 undefined on i
+nput line 97.
+
+
+LaTeX Warning: Citation `powell2009architectural' on page 6 undefined on input 
+line 97.
+
+
+LaTeX Warning: Reference `fig:performance-degradation' on page 6 undefined on i
+nput line 97.
+
+[6 <./images/fig1-3.pdf>]
+
+LaTeX Warning: Citation `yan2015corerank' on page 7 undefined on input line 107
+.
+
+
+LaTeX Warning: Citation `eyerman2007top' on page 7 undefined on input line 107.
+
+
+
+LaTeX Warning: Citation `yan2015corerank' on page 7 undefined on input line 107
+.
+
+
+LaTeX Warning: Citation `yan2011revivenet' on page 7 undefined on input line 10
+9.
+
+[7 <./images/fig1-4.pdf>]
+
+LaTeX Warning: Citation `aitken2012yield' on page 8 undefined on input line 112
+.
+
+
+LaTeX Warning: Citation `tschanz201045nm' on page 8 undefined on input line 112
+.
+
+
+LaTeX Warning: Reference `fig:circuit-repair' on page 8 undefined on input line
+ 115.
+
+
+LaTeX Warning: Citation `yan2010svfd' on page 8 undefined on input line 115.
+
+
+LaTeX Warning: Citation `powell2009architectural' on page 8 undefined on input 
+line 126.
+
+[8]
+
+LaTeX Warning: Reference `fig:microarch-repair' on page 9 undefined on input li
+ne 128.
+
+[9 <./images/fig1-5.pdf> <./images/fig1-6.pdf>]
+
+LaTeX Warning: Citation `fu2011abacus' on page 10 undefined on input line 146.
+
+
+LaTeX Warning: Citation `zhang2009topology' on page 10 undefined on input line 
+146.
+
+
+LaTeX Warning: Reference `fig:topology-reconfig' on page 10 undefined on input 
+line 148.
+
+
+LaTeX Warning: Reference `fig:topology-reconfig' on page 10 undefined on input 
+line 148.
+
+
+LaTeX Warning: Reference `fig:topology-reconfig' on page 10 undefined on input 
+line 149.
+
+
+LaTeX Warning: Citation `zhang2009topology' on page 10 undefined on input line 
+149.
+
+[10] [11 <./images/fig1-7.pdf>]
+
+LaTeX Warning: Citation `kohler2010fault' on page 12 undefined on input line 16
+9.
+
+[12]
+
+LaTeX Warning: Citation `gizopoulos2011architectures' on page 13 undefined on i
+nput line 177.
+
+
+LaTeX Warning: Citation `alizadeh2010debugging' on page 13 undefined on input l
+ine 179.
+
+
+LaTeX Warning: Citation `chang2011constraint' on page 13 undefined on input lin
+e 179.
+
+[13]
+No file author/chapter1.bbl.
+) [14] (./author/chapter2.tex
+Chapter 2.
+[15]
+
+LaTeX Warning: Citation `sematech03' on page 16 undefined on input line 21.
+
+
+LaTeX Warning: Citation `Mitra_C05' on page 16 undefined on input line 21.
+
+
+LaTeX Warning: Citation `Han_DT05' on page 16 undefined on input line 21.
+
+
+LaTeX Warning: Citation `Zhang_TVLSI06' on page 16 undefined on input line 21.
+
+
+LaTeX Warning: Citation `Vijaykumar_ISCA02' on page 16 undefined on input line 
+21.
+
+
+LaTeX Warning: Citation `Oh_TR02' on page 16 undefined on input line 21.
+
+
+LaTeX Warning: Citation `Electromigration_69' on page 16 undefined on input lin
+e 21.
+
+
+LaTeX Warning: Citation `NBTI_Impact05' on page 16 undefined on input line 21.
+
+
+LaTeX Warning: Citation `Modeling-and-minimization_06' on page 16 undefined on 
+input line 21.
+
+
+LaTeX Warning: Citation `NBTItoComb_07' on page 16 undefined on input line 21.
+
+
+LaTeX Warning: Citation `failure_models_00' on page 16 undefined on input line 
+21.
+
+
+LaTeX Warning: Citation `failure_prediction_07' on page 16 undefined on input l
+ine 23.
+
+
+LaTeX Warning: Citation `failure_prediction2_08' on page 16 undefined on input 
+line 23.
+
+
+LaTeX Warning: Citation `degradation_05' on page 16 undefined on input line 23.
+
+
+
+LaTeX Warning: Citation `failure_prediction_07' on page 16 undefined on input l
+ine 23.
+
+
+LaTeX Warning: Citation `Shivakumar_DSN02' on page 16 undefined on input line 2
+5.
+
+
+LaTeX Warning: Citation `Mitra_C05' on page 16 undefined on input line 25.
+
+
+LaTeX Warning: Citation `lowcost_date07' on page 16 undefined on input line 25.
+
+
+
+LaTeX Warning: Citation `Nicolaidis_VTS99' on page 16 undefined on input line 2
+5.
+
+[16]
+
+LaTeX Warning: Citation `Nicolaidis_TDMR05' on page 17 undefined on input line 
+35.
+
+
+LaTeX Warning: Citation `Shivakumar_DSN02' on page 17 undefined on input line 3
+5.
+
+
+LaTeX Warning: Citation `Shivakumar_DSN02' on page 17 undefined on input line 3
+5.
+
+
+LaTeX Warning: Citation `failure_prediction_07' on page 17 undefined on input l
+ine 37.
+
+
+LaTeX Warning: Citation `sensing_96' on page 17 undefined on input line 39.
+
+[17]
+
+LaTeX Warning: Reference `comb' on page 18 undefined on input line 57.
+
+[18 <./images/fig2-1-eps-converted-to.pdf>]
+
+LaTeX Warning: Reference `tvts' on page 19 undefined on input line 88.
+
+
+LaTeX Warning: Citation `Mitra_C05' on page 19 undefined on input line 108.
+
+
+LaTeX Warning: Citation `Han_DT05' on page 19 undefined on input line 108.
+
+
+LaTeX Warning: Citation `failure_prediction_07' on page 19 undefined on input l
+ine 108.
+
+
+LaTeX Warning: Citation `failure_prediction2_08' on page 19 undefined on input 
+line 108.
+
+[19 <./images/fig2-2-eps-converted-to.pdf>]
+
+LaTeX Warning: Reference `precharge' on page 20 undefined on input line 124.
+
+[20]
+
+LaTeX Warning: Reference `tvts' on page 21 undefined on input line 142.
+
+
+LaTeX Warning: Reference `precharge' on page 21 undefined on input line 142.
+
+
+LaTeX Warning: Reference `xor' on page 21 undefined on input line 144.
+
+
+LaTeX Warning: Citation `Mitra_C05' on page 21 undefined on input line 144.
+
+
+LaTeX Warning: Reference `zones' on page 21 undefined on input line 167.
+
+
+LaTeX Warning: Reference `zones' on page 21 undefined on input line 167.
+
+[21 <./images/fig2-3-eps-converted-to.pdf>]
+
+LaTeX Warning: Reference `zones' on page 22 undefined on input line 176.
+
+
+LaTeX Warning: Reference `ebz' on page 22 undefined on input line 176.
+
+
+LaTeX Warning: Reference `eq80' on page 22 undefined on input line 199.
+
+
+LaTeX Warning: Reference `eq81' on page 22 undefined on input line 199.
+
+
+LaTeX Warning: Reference `111' on page 22 undefined on input line 199.
+
+[22 <./images/fig2-4-eps-converted-to.pdf>]
+
+LaTeX Warning: Reference `eq82' on page 23 undefined on input line 205.
+
+
+LaTeX Warning: Citation `lowcost_date07' on page 23 undefined on input line 205
+.
+
+
+LaTeX Warning: Citation `Nicolaidis_ITC07' on page 23 undefined on input line 2
+05.
+
+
+LaTeX Warning: Citation `Delay_Insertion_06' on page 23 undefined on input line
+ 205.
+
+
+LaTeX Warning: Citation `Padding_93' on page 23 undefined on input line 205.
+
+
+LaTeX Warning: Reference `zones' on page 23 undefined on input line 208.
+
+
+LaTeX Warning: Reference `prechargeperiod' on page 23 undefined on input line 2
+20.
+
+
+LaTeX Warning: Reference `eq82' on page 23 undefined on input line 232.
+
+
+LaTeX Warning: Reference `prechargeperiod' on page 23 undefined on input line 2
+32.
+
+
+LaTeX Warning: Citation `failure_prediction_07' on page 23 undefined on input l
+ine 236.
+
+
+LaTeX Warning: Reference `eq82' on page 23 undefined on input line 236.
+
+[23]
+
+LaTeX Warning: Reference `imple' on page 24 undefined on input line 239.
+
+
+LaTeX Warning: Reference `imple' on page 24 undefined on input line 239.
+
+
+LaTeX Warning: Reference `circuit' on page 24 undefined on input line 252.
+
+
+LaTeX Warning: Reference `circuit' on page 24 undefined on input line 252.
+
+
+LaTeX Warning: Reference `circuit' on page 24 undefined on input line 252.
+
+[24 <./images/fig2-5a-eps-converted-to.pdf> <./images/fig2-5b-eps-converted-to.
+pdf>]
+
+LaTeX Warning: Citation `sensing_96' on page 25 undefined on input line 261.
+
+
+LaTeX Warning: Citation `failure_prediction_07' on page 25 undefined on input l
+ine 261.
+
+
+LaTeX Warning: Reference `circuit' on page 25 undefined on input line 263.
+
+
+LaTeX Warning: Citation `failure_prediction_07' on page 25 undefined on input l
+ine 278.
+
+[25 <./images/fig2-6-eps-converted-to.pdf>]
+
+LaTeX Warning: Reference `imple' on page 26 undefined on input line 311.
+
+[26 <./images/fig2-7a-eps-converted-to.pdf> <./images/fig2-7b-eps-converted-to.
+pdf>]
+
+LaTeX Warning: Reference `compactor' on page 27 undefined on input line 317.
+
+
+LaTeX Warning: Reference `compactor' on page 27 undefined on input line 325.
+
+
+LaTeX Warning: Reference `compactor' on page 27 undefined on input line 343.
+
+[27]
+
+LaTeX Warning: Citation `Logic_effort' on page 28 undefined on input line 365.
+
+
+LaTeX Warning: Reference `anddelay' on page 28 undefined on input line 371.
+
+
+LaTeX Warning: Citation `Logic_effort' on page 28 undefined on input line 373.
+
+
+LaTeX Warning: Citation `Victor_TC04' on page 28 undefined on input line 373.
+
+
+LaTeX Warning: Citation `failure_prediction_07' on page 28 undefined on input l
+ine 379.
+
+
+LaTeX Warning: Citation `clock_01' on page 28 undefined on input line 379.
+
+
+LaTeX Warning: Citation `DLL_00' on page 28 undefined on input line 379.
+
+
+LaTeX Warning: Citation `DLL2_04' on page 28 undefined on input line 379.
+
+
+LaTeX Warning: Citation `Itanium_clock05' on page 28 undefined on input line 37
+9.
+
+
+LaTeX Warning: Citation `failure_prediction_07' on page 28 undefined on input l
+ine 379.
+
+[28]
+
+LaTeX Warning: Citation `Razor2_ISSCC08' on page 29 undefined on input line 381
+.
+
+
+LaTeX Warning: Citation `PTM_06' on page 29 undefined on input line 392.
+
+[29 <./images/fig2-8-eps-converted-to.pdf>]
+
+LaTeX Warning: Citation `Mitra_C05' on page 30 undefined on input line 398.
+
+
+LaTeX Warning: Citation `lowcost_date07' on page 30 undefined on input line 398
+.
+
+
+LaTeX Warning: Citation `failure_prediction_07' on page 30 undefined on input l
+ine 398.
+
+
+LaTeX Warning: Citation `CWSP_DATE08' on page 30 undefined on input line 398.
+
+
+LaTeX Warning: Reference `spice' on page 30 undefined on input line 417.
+
+
+LaTeX Warning: Reference `comparison1' on page 30 undefined on input line 425.
+
+
+LaTeX Warning: Citation `Mitra_C05' on page 30 undefined on input line 425.
+
+
+LaTeX Warning: Citation `lowcost_date07' on page 30 undefined on input line 425
+.
+
+
+LaTeX Warning: Citation `failure_prediction_07' on page 30 undefined on input l
+ine 425.
+
+
+LaTeX Warning: Citation `CWSP_DATE08' on page 30 undefined on input line 425.
+
+
+LaTeX Warning: Reference `circuit' on page 30 undefined on input line 427.
+
+
+LaTeX Warning: Citation `Latch_01' on page 30 undefined on input line 427.
+
+
+LaTeX Warning: Citation `Flipflop_94' on page 30 undefined on input line 427.
+
+[30]
+
+LaTeX Warning: Reference `comparison1' on page 31 undefined on input line 429.
+
+
+LaTeX Warning: Reference `comparison1' on page 31 undefined on input line 429.
+
+
+LaTeX Warning: Citation `Mitra_C05' on page 31 undefined on input line 439.
+
+
+LaTeX Warning: Citation `failure_prediction_07' on page 31 undefined on input l
+ine 441.
+
+[31]
+
+LaTeX Warning: Citation `OpenSPARC_06' on page 32 undefined on input line 453.
+
+
+LaTeX Warning: Citation `OpenSPARC_06' on page 32 undefined on input line 453.
+
+
+LaTeX Warning: Reference `circuit' on page 32 undefined on input line 463.
+
+
+LaTeX Warning: Citation `lowcost_date07' on page 32 undefined on input line 465
+.
+
+
+LaTeX Warning: Citation `failure_prediction_07' on page 32 undefined on input l
+ine 465.
+
+
+LaTeX Warning: Reference `eq82' on page 32 undefined on input line 465.
+
+[32]
+
+LaTeX Warning: Reference `comparison1' on page 33 undefined on input line 468.
+
+
+LaTeX Warning: Command \textregistered invalid in math mode on input line 470.
+
+
+LaTeX Warning: Command \textregistered invalid in math mode on input line 470.
+
+[33 <./images/fig2-9a-eps-converted-to.pdf> <./images/fig2-9b-eps-converted-to.
+pdf>]
+
+LaTeX Warning: Reference `area_power' on page 34 undefined on input line 488.
+
+
+LaTeX Warning: Reference `area_power' on page 34 undefined on input line 490.
+
+
+LaTeX Warning: Reference `area_power' on page 34 undefined on input line 490.
+
+
+LaTeX Warning: Reference `lxor_land' on page 34 undefined on input line 497.
+
+[34 <./images/fig2-10a-eps-converted-to.pdf> <./images/fig2-10b-eps-converted-t
+o.pdf>]
+
+LaTeX Warning: Reference `lxor_land' on page 35 undefined on input line 501.
+
+
+LaTeX Warning: Reference `APcomparison' on page 35 undefined on input line 512.
+
+
+
+LaTeX Warning: Citation `Mitra_C05' on page 35 undefined on input line 512.
+
+
+LaTeX Warning: Citation `Mitra_C05' on page 35 undefined on input line 512.
+
+
+LaTeX Warning: Citation `lowcost_date07' on page 35 undefined on input line 512
+.
+
+
+LaTeX Warning: Citation `CWSP_DATE08' on page 35 undefined on input line 512.
+
+
+LaTeX Warning: Reference `comparison1' on page 35 undefined on input line 512.
+
+
+LaTeX Warning: Citation `failure_prediction_07' on page 35 undefined on input l
+ine 512.
+
+
+LaTeX Warning: Reference `APcomparison' on page 35 undefined on input line 514.
+
+
+
+LaTeX Warning: Citation `failure_prediction_07' on page 35 undefined on input l
+ine 514.
+
+
+LaTeX Warning: Reference `APcomparison' on page 35 undefined on input line 514.
+
+
+[35 <./images/fig2-11a-eps-converted-to.pdf> <./images/fig2-11b-eps-converted-t
+o.pdf>]
+
+LaTeX Warning: Reference `APcomparison' on page 36 undefined on input line 516.
+
+
+
+LaTeX Warning: Reference `APcomparison' on page 36 undefined on input line 518.
+
+
+
+LaTeX Warning: Reference `APcomparison' on page 36 undefined on input line 520.
+
+
+
+LaTeX Warning: Citation `Mitra_C05' on page 36 undefined on input line 532.
+
+
+LaTeX Warning: Citation `lowcost_date07' on page 36 undefined on input line 532
+.
+
+
+LaTeX Warning: Citation `failure_prediction_07' on page 36 undefined on input l
+ine 532.
+
+
+LaTeX Warning: Citation `CWSP_DATE08' on page 36 undefined on input line 532.
+
+
+LaTeX Warning: Citation `Revival_08' on page 36 undefined on input line 550.
+
+[36]
+
+LaTeX Warning: Citation `Using_Register_Lifetime_dsn07' on page 37 undefined on
+ input line 552.
+
+
+LaTeX Warning: Citation `Exploiting_selective_placement_taco08' on page 37 unde
+fined on input line 552.
+
+
+LaTeX Warning: Citation `Mitigating_Parameter_Variation_micro07' on page 37 und
+efined on input line 554.
+
+
+LaTeX Warning: Citation `failure_prediction_07' on page 37 undefined on input l
+ine 554.
+
+
+LaTeX Warning: Reference `circuit' on page 37 undefined on input line 559.
+
+
+LaTeX Warning: Reference `circuit' on page 37 undefined on input line 561.
+
+
+LaTeX Warning: Reference `circuit' on page 37 undefined on input line 561.
+
+[37]
+
+LaTeX Warning: Reference `circuit' on page 38 undefined on input line 568.
+
+
+LaTeX Warning: Citation `Shivakumar_DSN02' on page 38 undefined on input line 5
+72.
+
+
+LaTeX Warning: Citation `Sony' on page 38 undefined on input line 582.
+
+
+LaTeX Warning: Citation `Atmel' on page 38 undefined on input line 582.
+
+
+LaTeX Warning: Citation `degradation_05' on page 38 undefined on input line 582
+.
+
+
+LaTeX Warning: Citation `ITRS_PIDS07' on page 38 undefined on input line 582.
+
+
+LaTeX Warning: Citation `ITRS_PIDS07' on page 38 undefined on input line 582.
+
+
+LaTeX Warning: Citation `ITRS_PIDS07' on page 38 undefined on input line 582.
+
+
+LaTeX Warning: Citation `failure_prediction_07' on page 38 undefined on input l
+ine 582.
+
+
+LaTeX Warning: Citation `Self-calibrating_07' on page 38 undefined on input lin
+e 582.
+
+
+LaTeX Warning: Citation `NBTI_Impact05' on page 38 undefined on input line 582.
+
+
+
+LaTeX Warning: Citation `Impact-of-NBTI_07' on page 38 undefined on input line 
+582.
+
+
+LaTeX Warning: Citation `OB_Invert_03' on page 38 undefined on input line 582.
+
+
+LaTeX Warning: Citation `Impact_BD_04' on page 38 undefined on input line 582.
+
+
+LaTeX Warning: Citation `Gate-oxide-breakdown-07' on page 38 undefined on input
+ line 582.
+
+[38]
+
+LaTeX Warning: Citation `ParameterVariations_DAC03' on page 39 undefined on inp
+ut line 584.
+
+
+LaTeX Warning: Citation `DynamicNBTI_03' on page 39 undefined on input line 586
+.
+
+
+LaTeX Warning: Citation `Modeling-and-minimization_06' on page 39 undefined on 
+input line 586.
+
+
+LaTeX Warning: Citation `Compact-Modeling_07' on page 39 undefined on input lin
+e 586.
+
+
+LaTeX Warning: Citation `Impact-of-NBTI_07' on page 39 undefined on input line 
+586.
+
+
+LaTeX Warning: Citation `RAMP_04' on page 39 undefined on input line 586.
+
+
+LaTeX Warning: Citation `Penelope_07' on page 39 undefined on input line 586.
+
+
+LaTeX Warning: Citation `Framework_DSN07' on page 39 undefined on input line 58
+6.
+
+
+LaTeX Warning: Citation `Self-calibrating_07' on page 39 undefined on input lin
+e 586.
+
+
+LaTeX Warning: Citation `failure_prediction_07' on page 39 undefined on input l
+ine 586.
+
+
+LaTeX Warning: Citation `SVFD_09' on page 39 undefined on input line 586.
+
+
+LaTeX Warning: Citation `RAMP_04' on page 39 undefined on input line 588.
+
+
+LaTeX Warning: Citation `Facelift_08' on page 39 undefined on input line 588.
+
+
+LaTeX Warning: Citation `Duplication_05' on page 39 undefined on input line 588
+.
+
+
+LaTeX Warning: Citation `WearoutRecovery_08' on page 39 undefined on input line
+ 588.
+
+[39]
+
+LaTeX Warning: Citation `Self-calibrating_07' on page 40 undefined on input lin
+e 604.
+
+
+LaTeX Warning: Citation `failure_prediction_07' on page 40 undefined on input l
+ine 604.
+
+
+LaTeX Warning: Citation `failure_prediction2_08' on page 40 undefined on input 
+line 604.
+
+
+LaTeX Warning: Citation `Self-calibrating_07' on page 40 undefined on input lin
+e 604.
+
+
+LaTeX Warning: Citation `failure_prediction_07' on page 40 undefined on input l
+ine 604.
+
+
+LaTeX Warning: Citation `failure_prediction2_08' on page 40 undefined on input 
+line 604.
+
+
+LaTeX Warning: Citation `failure_prediction_07' on page 40 undefined on input l
+ine 606.
+
+
+LaTeX Warning: Citation `SVFD_09' on page 40 undefined on input line 606.
+
+
+LaTeX Warning: Reference `agingdelay' on page 40 undefined on input line 606.
+
+
+LaTeX Warning: Citation `SVFD_09' on page 40 undefined on input line 606.
+
+
+LaTeX Warning: Reference `setupsonsor' on page 40 undefined on input line 621.
+
+
+LaTeX Warning: Citation `SVFD_09' on page 40 undefined on input line 621.
+
+[40 <./images/Figure_1-eps-converted-to.pdf>]
+
+LaTeX Warning: Citation `SVFD_09' on page 41 undefined on input line 623.
+
+
+LaTeX Warning: Reference `setupsonsor' on page 41 undefined on input line 623.
+
+
+LaTeX Warning: Reference `setupsonsor' on page 41 undefined on input line 625.
+
+
+LaTeX Warning: Reference `syntop' on page 41 undefined on input line 631.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: Reference `ba_fa' on page 41 undefined on input line 646.
+
+
+LaTeX Warning: Citation `failure_prediction_07' on page 41 undefined on input l
+ine 646.
+
+
+LaTeX Warning: Citation `SVFD_09' on page 41 undefined on input line 646.
+
+[41 <./images/Figure_2-eps-converted-to.pdf>] [42 <./images/Figure_3-eps-conver
+ted-to.pdf> <./images/Figure_4-eps-converted-to.pdf>]
+
+LaTeX Warning: Citation `Recycle_07' on page 43 undefined on input line 667.
+
+
+LaTeX Warning: Reference `curve' on page 43 undefined on input line 680.
+
+[43] [44 <./images/Figure_5-eps-converted-to.pdf>]
+
+LaTeX Warning: Citation `OpenSPARC_06' on page 45 undefined on input line 729.
+
+
+LaTeX Warning: Reference `ff_type' on page 45 undefined on input line 729.
+
+
+LaTeX Warning: Reference `ff_type' on page 45 undefined on input line 731.
+
+
+LaTeX Warning: Reference `affs' on page 45 undefined on input line 734.
+
+[45 <./images/Figure_6-eps-converted-to.pdf>]
+
+LaTeX Warning: Reference `affs' on page 46 undefined on input line 743.
+
+
+LaTeX Warning: Reference `rradp' on page 46 undefined on input line 749.
+
+
+LaTeX Warning: Reference `rradp' on page 46 undefined on input line 757.
+
+
+LaTeX Warning: Reference `syntop' on page 46 undefined on input line 757.
+
+[46 <./images/Figure_7-eps-converted-to.pdf> <./images/Figure_8-eps-converted-t
+o.pdf>]
+
+LaTeX Warning: Citation `POIROT_00' on page 47 undefined on input line 759.
+
+[47]
+
+LaTeX Warning: Reference `section_complexity' on page 48 undefined on input lin
+e 783.
+
+
+LaTeX Warning: Reference `agent' on page 48 undefined on input line 793.
+
+
+LaTeX Warning: Citation `degradation_05' on page 48 undefined on input line 798
+.
+
+[48 <./images/Figure_9-eps-converted-to.pdf>]
+
+LaTeX Warning: Reference `synadp' on page 49 undefined on input line 802.
+
+
+LaTeX Warning: Reference `rrtaexample' on page 49 undefined on input line 811.
+
+
+LaTeX Warning: Reference `logiccone' on page 49 undefined on input line 820.
+
+[49 <./images/Figure_10-eps-converted-to.pdf>]
+
+LaTeX Warning: Reference `agent_share' on page 50 undefined on input line 834.
+
+[50 <./images/Figure_11-eps-converted-to.pdf> <./images/Figure_12-eps-converted
+-to.pdf>]
+
+LaTeX Warning: Reference `delpoy' on page 51 undefined on input line 855.
+
+[51 <./images/Figure_13-eps-converted-to.pdf>]
+
+LaTeX Warning: Reference `delpoy' on page 52 undefined on input line 874.
+
+
+LaTeX Warning: Reference `sac' on page 52 undefined on input line 884.
+
+
+LaTeX Warning: Citation `clock_01' on page 52 undefined on input line 890.
+
+
+LaTeX Warning: Citation `DLL_00' on page 52 undefined on input line 890.
+
+
+LaTeX Warning: Citation `DLL2_04' on page 52 undefined on input line 890.
+
+
+LaTeX Warning: Citation `Itanium_clock05' on page 52 undefined on input line 89
+0.
+
+
+LaTeX Warning: Citation `clockpower_02' on page 52 undefined on input line 890.
+
+
+[52 <./images/Figure_14-eps-converted-to.pdf>]
+
+LaTeX Warning: Reference `section_results' on page 53 undefined on input line 8
+92.
+
+
+LaTeX Warning: Reference `clkgate' on page 53 undefined on input line 903.
+
+
+LaTeX Warning: Citation `clockpower_02' on page 53 undefined on input line 903.
+
+
+[53 <./images/Figure_15-eps-converted-to.pdf>]
+
+LaTeX Warning: Citation `Temporal-Performance-Degradation-date06' on page 54 un
+defined on input line 915.
+
+
+LaTeX Warning: Citation `Temporal-Performance-Degradation-date06' on page 54 un
+defined on input line 915.
+
+
+LaTeX Warning: Citation `Handbook' on page 54 undefined on input line 921.
+
+
+LaTeX Warning: Citation `Handbook' on page 54 undefined on input line 925.
+
+[54]
+
+LaTeX Warning: Citation `variation_jssc02' on page 55 undefined on input line 9
+35.
+
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 965.
+
+[55]
+
+LaTeX Warning: Reference `weibull' on page 56 undefined on input line 985.
+
+
+LaTeX Warning: Citation `Handbook' on page 56 undefined on input line 992.
+
+
+LaTeX Warning: Reference `weibull' on page 56 undefined on input line 992.
+
+
+LaTeX Warning: Reference `weibull' on page 56 undefined on input line 994.
+
+
+LaTeX Warning: Citation `Reliability_limits_IBM02' on page 56 undefined on inpu
+t line 1019.
+
+[56 <./images/Figure_16-eps-converted-to.pdf>]
+
+LaTeX Warning: Citation `NBTI_Impact05' on page 57 undefined on input line 1021
+.
+
+
+LaTeX Warning: Reference `nbti' on page 57 undefined on input line 1021.
+
+
+LaTeX Warning: Reference `nbti' on page 57 undefined on input line 1021.
+
+
+LaTeX Warning: Citation `Impact-of-NBTI_07' on page 57 undefined on input line 
+1021.
+
+
+LaTeX Warning: Reference `new_term' on page 57 undefined on input line 1025.
+
+
+LaTeX Warning: Citation `OpenSPARC_06' on page 57 undefined on input line 1036.
+
+
+
+LaTeX Warning: Citation `OpenSPARC_06' on page 57 undefined on input line 1036.
+
+
+[57 <./images/Figure_17-eps-converted-to.pdf>]
+
+LaTeX Warning: Reference `numsensor' on page 58 undefined on input line 1049.
+
+
+LaTeX Warning: Reference `numagent' on page 58 undefined on input line 1049.
+
+
+LaTeX Warning: Citation `JMRabaey' on page 58 undefined on input line 1072.
+
+
+LaTeX Warning: Citation `Impact-of-NBTI_07' on page 58 undefined on input line 
+1073.
+
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 1076.
+
+[58 <./images/Figure_18a-eps-converted-to.pdf> <./images/Figure_18b-eps-convert
+ed-to.pdf> <./images/Figure_18c-eps-converted-to.pdf>]
+
+LaTeX Warning: Reference `ab' on page 59 undefined on input line 1090.
+
+
+LaTeX Warning: Reference `reg' on page 59 undefined on input line 1092.
+
+
+LaTeX Warning: Reference `newab' on page 59 undefined on input line 1092.
+
+
+LaTeX Warning: Reference `frac' on page 59 undefined on input line 1092.
+
+
+LaTeX Warning: Reference `mttf' on page 59 undefined on input line 1099.
+
+
+LaTeX Warning: Reference `mttfr' on page 59 undefined on input line 1100.
+
+
+LaTeX Warning: Reference `ex' on page 59 undefined on input line 1100.
+
+
+LaTeX Warning: Reference `section_clcokgen' on page 59 undefined on input line 
+1109.
+
+
+LaTeX Warning: Reference `ex' on page 59 undefined on input line 1109.
+
+
+LaTeX Warning: Reference `ex' on page 59 undefined on input line 1109.
+
+
+LaTeX Warning: Citation `Itanium_clock05' on page 59 undefined on input line 11
+11.
+
+[59]
+
+LaTeX Warning: Citation `failure_prediction_07' on page 60 undefined on input l
+ine 1124.
+
+
+LaTeX Warning: Citation `SVFD_09' on page 60 undefined on input line 1124.
+
+
+LaTeX Warning: Reference `totalarea' on page 60 undefined on input line 1138.
+
+
+LaTeX Warning: Reference `logicpower' on page 60 undefined on input line 1157.
+
+
+LaTeX Warning: Citation `clockpower_02' on page 60 undefined on input line 1163
+.
+
+[60 <./images/Figure_19-eps-converted-to.pdf>]
+
+LaTeX Warning: Citation `clockpower_02' on page 61 undefined on input line 1173
+.
+
+
+LaTeX Warning: Citation `failure_prediction_07' on page 61 undefined on input l
+ine 1192.
+
+
+LaTeX Warning: Citation `SVFD_09' on page 61 undefined on input line 1192.
+
+[61 <./images/Figure_20-eps-converted-to.pdf>]
+
+LaTeX Warning: Reference `section_intro' on page 62 undefined on input line 121
+1.
+
+
+LaTeX Warning: Citation `Recycle_07' on page 62 undefined on input line 1215.
+
+
+LaTeX Warning: Citation `failure_prediction_07' on page 62 undefined on input l
+ine 1223.
+
+
+LaTeX Warning: Citation `Self-calibrating_07' on page 62 undefined on input lin
+e 1225.
+
+
+LaTeX Warning: Citation `RAMP_04' on page 62 undefined on input line 1230.
+
+
+LaTeX Warning: Citation `Duplication_05' on page 62 undefined on input line 123
+1.
+
+
+LaTeX Warning: Citation `WearoutRecovery_08' on page 62 undefined on input line
+ 1232.
+
+
+LaTeX Warning: Citation `Penelope_07' on page 62 undefined on input line 1235.
+
+[62]
+No file author/chapter2.bbl.
+) [63] (./author/chapter3.tex [64]
+Chapter 3.
+[65] [66] (/usr/local/texlive/2019/texmf-dist/tex/latex/newtx/t1ntxsups.fd)
+(./author/references.tex [67]
+
+LaTeX Warning: Citation `science-contrib' on page 68 undefined on input line 28
+.
+
+
+LaTeX Warning: Citation `science-online' on page 68 undefined on input line 28.
+
+
+
+LaTeX Warning: Citation `science-mono' on page 68 undefined on input line 28.
+
+
+LaTeX Warning: Citation `science-journal' on page 68 undefined on input line 28
+.
+
+
+LaTeX Warning: Citation `science-DOI' on page 68 undefined on input line 28.
+
+
+LaTeX Warning: Citation `phys-online' on page 68 undefined on input line 28.
+
+
+LaTeX Warning: Citation `phys-mono' on page 68 undefined on input line 28.
+
+
+LaTeX Warning: Citation `phys-journal' on page 68 undefined on input line 28.
+
+
+LaTeX Warning: Citation `phys-DOI' on page 68 undefined on input line 28.
+
+
+LaTeX Warning: Citation `phys-contrib' on page 68 undefined on input line 28.
+
+
+LaTeX Warning: Citation `psysoc-mono' on page 68 undefined on input line 28.
+
+
+LaTeX Warning: Citation `psysoc-online' on page 68 undefined on input line 28.
+
+
+LaTeX Warning: Citation `psysoc-journal' on page 68 undefined on input line 28.
+
+
+
+LaTeX Warning: Citation `psysoc-contrib' on page 68 undefined on input line 28.
+
+
+
+LaTeX Warning: Citation `psysoc-DOI' on page 68 undefined on input line 28.
+
+
+LaTeX Warning: Citation `humlinphil-journal' on page 68 undefined on input line
+ 28.
+
+
+LaTeX Warning: Citation `humlinphil-contrib' on page 68 undefined on input line
+ 28.
+
+
+LaTeX Warning: Citation `humlinphil-mono' on page 68 undefined on input line 28
+.
+
+
+LaTeX Warning: Citation `humlinphil-online' on page 68 undefined on input line 
+28.
+
+
+LaTeX Warning: Citation `humlinphil-DOI' on page 68 undefined on input line 28.
+
+
+
+LaTeX Warning: Citation `basic-contrib' on page 68 undefined on input line 28.
+
+
+LaTeX Warning: Citation `basic-online' on page 68 undefined on input line 28.
+
+
+LaTeX Warning: Citation `basic-journal' on page 68 undefined on input line 28.
+
+
+LaTeX Warning: Citation `basic-DOI' on page 68 undefined on input line 28.
+
+
+LaTeX Warning: Citation `basic-mono' on page 68 undefined on input line 28.
+
+[68])) [69] (./author/chapter4.tex [70]
+Chapter 4.
+
+Overfull \hbox (6.62218pt too wide) in paragraph at lines 18--18
+\T1/ntxtlf/m/n/10 that sum-ma-rizes the con-tent. The ab-stract will ap-pear \T
+1/ntxtlf/m/it/10 on-line \T1/ntxtlf/m/n/10 at www.SpringerLink.com
+(./author/references.tex [71] [72]
+
+LaTeX Warning: Citation `science-contrib' on page 73 undefined on input line 28
+.
+
+
+LaTeX Warning: Citation `science-online' on page 73 undefined on input line 28.
+
+
+
+LaTeX Warning: Citation `science-mono' on page 73 undefined on input line 28.
+
+
+LaTeX Warning: Citation `science-journal' on page 73 undefined on input line 28
+.
+
+
+LaTeX Warning: Citation `science-DOI' on page 73 undefined on input line 28.
+
+
+LaTeX Warning: Citation `phys-online' on page 73 undefined on input line 28.
+
+
+LaTeX Warning: Citation `phys-mono' on page 73 undefined on input line 28.
+
+
+LaTeX Warning: Citation `phys-journal' on page 73 undefined on input line 28.
+
+
+LaTeX Warning: Citation `phys-DOI' on page 73 undefined on input line 28.
+
+
+LaTeX Warning: Citation `phys-contrib' on page 73 undefined on input line 28.
+
+
+LaTeX Warning: Citation `psysoc-mono' on page 73 undefined on input line 28.
+
+
+LaTeX Warning: Citation `psysoc-online' on page 73 undefined on input line 28.
+
+
+LaTeX Warning: Citation `psysoc-journal' on page 73 undefined on input line 28.
+
+
+
+LaTeX Warning: Citation `psysoc-contrib' on page 73 undefined on input line 28.
+
+
+
+LaTeX Warning: Citation `psysoc-DOI' on page 73 undefined on input line 28.
+
+
+LaTeX Warning: Citation `humlinphil-journal' on page 73 undefined on input line
+ 28.
+
+
+LaTeX Warning: Citation `humlinphil-contrib' on page 73 undefined on input line
+ 28.
+
+
+LaTeX Warning: Citation `humlinphil-mono' on page 73 undefined on input line 28
+.
+
+
+LaTeX Warning: Citation `humlinphil-online' on page 73 undefined on input line 
+28.
+
+
+LaTeX Warning: Citation `humlinphil-DOI' on page 73 undefined on input line 28.
+
+
+
+LaTeX Warning: Citation `basic-contrib' on page 73 undefined on input line 28.
+
+
+LaTeX Warning: Citation `basic-online' on page 73 undefined on input line 28.
+
+
+LaTeX Warning: Citation `basic-journal' on page 73 undefined on input line 28.
+
+
+LaTeX Warning: Citation `basic-DOI' on page 73 undefined on input line 28.
+
+
+LaTeX Warning: Citation `basic-mono' on page 73 undefined on input line 28.
+
+[73])) [74] (./author/chapter5.tex
+Chapter 5.
+
+Overfull \hbox (6.62218pt too wide) in paragraph at lines 15--15
+\T1/ntxtlf/m/n/10 that sum-ma-rizes the con-tent. The ab-stract will ap-pear \T
+1/ntxtlf/m/it/10 on-line \T1/ntxtlf/m/n/10 at www.SpringerLink.com
+
+LaTeX Warning: Reference `sec:2' on page 75 undefined on input line 43.
+
+[75] (./author/references.tex [76]
+
+LaTeX Warning: Citation `science-contrib' on page 77 undefined on input line 28
+.
+
+
+LaTeX Warning: Citation `science-online' on page 77 undefined on input line 28.
+
+
+
+LaTeX Warning: Citation `science-mono' on page 77 undefined on input line 28.
+
+
+LaTeX Warning: Citation `science-journal' on page 77 undefined on input line 28
+.
+
+
+LaTeX Warning: Citation `science-DOI' on page 77 undefined on input line 28.
+
+
+LaTeX Warning: Citation `phys-online' on page 77 undefined on input line 28.
+
+
+LaTeX Warning: Citation `phys-mono' on page 77 undefined on input line 28.
+
+
+LaTeX Warning: Citation `phys-journal' on page 77 undefined on input line 28.
+
+
+LaTeX Warning: Citation `phys-DOI' on page 77 undefined on input line 28.
+
+
+LaTeX Warning: Citation `phys-contrib' on page 77 undefined on input line 28.
+
+
+LaTeX Warning: Citation `psysoc-mono' on page 77 undefined on input line 28.
+
+
+LaTeX Warning: Citation `psysoc-online' on page 77 undefined on input line 28.
+
+
+LaTeX Warning: Citation `psysoc-journal' on page 77 undefined on input line 28.
+
+
+
+LaTeX Warning: Citation `psysoc-contrib' on page 77 undefined on input line 28.
+
+
+
+LaTeX Warning: Citation `psysoc-DOI' on page 77 undefined on input line 28.
+
+
+LaTeX Warning: Citation `humlinphil-journal' on page 77 undefined on input line
+ 28.
+
+
+LaTeX Warning: Citation `humlinphil-contrib' on page 77 undefined on input line
+ 28.
+
+
+LaTeX Warning: Citation `humlinphil-mono' on page 77 undefined on input line 28
+.
+
+
+LaTeX Warning: Citation `humlinphil-online' on page 77 undefined on input line 
+28.
+
+
+LaTeX Warning: Citation `humlinphil-DOI' on page 77 undefined on input line 28.
+
+
+
+LaTeX Warning: Citation `basic-contrib' on page 77 undefined on input line 28.
+
+
+LaTeX Warning: Citation `basic-online' on page 77 undefined on input line 28.
+
+
+LaTeX Warning: Citation `basic-journal' on page 77 undefined on input line 28.
+
+
+LaTeX Warning: Citation `basic-DOI' on page 77 undefined on input line 28.
+
+
+LaTeX Warning: Citation `basic-mono' on page 77 undefined on input line 28.
+
+[77])) [78] (./author/chapter6.tex
+Chapter 6.
+(./author/references.tex
+
+LaTeX Warning: Citation `science-contrib' on page 79 undefined on input line 28
+.
+
+
+LaTeX Warning: Citation `science-online' on page 79 undefined on input line 28.
+
+
+
+LaTeX Warning: Citation `science-mono' on page 79 undefined on input line 28.
+
+
+LaTeX Warning: Citation `science-journal' on page 79 undefined on input line 28
+.
+
+
+LaTeX Warning: Citation `science-DOI' on page 79 undefined on input line 28.
+
+
+LaTeX Warning: Citation `phys-online' on page 79 undefined on input line 28.
+
+
+LaTeX Warning: Citation `phys-mono' on page 79 undefined on input line 28.
+
+
+LaTeX Warning: Citation `phys-journal' on page 79 undefined on input line 28.
+
+
+LaTeX Warning: Citation `phys-DOI' on page 79 undefined on input line 28.
+
+
+LaTeX Warning: Citation `phys-contrib' on page 79 undefined on input line 28.
+
+[79]
+
+LaTeX Warning: Citation `psysoc-mono' on page 80 undefined on input line 28.
+
+
+LaTeX Warning: Citation `psysoc-online' on page 80 undefined on input line 28.
+
+
+LaTeX Warning: Citation `psysoc-journal' on page 80 undefined on input line 28.
+
+
+
+LaTeX Warning: Citation `psysoc-contrib' on page 80 undefined on input line 28.
+
+
+
+LaTeX Warning: Citation `psysoc-DOI' on page 80 undefined on input line 28.
+
+
+LaTeX Warning: Citation `humlinphil-journal' on page 80 undefined on input line
+ 28.
+
+
+LaTeX Warning: Citation `humlinphil-contrib' on page 80 undefined on input line
+ 28.
+
+
+LaTeX Warning: Citation `humlinphil-mono' on page 80 undefined on input line 28
+.
+
+
+LaTeX Warning: Citation `humlinphil-online' on page 80 undefined on input line 
+28.
+
+
+LaTeX Warning: Citation `humlinphil-DOI' on page 80 undefined on input line 28.
+
+
+
+LaTeX Warning: Citation `basic-contrib' on page 80 undefined on input line 28.
+
+
+LaTeX Warning: Citation `basic-online' on page 80 undefined on input line 28.
+
+
+LaTeX Warning: Citation `basic-journal' on page 80 undefined on input line 28.
+
+
+LaTeX Warning: Citation `basic-DOI' on page 80 undefined on input line 28.
+
+
+LaTeX Warning: Citation `basic-mono' on page 80 undefined on input line 28.
+
+[80])) [81] (./author/appendix.tex [82]
+Appendix A.
+
+LaTeX Warning: Reference `sec:A1' on page 83 undefined on input line 31.
+
+
+LaTeX Warning: Reference `sec:A2' on page 83 undefined on input line 41.
+
+[83]
+Overfull \hbox (0.61853pt too wide) in paragraph at lines 70--81
+[][]
+) [84 <./images/figure.pdf>] (./author/glossary.tex) [85]
+(./author/solutions.tex [86]
+
+LaTeX Warning: Reference `intro' on page 87 undefined on input line 4.
+
+
+LaTeX Warning: Reference `prob1' on page 87 undefined on input line 6.
+
+
+LaTeX Warning: Reference `prob2' on page 87 undefined on input line 11.
+
+) [87]
+No file book.ind.
+(./book.aux (./author/dedication.aux) (./author/foreword.aux)
+(./author/preface.aux) (./author/acknowledgement.aux) (./author/acronym.aux)
+(./author/chapter1.aux) (./author/chapter2.aux) (./author/chapter3.aux)
+(./author/chapter4.aux) (./author/chapter5.aux) (./author/chapter6.aux)
+(./author/appendix.aux) (./author/glossary.aux) (./author/solutions.aux))
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ )
+(see the transcript file for additional information){/usr/local/texlive/2019/te
+xmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}{/usr/local/texlive/2019/texmf-d
+ist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc}{/usr/local/texlive/2019/texmf-dist/fo
+nts/enc/dvips/base/ec.enc}{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/t
+ex-gyre/q-ts1.enc}{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.e
+nc}</usr/local/texlive/2019/texmf-dist/fonts/type1/public/newtx/ntxsups-Regular
+.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/tex-gyre/qtmb.pfb><
+/usr/local/texlive/2019/texmf-dist/fonts/type1/public/tex-gyre/qtmbi.pfb></usr/
+local/texlive/2019/texmf-dist/fonts/type1/public/tex-gyre/qtmr.pfb></usr/local/
+texlive/2019/texmf-dist/fonts/type1/public/tex-gyre/qtmri.pfb></usr/local/texli
+ve/2019/texmf-dist/fonts/type1/public/newtx/rntxbmi.pfb></usr/local/texlive/201
+9/texmf-dist/fonts/type1/public/newtx/rntxmi.pfb></usr/local/texlive/2019/texmf
+-dist/fonts/type1/public/newtx/rntxmi5.pfb></usr/local/texlive/2019/texmf-dist/
+fonts/type1/public/newtx/rntxmi7.pfb></usr/local/texlive/2019/texmf-dist/fonts/
+type1/public/txfonts/rtxmi.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/
+public/newtx/rtxmi5.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/
+newtx/rtxmi7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/txfonts
+/rtxr.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/txfonts/t1xtt.
+pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/newtx/txexs.pfb></us
+r/local/texlive/2019/texmf-dist/fonts/type1/public/txfonts/txmia.pfb></usr/loca
+l/texlive/2019/texmf-dist/fonts/type1/public/txfonts/txsya.pfb></usr/local/texl
+ive/2019/texmf-dist/fonts/type1/public/newtx/txsys.pfb></usr/local/texlive/2019
+/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on book.pdf (103 pages, 9330001 bytes).
+Transcript written on book.log.
+bibtex 
+Makefile:13: recipe for target 'book.pdf' failed
