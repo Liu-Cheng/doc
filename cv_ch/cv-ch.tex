@@ -29,7 +29,7 @@
 
 \name{刘成} % Your name
 \address{+86-13713529934}
-\address{北京市海淀区中关村南路6号，中科院计算技术研究所} % Your secondary addess (optional)
+\address{北京市海淀区中关村南路6号，中科院计算技术研究所, 处理器芯片全国重点实验室} % Your secondary addess (optional)
 \address{liucheng@ict.ac.cn} % Your phone number and email
 
 %----------------------------------------------------------------------------------------
@@ -37,10 +37,18 @@
 %----------------------------------------------------------------------------------------
 
 \begin{document}
+\begin{rSection}{个人简介}
+    \vspace{-1em}
+\item 中科院计算技术研究所，副研究员,主要研究方向为领域专用芯片设计、容错芯片设计以及新型EDA技术，主持来自中科院先导、科技部、军工、基金委以及航天科技等多个领域专用芯片与系统的研究项目，将专用芯片应用于星载智能计算、舰载大数据处理、端侧智能计算等多个关键场景。发表集成电路设计相关的学术论文60余篇（CCF推荐A类21篇, IEEE/ACM汇刊22篇），出版英文专著1部，其中通信/一作论文30余篇，获得国际最佳论文奖2次。获得中科院科技成果转化特等奖1次，指导学生在CVPR低功耗计算机视觉挑战赛、DAC系统设计竞赛、ICCAD的EDA竞赛等国际竞赛中多次获得冠亚军。担任FCCM、FPT、ICLR、NIPS、ICML等国际学术会议的程序委员，TCAD、TVLSI、TC等多个集成电路领域期刊的审稿人。
+    \vspace{-0.5em}
+\end{rSection}
 
-\begin{rSection}{教育}
-
-{\bf 香港大学} \hfill {\em 2011-09 - 2016-04} \\ 
+\begin{rSection}{教育与工作经历}
+{\bf 中科院计算所} \hfill {\em 2018-06 - 至今} \\ 
+计算机体系结构国家重点实验室/处理器芯片全国重点实验室，副研究员\\
+{\bf 新加坡国立大学} \hfill {\em 2016-12 - 2018-06} \\ 
+计算机学院，博后\\
+{\bf 香港大学} \hfill {\em 2011-09 - 2016-11} \\ 
 计算机工程专业，电机与电子工程系\\
 {\bf 哈尔滨工业大学} \hfill {\em 2007-09 - 2009-07} \\
 微电子学与固体电子学专业， 航天学院\\
@@ -49,164 +57,121 @@
 
 \end{rSection}
 
-\begin{rSection}{研究方向}
-    \vspace{-1em}
-\item FPGA 计算加速, FPGA 虚拟化, 深度学习计算加速，软硬件协同设计, 片上网络
-    \vspace{-0.5em}
-\end{rSection}
 %----------------------------------------------------------------------------------------
 %	WORK EXPERIENCE SECTION
 %----------------------------------------------------------------------------------------
-\begin{rSection}{研究经历}
-\begin{rSubsection}{中科院计算所}{2018-06 - 现在}{
-        项目： 低功耗深度学习硬件加速器}{}
-\item 主要进行低功耗的深度学习加速器体系结构、电路设计优化以及自动化定制等研究，
-	开发适用于物端智能处理的超低功耗AI加速芯片，满足物端识别、分析等智能应用需求。
-\end{rSubsection}
-
-
-\begin{rSubsection}{计算机学院, 新加坡国立大学}{2016-12 - 2018-06}{
-        项目： 异构CPU-FPGA系统上的图计算加速}{}
-\item 本项目目标是开发一个面向大型图的软件可编程高性能图计算库，
-    可以用于在弱耦合与紧耦合的CPU-FPGA计算系统上的图计算加速。
-    目前已经在Alpha-Data加速卡上实现了一个BFS加速器的设计，并且
-    可以根据FPGA片上资源，调整设计参数，实现性能的优化。
-    同时也正在进行针对紧耦合的CPU-FPGA系统的一般性图计算优化研究。
-	针对Intel的Harp系统也即Xeon-FPGA，提出一种以数据
-	流处理为基础的软硬件协同设计方案，用于自动化的生成软硬件
-	协同的图计算设计。
-\end{rSubsection}
-
-\begin{rSubsection}{商汤科技}{2016-04 - 2016-10}{
-        项目: Zynq系统上CNN卷积加速器设计}{}
-\item 设计了一个灵活可配置的卷积加速器，能够支持任意的分块以及参数的配置，
-    目标是能够快速的配置，以满足不同场景下不同CNN模型加速的需求。在ZC706上实现，
-    并用于大场景人脸识别的展示系统。
-\end{rSubsection}
-
-\begin{rSubsection}{香港大学}{2011-09 - 2015-12}{
-        项目: 基于软CGRA的FPGA虚拟化研究}{}
-\item 本项目的目标是提供一个FPGA的虚拟层，用于多种相似的计算核心加速逻辑的快速实现，
-    相比通常的高层综合或者HDL的硬件加速方式，可以极大的提高设计效率。为此，我们在FPGA上构建了
-    一个规则的CGRA虚拟层，然后将高层语言的计算核心，编译成数据流图，并进一步调度到
-    指定的CGRA虚拟层上。这样不同但相似的计算核心，在整个设计过程中，可以复用CGRA虚拟层的
-    硬件综合实现。此外，我们进一步针对Xilinx Zynq系统，开发了相应的软硬件接口模板，使得计算核心
-    的加速对用户近乎透明，达到接近软件编译的效率，获得显著的硬件加速。
-\\
-\item 将CGRA虚拟层移植到一个简单的RISC-V处理器上，添加加速逻辑调用指令，
-    分析了在通用处理器上增加可重构加速逻辑的优化潜力。 
-\end{rSubsection}
-
-%------------------------------------------------
-
-\begin{rSubsection}{中科院计算所}{2009-09 - 2011-03}{
-        项目: 高可靠的片上网络微结构研究}{}
-\item 针对3D片上网络的TSV的可靠性问题，设计了TSV共享的片上路由器结构，
-    增加了少量的逻辑，显著的提高了设计的可靠性。
-\end{rSubsection}
-
-%------------------------------------------------
-
-\begin{rSubsection}{哈尔滨工业大学}{2006-10 - 2009-07}{
-       项目: 高性能片上路由器微结构设计}{}
-\item 优化片上网络路由器的流水线，使用tsmc 130 nm工艺，实现了800MHz片上路由器的设计.
-    针对路由器中虚拟通道的开销大的问题，实现了动态虚拟通道共享的设计，减小芯片面积开销。
-\end{rSubsection}
-
+\begin{rSection}{科研项目}
+{\bf 跨层芯片设计与优化软硬件平台课题} \hfill {\em 2024 - 2028} \\ 
+中科院先导B计划，主持\\
+{\bf 面向遥感图像识别的智能计算系统可靠性评测} \hfill {\em 2024 - 2024} \\ 
+航天科技集团，主持\\
+{\bf AI辅助的领域专用芯片设计自动化方法研究} \hfill {\em 2023 - 2024} \\ 
+处理器芯片重点实验室培育项目，主持\\
+{\bf 基于智能计算存储器的大数据处理系统设计} \hfill {\em 2023 - 2024} \\
+1XX创新项目， 主持\\
+{\bf 领域专用芯片跨层参数优化方法} \hfill {\em 2023 - 2025} \\
+国家重点研发计划子课题， 主持\\
+{\bf 面向COTS器件的深度学习容错工具链设计} \hfill {\em 2023 - 2023} \\
+航天科技集团，主持 \\
+{\bf 弹性深度学习处理器芯片设计} \hfill {\em 2022 - 2025} \\
+自然科学基金面上项目，主持 \\
+{\bf 基于FPGA的高能效图计算加速器定制设计} \hfill {\em 2020 - 2022} \\
+自然科学基金青年项目，主持 \\
+{\bf 深度学习处理器设计自动化加固设计方法} \hfill {\em 2021 - 2022} \\
+计算机体系结构重点实验室培育项目，主持 \\
+{\bf 物端智能无人机系统设计} \hfill {\em 2019 - 2020} \\
+1XX项目子课题，参与 \\
+{\bf 开源物端智能处理器} \hfill {\em 2020 - 2021} \\
+中科院先导C课题，参与 \\
+{\bf 基于智能网卡与智能存储设备的流式计算系统研究} \hfill {\em 2020 - 2021} \\
+华为，参与 \\
 \end{rSection}
 
 %----------------------------------------------------------------------------------------
 % Publications
 %----------------------------------------------------------------------------------------
 \begin{rSection}{论文}
-    \begin{rSubsection} {Book Chapter}{}{}{}
+    \begin{rSubsection} {书籍}{}{}{}
+    \item Xiaowei Li, Guihai Yan, \textbf{Cheng Liu}, Built-in Fault-tolerant Computing Paradigm for Resilient Large-Scale Chip Design, Springer Nature, 2023
+
 	\item Xuntao Cheng, \textbf{Cheng Liu}, Bingsheng He, "Emerging Hardware Technologies", In Book 
 		Encyclopedia of Big Data Technologies, pp.1-5, Jan 2018
+
     \item Hayden Kwok-Hay So and \textbf{Cheng Liu}, "FPGA overlays", in press FPGAs for Software
         Engineers, Dirk Koch, Frank Hannig and Daniel Ziener, Ed., 2016.  
     \end{rSubsection}
 
     \begin{rSubsection} {期刊}{}{}{}
-    \item Ying Wang, Yinhe Han, Lei Zhang, Binzhang Fu, \textbf{Cheng Liu}, Huawei Li, and Xiaowei Li.
-        "Economizing TSV Resources in 3-D Network-on-Chip Design." Very Large Scale Integration
-        (VLSI) Systems, IEEE Transactions on 23, no. 3 (2015): 493-506. (cited 12)  
-    \item Yinhe Han, \textbf{Cheng Liu}, Hang Lu, Wenbo Li, Lei Zhang, and Xiaowei Li. "RevivePath:
-        Resilient network-on-chip design through data path salvaging of router." Journal of Computer
-        Science and Technology 28, no. 6 (2013): 1045-1053. (cited 3)
-    \item Qingli Zhang, \textbf{Cheng Liu}, Liyi Xiao, Fangfa Fu.” Low Latency Router Design Supporting both
-        Deterministic Routing and Adaptive Routing.” Journal of Computer-Aided Design \& Computer
-        Graphics, 21(12), 2009 (in Chinese)
+    \item 1 Haitong Huang, Cheng Liu(通信作者), Xinghua Xue, Bo Liu, Huawei Li, Xiaowei Li, MRFI: An Open Source Multi-Resolution Fault Injection Framework for Neural Network Processing, IEEE Transactions on Very Large Scale Integration (VLSI) Systems, 2024.
+
+    \item 2 Mingkai Chen, Cheng Liu(通信作者), Shengwen Liang, Lei He, Ying Wang, Lei Zhang, Huawei Li, Xiaowei Li, An Energy-Efficient In-Memory Accelerator for Graph Construction and Updating, IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems (TCAD), 2024.
+
+    \item 3 Xinmiao Zhang, Cheng Liu(通信作者), Jiacheng Ni, Yuanqing Cheng*, Lei Zhang, Huawei Li, Xiaowei Li, PDG: A Prefetcher for Dynamic Graph Updating, IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems (TCAD), 2023.
+
+    \item 4 Xinghua Xue, Cheng Liu(通信作者), Ying Wang, Bing Yang, Tao Luo, Lei Zhang, Huawei Li, Xiaowei Li, Soft Error Reliability Analysis of Vision Transformers, IEEE Transactions on Very Large Scale Integration (VLSI) Systems, 2023.
+    \item 5 Xinghua Xue, Cheng Liu(通信作者), Bo Liu, Haitong Huang, Ying Wang, Tao Luo, Lei Zhang, Huawei Li, Xiaowei Li, "Exploring Winograd Convolution for Cost-effective Neural Network Fault Tolerance", IEEE Transactions on Very Large Scale Integration (VLSI) Systems, 2023.
+
+    \item 6 Cheng Chu, Cheng Liu(通信作者), Dawen Xu, Ying Wang, Tao Luo, Huawei Li, Xiaowei Li, "Accelerating Deformable Convolution Networks with Dynamic and Irregular Memory Accesses", ACM Transactions on Design Automation of Electronic Systems (TODAES), 2023.
+
+    \item 7 Haitong Huang, Xinghua Xue, Cheng Liu(通信作者), Ying Wang, Tao Luo, Long Cheng, Huawei Li, Xiaowei Li, "Statistical Modeling of Soft Error Influence on Neural Networks", IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems (TCAD), 2023.
+
+    \item 8 Cheng Liu, Cheng Chu, Dawen Xu, Ying Wang, Qianlong Wang, Huawei Li, Xiaowei Li, Kwang-Ting Cheng, "HyCA: A Hybrid Computing Architecture for Fault Tolerant Deep Learning", IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems (TCAD), 2022
+
+    \item 9 Dawen Xu, Zhuangyu Feng, Cheng Liu(通信作者), Li Li, Ying Wang, Huawei Li, Xiaowei Li, "Taming Process Variations in CNFET for Efficient Last Level Cache Design", IEEE Transactions on Very Large Scale Integration (VLSI) Systems, 2021.
+
+    \item 10 Dawen Xu, Meng He, Cheng Liu(通信作者), Ying Wang, Long Cheng, Huawei Li, Xiaowei Li, Kwang-Ting Cheng, "R2F: A Remote Retraining Framework for AIoT Processors with Computing Errors", IEEE Transactions on Very Large Scale Integration (VLSI) Systems, 2021.
+
+    \item 11 Dawen Xu, Ziyang Zhu, Cheng Liu(通信作者), Ying Wang, Shuang Zhao, Lei Zhang, Huaguo Liang, Huawei Li, Kwang-Ting Cheng, "Reliability Evaluation and Analysis of FPGA-based Neural Network Acceleration System", IEEE Transactions on Very Large Scale Integration (VLSI) Systems, 2021
+
+    \item 12 Dawen Xu(共同一作), Cheng Liu(共同一作), Ying Wang, Kaijie Tu, Bingsheng He, and Lei Zhang. "Accelerating Generative Neural Networks on Unmodified Deep Learning Processors-A Software Approach." IEEE Transactions on Computers (2020).
+
     \end{rSubsection}
 
     \begin{rSubsection} {会议}{}{}{}
-	\item Dawen Xu, Kaijie Tu, Ying Wang, \textbf{Cheng Liu}, Bingsheng He, Huawei Li, FCN-Engine: 
-		Accelerating Deconvolutional Layers in Classic CNN Processors, International Conference On 
-		Computer Aided Design (ICCAD), 2018 (to appear)
-    \item Ho-Cheung Ng, \textbf{Cheng Liu} and Hayden Kwok-Hay So. "A Soft Processor Overlay with
-        Tightly-coupled FPGA Accelerator," Overlay Architectures for FPGAs (OLAF), Second
-        International Workshop on, pp. 1-6, Feb, 2016. 
-    \item \textbf{Cheng Liu}, Ho-Cheung Ng, and Hayden Kwok-Hay So. "Automatic Nested Loop Acceleration on
-        FPGAs Using Soft CGRA Overlay", FPGAs for Software Programmers (FSP), 2nd International
-        Workshop on, Sep. 2015. (cited 12)
-    \item \textbf{Cheng Liu}, Ho-Cheung Ng, and Hayden Kwok-Hay So. "QuickDough: A Rapid FPGA Loop
-        Accelerator Design Framework Using Soft CGRA Overlay", Field Programmable Technology,
-        International Conference on (FPT), Dec. 2015 (cited 11) 
-    \item \textbf{Cheng Liu}, Lei Zhang, Yinhe Han, and Xiaowei Li. "Vertical interconnects squeezing in
-        symmetric 3D mesh Network-on-Chip." In Proceedings of the 16th Asia and South Pacific Design
-        Automation Conference, pp. 357-362. IEEE Press, 2011. (Cited 55)
-    \item \textbf{Cheng Liu}, Lei Zhang, Yinhe Han, and Xiaowei Li. "A resilient on-chip router design
-        through data path salvaging." In Proceedings of the 16th Asia and South Pacific Design
-        Automation Conference, pp. 437-442. IEEE Press, 2011. (Cited 23)
-    \end{rSubsection}
+    \item 1 Erjing Luo(共同一作), Haitong Huang(共同一作), Cheng Liu(通信作者), Guoyu Li, Bing Yang, Ying Wang, Huawei Li, Xiaowei Li, "DeepBurning-MixQ: An Open Source Mixed-Precision Neural Network Accelerator Design Framework for FPGAs", ICCAD, 2023.
 
-    \begin{rSubsection} {Poster}{}{}{}
-    \item \textbf{Cheng Liu}, and Hayden Kwok-Hay So. "Automatic Soft CGRA Overlay Customization for
-        High-Productivity Nested Loop Acceleration on FPGAs." In Field-Programmable Custom Computing
-        Machines (FCCM), 2015 IEEE 23rd Annual International Symposium on, pp. 101-101. IEEE, 2015.
-    \item \textbf{Cheng Liu}, Colin Lin Yu, and Hayden Kwok-Hay So. "A soft coarse-grained reconfigurable
-        array based high-level synthesis methodology: Promoting design productivity and exploring
-        extreme FPGA frequency." In Field-Programmable Custom Computing Machines (FCCM), 2013 IEEE
-        21st Annual International Symposium on, pp. 228-228. IEEE, 2013.
+    \item 2 Cheng Liu, Zhen Gao, Siting Liu, Xuefei Ning, Huawei Li, and Xiaowei Li, "Fault-Tolerant Deep Learning: A Hierarchical Perspective", in The 40th IEEE VLSI Test Symposium (VTS), 2022.
+
+    \item 3 Xinghua Xue, Haitong Huang, Cheng Liu(通信作者), Tao Luo, Lei Zhang, Ying Wang, "Winograd Convolution: A Perspective from Fault Tolerance", In proceedings of ACM/IEEE Design Automation Conference (DAC), 2022.
+
+    \item 4 Cangyuan Li, Ying Wang(通信作者), Cheng Liu(通信作者), Shengwen Liang, Huawei Li, Xiaowei Li, "GLIST: Towards In-Storage Graph Learning", USENIX Annual Technical Conference(ATC), 2021.
+
+    \item 5 Lei He(共同一作), Cheng Liu(共同一作), Ying Wang, Shengwen Liang, Huawei Li, and Xiaowei Li, "GCiM: A Near-Data Processing Accelerator for Graph Construction",In proceedings of ACM/IEEE Design Automation Conference (DAC), 2021.
+
+    \item 6 Yuquan He, Ying Wang(通信作者), Cheng Liu(通信作者), and Lei Zhang, "PicoVO: A Lightweight RGB-D Visual Odometry Targeting Resource-Constrained IoT Devices", In The 2021 IEEE International Conference on Robotics and Automation (ICRA), 2021.
+
+    \item 7 Dawen Xu, Cheng Chu, Cheng Liu(通信作者), Qianlong Wang, Ying Wang, Lei Zhang, Huaguo Liang and Kwang-Ting Tim Cheng, A Hybrid Computing Architecture for Fault-tolerant Deep Learning Accelerators, The 38th IEEE International Conference on Computer Design(ICCD), October, 2020.
+
+    \item 8 Shengwen Liang(共同一作), Cheng Liu(共同一作), Ying Wang, Huawei Li, Xiaowei Li, DeepBurning-GL: an Automated Framework for Generating Graph Neural Network Accelerators, IEEE/ACM International Conference on Computer-Aided Design (ICCAD), November, 2020
+
+    \item 9 Dawen Xu, Ziyang Zhu, Cheng Liu(通信作者), Ying Wang, Huawei Li, Lei Zhang, Kwang-Ting Cheng, Persistent Fault Analysis of Neural Networks on FPGA-based Acceleration System, The 31th IEEE International Conference on Application-specific Systems, Architectures and Processors (ASAP), July, 2020
+
+    \item 10 Dawen Xu, Cheng Chu, Cheng Liu(通信作者), Ying Wang, Xianzhong Zhou, Lei Zhang, Huawei Li, Huaguo Liang, Multi-task Scheduling for PIM-based Heterogeneous Computing System, In IEEE Great Lakes Symposium on VLSI (GLVLSI), 2020.
+
+    \item 11 Dawen Xu, Xinke Chu, Cheng Liu(通信作者), Ying Wang, Huawei Li, Lei Zhang, CNT-Cache: an Energy-Efficient Carbon Nanotube Cache with Adaptive Encoding , IEEE/ACM Proceedings of Design, Automation and Test in Europe conference (DATE), 2020
+
+    \item 12 Cheng Liu, Xinyu Chen, Bingsheng He, Ying Wang, Xiaofei Liao, Lei Zhang, OBFS: OpenCL Based BFS Optimization on Software Programmable FPGAs, In 2019 International Conference on Field Programmable Technology (FPT), Dec 11-13, 2019
+
+    \item 13 Dawen Xu, Kouzi Xing, Cheng Liu(通信作者), Ying Wang, Yulin Dai, Long Cheng, Huawei Li, Lei Zhang, Resilient Neural Network Training for Accelerators with Computing Errors, The 30th IEEE International Conference on Application-specific Systems, Architectures and Processors (ASAP), July 15-17, 2019
+
+    \item 14 Kouzi Xing, Dawen Xu, Cheng Liu(通信作者), Ying Wang, Huawei Li and Xiaowei Li, Squeezing the Last MHz for CNN Acceleration on FPGAs , The 3rd International Test Conference in Asia (ITC-Asia), 2019
+
+    \item 15 Cheng Liu, Ho-Cheung Ng, and Hayden Kwok-Hay So. QuickDough: a rapid FPGA loop accelerator design framework using soft CGRA overlay . In International Conference on Field Programmable Technology (FPT), pp. 56-63. IEEE, 2015.
+
+    \item 16 Cheng Liu, Ho-Cheung Ng, Hayden Kwok-Hay So, Automatic nested loop acceleration on fpgas using soft CGRA overlay, The Second International workshop of FPGAs for Software Programmers (FSP), 2015
+
+    \item 17 Cheng Liu, and Hayden Kwok-Hay So. Automatic soft cgra overlay customization for high-productivity nested loop acceleration on fpgas . In 2015 IEEE 23rd Annual International Symposium on Field-Programmable Custom Computing Machines (FCCM), pp. 101-101. IEEE, 2015 (poster)
+
+    \item 18 Cheng Liu, Colin Lin Yu, and Hayden Kwok-Hay So. A soft coarse-grained reconfigurable array based high-level synthesis methodology: Promoting design productivity and exploring extreme FPGA frequency. In 2013 IEEE 21st Annual International Symposium on Field-Programmable Custom Computing Machines (FCCM), pp. 228-228. IEEE, 2013 (poster)
+
+    \item 19 Cheng Liu, Hayden Kwok-Hay So, QuickDough: A Rapid FPGA Accelerator Generation Framework using Soft Coarse-Grained Reconfigurable Array Overla,y The 1st International Workshop on Overlay Architectures for FPGAs (OLAF), 2013.
+
+    \item 20 Cheng Liu, Lei Zhang, Yinhe Han, and Xiaowei Li. Vertical interconnects squeezing in symmetric 3D mesh network-on-chip. In Proceedings of the 16th Asia and South Pacific Design Automation Conference (ASP-DAC), pp. 357-362. IEEE Press, 2011.
+
+    \item 21 Cheng Liu, Lei Zhang, Yinhe Han, and Xiaowei Li. A resilient on-chip router design through data path salvaging. In Proceedings of the 16th Asia and South Pacific Design Automation Conference (ASP-DAC), pp.437-442. 2011.
     \end{rSubsection}
 
 \end{rSection}
 
-%\begin{rSection}{教学}
-%    \vspace{-1em}
-%\item 助教 – to Dr. V. Tam \\In ELEC1503, Object Oriented Programming 
-%and Data Structures, 2012 \\实验上机指导和答疑
-%
-%\item 助教 – to Dr. Hayden So \\In ELEC3441 Computer Architecture, 2014-2015
-%\\协助设计基于RISC-V的课程作业和实验以及答疑.
-%
-%\item 助教 – to Dr. Hayden So, Dr. Edmund Lam, and Dr. Kenneth K. Y. Wong 
-%\\In ENGG1203, Introduction to Electrical and Electronic Engineering, 2013-2014
-%\\实验上机指导和答疑. 
-%
-%\item 助教 – to Dr. Bingsheng He 
-%\\新加坡国立大学冬季课程 "Big Data Systems on Future Hardware" 负责 "System Optimizations and Performance Tuning for New Generation FPGAs"  部分, 2018 
-%
-%\end{rSection}
-%
-%\begin{rSection}{奖励}
-%    \vspace{-1em}
-%\item 博士奖学金, 香港大学, 2011-09 - 2015-08 
-%    \vspace{-0.5em}
-%\item 一等奖学金, 哈尔滨工业大学, 2007-09 - 2009-07
-%    \vspace{-0.5em}
-%\item 优秀研究生奖学金, 计算所系统结构重点实验室，2010-12
-%    \vspace{-0.5em}
-%\item 国家数学建模竞赛二等奖, 2008-05
-%    \vspace{-0.5em}
-%\item 黑龙江省电子竞赛二等奖, 2007-03
-%    \vspace{-0.5em}
-%\end{rSection}
-%
-%\begin{rSection}{技能}
-%    \begin{rSubsection}{编程语言}{}{}{}
-%    \item 熟悉: SystemC, C/C++, Matlab, Verilog, VHDL, HLS, OpenCL for FPGA
-%    \item 了解: JAVA, Python
-%    \end{rSubsection}
-%\end{rSection}
-%
+
 \end{document}
